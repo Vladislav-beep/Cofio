@@ -15,6 +15,8 @@
 		B9CC13722887389E0013ED76 /* CofioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13712887389E0013ED76 /* CofioTests.swift */; };
 		B9CC137C2887389E0013ED76 /* CofioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC137B2887389E0013ED76 /* CofioUITests.swift */; };
 		B9CC137E2887389E0013ED76 /* CofioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC137D2887389E0013ED76 /* CofioUITestsLaunchTests.swift */; };
+		B9CC138B28887C210013ED76 /* Vieww.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC138A28887C210013ED76 /* Vieww.swift */; };
+		B9CC138D2889D7900013ED76 /* LanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC138C2889D7900013ED76 /* LanguageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		B9CC13772887389E0013ED76 /* CofioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CofioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9CC137B2887389E0013ED76 /* CofioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CofioUITests.swift; sourceTree = "<group>"; };
 		B9CC137D2887389E0013ED76 /* CofioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CofioUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B9CC138A28887C210013ED76 /* Vieww.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vieww.swift; sourceTree = "<group>"; };
+		B9CC138C2889D7900013ED76 /* LanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +104,11 @@
 				B9CC135A288738980013ED76 /* AppDelegate.swift */,
 				B9CC135C288738980013ED76 /* SceneDelegate.swift */,
 				B9CC135E288738980013ED76 /* ViewController.swift */,
+				B9CC138A28887C210013ED76 /* Vieww.swift */,
 				B9CC13632887389D0013ED76 /* Assets.xcassets */,
 				B9CC13652887389D0013ED76 /* LaunchScreen.storyboard */,
 				B9CC13682887389D0013ED76 /* Info.plist */,
+				B9CC138C2889D7900013ED76 /* LanguageCell.swift */,
 			);
 			path = Cofio;
 			sourceTree = "<group>";
@@ -254,8 +260,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9CC138B28887C210013ED76 /* Vieww.swift in Sources */,
 				B9CC135F288738980013ED76 /* ViewController.swift in Sources */,
 				B9CC135B288738980013ED76 /* AppDelegate.swift in Sources */,
+				B9CC138D2889D7900013ED76 /* LanguageCell.swift in Sources */,
 				B9CC135D288738980013ED76 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
