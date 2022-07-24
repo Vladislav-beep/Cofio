@@ -32,7 +32,6 @@ class LanguagesViewController: UIViewController {
         cool.register(LanguageCell.self, forCellWithReuseIdentifier: "cell")
         cool.delegate = self
         cool.dataSource = self
-       // cool.backgroundColor = .red
         return cool
     }()
     
@@ -40,7 +39,8 @@ class LanguagesViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Добавить язык", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 21, weight: .semibold)
-        button.setTitleColor(UIColor(red: 90/255, green: 34/255, blue: 102/255, alpha: 1), for: .normal)
+        button.setTitleColor(UIColor.darkViolet, for: .normal)
+        button.setTitleColor(UIColor.darkOrange, for: .highlighted)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -90,7 +90,7 @@ extension LanguagesViewController: UICollectionViewDelegate {
 extension LanguagesViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        20
+        3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
