@@ -25,6 +25,8 @@
 		B9CC13A2288EE98E0013ED76 /* LanguagesInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13A1288EE98E0013ED76 /* LanguagesInteractorProtocol.swift */; };
 		B9CC13A4288EEAA70013ED76 /* LanguagesViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13A3288EEAA70013ED76 /* LanguagesViewProtocol.swift */; };
 		B9CC13A6288EEC7A0013ED76 /* LanguagesModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13A5288EEC7A0013ED76 /* LanguagesModuleBuilder.swift */; };
+		B9CC13A8288EF56D0013ED76 /* FlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13A7288EF56D0013ED76 /* FlowCoordinator.swift */; };
+		B9CC13AB288EF6FF0013ED76 /* FlowCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13AA288EF6FF0013ED76 /* FlowCoordinatorProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		B9CC13A1288EE98E0013ED76 /* LanguagesInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesInteractorProtocol.swift; sourceTree = "<group>"; };
 		B9CC13A3288EEAA70013ED76 /* LanguagesViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesViewProtocol.swift; sourceTree = "<group>"; };
 		B9CC13A5288EEC7A0013ED76 /* LanguagesModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesModuleBuilder.swift; sourceTree = "<group>"; };
+		B9CC13A7288EF56D0013ED76 /* FlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinator.swift; sourceTree = "<group>"; };
+		B9CC13AA288EF6FF0013ED76 /* FlowCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinatorProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,9 +121,9 @@
 		B9CC1359288738980013ED76 /* Cofio */ = {
 			isa = PBXGroup;
 			children = (
-				B9CC139E288EE81A0013ED76 /* New Group */,
 				B9CC135A288738980013ED76 /* AppDelegate.swift */,
 				B9CC135C288738980013ED76 /* SceneDelegate.swift */,
+				B9CC13A9288EF6E40013ED76 /* Flow */,
 				B9CC1395288D76E60013ED76 /* StartScreen */,
 				B9CC1392288B0C560013ED76 /* Extensions */,
 				B9CC13632887389D0013ED76 /* Assets.xcassets */,
@@ -203,11 +207,13 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
-		B9CC139E288EE81A0013ED76 /* New Group */ = {
+		B9CC13A9288EF6E40013ED76 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				B9CC13A7288EF56D0013ED76 /* FlowCoordinator.swift */,
+				B9CC13AA288EF6FF0013ED76 /* FlowCoordinatorProtocol.swift */,
 			);
-			path = "New Group";
+			path = Flow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9CC13AB288EF6FF0013ED76 /* FlowCoordinatorProtocol.swift in Sources */,
 				B9CC138F288B0AFD0013ED76 /* UICollectionView+Extension.swift in Sources */,
 				B9CC13A6288EEC7A0013ED76 /* LanguagesModuleBuilder.swift in Sources */,
 				B9CC13A2288EE98E0013ED76 /* LanguagesInteractorProtocol.swift in Sources */,
@@ -348,6 +355,7 @@
 				B9CC1391288B0B840013ED76 /* UICollectionViewLayout+Extension.swift in Sources */,
 				B9CC139D288EE6E90013ED76 /* LanguagesInteractor.swift in Sources */,
 				B9CC13A0288EE8C10013ED76 /* LanguagesPresenterProtocol.swift in Sources */,
+				B9CC13A8288EF56D0013ED76 /* FlowCoordinator.swift in Sources */,
 				B9CC135B288738980013ED76 /* AppDelegate.swift in Sources */,
 				B9CC138D2889D7900013ED76 /* LanguageCell.swift in Sources */,
 				B9CC135D288738980013ED76 /* SceneDelegate.swift in Sources */,

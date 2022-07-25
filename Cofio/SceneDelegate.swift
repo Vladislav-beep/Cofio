@@ -16,8 +16,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         
-     //   window.rootViewController = LanguagesViewController(coder: <#NSCoder#>)
+        
+        let parentVC = UIViewController()
+        window.rootViewController = parentVC
+        
         window.makeKeyAndVisible()
+        let flow = FlowCoordinator(vc: parentVC)
+        flow.start()
+        
+        
         self.window = window
     }
 
