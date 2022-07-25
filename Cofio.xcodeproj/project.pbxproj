@@ -19,6 +19,12 @@
 		B9CC138F288B0AFD0013ED76 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC138E288B0AFD0013ED76 /* UICollectionView+Extension.swift */; };
 		B9CC1391288B0B840013ED76 /* UICollectionViewLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC1390288B0B840013ED76 /* UICollectionViewLayout+Extension.swift */; };
 		B9CC1394288B15F00013ED76 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC1393288B15F00013ED76 /* UIColor+Extension.swift */; };
+		B9CC139B288EE6C20013ED76 /* LanguagesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC139A288EE6C20013ED76 /* LanguagesPresenter.swift */; };
+		B9CC139D288EE6E90013ED76 /* LanguagesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC139C288EE6E90013ED76 /* LanguagesInteractor.swift */; };
+		B9CC13A0288EE8C10013ED76 /* LanguagesPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC139F288EE8C10013ED76 /* LanguagesPresenterProtocol.swift */; };
+		B9CC13A2288EE98E0013ED76 /* LanguagesInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13A1288EE98E0013ED76 /* LanguagesInteractorProtocol.swift */; };
+		B9CC13A4288EEAA70013ED76 /* LanguagesViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13A3288EEAA70013ED76 /* LanguagesViewProtocol.swift */; };
+		B9CC13A6288EEC7A0013ED76 /* LanguagesModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13A5288EEC7A0013ED76 /* LanguagesModuleBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +61,12 @@
 		B9CC138E288B0AFD0013ED76 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		B9CC1390288B0B840013ED76 /* UICollectionViewLayout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewLayout+Extension.swift"; sourceTree = "<group>"; };
 		B9CC1393288B15F00013ED76 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		B9CC139A288EE6C20013ED76 /* LanguagesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesPresenter.swift; sourceTree = "<group>"; };
+		B9CC139C288EE6E90013ED76 /* LanguagesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesInteractor.swift; sourceTree = "<group>"; };
+		B9CC139F288EE8C10013ED76 /* LanguagesPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesPresenterProtocol.swift; sourceTree = "<group>"; };
+		B9CC13A1288EE98E0013ED76 /* LanguagesInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesInteractorProtocol.swift; sourceTree = "<group>"; };
+		B9CC13A3288EEAA70013ED76 /* LanguagesViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesViewProtocol.swift; sourceTree = "<group>"; };
+		B9CC13A5288EEC7A0013ED76 /* LanguagesModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesModuleBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +117,7 @@
 		B9CC1359288738980013ED76 /* Cofio */ = {
 			isa = PBXGroup;
 			children = (
+				B9CC139E288EE81A0013ED76 /* New Group */,
 				B9CC135A288738980013ED76 /* AppDelegate.swift */,
 				B9CC135C288738980013ED76 /* SceneDelegate.swift */,
 				B9CC1395288D76E60013ED76 /* StartScreen */,
@@ -146,10 +159,55 @@
 		B9CC1395288D76E60013ED76 /* StartScreen */ = {
 			isa = PBXGroup;
 			children = (
-				B9CC135E288738980013ED76 /* LanguagesViewController.swift */,
-				B9CC138C2889D7900013ED76 /* LanguageCell.swift */,
+				B9CC13A5288EEC7A0013ED76 /* LanguagesModuleBuilder.swift */,
+				B9CC1399288EE6640013ED76 /* Interactor */,
+				B9CC1398288EE65D0013ED76 /* Presenter */,
+				B9CC1396288EE6320013ED76 /* ViewController */,
 			);
 			path = StartScreen;
+			sourceTree = "<group>";
+		};
+		B9CC1396288EE6320013ED76 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B9CC135E288738980013ED76 /* LanguagesViewController.swift */,
+				B9CC13A3288EEAA70013ED76 /* LanguagesViewProtocol.swift */,
+				B9CC1397288EE6420013ED76 /* Cells */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		B9CC1397288EE6420013ED76 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B9CC138C2889D7900013ED76 /* LanguageCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B9CC1398288EE65D0013ED76 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B9CC139A288EE6C20013ED76 /* LanguagesPresenter.swift */,
+				B9CC139F288EE8C10013ED76 /* LanguagesPresenterProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B9CC1399288EE6640013ED76 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				B9CC139C288EE6E90013ED76 /* LanguagesInteractor.swift */,
+				B9CC13A1288EE98E0013ED76 /* LanguagesInteractorProtocol.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B9CC139E288EE81A0013ED76 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,11 +341,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9CC138F288B0AFD0013ED76 /* UICollectionView+Extension.swift in Sources */,
+				B9CC13A6288EEC7A0013ED76 /* LanguagesModuleBuilder.swift in Sources */,
+				B9CC13A2288EE98E0013ED76 /* LanguagesInteractorProtocol.swift in Sources */,
+				B9CC13A4288EEAA70013ED76 /* LanguagesViewProtocol.swift in Sources */,
 				B9CC135F288738980013ED76 /* LanguagesViewController.swift in Sources */,
 				B9CC1391288B0B840013ED76 /* UICollectionViewLayout+Extension.swift in Sources */,
+				B9CC139D288EE6E90013ED76 /* LanguagesInteractor.swift in Sources */,
+				B9CC13A0288EE8C10013ED76 /* LanguagesPresenterProtocol.swift in Sources */,
 				B9CC135B288738980013ED76 /* AppDelegate.swift in Sources */,
 				B9CC138D2889D7900013ED76 /* LanguageCell.swift in Sources */,
 				B9CC135D288738980013ED76 /* SceneDelegate.swift in Sources */,
+				B9CC139B288EE6C20013ED76 /* LanguagesPresenter.swift in Sources */,
 				B9CC1394288B15F00013ED76 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

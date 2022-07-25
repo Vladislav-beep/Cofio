@@ -9,6 +9,8 @@ import UIKit
 
 class LanguagesViewController: UIViewController {
     
+    private let output: LanguagesViewOutput
+    
     private lazy var titleL: UILabel = {
         let title = UILabel()
         title.font = UIFont.systemFont(ofSize: 30, weight: .bold)
@@ -44,6 +46,16 @@ class LanguagesViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
+    init(output: LanguagesViewOutput) {
+        self.output = output
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,3 +112,7 @@ extension LanguagesViewController: UICollectionViewDataSource {
         return cell
     }
 }
+
+
+
+extension LanguagesViewController: LanguagesViewInput {}
