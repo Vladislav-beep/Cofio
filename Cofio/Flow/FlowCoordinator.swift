@@ -10,6 +10,7 @@ import UIKit
 final class FlowCoordinator {
     
     private let parentVC: UIViewController
+    private var languagesVC: UIViewController?
     
     init(vc: UIViewController) {
         parentVC = vc
@@ -19,8 +20,17 @@ final class FlowCoordinator {
         let builder = LanguagesModuleBuilder(output: self)
         
         let vc = builder.build()
+        languagesVC = vc
         vc.modalPresentationStyle = .fullScreen
         parentVC.present(vc, animated: false)
+    }
+    
+    func showNewLanguageModule() {
+        let builder = NewLanguageModuleBuilder(output: self)
+        
+        let vc = builder.build()
+        
+        languagesVC?.present(vc, animated: true)
     }
 }
 
@@ -34,4 +44,13 @@ extension FlowCoordinator: FlowCoordinatorProtocol {
     }
 }
 
-extension FlowCoordinator: LanguagesPresenterOutput {}
+extension FlowCoordinator: LanguagesPresenterOutput {
+    
+    func moduleWantsToAddNewLanguage(_ module: LanguagesPresenterInput) {
+        showNewLanguageModule()
+    }
+}
+
+extension FlowCoordinator: NewLanguagePresenterOutput {
+    
+}

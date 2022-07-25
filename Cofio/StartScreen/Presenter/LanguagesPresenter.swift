@@ -20,6 +20,12 @@ final class LanguagesPresenter {
     }
 }
 
-extension LanguagesPresenter: LanguagesViewOutput {}
+extension LanguagesPresenter: LanguagesViewOutput {
+    func addNewLanguage() {
+        output?.moduleWantsToAddNewLanguage(self)
+    }
+}
+
+extension LanguagesPresenter: LanguagesPresenterInput {}
 
 extension LanguagesPresenter: LanguagesInteractorOutput {}

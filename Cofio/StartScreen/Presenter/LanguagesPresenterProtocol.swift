@@ -7,4 +7,7 @@
 
 protocol LanguagesPresenterInput: AnyObject {}
 
-protocol LanguagesPresenterOutput: AnyObject {}
+protocol LanguagesPresenterOutput: AnyObject {
+    
+    func moduleWantsToAddNewLanguage(_ module: LanguagesPresenterInput)
+}

@@ -43,6 +43,7 @@ class LanguagesViewController: UIViewController {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 21, weight: .semibold)
         button.setTitleColor(UIColor.darkViolet, for: .normal)
         button.setTitleColor(UIColor.darkOrange, for: .highlighted)
+        button.addTarget(self, action: #selector(addLanguage), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -92,6 +93,11 @@ class LanguagesViewController: UIViewController {
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0)
         ])
      
+    }
+    
+    @objc func addLanguage() {
+        output.addNewLanguage()
+        print("lol")
     }
 }
 

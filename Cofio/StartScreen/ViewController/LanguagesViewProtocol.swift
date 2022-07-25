@@ -7,4 +7,7 @@
 
 protocol LanguagesViewInput: AnyObject {}
 
-protocol LanguagesViewOutput: AnyObject {}
+protocol LanguagesViewOutput: AnyObject {
+    
+    func addNewLanguage()
+}
