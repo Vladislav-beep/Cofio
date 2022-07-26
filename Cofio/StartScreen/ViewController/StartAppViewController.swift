@@ -12,22 +12,14 @@ class StartAppViewController: UIViewController {
     private let output: StartAppViewOutput
     private let coordinater: FlowCoordinator
     
-    private lazy var titleL: UILabel = {
-        let title = UILabel()
-        title.font = UIFont.systemFont(ofSize: 30, weight: .bold)
-        title.numberOfLines = 0
-        title.text = "Иностранные языки"
-        title.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var titleLabel: TitleLabel = {
+        let title = TitleLabel(title: "Иностранные языки")
         return title
     }()
     
-    private lazy var subtitleL: UILabel = {
-        let title = UILabel()
-        title.font = UIFont.systemFont(ofSize: 17, weight: .regular)
-        title.numberOfLines = 0
-        title.text = "Изучение иностранных языков c кем и чеком и чебуреком с сыром и мясом лол ушцкрпм лдылмттлывм вымо"
-        title.translatesAutoresizingMaskIntoConstraints = false
-        return title
+    private lazy var subtitleLabel: SubtitleLabel = {
+        let subtitle = SubtitleLabel(subtitle: "Изучение иностранных языков c кем и чеком и чебуреком с сыром и мясом лол ушцкрпм лдылмттлывм вымо")
+        return subtitle
     }()
     
     private lazy var collectionView: UICollectionView = {
@@ -63,20 +55,20 @@ class StartAppViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        view.addSubview(titleL)
+        view.addSubview(titleLabel)
         NSLayoutConstraint.activate([
-            titleL.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
-            titleL.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            titleL.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            titleL.heightAnchor.constraint(equalToConstant: 50)
+            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
+            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            titleLabel.heightAnchor.constraint(equalToConstant: 50)
         ])
         
-        view.addSubview(subtitleL)
+        view.addSubview(subtitleLabel)
         NSLayoutConstraint.activate([
-            subtitleL.topAnchor.constraint(equalTo: titleL.bottomAnchor, constant: 16),
-            subtitleL.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            subtitleL.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            subtitleL.heightAnchor.constraint(equalToConstant: 70)
+            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
+            subtitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            subtitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            subtitleLabel.heightAnchor.constraint(equalToConstant: 70)
         ])
         
         view.addSubview(bottomButton)
@@ -89,7 +81,7 @@ class StartAppViewController: UIViewController {
         
         view.addSubview(collectionView)
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: subtitleL.bottomAnchor, constant: 40),
+            collectionView.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 40),
             collectionView.bottomAnchor.constraint(equalTo: bottomButton.topAnchor, constant: -8),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0)
