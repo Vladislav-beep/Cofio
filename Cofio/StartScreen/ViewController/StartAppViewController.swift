@@ -13,8 +13,8 @@ class StartAppViewController: UIViewController {
     private let coordinater: FlowCoordinator
     
     private lazy var titleLabel: TitleLabel = {
-        let title = TitleLabel(title: "Иностранные языки")
-        return title
+        let titleLabel = TitleLabel(title: "Иностранные языки")
+        return titleLabel
     }()
     
     private lazy var subtitleLabel: SubtitleLabel = {
