@@ -19,13 +19,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let parentVC = UIViewController()
         window.rootViewController = parentVC
-        
         window.makeKeyAndVisible()
         let flow = FlowCoordinator(vc: parentVC)
-        flow.start()
+        
         
         
         self.window = window
+        
+        flow.start()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

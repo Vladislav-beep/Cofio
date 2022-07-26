@@ -7,11 +7,11 @@
 
 import Foundation
 
-final class LanguagesInteractor {
+final class StartAppInteractor {
     
-    weak var output: LanguagesInteractorOutput?
+    weak var output: StartAppInteractorOutput?
     
 }
 
 
-extension LanguagesInteractor: LanguagesInteractorInput {}
+extension StartAppInteractor: StartAppInteractorInput {}

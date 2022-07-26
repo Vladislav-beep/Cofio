@@ -17,7 +17,15 @@ final class NewLanguagePresenter {
     }
 }
 
-extension NewLanguagePresenter: NewLanguageViewOutput {}
+extension NewLanguagePresenter: NewLanguageViewOutput {
+    func next() {
+        output?.moduleWantsToGoNext(self)
+    }
+    
+    func close() {
+        output?.moduleWantsToClose(self)
+    }
+}
 
 extension NewLanguagePresenter: NewLanguagePresenterInput {}
 

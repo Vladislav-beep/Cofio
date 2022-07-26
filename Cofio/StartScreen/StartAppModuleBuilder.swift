@@ -7,18 +7,18 @@
 
 import UIKit
 
-final class LanguagesModuleBuilder {
+final class StartAppModuleBuilder {
     
-    private weak var output: LanguagesPresenterOutput?
+    private var output: FlowCoordinator
     
-    init(output: LanguagesPresenterOutput) {
+    init(output: FlowCoordinator) {
         self.output = output
     }
     
     func build() -> UIViewController {
-        let interactor = LanguagesInteractor()
-        let presenter = LanguagesPresenter(interactor: interactor)
-        let viewController = LanguagesViewController(output: presenter)
+        let interactor = StartAppInteractor()
+        let presenter = StartAppPresenter(interactor: interactor)
+        let viewController = StartAppViewController(output: presenter, coordinater: output)
         
         presenter.view = viewController
         interactor.output = presenter

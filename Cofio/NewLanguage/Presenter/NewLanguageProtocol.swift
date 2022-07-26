@@ -7,4 +7,8 @@
 
 protocol NewLanguagePresenterInput: AnyObject {}
 
-protocol NewLanguagePresenterOutput: AnyObject {}
+protocol NewLanguagePresenterOutput: AnyObject {
+    
+    func moduleWantsToClose(_ module: NewLanguagePresenterInput)
+    func moduleWantsToGoNext(_ module: NewLanguagePresenterInput)
+}

@@ -5,9 +5,9 @@
 //  Created by Владислав Сизонов on 25.07.2022.
 //
 
-protocol LanguagesViewInput: AnyObject {}
+protocol StartAppViewInput: AnyObject {}
 
-protocol LanguagesViewOutput: AnyObject {
+protocol StartAppViewOutput: AnyObject {
     
     func addNewLanguage()
 }

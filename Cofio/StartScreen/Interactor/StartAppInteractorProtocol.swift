@@ -5,6 +5,6 @@
 //  Created by Владислав Сизонов on 25.07.2022.
 //
 
-protocol LanguagesInteractorInput: AnyObject {}
+protocol StartAppInteractorInput: AnyObject {}
 
-protocol LanguagesInteractorOutput: AnyObject {}
+protocol StartAppInteractorOutput: AnyObject {}

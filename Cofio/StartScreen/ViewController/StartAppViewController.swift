@@ -7,9 +7,10 @@
 
 import UIKit
 
-class LanguagesViewController: UIViewController {
+class StartAppViewController: UIViewController {
     
-    private let output: LanguagesViewOutput
+    private let output: StartAppViewOutput
+    private let coordinater: FlowCoordinator
     
     private lazy var titleL: UILabel = {
         let title = UILabel()
@@ -48,7 +49,8 @@ class LanguagesViewController: UIViewController {
         return button
     }()
     
-    init(output: LanguagesViewOutput) {
+    init(output: StartAppViewOutput, coordinater: FlowCoordinator) {
+        self.coordinater = coordinater
         self.output = output
         
         super.init(nibName: nil, bundle: nil)
@@ -97,15 +99,15 @@ class LanguagesViewController: UIViewController {
     
     @objc func addLanguage() {
         output.addNewLanguage()
-        print("lol")
+        print("1")
     }
 }
 
-extension LanguagesViewController: UICollectionViewDelegate {
+extension StartAppViewController: UICollectionViewDelegate {
     
 }
 
-extension LanguagesViewController: UICollectionViewDataSource {
+extension StartAppViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         3
@@ -121,4 +123,4 @@ extension LanguagesViewController: UICollectionViewDataSource {
 
 
 
-extension LanguagesViewController: LanguagesViewInput {}
+extension StartAppViewController: StartAppViewInput {}

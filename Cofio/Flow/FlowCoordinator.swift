@@ -11,13 +11,14 @@ final class FlowCoordinator {
     
     private let parentVC: UIViewController
     private var languagesVC: UIViewController?
+    private var newLangVC: UIViewController?
     
     init(vc: UIViewController) {
         parentVC = vc
     }
     
     func showLanguagesModule() {
-        let builder = LanguagesModuleBuilder(output: self)
+        let builder = StartAppModuleBuilder(output: self)
         
         let vc = builder.build()
         languagesVC = vc
@@ -29,8 +30,20 @@ final class FlowCoordinator {
         let builder = NewLanguageModuleBuilder(output: self)
         
         let vc = builder.build()
+        print("vlad")
         
+        newLangVC = vc
         languagesVC?.present(vc, animated: true)
+    }
+    
+    func showNext() {
+        let builder = CardsModuleBuilder(output: self)
+        
+        let vc = builder.build()
+        print("vlad1")
+        
+        
+        newLangVC?.present(vc, animated: true)
     }
 }
 
@@ -44,13 +57,24 @@ extension FlowCoordinator: FlowCoordinatorProtocol {
     }
 }
 
-extension FlowCoordinator: LanguagesPresenterOutput {
+extension FlowCoordinator: StartAppPresenterOutput {
     
-    func moduleWantsToAddNewLanguage(_ module: LanguagesPresenterInput) {
+    func moduleWantsToAddNewLanguage(_ module: StartAppPresenterInput) {
         showNewLanguageModule()
+        print("3")
     }
 }
 
 extension FlowCoordinator: NewLanguagePresenterOutput {
     
+    func moduleWantsToGoNext(_ module: NewLanguagePresenterInput) {
+        showNext()
+    }
+    
+    
+    func moduleWantsToClose(_ module: NewLanguagePresenterInput) {
+        languagesVC?.dismiss(animated: true)
+    }
 }
+
+extension FlowCoordinator: CardsPresenterOutput {}

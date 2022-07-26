@@ -7,4 +7,8 @@
 
 protocol NewLanguageViewInput: AnyObject {}
 
-protocol NewLanguageViewOutput: AnyObject {}
+protocol NewLanguageViewOutput: AnyObject {
+    
+    func close()
+    func next()
+}
