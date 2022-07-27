@@ -59,13 +59,12 @@ class StartAppViewController: UIViewController {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            titleLabel.heightAnchor.constraint(equalToConstant: 50)
+            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
         
         view.addSubview(subtitleLabel)
         NSLayoutConstraint.activate([
-            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
+            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 24),
             subtitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             subtitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             subtitleLabel.heightAnchor.constraint(equalToConstant: 70)

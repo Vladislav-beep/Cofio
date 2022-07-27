@@ -10,14 +10,8 @@ import UIKit
 
 final class LanguageCell: UICollectionViewCell {
     
-    private lazy var lowerView: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 20
-        view.backgroundColor = .base
-        layer.shadowRadius = 7
-        layer.shadowOpacity = 0.4
-        layer.shadowOffset = CGSize(width: 0, height: 3)
-        view.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var lowerView: LowerView = {
+        let view = LowerView()
         return view
     }()
     
@@ -50,17 +44,24 @@ final class LanguageCell: UICollectionViewCell {
     
     private lazy var iconView: UIImageView = {
         let image = UIImageView()
-        image.backgroundColor = .red
-        image.layer.cornerRadius = 10
+        image.image = UIImage(named: "Germany")
+        image.contentMode = .scaleAspectFill
+        image.clipsToBounds = true
+        image.layer.cornerRadius = 15
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-       // backgroundColor = .gray
-        
+        setupViews()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupViews() {
         contentView.addSubview(lowerView)
         NSLayoutConstraint.activate([
             lowerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
@@ -91,9 +92,5 @@ final class LanguageCell: UICollectionViewCell {
             subtitleLabel.trailingAnchor.constraint(equalTo: iconView.leadingAnchor, constant: -12),
             subtitleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
         ])
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }

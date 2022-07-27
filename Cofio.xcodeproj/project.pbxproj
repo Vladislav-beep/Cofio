@@ -43,6 +43,8 @@
 		B9CC13CF28906B6A0013ED76 /* CardsModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13CE28906B6A0013ED76 /* CardsModuleBuilder.swift */; };
 		B9CC13D3289070E70013ED76 /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13D2289070E70013ED76 /* TitleLabel.swift */; };
 		B9CC13D52890720B0013ED76 /* SubtitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13D42890720B0013ED76 /* SubtitleLabel.swift */; };
+		B9CC13D9289195BF0013ED76 /* LanguagesForPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13D8289195BF0013ED76 /* LanguagesForPicker.swift */; };
+		B9CC13DB28919E0E0013ED76 /* LowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13DA28919E0E0013ED76 /* LowerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +105,8 @@
 		B9CC13CE28906B6A0013ED76 /* CardsModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsModuleBuilder.swift; sourceTree = "<group>"; };
 		B9CC13D2289070E70013ED76 /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
 		B9CC13D42890720B0013ED76 /* SubtitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleLabel.swift; sourceTree = "<group>"; };
+		B9CC13D8289195BF0013ED76 /* LanguagesForPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesForPicker.swift; sourceTree = "<group>"; };
+		B9CC13DA28919E0E0013ED76 /* LowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,7 +164,7 @@
 				B9CC13AC288F070E0013ED76 /* NewLanguage */,
 				B9CC13BE289069A40013ED76 /* CardsView */,
 				B9CC1392288B0C560013ED76 /* Extensions */,
-				B9CC13D1289070700013ED76 /* UI Resources */,
+				B9CC13D1289070700013ED76 /* Resources */,
 				B9CC13682887389D0013ED76 /* Info.plist */,
 			);
 			path = Cofio;
@@ -330,18 +334,36 @@
 			children = (
 				B9CC13D2289070E70013ED76 /* TitleLabel.swift */,
 				B9CC13D42890720B0013ED76 /* SubtitleLabel.swift */,
+				B9CC13DA28919E0E0013ED76 /* LowerView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
-		B9CC13D1289070700013ED76 /* UI Resources */ = {
+		B9CC13D1289070700013ED76 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B9CC13D72891959D0013ED76 /* Text Resources */,
+				B9CC13D6289195770013ED76 /* UI Resources */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B9CC13D6289195770013ED76 /* UI Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B9CC13D02890705E0013ED76 /* CustomViews */,
 				B9CC13652887389D0013ED76 /* LaunchScreen.storyboard */,
 				B9CC13632887389D0013ED76 /* Assets.xcassets */,
-				B9CC13D02890705E0013ED76 /* CustomViews */,
 			);
 			path = "UI Resources";
+			sourceTree = "<group>";
+		};
+		B9CC13D72891959D0013ED76 /* Text Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B9CC13D8289195BF0013ED76 /* LanguagesForPicker.swift */,
+			);
+			path = "Text Resources";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -475,9 +497,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9CC13AB288EF6FF0013ED76 /* FlowCoordinatorProtocol.swift in Sources */,
+				B9CC13D9289195BF0013ED76 /* LanguagesForPicker.swift in Sources */,
 				B9CC138F288B0AFD0013ED76 /* UICollectionView+Extension.swift in Sources */,
 				B9CC13B7288F094A0013ED76 /* NewLanguageViewProtocol.swift in Sources */,
 				B9CC13D3289070E70013ED76 /* TitleLabel.swift in Sources */,
+				B9CC13DB28919E0E0013ED76 /* LowerView.swift in Sources */,
 				B9CC13A6288EEC7A0013ED76 /* StartAppModuleBuilder.swift in Sources */,
 				B9CC13A2288EE98E0013ED76 /* StartAppInteractorProtocol.swift in Sources */,
 				B9CC13A4288EEAA70013ED76 /* StartAppViewProtocol.swift in Sources */,
