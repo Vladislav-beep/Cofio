@@ -26,4 +26,7 @@ enum LanguagesForPicker: String, CaseIterable {
     case japan = "Японский"
     case portugese = "Португальский"
     case ukranian = "Украинский"
+    case denmark = "Датский"
+    case sweden = "Шведский"
+    case ireland = "Ирландский"
 }

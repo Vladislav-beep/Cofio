@@ -26,16 +26,11 @@ final class NewLanguageViewController: UIViewController {
         return titleLabel
     }()
     
-    private lazy var languageTextField: UITextField = {
-       let textField = UITextField()
-        textField.layer.borderWidth = 2.5
-        textField.layer.borderColor = UIColor.orange.cgColor
-        textField.layer.cornerRadius = 10
-        textField.placeholder = "Выберите язык"
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        return textField
+    private lazy var languageTextField: LanguageTextField = {
+        let languageTextField = LanguageTextField()
+        return languageTextField
     }()
-    
+
     private var pickerView: UIPickerView = {
         let pickerView = UIPickerView()
         pickerView.translatesAutoresizingMaskIntoConstraints = false
@@ -105,7 +100,7 @@ final class NewLanguageViewController: UIViewController {
         
         view.addSubview(pickerView)
         NSLayoutConstraint.activate([
-            pickerView.topAnchor.constraint(equalTo: languageTextField.bottomAnchor, constant: 40),
+            pickerView.topAnchor.constraint(equalTo: languageTextField.bottomAnchor, constant: 24),
             pickerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             pickerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             pickerView.heightAnchor.constraint(equalToConstant: 200)
@@ -119,8 +114,6 @@ final class NewLanguageViewController: UIViewController {
     @objc func next1() {
         output.next()
     }
-    
-    let languages = ["Lol", "Kek", "Cheburec"]
 }
 
 
