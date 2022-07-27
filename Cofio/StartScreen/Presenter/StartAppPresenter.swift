@@ -24,7 +24,6 @@ extension StartAppPresenter: StartAppViewOutput {
     
     func addNewLanguage() {
         output?.moduleWantsToAddNewLanguage(self)
-        print("2")
     }
 }
 

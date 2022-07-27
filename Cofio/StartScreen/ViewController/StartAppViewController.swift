@@ -91,7 +91,6 @@ class StartAppViewController: UIViewController {
     
     @objc func addLanguage() {
         output.addNewLanguage()
-        print("1")
     }
 }
 

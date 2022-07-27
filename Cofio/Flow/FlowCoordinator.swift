@@ -30,9 +30,9 @@ final class FlowCoordinator {
         let builder = NewLanguageModuleBuilder(output: self)
         
         let vc = builder.build()
-        print("vlad")
-        
+
         newLangVC = vc
+        vc.modalPresentationStyle = .fullScreen
         languagesVC?.present(vc, animated: true)
     }
     
@@ -40,9 +40,6 @@ final class FlowCoordinator {
         let builder = CardsModuleBuilder(output: self)
         
         let vc = builder.build()
-        print("vlad1")
-        
-        
         newLangVC?.present(vc, animated: true)
     }
 }
@@ -61,7 +58,6 @@ extension FlowCoordinator: StartAppPresenterOutput {
     
     func moduleWantsToAddNewLanguage(_ module: StartAppPresenterInput) {
         showNewLanguageModule()
-        print("3")
     }
 }
 
