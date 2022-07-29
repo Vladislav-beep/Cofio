@@ -10,6 +10,7 @@ import UIKit
 final class NewLanguageViewController: UIViewController {
     
     private let output: NewLanguageViewOutput
+    private let imageProvider: ImageProviderProtocol
     
     private lazy var closeButton: UIButton = {
         let closeButton = UIButton()
@@ -21,17 +22,17 @@ final class NewLanguageViewController: UIViewController {
         return closeButton
     }()
     
-    private lazy var titleLabel: TitleLabel = {
+    private let titleLabel: TitleLabel = {
         let titleLabel = TitleLabel(title: "Выберите язык")
         return titleLabel
     }()
     
-    private lazy var languageTextField: LanguageTextField = {
+    private let languageTextField: LanguageTextField = {
         let languageTextField = LanguageTextField()
         return languageTextField
     }()
 
-    private var pickerView: UIPickerView = {
+    private let pickerView: UIPickerView = {
         let pickerView = UIPickerView()
         pickerView.translatesAutoresizingMaskIntoConstraints = false
         pickerView.backgroundColor = .lightOrange
@@ -49,8 +50,11 @@ final class NewLanguageViewController: UIViewController {
         return doneButton
     }()
     
-    init(output: NewLanguageViewOutput) {
+    private lazy var models = imageProvider.getPickerModels()
+    
+    init(output: NewLanguageViewOutput, imageProvider: ImageProviderProtocol) {
         self.output = output
+        self.imageProvider = imageProvider
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -129,14 +133,19 @@ extension NewLanguageViewController: UIPickerViewDataSource {
     
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        LanguagesForPicker.allCases.count
+        models.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        LanguagesForPicker.allCases[row].rawValue
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 40.0
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let model = models[row]
+        return LanguagesPickerView.create(icon: model.icon, title: model.title)
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        languageTextField.text = LanguagesForPicker.allCases[row].rawValue
+        languageTextField.text = models[row].title
     }
 }

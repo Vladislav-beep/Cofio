@@ -16,9 +16,13 @@ final class NewLanguageModuleBuilder {
     }
     
     func build() -> UIViewController {
+        
+        let imageProvider = ImageProvider()
+        
         let interactor = NewLanguageInteractor()
         let presenter = NewLanguagePresenter(interactor: interactor)
-        let viewController = NewLanguageViewController(output: presenter)
+        let viewController = NewLanguageViewController(output: presenter,
+                                                       imageProvider: imageProvider)
         
         presenter.view = viewController
         interactor.output = presenter

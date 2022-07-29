@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StartAppViewController: UIViewController {
+class StartAppViewController: UIViewController, UITableViewDelegate {
     
     private let output: StartAppViewOutput
     private let coordinater: FlowCoordinator
@@ -22,13 +22,16 @@ class StartAppViewController: UIViewController {
         return subtitle
     }()
     
-    private lazy var collectionView: UICollectionView = {
-        let cool = UICollectionView.languageCollectionView
-        cool.register(LanguageCell.self, forCellWithReuseIdentifier: "cell")
+    private lazy var languagesTableView: UITableView = {
+        let cool = UITableView()
+        cool.register(LanguageCell.self)
+        cool.translatesAutoresizingMaskIntoConstraints = false
+        cool.separatorStyle = .none
         cool.delegate = self
-        cool.dataSource = self
         return cool
     }()
+    
+    private lazy var dataSource = TableViewDataSource().makeDataSource(for: languagesTableView)
     
     private lazy var bottomButton: UIButton = {
         let button = UIButton()
@@ -78,36 +81,28 @@ class StartAppViewController: UIViewController {
             bottomButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30)
         ])
         
-        view.addSubview(collectionView)
+        view.addSubview(languagesTableView)
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 40),
-            collectionView.bottomAnchor.constraint(equalTo: bottomButton.topAnchor, constant: -8),
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0)
+            languagesTableView.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 40),
+            languagesTableView.bottomAnchor.constraint(equalTo: bottomButton.topAnchor, constant: -8),
+            languagesTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            languagesTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0)
         ])
-     
+        
+        let data = [
+            LanguageCell.DisplayData(title: "Английский", collectionsCount: 2),
+            LanguageCell.DisplayData(title: "Французский", collectionsCount: 2),
+            LanguageCell.DisplayData(title: "LOl46", collectionsCount: 2)
+            ]
+        
+        var snapshot = NSDiffableDataSourceSnapshot<Int, LanguageCell.DisplayData>()
+        snapshot.appendSections([0])
+        snapshot.appendItems(data, toSection: 0)
+        dataSource.apply(snapshot)
     }
     
     @objc func addLanguage() {
         output.addNewLanguage()
-    }
-}
-
-extension StartAppViewController: UICollectionViewDelegate {
-    
-}
-
-extension StartAppViewController: UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        3
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell",
-                                                      for: indexPath) as? LanguageCell ?? UICollectionViewCell()
-        
-        return cell
     }
 }
 

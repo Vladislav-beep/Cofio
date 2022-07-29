@@ -46,6 +46,15 @@
 		B9CC13D9289195BF0013ED76 /* LanguagesForPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13D8289195BF0013ED76 /* LanguagesForPicker.swift */; };
 		B9CC13DB28919E0E0013ED76 /* LowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13DA28919E0E0013ED76 /* LowerView.swift */; };
 		B9CC13DD2891B9090013ED76 /* LanguageTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13DC2891B9090013ED76 /* LanguageTextField.swift */; };
+		B9CC13E12891D5C60013ED76 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13E02891D5C60013ED76 /* Language.swift */; };
+		B9CC13E32891D5F10013ED76 /* CardCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13E22891D5F10013ED76 /* CardCollection.swift */; };
+		B9CC13E52891D6380013ED76 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13E42891D6380013ED76 /* Card.swift */; };
+		B9CC13E72891D6510013ED76 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13E62891D6510013ED76 /* Word.swift */; };
+		B9CC13E92893084E0013ED76 /* LanguagesPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13E82893084E0013ED76 /* LanguagesPickerView.swift */; };
+		B9CC13ED2893094D0013ED76 /* ImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13EC2893094D0013ED76 /* ImageProvider.swift */; };
+		B9CC13EF28930A8A0013ED76 /* InfoPickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13EE28930A8A0013ED76 /* InfoPickerModel.swift */; };
+		B9CC13F1289310460013ED76 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13F0289310460013ED76 /* UIStackView+Extension.swift */; };
+		B9CC13F32894506E0013ED76 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13F22894506E0013ED76 /* TableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +118,15 @@
 		B9CC13D8289195BF0013ED76 /* LanguagesForPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesForPicker.swift; sourceTree = "<group>"; };
 		B9CC13DA28919E0E0013ED76 /* LowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowerView.swift; sourceTree = "<group>"; };
 		B9CC13DC2891B9090013ED76 /* LanguageTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTextField.swift; sourceTree = "<group>"; };
+		B9CC13E02891D5C60013ED76 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		B9CC13E22891D5F10013ED76 /* CardCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollection.swift; sourceTree = "<group>"; };
+		B9CC13E42891D6380013ED76 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		B9CC13E62891D6510013ED76 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		B9CC13E82893084E0013ED76 /* LanguagesPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesPickerView.swift; sourceTree = "<group>"; };
+		B9CC13EC2893094D0013ED76 /* ImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProvider.swift; sourceTree = "<group>"; };
+		B9CC13EE28930A8A0013ED76 /* InfoPickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPickerModel.swift; sourceTree = "<group>"; };
+		B9CC13F0289310460013ED76 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
+		B9CC13F22894506E0013ED76 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,9 +180,9 @@
 				B9CC135A288738980013ED76 /* AppDelegate.swift */,
 				B9CC135C288738980013ED76 /* SceneDelegate.swift */,
 				B9CC13A9288EF6E40013ED76 /* Flow */,
-				B9CC1395288D76E60013ED76 /* StartScreen */,
-				B9CC13AC288F070E0013ED76 /* NewLanguage */,
-				B9CC13BE289069A40013ED76 /* CardsView */,
+				B9CC13DE2891D5730013ED76 /* Modules */,
+				B9CC13DF2891D5A50013ED76 /* Models */,
+				B9CC13EB289309390013ED76 /* Services */,
 				B9CC1392288B0C560013ED76 /* Extensions */,
 				B9CC13D1289070700013ED76 /* Resources */,
 				B9CC13682887389D0013ED76 /* Info.plist */,
@@ -195,6 +213,7 @@
 				B9CC138E288B0AFD0013ED76 /* UICollectionView+Extension.swift */,
 				B9CC1390288B0B840013ED76 /* UICollectionViewLayout+Extension.swift */,
 				B9CC1393288B15F00013ED76 /* UIColor+Extension.swift */,
+				B9CC13F0289310460013ED76 /* UIStackView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -215,6 +234,7 @@
 			children = (
 				B9CC135E288738980013ED76 /* StartAppViewController.swift */,
 				B9CC13A3288EEAA70013ED76 /* StartAppViewProtocol.swift */,
+				B9CC13F22894506E0013ED76 /* TableViewDataSource.swift */,
 				B9CC1397288EE6420013ED76 /* Cells */,
 			);
 			path = ViewController;
@@ -271,6 +291,7 @@
 			children = (
 				B9CC13B0288F07BF0013ED76 /* NewLanguageViewController.swift */,
 				B9CC13B6288F094A0013ED76 /* NewLanguageViewProtocol.swift */,
+				B9CC13EA289308960013ED76 /* Views */,
 			);
 			path = VIewController;
 			sourceTree = "<group>";
@@ -367,6 +388,44 @@
 				B9CC13D8289195BF0013ED76 /* LanguagesForPicker.swift */,
 			);
 			path = "Text Resources";
+			sourceTree = "<group>";
+		};
+		B9CC13DE2891D5730013ED76 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				B9CC1395288D76E60013ED76 /* StartScreen */,
+				B9CC13AC288F070E0013ED76 /* NewLanguage */,
+				B9CC13BE289069A40013ED76 /* CardsView */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		B9CC13DF2891D5A50013ED76 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B9CC13E02891D5C60013ED76 /* Language.swift */,
+				B9CC13E22891D5F10013ED76 /* CardCollection.swift */,
+				B9CC13E42891D6380013ED76 /* Card.swift */,
+				B9CC13E62891D6510013ED76 /* Word.swift */,
+				B9CC13EE28930A8A0013ED76 /* InfoPickerModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B9CC13EA289308960013ED76 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B9CC13E82893084E0013ED76 /* LanguagesPickerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B9CC13EB289309390013ED76 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B9CC13EC2893094D0013ED76 /* ImageProvider.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -503,11 +562,15 @@
 				B9CC13D9289195BF0013ED76 /* LanguagesForPicker.swift in Sources */,
 				B9CC138F288B0AFD0013ED76 /* UICollectionView+Extension.swift in Sources */,
 				B9CC13B7288F094A0013ED76 /* NewLanguageViewProtocol.swift in Sources */,
+				B9CC13EF28930A8A0013ED76 /* InfoPickerModel.swift in Sources */,
 				B9CC13D3289070E70013ED76 /* TitleLabel.swift in Sources */,
 				B9CC13DB28919E0E0013ED76 /* LowerView.swift in Sources */,
 				B9CC13A6288EEC7A0013ED76 /* StartAppModuleBuilder.swift in Sources */,
 				B9CC13A2288EE98E0013ED76 /* StartAppInteractorProtocol.swift in Sources */,
+				B9CC13E52891D6380013ED76 /* Card.swift in Sources */,
+				B9CC13E72891D6510013ED76 /* Word.swift in Sources */,
 				B9CC13DD2891B9090013ED76 /* LanguageTextField.swift in Sources */,
+				B9CC13E32891D5F10013ED76 /* CardCollection.swift in Sources */,
 				B9CC13A4288EEAA70013ED76 /* StartAppViewProtocol.swift in Sources */,
 				B9CC135F288738980013ED76 /* StartAppViewController.swift in Sources */,
 				B9CC13B5288F087A0013ED76 /* NewLanguageProtocol.swift in Sources */,
@@ -516,20 +579,25 @@
 				B9CC13B1288F07BF0013ED76 /* NewLanguageViewController.swift in Sources */,
 				B9CC139D288EE6E90013ED76 /* StartAppInteractor.swift in Sources */,
 				B9CC13C0289069C90013ED76 /* CardsViewController.swift in Sources */,
+				B9CC13ED2893094D0013ED76 /* ImageProvider.swift in Sources */,
+				B9CC13E92893084E0013ED76 /* LanguagesPickerView.swift in Sources */,
 				B9CC13CB28906B040013ED76 /* CardsInteractor.swift in Sources */,
 				B9CC13CD28906B310013ED76 /* CardsInteractorProtocol.swift in Sources */,
 				B9CC13C228906A2F0013ED76 /* CardsViewProtocol.swift in Sources */,
 				B9CC13A0288EE8C10013ED76 /* StartAppPresenterProtocol.swift in Sources */,
 				B9CC13A8288EF56D0013ED76 /* FlowCoordinator.swift in Sources */,
 				B9CC13BB288F0A000013ED76 /* NewLanguageInteractorProtocol.swift in Sources */,
+				B9CC13F1289310460013ED76 /* UIStackView+Extension.swift in Sources */,
 				B9CC135B288738980013ED76 /* AppDelegate.swift in Sources */,
 				B9CC138D2889D7900013ED76 /* LanguageCell.swift in Sources */,
 				B9CC13B3288F08040013ED76 /* NewLanguagePresenter.swift in Sources */,
 				B9CC13CF28906B6A0013ED76 /* CardsModuleBuilder.swift in Sources */,
+				B9CC13F32894506E0013ED76 /* TableViewDataSource.swift in Sources */,
 				B9CC135D288738980013ED76 /* SceneDelegate.swift in Sources */,
 				B9CC139B288EE6C20013ED76 /* StartAppPresenter.swift in Sources */,
 				B9CC13D52890720B0013ED76 /* SubtitleLabel.swift in Sources */,
 				B9CC1394288B15F00013ED76 /* UIColor+Extension.swift in Sources */,
+				B9CC13E12891D5C60013ED76 /* Language.swift in Sources */,
 				B9CC13BD288F0AC90013ED76 /* NewLanguageModuleBuilder.swift in Sources */,
 				B9CC13B9288F09D10013ED76 /* NewLanguageInteractor.swift in Sources */,
 				B9CC13C928906ACC0013ED76 /* CardsProtocol.swift in Sources */,
