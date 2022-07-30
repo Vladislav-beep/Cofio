@@ -9,11 +9,19 @@ import UIKit
 
 final class NewLanguageModuleBuilder {
     
+    // MARK: Private
+    
     private weak var output: NewLanguagePresenterOutput?
+    
+    
+    // MARK: Lifecycle
     
     init(output: NewLanguagePresenterOutput) {
         self.output = output
     }
+    
+    
+    // MARK: Public
     
     func build() -> UIViewController {
         
@@ -21,6 +29,7 @@ final class NewLanguageModuleBuilder {
         
         let interactor = NewLanguageInteractor()
         let presenter = NewLanguagePresenter(interactor: interactor)
+        
         let viewController = NewLanguageViewController(output: presenter,
                                                        imageProvider: imageProvider)
         

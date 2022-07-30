@@ -7,18 +7,21 @@
 
 import UIKit
 
-class StartAppViewController: UIViewController, UITableViewDelegate {
+class StartAppViewController: UIViewController {
+    
+    // MARK: Private properties
     
     private let output: StartAppViewOutput
     private let coordinater: FlowCoordinator
+    private let dataSource: TableViewDataSourceProtocol
     
     private lazy var titleLabel: TitleLabel = {
-        let titleLabel = TitleLabel(title: "Иностранные языки")
+        let titleLabel = TitleLabel(title: AppText.startAppScreen.title.rawValue)
         return titleLabel
     }()
     
     private lazy var subtitleLabel: SubtitleLabel = {
-        let subtitle = SubtitleLabel(subtitle: "Изучение иностранных языков c кем и чеком и чебуреком с сыром и мясом лол ушцкрпм лдылмттлывм вымо")
+        let subtitle = SubtitleLabel(subtitle: AppText.startAppScreen.subtitle.rawValue)
         return subtitle
     }()
     
@@ -31,11 +34,9 @@ class StartAppViewController: UIViewController, UITableViewDelegate {
         return cool
     }()
     
-    private lazy var dataSource = TableViewDataSource().makeDataSource(for: languagesTableView)
-    
     private lazy var bottomButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Добавить язык", for: .normal)
+        button.setTitle(AppText.startAppScreen.buttonTitle.rawValue, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 21, weight: .semibold)
         button.setTitleColor(UIColor.darkViolet, for: .normal)
         button.setTitleColor(UIColor.darkOrange, for: .highlighted)
@@ -44,9 +45,17 @@ class StartAppViewController: UIViewController, UITableViewDelegate {
         return button
     }()
     
-    init(output: StartAppViewOutput, coordinater: FlowCoordinator) {
+    private lazy var tableViewDataSource = dataSource.makeDataSource(for: languagesTableView)
+    
+    
+    // MARK: Lifecycle
+    
+    init(output: StartAppViewOutput,
+         coordinater: FlowCoordinator,
+         dataSource: TableViewDataSourceProtocol) {
         self.coordinater = coordinater
         self.output = output
+        self.dataSource = dataSource
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -54,9 +63,18 @@ class StartAppViewController: UIViewController, UITableViewDelegate {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        setupViews()
+        updateView()
+    }
+    
+    
+    // MARK: Private
+    
+    private func setupViews() {
         view.backgroundColor = .white
         view.addSubview(titleLabel)
         NSLayoutConstraint.activate([
@@ -88,18 +106,10 @@ class StartAppViewController: UIViewController, UITableViewDelegate {
             languagesTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             languagesTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0)
         ])
-        
-        let data = [
-            LanguageCell.DisplayData(title: "Английский", collectionsCount: 2),
-            LanguageCell.DisplayData(title: "Французский", collectionsCount: 2),
-            LanguageCell.DisplayData(title: "LOl46", collectionsCount: 2)
-            ]
-        
-        var snapshot = NSDiffableDataSourceSnapshot<Int, LanguageCell.DisplayData>()
-        snapshot.appendSections([0])
-        snapshot.appendItems(data, toSection: 0)
-        dataSource.apply(snapshot)
     }
+    
+    
+    // MARK: Actions
     
     @objc func addLanguage() {
         output.addNewLanguage()
@@ -107,5 +117,28 @@ class StartAppViewController: UIViewController, UITableViewDelegate {
 }
 
 
+// MARK: - StartAppViewInput
 
-extension StartAppViewController: StartAppViewInput {}
+extension StartAppViewController: StartAppViewInput {
+    
+    func updateView() {
+        let data = DymmyData.getDymmyData()
+        
+        var snapshot = NSDiffableDataSourceSnapshot<Int, Language>()
+        snapshot.appendSections([0])
+        snapshot.appendItems(data, toSection: 0)
+        tableViewDataSource.apply(snapshot)
+    }
+}
+
+
+// MARK: - UITableViewDelegate
+
+extension StartAppViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let item = tableViewDataSource.itemIdentifier(for: indexPath) else { return }
+        output.viewDidTapRow(item)
+    }
+}

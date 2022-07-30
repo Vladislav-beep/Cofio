@@ -16,8 +16,8 @@
 		B9CC137C2887389E0013ED76 /* CofioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC137B2887389E0013ED76 /* CofioUITests.swift */; };
 		B9CC137E2887389E0013ED76 /* CofioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC137D2887389E0013ED76 /* CofioUITestsLaunchTests.swift */; };
 		B9CC138D2889D7900013ED76 /* LanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC138C2889D7900013ED76 /* LanguageCell.swift */; };
-		B9CC138F288B0AFD0013ED76 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC138E288B0AFD0013ED76 /* UICollectionView+Extension.swift */; };
-		B9CC1391288B0B840013ED76 /* UICollectionViewLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC1390288B0B840013ED76 /* UICollectionViewLayout+Extension.swift */; };
+		B9CC138F288B0AFD0013ED76 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC138E288B0AFD0013ED76 /* UITableView+Extension.swift */; };
+		B9CC1391288B0B840013ED76 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC1390288B0B840013ED76 /* UITableViewCell+Extension.swift */; };
 		B9CC1394288B15F00013ED76 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC1393288B15F00013ED76 /* UIColor+Extension.swift */; };
 		B9CC139B288EE6C20013ED76 /* StartAppPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC139A288EE6C20013ED76 /* StartAppPresenter.swift */; };
 		B9CC139D288EE6E90013ED76 /* StartAppInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC139C288EE6E90013ED76 /* StartAppInteractor.swift */; };
@@ -55,6 +55,8 @@
 		B9CC13EF28930A8A0013ED76 /* InfoPickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13EE28930A8A0013ED76 /* InfoPickerModel.swift */; };
 		B9CC13F1289310460013ED76 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13F0289310460013ED76 /* UIStackView+Extension.swift */; };
 		B9CC13F32894506E0013ED76 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13F22894506E0013ED76 /* TableViewDataSource.swift */; };
+		B9CC13F52895287B0013ED76 /* AppText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13F42895287B0013ED76 /* AppText.swift */; };
+		B9CC13F728952B630013ED76 /* DymmyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13F628952B630013ED76 /* DymmyData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,8 +90,8 @@
 		B9CC137B2887389E0013ED76 /* CofioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CofioUITests.swift; sourceTree = "<group>"; };
 		B9CC137D2887389E0013ED76 /* CofioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CofioUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B9CC138C2889D7900013ED76 /* LanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCell.swift; sourceTree = "<group>"; };
-		B9CC138E288B0AFD0013ED76 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
-		B9CC1390288B0B840013ED76 /* UICollectionViewLayout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewLayout+Extension.swift"; sourceTree = "<group>"; };
+		B9CC138E288B0AFD0013ED76 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		B9CC1390288B0B840013ED76 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		B9CC1393288B15F00013ED76 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		B9CC139A288EE6C20013ED76 /* StartAppPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartAppPresenter.swift; sourceTree = "<group>"; };
 		B9CC139C288EE6E90013ED76 /* StartAppInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartAppInteractor.swift; sourceTree = "<group>"; };
@@ -127,6 +129,8 @@
 		B9CC13EE28930A8A0013ED76 /* InfoPickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPickerModel.swift; sourceTree = "<group>"; };
 		B9CC13F0289310460013ED76 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		B9CC13F22894506E0013ED76 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		B9CC13F42895287B0013ED76 /* AppText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppText.swift; sourceTree = "<group>"; };
+		B9CC13F628952B630013ED76 /* DymmyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DymmyData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +190,7 @@
 				B9CC1392288B0C560013ED76 /* Extensions */,
 				B9CC13D1289070700013ED76 /* Resources */,
 				B9CC13682887389D0013ED76 /* Info.plist */,
+				B9CC13F628952B630013ED76 /* DymmyData.swift */,
 			);
 			path = Cofio;
 			sourceTree = "<group>";
@@ -210,8 +215,8 @@
 		B9CC1392288B0C560013ED76 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				B9CC138E288B0AFD0013ED76 /* UICollectionView+Extension.swift */,
-				B9CC1390288B0B840013ED76 /* UICollectionViewLayout+Extension.swift */,
+				B9CC138E288B0AFD0013ED76 /* UITableView+Extension.swift */,
+				B9CC1390288B0B840013ED76 /* UITableViewCell+Extension.swift */,
 				B9CC1393288B15F00013ED76 /* UIColor+Extension.swift */,
 				B9CC13F0289310460013ED76 /* UIStackView+Extension.swift */,
 			);
@@ -386,6 +391,7 @@
 			isa = PBXGroup;
 			children = (
 				B9CC13D8289195BF0013ED76 /* LanguagesForPicker.swift */,
+				B9CC13F42895287B0013ED76 /* AppText.swift */,
 			);
 			path = "Text Resources";
 			sourceTree = "<group>";
@@ -560,7 +566,7 @@
 			files = (
 				B9CC13AB288EF6FF0013ED76 /* FlowCoordinatorProtocol.swift in Sources */,
 				B9CC13D9289195BF0013ED76 /* LanguagesForPicker.swift in Sources */,
-				B9CC138F288B0AFD0013ED76 /* UICollectionView+Extension.swift in Sources */,
+				B9CC138F288B0AFD0013ED76 /* UITableView+Extension.swift in Sources */,
 				B9CC13B7288F094A0013ED76 /* NewLanguageViewProtocol.swift in Sources */,
 				B9CC13EF28930A8A0013ED76 /* InfoPickerModel.swift in Sources */,
 				B9CC13D3289070E70013ED76 /* TitleLabel.swift in Sources */,
@@ -574,7 +580,7 @@
 				B9CC13A4288EEAA70013ED76 /* StartAppViewProtocol.swift in Sources */,
 				B9CC135F288738980013ED76 /* StartAppViewController.swift in Sources */,
 				B9CC13B5288F087A0013ED76 /* NewLanguageProtocol.swift in Sources */,
-				B9CC1391288B0B840013ED76 /* UICollectionViewLayout+Extension.swift in Sources */,
+				B9CC1391288B0B840013ED76 /* UITableViewCell+Extension.swift in Sources */,
 				B9CC13C728906A7C0013ED76 /* CardsPresenter.swift in Sources */,
 				B9CC13B1288F07BF0013ED76 /* NewLanguageViewController.swift in Sources */,
 				B9CC139D288EE6E90013ED76 /* StartAppInteractor.swift in Sources */,
@@ -584,11 +590,13 @@
 				B9CC13CB28906B040013ED76 /* CardsInteractor.swift in Sources */,
 				B9CC13CD28906B310013ED76 /* CardsInteractorProtocol.swift in Sources */,
 				B9CC13C228906A2F0013ED76 /* CardsViewProtocol.swift in Sources */,
+				B9CC13F52895287B0013ED76 /* AppText.swift in Sources */,
 				B9CC13A0288EE8C10013ED76 /* StartAppPresenterProtocol.swift in Sources */,
 				B9CC13A8288EF56D0013ED76 /* FlowCoordinator.swift in Sources */,
 				B9CC13BB288F0A000013ED76 /* NewLanguageInteractorProtocol.swift in Sources */,
 				B9CC13F1289310460013ED76 /* UIStackView+Extension.swift in Sources */,
 				B9CC135B288738980013ED76 /* AppDelegate.swift in Sources */,
+				B9CC13F728952B630013ED76 /* DymmyData.swift in Sources */,
 				B9CC138D2889D7900013ED76 /* LanguageCell.swift in Sources */,
 				B9CC13B3288F08040013ED76 /* NewLanguagePresenter.swift in Sources */,
 				B9CC13CF28906B6A0013ED76 /* CardsModuleBuilder.swift in Sources */,

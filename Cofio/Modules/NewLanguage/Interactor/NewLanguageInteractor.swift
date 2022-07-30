@@ -7,8 +7,12 @@
 
 final class NewLanguageInteractor {
     
+    // MARK: Properties
+    
     weak var output: NewLanguageInteractorOutput?
 }
 
+
+// MARK: - NewLanguageInteractorInput
 
 extension NewLanguageInteractor: NewLanguageInteractorInput {}

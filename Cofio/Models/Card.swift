@@ -5,6 +5,6 @@
 //  Created by Владислав Сизонов on 27.07.2022.
 //
 
-struct Card {
+struct Card: Hashable {
     let words: [Word]
 }

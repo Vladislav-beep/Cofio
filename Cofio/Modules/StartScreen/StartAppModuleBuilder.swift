@@ -9,16 +9,28 @@ import UIKit
 
 final class StartAppModuleBuilder {
     
+    // MARK: Private
+    
     private var output: FlowCoordinator
+    
+    
+    // MARK: Lifecycle
     
     init(output: FlowCoordinator) {
         self.output = output
     }
     
+    
+    // MARK: Public
+    
     func build() -> UIViewController {
         let interactor = StartAppInteractor()
         let presenter = StartAppPresenter(interactor: interactor)
-        let viewController = StartAppViewController(output: presenter, coordinater: output)
+        
+        let tableViewDataSource = TableViewDataSource()
+        let viewController = StartAppViewController(output: presenter,
+                                                    coordinater: output,
+                                                    dataSource: tableViewDataSource)
         
         presenter.view = viewController
         interactor.output = presenter

@@ -5,17 +5,19 @@
 //  Created by Владислав Сизонов on 21.07.2022.
 //
 
-import Foundation
 import UIKit
 
 final class LanguageCell: UITableViewCell {
     
-    let reuseId = "cell"
+    // MARK: Data structures
     
     struct DisplayData: Hashable {
         let title: String
         let collectionsCount: Int
     }
+    
+    
+    // MARK: Private properties
     
     private lazy var lowerView: LowerView = {
         let view = LowerView()
@@ -26,7 +28,6 @@ final class LanguageCell: UITableViewCell {
         let title = UILabel()
         title.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         title.numberOfLines = 0
-        title.text = "Английский язык"
         title.numberOfLines = 1
         title.translatesAutoresizingMaskIntoConstraints = false
         return title
@@ -50,14 +51,21 @@ final class LanguageCell: UITableViewCell {
         return image
     }()
     
+    
+    // MARK: Lifecycle
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
         setupViews()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
+    // MARK: Private
     
     private func setupViews() {
         contentView.addSubview(lowerView)
@@ -93,31 +101,44 @@ final class LanguageCell: UITableViewCell {
     }
     
     private func configureSubtitleLabel(with count: Int) {
+        let string1: String
+        switch count {
+        case 1:
+            string1 = " сборник"
+        case 2...4:
+            string1 = " сборника"
+        case 5...Int.max:
+            string1 = " сборников"
+        default:
+            string1 = " сборников"
+        }
         let myAttribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .bold),
                            NSAttributedString.Key.foregroundColor: UIColor.darkOrange]
-        let string = NSMutableAttributedString(string: "\(count)", attributes: myAttribute)
-        let attrString = NSAttributedString(string: " сборников")
-        string.append(attrString)
-        
-        subtitleLabel.attributedText = string
-    }
-    
-    private func configureImage(with title: String) {
-        switch title {
-        case "Английский":
-            iconView.image = UIImage(named: "England")
-        case "Немецкий":
-            iconView.image = UIImage(named: "Germany")
-        case "Французский":
-            iconView.image = UIImage(named: "France")
-        default:
-            iconView.backgroundColor = .red
+        let countString = NSMutableAttributedString(string: "\(count)", attributes: myAttribute)
+        let attrString = NSAttributedString(string: string1)
+        if count == 0 {
+            subtitleLabel.text = "Нет сборников"
+        } else {
+            countString.append(attrString)
+            subtitleLabel.attributedText = countString
         }
     }
     
+    private func configureImage(with title: String) -> UIImage {
+        return ImageProvider().configureLanguageCell(with: title)
+    }
+    
+    
+    // MARK: Public
+    
     func configure(with displayData: DisplayData) {
-        titleLabel.text = displayData.title
+        if displayData.title == "Хинди" {
+            titleLabel.text = displayData.title
+        } else {
+            titleLabel.text = displayData.title + " язык"
+        }
+        
+        iconView.image = configureImage(with: displayData.title)
         configureSubtitleLabel(with: displayData.collectionsCount)
-        configureImage(with: displayData.title)
     }
 }

@@ -9,13 +9,7 @@ import UIKit
 
 final class LanguagesPickerView: UIView {
     
-    static func create(icon: UIImage, title: String) -> LanguagesPickerView {
-        let languageView = LanguagesPickerView()
-        languageView.iconView.image = icon
-        languageView.languageLabel.text = title
-        
-        return languageView
-    }
+    // MARK: Private properties
     
     private let iconView: UIImageView = {
         let iconView = UIImageView()
@@ -31,6 +25,9 @@ final class LanguagesPickerView: UIView {
         return languageLabel
     }()
     
+    
+    // MARK: Lifecycle
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -40,6 +37,9 @@ final class LanguagesPickerView: UIView {
         super.init(coder: coder)
         setup()
     }
+    
+    
+    // MARK: Private
     
     private func setup() {
         addSubview(iconView)
@@ -56,5 +56,16 @@ final class LanguagesPickerView: UIView {
             languageLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             languageLabel.leadingAnchor.constraint(equalTo: iconView.trailingAnchor, constant: 10.0)
         ])
+    }
+    
+    
+    // MARK: Public
+    
+    static func create(icon: UIImage, title: String) -> LanguagesPickerView {
+        let languageView = LanguagesPickerView()
+        languageView.iconView.image = icon
+        languageView.languageLabel.text = title
+        
+        return languageView
     }
 }

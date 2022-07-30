@@ -10,4 +10,5 @@ protocol StartAppPresenterInput: AnyObject {}
 protocol StartAppPresenterOutput: AnyObject {
     
     func moduleWantsToAddNewLanguage(_ module: StartAppPresenterInput)
+    func moduleWantsToOpenTabbar(_ module: StartAppPresenterInput)
 }

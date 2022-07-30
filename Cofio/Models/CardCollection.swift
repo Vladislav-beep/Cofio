@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CardCollection {
+struct CardCollection: Equatable, Hashable {
     let name: String
     let repeats: Int
     let repeatDate: Date

@@ -25,7 +25,7 @@ final class SubtitleLabel: UILabel {
     func setupLabel() {
         font = UIFont.systemFont(ofSize: 17, weight: .regular)
         numberOfLines = 0
-        text = "Изучение иностранных языков c кем и чеком и чебуреком с сыром и мясом лол ушцкрпм лдылмттлывм вымо"
+        text = subtitle
         translatesAutoresizingMaskIntoConstraints = false
     }
 }
