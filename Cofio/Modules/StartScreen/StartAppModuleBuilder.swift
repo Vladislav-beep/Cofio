@@ -27,7 +27,7 @@ final class StartAppModuleBuilder {
         let interactor = StartAppInteractor()
         let presenter = StartAppPresenter(interactor: interactor)
         
-        let tableViewDataSource = TableViewDataSource()
+        let tableViewDataSource = LanguageTableViewDataSource()
         let viewController = StartAppViewController(output: presenter,
                                                     coordinater: output,
                                                     dataSource: tableViewDataSource)

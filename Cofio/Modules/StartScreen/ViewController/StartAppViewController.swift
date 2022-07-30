@@ -13,7 +13,7 @@ class StartAppViewController: UIViewController {
     
     private let output: StartAppViewOutput
     private let coordinater: FlowCoordinator
-    private let dataSource: TableViewDataSourceProtocol
+    private let dataSource: LanguageTableViewDataSourceProtocol
     
     private lazy var titleLabel: TitleLabel = {
         let titleLabel = TitleLabel(title: AppText.startAppScreen.title.rawValue)
@@ -52,7 +52,7 @@ class StartAppViewController: UIViewController {
     
     init(output: StartAppViewOutput,
          coordinater: FlowCoordinator,
-         dataSource: TableViewDataSourceProtocol) {
+         dataSource: LanguageTableViewDataSourceProtocol) {
         self.coordinater = coordinater
         self.output = output
         self.dataSource = dataSource

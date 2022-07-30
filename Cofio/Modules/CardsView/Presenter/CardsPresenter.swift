@@ -17,7 +17,13 @@ final class CardsPresenter {
     }
 }
 
-extension CardsPresenter: CardsViewOutput {}
+extension CardsPresenter: CardsViewOutput {
+    
+    func viewDidLoad() {
+        var models: [CardsCellsDataModel] = [.statics(.init(title: "LOL")), .card(.init(title: "CACAC", subtitle: "pPPPPP")), .card(.init(title: "mksvkm", subtitle: "aklvj"))]
+        view?.updateData(with: models)
+    }
+}
 
 extension CardsPresenter: CardsPresenterInput {}
 

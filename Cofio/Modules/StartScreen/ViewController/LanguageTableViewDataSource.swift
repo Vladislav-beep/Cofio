@@ -1,5 +1,5 @@
 //
-//  TableViewDataSource.swift
+//  LanguageTableViewDataSource.swift
 //  Cofio
 //
 //  Created by Владислав Сизонов on 29.07.2022.
@@ -7,11 +7,11 @@
 
 import UIKit
 
-protocol TableViewDataSourceProtocol {
+protocol LanguageTableViewDataSourceProtocol {
     func makeDataSource(for tableview: UITableView) -> UITableViewDiffableDataSource<Int, Language>
 }
 
-final class TableViewDataSource: TableViewDataSourceProtocol {
+final class LanguageTableViewDataSource: LanguageTableViewDataSourceProtocol {
     
     // MARK: Public
     

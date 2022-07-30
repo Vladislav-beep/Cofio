@@ -16,9 +16,12 @@ final class CardsModuleBuilder {
     }
     
     func build() -> UIViewController {
+        let dataSource = CardsTableViewDataSource()
+        
         let interactor = CardsInteractor()
         let presenter = CardsPresenter(interactor: interactor)
-        let viewController = CardsViewController(output: presenter)
+        let viewController = CardsViewController(output: presenter,
+                                                 dataSource: dataSource)
         
         presenter.view = viewController
         interactor.output = presenter

@@ -45,12 +45,20 @@ final class FlowCoordinator {
     }
     
     func showTabbar() {
-  //      let builder = CardsModuleBuilder(output: self)
+//        let builder = TabBarModuleBuilder(output: self)
+//
+//        let vc = builder.build()
+//
+//        languagesVC?.present(vc, animated: true)
+
+//        let flow = TabBarFlowCoordinator(parentViewController: languagesVC ?? UIViewController(), output: self)
+//        flow.start()
         
-    //    let vc = builder.build()
+        let builder = CardsModuleBuilder(output: self)
+        let vc = builder.build()
+        let nav = UINavigationController(rootViewController: vc)
+        languagesVC?.present(nav, animated: true)
         
-        let vc = UITabBarController()
-        languagesVC?.present(vc, animated: true)
     }
 }
 
@@ -90,3 +98,14 @@ extension FlowCoordinator: NewLanguagePresenterOutput {
         languagesVC?.dismiss(animated: true)
     }
 }
+
+extension FlowCoordinator: TabBarModuleOutput {
+    
+    func moduleWantsToAddTab(_ module: TabBarModuleInput) {
+        
+    }
+}
+
+extension FlowCoordinator: TabBarModuleFlowOutput {}
+
+extension FlowCoordinator: CardsPresenterOutput {}
