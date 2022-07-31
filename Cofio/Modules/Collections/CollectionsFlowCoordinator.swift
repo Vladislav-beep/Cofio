@@ -1,5 +1,5 @@
 //
-//  CardsFlowCoordinator.swift
+//  CollectionsFlowCoordinator.swift
 //  Cofio
 //
 //  Created by Владислав Сизонов on 30.07.2022.
@@ -7,28 +7,28 @@
 
 import UIKit
 
-protocol CardsFlowCoordinatorOutput: AnyObject {}
+protocol CollectionsFlowCoordinatorOutput: AnyObject {}
 
-final class CardsFlowCoordinator {
+final class CollectionsFlowCoordinator {
     
     private weak var parentViewController: UIViewController?
     private weak var parentTabBarController: UITabBarController?
-    private weak var output: CardsFlowCoordinatorOutput?
+    private weak var output: CollectionsFlowCoordinatorOutput?
     
-    init(tabBar: UITabBarController, output: CardsFlowCoordinatorOutput?) {
+    init(tabBar: UITabBarController, output: CollectionsFlowCoordinatorOutput?) {
         self.parentTabBarController = tabBar
         self.output = output
     }
     
     private func showCardsModule() {
-        let builder = CardsModuleBuilder(output: self)
+        let builder = CollectionsModuleBuilder(output: self)
         let vc = builder.build()
         
         parentTabBarController?.setViewControllers([vc], animated: true)
     }
 }
 
-extension CardsFlowCoordinator: FlowCoordinatorProtocol {
+extension CollectionsFlowCoordinator: FlowCoordinatorProtocol {
     
     func start() {
         showCardsModule()
@@ -39,6 +39,8 @@ extension CardsFlowCoordinator: FlowCoordinatorProtocol {
     }
 }
 
-extension CardsFlowCoordinator: CardsPresenterOutput {
-    
+extension CollectionsFlowCoordinator: CollectionsPresenterOutput {
+    func moduleWantsToOpenCards(_ module: CollectionsPresenterInput) {
+        
+    }
 }

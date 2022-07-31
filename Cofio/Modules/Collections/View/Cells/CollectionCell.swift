@@ -1,5 +1,5 @@
 //
-//  CardsCollectionCell.swift
+//  CollectionCell.swift
 //  Cofio
 //
 //  Created by Владислав Сизонов on 30.07.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CardsCollectionCell: UITableViewCell {
+final class CollectionCell: UITableViewCell {
     
     // MARK: Data structures
     
@@ -21,7 +21,6 @@ final class CardsCollectionCell: UITableViewCell {
     
     private lazy var lowerView: LowerView = {
         let view = LowerView()
-        view.backgroundColor = .red
         return view
     }()
     

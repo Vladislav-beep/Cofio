@@ -1,5 +1,5 @@
 //
-//  CardsViewController.swift
+//  CollectionsViewController.swift
 //  Cofio
 //
 //  Created by Владислав Сизонов on 26.07.2022.
@@ -7,15 +7,15 @@
 
 import UIKit
 
-final class CardsViewController: UIViewController {
+final class CollectionsViewController: UIViewController {
     
-    private let output: CardsViewOutput
-    private let dataSource: CardsTableViewDataSourceProtocol
+    private let output: CollectionsViewOutput
+    private let dataSource: CollectionsTableViewDataSourceProtocol
     
     private lazy var collectionCardsTableView: UITableView = {
         let cool = UITableView()
         cool.register(StatisticsCell.self)
-        cool.register(CardsCollectionCell.self)
+        cool.register(CollectionCell.self)
         cool.translatesAutoresizingMaskIntoConstraints = false
         cool.separatorStyle = .none
         cool.delegate = self
@@ -24,8 +24,8 @@ final class CardsViewController: UIViewController {
     
     private lazy var tableViewDataSource = dataSource.makeDataSource(for: collectionCardsTableView)
     
-    init(output: CardsViewOutput,
-         dataSource: CardsTableViewDataSourceProtocol) {
+    init(output: CollectionsViewOutput,
+         dataSource: CollectionsTableViewDataSourceProtocol) {
         self.output = output
         self.dataSource = dataSource
         
@@ -51,20 +51,29 @@ final class CardsViewController: UIViewController {
         ])
         
         output.viewDidLoad()
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Сменить язык", style: .plain, target: self, action: #selector(close))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .add)
+        navigationItem.rightBarButtonItem?.tintColor = .darkViolet
+        navigationItem.leftBarButtonItem?.tintColor = .darkViolet
+    }
+    
+    @objc func close() {
+        
     }
 }
 
-extension CardsViewController: CardsViewInput {
+extension CollectionsViewController: CollectionsViewInput {
     
-    func updateData(with data: [CardsCellsDataModel]) {
-        var snapshot = NSDiffableDataSourceSnapshot<Int, CardsCellsDataModel>()
+    func updateData(with data: [CollectionsCellsDataModel]) {
+        var snapshot = NSDiffableDataSourceSnapshot<Int, CollectionsCellsDataModel>()
         snapshot.appendSections([0])
         snapshot.appendItems(data, toSection: 0)
         tableViewDataSource.apply(snapshot, animatingDifferences: true)
     }
 }
 
-extension CardsViewController: UITableViewDelegate {
+extension CollectionsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let snapshot = tableViewDataSource.snapshot()
@@ -72,10 +81,23 @@ extension CardsViewController: UITableViewDelegate {
         
         switch item {
         case .statics(_):
-            return 350
+            return 220
             
         case .card(_):
             return UITableView.automaticDimension
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let item = tableViewDataSource.itemIdentifier(for: indexPath) else { return }
+        
+        switch item {
+        case .statics:
+            break
+            
+        case .card(let cardsCellDataModel):
+            output.viewDidTapRow(cardsCellDataModel)
         }
     }
 }

@@ -14,6 +14,7 @@ final class FlowCoordinator {
     private let parentVC: UIViewController
     private var languagesVC: UIViewController?
     private var newLangVC: UIViewController?
+    private var navVC: UINavigationController?
     
     
     // MARK: Lifecycle
@@ -54,11 +55,19 @@ final class FlowCoordinator {
 //        let flow = TabBarFlowCoordinator(parentViewController: languagesVC ?? UIViewController(), output: self)
 //        flow.start()
         
-        let builder = CardsModuleBuilder(output: self)
+        let builder = CollectionsModuleBuilder(output: self)
         let vc = builder.build()
         let nav = UINavigationController(rootViewController: vc)
+        navVC = nav
         languagesVC?.present(nav, animated: true)
         
+    }
+    
+    func showCardsModule() {
+        
+        let builder = CardsModuleBuilder(output: self)
+        let vc = builder.build()
+        navVC?.pushViewController(vc, animated: true)
     }
 }
 
@@ -107,5 +116,12 @@ extension FlowCoordinator: TabBarModuleOutput {
 }
 
 extension FlowCoordinator: TabBarModuleFlowOutput {}
+
+extension FlowCoordinator: CollectionsPresenterOutput {
+    
+    func moduleWantsToOpenCards(_ module: CollectionsPresenterInput) {
+        showCardsModule()
+    }
+}
 
 extension FlowCoordinator: CardsPresenterOutput {}

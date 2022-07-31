@@ -30,7 +30,7 @@ final class TabBarFlowCoordinator {
     }
     
     private func addTab() {
-        let flow = CardsFlowCoordinator(tabBar: tabBarViewController ?? UITabBarController(), output: self)
+        let flow = CollectionsFlowCoordinator(tabBar: tabBarViewController ?? UITabBarController(), output: self)
         flow.start()
     }
 }
@@ -53,4 +53,4 @@ extension TabBarFlowCoordinator: FlowCoordinatorProtocol {
     }
 }
 
-extension TabBarFlowCoordinator: CardsFlowCoordinatorOutput {}
+extension TabBarFlowCoordinator: CollectionsFlowCoordinatorOutput {}

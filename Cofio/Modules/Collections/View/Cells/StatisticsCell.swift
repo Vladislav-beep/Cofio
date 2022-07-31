@@ -17,13 +17,10 @@ final class StatisticsCell: UITableViewCell {
     
     // MARK: Private properties
     
-    private lazy var titleLabel: UILabel = {
-        let title = UILabel()
-        title.font = UIFont.systemFont(ofSize: 22, weight: .bold)
-        title.numberOfLines = 0
-        title.numberOfLines = 1
-        title.translatesAutoresizingMaskIntoConstraints = false
-        return title
+    private lazy var lowerView: LowerView = {
+        let view = LowerView()
+        view.backgroundColor = .darkOrange
+        return view
     }()
     
     // MARK: Lifecycle
@@ -41,18 +38,18 @@ final class StatisticsCell: UITableViewCell {
     // MARK: Private
     
     private func setupViews() {
-        contentView.addSubview(titleLabel)
+        contentView.addSubview(lowerView)
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15),
+            lowerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            lowerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            lowerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            lowerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15),
         ])
     }
     
     // MARK: Public
     
     func configure(with displayData: DisplayData) {
-        titleLabel.text = displayData.title
+     //   titleLabel.text = displayData.title
     }
 }

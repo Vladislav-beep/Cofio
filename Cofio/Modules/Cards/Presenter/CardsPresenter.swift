@@ -2,7 +2,7 @@
 //  CardsPresenter.swift
 //  Cofio
 //
-//  Created by Владислав Сизонов on 26.07.2022.
+//  Created by Владислав Сизонов on 31.07.2022.
 //
 
 final class CardsPresenter {
@@ -19,8 +19,13 @@ final class CardsPresenter {
 
 extension CardsPresenter: CardsViewOutput {
     
+    func viewDidTapRow(_ item: CardCellDataModel) {
+        print("Lol")
+    }
+    
+    
     func viewDidLoad() {
-        var models: [CardsCellsDataModel] = [.statics(.init(title: "LOL")), .card(.init(title: "CACAC", subtitle: "pPPPPP")), .card(.init(title: "mksvkm", subtitle: "aklvj"))]
+        var models: [CollectionsCellsDataModel] = [.statics(.init(title: "LOL")), .card(.init(title: "CACAC", subtitle: "pPPPPP")), .card(.init(title: "mksvkm", subtitle: "aklvj"))]
         view?.updateData(with: models)
     }
 }

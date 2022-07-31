@@ -1,5 +1,5 @@
 //
-//  CardsModuleBuilder.swift
+//  CollectionsModuleBuilder.swift
 //  Cofio
 //
 //  Created by Владислав Сизонов on 26.07.2022.
@@ -7,20 +7,20 @@
 
 import UIKit
 
-final class CardsModuleBuilder {
+final class CollectionsModuleBuilder {
     
-    private weak var output: CardsPresenterOutput?
+    private weak var output: CollectionsPresenterOutput?
     
-    init(output: CardsPresenterOutput) {
+    init(output: CollectionsPresenterOutput) {
         self.output = output
     }
     
     func build() -> UIViewController {
-        let dataSource = CardsTableViewDataSource()
+        let dataSource = CollectionsTableViewDataSource()
         
-        let interactor = CardsInteractor()
-        let presenter = CardsPresenter(interactor: interactor)
-        let viewController = CardsViewController(output: presenter,
+        let interactor = CollectionsInteractor()
+        let presenter = CollectionsPresenter(interactor: interactor)
+        let viewController = CollectionsViewController(output: presenter,
                                                  dataSource: dataSource)
         
         presenter.view = viewController
