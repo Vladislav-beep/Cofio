@@ -23,9 +23,10 @@ extension CardsPresenter: CardsViewOutput {
         print("Lol")
     }
     
-    
     func viewDidLoad() {
-        var models: [CollectionsCellsDataModel] = [.statics(.init(title: "LOL")), .card(.init(title: "CACAC", subtitle: "pPPPPP")), .card(.init(title: "mksvkm", subtitle: "aklvj"))]
+        
+        var models: [CardCellDataModel] = [.init(meaning: "Dog", translation: "Собака"),
+                                           .init(meaning: "Aggregation", translation: "Агрегат")]
         view?.updateData(with: models)
     }
 }

@@ -5,4 +5,7 @@
 //  Created by Владислав Сизонов on 31.07.2022.
 //
 
-import Foundation
+struct CardCellDataModel: Hashable {
+    let meaning: String
+    let translation: String
+}

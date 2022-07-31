@@ -14,8 +14,7 @@ final class CardsViewController: UIViewController {
     
     private lazy var cardsTableView: UITableView = {
         let cool = UITableView()
-        cool.register(StatisticsCell.self)
-        cool.register(CollectionCell.self)
+        cool.register(CardsCell.self)
         cool.translatesAutoresizingMaskIntoConstraints = false
         cool.separatorStyle = .none
         cool.delegate = self
@@ -51,6 +50,9 @@ final class CardsViewController: UIViewController {
         ])
         
         output.viewDidLoad()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .add)
+        navigationController?.navigationBar.tintColor = UIColor.darkViolet
     }
     
     @objc func close() {
@@ -59,9 +61,9 @@ final class CardsViewController: UIViewController {
 }
 
 extension CardsViewController: CardsViewInput {
-    
-    func updateData(with data: [Card]) {
-        var snapshot = NSDiffableDataSourceSnapshot<Int, Card>()
+
+    func updateData(with data: [CardCellDataModel]) {
+        var snapshot = NSDiffableDataSourceSnapshot<Int, CardCellDataModel>()
         snapshot.appendSections([0])
         snapshot.appendItems(data, toSection: 0)
         tableViewDataSource.apply(snapshot, animatingDifferences: true)
@@ -70,29 +72,14 @@ extension CardsViewController: CardsViewInput {
 
 extension CardsViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let snapshot = tableViewDataSource.snapshot()
-        let item = snapshot.itemIdentifiers[indexPath.row]
-        
-        switch item {
-        case .statics(_):
-            return 220
-            
-        case .card(_):
-            return UITableView.automaticDimension
-        }
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         guard let item = tableViewDataSource.itemIdentifier(for: indexPath) else { return }
         
-        switch item {
-        case .statics:
-            break
-            
-        case .card(let cardsCellDataModel):
-            output.viewDidTapRow(cardsCellDataModel)
-        }
+        output.viewDidTapRow(item)
     }
+    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        200
+//    }
 }
