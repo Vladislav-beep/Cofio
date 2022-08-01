@@ -59,6 +59,7 @@ final class FlowCoordinator {
         let vc = builder.build()
         let nav = UINavigationController(rootViewController: vc)
         navVC = nav
+        nav.modalPresentationStyle = .fullScreen
         languagesVC?.present(nav, animated: true)
         
     }
@@ -118,6 +119,11 @@ extension FlowCoordinator: TabBarModuleOutput {
 extension FlowCoordinator: TabBarModuleFlowOutput {}
 
 extension FlowCoordinator: CollectionsPresenterOutput {
+    
+    func moduleWantsToClose(_ module: CollectionsPresenterInput) {
+        languagesVC?.dismiss(animated: true)
+    }
+    
     
     func moduleWantsToOpenCards(_ module: CollectionsPresenterInput) {
         showCardsModule()

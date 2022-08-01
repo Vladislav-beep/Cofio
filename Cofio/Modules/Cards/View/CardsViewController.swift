@@ -21,6 +21,16 @@ final class CardsViewController: UIViewController {
         return cool
     }()
     
+    private lazy var doneButton: UIButton = {
+        let doneButton = UIButton()
+        doneButton.translatesAutoresizingMaskIntoConstraints = false
+        doneButton.setTitle("Добавить карточку", for: .normal)
+        doneButton.backgroundColor = .darkViolet
+        doneButton.layer.cornerRadius = 15
+        doneButton.addTarget(self, action: #selector(addCard), for: .touchUpInside)
+        return doneButton
+    }()
+    
     private lazy var tableViewDataSource = dataSource.makeDataSource(for: cardsTableView)
     
     init(output: CardsViewOutput,
@@ -37,26 +47,37 @@ final class CardsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemTeal
         title = "Карточки"
+        view.backgroundColor = .white
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .add)
+        navigationController?.navigationBar.tintColor = UIColor.darkViolet
         
         view.addSubview(cardsTableView)
         NSLayoutConstraint.activate([
             cardsTableView.topAnchor.constraint(equalTo: view.topAnchor),
-            cardsTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            cardsTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
             cardsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             cardsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
         
-        output.viewDidLoad()
+        cardsTableView.addSubview(doneButton)
+        NSLayoutConstraint.activate([
+            doneButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40),
+            doneButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            doneButton.heightAnchor.constraint(equalToConstant: 56),
+            doneButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+        ])
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .add)
-        navigationController?.navigationBar.tintColor = UIColor.darkViolet
+        output.viewDidLoad()
     }
     
     @objc func close() {
         
+    }
+    
+    @objc func addCard() {
+        print("vlad")
     }
 }
 
