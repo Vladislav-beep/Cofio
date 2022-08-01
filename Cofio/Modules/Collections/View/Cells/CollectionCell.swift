@@ -13,14 +13,35 @@ final class CollectionCell: UITableViewCell {
     
     struct DisplayData: Hashable {
         let title: String
-        let subtitle: String
+        let cardsCount: Int
+        let repeats: Int
     }
     
     
     // MARK: Private properties
     
+    private lazy var trailingConstraint: NSLayoutConstraint = gradient.widthAnchor.constraint(equalToConstant: 100)
+    
     private lazy var lowerView: LowerView = {
         let view = LowerView()
+        return view
+    }()
+    
+    private lazy var gradient: UIView = {
+        let view = UIView()
+       // view.layer.masksToBounds = true
+        view.layer.cornerRadius = 12
+        view.backgroundColor = .lightViolet
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var clearView: UIView = {
+        let view = UIView()
+       // view.layer.masksToBounds = true
+        view.layer.cornerRadius = 20
+        view.backgroundColor = .clear
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -28,7 +49,6 @@ final class CollectionCell: UITableViewCell {
         let title = UILabel()
         title.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         title.numberOfLines = 0
-        title.numberOfLines = 1
         title.translatesAutoresizingMaskIntoConstraints = false
         return title
     }()
@@ -36,7 +56,6 @@ final class CollectionCell: UITableViewCell {
     private lazy var subtitleLabel: UILabel = {
         let title = UILabel()
         title.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        title.numberOfLines = 0
         title.numberOfLines = 1
         title.translatesAutoresizingMaskIntoConstraints = false
         return title
@@ -73,37 +92,85 @@ final class CollectionCell: UITableViewCell {
             lowerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             lowerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             lowerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            lowerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15),
+            lowerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
         ])
-        
-        lowerView.addSubview(iconView)
+        print("\(contentView.frame.width) - lol")
+        lowerView.addSubview(gradient)
         NSLayoutConstraint.activate([
-            iconView.heightAnchor.constraint(equalToConstant: 40),
-            iconView.widthAnchor.constraint(equalToConstant: 40),
-            iconView.topAnchor.constraint(equalTo: lowerView.topAnchor, constant: 16),
-            iconView.trailingAnchor.constraint(equalTo: lowerView.trailingAnchor, constant: -15)
+            gradient.topAnchor.constraint(equalTo: lowerView.topAnchor, constant: 0),
+            gradient.leadingAnchor.constraint(equalTo: lowerView.leadingAnchor, constant: 0),
+            trailingConstraint,
+            gradient.bottomAnchor.constraint(equalTo: lowerView.bottomAnchor, constant: 0),
         ])
         
-        lowerView.addSubview(titleLabel)
+        lowerView.addSubview(clearView)
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: lowerView.topAnchor, constant: 16),
-            titleLabel.leadingAnchor.constraint(equalTo: lowerView.leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: iconView.leadingAnchor, constant: -12),
+            clearView.topAnchor.constraint(equalTo: lowerView.topAnchor, constant: 0),
+            clearView.leadingAnchor.constraint(equalTo: lowerView.leadingAnchor, constant: 0),
+            clearView.trailingAnchor.constraint(equalTo: lowerView.trailingAnchor, constant: 0),
+            clearView.bottomAnchor.constraint(equalTo: lowerView.bottomAnchor, constant: 0),
         ])
         
-        lowerView.addSubview(subtitleLabel)
+        clearView.addSubview(titleLabel)
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: clearView.topAnchor, constant: 16),
+            titleLabel.leadingAnchor.constraint(equalTo: clearView.leadingAnchor, constant: 16),
+            titleLabel.trailingAnchor.constraint(equalTo: clearView.trailingAnchor, constant: -12),
+        ])
+        
+        clearView.addSubview(subtitleLabel)
         NSLayoutConstraint.activate([
             subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
-            subtitleLabel.leadingAnchor.constraint(equalTo: lowerView.leadingAnchor, constant: 16),
-            subtitleLabel.trailingAnchor.constraint(equalTo: iconView.leadingAnchor, constant: -12),
-            subtitleLabel.bottomAnchor.constraint(equalTo: lowerView.bottomAnchor, constant: -16)
+            subtitleLabel.leadingAnchor.constraint(equalTo: clearView.leadingAnchor, constant: 16),
+            subtitleLabel.trailingAnchor.constraint(equalTo: clearView.trailingAnchor, constant: -12),
+            subtitleLabel.bottomAnchor.constraint(equalTo: clearView.bottomAnchor, constant: -16)
         ])
     }
     
+    private func configureSubtitleLabel(with count: Int) {
+        let string1: String
+        switch count {
+        case 1:
+            string1 = " карточка"
+        case 2...4:
+            string1 = " карточки"
+        case 5...Int.max:
+            string1 = " карточек"
+        default:
+            string1 = " карточек"
+        }
+        let myAttribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .bold),
+                           NSAttributedString.Key.foregroundColor: UIColor.darkOrange]
+        let countString = NSMutableAttributedString(string: "\(count)", attributes: myAttribute)
+        let attrString = NSAttributedString(string: string1)
+        if count == 0 {
+            subtitleLabel.text = "Нет карточек"
+        } else {
+            countString.append(attrString)
+            subtitleLabel.attributedText = countString
+        }
+    }
+    
+    private func updateProgress(with progress: Int) {
+        if progress == 0 {
+            trailingConstraint.constant = CGFloat(12)
+        } else {
+            let m = UIScreen.main.bounds.width - 32
+            print("\(m) - m")
+            let k = m / 7
+            print("\(k) - k")
+            let l = m / 7 * CGFloat(progress)
+            print("\(l) - l")
+            trailingConstraint.constant = m / 7 * CGFloat(progress)
+        }
+    }
+
+
     // MARK: Public
     
     func configure(with displayData: DisplayData) {
         titleLabel.text = displayData.title
-        subtitleLabel.text = displayData.subtitle
+        configureSubtitleLabel(with: displayData.cardsCount)
+        updateProgress(with: displayData.repeats)
     }
 }

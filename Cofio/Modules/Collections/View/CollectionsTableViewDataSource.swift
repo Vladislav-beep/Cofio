@@ -26,7 +26,9 @@ final class CollectionsTableViewDataSource: CollectionsTableViewDataSourceProtoc
                 
             case .card(let model):
                 let cell = tableview.reuse(CollectionCell.self, indexPath)
-                let displayData = CollectionCell.DisplayData(title: model.title, subtitle: model.subtitle)
+                let displayData = CollectionCell.DisplayData(title: model.title,
+                                                             cardsCount: model.cardsCount,
+                                                             repeats: model.repeats)
                 cell.configure(with: displayData)
                 return cell
             }

@@ -14,4 +14,5 @@ protocol CollectionsViewOutput: AnyObject {
     
     func viewDidLoad()
     func viewDidTapRow(_ item: CollectionsCellDataModel)
+    func viewDidTapClose()
 }

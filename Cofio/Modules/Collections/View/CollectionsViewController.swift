@@ -59,7 +59,7 @@ final class CollectionsViewController: UIViewController {
     }
     
     @objc func close() {
-        
+        output.viewDidTapClose()
     }
 }
 

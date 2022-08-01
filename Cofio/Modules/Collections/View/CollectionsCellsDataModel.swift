@@ -16,5 +16,6 @@ struct StaticsCellDataModel: Hashable {
 
 struct CollectionsCellDataModel: Hashable {
     let title: String
-    let subtitle: String
+    let cardsCount: Int
+    let repeats: Int
 }

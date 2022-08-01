@@ -10,5 +10,6 @@ protocol CollectionsPresenterInput: AnyObject {}
 protocol CollectionsPresenterOutput: AnyObject {
     
     func moduleWantsToOpenCards(_ module: CollectionsPresenterInput)
+    func moduleWantsToClose(_ module: CollectionsPresenterInput)
 }
 

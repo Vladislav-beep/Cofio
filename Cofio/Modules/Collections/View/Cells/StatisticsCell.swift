@@ -22,6 +22,7 @@ final class StatisticsCell: UITableViewCell {
         view.backgroundColor = .darkOrange
         return view
     }()
+
     
     // MARK: Lifecycle
     

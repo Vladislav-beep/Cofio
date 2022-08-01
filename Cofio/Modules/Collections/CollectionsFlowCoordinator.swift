@@ -40,6 +40,11 @@ extension CollectionsFlowCoordinator: FlowCoordinatorProtocol {
 }
 
 extension CollectionsFlowCoordinator: CollectionsPresenterOutput {
+    
+    func moduleWantsToClose(_ module: CollectionsPresenterInput) {
+        
+    }
+    
     func moduleWantsToOpenCards(_ module: CollectionsPresenterInput) {
         
     }
