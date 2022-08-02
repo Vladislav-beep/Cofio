@@ -31,6 +31,12 @@ final class CardsViewController: UIViewController {
         return doneButton
     }()
     
+    private lazy var fadeView: FadeView = {
+        let fadeView = FadeView()
+        fadeView.translatesAutoresizingMaskIntoConstraints = false
+        return fadeView
+    }()
+    
     private lazy var tableViewDataSource = dataSource.makeDataSource(for: cardsTableView)
     
     init(output: CardsViewOutput,
@@ -61,7 +67,15 @@ final class CardsViewController: UIViewController {
             cardsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
         
-        cardsTableView.addSubview(doneButton)
+        cardsTableView.addSubview(fadeView)
+        NSLayoutConstraint.activate([
+            fadeView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+            fadeView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            fadeView.heightAnchor.constraint(equalToConstant: 106),
+            fadeView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+        ])
+
+        fadeView.addSubview(doneButton)
         NSLayoutConstraint.activate([
             doneButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40),
             doneButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),

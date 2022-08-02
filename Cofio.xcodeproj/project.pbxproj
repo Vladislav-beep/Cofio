@@ -14,7 +14,7 @@
 		B93EF8BE28968E320057C774 /* CardsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8BD28968E320057C774 /* CardsInteractor.swift */; };
 		B93EF8C028968E690057C774 /* CardsInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8BF28968E690057C774 /* CardsInteractorProtocol.swift */; };
 		B93EF8C228968F310057C774 /* CardsModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8C128968F310057C774 /* CardsModuleBuilder.swift */; };
-		B93EF8C428970C4C0057C774 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8C328970C4C0057C774 /* GradientView.swift */; };
+		B93EF8C428970C4C0057C774 /* FadeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8C328970C4C0057C774 /* FadeView.swift */; };
 		B9CC135B288738980013ED76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC135A288738980013ED76 /* AppDelegate.swift */; };
 		B9CC135D288738980013ED76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC135C288738980013ED76 /* SceneDelegate.swift */; };
 		B9CC135F288738980013ED76 /* StartAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC135E288738980013ED76 /* StartAppViewController.swift */; };
@@ -106,7 +106,7 @@
 		B93EF8BD28968E320057C774 /* CardsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsInteractor.swift; sourceTree = "<group>"; };
 		B93EF8BF28968E690057C774 /* CardsInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsInteractorProtocol.swift; sourceTree = "<group>"; };
 		B93EF8C128968F310057C774 /* CardsModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsModuleBuilder.swift; sourceTree = "<group>"; };
-		B93EF8C328970C4C0057C774 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		B93EF8C328970C4C0057C774 /* FadeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeView.swift; sourceTree = "<group>"; };
 		B9CC1357288738980013ED76 /* Cofio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cofio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9CC135A288738980013ED76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9CC135C288738980013ED76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -430,7 +430,7 @@
 				B9CC13D42890720B0013ED76 /* SubtitleLabel.swift */,
 				B9CC13DA28919E0E0013ED76 /* LowerView.swift */,
 				B9CC13DC2891B9090013ED76 /* LanguageTextField.swift */,
-				B93EF8C328970C4C0057C774 /* GradientView.swift */,
+				B93EF8C328970C4C0057C774 /* FadeView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -709,7 +709,7 @@
 				B9CC13EF28930A8A0013ED76 /* InfoPickerModel.swift in Sources */,
 				B9CC13D3289070E70013ED76 /* TitleLabel.swift in Sources */,
 				B9CC13DB28919E0E0013ED76 /* LowerView.swift in Sources */,
-				B93EF8C428970C4C0057C774 /* GradientView.swift in Sources */,
+				B93EF8C428970C4C0057C774 /* FadeView.swift in Sources */,
 				B9CC14112895C2530013ED76 /* CollectionsCellsDataModel.swift in Sources */,
 				B9CC13A6288EEC7A0013ED76 /* StartAppModuleBuilder.swift in Sources */,
 				B9CC13A2288EE98E0013ED76 /* StartAppInteractorProtocol.swift in Sources */,

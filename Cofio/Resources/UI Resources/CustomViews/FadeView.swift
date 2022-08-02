@@ -1,5 +1,5 @@
 //
-//  GradientView.swift
+//  FadeView.swift
 //  Cofio
 //
 //  Created by Владислав Сизонов on 31.07.2022.
@@ -7,14 +7,14 @@
 
 import UIKit
 
-final class GradientView: UIView {
+final class FadeView: UIView {
     
-    private var progress: Int
     private let gardientlayer = CAGradientLayer()
     
-    init(progress: Int) {
-        self.progress = progress
-        super.init(frame: .zero)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+  
+        setupGradient()
     }
     
     required init?(coder: NSCoder) {
@@ -28,9 +28,7 @@ final class GradientView: UIView {
     
     private func setupGradient() {
         layer.addSublayer(gardientlayer)
-        gardientlayer.colors = [UIColor.violet.cgColor, UIColor.base.cgColor]
-        gardientlayer.startPoint = CGPoint(x: 0.0, y: 0.5)
-        gardientlayer.endPoint = CGPoint(x: 1.0, y: 0.5)
-        gardientlayer.locations = [ 0.0, 1.0]
+        gardientlayer.colors = [UIColor.clear.cgColor, UIColor.white.cgColor]
+        gardientlayer.locations = [0, 0.4]
     }
 }

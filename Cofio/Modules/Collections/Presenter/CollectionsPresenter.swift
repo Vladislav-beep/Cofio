@@ -32,7 +32,7 @@ extension CollectionsPresenter: CollectionsViewOutput {
         var models: [CollectionsCellsDataModel] = [
             .statics(.init(title: "LOL")),
             .card(.init(title: "Кухня", cardsCount: 2, repeats: 0)),
-            .card(.init(title: "Автомобиль", cardsCount: 5, repeats: 5)),
+            .card(.init(title: "Автомобиль", cardsCount: 5, repeats: 7)),
             .card(.init(title: "Домашние дела", cardsCount: 1, repeats: 1)),
             .card(.init(title: "Путешествия", cardsCount: 0, repeats: 7))
         ]

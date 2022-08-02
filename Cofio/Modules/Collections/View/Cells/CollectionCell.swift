@@ -29,7 +29,6 @@ final class CollectionCell: UITableViewCell {
     
     private lazy var gradient: UIView = {
         let view = UIView()
-       // view.layer.masksToBounds = true
         view.layer.cornerRadius = 12
         view.backgroundColor = .lightViolet
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -38,7 +37,6 @@ final class CollectionCell: UITableViewCell {
     
     private lazy var clearView: UIView = {
         let view = UIView()
-       // view.layer.masksToBounds = true
         view.layer.cornerRadius = 20
         view.backgroundColor = .clear
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -61,15 +59,15 @@ final class CollectionCell: UITableViewCell {
         return title
     }()
     
-    private lazy var iconView: UIImageView = {
-        let image = UIImageView()
-        image.contentMode = .scaleAspectFill
-        image.clipsToBounds = true
-        image.layer.cornerRadius = 15
-        image.backgroundColor = .blue
-        image.translatesAutoresizingMaskIntoConstraints = false
-        return image
+    private lazy var persentLabel: UILabel = {
+        let title = UILabel()
+        title.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+        title.numberOfLines = 1
+        title.textAlignment = .center
+        title.translatesAutoresizingMaskIntoConstraints = false
+        return title
     }()
+    
     
     // MARK: Lifecycle
     
@@ -94,7 +92,7 @@ final class CollectionCell: UITableViewCell {
             lowerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             lowerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
         ])
-        print("\(contentView.frame.width) - lol")
+        
         lowerView.addSubview(gradient)
         NSLayoutConstraint.activate([
             gradient.topAnchor.constraint(equalTo: lowerView.topAnchor, constant: 0),
@@ -109,6 +107,14 @@ final class CollectionCell: UITableViewCell {
             clearView.leadingAnchor.constraint(equalTo: lowerView.leadingAnchor, constant: 0),
             clearView.trailingAnchor.constraint(equalTo: lowerView.trailingAnchor, constant: 0),
             clearView.bottomAnchor.constraint(equalTo: lowerView.bottomAnchor, constant: 0),
+        ])
+        
+        clearView.addSubview(persentLabel)
+        NSLayoutConstraint.activate([
+            persentLabel.topAnchor.constraint(equalTo: clearView.topAnchor, constant: 10),
+            persentLabel.bottomAnchor.constraint(equalTo: clearView.bottomAnchor, constant: -16),
+            persentLabel.trailingAnchor.constraint(equalTo: clearView.trailingAnchor, constant: -12),
+            persentLabel.heightAnchor.constraint(equalTo: persentLabel.widthAnchor)
         ])
         
         clearView.addSubview(titleLabel)
@@ -155,21 +161,21 @@ final class CollectionCell: UITableViewCell {
         if progress == 0 {
             trailingConstraint.constant = CGFloat(12)
         } else {
-            let m = UIScreen.main.bounds.width - 32
-            print("\(m) - m")
-            let k = m / 7
-            print("\(k) - k")
-            let l = m / 7 * CGFloat(progress)
-            print("\(l) - l")
-            trailingConstraint.constant = m / 7 * CGFloat(progress)
+            let screenWidth = UIScreen.main.bounds.width - 32
+            trailingConstraint.constant = screenWidth / 7 * CGFloat(progress)
         }
     }
-
-
+    
+    
     // MARK: Public
     
     func configure(with displayData: DisplayData) {
         titleLabel.text = displayData.title
+        if displayData.repeats == 7 {
+            persentLabel.text = "100 %"
+        } else {
+            persentLabel.text = String(100 / 7 * displayData.repeats) + " %"
+        }
         configureSubtitleLabel(with: displayData.cardsCount)
         updateProgress(with: displayData.repeats)
     }
