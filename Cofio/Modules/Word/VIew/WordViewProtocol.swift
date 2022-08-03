@@ -5,4 +5,8 @@
 //  Created by Владислав Сизонов on 03.08.2022.
 //
 
-import Foundation
+protocol WordViewInput: AnyObject {
+}
+
+protocol WordViewOutput: AnyObject {
+}

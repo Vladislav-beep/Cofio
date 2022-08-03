@@ -15,6 +15,12 @@
 		B93EF8C028968E690057C774 /* CardsInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8BF28968E690057C774 /* CardsInteractorProtocol.swift */; };
 		B93EF8C228968F310057C774 /* CardsModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8C128968F310057C774 /* CardsModuleBuilder.swift */; };
 		B93EF8C428970C4C0057C774 /* FadeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8C328970C4C0057C774 /* FadeView.swift */; };
+		B93EF8CB289AF9910057C774 /* WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8CA289AF9910057C774 /* WordViewController.swift */; };
+		B93EF8CD289AF9B60057C774 /* WordViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8CC289AF9B60057C774 /* WordViewProtocol.swift */; };
+		B93EF8CF289AFAB00057C774 /* WordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8CE289AFAB00057C774 /* WordPresenter.swift */; };
+		B93EF8D1289AFADC0057C774 /* WordPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8D0289AFADC0057C774 /* WordPresenterProtocol.swift */; };
+		B93EF8D3289AFB060057C774 /* WordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8D2289AFB060057C774 /* WordInteractor.swift */; };
+		B93EF8D5289AFB2A0057C774 /* WordInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8D4289AFB2A0057C774 /* WordInteractorProtocol.swift */; };
 		B9CC135B288738980013ED76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC135A288738980013ED76 /* AppDelegate.swift */; };
 		B9CC135D288738980013ED76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC135C288738980013ED76 /* SceneDelegate.swift */; };
 		B9CC135F288738980013ED76 /* StartAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC135E288738980013ED76 /* StartAppViewController.swift */; };
@@ -107,6 +113,12 @@
 		B93EF8BF28968E690057C774 /* CardsInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsInteractorProtocol.swift; sourceTree = "<group>"; };
 		B93EF8C128968F310057C774 /* CardsModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsModuleBuilder.swift; sourceTree = "<group>"; };
 		B93EF8C328970C4C0057C774 /* FadeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeView.swift; sourceTree = "<group>"; };
+		B93EF8CA289AF9910057C774 /* WordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewController.swift; sourceTree = "<group>"; };
+		B93EF8CC289AF9B60057C774 /* WordViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewProtocol.swift; sourceTree = "<group>"; };
+		B93EF8CE289AFAB00057C774 /* WordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordPresenter.swift; sourceTree = "<group>"; };
+		B93EF8D0289AFADC0057C774 /* WordPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordPresenterProtocol.swift; sourceTree = "<group>"; };
+		B93EF8D2289AFB060057C774 /* WordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordInteractor.swift; sourceTree = "<group>"; };
+		B93EF8D4289AFB2A0057C774 /* WordInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordInteractorProtocol.swift; sourceTree = "<group>"; };
 		B9CC1357288738980013ED76 /* Cofio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cofio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9CC135A288738980013ED76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9CC135C288738980013ED76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -216,6 +228,43 @@
 			children = (
 				B93EF8BD28968E320057C774 /* CardsInteractor.swift */,
 				B93EF8BF28968E690057C774 /* CardsInteractorProtocol.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B93EF8C5289AF9190057C774 /* Word */ = {
+			isa = PBXGroup;
+			children = (
+				B93EF8C8289AF9410057C774 /* Interactor */,
+				B93EF8C7289AF93B0057C774 /* Presenter */,
+				B93EF8C6289AF9360057C774 /* VIew */,
+			);
+			path = Word;
+			sourceTree = "<group>";
+		};
+		B93EF8C6289AF9360057C774 /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				B93EF8CA289AF9910057C774 /* WordViewController.swift */,
+				B93EF8CC289AF9B60057C774 /* WordViewProtocol.swift */,
+			);
+			path = VIew;
+			sourceTree = "<group>";
+		};
+		B93EF8C7289AF93B0057C774 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B93EF8CE289AFAB00057C774 /* WordPresenter.swift */,
+				B93EF8D0289AFADC0057C774 /* WordPresenterProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B93EF8C8289AF9410057C774 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				B93EF8D2289AFB060057C774 /* WordInteractor.swift */,
+				B93EF8D4289AFB2A0057C774 /* WordInteractorProtocol.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -471,6 +520,7 @@
 				B9CC13F82895992A0013ED76 /* TabBar */,
 				B9CC13BE289069A40013ED76 /* Collections */,
 				B9CC14122896846B0013ED76 /* Cards */,
+				B93EF8C5289AF9190057C774 /* Word */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -710,6 +760,7 @@
 				B9CC13D3289070E70013ED76 /* TitleLabel.swift in Sources */,
 				B9CC13DB28919E0E0013ED76 /* LowerView.swift in Sources */,
 				B93EF8C428970C4C0057C774 /* FadeView.swift in Sources */,
+				B93EF8D5289AFB2A0057C774 /* WordInteractorProtocol.swift in Sources */,
 				B9CC14112895C2530013ED76 /* CollectionsCellsDataModel.swift in Sources */,
 				B9CC13A6288EEC7A0013ED76 /* StartAppModuleBuilder.swift in Sources */,
 				B9CC13A2288EE98E0013ED76 /* StartAppInteractorProtocol.swift in Sources */,
@@ -720,6 +771,7 @@
 				B9CC13E32891D5F10013ED76 /* CardCollection.swift in Sources */,
 				B9CC13A4288EEAA70013ED76 /* StartAppViewProtocol.swift in Sources */,
 				B9CC135F288738980013ED76 /* StartAppViewController.swift in Sources */,
+				B93EF8CB289AF9910057C774 /* WordViewController.swift in Sources */,
 				B9CC13B5288F087A0013ED76 /* NewLanguageProtocol.swift in Sources */,
 				B93EF8B828968D210057C774 /* CardsPresenter.swift in Sources */,
 				B9CC141E289688470013ED76 /* CardsCell.swift in Sources */,
@@ -731,6 +783,7 @@
 				B9CC1414289686140013ED76 /* CardsViewController.swift in Sources */,
 				B9CC140028959CBF0013ED76 /* TabBarPresenter.swift in Sources */,
 				B93EF8BA28968D950057C774 /* CardsPresenterProtocol.swift in Sources */,
+				B93EF8D3289AFB060057C774 /* WordInteractor.swift in Sources */,
 				B9CC140428959EB80013ED76 /* TabBarModuleBuilder.swift in Sources */,
 				B9CC13C0289069C90013ED76 /* CollectionsViewController.swift in Sources */,
 				B9CC13ED2893094D0013ED76 /* ImageProvider.swift in Sources */,
@@ -744,8 +797,10 @@
 				B93EF8B428968A8F0057C774 /* CardsViewProtocol.swift in Sources */,
 				B9CC13A8288EF56D0013ED76 /* FlowCoordinator.swift in Sources */,
 				B9CC13BB288F0A000013ED76 /* NewLanguageInteractorProtocol.swift in Sources */,
+				B93EF8CD289AF9B60057C774 /* WordViewProtocol.swift in Sources */,
 				B9CC13F1289310460013ED76 /* UIStackView+Extension.swift in Sources */,
 				B9CC135B288738980013ED76 /* AppDelegate.swift in Sources */,
+				B93EF8CF289AFAB00057C774 /* WordPresenter.swift in Sources */,
 				B93EF8C228968F310057C774 /* CardsModuleBuilder.swift in Sources */,
 				B9CC13F728952B630013ED76 /* DymmyData.swift in Sources */,
 				B9CC138D2889D7900013ED76 /* LanguageCell.swift in Sources */,
@@ -763,6 +818,7 @@
 				B9CC139B288EE6C20013ED76 /* StartAppPresenter.swift in Sources */,
 				B93EF8BE28968E320057C774 /* CardsInteractor.swift in Sources */,
 				B9CC13D52890720B0013ED76 /* SubtitleLabel.swift in Sources */,
+				B93EF8D1289AFADC0057C774 /* WordPresenterProtocol.swift in Sources */,
 				B9CC141A2896878E0013ED76 /* CardsTableViewDataSource.swift in Sources */,
 				B9CC1394288B15F00013ED76 /* UIColor+Extension.swift in Sources */,
 				B9CC13E12891D5C60013ED76 /* Language.swift in Sources */,
