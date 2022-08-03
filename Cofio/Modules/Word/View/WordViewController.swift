@@ -9,7 +9,12 @@ import UIKit
 
 final class WordViewController: UIViewController {
     
+    // MARK: Private properties
+    
     private let output: WordViewOutput
+
+    
+    // MARK: Lifecycle
     
     init(output: WordViewOutput) {
         self.output = output
@@ -24,7 +29,25 @@ final class WordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .red
+        setupViews()
+        setupNavigationBar()
+    }
+    
+    private func setupViews() {
+        view.backgroundColor = .white
+    }
+    
+    private func setupNavigationBar() {
+        title = "Повторение"
+        view.backgroundColor = .white
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = UIColor.darkViolet
+    }
+    
+    // MARK: Actions
+    
+    @objc func close() {
+        output.closeModule()
     }
 }
 

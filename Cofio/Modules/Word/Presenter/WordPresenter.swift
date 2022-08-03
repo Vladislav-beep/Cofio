@@ -17,7 +17,12 @@ final class WordPresenter {
     }
 }
 
-extension WordPresenter: WordViewOutput {}
+extension WordPresenter: WordViewOutput {
+    
+    func closeModule() {
+        output?.moduleWantsToClose(self)
+    }
+}
 
 extension WordPresenter: WordPresenterInput {}
 

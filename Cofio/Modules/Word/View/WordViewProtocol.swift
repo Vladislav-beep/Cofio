@@ -9,4 +9,6 @@ protocol WordViewInput: AnyObject {
 }
 
 protocol WordViewOutput: AnyObject {
+    
+    func closeModule()
 }

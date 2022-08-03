@@ -53,12 +53,14 @@ final class CardsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Карточки"
-        view.backgroundColor = .white
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .add)
-        navigationController?.navigationBar.tintColor = UIColor.darkViolet
         
+        setupViews()
+        setupNavigationBar()
+
+        output.viewDidLoad()
+    }
+    
+    private func setupViews() {
         view.addSubview(cardsTableView)
         NSLayoutConstraint.activate([
             cardsTableView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -74,7 +76,7 @@ final class CardsViewController: UIViewController {
             fadeView.heightAnchor.constraint(equalToConstant: 106),
             fadeView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
         ])
-
+        
         fadeView.addSubview(doneButton)
         NSLayoutConstraint.activate([
             doneButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40),
@@ -82,8 +84,14 @@ final class CardsViewController: UIViewController {
             doneButton.heightAnchor.constraint(equalToConstant: 56),
             doneButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
         ])
-        
-        output.viewDidLoad()
+    }
+    
+    private func setupNavigationBar() {
+        title = "Карточки"
+        view.backgroundColor = .white
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .add)
+        navigationController?.navigationBar.tintColor = UIColor.darkViolet
     }
     
     @objc func close() {

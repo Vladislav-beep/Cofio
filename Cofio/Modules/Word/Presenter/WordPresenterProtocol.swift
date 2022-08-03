@@ -7,4 +7,7 @@
 
 protocol WordPresenterInput: AnyObject {}
 
-protocol WordPresenterOutput: AnyObject {}
+protocol WordPresenterOutput: AnyObject {
+    
+    func moduleWantsToClose(_ module: WordPresenterInput)
+}

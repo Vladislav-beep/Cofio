@@ -37,4 +37,3 @@ final class CollectionsTableViewDataSource: CollectionsTableViewDataSourceProtoc
         return tableViewDataSource
     }
 }
-

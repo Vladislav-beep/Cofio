@@ -22,6 +22,7 @@
 		B93EF8D3289AFB060057C774 /* WordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8D2289AFB060057C774 /* WordInteractor.swift */; };
 		B93EF8D5289AFB2A0057C774 /* WordInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8D4289AFB2A0057C774 /* WordInteractorProtocol.swift */; };
 		B93EF8D7289AFB720057C774 /* WordModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8D6289AFB720057C774 /* WordModuleBuilder.swift */; };
+		B93EF8D9289AFFD30057C774 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8D8289AFFD30057C774 /* CloseButton.swift */; };
 		B9CC135B288738980013ED76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC135A288738980013ED76 /* AppDelegate.swift */; };
 		B9CC135D288738980013ED76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC135C288738980013ED76 /* SceneDelegate.swift */; };
 		B9CC135F288738980013ED76 /* StartAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC135E288738980013ED76 /* StartAppViewController.swift */; };
@@ -121,6 +122,7 @@
 		B93EF8D2289AFB060057C774 /* WordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordInteractor.swift; sourceTree = "<group>"; };
 		B93EF8D4289AFB2A0057C774 /* WordInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordInteractorProtocol.swift; sourceTree = "<group>"; };
 		B93EF8D6289AFB720057C774 /* WordModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordModuleBuilder.swift; sourceTree = "<group>"; };
+		B93EF8D8289AFFD30057C774 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		B9CC1357288738980013ED76 /* Cofio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cofio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9CC135A288738980013ED76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9CC135C288738980013ED76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -483,6 +485,7 @@
 				B9CC13DA28919E0E0013ED76 /* LowerView.swift */,
 				B9CC13DC2891B9090013ED76 /* LanguageTextField.swift */,
 				B93EF8C328970C4C0057C774 /* FadeView.swift */,
+				B93EF8D8289AFFD30057C774 /* CloseButton.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -770,6 +773,7 @@
 				B9CC13A2288EE98E0013ED76 /* StartAppInteractorProtocol.swift in Sources */,
 				B9CC13E52891D6380013ED76 /* Card.swift in Sources */,
 				B9CC14082895A2AE0013ED76 /* CollectionsFlowCoordinator.swift in Sources */,
+				B93EF8D9289AFFD30057C774 /* CloseButton.swift in Sources */,
 				B9CC13E72891D6510013ED76 /* Word.swift in Sources */,
 				B9CC13DD2891B9090013ED76 /* LanguageTextField.swift in Sources */,
 				B9CC13E32891D5F10013ED76 /* CardCollection.swift in Sources */,

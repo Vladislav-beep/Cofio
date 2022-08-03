@@ -38,10 +38,14 @@ final class CollectionsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemTeal
-        title = "Сборники"
-        navigationController?.navigationBar.prefersLargeTitles = true
         
+        setupViews()
+        setupNavigationBar()
+        
+        output.viewDidLoad()
+    }
+    
+    private func setupViews() {
         view.addSubview(collectionCardsTableView)
         NSLayoutConstraint.activate([
             collectionCardsTableView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -49,9 +53,11 @@ final class CollectionsViewController: UIViewController {
             collectionCardsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionCardsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
-        
-        output.viewDidLoad()
-        
+    }
+    
+    private func setupNavigationBar() {
+        title = "Сборники"
+        navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Сменить язык", style: .plain, target: self, action: #selector(close))
         navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .add)
         navigationItem.rightBarButtonItem?.tintColor = .darkViolet

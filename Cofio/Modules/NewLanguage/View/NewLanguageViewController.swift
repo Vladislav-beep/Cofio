@@ -14,12 +14,8 @@ final class NewLanguageViewController: UIViewController {
     private let output: NewLanguageViewOutput
     private let imageProvider: ImageProviderProtocol
     
-    private lazy var closeButton: UIButton = {
-        let closeButton = UIButton()
-        closeButton.translatesAutoresizingMaskIntoConstraints = false
-        closeButton.setTitle(AppText.Common.close.rawValue, for: .normal)
-        closeButton.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.left
-        closeButton.setTitleColor(UIColor.darkViolet, for: .normal)
+    private lazy var closeButton: CloseButton = {
+        let closeButton = CloseButton()
         closeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
         return closeButton
     }()
@@ -74,7 +70,6 @@ final class NewLanguageViewController: UIViewController {
         setupViews()
         pickerView.delegate = self
         pickerView.dataSource = self
-        
     }
     
     
@@ -84,7 +79,6 @@ final class NewLanguageViewController: UIViewController {
         view.backgroundColor = .white
         
         view.addSubview(closeButton)
-        
         NSLayoutConstraint.activate([
             closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 45),
             closeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
@@ -93,7 +87,6 @@ final class NewLanguageViewController: UIViewController {
         ])
         
         view.addSubview(doneButton)
-        
         NSLayoutConstraint.activate([
             doneButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40),
             doneButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),

@@ -28,8 +28,8 @@ final class FlowCoordinator {
     
     func showLanguagesModule() {
         let builder = StartAppModuleBuilder(output: self)
-        
         let vc = builder.build()
+        
         languagesVC = vc
         vc.modalPresentationStyle = .fullScreen
         parentVC.present(vc, animated: false)
@@ -37,7 +37,6 @@ final class FlowCoordinator {
     
     func showNewLanguageModule() {
         let builder = NewLanguageModuleBuilder(output: self)
-        
         let vc = builder.build()
 
         newLangVC = vc
@@ -64,7 +63,6 @@ final class FlowCoordinator {
     }
     
     func showCardsModule() {
-        
         let builder = CardsModuleBuilder(output: self)
         let vc = builder.build()
         navVC?.pushViewController(vc, animated: true)
@@ -73,9 +71,7 @@ final class FlowCoordinator {
     func showWordModule() {
         let builder = WordModuleBuilder(output: self)
         let vc = builder.build()
-        print("aaaaa")
-
-        navVC?.present(vc, animated: true)
+        navVC?.pushViewController(vc, animated: true)
     }
 }
 
@@ -144,4 +140,9 @@ extension FlowCoordinator: CardsPresenterOutput {
     }
 }
 
-extension FlowCoordinator: WordPresenterOutput {}
+extension FlowCoordinator: WordPresenterOutput {
+    
+    func moduleWantsToClose(_ module: WordPresenterInput) {
+        navVC?.dismiss(animated: true)
+    }
+}
