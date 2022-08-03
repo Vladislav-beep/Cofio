@@ -9,7 +9,7 @@ import UIKit
 
 class LanguageTextField: UITextField {
 
-    // MARK: Life Time
+    // MARK: Lifecycle
     
     init() {
         super.init(frame: .zero)
