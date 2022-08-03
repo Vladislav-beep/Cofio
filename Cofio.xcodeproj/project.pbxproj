@@ -21,6 +21,7 @@
 		B93EF8D1289AFADC0057C774 /* WordPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8D0289AFADC0057C774 /* WordPresenterProtocol.swift */; };
 		B93EF8D3289AFB060057C774 /* WordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8D2289AFB060057C774 /* WordInteractor.swift */; };
 		B93EF8D5289AFB2A0057C774 /* WordInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8D4289AFB2A0057C774 /* WordInteractorProtocol.swift */; };
+		B93EF8D7289AFB720057C774 /* WordModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8D6289AFB720057C774 /* WordModuleBuilder.swift */; };
 		B9CC135B288738980013ED76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC135A288738980013ED76 /* AppDelegate.swift */; };
 		B9CC135D288738980013ED76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC135C288738980013ED76 /* SceneDelegate.swift */; };
 		B9CC135F288738980013ED76 /* StartAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC135E288738980013ED76 /* StartAppViewController.swift */; };
@@ -119,6 +120,7 @@
 		B93EF8D0289AFADC0057C774 /* WordPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordPresenterProtocol.swift; sourceTree = "<group>"; };
 		B93EF8D2289AFB060057C774 /* WordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordInteractor.swift; sourceTree = "<group>"; };
 		B93EF8D4289AFB2A0057C774 /* WordInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordInteractorProtocol.swift; sourceTree = "<group>"; };
+		B93EF8D6289AFB720057C774 /* WordModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordModuleBuilder.swift; sourceTree = "<group>"; };
 		B9CC1357288738980013ED76 /* Cofio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cofio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9CC135A288738980013ED76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9CC135C288738980013ED76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -235,20 +237,21 @@
 		B93EF8C5289AF9190057C774 /* Word */ = {
 			isa = PBXGroup;
 			children = (
+				B93EF8D6289AFB720057C774 /* WordModuleBuilder.swift */,
 				B93EF8C8289AF9410057C774 /* Interactor */,
 				B93EF8C7289AF93B0057C774 /* Presenter */,
-				B93EF8C6289AF9360057C774 /* VIew */,
+				B93EF8C6289AF9360057C774 /* View */,
 			);
 			path = Word;
 			sourceTree = "<group>";
 		};
-		B93EF8C6289AF9360057C774 /* VIew */ = {
+		B93EF8C6289AF9360057C774 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				B93EF8CA289AF9910057C774 /* WordViewController.swift */,
 				B93EF8CC289AF9B60057C774 /* WordViewProtocol.swift */,
 			);
-			path = VIew;
+			path = View;
 			sourceTree = "<group>";
 		};
 		B93EF8C7289AF93B0057C774 /* Presenter */ = {
@@ -397,19 +400,19 @@
 				B9CC13BC288F0AC90013ED76 /* NewLanguageModuleBuilder.swift */,
 				B9CC13AF288F07650013ED76 /* Interactor */,
 				B9CC13AE288F075B0013ED76 /* Presenter */,
-				B9CC13AD288F072F0013ED76 /* VIewController */,
+				B9CC13AD288F072F0013ED76 /* View */,
 			);
 			path = NewLanguage;
 			sourceTree = "<group>";
 		};
-		B9CC13AD288F072F0013ED76 /* VIewController */ = {
+		B9CC13AD288F072F0013ED76 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				B9CC13B0288F07BF0013ED76 /* NewLanguageViewController.swift */,
 				B9CC13B6288F094A0013ED76 /* NewLanguageViewProtocol.swift */,
 				B9CC13EA289308960013ED76 /* Views */,
 			);
-			path = VIewController;
+			path = View;
 			sourceTree = "<group>";
 		};
 		B9CC13AE288F075B0013ED76 /* Presenter */ = {
@@ -755,6 +758,7 @@
 				B9CC13AB288EF6FF0013ED76 /* FlowCoordinatorProtocol.swift in Sources */,
 				B9CC13D9289195BF0013ED76 /* LanguagesForPicker.swift in Sources */,
 				B9CC138F288B0AFD0013ED76 /* UITableView+Extension.swift in Sources */,
+				B93EF8D7289AFB720057C774 /* WordModuleBuilder.swift in Sources */,
 				B9CC13B7288F094A0013ED76 /* NewLanguageViewProtocol.swift in Sources */,
 				B9CC13EF28930A8A0013ED76 /* InfoPickerModel.swift in Sources */,
 				B9CC13D3289070E70013ED76 /* TitleLabel.swift in Sources */,

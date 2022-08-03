@@ -7,4 +7,7 @@
 
 protocol CardsPresenterInput: AnyObject {}
 
-protocol CardsPresenterOutput: AnyObject {}
+protocol CardsPresenterOutput: AnyObject {
+    
+    func moduleWantsToOpenWord(_ module: CardsPresenterInput)
+}

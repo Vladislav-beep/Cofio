@@ -10,9 +10,15 @@ final class WordPresenter {
     private let interactor: WordInteractorInput
     
     weak var view: WordViewInput?
-    weak var output: WordInteractorInput?
+    weak var output: WordPresenterOutput?
     
     init(interactor: WordInteractorInput) {
         self.interactor = interactor
     }
 }
+
+extension WordPresenter: WordViewOutput {}
+
+extension WordPresenter: WordPresenterInput {}
+
+extension WordPresenter: WordInteractorOutput {}

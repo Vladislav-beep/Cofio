@@ -20,7 +20,7 @@ final class CardsPresenter {
 extension CardsPresenter: CardsViewOutput {
     
     func viewDidTapRow(_ item: CardCellDataModel) {
-        print("Lol")
+        output?.moduleWantsToOpenWord(self)
     }
     
     func viewDidLoad() {
