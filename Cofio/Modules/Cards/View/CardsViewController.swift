@@ -113,8 +113,4 @@ extension CardsViewController: UITableViewDelegate {
         
         output.viewDidTapRow(item)
     }
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        200
-//    }
 }
