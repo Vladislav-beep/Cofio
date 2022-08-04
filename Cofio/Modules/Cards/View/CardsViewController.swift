@@ -21,12 +21,8 @@ final class CardsViewController: UIViewController {
         return cool
     }()
     
-    private lazy var doneButton: UIButton = {
-        let doneButton = UIButton()
-        doneButton.translatesAutoresizingMaskIntoConstraints = false
-        doneButton.setTitle("Добавить карточку", for: .normal)
-        doneButton.backgroundColor = .darkViolet
-        doneButton.layer.cornerRadius = 15
+    private lazy var doneButton: DoneButton = {
+        let doneButton = DoneButton(title: "Добавить карточку")
         doneButton.addTarget(self, action: #selector(addCard), for: .touchUpInside)
         return doneButton
     }()
@@ -61,6 +57,8 @@ final class CardsViewController: UIViewController {
     }
     
     private func setupViews() {
+        view.backgroundColor = .white
+        
         view.addSubview(cardsTableView)
         NSLayoutConstraint.activate([
             cardsTableView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -82,24 +80,18 @@ final class CardsViewController: UIViewController {
             doneButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40),
             doneButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             doneButton.heightAnchor.constraint(equalToConstant: 56),
-            doneButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            doneButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
     }
     
     private func setupNavigationBar() {
         title = "Карточки"
-        view.backgroundColor = .white
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .add)
         navigationController?.navigationBar.tintColor = UIColor.darkViolet
     }
     
-    @objc func close() {
-        
-    }
-    
     @objc func addCard() {
-        print("vlad")
+        
     }
 }
 

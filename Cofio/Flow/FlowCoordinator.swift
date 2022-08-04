@@ -71,7 +71,8 @@ final class FlowCoordinator {
     func showWordModule() {
         let builder = WordModuleBuilder(output: self)
         let vc = builder.build()
-        navVC?.pushViewController(vc, animated: true)
+        vc.modalPresentationStyle = .fullScreen
+        navVC?.present(vc, animated: true)
     }
 }
 

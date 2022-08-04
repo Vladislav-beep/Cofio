@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B932E944289C402A007244E6 /* DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932E943289C402A007244E6 /* DoneButton.swift */; };
 		B93EF8B428968A8F0057C774 /* CardsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8B328968A8F0057C774 /* CardsViewProtocol.swift */; };
 		B93EF8B628968B150057C774 /* CardCellDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8B528968B150057C774 /* CardCellDataModel.swift */; };
 		B93EF8B828968D210057C774 /* CardsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8B728968D210057C774 /* CardsPresenter.swift */; };
@@ -107,6 +108,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B932E943289C402A007244E6 /* DoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneButton.swift; sourceTree = "<group>"; };
 		B93EF8B328968A8F0057C774 /* CardsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewProtocol.swift; sourceTree = "<group>"; };
 		B93EF8B528968B150057C774 /* CardCellDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCellDataModel.swift; sourceTree = "<group>"; };
 		B93EF8B728968D210057C774 /* CardsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsPresenter.swift; sourceTree = "<group>"; };
@@ -486,6 +488,7 @@
 				B9CC13DC2891B9090013ED76 /* LanguageTextField.swift */,
 				B93EF8C328970C4C0057C774 /* FadeView.swift */,
 				B93EF8D8289AFFD30057C774 /* CloseButton.swift */,
+				B932E943289C402A007244E6 /* DoneButton.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -799,6 +802,7 @@
 				B9CC13CB28906B040013ED76 /* CollectionsInteractor.swift in Sources */,
 				B9CC13CD28906B310013ED76 /* CollectionsInteractorProtocol.swift in Sources */,
 				B9CC14062895A0720013ED76 /* TabBarFlowCoordinator.swift in Sources */,
+				B932E944289C402A007244E6 /* DoneButton.swift in Sources */,
 				B9CC13C228906A2F0013ED76 /* CollectionsViewProtocol.swift in Sources */,
 				B9CC13F52895287B0013ED76 /* AppText.swift in Sources */,
 				B9CC13A0288EE8C10013ED76 /* StartAppPresenterProtocol.swift in Sources */,
