@@ -16,6 +16,7 @@ final class CollectionsViewController: UIViewController {
         let cool = UITableView()
         cool.register(StatisticsCell.self)
         cool.register(CollectionCell.self)
+        cool.register(HeaderCell.self)
         cool.translatesAutoresizingMaskIntoConstraints = false
         cool.separatorStyle = .none
         cool.delegate = self
@@ -56,7 +57,7 @@ final class CollectionsViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        title = "Сборники"
+        title = "Английский язык"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Сменить язык", style: .plain, target: self, action: #selector(close))
         navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .add)
@@ -89,6 +90,9 @@ extension CollectionsViewController: UITableViewDelegate {
         case .statics(_):
             return 220
             
+        case .header(_):
+            return 50
+
         case .card(_):
             return UITableView.automaticDimension
         }
@@ -99,7 +103,7 @@ extension CollectionsViewController: UITableViewDelegate {
         guard let item = tableViewDataSource.itemIdentifier(for: indexPath) else { return }
         
         switch item {
-        case .statics:
+        case .statics, .header:
             break
             
         case .card(let cardsCellDataModel):

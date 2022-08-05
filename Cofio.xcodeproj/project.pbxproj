@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B932E944289C402A007244E6 /* DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932E943289C402A007244E6 /* DoneButton.swift */; };
+		B932E946289DB069007244E6 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932E945289DB069007244E6 /* HeaderCell.swift */; };
 		B93EF8B428968A8F0057C774 /* CardsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8B328968A8F0057C774 /* CardsViewProtocol.swift */; };
 		B93EF8B628968B150057C774 /* CardCellDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8B528968B150057C774 /* CardCellDataModel.swift */; };
 		B93EF8B828968D210057C774 /* CardsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8B728968D210057C774 /* CardsPresenter.swift */; };
@@ -109,6 +110,7 @@
 
 /* Begin PBXFileReference section */
 		B932E943289C402A007244E6 /* DoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneButton.swift; sourceTree = "<group>"; };
+		B932E945289DB069007244E6 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		B93EF8B328968A8F0057C774 /* CardsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewProtocol.swift; sourceTree = "<group>"; };
 		B93EF8B528968B150057C774 /* CardCellDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCellDataModel.swift; sourceTree = "<group>"; };
 		B93EF8B728968D210057C774 /* CardsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsPresenter.swift; sourceTree = "<group>"; };
@@ -595,6 +597,7 @@
 			isa = PBXGroup;
 			children = (
 				B9CC140A2895C00C0013ED76 /* StatisticsCell.swift */,
+				B932E945289DB069007244E6 /* HeaderCell.swift */,
 				B9CC140C2895C1100013ED76 /* CollectionCell.swift */,
 			);
 			path = Cells;
@@ -781,6 +784,7 @@
 				B9CC13DD2891B9090013ED76 /* LanguageTextField.swift in Sources */,
 				B9CC13E32891D5F10013ED76 /* CardCollection.swift in Sources */,
 				B9CC13A4288EEAA70013ED76 /* StartAppViewProtocol.swift in Sources */,
+				B932E946289DB069007244E6 /* HeaderCell.swift in Sources */,
 				B9CC135F288738980013ED76 /* StartAppViewController.swift in Sources */,
 				B93EF8CB289AF9910057C774 /* WordViewController.swift in Sources */,
 				B9CC13B5288F087A0013ED76 /* NewLanguageProtocol.swift in Sources */,

@@ -31,6 +31,7 @@ extension CollectionsPresenter: CollectionsViewOutput {
     func viewDidLoad() {
         var models: [CollectionsCellsDataModel] = [
             .statics(.init(title: "LOL")),
+            .header(.init(title: "Сборники")),
             .card(.init(title: "Кухня", cardsCount: 2, repeats: 0)),
             .card(.init(title: "Автомобиль", cardsCount: 5, repeats: 7)),
             .card(.init(title: "Домашние дела", cardsCount: 1, repeats: 1)),

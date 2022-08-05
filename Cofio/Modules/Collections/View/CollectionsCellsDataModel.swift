@@ -7,10 +7,15 @@
 
 enum CollectionsCellsDataModel: Hashable {
     case statics(StaticsCellDataModel)
+    case header(HeaderCellDataModel)
     case card(CollectionsCellDataModel)
 }
 
 struct StaticsCellDataModel: Hashable {
+    let title: String
+}
+
+struct HeaderCellDataModel: Hashable {
     let title: String
 }
 
