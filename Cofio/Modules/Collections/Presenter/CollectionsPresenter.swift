@@ -19,25 +19,18 @@ final class CollectionsPresenter {
 
 extension CollectionsPresenter: CollectionsViewOutput {
     
+    func viewDidLoad() {
+        let data = DymmyData.getCollectionCells()
+        view?.updateData(with: data)
+        view?.setupNavBarTitle(with: "Финский язык")
+    }
+    
     func viewDidTapClose() {
         output?.moduleWantsToClose(self)
     }
     
     func viewDidTapRow(_ item: CollectionsCellDataModel) {
         output?.moduleWantsToOpenCards(self)
-    }
-    
-    
-    func viewDidLoad() {
-        var models: [CollectionsCellsDataModel] = [
-            .statics(.init(title: "LOL")),
-            .header(.init(title: "Сборники")),
-            .card(.init(title: "Кухня", cardsCount: 2, repeats: 0)),
-            .card(.init(title: "Автомобиль", cardsCount: 5, repeats: 7)),
-            .card(.init(title: "Домашние дела", cardsCount: 1, repeats: 1)),
-            .card(.init(title: "Путешествия", cardsCount: 0, repeats: 7))
-        ]
-        view?.updateData(with: models)
     }
 }
 

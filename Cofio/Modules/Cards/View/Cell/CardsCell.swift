@@ -25,37 +25,37 @@ final class CardsCell: UITableViewCell {
     }()
     
     private lazy var titleLabel: UILabel = {
-        let title = UILabel()
-        title.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        title.numberOfLines = 1
-        title.text = "Слово:"
-        title.translatesAutoresizingMaskIntoConstraints = false
-        return title
+        let titleLabel = UILabel()
+        titleLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        titleLabel.numberOfLines = 1
+        titleLabel.text = "Слово:"
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        return titleLabel
     }()
     
     private lazy var wordLabel: UILabel = {
-        let title = UILabel()
-        title.font = UIFont.systemFont(ofSize: 22, weight: .bold)
-        title.numberOfLines = 0
-        title.translatesAutoresizingMaskIntoConstraints = false
-        return title
+        let wordLabel = UILabel()
+        wordLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+        wordLabel.numberOfLines = 0
+        wordLabel.translatesAutoresizingMaskIntoConstraints = false
+        return wordLabel
     }()
     
     private lazy var subtitleLabel: UILabel = {
-        let title = UILabel()
-        title.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        title.numberOfLines = 1
-        title.text = "Перевод:"
-        title.translatesAutoresizingMaskIntoConstraints = false
-        return title
+        let subtitleLabel = UILabel()
+        subtitleLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        subtitleLabel.numberOfLines = 1
+        subtitleLabel.text = "Перевод:"
+        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        return subtitleLabel
     }()
     
     private lazy var translationLabel: UILabel = {
-        let title = UILabel()
-        title.font = UIFont.systemFont(ofSize: 22, weight: .bold)
-        title.numberOfLines = 0
-        title.translatesAutoresizingMaskIntoConstraints = false
-        return title
+        let translationLabel = UILabel()
+        translationLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+        translationLabel.numberOfLines = 0
+        translationLabel.translatesAutoresizingMaskIntoConstraints = false
+        return translationLabel
     }()
     
     
@@ -113,6 +113,7 @@ final class CardsCell: UITableViewCell {
             translationLabel.bottomAnchor.constraint(equalTo: lowerView.bottomAnchor, constant: -12),
         ])
     }
+    
     
     // MARK: Public
     

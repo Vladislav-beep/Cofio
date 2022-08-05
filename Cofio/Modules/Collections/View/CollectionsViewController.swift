@@ -13,14 +13,14 @@ final class CollectionsViewController: UIViewController {
     private let dataSource: CollectionsTableViewDataSourceProtocol
     
     private lazy var collectionCardsTableView: UITableView = {
-        let cool = UITableView()
-        cool.register(StatisticsCell.self)
-        cool.register(CollectionCell.self)
-        cool.register(HeaderCell.self)
-        cool.translatesAutoresizingMaskIntoConstraints = false
-        cool.separatorStyle = .none
-        cool.delegate = self
-        return cool
+        let tableView = UITableView()
+        tableView.register(StatisticsCell.self)
+        tableView.register(CollectionCell.self)
+        tableView.register(HeaderCell.self)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.separatorStyle = .none
+        tableView.delegate = self
+        return tableView
     }()
     
     private lazy var tableViewDataSource = dataSource.makeDataSource(for: collectionCardsTableView)
@@ -57,7 +57,6 @@ final class CollectionsViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        title = "Английский язык"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Сменить язык", style: .plain, target: self, action: #selector(close))
         navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .add)
@@ -77,6 +76,10 @@ extension CollectionsViewController: CollectionsViewInput {
         snapshot.appendSections([0])
         snapshot.appendItems(data, toSection: 0)
         tableViewDataSource.apply(snapshot, animatingDifferences: true)
+    }
+    
+    func setupNavBarTitle(with title: String) {
+        navigationItem.title = title
     }
 }
 

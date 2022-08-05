@@ -19,11 +19,11 @@ final class HeaderCell: UITableViewCell {
     // MARK: Private properties
     
     private lazy var titleLabel: UILabel = {
-        let title = UILabel()
-        title.font = UIFont.systemFont(ofSize: 28, weight: .bold)
-        title.numberOfLines = 0
-        title.translatesAutoresizingMaskIntoConstraints = false
-        return title
+        let titleLabel = UILabel()
+        titleLabel.font = UIFont.systemFont(ofSize: 28, weight: .bold)
+        titleLabel.numberOfLines = 0
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        return titleLabel
     }()
     
     

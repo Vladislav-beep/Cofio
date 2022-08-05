@@ -25,30 +25,30 @@ final class LanguageCell: UITableViewCell {
     }()
     
     private lazy var titleLabel: UILabel = {
-        let title = UILabel()
-        title.font = UIFont.systemFont(ofSize: 22, weight: .bold)
-        title.numberOfLines = 0
-        title.numberOfLines = 1
-        title.translatesAutoresizingMaskIntoConstraints = false
-        return title
+        let titleLabel = UILabel()
+        titleLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+        titleLabel.numberOfLines = 0
+        titleLabel.numberOfLines = 1
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        return titleLabel
     }()
     
     private lazy var subtitleLabel: UILabel = {
-        let title = UILabel()
-        title.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        title.numberOfLines = 0
-        title.numberOfLines = 1
-        title.translatesAutoresizingMaskIntoConstraints = false
-        return title
+        let subtitleLabel = UILabel()
+        subtitleLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        subtitleLabel.numberOfLines = 0
+        subtitleLabel.numberOfLines = 1
+        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        return subtitleLabel
     }()
     
     private lazy var iconView: UIImageView = {
-        let image = UIImageView()
-        image.contentMode = .scaleAspectFill
-        image.clipsToBounds = true
-        image.layer.cornerRadius = 15
-        image.translatesAutoresizingMaskIntoConstraints = false
-        return image
+        let iconView = UIImageView()
+        iconView.contentMode = .scaleAspectFill
+        iconView.clipsToBounds = true
+        iconView.layer.cornerRadius = 15
+        iconView.translatesAutoresizingMaskIntoConstraints = false
+        return iconView
     }()
     
     

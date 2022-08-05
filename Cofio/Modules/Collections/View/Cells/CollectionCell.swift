@@ -28,44 +28,44 @@ final class CollectionCell: UITableViewCell {
     }()
     
     private lazy var gradient: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 12
-        view.backgroundColor = .lightViolet
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+        let gradient = UIView()
+        gradient.layer.cornerRadius = 12
+        gradient.backgroundColor = .lightViolet
+        gradient.translatesAutoresizingMaskIntoConstraints = false
+        return gradient
     }()
     
     private lazy var clearView: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 20
-        view.backgroundColor = .clear
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+        let clearView = UIView()
+        clearView.layer.cornerRadius = 20
+        clearView.backgroundColor = .clear
+        clearView.translatesAutoresizingMaskIntoConstraints = false
+        return clearView
     }()
     
     private lazy var titleLabel: UILabel = {
-        let title = UILabel()
-        title.font = UIFont.systemFont(ofSize: 22, weight: .bold)
-        title.numberOfLines = 0
-        title.translatesAutoresizingMaskIntoConstraints = false
-        return title
+        let titleLabel = UILabel()
+        titleLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+        titleLabel.numberOfLines = 0
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        return titleLabel
     }()
     
     private lazy var subtitleLabel: UILabel = {
-        let title = UILabel()
-        title.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        title.numberOfLines = 1
-        title.translatesAutoresizingMaskIntoConstraints = false
-        return title
+        let subtitleLabel = UILabel()
+        subtitleLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        subtitleLabel.numberOfLines = 1
+        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        return subtitleLabel
     }()
     
     private lazy var persentLabel: UILabel = {
-        let title = UILabel()
-        title.font = UIFont.systemFont(ofSize: 24, weight: .bold)
-        title.numberOfLines = 1
-        title.textAlignment = .center
-        title.translatesAutoresizingMaskIntoConstraints = false
-        return title
+        let persentLabel = UILabel()
+        persentLabel.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+        persentLabel.numberOfLines = 1
+        persentLabel.textAlignment = .center
+        persentLabel.translatesAutoresizingMaskIntoConstraints = false
+        return persentLabel
     }()
     
     

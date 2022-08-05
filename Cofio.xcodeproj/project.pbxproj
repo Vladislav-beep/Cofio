@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B932E944289C402A007244E6 /* DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932E943289C402A007244E6 /* DoneButton.swift */; };
 		B932E946289DB069007244E6 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932E945289DB069007244E6 /* HeaderCell.swift */; };
+		B932E948289DB365007244E6 /* StartAppCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932E947289DB365007244E6 /* StartAppCellViewModel.swift */; };
+		B932E94A289DBD95007244E6 /* HorizontalProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932E949289DBD95007244E6 /* HorizontalProgressBar.swift */; };
 		B93EF8B428968A8F0057C774 /* CardsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8B328968A8F0057C774 /* CardsViewProtocol.swift */; };
 		B93EF8B628968B150057C774 /* CardCellDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8B528968B150057C774 /* CardCellDataModel.swift */; };
 		B93EF8B828968D210057C774 /* CardsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8B728968D210057C774 /* CardsPresenter.swift */; };
@@ -111,6 +113,8 @@
 /* Begin PBXFileReference section */
 		B932E943289C402A007244E6 /* DoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneButton.swift; sourceTree = "<group>"; };
 		B932E945289DB069007244E6 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		B932E947289DB365007244E6 /* StartAppCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartAppCellViewModel.swift; sourceTree = "<group>"; };
+		B932E949289DBD95007244E6 /* HorizontalProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalProgressBar.swift; sourceTree = "<group>"; };
 		B93EF8B328968A8F0057C774 /* CardsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewProtocol.swift; sourceTree = "<group>"; };
 		B93EF8B528968B150057C774 /* CardCellDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCellDataModel.swift; sourceTree = "<group>"; };
 		B93EF8B728968D210057C774 /* CardsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsPresenter.swift; sourceTree = "<group>"; };
@@ -360,6 +364,7 @@
 				B9CC135E288738980013ED76 /* StartAppViewController.swift */,
 				B9CC13A3288EEAA70013ED76 /* StartAppViewProtocol.swift */,
 				B9CC13F22894506E0013ED76 /* LanguageTableViewDataSource.swift */,
+				B932E947289DB365007244E6 /* StartAppCellViewModel.swift */,
 				B9CC1397288EE6420013ED76 /* Cells */,
 			);
 			path = ViewController;
@@ -491,6 +496,7 @@
 				B93EF8C328970C4C0057C774 /* FadeView.swift */,
 				B93EF8D8289AFFD30057C774 /* CloseButton.swift */,
 				B932E943289C402A007244E6 /* DoneButton.swift */,
+				B932E949289DBD95007244E6 /* HorizontalProgressBar.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -811,6 +817,7 @@
 				B9CC13F52895287B0013ED76 /* AppText.swift in Sources */,
 				B9CC13A0288EE8C10013ED76 /* StartAppPresenterProtocol.swift in Sources */,
 				B93EF8B428968A8F0057C774 /* CardsViewProtocol.swift in Sources */,
+				B932E948289DB365007244E6 /* StartAppCellViewModel.swift in Sources */,
 				B9CC13A8288EF56D0013ED76 /* FlowCoordinator.swift in Sources */,
 				B9CC13BB288F0A000013ED76 /* NewLanguageInteractorProtocol.swift in Sources */,
 				B93EF8CD289AF9B60057C774 /* WordViewProtocol.swift in Sources */,
@@ -838,6 +845,7 @@
 				B9CC141A2896878E0013ED76 /* CardsTableViewDataSource.swift in Sources */,
 				B9CC1394288B15F00013ED76 /* UIColor+Extension.swift in Sources */,
 				B9CC13E12891D5C60013ED76 /* Language.swift in Sources */,
+				B932E94A289DBD95007244E6 /* HorizontalProgressBar.swift in Sources */,
 				B9CC13BD288F0AC90013ED76 /* NewLanguageModuleBuilder.swift in Sources */,
 				B9CC13B9288F09D10013ED76 /* NewLanguageInteractor.swift in Sources */,
 				B9CC13C928906ACC0013ED76 /* CollectionsPresenterProtocol.swift in Sources */,

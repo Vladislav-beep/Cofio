@@ -123,7 +123,6 @@ final class WordViewController: UIViewController {
     }
     
     @objc func addWord() {
-        print("rvwrv")
     }
 }
 

@@ -72,4 +72,39 @@ final class DymmyData {
         
         return data
     }
+    
+    
+    static func getLanguages() -> [StartAppCellViewModel] {
+        
+        return [
+            .init(title: "Английский", collectionsCount: 0),
+            .init(title: "Финский", collectionsCount: 1),
+            .init(title: "Японский", collectionsCount: 2),
+            .init(title: "Немецкий", collectionsCount: 3),
+            .init(title: "Арабский", collectionsCount: 4),
+            .init(title: "Хинди", collectionsCount: 5)
+        ]
+    }
+    
+    static func getCollectionCells() -> [CollectionsCellsDataModel] {
+        return [
+            .statics(.init(title: "LOL")),
+            .header(.init(title: "Сборники")),
+            .card(.init(title: "Кухня", cardsCount: 2, repeats: 0)),
+            .card(.init(title: "Автомобиль", cardsCount: 5, repeats: 7)),
+            .card(.init(title: "Домашние дела", cardsCount: 1, repeats: 1)),
+            .card(.init(title: "Путешествия", cardsCount: 0, repeats: 7))
+        ]
+    }
+    
+    static func getCardCellDataModel() -> [CardCellDataModel] {
+        return [
+            .init(meaning: "Dog", translation: "Собака"),
+            .init(meaning: "Aggregation", translation: "Агрегат"),
+            .init(meaning: "sgrbgsv dsvss sdvsd advadv svsvsv svvddsvsvd", translation: "sbvsdv"),
+            .init(meaning: "favdvavda", translation: "avdavdvadva"),
+            .init(meaning: "davadvad", translation: "svdvsvs"),
+            .init(meaning: "svsvvsvs", translation: "vavsd")
+        ]
+    }
 }

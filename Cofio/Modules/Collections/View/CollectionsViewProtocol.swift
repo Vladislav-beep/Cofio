@@ -8,6 +8,7 @@
 protocol CollectionsViewInput: AnyObject {
     
     func updateData(with data: [CollectionsCellsDataModel])
+    func setupNavBarTitle(with title: String)
 }
 
 protocol CollectionsViewOutput: AnyObject {

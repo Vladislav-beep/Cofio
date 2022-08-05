@@ -10,7 +10,6 @@ final class StartAppInteractor {
     // MARK: Properties
     
     weak var output: StartAppInteractorOutput?
-    
 }
 
 

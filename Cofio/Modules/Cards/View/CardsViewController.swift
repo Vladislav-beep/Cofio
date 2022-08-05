@@ -13,12 +13,12 @@ final class CardsViewController: UIViewController {
     private let dataSource: CardsTableViewDataSourceProtocol
     
     private lazy var cardsTableView: UITableView = {
-        let cool = UITableView()
-        cool.register(CardsCell.self)
-        cool.translatesAutoresizingMaskIntoConstraints = false
-        cool.separatorStyle = .none
-        cool.delegate = self
-        return cool
+        let tableView = UITableView()
+        tableView.register(CardsCell.self)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.separatorStyle = .none
+        tableView.delegate = self
+        return tableView
     }()
     
     private lazy var doneButton: DoneButton = {

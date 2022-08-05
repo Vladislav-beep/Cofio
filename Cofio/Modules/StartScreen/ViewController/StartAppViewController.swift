@@ -26,12 +26,12 @@ class StartAppViewController: UIViewController {
     }()
     
     private lazy var languagesTableView: UITableView = {
-        let cool = UITableView()
-        cool.register(LanguageCell.self)
-        cool.translatesAutoresizingMaskIntoConstraints = false
-        cool.separatorStyle = .none
-        cool.delegate = self
-        return cool
+        let tableview = UITableView()
+        tableview.register(LanguageCell.self)
+        tableview.translatesAutoresizingMaskIntoConstraints = false
+        tableview.separatorStyle = .none
+        tableview.delegate = self
+        return tableview
     }()
     
     private lazy var fadeView: FadeView = {
@@ -74,7 +74,7 @@ class StartAppViewController: UIViewController {
         super.viewDidLoad()
        
         setupViews()
-        updateView()
+        output.viewDidLoad()
     }
     
     
@@ -135,10 +135,8 @@ class StartAppViewController: UIViewController {
 
 extension StartAppViewController: StartAppViewInput {
     
-    func updateView() {
-        let data = DymmyData.getDymmyData()
-        
-        var snapshot = NSDiffableDataSourceSnapshot<Int, Language>()
+    func updateView(with data: [StartAppCellViewModel]) {
+        var snapshot = NSDiffableDataSourceSnapshot<Int, StartAppCellViewModel>()
         snapshot.appendSections([0])
         snapshot.appendItems(data, toSection: 0)
         tableViewDataSource.apply(snapshot)

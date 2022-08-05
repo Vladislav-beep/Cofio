@@ -24,17 +24,8 @@ extension CardsPresenter: CardsViewOutput {
     }
     
     func viewDidLoad() {
-        
-        var models: [CardCellDataModel] = [
-            .init(meaning: "Dog", translation: "Собака"),
-            .init(meaning: "Aggregation", translation: "Агрегат"),
-            .init(meaning: "sgrbgsv dsvss sdvsd advadv svsvsv svvddsvsvd", translation: "sbvsdv"),
-            .init(meaning: "favdvavda", translation: "avdavdvadva"),
-            .init(meaning: "davadvad", translation: "svdvsvs"),
-            .init(meaning: "svsvvsvs", translation: "vavsd")
-        ]
-        
-        view?.updateData(with: models)
+        let data = DymmyData.getCardCellDataModel()
+        view?.updateData(with: data)
     }
 }
 

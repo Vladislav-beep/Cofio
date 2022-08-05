@@ -24,9 +24,9 @@ final class CollectionsTableViewDataSource: CollectionsTableViewDataSourceProtoc
                 cell.configure(with: displayData)
                 return cell
                 
-            case .header(_):
+            case .header(let model):
                 let cell = tableview.reuse(HeaderCell.self, indexPath)
-                let displayData = HeaderCell.DisplayData(title: "Сборники")
+                let displayData = HeaderCell.DisplayData(title: model.title)
                 cell.configure(with: displayData)
                 return cell
                 

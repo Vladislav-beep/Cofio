@@ -30,10 +30,15 @@ final class StartAppPresenter {
 
 extension StartAppPresenter: StartAppViewOutput {
     
-    func viewDidTapRow(_ type: Language) {
-        output?.moduleWantsToOpenTabbar(self)
+    func viewDidLoad() {
+        let data = DymmyData.getLanguages()
+        
+        view?.updateView(with: data)
     }
     
+    func viewDidTapRow(_ type: StartAppCellViewModel) {
+        output?.moduleWantsToOpenTabbar(self)
+    }
     
     func addNewLanguage() {
         output?.moduleWantsToAddNewLanguage(self)

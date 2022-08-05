@@ -7,11 +7,12 @@
 
 protocol StartAppViewInput: AnyObject {
     
-    func updateView()
+    func updateView(with data: [StartAppCellViewModel])
 }
 
 protocol StartAppViewOutput: AnyObject {
     
+    func viewDidLoad()
+    func viewDidTapRow(_ type: StartAppCellViewModel)
     func addNewLanguage()
-    func viewDidTapRow(_ type: Language)
 }
