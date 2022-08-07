@@ -22,6 +22,14 @@ final class StatisticsCell: UITableViewCell {
         view.backgroundColor = .darkOrange
         return view
     }()
+    
+    private lazy var progress: HorizontalProgressBar = {
+        let progress = HorizontalProgressBar()
+        progress.backgroundColor = .blue
+        progress.progress = 0.3
+        progress.translatesAutoresizingMaskIntoConstraints = false
+        return progress
+    }()
 
     
     // MARK: Lifecycle
@@ -47,11 +55,25 @@ final class StatisticsCell: UITableViewCell {
             lowerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             lowerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15),
         ])
+        
+        lowerView.addSubview(progress)
+        NSLayoutConstraint.activate([
+            progress.topAnchor.constraint(equalTo: lowerView.topAnchor, constant: 20),
+            progress.leadingAnchor.constraint(equalTo: lowerView.leadingAnchor, constant: 16),
+            progress.trailingAnchor.constraint(equalTo: lowerView.trailingAnchor, constant: -16),
+            progress.heightAnchor.constraint(equalToConstant: 30)
+        ])
+        
     }
     
     // MARK: Public
     
     func configure(with displayData: DisplayData) {
-     //   titleLabel.text = displayData.title
+        UIView.animate(withDuration: 2, delay: 1, options: .autoreverse) {
+            self.progress.progress = 0.8
+        } completion: { _ in
+
+        }
+
     }
 }
