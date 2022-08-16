@@ -41,6 +41,14 @@ final class RepetitionCell: UITableViewCell {
         return subtitleLabel
     }()
     
+    private lazy var dateLabel: UILabel = {
+        let subtitleLabel = UILabel()
+        subtitleLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        subtitleLabel.numberOfLines = 1
+        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        return subtitleLabel
+    }()
+    
     
     // MARK: Lifecycle
     
@@ -70,15 +78,22 @@ final class RepetitionCell: UITableViewCell {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: lowerView.topAnchor, constant: 16),
             titleLabel.leadingAnchor.constraint(equalTo: lowerView.leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: lowerView.trailingAnchor, constant: -12),
+            titleLabel.trailingAnchor.constraint(equalTo: lowerView.trailingAnchor, constant: -12)
         ])
         
         lowerView.addSubview(subtitleLabel)
         NSLayoutConstraint.activate([
-            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
+            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
             subtitleLabel.leadingAnchor.constraint(equalTo: lowerView.leadingAnchor, constant: 16),
-            subtitleLabel.trailingAnchor.constraint(equalTo: lowerView.trailingAnchor, constant: -12),
-            subtitleLabel.bottomAnchor.constraint(equalTo: lowerView.bottomAnchor, constant: -16)
+            subtitleLabel.trailingAnchor.constraint(equalTo: lowerView.trailingAnchor, constant: -12)
+        ])
+        
+        lowerView.addSubview(dateLabel)
+        NSLayoutConstraint.activate([
+            dateLabel.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 5),
+            dateLabel.leadingAnchor.constraint(equalTo: lowerView.leadingAnchor, constant: 16),
+            dateLabel.trailingAnchor.constraint(equalTo: lowerView.trailingAnchor, constant: -12),
+            dateLabel.bottomAnchor.constraint(equalTo: lowerView.bottomAnchor, constant: -16)
         ])
     }
     
@@ -87,6 +102,12 @@ final class RepetitionCell: UITableViewCell {
     
     func configure(with displayData: DisplayData) {
         titleLabel.text = displayData.title
-        subtitleLabel.text = displayData.nextRepeat
+        dateLabel.text = displayData.nextRepeat
+        if displayData.repeats == 7 {
+            subtitleLabel.text = "Последнее повторение!"
+            dateLabel.isHidden = true
+        } else {
+            subtitleLabel.text = "Следующее повторение"
+        }
     }
 }
