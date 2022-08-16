@@ -5,6 +5,12 @@
 //  Created by Владислав Сизонов on 16.08.2022.
 //
 
-protocol RepetitionViewInput: AnyObject {}
+protocol RepetitionViewInput: AnyObject {
+    
+    func updateData(with data: [RepetitionCellDataModel])
+}
 
-protocol RepetitionViewOutput: AnyObject {}
+protocol RepetitionViewOutput: AnyObject {
+    
+    func viewDidLoad()
+}

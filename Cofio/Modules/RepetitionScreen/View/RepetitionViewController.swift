@@ -45,6 +45,8 @@ final class RepetitionViewController: UIViewController {
         
         setupViews()
         setupNavigationBar()
+        
+        output.viewDidLoad()
     }
     
     private func setupViews() {
@@ -66,6 +68,14 @@ final class RepetitionViewController: UIViewController {
 }
 
 
-extension RepetitionViewController: RepetitionViewInput {}
+extension RepetitionViewController: RepetitionViewInput {
+    
+    func updateData(with data: [RepetitionCellDataModel]) {
+        var snapshot = NSDiffableDataSourceSnapshot<Int, RepetitionCellDataModel>()
+        snapshot.appendSections([0])
+        snapshot.appendItems(data, toSection: 0)
+        tableViewDataSource.apply(snapshot, animatingDifferences: true)
+    }
+}
 
 extension RepetitionViewController: UITableViewDelegate {}

@@ -107,4 +107,13 @@ final class DymmyData {
             .init(meaning: "svsvvsvs", translation: "vavsd")
         ]
     }
+    
+    static func getRepetitionCellDataModel() -> [RepetitionCellDataModel] {
+        return [
+            .init(title: "Кухня", repeats: 1, nextRepeat: "13 июля"),
+            .init(title: "Автомобиль", repeats: 2, nextRepeat: "7 марта"),
+            .init(title: "Домашние дела", repeats: 3, nextRepeat: "9 января"),
+            .init(title: "Путешествия", repeats: 8, nextRepeat: "28 ноября")
+        ]
+    }
 }

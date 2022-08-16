@@ -17,7 +17,13 @@ final class RepetitionPresenter {
     }
 }
 
-extension RepetitionPresenter: RepetitionViewOutput {}
+extension RepetitionPresenter: RepetitionViewOutput {
+    
+    func viewDidLoad() {
+        let data = DymmyData.getRepetitionCellDataModel()
+        view?.updateData(with: data)
+    }
+}
 
 extension RepetitionPresenter: RepetitionPresenterInput {}
 
