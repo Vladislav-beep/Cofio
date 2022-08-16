@@ -19,30 +19,13 @@ final class CollectionCell: UITableViewCell {
     
     
     // MARK: Private properties
-    
-    private lazy var trailingConstraint: NSLayoutConstraint = gradient.widthAnchor.constraint(equalToConstant: 100)
-    
+
     private lazy var lowerView: LowerView = {
         let view = LowerView()
+        view.layer.cornerRadius = 12
         return view
     }()
-    
-    private lazy var gradient: UIView = {
-        let gradient = UIView()
-        gradient.layer.cornerRadius = 12
-        gradient.backgroundColor = .lightViolet
-        gradient.translatesAutoresizingMaskIntoConstraints = false
-        return gradient
-    }()
-    
-    private lazy var clearView: UIView = {
-        let clearView = UIView()
-        clearView.layer.cornerRadius = 20
-        clearView.backgroundColor = .clear
-        clearView.translatesAutoresizingMaskIntoConstraints = false
-        return clearView
-    }()
-    
+
     private lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
@@ -61,11 +44,20 @@ final class CollectionCell: UITableViewCell {
     
     private lazy var persentLabel: UILabel = {
         let persentLabel = UILabel()
-        persentLabel.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+        persentLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         persentLabel.numberOfLines = 1
         persentLabel.textAlignment = .center
         persentLabel.translatesAutoresizingMaskIntoConstraints = false
         return persentLabel
+    }()
+    
+    private lazy var progressView: HorizontalProgressBar = {
+        let progress = HorizontalProgressBar()
+        progress.backgroundColor = .white
+        progress.layer.borderWidth = 1
+        progress.layer.borderColor = UIColor.darkViolet.cgColor
+        progress.translatesAutoresizingMaskIntoConstraints = false
+        return progress
     }()
     
     
@@ -94,43 +86,35 @@ final class CollectionCell: UITableViewCell {
             lowerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
         ])
         
-        lowerView.addSubview(gradient)
+        lowerView.addSubview(persentLabel)
         NSLayoutConstraint.activate([
-            gradient.topAnchor.constraint(equalTo: lowerView.topAnchor, constant: 0),
-            gradient.leadingAnchor.constraint(equalTo: lowerView.leadingAnchor, constant: 0),
-            trailingConstraint,
-            gradient.bottomAnchor.constraint(equalTo: lowerView.bottomAnchor, constant: 0),
-        ])
-        
-        lowerView.addSubview(clearView)
-        NSLayoutConstraint.activate([
-            clearView.topAnchor.constraint(equalTo: lowerView.topAnchor, constant: 0),
-            clearView.leadingAnchor.constraint(equalTo: lowerView.leadingAnchor, constant: 0),
-            clearView.trailingAnchor.constraint(equalTo: lowerView.trailingAnchor, constant: 0),
-            clearView.bottomAnchor.constraint(equalTo: lowerView.bottomAnchor, constant: 0),
-        ])
-        
-        clearView.addSubview(persentLabel)
-        NSLayoutConstraint.activate([
-            persentLabel.topAnchor.constraint(equalTo: clearView.topAnchor, constant: 10),
-            persentLabel.bottomAnchor.constraint(equalTo: clearView.bottomAnchor, constant: -16),
-            persentLabel.trailingAnchor.constraint(equalTo: clearView.trailingAnchor, constant: -12),
+            persentLabel.topAnchor.constraint(equalTo: lowerView.topAnchor, constant: 10),
+            persentLabel.bottomAnchor.constraint(equalTo: lowerView.bottomAnchor, constant: -16),
+            persentLabel.trailingAnchor.constraint(equalTo: lowerView.trailingAnchor, constant: -12),
             persentLabel.heightAnchor.constraint(equalTo: persentLabel.widthAnchor)
         ])
         
-        clearView.addSubview(titleLabel)
+        lowerView.addSubview(titleLabel)
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: clearView.topAnchor, constant: 16),
-            titleLabel.leadingAnchor.constraint(equalTo: clearView.leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: clearView.trailingAnchor, constant: -12),
+            titleLabel.topAnchor.constraint(equalTo: lowerView.topAnchor, constant: 16),
+            titleLabel.leadingAnchor.constraint(equalTo: lowerView.leadingAnchor, constant: 16),
+            titleLabel.trailingAnchor.constraint(equalTo: lowerView.trailingAnchor, constant: -12),
         ])
         
-        clearView.addSubview(subtitleLabel)
+        lowerView.addSubview(subtitleLabel)
         NSLayoutConstraint.activate([
             subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
-            subtitleLabel.leadingAnchor.constraint(equalTo: clearView.leadingAnchor, constant: 16),
-            subtitleLabel.trailingAnchor.constraint(equalTo: clearView.trailingAnchor, constant: -12),
-            subtitleLabel.bottomAnchor.constraint(equalTo: clearView.bottomAnchor, constant: -16)
+            subtitleLabel.leadingAnchor.constraint(equalTo: lowerView.leadingAnchor, constant: 16),
+            subtitleLabel.trailingAnchor.constraint(equalTo: lowerView.trailingAnchor, constant: -12),
+            subtitleLabel.bottomAnchor.constraint(equalTo: lowerView.bottomAnchor, constant: -16)
+        ])
+        
+        lowerView.addSubview(progressView)
+        NSLayoutConstraint.activate([
+            progressView.leadingAnchor.constraint(equalTo: lowerView.leadingAnchor, constant: 16),
+            progressView.trailingAnchor.constraint(equalTo: lowerView.trailingAnchor, constant: -16),
+            progressView.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 4),
+            progressView.bottomAnchor.constraint(equalTo: lowerView.bottomAnchor, constant: -6)
         ])
     }
     
@@ -159,12 +143,13 @@ final class CollectionCell: UITableViewCell {
     }
     
     private func updateProgress(with progress: Int) {
-        if progress == 0 {
-            trailingConstraint.constant = CGFloat(12)
+        var k = 0.0
+        if progress == 8 {
+            k = 1.0
         } else {
-            let screenWidth = UIScreen.main.bounds.width - 32
-            trailingConstraint.constant = screenWidth / 7 * CGFloat(progress)
+            k = Double(100 / 8 * progress) / 100
         }
+        progressView.progress = CGFloat(k)
     }
     
     
@@ -172,10 +157,10 @@ final class CollectionCell: UITableViewCell {
     
     func configure(with displayData: DisplayData) {
         titleLabel.text = displayData.title
-        if displayData.repeats == 7 {
+        if displayData.repeats == 8 {
             persentLabel.text = "100 %"
         } else {
-            persentLabel.text = String(100 / 7 * displayData.repeats) + " %"
+            persentLabel.text = String(100 / 8 * displayData.repeats) + " %"
         }
         configureSubtitleLabel(with: displayData.cardsCount)
         updateProgress(with: displayData.repeats)

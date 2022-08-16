@@ -19,30 +19,18 @@ final class WordViewController: UIViewController {
         return closeButton
     }()
     
-    private lazy var wordTextView: UITextView = {
-        let wordTextView = UITextView()
-        wordTextView.layer.cornerRadius = 10
-        wordTextView.backgroundColor = .orange
-        wordTextView.font = UIFont.systemFont(ofSize: 18)
-        wordTextView.translatesAutoresizingMaskIntoConstraints = false
+    private let wordTextView: WordTextView = {
+        let wordTextView = WordTextView()
         return wordTextView
     }()
     
-    private lazy var translationTextView: UITextView = {
-        let translationTextView = UITextView()
-        translationTextView.layer.cornerRadius = 10
-        translationTextView.backgroundColor = .orange
-        translationTextView.font = UIFont.systemFont(ofSize: 18)
-        translationTextView.translatesAutoresizingMaskIntoConstraints = false
+    private let translationTextView: WordTextView = {
+        let translationTextView = WordTextView()
         return translationTextView
     }()
     
-    private lazy var sentenceTextView: UITextView = {
-        let sentenceTextView = UITextView()
-        sentenceTextView.layer.cornerRadius = 10
-        sentenceTextView.backgroundColor = .orange
-        sentenceTextView.font = UIFont.systemFont(ofSize: 18)
-        sentenceTextView.translatesAutoresizingMaskIntoConstraints = false
+    private let sentenceTextView: WordTextView = {
+        let sentenceTextView = WordTextView()
         return sentenceTextView
     }()
     
