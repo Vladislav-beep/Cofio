@@ -19,6 +19,10 @@ final class CollectionsPresenter {
 
 extension CollectionsPresenter: CollectionsViewOutput {
     
+    func openRepetition() {
+        output?.moduleWantsToOpenRepetition(self)
+    }
+    
     func viewDidLoad() {
         let data = DymmyData.getCollectionCells()
         view?.updateData(with: data)

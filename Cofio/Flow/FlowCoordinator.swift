@@ -74,6 +74,14 @@ final class FlowCoordinator {
         vc.modalPresentationStyle = .fullScreen
         navVC?.present(vc, animated: true)
     }
+    
+    func showRepetitonModule() {
+        let builder = RepetitionModuleBuilder(output: self)
+        let vc = builder.build()
+        let nav1 = UINavigationController(rootViewController: vc)
+        nav1.modalPresentationStyle = .fullScreen
+        navVC?.present(nav1, animated: true)
+    }
 }
 
 // MARK: - FlowCoordinatorProtocol
@@ -124,6 +132,11 @@ extension FlowCoordinator: TabBarModuleFlowOutput {}
 
 extension FlowCoordinator: CollectionsPresenterOutput {
     
+    func moduleWantsToOpenRepetition(_ module: CollectionsPresenterInput) {
+        showRepetitonModule()
+    }
+    
+    
     func moduleWantsToClose(_ module: CollectionsPresenterInput) {
         languagesVC?.dismiss(animated: true)
     }
@@ -147,3 +160,6 @@ extension FlowCoordinator: WordPresenterOutput {
         navVC?.dismiss(animated: true)
     }
 }
+
+
+extension FlowCoordinator: RepetitionPresenterOutput {}

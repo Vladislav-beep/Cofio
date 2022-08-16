@@ -24,7 +24,7 @@ final class CollectionsFlowCoordinator {
         let builder = CollectionsModuleBuilder(output: self)
         let vc = builder.build()
         
-        parentTabBarController?.setViewControllers([vc], animated: true)
+        parentTabBarController?.present(vc, animated: true)
     }
 }
 
@@ -40,6 +40,10 @@ extension CollectionsFlowCoordinator: FlowCoordinatorProtocol {
 }
 
 extension CollectionsFlowCoordinator: CollectionsPresenterOutput {
+    
+    func moduleWantsToOpenRepetition(_ module: CollectionsPresenterInput) {
+        
+    }
     
     func moduleWantsToClose(_ module: CollectionsPresenterInput) {
         

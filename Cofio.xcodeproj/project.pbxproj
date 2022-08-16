@@ -19,6 +19,9 @@
 		B932E95A28ABFADF007244E6 /* RepetitonInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932E95928ABFADF007244E6 /* RepetitonInteractor.swift */; };
 		B932E95C28ABFB51007244E6 /* RepetitionInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932E95B28ABFB51007244E6 /* RepetitionInteractorProtocol.swift */; };
 		B932E95E28ABFBC4007244E6 /* RepetitionModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932E95D28ABFBC4007244E6 /* RepetitionModuleBuilder.swift */; };
+		B932E96128AC032B007244E6 /* RepetitionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932E96028AC032B007244E6 /* RepetitionCell.swift */; };
+		B932E96328AC06AD007244E6 /* RepetitionCellDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932E96228AC06AD007244E6 /* RepetitionCellDataModel.swift */; };
+		B932E96528AC06F4007244E6 /* RepetitionTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932E96428AC06F4007244E6 /* RepetitionTableViewDataSource.swift */; };
 		B93EF8B428968A8F0057C774 /* CardsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8B328968A8F0057C774 /* CardsViewProtocol.swift */; };
 		B93EF8B628968B150057C774 /* CardCellDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8B528968B150057C774 /* CardCellDataModel.swift */; };
 		B93EF8B828968D210057C774 /* CardsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8B728968D210057C774 /* CardsPresenter.swift */; };
@@ -131,6 +134,9 @@
 		B932E95928ABFADF007244E6 /* RepetitonInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepetitonInteractor.swift; sourceTree = "<group>"; };
 		B932E95B28ABFB51007244E6 /* RepetitionInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepetitionInteractorProtocol.swift; sourceTree = "<group>"; };
 		B932E95D28ABFBC4007244E6 /* RepetitionModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepetitionModuleBuilder.swift; sourceTree = "<group>"; };
+		B932E96028AC032B007244E6 /* RepetitionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepetitionCell.swift; sourceTree = "<group>"; };
+		B932E96228AC06AD007244E6 /* RepetitionCellDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepetitionCellDataModel.swift; sourceTree = "<group>"; };
+		B932E96428AC06F4007244E6 /* RepetitionTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepetitionTableViewDataSource.swift; sourceTree = "<group>"; };
 		B93EF8B328968A8F0057C774 /* CardsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewProtocol.swift; sourceTree = "<group>"; };
 		B93EF8B528968B150057C774 /* CardCellDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCellDataModel.swift; sourceTree = "<group>"; };
 		B93EF8B728968D210057C774 /* CardsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsPresenter.swift; sourceTree = "<group>"; };
@@ -258,6 +264,9 @@
 			children = (
 				B932E95128ABF9DC007244E6 /* RepetitionViewController.swift */,
 				B932E95328ABFA1E007244E6 /* RepetitionViewProtocol.swift */,
+				B932E96228AC06AD007244E6 /* RepetitionCellDataModel.swift */,
+				B932E96428AC06F4007244E6 /* RepetitionTableViewDataSource.swift */,
+				B932E95F28AC030E007244E6 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -278,6 +287,14 @@
 				B932E95B28ABFB51007244E6 /* RepetitionInteractorProtocol.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B932E95F28AC030E007244E6 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B932E96028AC032B007244E6 /* RepetitionCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		B93EF8BB28968E120057C774 /* Presenter */ = {
@@ -827,6 +844,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9CC13AB288EF6FF0013ED76 /* FlowCoordinatorProtocol.swift in Sources */,
+				B932E96328AC06AD007244E6 /* RepetitionCellDataModel.swift in Sources */,
 				B9CC13D9289195BF0013ED76 /* LanguagesForPicker.swift in Sources */,
 				B9CC138F288B0AFD0013ED76 /* UITableView+Extension.swift in Sources */,
 				B93EF8D7289AFB720057C774 /* WordModuleBuilder.swift in Sources */,
@@ -870,6 +888,7 @@
 				B9CC13C0289069C90013ED76 /* CollectionsViewController.swift in Sources */,
 				B9CC13ED2893094D0013ED76 /* ImageProvider.swift in Sources */,
 				B9CC13E92893084E0013ED76 /* LanguagesPickerView.swift in Sources */,
+				B932E96528AC06F4007244E6 /* RepetitionTableViewDataSource.swift in Sources */,
 				B9CC13CB28906B040013ED76 /* CollectionsInteractor.swift in Sources */,
 				B9CC13CD28906B310013ED76 /* CollectionsInteractorProtocol.swift in Sources */,
 				B932E94C28A00499007244E6 /* WordTextView.swift in Sources */,
@@ -892,6 +911,7 @@
 				B9CC138D2889D7900013ED76 /* LanguageCell.swift in Sources */,
 				B9CC140228959CE60013ED76 /* TabBarModuleProtocol.swift in Sources */,
 				B9CC13B3288F08040013ED76 /* NewLanguagePresenter.swift in Sources */,
+				B932E96128AC032B007244E6 /* RepetitionCell.swift in Sources */,
 				B9CC13CF28906B6A0013ED76 /* CollectionsModuleBuilder.swift in Sources */,
 				B932E95628ABFA5F007244E6 /* RepetitionPresenter.swift in Sources */,
 				B9CC13FC28959BE00013ED76 /* TabBarProtocol.swift in Sources */,

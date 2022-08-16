@@ -11,5 +11,6 @@ protocol CollectionsPresenterOutput: AnyObject {
     
     func moduleWantsToOpenCards(_ module: CollectionsPresenterInput)
     func moduleWantsToClose(_ module: CollectionsPresenterInput)
+    func moduleWantsToOpenRepetition(_ module: CollectionsPresenterInput)
 }
 

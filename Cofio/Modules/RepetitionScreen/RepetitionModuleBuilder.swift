@@ -16,9 +16,11 @@ final class RepetitionModuleBuilder {
     }
     
     func build() -> UIViewController {
+        let dataSource = RepetitionTableViewDataSource()
         let interactor = RepetitonInteractor()
         let presenter = RepetitionPresenter(interactor: interactor)
-        let viewController = RepetitionViewController(output: presenter)
+        let viewController = RepetitionViewController(output: presenter,
+                                                      dataSource: dataSource)
         
         presenter.view = viewController
         interactor.output = presenter

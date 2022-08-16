@@ -12,14 +12,26 @@ final class RepetitionViewController: UIViewController {
     // MARK: Private properties
     
     private let output: RepetitionViewOutput
+    private let dataSource: RepetitionTableViewDataSourceProtocol
  
-   
+    private lazy var repetitionTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.register(RepetitionCell.self)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.separatorStyle = .none
+        tableView.delegate = self
+        return tableView
+    }()
+    
+    private lazy var tableViewDataSource = dataSource.makeDataSource(for: repetitionTableView)
     
     
     // MARK: Lifecycle
     
-    init(output: RepetitionViewOutput) {
+    init(output: RepetitionViewOutput,
+         dataSource: RepetitionTableViewDataSourceProtocol) {
         self.output = output
+        self.dataSource = dataSource
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -30,9 +42,30 @@ final class RepetitionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupViews()
+        setupNavigationBar()
+    }
+    
+    private func setupViews() {
+        view.backgroundColor = .white
+        
+        view.addSubview(repetitionTableView)
+        NSLayoutConstraint.activate([
+            repetitionTableView.topAnchor.constraint(equalTo: view.topAnchor),
+            repetitionTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+            repetitionTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            repetitionTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+    }
+    
+    private func setupNavigationBar() {
+        title = "Повторение"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }
 
 
 extension RepetitionViewController: RepetitionViewInput {}
 
+extension RepetitionViewController: UITableViewDelegate {}

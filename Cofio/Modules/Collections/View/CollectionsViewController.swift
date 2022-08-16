@@ -59,13 +59,17 @@ final class CollectionsViewController: UIViewController {
     private func setupNavigationBar() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Сменить язык", style: .plain, target: self, action: #selector(close))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .add)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Повторение", style: .plain, target: self, action: #selector(openRepetititon))
         navigationItem.rightBarButtonItem?.tintColor = .darkViolet
         navigationItem.leftBarButtonItem?.tintColor = .darkViolet
     }
     
     @objc func close() {
         output.viewDidTapClose()
+    }
+    
+    @objc func openRepetititon() {
+        output.openRepetition()
     }
 }
 
