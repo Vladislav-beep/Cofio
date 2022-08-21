@@ -44,7 +44,7 @@ final class RepetitionCell: UITableViewCell {
     
     private lazy var dateLabel: UILabel = {
         let subtitleLabel = UILabel()
-        subtitleLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        subtitleLabel.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         subtitleLabel.numberOfLines = 1
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
         return subtitleLabel

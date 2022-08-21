@@ -112,8 +112,9 @@ final class DymmyData {
         return [
             .init(title: "Кухня", repeats: 1, nextRepeat: "13 июля", repeatDate: Date()),
             .init(title: "Автомобиль", repeats: 2, nextRepeat: "7 марта", repeatDate: Date()),
-            .init(title: "Домашние дела", repeats: 7, nextRepeat: "9 января", repeatDate: Date(timeIntervalSinceNow: -1000000)),
-            .init(title: "Путешествия", repeats: 8, nextRepeat: "28 ноября", repeatDate: Date(timeIntervalSinceNow: 30000))
+            .init(title: "Домашние дела", repeats: 7, nextRepeat: "9 января", repeatDate: Date(timeIntervalSinceNow: -90000)),
+            .init(title: "Путешествия", repeats: 8, nextRepeat: "28 ноября", repeatDate: Date(timeIntervalSinceNow: 30000)),
+            .init(title: "Kjkrf", repeats: 4, nextRepeat: "28 ноября", repeatDate: Date(timeIntervalSinceNow: 1000000))
         ]
     }
 }
