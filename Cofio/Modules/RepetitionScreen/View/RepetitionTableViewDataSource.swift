@@ -20,7 +20,8 @@ final class RepetitionTableViewDataSource: RepetitionTableViewDataSourceProtocol
             let cell = tableView.reuse(RepetitionCell.self, indexPath)
             let displayData = RepetitionCell.DisplayData(title: collection.title,
                                                          repeats: collection.repeats,
-                                                         nextRepeat: collection.nextRepeat)
+                                                         nextRepeat: collection.nextRepeat,
+                                                         repeatDate: collection.repeatDate)
             cell.configure(with: displayData)
             return cell
         }
