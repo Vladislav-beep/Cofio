@@ -118,9 +118,11 @@ final class RepetitionCell: UITableViewCell {
     
     private func setupBackground(with displayData: DisplayData) {
         if displayData.repeatDate > Date() {
-            lowerView.backgroundColor = .customGreen
+            lowerView.backgroundColor = .darkGreen
+        } else if Calendar.current.isDateInToday(displayData.repeatDate) {
+            lowerView.backgroundColor = .lightGreen
         } else {
-            lowerView.backgroundColor = .customRed
+            lowerView.backgroundColor = .darkRed
         }
     }
     

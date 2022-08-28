@@ -20,7 +20,8 @@ final class RepetitionPresenter {
 extension RepetitionPresenter: RepetitionViewOutput {
     
     func viewDidLoad() {
-        let data = DymmyData.getRepetitionCellDataModel()
+        var data = DymmyData.getRepetitionCellDataModel()
+        data.sort { $0.repeatDate < $1.repeatDate }
         view?.updateData(with: data)
     }
 }
