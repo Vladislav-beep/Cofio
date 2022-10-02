@@ -9,11 +9,19 @@ import UIKit
 
 final class WordModuleBuilder {
     
+    // MARK: Private
+    
     private weak var output: WordPresenterOutput?
+    
+    
+    // MARK: Lifecycle
     
     init(output: WordPresenterOutput) {
         self.output = output
     }
+    
+    
+    // MARK: Public
     
     func build() -> UIViewController {
         let interactor = WordInteractor()

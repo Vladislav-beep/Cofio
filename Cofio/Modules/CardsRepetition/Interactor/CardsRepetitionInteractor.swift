@@ -7,9 +7,12 @@
 
 final class CardsRepetitonInteractor {
     
+    // MARK: Properties
+    
     weak var output: CardsRepetitionInteractorOutput?
 }
 
 
-extension CardsRepetitonInteractor: CardsRepetitionInteractorInput {}
+// MARK: - CardsRepetitionInteractorInput
 
+extension CardsRepetitonInteractor: CardsRepetitionInteractorInput {}

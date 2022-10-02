@@ -14,4 +14,5 @@ final class StartAppInteractor {
 
 
 // MARK: - StartAppInteractorInput
+
 extension StartAppInteractor: StartAppInteractorInput {}

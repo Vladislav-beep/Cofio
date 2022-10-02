@@ -49,6 +49,9 @@ final class RepetitionViewController: UIViewController {
         output.viewDidLoad()
     }
     
+    
+    // MARK: Private
+    
     private func setupViews() {
         view.backgroundColor = .white
         
@@ -68,6 +71,8 @@ final class RepetitionViewController: UIViewController {
 }
 
 
+// MARK: - RepetitionViewInput
+
 extension RepetitionViewController: RepetitionViewInput {
     
     func updateData(with data: [RepetitionCellDataModel]) {
@@ -77,5 +82,8 @@ extension RepetitionViewController: RepetitionViewInput {
         tableViewDataSource.apply(snapshot, animatingDifferences: true)
     }
 }
+
+
+// MARK: - UITableViewDelegate
 
 extension RepetitionViewController: UITableViewDelegate {}

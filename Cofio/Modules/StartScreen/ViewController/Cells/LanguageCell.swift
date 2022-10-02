@@ -9,7 +9,7 @@ import UIKit
 
 final class LanguageCell: UITableViewCell {
     
-    // MARK: Data structures
+    // MARK: Public data structures
     
     struct DisplayData: Hashable {
         let title: String

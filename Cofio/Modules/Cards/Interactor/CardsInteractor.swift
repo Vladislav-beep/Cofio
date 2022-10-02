@@ -7,8 +7,12 @@
 
 final class CardsInteractor {
     
+    // MARK: Properties
+    
     weak var output: CardsInteractorOutput?
 }
 
+
+// MARK: - CardsInteractorInput
 
 extension CardsInteractor: CardsInteractorInput {}

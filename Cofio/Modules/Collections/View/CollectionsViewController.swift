@@ -9,6 +9,8 @@ import UIKit
 
 final class CollectionsViewController: UIViewController {
     
+    // MARK: Private properties
+    
     private let output: CollectionsViewOutput
     private let dataSource: CollectionsTableViewDataSourceProtocol
     
@@ -24,6 +26,9 @@ final class CollectionsViewController: UIViewController {
     }()
     
     private lazy var tableViewDataSource = dataSource.makeDataSource(for: collectionCardsTableView)
+    
+    
+    // MARK: Lifecycle
     
     init(output: CollectionsViewOutput,
          dataSource: CollectionsTableViewDataSourceProtocol) {
@@ -46,6 +51,9 @@ final class CollectionsViewController: UIViewController {
         output.viewDidLoad()
     }
     
+    
+    // MARK: Private
+    
     private func setupViews() {
         view.addSubview(collectionCardsTableView)
         NSLayoutConstraint.activate([
@@ -64,6 +72,9 @@ final class CollectionsViewController: UIViewController {
         navigationItem.leftBarButtonItem?.tintColor = .darkViolet
     }
     
+    
+    // MARK: Actions
+    
     @objc func close() {
         output.viewDidTapClose()
     }
@@ -72,6 +83,9 @@ final class CollectionsViewController: UIViewController {
         output.openRepetition()
     }
 }
+
+
+// MARK: - CollectionsViewInput
 
 extension CollectionsViewController: CollectionsViewInput {
     
@@ -86,6 +100,9 @@ extension CollectionsViewController: CollectionsViewInput {
         navigationItem.title = title
     }
 }
+
+
+// MARK: - UITableViewDelegate
 
 extension CollectionsViewController: UITableViewDelegate {
     
@@ -118,4 +135,3 @@ extension CollectionsViewController: UITableViewDelegate {
         }
     }
 }
-

@@ -70,6 +70,9 @@ final class WordViewController: UIViewController {
         setupNavigationBar()
     }
     
+    
+    // MARK: Private
+    
     private func setupViews() {
 
         view.addSubview(closeButton)
@@ -104,6 +107,7 @@ final class WordViewController: UIViewController {
         navigationController?.navigationBar.tintColor = UIColor.darkViolet
     }
     
+    
     // MARK: Actions
     
     @objc func close() {
@@ -114,5 +118,7 @@ final class WordViewController: UIViewController {
     }
 }
 
+
+// MARK: - WordViewInput
 
 extension WordViewController: WordViewInput {}

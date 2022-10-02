@@ -7,8 +7,12 @@
 
 final class WordInteractor {
     
+    // MARK: Properties
+    
     weak var output: WordInteractorOutput?
 }
 
+
+// MARK: - WordInteractorInput
 
 extension WordInteractor: WordInteractorInput {}

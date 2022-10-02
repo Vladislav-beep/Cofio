@@ -7,15 +7,26 @@
 
 final class RepetitionPresenter {
     
+    // MARK: Private properties
+    
     private let interactor: RepetitionInteractorInput
+    
+    
+    // MARK: Public properties
     
     weak var view: RepetitionViewInput?
     weak var output: RepetitionPresenterOutput?
+    
+    
+    // MARK: Lifecycle
     
     init(interactor: RepetitionInteractorInput) {
         self.interactor = interactor
     }
 }
+
+
+// MARK: - RepetitionViewOutput
 
 extension RepetitionPresenter: RepetitionViewOutput {
     
@@ -26,6 +37,12 @@ extension RepetitionPresenter: RepetitionViewOutput {
     }
 }
 
+
+// MARK: - RepetitionPresenterInput
+
 extension RepetitionPresenter: RepetitionPresenterInput {}
+
+
+// MARK: - RepetitionInteractorOutput
 
 extension RepetitionPresenter: RepetitionInteractorOutput {}

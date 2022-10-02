@@ -9,11 +9,12 @@ import UIKit
 
 final class StatisticsCell: UITableViewCell {
     
-    // MARK: Data structures
+    // MARK: Public data structures
     
     struct DisplayData: Hashable {
         let title: String
     }
+    
     
     // MARK: Private properties
     
@@ -45,6 +46,7 @@ final class StatisticsCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
     // MARK: Private
     
     private func setupViews() {
@@ -65,6 +67,7 @@ final class StatisticsCell: UITableViewCell {
         ])
         
     }
+    
     
     // MARK: Public
     

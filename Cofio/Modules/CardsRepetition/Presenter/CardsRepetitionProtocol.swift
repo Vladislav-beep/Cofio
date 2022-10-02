@@ -8,4 +8,3 @@
 protocol CardsRepetitionPresenterInput: AnyObject {}
 
 protocol CardsRepetitionPresenterOutput: AnyObject {}
-

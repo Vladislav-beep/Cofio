@@ -9,6 +9,8 @@ import UIKit
 
 final class CardsViewController: UIViewController {
     
+    // MARK: Private properties
+    
     private let output: CardsViewOutput
     private let dataSource: CardsTableViewDataSourceProtocol
     
@@ -35,6 +37,9 @@ final class CardsViewController: UIViewController {
     
     private lazy var tableViewDataSource = dataSource.makeDataSource(for: cardsTableView)
     
+    
+    // MARK: Lifecycle
+    
     init(output: CardsViewOutput,
          dataSource: CardsTableViewDataSourceProtocol) {
         self.output = output
@@ -55,6 +60,9 @@ final class CardsViewController: UIViewController {
 
         output.viewDidLoad()
     }
+    
+    
+    // MARK: Private
     
     private func setupViews() {
         view.backgroundColor = .white
@@ -90,10 +98,16 @@ final class CardsViewController: UIViewController {
         navigationController?.navigationBar.tintColor = UIColor.darkViolet
     }
     
+    
+    // MARK: Actions
+    
     @objc func addCard() {
         
     }
 }
+
+
+// MARK: - CardsViewInput
 
 extension CardsViewController: CardsViewInput {
 
@@ -104,6 +118,9 @@ extension CardsViewController: CardsViewInput {
         tableViewDataSource.apply(snapshot, animatingDifferences: true)
     }
 }
+
+
+// MARK: - UITableViewDelegate
 
 extension CardsViewController: UITableViewDelegate {
     

@@ -9,11 +9,19 @@ import UIKit
 
 final class CardsModuleBuilder {
     
+    // MARK: Private
+    
     private weak var output: CardsPresenterOutput?
+    
+    
+    // MARK: Lifecycle
     
     init(output: CardsPresenterOutput) {
         self.output = output
     }
+    
+    
+    // MARK: Public
     
     func build() -> UIViewController {
         let dataSource = CardsTableViewDataSource()

@@ -7,15 +7,26 @@
 
 final class CollectionsPresenter {
     
+    // MARK: Private properties
+    
     private let interactor: CollectionsInteractorInput
+    
+    
+    // MARK: Public properties
     
     weak var view: CollectionsViewInput?
     weak var output: CollectionsPresenterOutput?
+    
+    
+    // MARK: Lifecycle
     
     init(interactor: CollectionsInteractorInput) {
         self.interactor = interactor
     }
 }
+
+
+// MARK: - CollectionsViewOutput
 
 extension CollectionsPresenter: CollectionsViewOutput {
     
@@ -38,7 +49,13 @@ extension CollectionsPresenter: CollectionsViewOutput {
     }
 }
 
+
+// MARK: - CollectionsPresenterInput
+
 extension CollectionsPresenter: CollectionsPresenterInput {}
+
+
+// MARK: - CollectionsInteractorOutput
 
 extension CollectionsPresenter: CollectionsInteractorOutput {}
 

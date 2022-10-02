@@ -7,15 +7,26 @@
 
 final class CardsPresenter {
     
+    // MARK: Private properties
+    
     private let interactor: CardsInteractorInput
+    
+    
+    // MARK: Public properties
     
     weak var view: CardsViewInput?
     weak var output: CardsPresenterOutput?
+    
+    
+    // MARK: Lifecycle
     
     init(interactor: CardsInteractorInput) {
         self.interactor = interactor
     }
 }
+
+
+// MARK: - CardsViewOutput
 
 extension CardsPresenter: CardsViewOutput {
     
@@ -29,7 +40,12 @@ extension CardsPresenter: CardsViewOutput {
     }
 }
 
+
+// MARK: - CardsPresenterInput
+
 extension CardsPresenter: CardsPresenterInput {}
 
-extension CardsPresenter: CardsInteractorOutput {}
 
+// MARK: - CardsInteractorOutput
+
+extension CardsPresenter: CardsInteractorOutput {}

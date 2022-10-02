@@ -9,7 +9,7 @@ import UIKit
 
 final class RepetitionCell: UITableViewCell {
     
-    // MARK: Data structures
+    // MARK: Public data structures
     
     struct DisplayData: Hashable {
         let title: String
@@ -17,6 +17,7 @@ final class RepetitionCell: UITableViewCell {
         let nextRepeat: String
         let repeatDate: Date
     }
+    
     
     // MARK: Private properties
     
@@ -63,6 +64,7 @@ final class RepetitionCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     
     // MARK: Private
     

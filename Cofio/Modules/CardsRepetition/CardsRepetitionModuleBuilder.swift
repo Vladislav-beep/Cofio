@@ -9,11 +9,19 @@ import UIKit
 
 final class CardsRepetitionModuleBuilder {
     
+    // MARK: Private
+    
     private weak var output: CardsRepetitionPresenterOutput?
+    
+    
+    // MARK: Lifecycle
     
     init(output: CardsRepetitionPresenterOutput) {
         self.output = output
     }
+    
+    
+    // MARK: Public
     
     func build() -> UIViewController {
         let interactor = CardsRepetitonInteractor()

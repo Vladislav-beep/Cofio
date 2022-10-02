@@ -9,11 +9,19 @@ import UIKit
 
 final class CollectionsModuleBuilder {
     
+    // MARK: Private
+    
     private weak var output: CollectionsPresenterOutput?
+    
+    
+    // MARK: Lifecycle
     
     init(output: CollectionsPresenterOutput) {
         self.output = output
     }
+    
+    
+    // MARK: Public
     
     func build() -> UIViewController {
         let dataSource = CollectionsTableViewDataSource()

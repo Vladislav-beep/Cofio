@@ -33,6 +33,6 @@ final class CardsRepetitionViewController: UIViewController {
 }
 
 
-extension CardsRepetitionViewController: CardsRepetitionViewInput {
+// MARK: - CardsRepetitionViewInput
 
-}
+extension CardsRepetitionViewController: CardsRepetitionViewInput {}

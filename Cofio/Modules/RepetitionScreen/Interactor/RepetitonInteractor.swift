@@ -7,8 +7,12 @@
 
 final class RepetitonInteractor {
     
+    // MARK: Properties
+    
     weak var output: RepetitionInteractorOutput?
 }
 
+
+// MARK: - RepetitionInteractorInput
 
 extension RepetitonInteractor: RepetitionInteractorInput {}

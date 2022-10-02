@@ -8,4 +8,3 @@
 protocol CollectionsInteractorInput: AnyObject {}
 
 protocol CollectionsInteractorOutput: AnyObject {}
-

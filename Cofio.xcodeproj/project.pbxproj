@@ -523,6 +523,7 @@
 			isa = PBXGroup;
 			children = (
 				B9CC13A7288EF56D0013ED76 /* FlowCoordinator.swift */,
+				B9CC14072895A2AE0013ED76 /* CollectionsFlowCoordinator.swift */,
 				B9CC13AA288EF6FF0013ED76 /* FlowCoordinatorProtocol.swift */,
 			);
 			path = Flow;
@@ -570,7 +571,6 @@
 		B9CC13BE289069A40013ED76 /* Collections */ = {
 			isa = PBXGroup;
 			children = (
-				B9CC14072895A2AE0013ED76 /* CollectionsFlowCoordinator.swift */,
 				B9CC13CE28906B6A0013ED76 /* CollectionsModuleBuilder.swift */,
 				B9CC13C528906A600013ED76 /* Interactor */,
 				B9CC13C428906A5A0013ED76 /* Presenter */,

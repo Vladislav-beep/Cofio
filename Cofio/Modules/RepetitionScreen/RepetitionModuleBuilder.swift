@@ -9,11 +9,19 @@ import UIKit
 
 final class RepetitionModuleBuilder {
     
+    // MARK: Private
+    
     private weak var output: RepetitionPresenterOutput?
+    
+    
+    // MARK: Lifecycle
     
     init(output: RepetitionPresenterOutput) {
         self.output = output
     }
+    
+    
+    // MARK: Public
     
     func build() -> UIViewController {
         let dataSource = RepetitionTableViewDataSource()

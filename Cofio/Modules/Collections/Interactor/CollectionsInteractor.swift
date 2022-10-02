@@ -7,8 +7,12 @@
 
 final class CollectionsInteractor {
     
+    // MARK: Properties
+    
     weak var output: CollectionsInteractorOutput?
 }
 
+
+// MARK: - CollectionsInteractorInput
 
 extension CollectionsInteractor: CollectionsInteractorInput {}

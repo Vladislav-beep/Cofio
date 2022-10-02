@@ -7,15 +7,26 @@
 
 final class WordPresenter {
     
+    // MARK: Private properties
+    
     private let interactor: WordInteractorInput
+    
+    
+    // MARK: Public properties
     
     weak var view: WordViewInput?
     weak var output: WordPresenterOutput?
+    
+    
+    // MARK: Lifecycle
     
     init(interactor: WordInteractorInput) {
         self.interactor = interactor
     }
 }
+
+
+// MARK: - WordViewOutput
 
 extension WordPresenter: WordViewOutput {
     
@@ -24,6 +35,12 @@ extension WordPresenter: WordViewOutput {
     }
 }
 
+
+// MARK: - WordPresenterInput
+
 extension WordPresenter: WordPresenterInput {}
+
+
+// MARK: - WordInteractorOutput
 
 extension WordPresenter: WordInteractorOutput {}
