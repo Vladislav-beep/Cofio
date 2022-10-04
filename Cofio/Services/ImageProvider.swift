@@ -40,7 +40,6 @@ final class ImageProvider: ImageProviderProtocol {
     
     
     func getPickerModels() -> [InfoPickerModel] {
-        
         var models: [InfoPickerModel] = []
         for (language, icon) in info {
             models.append(.init(title: language, icon: icon))

@@ -133,7 +133,7 @@ final class LanguageCell: UITableViewCell {
     // MARK: Public
     
     func configure(with displayData: DisplayData) {
-        if displayData.title == "Хинди" {
+        if displayData.title == AppText.StartAppScreen.hindi.rawValue {
             titleLabel.text = displayData.title
         } else {
             titleLabel.text = displayData.title + " язык"

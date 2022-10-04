@@ -16,12 +16,12 @@ class StartAppViewController: UIViewController {
     private let dataSource: LanguageTableViewDataSourceProtocol
     
     private lazy var titleLabel: TitleLabel = {
-        let titleLabel = TitleLabel(title: AppText.startAppScreen.title.rawValue)
+        let titleLabel = TitleLabel(title: AppText.StartAppScreen.title.rawValue)
         return titleLabel
     }()
     
     private lazy var subtitleLabel: SubtitleLabel = {
-        let subtitle = SubtitleLabel(subtitle: AppText.startAppScreen.subtitle.rawValue)
+        let subtitle = SubtitleLabel(subtitle: AppText.StartAppScreen.subtitle.rawValue)
         return subtitle
     }()
     
@@ -42,7 +42,7 @@ class StartAppViewController: UIViewController {
     
     private lazy var bottomButton: UIButton = {
         let button = UIButton()
-        button.setTitle(AppText.startAppScreen.buttonTitle.rawValue, for: .normal)
+        button.setTitle(AppText.StartAppScreen.buttonTitle.rawValue, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 21, weight: .semibold)
         button.setTitleColor(UIColor.darkViolet, for: .normal)
         button.setTitleColor(UIColor.darkOrange, for: .highlighted)

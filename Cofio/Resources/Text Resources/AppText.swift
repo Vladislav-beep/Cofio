@@ -11,10 +11,11 @@ struct AppText {
         case close = "Закрыть"
     }
     
-    enum startAppScreen: String {
+    enum StartAppScreen: String {
         case title = "Иностранные языки"
         case subtitle = "Изучение иностранных языков с помощью карточек для запоминания и пополнения лексики"
         case buttonTitle = "Добавить язык"
+        case hindi = "Хинди"
     }
     
     enum NewLanguage: String {
