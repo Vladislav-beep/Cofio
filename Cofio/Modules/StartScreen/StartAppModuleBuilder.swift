@@ -11,12 +11,12 @@ final class StartAppModuleBuilder {
     
     // MARK: Private
     
-    private var output: FlowCoordinator
+    private var output: FlowCoordinator1
     
     
     // MARK: Lifecycle
     
-    init(output: FlowCoordinator) {
+    init(output: FlowCoordinator1) {
         self.output = output
     }
     

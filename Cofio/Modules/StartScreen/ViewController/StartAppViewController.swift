@@ -12,7 +12,7 @@ class StartAppViewController: UIViewController {
     // MARK: Private properties
     
     private let output: StartAppViewOutput
-    private let coordinater: FlowCoordinator
+    private let coordinater: FlowCoordinator1
     private let dataSource: LanguageTableViewDataSourceProtocol
     
     private lazy var titleLabel: TitleLabel = {
@@ -57,7 +57,7 @@ class StartAppViewController: UIViewController {
     // MARK: Lifecycle
     
     init(output: StartAppViewOutput,
-         coordinater: FlowCoordinator,
+         coordinater: FlowCoordinator1,
          dataSource: LanguageTableViewDataSourceProtocol) {
         self.coordinater = coordinater
         self.output = output

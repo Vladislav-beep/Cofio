@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class FlowCoordinator {
+final class FlowCoordinator1 {
     
     // MARK: Private
     
@@ -39,10 +39,9 @@ final class FlowCoordinator {
         let builder = NewLanguageModuleBuilder(output: self)
         let vc = builder.build()
 
-//        newLangVC = vc
-//        vc.modalPresentationStyle = .fullScreen
-//        languagesVC?.present(vc, animated: true)
-        parentVC.pushViewController(vc, animated: true)
+        newLangVC = vc
+        vc.modalPresentationStyle = .fullScreen
+        languagesVC?.present(vc, animated: true)
     }
     
     func showTabbar() {
@@ -87,7 +86,7 @@ final class FlowCoordinator {
 
 // MARK: - FlowCoordinatorProtocol
 
-extension FlowCoordinator: FlowCoordinatorProtocol {
+extension FlowCoordinator1: FlowCoordinatorProtocol {
     func start() {
         showLanguagesModule()
     }
@@ -100,7 +99,7 @@ extension FlowCoordinator: FlowCoordinatorProtocol {
 
 // MARK: - StartAppPresenterOutput
 
-extension FlowCoordinator: StartAppPresenterOutput {
+extension FlowCoordinator1: StartAppPresenterOutput {
     
     func moduleWantsToOpenTabbar(_ module: StartAppPresenterInput) {
         showTabbar()
@@ -115,23 +114,14 @@ extension FlowCoordinator: StartAppPresenterOutput {
 
 // MARK: - NewLanguagePresenterOutput
 
-extension FlowCoordinator: NewLanguagePresenterOutput {
+extension FlowCoordinator1: NewLanguagePresenterOutput {
     
     func moduleWantsToClose(_ module: NewLanguagePresenterInput) {
         languagesVC?.dismiss(animated: true)
     }
 }
 
-extension FlowCoordinator: TabBarModuleOutput {
-    
-    func moduleWantsToAddTab(_ module: TabBarModuleInput) {
-        
-    }
-}
-
-extension FlowCoordinator: TabBarModuleFlowOutput {}
-
-extension FlowCoordinator: CollectionsPresenterOutput {
+extension FlowCoordinator1: CollectionsPresenterOutput {
     
     func moduleWantsToOpenRepetition(_ module: CollectionsPresenterInput) {
         showRepetitonModule()
@@ -148,14 +138,14 @@ extension FlowCoordinator: CollectionsPresenterOutput {
     }
 }
 
-extension FlowCoordinator: CardsPresenterOutput {
+extension FlowCoordinator1: CardsPresenterOutput {
     
     func moduleWantsToOpenWord(_ module: CardsPresenterInput) {
         showWordModule()
     }
 }
 
-extension FlowCoordinator: WordPresenterOutput {
+extension FlowCoordinator1: WordPresenterOutput {
     
     func moduleWantsToClose(_ module: WordPresenterInput) {
         navVC?.dismiss(animated: true)
@@ -163,4 +153,4 @@ extension FlowCoordinator: WordPresenterOutput {
 }
 
 
-extension FlowCoordinator: RepetitionPresenterOutput {}
+extension FlowCoordinator1: RepetitionPresenterOutput {}

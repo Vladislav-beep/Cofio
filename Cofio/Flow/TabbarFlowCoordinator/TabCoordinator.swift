@@ -17,7 +17,7 @@ protocol TabCoordinatorProtocol: Coordinator {
     func currentPage() -> TabBarPage?
 }
 
-class TabCoordinator: NSObject, Coordinator, RepetitionPresenterOutput {
+class TabbarFlowCoordinator: NSObject, Coordinator, RepetitionPresenterOutput {
     weak var finishDelegate: CoordinatorFinishDelegate?
         
     var childCoordinators: [Coordinator] = []
@@ -35,7 +35,7 @@ class TabCoordinator: NSObject, Coordinator, RepetitionPresenterOutput {
 
     func start() {
         // Let's define which pages do we want to add into tab bar
-        let pages: [TabBarPage] = [.go, .steady, .ready]
+        let pages: [TabBarPage] = [.main, .repetition, .settings, .analytics]
             .sorted(by: { $0.pageOrderNumber() < $1.pageOrderNumber() })
         
         // Initialization of ViewControllers or these pages
@@ -54,7 +54,7 @@ class TabCoordinator: NSObject, Coordinator, RepetitionPresenterOutput {
         /// Assign page's controllers
         tabBarController.setViewControllers(tabControllers, animated: true)
         /// Let set index
-        tabBarController.selectedIndex = TabBarPage.ready.pageOrderNumber()
+        tabBarController.selectedIndex = TabBarPage.main.pageOrderNumber()
         /// Styling
         tabBarController.tabBar.isTranslucent = false
         
@@ -71,9 +71,9 @@ class TabCoordinator: NSObject, Coordinator, RepetitionPresenterOutput {
                                                      tag: page.pageOrderNumber())
 
         switch page {
-        case .ready:
+        case .main:
             // If needed: Each tab bar flow can have it's own Coordinator.
-            let flow = FlowCoordinator(vc: navController)
+            let flow = FlowCoordinator1(vc: navController)
             flow.start()
 //            let readyVC = ReadyViewController()
 //            readyVC.didSendEventClosure = { [weak self] event in
@@ -84,7 +84,7 @@ class TabCoordinator: NSObject, Coordinator, RepetitionPresenterOutput {
          //   }
                         
            // navController.pushViewController(readyVC, animated: true)
-        case .steady:
+        case .repetition:
 //            let steadyVC = SteadyViewController()
 //            steadyVC.didSendEventClosure = { [weak self] event in
 //                switch event {
@@ -96,17 +96,14 @@ class TabCoordinator: NSObject, Coordinator, RepetitionPresenterOutput {
             let vc = builder.build()
             
             navController.pushViewController(vc, animated: true)
-        case .go:
-            let goVC = GoViewController()
-            goVC.didSendEventClosure = { [weak self] event in
-                switch event {
-                case .go:
-                    self?.finish()
-                }
-            }
+        case .settings:
+            print("lol")
             
-            navController.pushViewController(goVC, animated: true)
+          //  navController.pushViewController(goVC, animated: true)
+        case .analytics:
+            print("analytics")
         }
+    
         
         return navController
     }
@@ -125,7 +122,7 @@ class TabCoordinator: NSObject, Coordinator, RepetitionPresenterOutput {
 }
 
 // MARK: - UITabBarControllerDelegate
-extension TabCoordinator: UITabBarControllerDelegate {
+extension TabbarFlowCoordinator: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController,
                           didSelect viewController: UIViewController) {
         // Some implementation

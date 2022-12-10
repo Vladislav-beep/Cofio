@@ -6,18 +6,21 @@
 //
 
 enum TabBarPage {
-    case ready
-    case steady
-    case go
+    case main
+    case repetition
+    case settings
+    case analytics
 
     init?(index: Int) {
         switch index {
         case 0:
-            self = .ready
+            self = .main
         case 1:
-            self = .steady
+            self = .repetition
         case 2:
-            self = .go
+            self = .settings
+        case 3:
+            self = .analytics
         default:
             return nil
         }
@@ -25,23 +28,27 @@ enum TabBarPage {
     
     func pageTitleValue() -> String {
         switch self {
-        case .ready:
-            return "Ready"
-        case .steady:
-            return "Steady"
-        case .go:
-            return "Go"
+        case .main:
+            return "Главная"
+        case .repetition:
+            return "Повторение"
+        case .settings:
+            return "Настройки"
+        case .analytics:
+            return "Статистика"
         }
     }
 
     func pageOrderNumber() -> Int {
         switch self {
-        case .ready:
+        case .main:
             return 0
-        case .steady:
+        case .repetition:
             return 1
-        case .go:
+        case .settings:
             return 2
+        case .analytics:
+            return 3
         }
     }
 
