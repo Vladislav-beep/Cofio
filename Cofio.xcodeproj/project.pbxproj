@@ -45,6 +45,15 @@
 		B93EF8D5289AFB2A0057C774 /* WordInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8D4289AFB2A0057C774 /* WordInteractorProtocol.swift */; };
 		B93EF8D7289AFB720057C774 /* WordModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8D6289AFB720057C774 /* WordModuleBuilder.swift */; };
 		B93EF8D9289AFFD30057C774 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8D8289AFFD30057C774 /* CloseButton.swift */; };
+		B99B17522944CD2D002167DB /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B17512944CD2D002167DB /* Coordinator.swift */; };
+		B99B17542944CD66002167DB /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B17532944CD66002167DB /* AppCoordinator.swift */; };
+		B99B17562944CE09002167DB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B17552944CE09002167DB /* LoginViewController.swift */; };
+		B99B17582944CE4A002167DB /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B17572944CE4A002167DB /* LoginCoordinator.swift */; };
+		B99B175A2944CEE7002167DB /* TabBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B17592944CEE7002167DB /* TabBarPage.swift */; };
+		B99B175C2944CF07002167DB /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B175B2944CF07002167DB /* TabCoordinator.swift */; };
+		B99B175E2944CF55002167DB /* ReadyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B175D2944CF55002167DB /* ReadyViewController.swift */; };
+		B99B17602944CFAA002167DB /* SteadyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B175F2944CFAA002167DB /* SteadyViewController.swift */; };
+		B99B17622944D00F002167DB /* GoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B17612944D00F002167DB /* GoViewController.swift */; };
 		B9CC135B288738980013ED76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC135A288738980013ED76 /* AppDelegate.swift */; };
 		B9CC135D288738980013ED76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC135C288738980013ED76 /* SceneDelegate.swift */; };
 		B9CC135F288738980013ED76 /* StartAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC135E288738980013ED76 /* StartAppViewController.swift */; };
@@ -167,6 +176,15 @@
 		B93EF8D4289AFB2A0057C774 /* WordInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordInteractorProtocol.swift; sourceTree = "<group>"; };
 		B93EF8D6289AFB720057C774 /* WordModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordModuleBuilder.swift; sourceTree = "<group>"; };
 		B93EF8D8289AFFD30057C774 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		B99B17512944CD2D002167DB /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		B99B17532944CD66002167DB /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		B99B17552944CE09002167DB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B99B17572944CE4A002167DB /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		B99B17592944CEE7002167DB /* TabBarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPage.swift; sourceTree = "<group>"; };
+		B99B175B2944CF07002167DB /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
+		B99B175D2944CF55002167DB /* ReadyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyViewController.swift; sourceTree = "<group>"; };
+		B99B175F2944CFAA002167DB /* SteadyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteadyViewController.swift; sourceTree = "<group>"; };
+		B99B17612944D00F002167DB /* GoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoViewController.swift; sourceTree = "<group>"; };
 		B9CC1357288738980013ED76 /* Cofio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cofio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9CC135A288738980013ED76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9CC135C288738980013ED76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -405,6 +423,22 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		B99B17502944CD15002167DB /* Coord */ = {
+			isa = PBXGroup;
+			children = (
+				B99B17512944CD2D002167DB /* Coordinator.swift */,
+				B99B17532944CD66002167DB /* AppCoordinator.swift */,
+				B99B17552944CE09002167DB /* LoginViewController.swift */,
+				B99B17572944CE4A002167DB /* LoginCoordinator.swift */,
+				B99B17592944CEE7002167DB /* TabBarPage.swift */,
+				B99B175B2944CF07002167DB /* TabCoordinator.swift */,
+				B99B17612944D00F002167DB /* GoViewController.swift */,
+				B99B175F2944CFAA002167DB /* SteadyViewController.swift */,
+				B99B175D2944CF55002167DB /* ReadyViewController.swift */,
+			);
+			path = Coord;
+			sourceTree = "<group>";
+		};
 		B9CC134E288738970013ED76 = {
 			isa = PBXGroup;
 			children = (
@@ -428,6 +462,7 @@
 		B9CC1359288738980013ED76 /* Cofio */ = {
 			isa = PBXGroup;
 			children = (
+				B99B17502944CD15002167DB /* Coord */,
 				B9CC135A288738980013ED76 /* AppDelegate.swift */,
 				B9CC135C288738980013ED76 /* SceneDelegate.swift */,
 				B9CC13A9288EF6E40013ED76 /* Flow */,
@@ -896,11 +931,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B99B17582944CE4A002167DB /* LoginCoordinator.swift in Sources */,
 				B9CC13AB288EF6FF0013ED76 /* FlowCoordinatorProtocol.swift in Sources */,
 				B932E96328AC06AD007244E6 /* RepetitionCellDataModel.swift in Sources */,
 				B9CC13D9289195BF0013ED76 /* LanguagesForPicker.swift in Sources */,
 				B9CC138F288B0AFD0013ED76 /* UITableView+Extension.swift in Sources */,
 				B93EF8D7289AFB720057C774 /* WordModuleBuilder.swift in Sources */,
+				B99B175A2944CEE7002167DB /* TabBarPage.swift in Sources */,
 				B9CC13B7288F094A0013ED76 /* NewLanguageViewProtocol.swift in Sources */,
 				B9CC13EF28930A8A0013ED76 /* InfoPickerModel.swift in Sources */,
 				B9CC13D3289070E70013ED76 /* TitleLabel.swift in Sources */,
@@ -929,11 +966,14 @@
 				B932E95828ABFA98007244E6 /* RepetitionPresenterProtocol.swift in Sources */,
 				B93EF8CB289AF9910057C774 /* WordViewController.swift in Sources */,
 				B9CC13B5288F087A0013ED76 /* NewLanguageProtocol.swift in Sources */,
+				B99B17542944CD66002167DB /* AppCoordinator.swift in Sources */,
 				B93EF8B828968D210057C774 /* CardsPresenter.swift in Sources */,
+				B99B17522944CD2D002167DB /* Coordinator.swift in Sources */,
 				B9CC141E289688470013ED76 /* CardsCell.swift in Sources */,
 				B9CC1391288B0B840013ED76 /* UITableViewCell+Extension.swift in Sources */,
 				B9CC140B2895C00C0013ED76 /* StatisticsCell.swift in Sources */,
 				B9CC13C728906A7C0013ED76 /* CollectionsPresenter.swift in Sources */,
+				B99B17602944CFAA002167DB /* SteadyViewController.swift in Sources */,
 				B9CC13B1288F07BF0013ED76 /* NewLanguageViewController.swift in Sources */,
 				B9CC139D288EE6E90013ED76 /* StartAppInteractor.swift in Sources */,
 				B9CC1414289686140013ED76 /* CardsViewController.swift in Sources */,
@@ -949,6 +989,7 @@
 				B932E97328B7FAA5007244E6 /* CardsRepetitionInteractor.swift in Sources */,
 				B9CC13CB28906B040013ED76 /* CollectionsInteractor.swift in Sources */,
 				B9CC13CD28906B310013ED76 /* CollectionsInteractorProtocol.swift in Sources */,
+				B99B17622944D00F002167DB /* GoViewController.swift in Sources */,
 				B932E94C28A00499007244E6 /* WordTextView.swift in Sources */,
 				B932E95428ABFA1E007244E6 /* RepetitionViewProtocol.swift in Sources */,
 				B932E96B28B7F960007244E6 /* CardsRepetitionViewController.swift in Sources */,
@@ -961,6 +1002,7 @@
 				B93EF8B428968A8F0057C774 /* CardsViewProtocol.swift in Sources */,
 				B932E948289DB365007244E6 /* StartAppCellViewModel.swift in Sources */,
 				B9CC13A8288EF56D0013ED76 /* FlowCoordinator.swift in Sources */,
+				B99B175C2944CF07002167DB /* TabCoordinator.swift in Sources */,
 				B9CC13BB288F0A000013ED76 /* NewLanguageInteractorProtocol.swift in Sources */,
 				B93EF8CD289AF9B60057C774 /* WordViewProtocol.swift in Sources */,
 				B9CC13F1289310460013ED76 /* UIStackView+Extension.swift in Sources */,
@@ -971,6 +1013,7 @@
 				B9CC138D2889D7900013ED76 /* LanguageCell.swift in Sources */,
 				B9CC140228959CE60013ED76 /* TabBarModuleProtocol.swift in Sources */,
 				B9CC13B3288F08040013ED76 /* NewLanguagePresenter.swift in Sources */,
+				B99B175E2944CF55002167DB /* ReadyViewController.swift in Sources */,
 				B932E96128AC032B007244E6 /* RepetitionCell.swift in Sources */,
 				B9CC13CF28906B6A0013ED76 /* CollectionsModuleBuilder.swift in Sources */,
 				B932E95628ABFA5F007244E6 /* RepetitionPresenter.swift in Sources */,
@@ -982,6 +1025,7 @@
 				B9CC135D288738980013ED76 /* SceneDelegate.swift in Sources */,
 				B9CC140D2895C1100013ED76 /* CollectionCell.swift in Sources */,
 				B9CC13FA28959B100013ED76 /* TabBarViewController.swift in Sources */,
+				B99B17562944CE09002167DB /* LoginViewController.swift in Sources */,
 				B9CC139B288EE6C20013ED76 /* StartAppPresenter.swift in Sources */,
 				B93EF8BE28968E320057C774 /* CardsInteractor.swift in Sources */,
 				B9CC13D52890720B0013ED76 /* SubtitleLabel.swift in Sources */,

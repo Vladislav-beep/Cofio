@@ -17,10 +17,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         
         
-        let parentVC = UIViewController()
+        let parentVC = UINavigationController()
         window.rootViewController = parentVC
         window.makeKeyAndVisible()
-        let flow = FlowCoordinator(vc: parentVC)
+        let flow = AppCoordinator(parentVC)
         
         
         

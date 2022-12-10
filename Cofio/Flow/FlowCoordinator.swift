@@ -11,7 +11,7 @@ final class FlowCoordinator {
     
     // MARK: Private
     
-    private let parentVC: UIViewController
+    private let parentVC: UINavigationController
     private var languagesVC: UIViewController?
     private var newLangVC: UIViewController?
     private var navVC: UINavigationController?
@@ -19,7 +19,7 @@ final class FlowCoordinator {
     
     // MARK: Lifecycle
     
-    init(vc: UIViewController) {
+    init(vc: UINavigationController) {
         parentVC = vc
     }
     
@@ -31,17 +31,18 @@ final class FlowCoordinator {
         let vc = builder.build()
         
         languagesVC = vc
-        vc.modalPresentationStyle = .fullScreen
-        parentVC.present(vc, animated: false)
+        //vc.modalPresentationStyle = .fullScreen
+        parentVC.pushViewController(vc, animated: true)
     }
     
     func showNewLanguageModule() {
         let builder = NewLanguageModuleBuilder(output: self)
         let vc = builder.build()
 
-        newLangVC = vc
-        vc.modalPresentationStyle = .fullScreen
-        languagesVC?.present(vc, animated: true)
+//        newLangVC = vc
+//        vc.modalPresentationStyle = .fullScreen
+//        languagesVC?.present(vc, animated: true)
+        parentVC.pushViewController(vc, animated: true)
     }
     
     func showTabbar() {
