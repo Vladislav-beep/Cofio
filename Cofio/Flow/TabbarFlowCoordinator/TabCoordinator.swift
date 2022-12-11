@@ -60,6 +60,8 @@ class TabbarFlowCoordinator: NSObject, Coordinator, RepetitionPresenterOutput {
         
         /// In this step, we attach tabBarController to navigation controller associated with this coordanator
         navigationController.viewControllers = [tabBarController]
+        
+        navigationController.tabBarController?.tabBar.backgroundColor = .systemTeal
     }
       
     private func getTabController(_ page: TabBarPage) -> UINavigationController {
@@ -97,11 +99,12 @@ class TabbarFlowCoordinator: NSObject, Coordinator, RepetitionPresenterOutput {
             
             navController.pushViewController(vc, animated: true)
         case .settings:
-            print("lol")
+            let settingVC = SettingsViewController()
             
-          //  navController.pushViewController(goVC, animated: true)
+            navController.pushViewController(settingVC, animated: true)
         case .analytics:
-            print("analytics")
+            let statistics = StatisticsViewController()
+            navController.pushViewController(statistics, animated: true)
         }
     
         

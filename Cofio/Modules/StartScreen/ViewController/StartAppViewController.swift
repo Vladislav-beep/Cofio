@@ -34,19 +34,18 @@ class StartAppViewController: UIViewController {
         return tableview
     }()
     
-    private lazy var fadeView: FadeView = {
-        let fadeView = FadeView()
-        fadeView.translatesAutoresizingMaskIntoConstraints = false
-        return fadeView
-    }()
-    
     private lazy var bottomButton: UIButton = {
         let button = UIButton()
-        button.setTitle(AppText.StartAppScreen.buttonTitle.rawValue, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 21, weight: .semibold)
-        button.setTitleColor(UIColor.darkViolet, for: .normal)
+      //  button.setTitle("+", for: .normal)
+        button.setImage(UIImage(systemName: "plus"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFill
+       // button.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+      //  button.titleLabel?.font = UIFont.systemFont(ofSize: 21, weight: .semibold)
+        button.setTitleColor(UIColor.white, for: .normal)
         button.setTitleColor(UIColor.darkOrange, for: .highlighted)
         button.addTarget(self, action: #selector(addLanguage), for: .touchUpInside)
+        button.layer.cornerRadius = 25
+        button.backgroundColor = .violet
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -105,18 +104,10 @@ class StartAppViewController: UIViewController {
             languagesTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0)
         ])
         
-        languagesTableView.addSubview(fadeView)
+        view.addSubview(bottomButton)
         NSLayoutConstraint.activate([
-            fadeView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
-            fadeView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            fadeView.heightAnchor.constraint(equalToConstant: 106),
-            fadeView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-        ])
-        
-        fadeView.addSubview(bottomButton)
-        NSLayoutConstraint.activate([
-            bottomButton.heightAnchor.constraint(equalToConstant: 56),
-            bottomButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            bottomButton.heightAnchor.constraint(equalToConstant: 50),
+            bottomButton.widthAnchor.constraint(equalToConstant: 50),
             bottomButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             bottomButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30)
         ])
