@@ -14,13 +14,12 @@ protocol AppCoordinatorProtocol: Coordinator {
 class AppFlowCoordinator: AppCoordinatorProtocol {
     
     weak var finishDelegate: CoordinatorFinishDelegate? = nil
-    var navigationController: UINavigationController
+    var parentViewController: UIViewController
     var childCoordinators = [Coordinator]()
     var type: CoordinatorType { .app }
     
-    required init(_ navigationController: UINavigationController) {
-        self.navigationController = navigationController
-        navigationController.setNavigationBarHidden(true, animated: true)
+    required init(parentViewController: UIViewController) {
+        self.parentViewController = parentViewController
     }
     
     func start() {
@@ -28,7 +27,7 @@ class AppFlowCoordinator: AppCoordinatorProtocol {
     }
     
     func showMainFlow() {
-        let tabCoordinator = TabbarFlowCoordinator.init(navigationController)
+        let tabCoordinator = TabbarFlowCoordinator(parentViewController: parentViewController)
         tabCoordinator.finishDelegate = self
         tabCoordinator.start()
         childCoordinators.append(tabCoordinator)

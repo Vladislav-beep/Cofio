@@ -1,5 +1,5 @@
 //
-//  LanguageCell.swift
+//  MainModuleCell.swift
 //  Cofio
 //
 //  Created by Владислав Сизонов on 21.07.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class LanguageCell: UITableViewCell {
+final class MainModuleCell: UITableViewCell {
     
     // MARK: Public data structures
     

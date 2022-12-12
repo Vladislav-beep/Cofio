@@ -27,7 +27,7 @@ final class FlowCoordinator1 {
     // MARK: Public
     
     func showLanguagesModule() {
-        let builder = StartAppModuleBuilder(output: self)
+        let builder = MainModuleBuilder(output: self)
         let vc = builder.build()
         
         languagesVC = vc
@@ -99,14 +99,14 @@ extension FlowCoordinator1: FlowCoordinatorProtocol {
 
 // MARK: - StartAppPresenterOutput
 
-extension FlowCoordinator1: StartAppPresenterOutput {
+extension FlowCoordinator1: MainPresenterOutput {
     
-    func moduleWantsToOpenTabbar(_ module: StartAppPresenterInput) {
+    func moduleWantsToOpenTabbar(_ module: MainPresenterInput) {
         showTabbar()
     }
     
     
-    func moduleWantsToAddNewLanguage(_ module: StartAppPresenterInput) {
+    func moduleWantsToAddNewLanguage(_ module: MainPresenterInput) {
         showNewLanguageModule()
     }
 }

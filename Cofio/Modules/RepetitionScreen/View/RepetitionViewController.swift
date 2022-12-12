@@ -66,8 +66,8 @@ final class RepetitionViewController: UIViewController {
     
     private func setupNavigationBar() {
         title = "Повторение"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.tabBarController?.tabBar.backgroundColor = .base
+      //  navigationController?.navigationBar.prefersLargeTitles = true
+      //  navigationController?.tabBarController?.tabBar.backgroundColor = .base
     }
 }
 

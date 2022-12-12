@@ -74,7 +74,7 @@ final class DymmyData {
     }
     
     
-    static func getLanguages() -> [StartAppCellViewModel] {
+    static func getLanguages() -> [MainModuleCellViewModel] {
         
         return [
             .init(title: "Английский", collectionsCount: 0),

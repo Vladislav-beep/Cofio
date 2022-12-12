@@ -9,7 +9,7 @@ enum TabBarPage {
     case main
     case repetition
     case settings
-    case analytics
+    case statistics
 
     init?(index: Int) {
         switch index {
@@ -18,9 +18,9 @@ enum TabBarPage {
         case 1:
             self = .repetition
         case 2:
-            self = .settings
+            self = .statistics
         case 3:
-            self = .analytics
+            self = .settings
         default:
             return nil
         }
@@ -33,9 +33,9 @@ enum TabBarPage {
         case .repetition:
             return "Повторение"
         case .settings:
-            return "Настройки"
-        case .analytics:
             return "Статистика"
+        case .statistics:
+            return "Настройки"
         }
     }
 
@@ -47,7 +47,7 @@ enum TabBarPage {
             return 1
         case .settings:
             return 2
-        case .analytics:
+        case .statistics:
             return 3
         }
     }

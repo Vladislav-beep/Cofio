@@ -1,26 +1,26 @@
 //
-//  LanguagesPresenter.swift
+//  MainPresenter.swift
 //  Cofio
 //
 //  Created by Владислав Сизонов on 25.07.2022.
 //
 
-final class StartAppPresenter {
+final class MainPresenter {
     
     // MARK: Private properties
     
-    private let interactor: StartAppInteractorInput
+    private let interactor: MainInteractorInput
     
     
     // MARK: Public properties
     
-    weak var view: StartAppViewInput?
-    weak var output: StartAppPresenterOutput?
+    weak var view: MainViewInput?
+    weak var output: MainPresenterOutput?
     
     
     // MARK: Lifecycle
     
-    init(interactor: StartAppInteractorInput) {
+    init(interactor: MainInteractorInput) {
         self.interactor = interactor
     }
 }
@@ -28,7 +28,7 @@ final class StartAppPresenter {
 
 // MARK: - StartAppViewOutput
 
-extension StartAppPresenter: StartAppViewOutput {
+extension MainPresenter: MainViewOutput {
     
     func viewDidLoad() {
         let data = DymmyData.getLanguages()
@@ -36,7 +36,7 @@ extension StartAppPresenter: StartAppViewOutput {
         view?.updateView(with: data)
     }
     
-    func viewDidTapRow(_ type: StartAppCellViewModel) {
+    func viewDidTapRow(_ type: MainModuleCellViewModel) {
         output?.moduleWantsToOpenTabbar(self)
     }
     
@@ -48,9 +48,9 @@ extension StartAppPresenter: StartAppViewOutput {
 
 // MARK: - StartAppPresenterInput
 
-extension StartAppPresenter: StartAppPresenterInput {}
+extension MainPresenter: MainPresenterInput {}
 
 
 // MARK: - StartAppInteractorOutput
 
-extension StartAppPresenter: StartAppInteractorOutput {}
+extension MainPresenter: MainInteractorOutput {}

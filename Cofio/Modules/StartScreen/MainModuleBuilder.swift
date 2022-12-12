@@ -1,5 +1,5 @@
 //
-//  LanguagesModuleBuilder.swift
+//  MainModuleBuilder.swift
 //  Cofio
 //
 //  Created by Владислав Сизонов on 25.07.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class StartAppModuleBuilder {
+final class MainModuleBuilder {
     
     // MARK: Private
     
@@ -24,11 +24,11 @@ final class StartAppModuleBuilder {
     // MARK: Public
     
     func build() -> UIViewController {
-        let interactor = StartAppInteractor()
-        let presenter = StartAppPresenter(interactor: interactor)
+        let interactor = MainInteractor()
+        let presenter = MainPresenter(interactor: interactor)
         
-        let tableViewDataSource = LanguageTableViewDataSource()
-        let viewController = StartAppViewController(output: presenter,
+        let tableViewDataSource = MainTableViewDataSource()
+        let viewController = MainViewController(output: presenter,
                                                     coordinater: output,
                                                     dataSource: tableViewDataSource)
         

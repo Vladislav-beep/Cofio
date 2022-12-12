@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  Cofio
 //
 //  Created by Владислав Сизонов on 19.07.2022.
@@ -7,13 +7,13 @@
 
 import UIKit
 
-class StartAppViewController: UIViewController {
+class MainViewController: UIViewController {
     
     // MARK: Private properties
     
-    private let output: StartAppViewOutput
+    private let output: MainViewOutput
     private let coordinater: FlowCoordinator1
-    private let dataSource: LanguageTableViewDataSourceProtocol
+    private let dataSource: MainTableViewDataSourceProtocol
     
     private lazy var titleLabel: TitleLabel = {
         let titleLabel = TitleLabel(title: AppText.StartAppScreen.title.rawValue)
@@ -27,7 +27,7 @@ class StartAppViewController: UIViewController {
     
     private lazy var languagesTableView: UITableView = {
         let tableview = UITableView()
-        tableview.register(LanguageCell.self)
+        tableview.register(MainModuleCell.self)
         tableview.translatesAutoresizingMaskIntoConstraints = false
         tableview.separatorStyle = .none
         tableview.delegate = self
@@ -55,9 +55,9 @@ class StartAppViewController: UIViewController {
     
     // MARK: Lifecycle
     
-    init(output: StartAppViewOutput,
+    init(output: MainViewOutput,
          coordinater: FlowCoordinator1,
-         dataSource: LanguageTableViewDataSourceProtocol) {
+         dataSource: MainTableViewDataSourceProtocol) {
         self.coordinater = coordinater
         self.output = output
         self.dataSource = dataSource
@@ -124,10 +124,10 @@ class StartAppViewController: UIViewController {
 
 // MARK: - StartAppViewInput
 
-extension StartAppViewController: StartAppViewInput {
+extension MainViewController: MainViewInput {
     
-    func updateView(with data: [StartAppCellViewModel]) {
-        var snapshot = NSDiffableDataSourceSnapshot<Int, StartAppCellViewModel>()
+    func updateView(with data: [MainModuleCellViewModel]) {
+        var snapshot = NSDiffableDataSourceSnapshot<Int, MainModuleCellViewModel>()
         snapshot.appendSections([0])
         snapshot.appendItems(data, toSection: 0)
         tableViewDataSource.apply(snapshot)
@@ -137,7 +137,7 @@ extension StartAppViewController: StartAppViewInput {
 
 // MARK: - UITableViewDelegate
 
-extension StartAppViewController: UITableViewDelegate {
+extension MainViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)

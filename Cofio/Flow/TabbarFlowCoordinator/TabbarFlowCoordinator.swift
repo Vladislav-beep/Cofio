@@ -1,5 +1,5 @@
 //
-//  TabCoordinator.swift
+//  TabbarFlowCoordinator.swift
 //  Cofio
 //
 //  Created by Владислав Сизонов on 10.12.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol TabCoordinatorProtocol: Coordinator {
+protocol TabbarFlowCoordinatorProtocol: Coordinator {
     var tabBarController: UITabBarController { get set }
     
     func selectPage(_ page: TabBarPage)
@@ -18,30 +18,29 @@ protocol TabCoordinatorProtocol: Coordinator {
 }
 
 class TabbarFlowCoordinator: NSObject, Coordinator, RepetitionPresenterOutput {
-    weak var finishDelegate: CoordinatorFinishDelegate?
-        
-    var childCoordinators: [Coordinator] = []
-
-    var navigationController: UINavigationController
     
+    weak var finishDelegate: CoordinatorFinishDelegate?
+    var childCoordinators: [Coordinator] = []
+    var parentViewController: UIViewController
     var tabBarController: UITabBarController
 
     var type: CoordinatorType { .tab }
     
-    required init(_ navigationController: UINavigationController) {
-        self.navigationController = navigationController
+    required init(parentViewController: UIViewController) {
+        self.parentViewController = parentViewController
         self.tabBarController = .init()
     }
 
     func start() {
-        // Let's define which pages do we want to add into tab bar
-        let pages: [TabBarPage] = [.main, .repetition, .settings, .analytics]
+        let pages: [TabBarPage] = [.main, .repetition, .statistics, .settings]
             .sorted(by: { $0.pageOrderNumber() < $1.pageOrderNumber() })
         
-        // Initialization of ViewControllers or these pages
-        let controllers: [UINavigationController] = pages.map({ getTabController($0) })
+        let controllers: [UIViewController] = pages.map({ getTabController($0) })
         
         prepareTabBarController(withTabControllers: controllers)
+ 
+        tabBarController.modalPresentationStyle = .fullScreen
+        parentViewController.present(tabBarController, animated: false)
     }
     
     deinit {
@@ -49,19 +48,11 @@ class TabbarFlowCoordinator: NSObject, Coordinator, RepetitionPresenterOutput {
     }
     
     private func prepareTabBarController(withTabControllers tabControllers: [UIViewController]) {
-        /// Set delegate for UITabBarController
         tabBarController.delegate = self
-        /// Assign page's controllers
         tabBarController.setViewControllers(tabControllers, animated: true)
-        /// Let set index
         tabBarController.selectedIndex = TabBarPage.main.pageOrderNumber()
-        /// Styling
         tabBarController.tabBar.isTranslucent = false
-        
-        /// In this step, we attach tabBarController to navigation controller associated with this coordanator
-        navigationController.viewControllers = [tabBarController]
-        
-        navigationController.tabBarController?.tabBar.backgroundColor = .systemTeal
+        tabBarController.tabBar.backgroundColor = .gray
     }
       
     private func getTabController(_ page: TabBarPage) -> UINavigationController {
@@ -74,40 +65,22 @@ class TabbarFlowCoordinator: NSObject, Coordinator, RepetitionPresenterOutput {
 
         switch page {
         case .main:
-            // If needed: Each tab bar flow can have it's own Coordinator.
             let flow = FlowCoordinator1(vc: navController)
             flow.start()
-//            let readyVC = ReadyViewController()
-//            readyVC.didSendEventClosure = { [weak self] event in
-//                switch event {
-//                case .ready:
-//                    self?.selectPage(.steady)
-//                }
-         //   }
                         
-           // navController.pushViewController(readyVC, animated: true)
         case .repetition:
-//            let steadyVC = SteadyViewController()
-//            steadyVC.didSendEventClosure = { [weak self] event in
-//                switch event {
-//                case .steady:
-//                    self?.selectPage(.go)
-//                }
-//            }
             let builder = RepetitionModuleBuilder(output: self)
             let vc = builder.build()
-            
             navController.pushViewController(vc, animated: true)
+        
         case .settings:
-            let settingVC = SettingsViewController()
-            
-            navController.pushViewController(settingVC, animated: true)
-        case .analytics:
             let statistics = StatisticsViewController()
             navController.pushViewController(statistics, animated: true)
+            
+        case .statistics:
+            let settingVC = SettingsViewController()
+            navController.pushViewController(settingVC, animated: true)
         }
-    
-        
         return navController
     }
     
