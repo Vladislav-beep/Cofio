@@ -7,24 +7,12 @@
 
 import UIKit
 
-protocol TabbarFlowCoordinatorProtocol: Coordinator {
-    var tabBarController: UITabBarController { get set }
+class TabbarFlowCoordinator: NSObject, FlowCoordinatorProtocol {
     
-    func selectPage(_ page: TabBarPage)
-    
-    func setSelectedIndex(_ index: Int)
-    
-    func currentPage() -> TabBarPage?
-}
-
-class TabbarFlowCoordinator: NSObject, Coordinator, RepetitionPresenterOutput {
-    
-    weak var finishDelegate: CoordinatorFinishDelegate?
-    var childCoordinators: [Coordinator] = []
+    var childCoordinators: [FlowCoordinatorProtocol] = []
     var parentViewController: UIViewController
     var tabBarController: UITabBarController
 
-    var type: CoordinatorType { .tab }
     
     required init(parentViewController: UIViewController) {
         self.parentViewController = parentViewController
@@ -41,6 +29,10 @@ class TabbarFlowCoordinator: NSObject, Coordinator, RepetitionPresenterOutput {
  
         tabBarController.modalPresentationStyle = .fullScreen
         parentViewController.present(tabBarController, animated: false)
+    }
+    
+    func finish(completion: (() -> Void)?) {
+        // TODO: to do
     }
     
     deinit {
@@ -103,4 +95,8 @@ extension TabbarFlowCoordinator: UITabBarControllerDelegate {
                           didSelect viewController: UIViewController) {
         // Some implementation
     }
+}
+
+extension TabbarFlowCoordinator: RepetitionPresenterOutput {
+    
 }

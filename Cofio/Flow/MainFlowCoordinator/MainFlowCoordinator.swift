@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MainFlowCoordinator {
+final class MainFlowCoordinator: FlowCoordinatorProtocol {
     
     // MARK: Private
     
@@ -33,7 +33,7 @@ final class MainFlowCoordinator {
     }
     
     func showNewCollectionModule() {
-        let builder = NewLanguageModuleBuilder(output: self)
+        let builder = NewCollectionModuleBuilder(output: self)
         let newCollectionViewController = builder.build()
 
         newCollectionViewController.modalPresentationStyle = .fullScreen
@@ -43,12 +43,12 @@ final class MainFlowCoordinator {
 
 // MARK: - FlowCoordinatorProtocol
 
-extension MainFlowCoordinator: MainFlowCoordinatorProtocol {
+extension MainFlowCoordinator {
     func start() {
         showMainModule()
     }
     
-    func finish() {
+    func finish(completion: (() -> Void)?) {
         
     }
 }
@@ -66,9 +66,9 @@ extension MainFlowCoordinator: MainPresenterOutput {
 
 // MARK: - NewLanguagePresenterOutput
 
-extension MainFlowCoordinator: NewLanguagePresenterOutput {
+extension MainFlowCoordinator: NewCollectionPresenterOutput {
     
-    func moduleWantsToClose(_ module: NewLanguagePresenterInput) {
+    func moduleWantsToClose(_ module: NewCollectionPresenterInput) {
         mainModuleViewController?.dismiss(animated: true)
     }
 }

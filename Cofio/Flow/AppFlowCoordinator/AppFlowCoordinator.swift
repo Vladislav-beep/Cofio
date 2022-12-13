@@ -7,16 +7,14 @@
 
 import UIKit
 
-protocol AppCoordinatorProtocol: Coordinator {
+protocol AppCoordinatorProtocol: FlowCoordinatorProtocol {
     func showMainFlow()
 }
 
 class AppFlowCoordinator: AppCoordinatorProtocol {
     
-    weak var finishDelegate: CoordinatorFinishDelegate? = nil
     var parentViewController: UIViewController
-    var childCoordinators = [Coordinator]()
-    var type: CoordinatorType { .app }
+    var childCoordinators = [FlowCoordinatorProtocol]()
     
     required init(parentViewController: UIViewController) {
         self.parentViewController = parentViewController
@@ -26,16 +24,13 @@ class AppFlowCoordinator: AppCoordinatorProtocol {
         showMainFlow()
     }
     
+    func finish(completion: (() -> Void)?) {
+        // unused
+    }
+    
     func showMainFlow() {
         let tabCoordinator = TabbarFlowCoordinator(parentViewController: parentViewController)
-        tabCoordinator.finishDelegate = self
         tabCoordinator.start()
         childCoordinators.append(tabCoordinator)
-    }
-}
-
-extension AppFlowCoordinator: CoordinatorFinishDelegate {
-    func coordinatorDidFinish(childCoordinator: Coordinator) {
-        childCoordinators = childCoordinators.filter({ $0.type != childCoordinator.type })
     }
 }

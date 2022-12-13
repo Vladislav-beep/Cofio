@@ -1,5 +1,5 @@
 //
-//  NewLanguageModuleBuilder.swift
+//  NewCollectionModuleBuilder.swift
 //  Cofio
 //
 //  Created by Владислав Сизонов on 25.07.2022.
@@ -7,16 +7,16 @@
 
 import UIKit
 
-final class NewLanguageModuleBuilder {
+final class NewCollectionModuleBuilder {
     
     // MARK: Private
     
-    private weak var output: NewLanguagePresenterOutput?
+    private weak var output: NewCollectionPresenterOutput?
     
     
     // MARK: Lifecycle
     
-    init(output: NewLanguagePresenterOutput) {
+    init(output: NewCollectionPresenterOutput) {
         self.output = output
     }
     
@@ -27,10 +27,10 @@ final class NewLanguageModuleBuilder {
         
         let imageProvider = ImageProvider()
         
-        let interactor = NewLanguageInteractor()
-        let presenter = NewLanguagePresenter(interactor: interactor)
+        let interactor = NewCollectionInteractor()
+        let presenter = NewCollectionPresenter(interactor: interactor)
         
-        let viewController = NewLanguageViewController(output: presenter,
+        let viewController = NewCollectionViewController(output: presenter,
                                                        imageProvider: imageProvider)
         
         presenter.view = viewController

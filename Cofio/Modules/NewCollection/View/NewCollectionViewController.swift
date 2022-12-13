@@ -1,5 +1,5 @@
 //
-//  NewLanguageViewController.swift
+//  NewCollectionViewController.swift
 //  Cofio
 //
 //  Created by Владислав Сизонов on 25.07.2022.
@@ -7,11 +7,11 @@
 
 import UIKit
 
-final class NewLanguageViewController: UIViewController {
+final class NewCollectionViewController: UIViewController {
     
     // MARK: Private properties
     
-    private let output: NewLanguageViewOutput
+    private let output: NewCollectionViewOutput
     private let imageProvider: ImageProviderProtocol
     
     private lazy var closeButton: CloseButton = {
@@ -30,14 +30,6 @@ final class NewLanguageViewController: UIViewController {
         return languageTextField
     }()
     
-    private let pickerView: UIPickerView = {
-        let pickerView = UIPickerView()
-        pickerView.translatesAutoresizingMaskIntoConstraints = false
-        pickerView.backgroundColor = .lightOrange
-        pickerView.layer.cornerRadius = 20
-        return pickerView
-    }()
-    
     private lazy var doneButton: UIButton = {
         let doneButton = UIButton()
         doneButton.translatesAutoresizingMaskIntoConstraints = false
@@ -53,7 +45,7 @@ final class NewLanguageViewController: UIViewController {
     
     // MARK: Lifecycle
     
-    init(output: NewLanguageViewOutput, imageProvider: ImageProviderProtocol) {
+    init(output: NewCollectionViewOutput, imageProvider: ImageProviderProtocol) {
         self.output = output
         self.imageProvider = imageProvider
         
@@ -68,8 +60,6 @@ final class NewLanguageViewController: UIViewController {
         super.viewDidLoad()
         
         setupViews()
-        pickerView.delegate = self
-        pickerView.dataSource = self
     }
     
     
@@ -108,14 +98,6 @@ final class NewLanguageViewController: UIViewController {
             languageTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             languageTextField.heightAnchor.constraint(equalToConstant: 56)
         ])
-        
-        view.addSubview(pickerView)
-        NSLayoutConstraint.activate([
-            pickerView.topAnchor.constraint(equalTo: languageTextField.bottomAnchor, constant: 24),
-            pickerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            pickerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            pickerView.heightAnchor.constraint(equalToConstant: 200)
-        ])
     }
     
     
@@ -133,32 +115,4 @@ final class NewLanguageViewController: UIViewController {
 
 // MARK: - NewLanguageViewInput
 
-extension NewLanguageViewController: NewLanguageViewInput {}
-
-
-// MARK: - UIPickerViewDataSource
-
-extension NewLanguageViewController: UIPickerViewDataSource {
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int { 1 }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        languages.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat { 40.0 }
-    
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        let model = languages[row]
-        return LanguagesPickerView.create(icon: model.icon, title: model.title)
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        languageTextField.text = languages[row].title
-    }
-}
-
-
-// MARK: - UIPickerViewDelegate
-
-extension NewLanguageViewController: UIPickerViewDelegate {}
+extension NewCollectionViewController: NewCollectionViewInput {}

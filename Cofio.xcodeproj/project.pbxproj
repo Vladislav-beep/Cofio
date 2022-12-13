@@ -10,7 +10,7 @@
 		B910AB3C2945E42400D9E7EA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B910AB3B2945E42400D9E7EA /* SettingsViewController.swift */; };
 		B910AB402945E51900D9E7EA /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B910AB3F2945E51900D9E7EA /* StatisticsViewController.swift */; };
 		B910AB4429485B8100D9E7EA /* RepetitionFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B910AB4329485B8100D9E7EA /* RepetitionFlowCoordinator.swift */; };
-		B910AB4629485BB500D9E7EA /* RepetitionFlowCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B910AB4529485BB500D9E7EA /* RepetitionFlowCoordinatorProtocol.swift */; };
+		B910AB482948EE5000D9E7EA /* FlowCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B910AB472948EE5000D9E7EA /* FlowCoordinatorProtocol.swift */; };
 		B932E944289C402A007244E6 /* DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932E943289C402A007244E6 /* DoneButton.swift */; };
 		B932E946289DB069007244E6 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932E945289DB069007244E6 /* HeaderCell.swift */; };
 		B932E948289DB365007244E6 /* MainModuleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932E947289DB365007244E6 /* MainModuleCellViewModel.swift */; };
@@ -49,7 +49,6 @@
 		B93EF8D5289AFB2A0057C774 /* WordInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8D4289AFB2A0057C774 /* WordInteractorProtocol.swift */; };
 		B93EF8D7289AFB720057C774 /* WordModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8D6289AFB720057C774 /* WordModuleBuilder.swift */; };
 		B93EF8D9289AFFD30057C774 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8D8289AFFD30057C774 /* CloseButton.swift */; };
-		B99B17522944CD2D002167DB /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B17512944CD2D002167DB /* Coordinator.swift */; };
 		B99B17542944CD66002167DB /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B17532944CD66002167DB /* AppFlowCoordinator.swift */; };
 		B99B175A2944CEE7002167DB /* TabBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B17592944CEE7002167DB /* TabBarPage.swift */; };
 		B99B175C2944CF07002167DB /* TabbarFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B175B2944CF07002167DB /* TabbarFlowCoordinator.swift */; };
@@ -72,14 +71,13 @@
 		B9CC13A4288EEAA70013ED76 /* MainViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13A3288EEAA70013ED76 /* MainViewProtocol.swift */; };
 		B9CC13A6288EEC7A0013ED76 /* MainModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13A5288EEC7A0013ED76 /* MainModuleBuilder.swift */; };
 		B9CC13A8288EF56D0013ED76 /* MainFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13A7288EF56D0013ED76 /* MainFlowCoordinator.swift */; };
-		B9CC13AB288EF6FF0013ED76 /* MainFlowCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13AA288EF6FF0013ED76 /* MainFlowCoordinatorProtocol.swift */; };
-		B9CC13B1288F07BF0013ED76 /* NewLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13B0288F07BF0013ED76 /* NewLanguageViewController.swift */; };
-		B9CC13B3288F08040013ED76 /* NewLanguagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13B2288F08040013ED76 /* NewLanguagePresenter.swift */; };
+		B9CC13B1288F07BF0013ED76 /* NewCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13B0288F07BF0013ED76 /* NewCollectionViewController.swift */; };
+		B9CC13B3288F08040013ED76 /* NewCollectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13B2288F08040013ED76 /* NewCollectionPresenter.swift */; };
 		B9CC13B5288F087A0013ED76 /* NewLanguageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13B4288F087A0013ED76 /* NewLanguageProtocol.swift */; };
-		B9CC13B7288F094A0013ED76 /* NewLanguageViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13B6288F094A0013ED76 /* NewLanguageViewProtocol.swift */; };
-		B9CC13B9288F09D10013ED76 /* NewLanguageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13B8288F09D10013ED76 /* NewLanguageInteractor.swift */; };
-		B9CC13BB288F0A000013ED76 /* NewLanguageInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13BA288F0A000013ED76 /* NewLanguageInteractorProtocol.swift */; };
-		B9CC13BD288F0AC90013ED76 /* NewLanguageModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13BC288F0AC90013ED76 /* NewLanguageModuleBuilder.swift */; };
+		B9CC13B7288F094A0013ED76 /* NewCollectionViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13B6288F094A0013ED76 /* NewCollectionViewProtocol.swift */; };
+		B9CC13B9288F09D10013ED76 /* NewCollectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13B8288F09D10013ED76 /* NewCollectionInteractor.swift */; };
+		B9CC13BB288F0A000013ED76 /* NewCollectionInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13BA288F0A000013ED76 /* NewCollectionInteractorProtocol.swift */; };
+		B9CC13BD288F0AC90013ED76 /* NewCollectionModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13BC288F0AC90013ED76 /* NewCollectionModuleBuilder.swift */; };
 		B9CC13C0289069C90013ED76 /* CollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13BF289069C90013ED76 /* CollectionsViewController.swift */; };
 		B9CC13C228906A2F0013ED76 /* CollectionsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13C128906A2F0013ED76 /* CollectionsViewProtocol.swift */; };
 		B9CC13C728906A7C0013ED76 /* CollectionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13C628906A7C0013ED76 /* CollectionsPresenter.swift */; };
@@ -96,7 +94,6 @@
 		B9CC13E32891D5F10013ED76 /* CardCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13E22891D5F10013ED76 /* CardCollection.swift */; };
 		B9CC13E52891D6380013ED76 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13E42891D6380013ED76 /* Card.swift */; };
 		B9CC13E72891D6510013ED76 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13E62891D6510013ED76 /* Word.swift */; };
-		B9CC13E92893084E0013ED76 /* LanguagesPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13E82893084E0013ED76 /* LanguagesPickerView.swift */; };
 		B9CC13ED2893094D0013ED76 /* ImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13EC2893094D0013ED76 /* ImageProvider.swift */; };
 		B9CC13EF28930A8A0013ED76 /* InfoPickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13EE28930A8A0013ED76 /* InfoPickerModel.swift */; };
 		B9CC13F1289310460013ED76 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13F0289310460013ED76 /* UIStackView+Extension.swift */; };
@@ -133,7 +130,7 @@
 		B910AB3B2945E42400D9E7EA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B910AB3F2945E51900D9E7EA /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		B910AB4329485B8100D9E7EA /* RepetitionFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepetitionFlowCoordinator.swift; sourceTree = "<group>"; };
-		B910AB4529485BB500D9E7EA /* RepetitionFlowCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepetitionFlowCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		B910AB472948EE5000D9E7EA /* FlowCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		B932E943289C402A007244E6 /* DoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneButton.swift; sourceTree = "<group>"; };
 		B932E945289DB069007244E6 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		B932E947289DB365007244E6 /* MainModuleCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleCellViewModel.swift; sourceTree = "<group>"; };
@@ -172,7 +169,6 @@
 		B93EF8D4289AFB2A0057C774 /* WordInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordInteractorProtocol.swift; sourceTree = "<group>"; };
 		B93EF8D6289AFB720057C774 /* WordModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordModuleBuilder.swift; sourceTree = "<group>"; };
 		B93EF8D8289AFFD30057C774 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
-		B99B17512944CD2D002167DB /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		B99B17532944CD66002167DB /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
 		B99B17592944CEE7002167DB /* TabBarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPage.swift; sourceTree = "<group>"; };
 		B99B175B2944CF07002167DB /* TabbarFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -199,14 +195,13 @@
 		B9CC13A3288EEAA70013ED76 /* MainViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewProtocol.swift; sourceTree = "<group>"; };
 		B9CC13A5288EEC7A0013ED76 /* MainModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleBuilder.swift; sourceTree = "<group>"; };
 		B9CC13A7288EF56D0013ED76 /* MainFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowCoordinator.swift; sourceTree = "<group>"; };
-		B9CC13AA288EF6FF0013ED76 /* MainFlowCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowCoordinatorProtocol.swift; sourceTree = "<group>"; };
-		B9CC13B0288F07BF0013ED76 /* NewLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLanguageViewController.swift; sourceTree = "<group>"; };
-		B9CC13B2288F08040013ED76 /* NewLanguagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLanguagePresenter.swift; sourceTree = "<group>"; };
+		B9CC13B0288F07BF0013ED76 /* NewCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCollectionViewController.swift; sourceTree = "<group>"; };
+		B9CC13B2288F08040013ED76 /* NewCollectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCollectionPresenter.swift; sourceTree = "<group>"; };
 		B9CC13B4288F087A0013ED76 /* NewLanguageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLanguageProtocol.swift; sourceTree = "<group>"; };
-		B9CC13B6288F094A0013ED76 /* NewLanguageViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLanguageViewProtocol.swift; sourceTree = "<group>"; };
-		B9CC13B8288F09D10013ED76 /* NewLanguageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLanguageInteractor.swift; sourceTree = "<group>"; };
-		B9CC13BA288F0A000013ED76 /* NewLanguageInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLanguageInteractorProtocol.swift; sourceTree = "<group>"; };
-		B9CC13BC288F0AC90013ED76 /* NewLanguageModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLanguageModuleBuilder.swift; sourceTree = "<group>"; };
+		B9CC13B6288F094A0013ED76 /* NewCollectionViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCollectionViewProtocol.swift; sourceTree = "<group>"; };
+		B9CC13B8288F09D10013ED76 /* NewCollectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCollectionInteractor.swift; sourceTree = "<group>"; };
+		B9CC13BA288F0A000013ED76 /* NewCollectionInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCollectionInteractorProtocol.swift; sourceTree = "<group>"; };
+		B9CC13BC288F0AC90013ED76 /* NewCollectionModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCollectionModuleBuilder.swift; sourceTree = "<group>"; };
 		B9CC13BF289069C90013ED76 /* CollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewController.swift; sourceTree = "<group>"; };
 		B9CC13C128906A2F0013ED76 /* CollectionsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewProtocol.swift; sourceTree = "<group>"; };
 		B9CC13C628906A7C0013ED76 /* CollectionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsPresenter.swift; sourceTree = "<group>"; };
@@ -223,7 +218,6 @@
 		B9CC13E22891D5F10013ED76 /* CardCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollection.swift; sourceTree = "<group>"; };
 		B9CC13E42891D6380013ED76 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		B9CC13E62891D6510013ED76 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
-		B9CC13E82893084E0013ED76 /* LanguagesPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesPickerView.swift; sourceTree = "<group>"; };
 		B9CC13EC2893094D0013ED76 /* ImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProvider.swift; sourceTree = "<group>"; };
 		B9CC13EE28930A8A0013ED76 /* InfoPickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPickerModel.swift; sourceTree = "<group>"; };
 		B9CC13F0289310460013ED76 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
@@ -301,7 +295,6 @@
 			isa = PBXGroup;
 			children = (
 				B9CC13A7288EF56D0013ED76 /* MainFlowCoordinator.swift */,
-				B9CC13AA288EF6FF0013ED76 /* MainFlowCoordinatorProtocol.swift */,
 			);
 			path = MainFlowCoordinator;
 			sourceTree = "<group>";
@@ -310,7 +303,6 @@
 			isa = PBXGroup;
 			children = (
 				B910AB4329485B8100D9E7EA /* RepetitionFlowCoordinator.swift */,
-				B910AB4529485BB500D9E7EA /* RepetitionFlowCoordinatorProtocol.swift */,
 			);
 			path = RepetitionFlowCoordinator;
 			sourceTree = "<group>";
@@ -468,7 +460,6 @@
 		B99B176329450BA4002167DB /* AppFlowCoordinator */ = {
 			isa = PBXGroup;
 			children = (
-				B99B17512944CD2D002167DB /* Coordinator.swift */,
 				B99B17532944CD66002167DB /* AppFlowCoordinator.swift */,
 			);
 			path = AppFlowCoordinator;
@@ -601,6 +592,7 @@
 		B9CC13A9288EF6E40013ED76 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				B910AB472948EE5000D9E7EA /* FlowCoordinatorProtocol.swift */,
 				B99B176329450BA4002167DB /* AppFlowCoordinator */,
 				B99B176429450C47002167DB /* TabbarFlowCoordinator */,
 				B910AB412948565C00D9E7EA /* MainFlowCoordinator */,
@@ -609,23 +601,22 @@
 			path = Flow;
 			sourceTree = "<group>";
 		};
-		B9CC13AC288F070E0013ED76 /* NewLanguage */ = {
+		B9CC13AC288F070E0013ED76 /* NewCollection */ = {
 			isa = PBXGroup;
 			children = (
-				B9CC13BC288F0AC90013ED76 /* NewLanguageModuleBuilder.swift */,
+				B9CC13BC288F0AC90013ED76 /* NewCollectionModuleBuilder.swift */,
 				B9CC13AF288F07650013ED76 /* Interactor */,
 				B9CC13AE288F075B0013ED76 /* Presenter */,
 				B9CC13AD288F072F0013ED76 /* View */,
 			);
-			path = NewLanguage;
+			path = NewCollection;
 			sourceTree = "<group>";
 		};
 		B9CC13AD288F072F0013ED76 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B9CC13B0288F07BF0013ED76 /* NewLanguageViewController.swift */,
-				B9CC13B6288F094A0013ED76 /* NewLanguageViewProtocol.swift */,
-				B9CC13EA289308960013ED76 /* Views */,
+				B9CC13B0288F07BF0013ED76 /* NewCollectionViewController.swift */,
+				B9CC13B6288F094A0013ED76 /* NewCollectionViewProtocol.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -633,7 +624,7 @@
 		B9CC13AE288F075B0013ED76 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				B9CC13B2288F08040013ED76 /* NewLanguagePresenter.swift */,
+				B9CC13B2288F08040013ED76 /* NewCollectionPresenter.swift */,
 				B9CC13B4288F087A0013ED76 /* NewLanguageProtocol.swift */,
 			);
 			path = Presenter;
@@ -642,8 +633,8 @@
 		B9CC13AF288F07650013ED76 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				B9CC13B8288F09D10013ED76 /* NewLanguageInteractor.swift */,
-				B9CC13BA288F0A000013ED76 /* NewLanguageInteractorProtocol.swift */,
+				B9CC13B8288F09D10013ED76 /* NewCollectionInteractor.swift */,
+				B9CC13BA288F0A000013ED76 /* NewCollectionInteractorProtocol.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -737,7 +728,7 @@
 			isa = PBXGroup;
 			children = (
 				B9CC1395288D76E60013ED76 /* MainModule */,
-				B9CC13AC288F070E0013ED76 /* NewLanguage */,
+				B9CC13AC288F070E0013ED76 /* NewCollection */,
 				B9CC13BE289069A40013ED76 /* Collections */,
 				B9CC14122896846B0013ED76 /* Cards */,
 				B93EF8C5289AF9190057C774 /* Word */,
@@ -758,14 +749,6 @@
 				B9CC13EE28930A8A0013ED76 /* InfoPickerModel.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		B9CC13EA289308960013ED76 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				B9CC13E82893084E0013ED76 /* LanguagesPickerView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		B9CC13EB289309390013ED76 /* Services */ = {
@@ -947,18 +930,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9CC13AB288EF6FF0013ED76 /* MainFlowCoordinatorProtocol.swift in Sources */,
 				B932E96328AC06AD007244E6 /* RepetitionCellDataModel.swift in Sources */,
 				B9CC13D9289195BF0013ED76 /* LanguagesForPicker.swift in Sources */,
 				B910AB402945E51900D9E7EA /* StatisticsViewController.swift in Sources */,
 				B9CC138F288B0AFD0013ED76 /* UITableView+Extension.swift in Sources */,
 				B93EF8D7289AFB720057C774 /* WordModuleBuilder.swift in Sources */,
 				B99B175A2944CEE7002167DB /* TabBarPage.swift in Sources */,
-				B9CC13B7288F094A0013ED76 /* NewLanguageViewProtocol.swift in Sources */,
+				B9CC13B7288F094A0013ED76 /* NewCollectionViewProtocol.swift in Sources */,
 				B9CC13EF28930A8A0013ED76 /* InfoPickerModel.swift in Sources */,
 				B9CC13D3289070E70013ED76 /* TitleLabel.swift in Sources */,
 				B9CC13DB28919E0E0013ED76 /* LowerView.swift in Sources */,
 				B93EF8C428970C4C0057C774 /* FadeView.swift in Sources */,
+				B910AB482948EE5000D9E7EA /* FlowCoordinatorProtocol.swift in Sources */,
 				B93EF8D5289AFB2A0057C774 /* WordInteractorProtocol.swift in Sources */,
 				B9CC14112895C2530013ED76 /* CollectionsCellsDataModel.swift in Sources */,
 				B910AB4429485B8100D9E7EA /* RepetitionFlowCoordinator.swift in Sources */,
@@ -984,12 +967,11 @@
 				B9CC13B5288F087A0013ED76 /* NewLanguageProtocol.swift in Sources */,
 				B99B17542944CD66002167DB /* AppFlowCoordinator.swift in Sources */,
 				B93EF8B828968D210057C774 /* CardsPresenter.swift in Sources */,
-				B99B17522944CD2D002167DB /* Coordinator.swift in Sources */,
 				B9CC141E289688470013ED76 /* CardsCell.swift in Sources */,
 				B9CC1391288B0B840013ED76 /* UITableViewCell+Extension.swift in Sources */,
 				B9CC140B2895C00C0013ED76 /* StatisticsCell.swift in Sources */,
 				B9CC13C728906A7C0013ED76 /* CollectionsPresenter.swift in Sources */,
-				B9CC13B1288F07BF0013ED76 /* NewLanguageViewController.swift in Sources */,
+				B9CC13B1288F07BF0013ED76 /* NewCollectionViewController.swift in Sources */,
 				B9CC139D288EE6E90013ED76 /* MainInteractor.swift in Sources */,
 				B9CC1414289686140013ED76 /* CardsViewController.swift in Sources */,
 				B910AB3C2945E42400D9E7EA /* SettingsViewController.swift in Sources */,
@@ -998,11 +980,9 @@
 				B9CC13C0289069C90013ED76 /* CollectionsViewController.swift in Sources */,
 				B9CC13ED2893094D0013ED76 /* ImageProvider.swift in Sources */,
 				B932E96F28B7FA0E007244E6 /* CardsRepetitionPresenter.swift in Sources */,
-				B9CC13E92893084E0013ED76 /* LanguagesPickerView.swift in Sources */,
 				B932E96528AC06F4007244E6 /* RepetitionTableViewDataSource.swift in Sources */,
 				B932E97328B7FAA5007244E6 /* CardsRepetitionInteractor.swift in Sources */,
 				B9CC13CB28906B040013ED76 /* CollectionsInteractor.swift in Sources */,
-				B910AB4629485BB500D9E7EA /* RepetitionFlowCoordinatorProtocol.swift in Sources */,
 				B9CC13CD28906B310013ED76 /* CollectionsInteractorProtocol.swift in Sources */,
 				B932E94C28A00499007244E6 /* WordTextView.swift in Sources */,
 				B932E95428ABFA1E007244E6 /* RepetitionViewProtocol.swift in Sources */,
@@ -1016,7 +996,7 @@
 				B932E948289DB365007244E6 /* MainModuleCellViewModel.swift in Sources */,
 				B9CC13A8288EF56D0013ED76 /* MainFlowCoordinator.swift in Sources */,
 				B99B175C2944CF07002167DB /* TabbarFlowCoordinator.swift in Sources */,
-				B9CC13BB288F0A000013ED76 /* NewLanguageInteractorProtocol.swift in Sources */,
+				B9CC13BB288F0A000013ED76 /* NewCollectionInteractorProtocol.swift in Sources */,
 				B93EF8CD289AF9B60057C774 /* WordViewProtocol.swift in Sources */,
 				B9CC13F1289310460013ED76 /* UIStackView+Extension.swift in Sources */,
 				B9CC135B288738980013ED76 /* AppDelegate.swift in Sources */,
@@ -1024,7 +1004,7 @@
 				B93EF8C228968F310057C774 /* CardsModuleBuilder.swift in Sources */,
 				B9CC13F728952B630013ED76 /* DymmyData.swift in Sources */,
 				B9CC138D2889D7900013ED76 /* MainModuleCell.swift in Sources */,
-				B9CC13B3288F08040013ED76 /* NewLanguagePresenter.swift in Sources */,
+				B9CC13B3288F08040013ED76 /* NewCollectionPresenter.swift in Sources */,
 				B932E96128AC032B007244E6 /* RepetitionCell.swift in Sources */,
 				B9CC13CF28906B6A0013ED76 /* CollectionsModuleBuilder.swift in Sources */,
 				B932E95628ABFA5F007244E6 /* RepetitionPresenter.swift in Sources */,
@@ -1042,8 +1022,8 @@
 				B9CC1394288B15F00013ED76 /* UIColor+Extension.swift in Sources */,
 				B9CC13E12891D5C60013ED76 /* Language.swift in Sources */,
 				B932E94A289DBD95007244E6 /* HorizontalProgressBar.swift in Sources */,
-				B9CC13BD288F0AC90013ED76 /* NewLanguageModuleBuilder.swift in Sources */,
-				B9CC13B9288F09D10013ED76 /* NewLanguageInteractor.swift in Sources */,
+				B9CC13BD288F0AC90013ED76 /* NewCollectionModuleBuilder.swift in Sources */,
+				B9CC13B9288F09D10013ED76 /* NewCollectionInteractor.swift in Sources */,
 				B9CC13C928906ACC0013ED76 /* CollectionsPresenterProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
