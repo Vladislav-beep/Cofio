@@ -1,26 +1,26 @@
 //
-//  CollectionsPresenter.swift
+//  ThemesPresenter.swift
 //  Cofio
 //
 //  Created by Владислав Сизонов on 26.07.2022.
 //
 
-final class CollectionsPresenter {
+final class ThemesPresenter {
     
     // MARK: Private properties
     
-    private let interactor: CollectionsInteractorInput
+    private let interactor: ThemesInteractorInput
     
     
     // MARK: Public properties
     
-    weak var view: CollectionsViewInput?
-    weak var output: CollectionsPresenterOutput?
+    weak var view: ThemesViewInput?
+    weak var output: ThemesPresenterOutput?
     
     
     // MARK: Lifecycle
     
-    init(interactor: CollectionsInteractorInput) {
+    init(interactor: ThemesInteractorInput) {
         self.interactor = interactor
     }
 }
@@ -28,7 +28,7 @@ final class CollectionsPresenter {
 
 // MARK: - CollectionsViewOutput
 
-extension CollectionsPresenter: CollectionsViewOutput {
+extension ThemesPresenter: ThemesViewOutput {
     
     func openRepetition() {
         output?.moduleWantsToOpenRepetition(self)
@@ -44,7 +44,7 @@ extension CollectionsPresenter: CollectionsViewOutput {
         output?.moduleWantsToClose(self)
     }
     
-    func viewDidTapRow(_ item: CollectionsCellDataModel) {
+    func viewDidTapRow(_ item: ThemesCellDataModel) {
         output?.moduleWantsToOpenCards(self)
     }
 }
@@ -52,10 +52,10 @@ extension CollectionsPresenter: CollectionsViewOutput {
 
 // MARK: - CollectionsPresenterInput
 
-extension CollectionsPresenter: CollectionsPresenterInput {}
+extension ThemesPresenter: ThemesPresenterInput {}
 
 
 // MARK: - CollectionsInteractorOutput
 
-extension CollectionsPresenter: CollectionsInteractorOutput {}
+extension ThemesPresenter: ThemesInteractorOutput {}
 

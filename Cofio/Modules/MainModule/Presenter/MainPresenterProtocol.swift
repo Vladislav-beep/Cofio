@@ -10,4 +10,5 @@ protocol MainPresenterInput: AnyObject {}
 protocol MainPresenterOutput: AnyObject {
     
     func moduleWantsToAddNewCollection(_ module: MainPresenterInput)
+    func moduleWantsToOpenThemes(_ module: MainPresenterInput)
 }

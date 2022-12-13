@@ -1,5 +1,5 @@
 //
-//  CollectionsTableViewDataSource.swift
+//  ThemesTableViewDataSource.swift
 //  Cofio
 //
 //  Created by Владислав Сизонов on 30.07.2022.
@@ -7,16 +7,16 @@
 
 import UIKit
 
-protocol CollectionsTableViewDataSourceProtocol {
-    func makeDataSource(for tableview: UITableView) -> UITableViewDiffableDataSource<Int, CollectionsCellsDataModel>
+protocol ThemesTableViewDataSourceProtocol {
+    func makeDataSource(for tableview: UITableView) -> UITableViewDiffableDataSource<Int, ThemesCellsDataModel>
 }
 
-final class CollectionsTableViewDataSource: CollectionsTableViewDataSourceProtocol {
+final class ThemesTableViewDataSource: ThemesTableViewDataSourceProtocol {
     
     // MARK: Public
     
-    func makeDataSource(for tableview: UITableView) -> UITableViewDiffableDataSource<Int, CollectionsCellsDataModel> {
-        let tableViewDataSource = UITableViewDiffableDataSource<Int, CollectionsCellsDataModel>(tableView: tableview) { tableView, indexPath, cellType in
+    func makeDataSource(for tableview: UITableView) -> UITableViewDiffableDataSource<Int, ThemesCellsDataModel> {
+        let tableViewDataSource = UITableViewDiffableDataSource<Int, ThemesCellsDataModel>(tableView: tableview) { tableView, indexPath, cellType in
             switch cellType {
             case .statics(let model):
                 let cell = tableview.reuse(StatisticsCell.self, indexPath)
@@ -31,8 +31,8 @@ final class CollectionsTableViewDataSource: CollectionsTableViewDataSourceProtoc
                 return cell
                 
             case .card(let model):
-                let cell = tableview.reuse(CollectionCell.self, indexPath)
-                let displayData = CollectionCell.DisplayData(title: model.title,
+                let cell = tableview.reuse(ThemesCell.self, indexPath)
+                let displayData = ThemesCell.DisplayData(title: model.title,
                                                              cardsCount: model.cardsCount,
                                                              repeats: model.repeats)
                 cell.configure(with: displayData)

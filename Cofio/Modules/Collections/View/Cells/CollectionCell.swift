@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CollectionCell: UITableViewCell {
+final class ThemesCell: UITableViewCell {
     
     // MARK: Public data structures
     

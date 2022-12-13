@@ -1,5 +1,5 @@
 //
-//  CollectionsModuleBuilder.swift
+//  ThemesModuleBuilder.swift
 //  Cofio
 //
 //  Created by Владислав Сизонов on 26.07.2022.
@@ -7,16 +7,16 @@
 
 import UIKit
 
-final class CollectionsModuleBuilder {
+final class ThemesModuleBuilder {
     
     // MARK: Private
     
-    private weak var output: CollectionsPresenterOutput?
+    private weak var output: ThemesPresenterOutput?
     
     
     // MARK: Lifecycle
     
-    init(output: CollectionsPresenterOutput) {
+    init(output: ThemesPresenterOutput) {
         self.output = output
     }
     
@@ -24,11 +24,11 @@ final class CollectionsModuleBuilder {
     // MARK: Public
     
     func build() -> UIViewController {
-        let dataSource = CollectionsTableViewDataSource()
+        let dataSource = ThemesTableViewDataSource()
         
-        let interactor = CollectionsInteractor()
-        let presenter = CollectionsPresenter(interactor: interactor)
-        let viewController = CollectionsViewController(output: presenter,
+        let interactor = ThemesInteractor()
+        let presenter = ThemesPresenter(interactor: interactor)
+        let viewController = ThemesViewController(output: presenter,
                                                  dataSource: dataSource)
         
         presenter.view = viewController

@@ -37,7 +37,7 @@ extension MainPresenter: MainViewOutput {
     }
     
     func viewDidTapRow(_ type: MainModuleCellViewModel) {
-      //  output?.moduleWantsToOpenTabbar(self)
+        output?.moduleWantsToOpenThemes(self)
     }
     
     func addNewLanguage() {

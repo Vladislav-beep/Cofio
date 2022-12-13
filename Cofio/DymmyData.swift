@@ -86,7 +86,7 @@ final class DymmyData {
         ]
     }
     
-    static func getCollectionCells() -> [CollectionsCellsDataModel] {
+    static func getCollectionCells() -> [ThemesCellsDataModel] {
         return [
             .statics(.init(title: "LOL")),
             .header(.init(title: "Сборники")),

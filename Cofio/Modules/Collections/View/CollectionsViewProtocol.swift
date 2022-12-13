@@ -1,20 +1,20 @@
 //
-//  CollectionsViewProtocol.swift
+//  ThemesViewProtocol.swift
 //  Cofio
 //
 //  Created by Владислав Сизонов on 26.07.2022.
 //
 
-protocol CollectionsViewInput: AnyObject {
+protocol ThemesViewInput: AnyObject {
     
-    func updateData(with data: [CollectionsCellsDataModel])
+    func updateData(with data: [ThemesCellsDataModel])
     func setupNavBarTitle(with title: String)
 }
 
-protocol CollectionsViewOutput: AnyObject {
+protocol ThemesViewOutput: AnyObject {
     
     func viewDidLoad()
-    func viewDidTapRow(_ item: CollectionsCellDataModel)
+    func viewDidTapRow(_ item: ThemesCellDataModel)
     func viewDidTapClose()
     
     func openRepetition()

@@ -1,5 +1,5 @@
 //
-//  CollectionsViewController.swift
+//  ThemesViewController.swift
 //  Cofio
 //
 //  Created by Владислав Сизонов on 26.07.2022.
@@ -7,17 +7,17 @@
 
 import UIKit
 
-final class CollectionsViewController: UIViewController {
+final class ThemesViewController: UIViewController {
     
     // MARK: Private properties
     
-    private let output: CollectionsViewOutput
-    private let dataSource: CollectionsTableViewDataSourceProtocol
+    private let output: ThemesViewOutput
+    private let dataSource: ThemesTableViewDataSourceProtocol
     
     private lazy var collectionCardsTableView: UITableView = {
         let tableView = UITableView()
         tableView.register(StatisticsCell.self)
-        tableView.register(CollectionCell.self)
+        tableView.register(ThemesCell.self)
         tableView.register(HeaderCell.self)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
@@ -30,8 +30,8 @@ final class CollectionsViewController: UIViewController {
     
     // MARK: Lifecycle
     
-    init(output: CollectionsViewOutput,
-         dataSource: CollectionsTableViewDataSourceProtocol) {
+    init(output: ThemesViewOutput,
+         dataSource: ThemesTableViewDataSourceProtocol) {
         self.output = output
         self.dataSource = dataSource
         
@@ -87,10 +87,10 @@ final class CollectionsViewController: UIViewController {
 
 // MARK: - CollectionsViewInput
 
-extension CollectionsViewController: CollectionsViewInput {
+extension ThemesViewController: ThemesViewInput {
     
-    func updateData(with data: [CollectionsCellsDataModel]) {
-        var snapshot = NSDiffableDataSourceSnapshot<Int, CollectionsCellsDataModel>()
+    func updateData(with data: [ThemesCellsDataModel]) {
+        var snapshot = NSDiffableDataSourceSnapshot<Int, ThemesCellsDataModel>()
         snapshot.appendSections([0])
         snapshot.appendItems(data, toSection: 0)
         tableViewDataSource.apply(snapshot, animatingDifferences: true)
@@ -104,7 +104,7 @@ extension CollectionsViewController: CollectionsViewInput {
 
 // MARK: - UITableViewDelegate
 
-extension CollectionsViewController: UITableViewDelegate {
+extension ThemesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let snapshot = tableViewDataSource.snapshot()

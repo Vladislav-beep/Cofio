@@ -10,4 +10,5 @@ protocol NewCollectionPresenterInput: AnyObject {}
 protocol NewCollectionPresenterOutput: AnyObject {
     
     func moduleWantsToClose(_ module: NewCollectionPresenterInput)
+    func moduleWantsToAddCollectionAndClose(_ module: NewCollectionPresenterInput)
 }

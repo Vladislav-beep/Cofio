@@ -1,14 +1,14 @@
 //
-//  CollectionsCellsDataModel.swift
+//  ThemesCellsDataModel.swift
 //  Cofio
 //
 //  Created by Владислав Сизонов on 30.07.2022.
 //
 
-enum CollectionsCellsDataModel: Hashable {
+enum ThemesCellsDataModel: Hashable {
     case statics(StaticsCellDataModel)
     case header(HeaderCellDataModel)
-    case card(CollectionsCellDataModel)
+    case card(ThemesCellDataModel)
 }
 
 struct StaticsCellDataModel: Hashable {
@@ -19,7 +19,7 @@ struct HeaderCellDataModel: Hashable {
     let title: String
 }
 
-struct CollectionsCellDataModel: Hashable {
+struct ThemesCellDataModel: Hashable {
     let title: String
     let cardsCount: Int
     let repeats: Int
