@@ -1,11 +1,11 @@
 //
-//  FlowCoordinatorProtocol.swift
+//  MainFlowCoordinatorProtocol.swift
 //  Cofio
 //
 //  Created by Владислав Сизонов on 25.07.2022.
 //
 
-protocol FlowCoordinatorProtocol {
+protocol MainFlowCoordinatorProtocol {
     func start()
     func finish()
 }

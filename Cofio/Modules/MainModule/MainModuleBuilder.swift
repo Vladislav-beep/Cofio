@@ -11,12 +11,12 @@ final class MainModuleBuilder {
     
     // MARK: Private
     
-    private var output: FlowCoordinator1
+    private var output: MainPresenterOutput
     
     
     // MARK: Lifecycle
     
-    init(output: FlowCoordinator1) {
+    init(output: MainPresenterOutput) {
         self.output = output
     }
     
@@ -29,8 +29,7 @@ final class MainModuleBuilder {
         
         let tableViewDataSource = MainTableViewDataSource()
         let viewController = MainViewController(output: presenter,
-                                                    coordinater: output,
-                                                    dataSource: tableViewDataSource)
+                                                dataSource: tableViewDataSource)
         
         presenter.view = viewController
         interactor.output = presenter

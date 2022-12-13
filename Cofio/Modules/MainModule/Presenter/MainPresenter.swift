@@ -15,7 +15,7 @@ final class MainPresenter {
     // MARK: Public properties
     
     weak var view: MainViewInput?
-    weak var output: MainPresenterOutput?
+    var output: MainPresenterOutput?
     
     
     // MARK: Lifecycle
@@ -37,11 +37,11 @@ extension MainPresenter: MainViewOutput {
     }
     
     func viewDidTapRow(_ type: MainModuleCellViewModel) {
-        output?.moduleWantsToOpenTabbar(self)
+      //  output?.moduleWantsToOpenTabbar(self)
     }
     
     func addNewLanguage() {
-        output?.moduleWantsToAddNewLanguage(self)
+        output?.moduleWantsToAddNewCollection(self)
     }
 }
 

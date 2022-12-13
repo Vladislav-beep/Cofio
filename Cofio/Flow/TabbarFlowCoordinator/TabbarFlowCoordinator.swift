@@ -56,32 +56,31 @@ class TabbarFlowCoordinator: NSObject, Coordinator, RepetitionPresenterOutput {
     }
       
     private func getTabController(_ page: TabBarPage) -> UINavigationController {
-        let navController = UINavigationController()
-        navController.setNavigationBarHidden(false, animated: false)
+        let parentNavigationController = UINavigationController()
+        parentNavigationController.setNavigationBarHidden(false, animated: false)
 
-        navController.tabBarItem = UITabBarItem.init(title: page.pageTitleValue(),
+        parentNavigationController.tabBarItem = UITabBarItem.init(title: page.pageTitleValue(),
                                                      image: nil,
                                                      tag: page.pageOrderNumber())
 
         switch page {
         case .main:
-            let flow = FlowCoordinator1(vc: navController)
+            let flow = MainFlowCoordinator(parentViewController: parentNavigationController)
             flow.start()
                         
         case .repetition:
-            let builder = RepetitionModuleBuilder(output: self)
-            let vc = builder.build()
-            navController.pushViewController(vc, animated: true)
+            let flow = RepetitionFlowCoordinator(parentViewController: parentNavigationController)
+            flow.start()
         
         case .settings:
             let statistics = StatisticsViewController()
-            navController.pushViewController(statistics, animated: true)
+            parentNavigationController.pushViewController(statistics, animated: true)
             
         case .statistics:
             let settingVC = SettingsViewController()
-            navController.pushViewController(settingVC, animated: true)
+            parentNavigationController.pushViewController(settingVC, animated: true)
         }
-        return navController
+        return parentNavigationController
     }
     
     func currentPage() -> TabBarPage? { TabBarPage.init(index: tabBarController.selectedIndex) }
@@ -99,6 +98,7 @@ class TabbarFlowCoordinator: NSObject, Coordinator, RepetitionPresenterOutput {
 
 // MARK: - UITabBarControllerDelegate
 extension TabbarFlowCoordinator: UITabBarControllerDelegate {
+
     func tabBarController(_ tabBarController: UITabBarController,
                           didSelect viewController: UIViewController) {
         // Some implementation

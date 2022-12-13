@@ -9,6 +9,5 @@ protocol MainPresenterInput: AnyObject {}
 
 protocol MainPresenterOutput: AnyObject {
     
-    func moduleWantsToAddNewLanguage(_ module: MainPresenterInput)
-    func moduleWantsToOpenTabbar(_ module: MainPresenterInput)
+    func moduleWantsToAddNewCollection(_ module: MainPresenterInput)
 }

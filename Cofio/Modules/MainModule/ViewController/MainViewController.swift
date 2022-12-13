@@ -12,7 +12,6 @@ class MainViewController: UIViewController {
     // MARK: Private properties
     
     private let output: MainViewOutput
-    private let coordinater: FlowCoordinator1
     private let dataSource: MainTableViewDataSourceProtocol
     
     private lazy var titleLabel: TitleLabel = {
@@ -56,9 +55,7 @@ class MainViewController: UIViewController {
     // MARK: Lifecycle
     
     init(output: MainViewOutput,
-         coordinater: FlowCoordinator1,
          dataSource: MainTableViewDataSourceProtocol) {
-        self.coordinater = coordinater
         self.output = output
         self.dataSource = dataSource
         
