@@ -13,6 +13,7 @@ final class MainFlowCoordinator {
     
     private let parentViewController: UINavigationController
     private var mainModuleViewController: UIViewController?
+    private weak var mainModule: MainPresenterInput?
     
     
     // MARK: Lifecycle
@@ -39,6 +40,13 @@ final class MainFlowCoordinator {
         newCollectionViewController.modalPresentationStyle = .fullScreen
         mainModuleViewController?.present(newCollectionViewController, animated: true)
     }
+    
+    func showThemesModule() {
+        let builder = ThemesModuleBuilder(output: self)
+        let themesViewController = builder.build()
+        
+        parentViewController.pushViewController(themesViewController, animated: true)
+    }
 }
 
 // MARK: - FlowCoordinatorProtocol
@@ -57,13 +65,17 @@ extension MainFlowCoordinator: FlowCoordinatorProtocol {
 // MARK: - MainPresenterOutput
 
 extension MainFlowCoordinator: MainPresenterOutput {
+
+    func moduleDidLoad(_ module: MainPresenterInput) {
+        mainModule = module
+    }
     
     func moduleWantsToAddNewCollection(_ module: MainPresenterInput) {
         showNewCollectionModule()
     }
     
     func moduleWantsToOpenThemes(_ module: MainPresenterInput) {
-        
+        showThemesModule()
     }
 }
 
@@ -77,6 +89,27 @@ extension MainFlowCoordinator: NewCollectionPresenterOutput {
     }
     
     func moduleWantsToAddCollectionAndClose(_ module: NewCollectionPresenterInput) {
+        mainModule?.refreshCollections()
+        mainModuleViewController?.dismiss(animated: true)
+    }
+}
+
+
+// MARK: - ThemesPresenterOutput
+
+extension MainFlowCoordinator: ThemesPresenterOutput {
+    
+    func moduleWantsToOpenCards(_ module: ThemesPresenterInput) {
         
     }
+    
+    func moduleWantsToClose(_ module: ThemesPresenterInput) {
+        
+    }
+    
+    func moduleWantsToOpenRepetition(_ module: ThemesPresenterInput) {
+        
+    }
+    
+    
 }

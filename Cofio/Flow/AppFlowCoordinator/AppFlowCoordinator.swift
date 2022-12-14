@@ -11,7 +11,7 @@ protocol AppCoordinatorProtocol: FlowCoordinatorProtocol {
     func showMainFlow()
 }
 
-class AppFlowCoordinator: AppCoordinatorProtocol {
+final class AppFlowCoordinator: AppCoordinatorProtocol {
     
     var parentViewController: UIViewController
     var childCoordinators = [FlowCoordinatorProtocol]()

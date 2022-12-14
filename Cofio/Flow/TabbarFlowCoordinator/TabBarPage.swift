@@ -5,6 +5,8 @@
 //  Created by Владислав Сизонов on 10.12.2022.
 //
 
+import Foundation
+
 enum TabBarPage {
     case main
     case repetition
@@ -29,7 +31,7 @@ enum TabBarPage {
     func pageTitleValue() -> String {
         switch self {
         case .main:
-            return "Главная"
+            return NSLocalizedString("main_tab", comment: "")
         case .repetition:
             return "Повторение"
         case .settings:

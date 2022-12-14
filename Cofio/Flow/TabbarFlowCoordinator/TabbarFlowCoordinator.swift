@@ -96,7 +96,3 @@ extension TabbarFlowCoordinator: UITabBarControllerDelegate {
         // Some implementation
     }
 }
-
-extension TabbarFlowCoordinator: RepetitionPresenterOutput {
-    
-}

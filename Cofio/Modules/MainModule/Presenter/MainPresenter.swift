@@ -48,7 +48,12 @@ extension MainPresenter: MainViewOutput {
 
 // MARK: - StartAppPresenterInput
 
-extension MainPresenter: MainPresenterInput {}
+extension MainPresenter: MainPresenterInput {
+
+    func refreshCollections() {
+        
+    }
+}
 
 
 // MARK: - StartAppInteractorOutput
