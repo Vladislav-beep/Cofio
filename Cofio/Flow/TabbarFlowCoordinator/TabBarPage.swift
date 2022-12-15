@@ -31,7 +31,7 @@ enum TabBarPage {
     func pageTitleValue() -> String {
         switch self {
         case .main:
-            return NSLocalizedString("main_tab", comment: "")
+            return "main_tab"~
         case .repetition:
             return "Повторение"
         case .settings:

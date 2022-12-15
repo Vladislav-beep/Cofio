@@ -15,7 +15,7 @@ class MainViewController: UIViewController {
     private let dataSource: MainTableViewDataSourceProtocol
     
     private lazy var titleLabel: TitleLabel = {
-        let titleLabel = TitleLabel(title: AppText.StartAppScreen.title.rawValue)
+        let titleLabel = TitleLabel(title: "main_module_title"~)
         return titleLabel
     }()
     
@@ -89,8 +89,7 @@ class MainViewController: UIViewController {
         NSLayoutConstraint.activate([
             subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 24),
             subtitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            subtitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            subtitleLabel.heightAnchor.constraint(equalToConstant: 70)
+            subtitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
         
         view.addSubview(languagesTableView)
