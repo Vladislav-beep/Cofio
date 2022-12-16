@@ -31,8 +31,9 @@ final class MainPresenter {
 extension MainPresenter: MainViewOutput {
     
     func viewDidLoad() {
-        let data = DymmyData.getLanguages()
+        output?.moduleDidLoad(self)
         
+        let data = DymmyData.getLanguages()
         view?.updateView(with: data)
     }
     
@@ -51,7 +52,7 @@ extension MainPresenter: MainViewOutput {
 extension MainPresenter: MainPresenterInput {
 
     func refreshCollections() {
-        
+        print("vlad refreshCollections")
     }
 }
 

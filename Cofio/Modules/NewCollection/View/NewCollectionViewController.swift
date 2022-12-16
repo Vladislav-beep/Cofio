@@ -21,7 +21,7 @@ final class NewCollectionViewController: UIViewController {
     }()
     
     private let titleLabel: TitleLabel = {
-        let titleLabel = TitleLabel(title: AppText.NewLanguage.title.rawValue)
+        let titleLabel = TitleLabel(title: "new_collection_module_title"~)
         return titleLabel
     }()
     
@@ -33,10 +33,10 @@ final class NewCollectionViewController: UIViewController {
     private lazy var doneButton: UIButton = {
         let doneButton = UIButton()
         doneButton.translatesAutoresizingMaskIntoConstraints = false
-        doneButton.setTitle(AppText.NewLanguage.buttonTitle.rawValue, for: .normal)
+        doneButton.setTitle("new_collection_module_button_title"~, for: .normal)
         doneButton.backgroundColor = .darkViolet
         doneButton.layer.cornerRadius = 15
-        doneButton.addTarget(self, action: #selector(addLanguage), for: .touchUpInside)
+        doneButton.addTarget(self, action: #selector(addNewCollection), for: .touchUpInside)
         return doneButton
     }()
     
@@ -107,8 +107,8 @@ final class NewCollectionViewController: UIViewController {
         output.closeModule()
     }
     
-    @objc func addLanguage() {
-    
+    @objc func addNewCollection() {
+        output.addNewCollection()
     }
 }
 

@@ -100,7 +100,6 @@
 		B9CC13EF28930A8A0013ED76 /* InfoPickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13EE28930A8A0013ED76 /* InfoPickerModel.swift */; };
 		B9CC13F1289310460013ED76 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13F0289310460013ED76 /* UIStackView+Extension.swift */; };
 		B9CC13F32894506E0013ED76 /* MainTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13F22894506E0013ED76 /* MainTableViewDataSource.swift */; };
-		B9CC13F52895287B0013ED76 /* AppText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13F42895287B0013ED76 /* AppText.swift */; };
 		B9CC13F728952B630013ED76 /* DymmyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13F628952B630013ED76 /* DymmyData.swift */; };
 		B9CC140B2895C00C0013ED76 /* StatisticsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC140A2895C00C0013ED76 /* StatisticsCell.swift */; };
 		B9CC140D2895C1100013ED76 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC140C2895C1100013ED76 /* CollectionCell.swift */; };
@@ -227,7 +226,6 @@
 		B9CC13EE28930A8A0013ED76 /* InfoPickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPickerModel.swift; sourceTree = "<group>"; };
 		B9CC13F0289310460013ED76 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		B9CC13F22894506E0013ED76 /* MainTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewDataSource.swift; sourceTree = "<group>"; };
-		B9CC13F42895287B0013ED76 /* AppText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppText.swift; sourceTree = "<group>"; };
 		B9CC13F628952B630013ED76 /* DymmyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DymmyData.swift; sourceTree = "<group>"; };
 		B9CC140A2895C00C0013ED76 /* StatisticsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCell.swift; sourceTree = "<group>"; };
 		B9CC140C2895C1100013ED76 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
@@ -717,7 +715,6 @@
 			isa = PBXGroup;
 			children = (
 				B9CC13D8289195BF0013ED76 /* LanguagesForPicker.swift */,
-				B9CC13F42895287B0013ED76 /* AppText.swift */,
 			);
 			path = "Text Resources";
 			sourceTree = "<group>";
@@ -991,7 +988,6 @@
 				B932E96B28B7F960007244E6 /* CardsRepetitionViewController.swift in Sources */,
 				B932E944289C402A007244E6 /* DoneButton.swift in Sources */,
 				B9CC13C228906A2F0013ED76 /* CollectionsViewProtocol.swift in Sources */,
-				B9CC13F52895287B0013ED76 /* AppText.swift in Sources */,
 				B932E97128B7FA58007244E6 /* CardsRepetitionProtocol.swift in Sources */,
 				B9CC13A0288EE8C10013ED76 /* MainPresenterProtocol.swift in Sources */,
 				B93EF8B428968A8F0057C774 /* CardsViewProtocol.swift in Sources */,

@@ -133,11 +133,11 @@ final class MainModuleCell: UITableViewCell {
     // MARK: Public
     
     func configure(with displayData: DisplayData) {
-        if displayData.title == AppText.StartAppScreen.hindi.rawValue {
-            titleLabel.text = displayData.title
-        } else {
-            titleLabel.text = displayData.title + " язык"
-        }
+//        if displayData.title == AppText.StartAppScreen.hindi.rawValue {
+//            titleLabel.text = displayData.title
+//        } else {
+//            titleLabel.text = displayData.title + " язык"
+//        }
         
         iconView.image = configureImage(with: displayData.title)
         configureSubtitleLabel(with: displayData.collectionsCount)

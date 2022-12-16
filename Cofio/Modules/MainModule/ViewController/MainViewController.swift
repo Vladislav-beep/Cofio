@@ -20,7 +20,7 @@ class MainViewController: UIViewController {
     }()
     
     private lazy var subtitleLabel: SubtitleLabel = {
-        let subtitle = SubtitleLabel(subtitle: AppText.StartAppScreen.subtitle.rawValue)
+        let subtitle = SubtitleLabel(subtitle: "main_module_subtitle"~)
         return subtitle
     }()
     
@@ -42,7 +42,7 @@ class MainViewController: UIViewController {
       //  button.titleLabel?.font = UIFont.systemFont(ofSize: 21, weight: .semibold)
         button.setTitleColor(UIColor.white, for: .normal)
         button.setTitleColor(UIColor.darkOrange, for: .highlighted)
-        button.addTarget(self, action: #selector(addLanguage), for: .touchUpInside)
+        button.addTarget(self, action: #selector(addNewCollection), for: .touchUpInside)
         button.layer.cornerRadius = 25
         button.backgroundColor = .violet
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -112,7 +112,7 @@ class MainViewController: UIViewController {
     
     // MARK: Actions
     
-    @objc func addLanguage() {
+    @objc func addNewCollection() {
         output.addNewLanguage()
     }
 }

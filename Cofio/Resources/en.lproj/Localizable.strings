@@ -6,5 +6,16 @@
   
 */
 
+// MARK: Common
+"close_button_title" = "Close";
+
+// MARK: Tab bar
 "main_tab" = "Сollections";
+
+// MARK: Main module
 "main_module_title" = "Flash cards";
+"main_module_subtitle" = "Cards for memorizing any information, preparing for exams, learning foreign words";
+
+// MARK: New collection
+"new_collection_module_title" = "Add collection";
+"new_collection_module_button_title" = "Add";
