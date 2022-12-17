@@ -44,6 +44,7 @@ extension ThemesPresenter: ThemesViewOutput {
     
     func addTheme(name: String) {
         // TODO: add to core data
+       // view?.updateData(with: [])
     }
 }
 

@@ -23,9 +23,9 @@ final class MainFlowCoordinator {
     }
     
     
-    // MARK: Public
+    // MARK: Private
     
-    func showMainModule() {
+    private func showMainModule() {
         let builder = MainModuleBuilder(output: self)
         let mainViewController = builder.build()
         
@@ -33,7 +33,7 @@ final class MainFlowCoordinator {
         parentViewController.pushViewController(mainViewController, animated: true)
     }
     
-    func showNewCollectionModule() {
+    private func showNewCollectionModule() {
         let builder = NewCollectionModuleBuilder(output: self)
         let newCollectionViewController = builder.build()
 
@@ -41,11 +41,25 @@ final class MainFlowCoordinator {
         mainModuleViewController?.present(newCollectionViewController, animated: true)
     }
     
-    func showThemesModule(title: String) {
+    private func showThemesModule(title: String) {
         let builder = ThemesModuleBuilder(output: self, navigationBarTitle: title)
         let themesViewController = builder.build()
         
         parentViewController.pushViewController(themesViewController, animated: true)
+    }
+    
+    private func showCardsModule() {
+        let builder = CardsModuleBuilder(output: self)
+        let cardsViewController = builder.build()
+        
+        parentViewController.pushViewController(cardsViewController, animated: true)
+    }
+    
+    private func showCardDetailsModule() {
+        let builder = CardDetailsModuleBuilder(output: self)
+        let cardDetailsViewController = builder.build()
+        
+        parentViewController.present(cardDetailsViewController, animated: true)
     }
 }
 
@@ -100,10 +114,30 @@ extension MainFlowCoordinator: NewCollectionPresenterOutput {
 extension MainFlowCoordinator: ThemesPresenterOutput {
 
     func moduleWantsToOpenCards(_ module: ThemesPresenterInput) {
-        
+        showCardsModule()
     }
     
     func moduleWantsToClose(_ module: ThemesPresenterInput) {
         parentViewController.popViewController(animated: true)
+    }
+}
+
+
+// MARK: - CardsPresenterOutput
+
+extension MainFlowCoordinator: CardsPresenterOutput {
+    
+    func moduleWantsToOpenCardDetails(_ module: CardsPresenterInput) {
+        showCardDetailsModule()
+    }
+}
+
+
+// MARK: - CardDetailsPresenterOutput
+
+extension MainFlowCoordinator: CardDetailsPresenterOutput {
+    
+    func moduleWantsToClose(_ module: CardsPresenterInput) {
+        parentViewController.dismiss(animated: true)
     }
 }

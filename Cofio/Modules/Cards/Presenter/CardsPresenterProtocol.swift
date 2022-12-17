@@ -9,5 +9,5 @@ protocol CardsPresenterInput: AnyObject {}
 
 protocol CardsPresenterOutput: AnyObject {
     
-    func moduleWantsToOpenWord(_ module: CardsPresenterInput)
+    func moduleWantsToOpenCardDetails(_ module: CardsPresenterInput)
 }

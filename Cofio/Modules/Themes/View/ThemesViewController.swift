@@ -83,7 +83,7 @@ final class ThemesViewController: UIViewController {
         }
         let addAction = UIAlertAction(
             title: "theme_module_alert_add_button"~,
-            style: .default
+            style: .cancel
         ) { _ in
             let tf = alert.textFields?.first
             let name = tf?.text ?? ""
