@@ -74,22 +74,21 @@ final class DymmyData {
     }
     
     
-    static func getLanguages() -> [MainModuleCellViewModel] {
+    static func getLanguages() -> [MainModuleCellsDataModel] {
         
         return [
-            .init(title: "Английский", collectionsCount: 0),
-            .init(title: "Финский", collectionsCount: 1),
-            .init(title: "Японский", collectionsCount: 2),
-            .init(title: "Немецкий", collectionsCount: 3),
-            .init(title: "Арабский", collectionsCount: 4),
-            .init(title: "Хинди", collectionsCount: 5)
+            .title(.init(title: "main_module_title"~)),
+            .subtitle(.init(subtitle: "main_module_subtitle"~)),
+            .collection(.init(title: "German", collectionsCount: 2, image: UIImage())),
+            .collection(.init(title: "Mathematiican exam", collectionsCount: 34, image: UIImage(systemName: "car") ?? UIImage())),
+            .collection(.init(title: "wajncsjncjnasjnascjncasjncs", collectionsCount: 0, image: UIImage()))
         ]
     }
     
     static func getCollectionCells() -> [ThemesCellsDataModel] {
         return [
             .statics(.init(title: "LOL")),
-            .header(.init(title: "Сборники")),
+            .header(.init(title: "Темы")),
             .card(.init(title: "Кухня", cardsCount: 2, repeats: 3)),
             .card(.init(title: "Автомобиль", cardsCount: 5, repeats: 8)),
             .card(.init(title: "Домашние дела", cardsCount: 1, repeats: 1)),

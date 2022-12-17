@@ -41,8 +41,8 @@ final class MainFlowCoordinator {
         mainModuleViewController?.present(newCollectionViewController, animated: true)
     }
     
-    func showThemesModule() {
-        let builder = ThemesModuleBuilder(output: self)
+    func showThemesModule(title: String) {
+        let builder = ThemesModuleBuilder(output: self, navigationBarTitle: title)
         let themesViewController = builder.build()
         
         parentViewController.pushViewController(themesViewController, animated: true)
@@ -74,8 +74,8 @@ extension MainFlowCoordinator: MainPresenterOutput {
         showNewCollectionModule()
     }
     
-    func moduleWantsToOpenThemes(_ module: MainPresenterInput) {
-        showThemesModule()
+    func moduleWantsToOpenThemes(_ module: MainPresenterInput, title: String) {
+        showThemesModule(title: title)
     }
 }
 
@@ -98,18 +98,12 @@ extension MainFlowCoordinator: NewCollectionPresenterOutput {
 // MARK: - ThemesPresenterOutput
 
 extension MainFlowCoordinator: ThemesPresenterOutput {
-    
+
     func moduleWantsToOpenCards(_ module: ThemesPresenterInput) {
         
     }
     
     func moduleWantsToClose(_ module: ThemesPresenterInput) {
-        
+        parentViewController.popViewController(animated: true)
     }
-    
-    func moduleWantsToOpenRepetition(_ module: ThemesPresenterInput) {
-        
-    }
-    
-    
 }

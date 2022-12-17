@@ -1,15 +1,15 @@
 //
-//  HeaderCell.swift
+//  MainModuleTitleCell.swift
 //  Cofio
 //
-//  Created by Владислав Сизонов on 05.08.2022.
+//  Created by Владислав Сизонов on 17.12.2022.
 //
 
 import UIKit
 
-final class HeaderCell: UITableViewCell {
+final class MainModuleTitleCell: UITableViewCell {
     
-    // MARK: Data structures
+    // MARK: Public data structures
     
     struct DisplayData: Hashable {
         let title: String
@@ -18,9 +18,10 @@ final class HeaderCell: UITableViewCell {
     
     // MARK: Private properties
     
+    
     private lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
-        titleLabel.font = UIFont.systemFont(ofSize: 28, weight: .bold)
+        titleLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold)
         titleLabel.numberOfLines = 0
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         return titleLabel

@@ -20,3 +20,9 @@
 "new_collection_module_title" = "Добавить коллекцию";
 "new_collection_module_button_title" = "Добавить";
 
+// MARK: Themes
+"theme_module_alert_title" = "Добавление темы";
+"theme_module_alert_subtitle" = "Напишите название темы, которую хотите добавить";
+"theme_module_alert_textField_placeholder" = "Название темы";
+"theme_module_alert_add_button" = "Добавить";
+"theme_module_alert_cancel_button" = "Отмена";

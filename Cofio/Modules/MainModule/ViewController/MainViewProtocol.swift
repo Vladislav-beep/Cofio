@@ -7,12 +7,12 @@
 
 protocol MainViewInput: AnyObject {
     
-    func updateView(with data: [MainModuleCellViewModel])
+    func updateView(with data: [MainModuleCellsDataModel])
 }
 
 protocol MainViewOutput: AnyObject {
     
     func viewDidLoad()
-    func viewDidTapRow(_ type: MainModuleCellViewModel)
-    func addNewLanguage()
+    func viewDidTapRow(_ type: MainModuleCellsDataModel)
+    func addNewCollection()
 }

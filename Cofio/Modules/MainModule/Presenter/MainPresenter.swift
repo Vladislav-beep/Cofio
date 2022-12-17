@@ -37,11 +37,21 @@ extension MainPresenter: MainViewOutput {
         view?.updateView(with: data)
     }
     
-    func viewDidTapRow(_ type: MainModuleCellViewModel) {
-        output?.moduleWantsToOpenThemes(self)
+    func viewDidTapRow(_ type: MainModuleCellsDataModel) {
+        switch type {
+        case .title:
+            break
+            
+        case .subtitle:
+            break
+            
+        case .collection(let model):
+            output?.moduleWantsToOpenThemes(self, title: model.title)
+        }
+        
     }
     
-    func addNewLanguage() {
+    func addNewCollection() {
         output?.moduleWantsToAddNewCollection(self)
     }
 }

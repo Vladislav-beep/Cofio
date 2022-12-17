@@ -11,6 +11,4 @@ protocol ThemesPresenterOutput: AnyObject {
     
     func moduleWantsToOpenCards(_ module: ThemesPresenterInput)
     func moduleWantsToClose(_ module: ThemesPresenterInput)
-    func moduleWantsToOpenRepetition(_ module: ThemesPresenterInput)
 }
-

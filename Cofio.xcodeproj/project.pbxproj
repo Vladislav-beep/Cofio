@@ -13,6 +13,8 @@
 		B910AB482948EE5000D9E7EA /* FlowCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B910AB472948EE5000D9E7EA /* FlowCoordinatorProtocol.swift */; };
 		B910AB4B2949A44F00D9E7EA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B910AB4D2949A44F00D9E7EA /* Localizable.strings */; };
 		B910AB50294BBAF700D9E7EA /* Postfix operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B910AB4F294BBAF700D9E7EA /* Postfix operator.swift */; };
+		B910AB52294DC23600D9E7EA /* MainModuleTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B910AB51294DC23600D9E7EA /* MainModuleTitleCell.swift */; };
+		B910AB54294DC33500D9E7EA /* MainModuleSubtitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B910AB53294DC33500D9E7EA /* MainModuleSubtitleCell.swift */; };
 		B932E944289C402A007244E6 /* DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932E943289C402A007244E6 /* DoneButton.swift */; };
 		B932E946289DB069007244E6 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932E945289DB069007244E6 /* HeaderCell.swift */; };
 		B932E948289DB365007244E6 /* MainModuleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932E947289DB365007244E6 /* MainModuleCellViewModel.swift */; };
@@ -81,7 +83,7 @@
 		B9CC13BB288F0A000013ED76 /* NewCollectionInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13BA288F0A000013ED76 /* NewCollectionInteractorProtocol.swift */; };
 		B9CC13BD288F0AC90013ED76 /* NewCollectionModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13BC288F0AC90013ED76 /* NewCollectionModuleBuilder.swift */; };
 		B9CC13C0289069C90013ED76 /* ThemesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13BF289069C90013ED76 /* ThemesViewController.swift */; };
-		B9CC13C228906A2F0013ED76 /* CollectionsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13C128906A2F0013ED76 /* CollectionsViewProtocol.swift */; };
+		B9CC13C228906A2F0013ED76 /* ThemesViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13C128906A2F0013ED76 /* ThemesViewProtocol.swift */; };
 		B9CC13C728906A7C0013ED76 /* ThemesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13C628906A7C0013ED76 /* ThemesPresenter.swift */; };
 		B9CC13C928906ACC0013ED76 /* ThemesPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13C828906ACC0013ED76 /* ThemesPresenterProtocol.swift */; };
 		B9CC13CB28906B040013ED76 /* ThemesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13CA28906B040013ED76 /* ThemesInteractor.swift */; };
@@ -135,6 +137,8 @@
 		B910AB4C2949A44F00D9E7EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B910AB4E2949A4C700D9E7EA /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B910AB4F294BBAF700D9E7EA /* Postfix operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Postfix operator.swift"; sourceTree = "<group>"; };
+		B910AB51294DC23600D9E7EA /* MainModuleTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleTitleCell.swift; sourceTree = "<group>"; };
+		B910AB53294DC33500D9E7EA /* MainModuleSubtitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleSubtitleCell.swift; sourceTree = "<group>"; };
 		B932E943289C402A007244E6 /* DoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneButton.swift; sourceTree = "<group>"; };
 		B932E945289DB069007244E6 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		B932E947289DB365007244E6 /* MainModuleCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleCellViewModel.swift; sourceTree = "<group>"; };
@@ -207,7 +211,7 @@
 		B9CC13BA288F0A000013ED76 /* NewCollectionInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCollectionInteractorProtocol.swift; sourceTree = "<group>"; };
 		B9CC13BC288F0AC90013ED76 /* NewCollectionModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCollectionModuleBuilder.swift; sourceTree = "<group>"; };
 		B9CC13BF289069C90013ED76 /* ThemesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesViewController.swift; sourceTree = "<group>"; };
-		B9CC13C128906A2F0013ED76 /* CollectionsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewProtocol.swift; sourceTree = "<group>"; };
+		B9CC13C128906A2F0013ED76 /* ThemesViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesViewProtocol.swift; sourceTree = "<group>"; };
 		B9CC13C628906A7C0013ED76 /* ThemesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesPresenter.swift; sourceTree = "<group>"; };
 		B9CC13C828906ACC0013ED76 /* ThemesPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesPresenterProtocol.swift; sourceTree = "<group>"; };
 		B9CC13CA28906B040013ED76 /* ThemesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesInteractor.swift; sourceTree = "<group>"; };
@@ -562,6 +566,8 @@
 			isa = PBXGroup;
 			children = (
 				B9CC138C2889D7900013ED76 /* MainModuleCell.swift */,
+				B910AB51294DC23600D9E7EA /* MainModuleTitleCell.swift */,
+				B910AB53294DC33500D9E7EA /* MainModuleSubtitleCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -649,7 +655,7 @@
 			isa = PBXGroup;
 			children = (
 				B9CC13BF289069C90013ED76 /* ThemesViewController.swift */,
-				B9CC13C128906A2F0013ED76 /* CollectionsViewProtocol.swift */,
+				B9CC13C128906A2F0013ED76 /* ThemesViewProtocol.swift */,
 				B9CC140E2895C1E50013ED76 /* ThemesTableViewDataSource.swift */,
 				B9CC14102895C2530013ED76 /* ThemesCellsDataModel.swift */,
 				B9CC14092895BEE60013ED76 /* Cells */,
@@ -961,6 +967,7 @@
 				B932E95A28ABFADF007244E6 /* RepetitonInteractor.swift in Sources */,
 				B932E97528B7FAD0007244E6 /* CardsRepetitionInteractorProtocol.swift in Sources */,
 				B9CC135F288738980013ED76 /* MainViewController.swift in Sources */,
+				B910AB52294DC23600D9E7EA /* MainModuleTitleCell.swift in Sources */,
 				B932E95828ABFA98007244E6 /* RepetitionPresenterProtocol.swift in Sources */,
 				B93EF8CB289AF9910057C774 /* WordViewController.swift in Sources */,
 				B9CC13B5288F087A0013ED76 /* NewCollectionProtocol.swift in Sources */,
@@ -979,6 +986,7 @@
 				B9CC13C0289069C90013ED76 /* ThemesViewController.swift in Sources */,
 				B9CC13ED2893094D0013ED76 /* ImageProvider.swift in Sources */,
 				B932E96F28B7FA0E007244E6 /* CardsRepetitionPresenter.swift in Sources */,
+				B910AB54294DC33500D9E7EA /* MainModuleSubtitleCell.swift in Sources */,
 				B932E96528AC06F4007244E6 /* RepetitionTableViewDataSource.swift in Sources */,
 				B932E97328B7FAA5007244E6 /* CardsRepetitionInteractor.swift in Sources */,
 				B9CC13CB28906B040013ED76 /* ThemesInteractor.swift in Sources */,
@@ -987,7 +995,7 @@
 				B932E95428ABFA1E007244E6 /* RepetitionViewProtocol.swift in Sources */,
 				B932E96B28B7F960007244E6 /* CardsRepetitionViewController.swift in Sources */,
 				B932E944289C402A007244E6 /* DoneButton.swift in Sources */,
-				B9CC13C228906A2F0013ED76 /* CollectionsViewProtocol.swift in Sources */,
+				B9CC13C228906A2F0013ED76 /* ThemesViewProtocol.swift in Sources */,
 				B932E97128B7FA58007244E6 /* CardsRepetitionProtocol.swift in Sources */,
 				B9CC13A0288EE8C10013ED76 /* MainPresenterProtocol.swift in Sources */,
 				B93EF8B428968A8F0057C774 /* CardsViewProtocol.swift in Sources */,

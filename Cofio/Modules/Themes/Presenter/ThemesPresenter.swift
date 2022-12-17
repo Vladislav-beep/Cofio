@@ -10,6 +10,7 @@ final class ThemesPresenter {
     // MARK: Private properties
     
     private let interactor: ThemesInteractorInput
+    private let navigationBarTitle: String
     
     
     // MARK: Public properties
@@ -20,8 +21,9 @@ final class ThemesPresenter {
     
     // MARK: Lifecycle
     
-    init(interactor: ThemesInteractorInput) {
+    init(interactor: ThemesInteractorInput, navigationBarTitle: String) {
         self.interactor = interactor
+        self.navigationBarTitle = navigationBarTitle
     }
 }
 
@@ -30,22 +32,18 @@ final class ThemesPresenter {
 
 extension ThemesPresenter: ThemesViewOutput {
     
-    func openRepetition() {
-        output?.moduleWantsToOpenRepetition(self)
-    }
-    
     func viewDidLoad() {
         let data = DymmyData.getCollectionCells()
         view?.updateData(with: data)
-        view?.setupNavBarTitle(with: "Финский язык")
-    }
-    
-    func viewDidTapClose() {
-        output?.moduleWantsToClose(self)
+        view?.setupNavBarTitle(with: navigationBarTitle)
     }
     
     func viewDidTapRow(_ item: ThemesCellDataModel) {
         output?.moduleWantsToOpenCards(self)
+    }
+    
+    func addTheme(name: String) {
+        // TODO: add to core data
     }
 }
 

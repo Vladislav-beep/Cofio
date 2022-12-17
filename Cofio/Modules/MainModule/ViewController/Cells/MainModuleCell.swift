@@ -14,6 +14,7 @@ final class MainModuleCell: UITableViewCell {
     struct DisplayData: Hashable {
         let title: String
         let collectionsCount: Int
+        let icon: UIImage
     }
     
     
@@ -46,7 +47,7 @@ final class MainModuleCell: UITableViewCell {
         let iconView = UIImageView()
         iconView.contentMode = .scaleAspectFill
         iconView.clipsToBounds = true
-        iconView.layer.cornerRadius = 15
+        iconView.layer.cornerRadius = 17
         iconView.translatesAutoresizingMaskIntoConstraints = false
         return iconView
     }()
@@ -79,8 +80,8 @@ final class MainModuleCell: UITableViewCell {
         
         lowerView.addSubview(iconView)
         NSLayoutConstraint.activate([
-            iconView.heightAnchor.constraint(equalToConstant: 40),
-            iconView.widthAnchor.constraint(equalToConstant: 40),
+            iconView.heightAnchor.constraint(equalToConstant: 34),
+            iconView.widthAnchor.constraint(equalToConstant: 34),
             iconView.topAnchor.constraint(equalTo: lowerView.topAnchor, constant: 16),
             iconView.trailingAnchor.constraint(equalTo: lowerView.trailingAnchor, constant: -15)
         ])
@@ -138,8 +139,9 @@ final class MainModuleCell: UITableViewCell {
 //        } else {
 //            titleLabel.text = displayData.title + " язык"
 //        }
-        
-        iconView.image = configureImage(with: displayData.title)
+        titleLabel.text = displayData.title
+       // iconView.image = configureImage(with: displayData.title)
+        iconView.image = displayData.icon
         configureSubtitleLabel(with: displayData.collectionsCount)
     }
 }

@@ -12,12 +12,14 @@ final class ThemesModuleBuilder {
     // MARK: Private
     
     private weak var output: ThemesPresenterOutput?
+    private let navigationBarTitle: String
     
     
     // MARK: Lifecycle
     
-    init(output: ThemesPresenterOutput) {
+    init(output: ThemesPresenterOutput, navigationBarTitle: String) {
         self.output = output
+        self.navigationBarTitle = navigationBarTitle
     }
     
     
@@ -27,7 +29,7 @@ final class ThemesModuleBuilder {
         let dataSource = ThemesTableViewDataSource()
         
         let interactor = ThemesInteractor()
-        let presenter = ThemesPresenter(interactor: interactor)
+        let presenter = ThemesPresenter(interactor: interactor, navigationBarTitle: navigationBarTitle)
         let viewController = ThemesViewController(output: presenter,
                                                  dataSource: dataSource)
         

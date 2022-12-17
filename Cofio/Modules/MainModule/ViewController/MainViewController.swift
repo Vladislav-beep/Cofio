@@ -14,19 +14,11 @@ class MainViewController: UIViewController {
     private let output: MainViewOutput
     private let dataSource: MainTableViewDataSourceProtocol
     
-    private lazy var titleLabel: TitleLabel = {
-        let titleLabel = TitleLabel(title: "main_module_title"~)
-        return titleLabel
-    }()
-    
-    private lazy var subtitleLabel: SubtitleLabel = {
-        let subtitle = SubtitleLabel(subtitle: "main_module_subtitle"~)
-        return subtitle
-    }()
-    
-    private lazy var languagesTableView: UITableView = {
+    private lazy var collectionsTableView: UITableView = {
         let tableview = UITableView()
         tableview.register(MainModuleCell.self)
+        tableview.register(MainModuleTitleCell.self)
+        tableview.register(MainModuleSubtitleCell.self)
         tableview.translatesAutoresizingMaskIntoConstraints = false
         tableview.separatorStyle = .none
         tableview.delegate = self
@@ -49,7 +41,7 @@ class MainViewController: UIViewController {
         return button
     }()
     
-    private lazy var tableViewDataSource = dataSource.makeDataSource(for: languagesTableView)
+    private lazy var tableViewDataSource = dataSource.makeDataSource(for: collectionsTableView)
     
     
     // MARK: Lifecycle
@@ -78,26 +70,13 @@ class MainViewController: UIViewController {
     
     private func setupViews() {
         view.backgroundColor = .white
-        view.addSubview(titleLabel)
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
-            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
-        ])
         
-        view.addSubview(subtitleLabel)
+        view.addSubview(collectionsTableView)
         NSLayoutConstraint.activate([
-            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 24),
-            subtitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            subtitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
-        ])
-        
-        view.addSubview(languagesTableView)
-        NSLayoutConstraint.activate([
-            languagesTableView.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 40),
-            languagesTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
-            languagesTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            languagesTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0)
+            collectionsTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            collectionsTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+            collectionsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            collectionsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0)
         ])
         
         view.addSubview(bottomButton)
@@ -113,7 +92,7 @@ class MainViewController: UIViewController {
     // MARK: Actions
     
     @objc func addNewCollection() {
-        output.addNewLanguage()
+        output.addNewCollection()
     }
 }
 
@@ -122,8 +101,8 @@ class MainViewController: UIViewController {
 
 extension MainViewController: MainViewInput {
     
-    func updateView(with data: [MainModuleCellViewModel]) {
-        var snapshot = NSDiffableDataSourceSnapshot<Int, MainModuleCellViewModel>()
+    func updateView(with data: [MainModuleCellsDataModel]) {
+        var snapshot = NSDiffableDataSourceSnapshot<Int, MainModuleCellsDataModel>()
         snapshot.appendSections([0])
         snapshot.appendItems(data, toSection: 0)
         tableViewDataSource.apply(snapshot)

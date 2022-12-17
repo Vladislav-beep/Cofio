@@ -66,21 +66,36 @@ final class ThemesViewController: UIViewController {
     
     private func setupNavigationBar() {
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Сменить язык", style: .plain, target: self, action: #selector(close))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Повторение", style: .plain, target: self, action: #selector(openRepetititon))
-        navigationItem.rightBarButtonItem?.tintColor = .darkViolet
-        navigationItem.leftBarButtonItem?.tintColor = .darkViolet
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTheme))
     }
     
     
     // MARK: Actions
     
-    @objc func close() {
-        output.viewDidTapClose()
-    }
-    
-    @objc func openRepetititon() {
-        output.openRepetition()
+    @objc func addTheme() {
+        let alert = UIAlertController(
+            title:"theme_module_alert_title"~,
+            message: "theme_module_alert_subtitle"~,
+            preferredStyle: .alert
+        )
+        alert.addTextField { textField in
+            textField.placeholder = "theme_module_alert_textField_placeholder"~
+        }
+        let addAction = UIAlertAction(
+            title: "theme_module_alert_add_button"~,
+            style: .default
+        ) { _ in
+            let tf = alert.textFields?.first
+            let name = tf?.text ?? ""
+            self.output.addTheme(name: name)
+        }
+        let cancelAction = UIAlertAction(
+            title: "theme_module_alert_cancel_button"~,
+            style: .default
+        )
+        alert.addAction(addAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true)
     }
 }
 
@@ -112,7 +127,7 @@ extension ThemesViewController: UITableViewDelegate {
         
         switch item {
         case .statics(_):
-            return 220
+            return 140
             
         case .header(_):
             return 50
