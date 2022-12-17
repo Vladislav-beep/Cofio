@@ -44,7 +44,7 @@ class TabbarFlowCoordinator: NSObject, FlowCoordinatorProtocol {
         tabBarController.setViewControllers(tabControllers, animated: true)
         tabBarController.selectedIndex = TabBarPage.main.pageOrderNumber()
         tabBarController.tabBar.isTranslucent = false
-        tabBarController.tabBar.backgroundColor = .gray
+        tabBarController.tabBar.backgroundColor = .base
     }
       
     private func getTabController(_ page: TabBarPage) -> UINavigationController {

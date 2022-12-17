@@ -28,7 +28,7 @@ class MainViewController: UIViewController {
     private lazy var bottomButton: UIButton = {
         let button = UIButton()
       //  button.setTitle("+", for: .normal)
-        button.setImage(UIImage(systemName: "plus"), for: .normal)
+        button.setImage(UIImage(named: "pluss")?.withTintColor(.white), for: .normal)
         button.imageView?.contentMode = .scaleAspectFill
        // button.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
       //  button.titleLabel?.font = UIFont.systemFont(ofSize: 21, weight: .semibold)
@@ -37,6 +37,9 @@ class MainViewController: UIViewController {
         button.addTarget(self, action: #selector(addNewCollection), for: .touchUpInside)
         button.layer.cornerRadius = 25
         button.backgroundColor = .violet
+        button.layer.shadowRadius = 6
+        button.layer.shadowOpacity = 0.4
+        button.layer.shadowOffset = CGSize(width: 0, height: 3)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
