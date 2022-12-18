@@ -26,3 +26,9 @@
 "theme_module_alert_textField_placeholder" = "Название темы";
 "theme_module_alert_add_button" = "Добавить";
 "theme_module_alert_cancel_button" = "Отмена";
+
+// MARK: Cards
+"cards_module_title" = "Карточки";
+
+// MARK: New Card
+"new_card_module_add_button_title" = "Добавить карточку";

@@ -1,5 +1,5 @@
 //
-//  WordModuleBuilder.swift
+//  NewCardModuleBuilder.swift
 //  Cofio
 //
 //  Created by Владислав Сизонов on 03.08.2022.
@@ -7,16 +7,16 @@
 
 import UIKit
 
-final class WordModuleBuilder {
+final class NewCardModuleBuilder {
     
     // MARK: Private
     
-    private weak var output: WordPresenterOutput?
+    private weak var output: NewCardPresenterOutput?
     
     
     // MARK: Lifecycle
     
-    init(output: WordPresenterOutput) {
+    init(output: NewCardPresenterOutput) {
         self.output = output
     }
     
@@ -24,9 +24,9 @@ final class WordModuleBuilder {
     // MARK: Public
     
     func build() -> UIViewController {
-        let interactor = WordInteractor()
-        let presenter = WordPresenter(interactor: interactor)
-        let viewController = WordViewController(output: presenter)
+        let interactor = NewCardInteractor()
+        let presenter = NewCardPresenter(interactor: interactor)
+        let viewController = NewCardViewController(output: presenter)
         
         presenter.view = viewController
         interactor.output = presenter

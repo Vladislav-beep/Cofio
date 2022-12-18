@@ -45,19 +45,20 @@
 		B93EF8C028968E690057C774 /* CardsInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8BF28968E690057C774 /* CardsInteractorProtocol.swift */; };
 		B93EF8C228968F310057C774 /* CardsModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8C128968F310057C774 /* CardsModuleBuilder.swift */; };
 		B93EF8C428970C4C0057C774 /* FadeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8C328970C4C0057C774 /* FadeView.swift */; };
-		B93EF8CB289AF9910057C774 /* WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8CA289AF9910057C774 /* WordViewController.swift */; };
-		B93EF8CD289AF9B60057C774 /* WordViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8CC289AF9B60057C774 /* WordViewProtocol.swift */; };
-		B93EF8CF289AFAB00057C774 /* WordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8CE289AFAB00057C774 /* WordPresenter.swift */; };
-		B93EF8D1289AFADC0057C774 /* WordPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8D0289AFADC0057C774 /* WordPresenterProtocol.swift */; };
-		B93EF8D3289AFB060057C774 /* WordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8D2289AFB060057C774 /* WordInteractor.swift */; };
-		B93EF8D5289AFB2A0057C774 /* WordInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8D4289AFB2A0057C774 /* WordInteractorProtocol.swift */; };
-		B93EF8D7289AFB720057C774 /* WordModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8D6289AFB720057C774 /* WordModuleBuilder.swift */; };
+		B93EF8CB289AF9910057C774 /* NewCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8CA289AF9910057C774 /* NewCardViewController.swift */; };
+		B93EF8CD289AF9B60057C774 /* NewCardViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8CC289AF9B60057C774 /* NewCardViewProtocol.swift */; };
+		B93EF8CF289AFAB00057C774 /* NewCardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8CE289AFAB00057C774 /* NewCardPresenter.swift */; };
+		B93EF8D1289AFADC0057C774 /* NewCardPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8D0289AFADC0057C774 /* NewCardPresenterProtocol.swift */; };
+		B93EF8D3289AFB060057C774 /* NewCardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8D2289AFB060057C774 /* NewCardInteractor.swift */; };
+		B93EF8D5289AFB2A0057C774 /* NewCardInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8D4289AFB2A0057C774 /* NewCardInteractorProtocol.swift */; };
+		B93EF8D7289AFB720057C774 /* NewCardModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8D6289AFB720057C774 /* NewCardModuleBuilder.swift */; };
 		B93EF8D9289AFFD30057C774 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8D8289AFFD30057C774 /* CloseButton.swift */; };
 		B94C0253294E596800EF9EB6 /* CardDetailsModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94C0252294E596800EF9EB6 /* CardDetailsModuleBuilder.swift */; };
 		B94C0256294E59BF00EF9EB6 /* CardDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94C0255294E59BF00EF9EB6 /* CardDetailsViewController.swift */; };
 		B94C0258294E5B3F00EF9EB6 /* CardDetailsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94C0257294E5B3F00EF9EB6 /* CardDetailsViewProtocol.swift */; };
 		B94C025B294E5BC200EF9EB6 /* CardDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94C025A294E5BC200EF9EB6 /* CardDetailsPresenter.swift */; };
 		B94C025D294E5BD300EF9EB6 /* CardDetailsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94C025C294E5BD300EF9EB6 /* CardDetailsPresenterProtocol.swift */; };
+		B94C025F294F87A700EF9EB6 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94C025E294F87A700EF9EB6 /* UIViewController+Extension.swift */; };
 		B99B17542944CD66002167DB /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B17532944CD66002167DB /* AppFlowCoordinator.swift */; };
 		B99B175A2944CEE7002167DB /* TabBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B17592944CEE7002167DB /* TabBarPage.swift */; };
 		B99B175C2944CF07002167DB /* TabbarFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B175B2944CF07002167DB /* TabbarFlowCoordinator.swift */; };
@@ -174,19 +175,20 @@
 		B93EF8BF28968E690057C774 /* CardsInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsInteractorProtocol.swift; sourceTree = "<group>"; };
 		B93EF8C128968F310057C774 /* CardsModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsModuleBuilder.swift; sourceTree = "<group>"; };
 		B93EF8C328970C4C0057C774 /* FadeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeView.swift; sourceTree = "<group>"; };
-		B93EF8CA289AF9910057C774 /* WordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewController.swift; sourceTree = "<group>"; };
-		B93EF8CC289AF9B60057C774 /* WordViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewProtocol.swift; sourceTree = "<group>"; };
-		B93EF8CE289AFAB00057C774 /* WordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordPresenter.swift; sourceTree = "<group>"; };
-		B93EF8D0289AFADC0057C774 /* WordPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordPresenterProtocol.swift; sourceTree = "<group>"; };
-		B93EF8D2289AFB060057C774 /* WordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordInteractor.swift; sourceTree = "<group>"; };
-		B93EF8D4289AFB2A0057C774 /* WordInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordInteractorProtocol.swift; sourceTree = "<group>"; };
-		B93EF8D6289AFB720057C774 /* WordModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordModuleBuilder.swift; sourceTree = "<group>"; };
+		B93EF8CA289AF9910057C774 /* NewCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardViewController.swift; sourceTree = "<group>"; };
+		B93EF8CC289AF9B60057C774 /* NewCardViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardViewProtocol.swift; sourceTree = "<group>"; };
+		B93EF8CE289AFAB00057C774 /* NewCardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardPresenter.swift; sourceTree = "<group>"; };
+		B93EF8D0289AFADC0057C774 /* NewCardPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardPresenterProtocol.swift; sourceTree = "<group>"; };
+		B93EF8D2289AFB060057C774 /* NewCardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardInteractor.swift; sourceTree = "<group>"; };
+		B93EF8D4289AFB2A0057C774 /* NewCardInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardInteractorProtocol.swift; sourceTree = "<group>"; };
+		B93EF8D6289AFB720057C774 /* NewCardModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardModuleBuilder.swift; sourceTree = "<group>"; };
 		B93EF8D8289AFFD30057C774 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		B94C0252294E596800EF9EB6 /* CardDetailsModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsModuleBuilder.swift; sourceTree = "<group>"; };
 		B94C0255294E59BF00EF9EB6 /* CardDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsViewController.swift; sourceTree = "<group>"; };
 		B94C0257294E5B3F00EF9EB6 /* CardDetailsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsViewProtocol.swift; sourceTree = "<group>"; };
 		B94C025A294E5BC200EF9EB6 /* CardDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsPresenter.swift; sourceTree = "<group>"; };
 		B94C025C294E5BD300EF9EB6 /* CardDetailsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsPresenterProtocol.swift; sourceTree = "<group>"; };
+		B94C025E294F87A700EF9EB6 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		B99B17532944CD66002167DB /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
 		B99B17592944CEE7002167DB /* TabBarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPage.swift; sourceTree = "<group>"; };
 		B99B175B2944CF07002167DB /* TabbarFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -431,7 +433,7 @@
 		B93EF8C5289AF9190057C774 /* Word */ = {
 			isa = PBXGroup;
 			children = (
-				B93EF8D6289AFB720057C774 /* WordModuleBuilder.swift */,
+				B93EF8D6289AFB720057C774 /* NewCardModuleBuilder.swift */,
 				B93EF8C8289AF9410057C774 /* Interactor */,
 				B93EF8C7289AF93B0057C774 /* Presenter */,
 				B93EF8C6289AF9360057C774 /* View */,
@@ -442,8 +444,8 @@
 		B93EF8C6289AF9360057C774 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B93EF8CA289AF9910057C774 /* WordViewController.swift */,
-				B93EF8CC289AF9B60057C774 /* WordViewProtocol.swift */,
+				B93EF8CA289AF9910057C774 /* NewCardViewController.swift */,
+				B93EF8CC289AF9B60057C774 /* NewCardViewProtocol.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -451,8 +453,8 @@
 		B93EF8C7289AF93B0057C774 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				B93EF8CE289AFAB00057C774 /* WordPresenter.swift */,
-				B93EF8D0289AFADC0057C774 /* WordPresenterProtocol.swift */,
+				B93EF8CE289AFAB00057C774 /* NewCardPresenter.swift */,
+				B93EF8D0289AFADC0057C774 /* NewCardPresenterProtocol.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -460,8 +462,8 @@
 		B93EF8C8289AF9410057C774 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				B93EF8D2289AFB060057C774 /* WordInteractor.swift */,
-				B93EF8D4289AFB2A0057C774 /* WordInteractorProtocol.swift */,
+				B93EF8D2289AFB060057C774 /* NewCardInteractor.swift */,
+				B93EF8D4289AFB2A0057C774 /* NewCardInteractorProtocol.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -573,6 +575,7 @@
 				B9CC1393288B15F00013ED76 /* UIColor+Extension.swift */,
 				B9CC13F0289310460013ED76 /* UIStackView+Extension.swift */,
 				B910AB4F294BBAF700D9E7EA /* Postfix operator.swift */,
+				B94C025E294F87A700EF9EB6 /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -977,7 +980,7 @@
 				B9CC13D9289195BF0013ED76 /* LanguagesForPicker.swift in Sources */,
 				B910AB402945E51900D9E7EA /* StatisticsViewController.swift in Sources */,
 				B9CC138F288B0AFD0013ED76 /* UITableView+Extension.swift in Sources */,
-				B93EF8D7289AFB720057C774 /* WordModuleBuilder.swift in Sources */,
+				B93EF8D7289AFB720057C774 /* NewCardModuleBuilder.swift in Sources */,
 				B99B175A2944CEE7002167DB /* TabBarPage.swift in Sources */,
 				B9CC13B7288F094A0013ED76 /* NewCollectionViewProtocol.swift in Sources */,
 				B9CC13EF28930A8A0013ED76 /* InfoPickerModel.swift in Sources */,
@@ -986,7 +989,7 @@
 				B910AB50294BBAF700D9E7EA /* Postfix operator.swift in Sources */,
 				B93EF8C428970C4C0057C774 /* FadeView.swift in Sources */,
 				B910AB482948EE5000D9E7EA /* FlowCoordinatorProtocol.swift in Sources */,
-				B93EF8D5289AFB2A0057C774 /* WordInteractorProtocol.swift in Sources */,
+				B93EF8D5289AFB2A0057C774 /* NewCardInteractorProtocol.swift in Sources */,
 				B9CC14112895C2530013ED76 /* ThemesCellsDataModel.swift in Sources */,
 				B910AB4429485B8100D9E7EA /* RepetitionFlowCoordinator.swift in Sources */,
 				B9CC13A6288EEC7A0013ED76 /* MainModuleBuilder.swift in Sources */,
@@ -1009,7 +1012,7 @@
 				B9CC135F288738980013ED76 /* MainViewController.swift in Sources */,
 				B910AB52294DC23600D9E7EA /* MainModuleTitleCell.swift in Sources */,
 				B932E95828ABFA98007244E6 /* RepetitionPresenterProtocol.swift in Sources */,
-				B93EF8CB289AF9910057C774 /* WordViewController.swift in Sources */,
+				B93EF8CB289AF9910057C774 /* NewCardViewController.swift in Sources */,
 				B9CC13B5288F087A0013ED76 /* NewCollectionProtocol.swift in Sources */,
 				B99B17542944CD66002167DB /* AppFlowCoordinator.swift in Sources */,
 				B93EF8B828968D210057C774 /* CardsPresenter.swift in Sources */,
@@ -1024,7 +1027,7 @@
 				B910AB3C2945E42400D9E7EA /* SettingsViewController.swift in Sources */,
 				B93EF8BA28968D950057C774 /* CardsPresenterProtocol.swift in Sources */,
 				B94C0256294E59BF00EF9EB6 /* CardDetailsViewController.swift in Sources */,
-				B93EF8D3289AFB060057C774 /* WordInteractor.swift in Sources */,
+				B93EF8D3289AFB060057C774 /* NewCardInteractor.swift in Sources */,
 				B9CC13C0289069C90013ED76 /* ThemesViewController.swift in Sources */,
 				B9CC13ED2893094D0013ED76 /* ImageProvider.swift in Sources */,
 				B932E96F28B7FA0E007244E6 /* CardsRepetitionPresenter.swift in Sources */,
@@ -1046,10 +1049,11 @@
 				B9CC13A8288EF56D0013ED76 /* MainFlowCoordinator.swift in Sources */,
 				B99B175C2944CF07002167DB /* TabbarFlowCoordinator.swift in Sources */,
 				B9CC13BB288F0A000013ED76 /* NewCollectionInteractorProtocol.swift in Sources */,
-				B93EF8CD289AF9B60057C774 /* WordViewProtocol.swift in Sources */,
+				B93EF8CD289AF9B60057C774 /* NewCardViewProtocol.swift in Sources */,
 				B9CC13F1289310460013ED76 /* UIStackView+Extension.swift in Sources */,
+				B94C025F294F87A700EF9EB6 /* UIViewController+Extension.swift in Sources */,
 				B9CC135B288738980013ED76 /* AppDelegate.swift in Sources */,
-				B93EF8CF289AFAB00057C774 /* WordPresenter.swift in Sources */,
+				B93EF8CF289AFAB00057C774 /* NewCardPresenter.swift in Sources */,
 				B93EF8C228968F310057C774 /* CardsModuleBuilder.swift in Sources */,
 				B9CC13F728952B630013ED76 /* DymmyData.swift in Sources */,
 				B9CC138D2889D7900013ED76 /* MainModuleCell.swift in Sources */,
@@ -1066,7 +1070,7 @@
 				B9CC139B288EE6C20013ED76 /* MainPresenter.swift in Sources */,
 				B93EF8BE28968E320057C774 /* CardsInteractor.swift in Sources */,
 				B9CC13D52890720B0013ED76 /* SubtitleLabel.swift in Sources */,
-				B93EF8D1289AFADC0057C774 /* WordPresenterProtocol.swift in Sources */,
+				B93EF8D1289AFADC0057C774 /* NewCardPresenterProtocol.swift in Sources */,
 				B9CC141A2896878E0013ED76 /* CardsTableViewDataSource.swift in Sources */,
 				B9CC1394288B15F00013ED76 /* UIColor+Extension.swift in Sources */,
 				B9CC13E12891D5C60013ED76 /* Language.swift in Sources */,

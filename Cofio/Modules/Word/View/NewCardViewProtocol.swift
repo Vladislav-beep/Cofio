@@ -1,14 +1,13 @@
 //
-//  WordViewProtocol.swift
+//  NewCardViewProtocol.swift
 //  Cofio
 //
 //  Created by Владислав Сизонов on 03.08.2022.
 //
 
-protocol WordViewInput: AnyObject {
-}
+protocol NewCardViewInput: AnyObject {}
 
-protocol WordViewOutput: AnyObject {
+protocol NewCardViewOutput: AnyObject {
     
     func closeModule()
 }

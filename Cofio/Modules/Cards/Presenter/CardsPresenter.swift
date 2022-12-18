@@ -38,6 +38,10 @@ extension CardsPresenter: CardsViewOutput {
         let data = DymmyData.getCardCellDataModel()
         view?.updateData(with: data)
     }
+    
+    func addCard() {
+        output?.moduleWantsToOpenNewCard(self)
+    }
 }
 
 

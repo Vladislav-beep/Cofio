@@ -14,4 +14,5 @@ protocol CardsViewOutput: AnyObject {
     
     func viewDidLoad()
     func viewDidTapRow(_ item: CardCellDataModel)
+    func addCard()
 }

@@ -73,29 +73,12 @@ final class ThemesViewController: UIViewController {
     // MARK: Actions
     
     @objc func addTheme() {
-        let alert = UIAlertController(
-            title:"theme_module_alert_title"~,
-            message: "theme_module_alert_subtitle"~,
-            preferredStyle: .alert
-        )
-        alert.addTextField { textField in
-            textField.placeholder = "theme_module_alert_textField_placeholder"~
+        showTwoButtonAlert(title: "theme_module_alert_title"~,
+                           message: "theme_module_alert_subtitle"~,
+                           actionTitle: "theme_module_alert_add_button"~,
+                           textFieldPlaceholder: "theme_module_alert_textField_placeholder"~) { [weak self] name in
+            self?.output.addTheme(name: name)
         }
-        let addAction = UIAlertAction(
-            title: "theme_module_alert_add_button"~,
-            style: .cancel
-        ) { _ in
-            let tf = alert.textFields?.first
-            let name = tf?.text ?? ""
-            self.output.addTheme(name: name)
-        }
-        let cancelAction = UIAlertAction(
-            title: "theme_module_alert_cancel_button"~,
-            style: .default
-        )
-        alert.addAction(addAction)
-        alert.addAction(cancelAction)
-        present(alert, animated: true)
     }
 }
 

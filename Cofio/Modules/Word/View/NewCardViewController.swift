@@ -1,5 +1,5 @@
 //
-//  WordViewController.swift
+//  NewCardViewController.swift
 //  Cofio
 //
 //  Created by Владислав Сизонов on 03.08.2022.
@@ -7,11 +7,11 @@
 
 import UIKit
 
-final class WordViewController: UIViewController {
+final class NewCardViewController: UIViewController {
     
     // MARK: Private properties
     
-    private let output: WordViewOutput
+    private let output: NewCardViewOutput
  
     private let closeButton: CloseButton = {
         let closeButton = CloseButton()
@@ -45,7 +45,7 @@ final class WordViewController: UIViewController {
     }()
     
     private let doneButton: DoneButton = {
-        let doneButton = DoneButton(title: "Добавить")
+        let doneButton = DoneButton(title: "new_card_module_add_button_title"~)
         doneButton.addTarget(self, action: #selector(addWord), for: .touchUpInside)
         return doneButton
     }()
@@ -53,7 +53,7 @@ final class WordViewController: UIViewController {
     
     // MARK: Lifecycle
     
-    init(output: WordViewOutput) {
+    init(output: NewCardViewOutput) {
         self.output = output
         
         super.init(nibName: nil, bundle: nil)
@@ -67,13 +67,13 @@ final class WordViewController: UIViewController {
         super.viewDidLoad()
         
         setupViews()
-        setupNavigationBar()
     }
     
     
     // MARK: Private
     
     private func setupViews() {
+        view.backgroundColor = .white
 
         view.addSubview(closeButton)
         NSLayoutConstraint.activate([
@@ -100,14 +100,6 @@ final class WordViewController: UIViewController {
         ])
     }
     
-    private func setupNavigationBar() {
-        title = "Повторение"
-        view.backgroundColor = .white
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.tintColor = UIColor.darkViolet
-    }
-    
-    
     // MARK: Actions
     
     @objc func close() {
@@ -115,10 +107,11 @@ final class WordViewController: UIViewController {
     }
     
     @objc func addWord() {
+        
     }
 }
 
 
 // MARK: - WordViewInput
 
-extension WordViewController: WordViewInput {}
+extension NewCardViewController: NewCardViewInput {}

@@ -5,22 +5,22 @@
 //  Created by Владислав Сизонов on 03.08.2022.
 //
 
-final class WordPresenter {
+final class NewCardPresenter {
     
     // MARK: Private properties
     
-    private let interactor: WordInteractorInput
+    private let interactor: NewCardInteractorInput
     
     
     // MARK: Public properties
     
-    weak var view: WordViewInput?
-    weak var output: WordPresenterOutput?
+    weak var view: NewCardViewInput?
+    weak var output: NewCardPresenterOutput?
     
     
     // MARK: Lifecycle
     
-    init(interactor: WordInteractorInput) {
+    init(interactor: NewCardInteractorInput) {
         self.interactor = interactor
     }
 }
@@ -28,7 +28,7 @@ final class WordPresenter {
 
 // MARK: - WordViewOutput
 
-extension WordPresenter: WordViewOutput {
+extension NewCardPresenter: NewCardViewOutput {
     
     func closeModule() {
         output?.moduleWantsToClose(self)
@@ -38,9 +38,9 @@ extension WordPresenter: WordViewOutput {
 
 // MARK: - WordPresenterInput
 
-extension WordPresenter: WordPresenterInput {}
+extension NewCardPresenter: NewCardPresenterInput {}
 
 
 // MARK: - WordInteractorOutput
 
-extension WordPresenter: WordInteractorOutput {}
+extension NewCardPresenter: NewCardInteractorOutput {}

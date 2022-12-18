@@ -61,6 +61,13 @@ final class MainFlowCoordinator {
         
         parentViewController.present(cardDetailsViewController, animated: true)
     }
+    
+    private func showNewCardModule() {
+        let builder = NewCardModuleBuilder(output: self)
+        let newCardViewController = builder.build()
+        newCardViewController.modalPresentationStyle = .fullScreen
+        parentViewController.present(newCardViewController, animated: true)
+    }
 }
 
 // MARK: - FlowCoordinatorProtocol
@@ -130,6 +137,10 @@ extension MainFlowCoordinator: CardsPresenterOutput {
     func moduleWantsToOpenCardDetails(_ module: CardsPresenterInput) {
         showCardDetailsModule()
     }
+    
+    func moduleWantsToOpenNewCard(_ module: CardsPresenterInput) {
+        showNewCardModule()
+    }
 }
 
 
@@ -139,5 +150,16 @@ extension MainFlowCoordinator: CardDetailsPresenterOutput {
     
     func moduleWantsToClose(_ module: CardsPresenterInput) {
         parentViewController.dismiss(animated: true)
+    }
+}
+
+
+// MARK: - NewCardPresenterOutput
+
+extension MainFlowCoordinator: NewCardPresenterOutput {
+    
+    func moduleWantsToClose(_ module: NewCardPresenterInput) {
+        parentViewController.dismiss(animated: true)
+        // update UI
     }
 }

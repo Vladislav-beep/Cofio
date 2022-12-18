@@ -66,8 +66,8 @@ class TabbarFlowCoordinator: NSObject, FlowCoordinatorProtocol {
         parentNavigationController.setNavigationBarHidden(false, animated: false)
 
         parentNavigationController.tabBarItem = UITabBarItem.init(title: page.pageTitleValue(),
-                                                     image: nil,
-                                                     tag: page.pageOrderNumber())
+                                                                  image: nil,
+                                                                  tag: page.pageOrderNumber())
 
         switch page {
         case .main:

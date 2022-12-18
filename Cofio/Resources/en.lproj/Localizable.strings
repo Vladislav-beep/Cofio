@@ -26,3 +26,9 @@
 "theme_module_alert_textField_placeholder" = "Topic name";
 "theme_module_alert_add_button" = "Add";
 "theme_module_alert_cancel_button" = "Cancel";
+
+// MARK: Cards
+"cards_module_title" = "Cards";
+
+// MARK: New Card
+"new_card_module_add_button_title" = "Add card";

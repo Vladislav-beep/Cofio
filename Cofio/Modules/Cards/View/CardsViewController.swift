@@ -23,18 +23,6 @@ final class CardsViewController: UIViewController {
         return tableView
     }()
     
-    private lazy var doneButton: DoneButton = {
-        let doneButton = DoneButton(title: "Добавить карточку")
-        doneButton.addTarget(self, action: #selector(addCard), for: .touchUpInside)
-        return doneButton
-    }()
-    
-    private lazy var fadeView: FadeView = {
-        let fadeView = FadeView()
-        fadeView.translatesAutoresizingMaskIntoConstraints = false
-        return fadeView
-    }()
-    
     private lazy var tableViewDataSource = dataSource.makeDataSource(for: cardsTableView)
     
     
@@ -74,35 +62,20 @@ final class CardsViewController: UIViewController {
             cardsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             cardsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
-        
-        cardsTableView.addSubview(fadeView)
-        NSLayoutConstraint.activate([
-            fadeView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
-            fadeView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            fadeView.heightAnchor.constraint(equalToConstant: 106),
-            fadeView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-        ])
-        
-        fadeView.addSubview(doneButton)
-        NSLayoutConstraint.activate([
-            doneButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40),
-            doneButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            doneButton.heightAnchor.constraint(equalToConstant: 56),
-            doneButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
-        ])
     }
     
     private func setupNavigationBar() {
-        title = "Карточки"
+        title = "cards_module_title"~
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = UIColor.darkViolet
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addCard))
     }
     
     
     // MARK: Actions
     
     @objc func addCard() {
-        
+        output.addCard()
     }
 }
 
