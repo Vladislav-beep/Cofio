@@ -26,7 +26,21 @@ class TabbarFlowCoordinator: NSObject, FlowCoordinatorProtocol {
         let controllers: [UIViewController] = pages.map({ getTabController($0) })
         
         prepareTabBarController(withTabControllers: controllers)
- 
+        let tabBarItem0 = (tabBarController.tabBar.items?[0])! as UITabBarItem
+        tabBarItem0.image = UIImage(named: "tab0")
+        tabBarItem0.imageInsets = UIEdgeInsets(top: 9, left: 0, bottom: 9, right: 0)
+
+        let tabBarItem1 = (tabBarController.tabBar.items?[1])! as UITabBarItem
+        tabBarItem1.image = UIImage(named: "tab1")
+        tabBarItem1.imageInsets = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
+        
+        let tabBarItem2 = (tabBarController.tabBar.items?[2])! as UITabBarItem
+        tabBarItem2.image = UIImage(named: "tab2")
+        
+        let tabBarItem3 = (tabBarController.tabBar.items?[3])! as UITabBarItem
+        tabBarItem3.image = UIImage(named: "tab3")
+        tabBarItem3.imageInsets = UIEdgeInsets(top: 4, left: 0, bottom: 4, right: 0)
+        
         tabBarController.modalPresentationStyle = .fullScreen
         parentViewController.present(tabBarController, animated: false)
     }
