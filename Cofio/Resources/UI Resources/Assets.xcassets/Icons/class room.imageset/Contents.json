@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Classroom icon app.jpeg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

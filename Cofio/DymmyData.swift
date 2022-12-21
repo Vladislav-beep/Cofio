@@ -79,9 +79,9 @@ final class DymmyData {
         return [
             .title(.init(title: "main_module_title"~)),
             .subtitle(.init(subtitle: "main_module_subtitle"~)),
-            .collection(.init(title: "German", collectionsCount: 2, image: UIImage())),
-            .collection(.init(title: "Mathematiican exam", collectionsCount: 34, image: UIImage(systemName: "car") ?? UIImage())),
-            .collection(.init(title: "wajncsjncjnasjnascjncasjncs", collectionsCount: 0, image: UIImage()))
+            .collection(.init(title: "German", collectionsCount: 2, image: "life")),
+            .collection(.init(title: "Mathematiican exam", collectionsCount: 34, image: "clock")),
+            .collection(.init(title: "wajncsjncjnasjnascjncasjncs", collectionsCount: 0, image: "calendar"))
         ]
     }
     

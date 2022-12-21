@@ -24,5 +24,5 @@ struct SubtitleCellDataModel: Hashable {
 struct MainModuleCellViewModel: Hashable {
     let title: String
     let collectionsCount: Int
-    let image: UIImage
+    let image: String
 }

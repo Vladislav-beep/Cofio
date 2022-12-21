@@ -14,7 +14,7 @@ final class MainModuleCell: UITableViewCell {
     struct DisplayData: Hashable {
         let title: String
         let collectionsCount: Int
-        let icon: UIImage
+        let icon: String
     }
     
     
@@ -141,7 +141,7 @@ final class MainModuleCell: UITableViewCell {
 //        }
         titleLabel.text = displayData.title
        // iconView.image = configureImage(with: displayData.title)
-        iconView.image = displayData.icon
+        iconView.image = UIImage(named: displayData.icon)
         configureSubtitleLabel(with: displayData.collectionsCount)
     }
 }
