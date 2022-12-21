@@ -32,3 +32,12 @@
 
 // MARK: New Card
 "new_card_module_add_button_title" = "Добавить карточку";
+
+
+
+
+
+// MARK: - UI
+
+// MARK: CollectionTextField
+"collection_textField_placeholder" = "Название коллекции";

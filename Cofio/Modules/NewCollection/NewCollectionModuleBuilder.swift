@@ -24,14 +24,10 @@ final class NewCollectionModuleBuilder {
     // MARK: Public
     
     func build() -> UIViewController {
-        
-        let imageProvider = ImageProvider()
-        
         let interactor = NewCollectionInteractor()
         let presenter = NewCollectionPresenter(interactor: interactor)
         
-        let viewController = NewCollectionViewController(output: presenter,
-                                                       imageProvider: imageProvider)
+        let viewController = NewCollectionViewController(output: presenter)
         
         presenter.view = viewController
         interactor.output = presenter

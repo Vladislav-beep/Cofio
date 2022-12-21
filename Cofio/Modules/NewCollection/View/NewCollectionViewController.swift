@@ -12,7 +12,6 @@ final class NewCollectionViewController: UIViewController {
     // MARK: Private properties
     
     private let output: NewCollectionViewOutput
-    private let imageProvider: ImageProviderProtocol
     
     private lazy var closeButton: CloseButton = {
         let closeButton = CloseButton()
@@ -25,9 +24,16 @@ final class NewCollectionViewController: UIViewController {
         return titleLabel
     }()
     
-    private let languageTextField: LanguageTextField = {
-        let languageTextField = LanguageTextField()
-        return languageTextField
+    private let collectionTextField: CollectionTextField = {
+        let collectionTextField = CollectionTextField()
+        return collectionTextField
+    }()
+    
+    private let thinView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .gray
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     private lazy var doneButton: UIButton = {
@@ -40,14 +46,11 @@ final class NewCollectionViewController: UIViewController {
         return doneButton
     }()
     
-    private lazy var languages = imageProvider.getPickerModels()
-    
     
     // MARK: Lifecycle
     
-    init(output: NewCollectionViewOutput, imageProvider: ImageProviderProtocol) {
+    init(output: NewCollectionViewOutput) {
         self.output = output
-        self.imageProvider = imageProvider
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -60,6 +63,8 @@ final class NewCollectionViewController: UIViewController {
         super.viewDidLoad()
         
         setupViews()
+        collectionTextField.delegate = self
+        collectionTextField.becomeFirstResponder()
     }
     
     
@@ -76,14 +81,6 @@ final class NewCollectionViewController: UIViewController {
             closeButton.widthAnchor.constraint(equalToConstant: 100)
         ])
         
-        view.addSubview(doneButton)
-        NSLayoutConstraint.activate([
-            doneButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40),
-            doneButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            doneButton.heightAnchor.constraint(equalToConstant: 56),
-            doneButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-        ])
-        
         view.addSubview(titleLabel)
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
@@ -91,12 +88,28 @@ final class NewCollectionViewController: UIViewController {
             titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
         
-        view.addSubview(languageTextField)
+        view.addSubview(collectionTextField)
         NSLayoutConstraint.activate([
-            languageTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 40),
-            languageTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            languageTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            languageTextField.heightAnchor.constraint(equalToConstant: 56)
+            collectionTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 25),
+            collectionTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            collectionTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            collectionTextField.heightAnchor.constraint(equalToConstant: 56)
+        ])
+        
+        view.addSubview(thinView)
+        NSLayoutConstraint.activate([
+            thinView.topAnchor.constraint(equalTo: collectionTextField.bottomAnchor, constant: -10),
+            thinView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            thinView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            thinView.heightAnchor.constraint(equalToConstant: 5)
+        ])
+        
+        view.addSubview(doneButton)
+        NSLayoutConstraint.activate([
+            doneButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40),
+            doneButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            doneButton.heightAnchor.constraint(equalToConstant: 56),
+            doneButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
         ])
     }
     
@@ -113,6 +126,14 @@ final class NewCollectionViewController: UIViewController {
 }
 
 
-// MARK: - NewLanguageViewInput
+// MARK: - NewCollectionViewInput 
 
 extension NewCollectionViewController: NewCollectionViewInput {}
+
+extension NewCollectionViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        collectionTextField.resignFirstResponder()
+        return true
+    }
+}

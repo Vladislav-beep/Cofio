@@ -99,7 +99,7 @@
 		B9CC13D52890720B0013ED76 /* SubtitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13D42890720B0013ED76 /* SubtitleLabel.swift */; };
 		B9CC13D9289195BF0013ED76 /* LanguagesForPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13D8289195BF0013ED76 /* LanguagesForPicker.swift */; };
 		B9CC13DB28919E0E0013ED76 /* LowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13DA28919E0E0013ED76 /* LowerView.swift */; };
-		B9CC13DD2891B9090013ED76 /* LanguageTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13DC2891B9090013ED76 /* LanguageTextField.swift */; };
+		B9CC13DD2891B9090013ED76 /* CollectionTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13DC2891B9090013ED76 /* CollectionTextField.swift */; };
 		B9CC13E12891D5C60013ED76 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13E02891D5C60013ED76 /* Language.swift */; };
 		B9CC13E32891D5F10013ED76 /* CardCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13E22891D5F10013ED76 /* CardCollection.swift */; };
 		B9CC13E52891D6380013ED76 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC13E42891D6380013ED76 /* Card.swift */; };
@@ -233,7 +233,7 @@
 		B9CC13D42890720B0013ED76 /* SubtitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleLabel.swift; sourceTree = "<group>"; };
 		B9CC13D8289195BF0013ED76 /* LanguagesForPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesForPicker.swift; sourceTree = "<group>"; };
 		B9CC13DA28919E0E0013ED76 /* LowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowerView.swift; sourceTree = "<group>"; };
-		B9CC13DC2891B9090013ED76 /* LanguageTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTextField.swift; sourceTree = "<group>"; };
+		B9CC13DC2891B9090013ED76 /* CollectionTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTextField.swift; sourceTree = "<group>"; };
 		B9CC13E02891D5C60013ED76 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		B9CC13E22891D5F10013ED76 /* CardCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollection.swift; sourceTree = "<group>"; };
 		B9CC13E42891D6380013ED76 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -728,7 +728,7 @@
 				B9CC13D2289070E70013ED76 /* TitleLabel.swift */,
 				B9CC13D42890720B0013ED76 /* SubtitleLabel.swift */,
 				B9CC13DA28919E0E0013ED76 /* LowerView.swift */,
-				B9CC13DC2891B9090013ED76 /* LanguageTextField.swift */,
+				B9CC13DC2891B9090013ED76 /* CollectionTextField.swift */,
 				B93EF8C328970C4C0057C774 /* FadeView.swift */,
 				B93EF8D8289AFFD30057C774 /* CloseButton.swift */,
 				B932E943289C402A007244E6 /* DoneButton.swift */,
@@ -1000,7 +1000,7 @@
 				B93EF8D9289AFFD30057C774 /* CloseButton.swift in Sources */,
 				B932E95228ABF9DC007244E6 /* RepetitionViewController.swift in Sources */,
 				B9CC13E72891D6510013ED76 /* Word.swift in Sources */,
-				B9CC13DD2891B9090013ED76 /* LanguageTextField.swift in Sources */,
+				B9CC13DD2891B9090013ED76 /* CollectionTextField.swift in Sources */,
 				B94C0258294E5B3F00EF9EB6 /* CardDetailsViewProtocol.swift in Sources */,
 				B932E95E28ABFBC4007244E6 /* RepetitionModuleBuilder.swift in Sources */,
 				B9CC13E32891D5F10013ED76 /* CardCollection.swift in Sources */,

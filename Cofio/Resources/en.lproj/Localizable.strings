@@ -32,3 +32,10 @@
 
 // MARK: New Card
 "new_card_module_add_button_title" = "Add card";
+
+
+
+// MARK: - UI
+
+// MARK: CollectionTextField
+"collection_textField_placeholder" = "Collection name";

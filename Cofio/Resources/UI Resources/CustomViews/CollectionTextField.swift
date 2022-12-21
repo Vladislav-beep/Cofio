@@ -1,5 +1,5 @@
 //
-//  LanguageTextField.swift
+//  CollectionTextField.swift
 //  Cofio
 //
 //  Created by Владислав Сизонов on 27.07.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LanguageTextField: UITextField {
+class CollectionTextField: UITextField {
 
     // MARK: Lifecycle
     
@@ -23,14 +23,11 @@ class LanguageTextField: UITextField {
     // MARK: Private methods
     
     private func initialize() {
-        layer.borderWidth = 2.5
-        layer.borderColor = UIColor.orange.cgColor
-        layer.cornerRadius = 10
-        placeholder = "Выберите язык"
+        placeholder = "collection_textField_placeholder"~
         borderStyle = .none
         translatesAutoresizingMaskIntoConstraints = false
         
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 5))
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 3, height: 5))
         leftViewMode = .always
         leftView = view
     }
