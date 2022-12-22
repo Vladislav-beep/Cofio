@@ -19,6 +19,11 @@ final class ChooseIconViewController: UIViewController {
         return closeButton
     }()
     
+    private lazy var iconsCollectionView: IconsCollectionView = {
+        let iconsCollectionView = IconsCollectionView()
+        return iconsCollectionView
+    }()
+
     // MARK: Lifecycle
     
     init(output: ChooseIconViewOutput) {
@@ -35,12 +40,14 @@ final class ChooseIconViewController: UIViewController {
         super.viewDidLoad()
         
         setupViews()
+        iconsCollectionView.dataSource = self
+        iconsCollectionView.delegate = self
     }
     
     // MARK: Private
     
     private func setupViews() {
-        view.backgroundColor = .white
+        view.backgroundColor = .blue
         
         view.addSubview(closeButton)
         NSLayoutConstraint.activate([
@@ -48,6 +55,14 @@ final class ChooseIconViewController: UIViewController {
             closeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             closeButton.heightAnchor.constraint(equalToConstant: 40),
             closeButton.widthAnchor.constraint(equalToConstant: 100)
+        ])
+        
+        view.addSubview(iconsCollectionView)
+        NSLayoutConstraint.activate([
+            iconsCollectionView.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 20),
+            iconsCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            iconsCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            iconsCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
     
@@ -60,4 +75,26 @@ final class ChooseIconViewController: UIViewController {
 
 // MARK: - ChooseIconViewInput
 
-extension NewCollectionViewController: ChooseIconViewInput {}
+extension ChooseIconViewController: ChooseIconViewInput {}
+
+// MARK: - UICollectionViewDelegate
+
+extension ChooseIconViewController: UICollectionViewDelegate {
+
+}
+
+// MARK: - CollectionViewDataSource
+
+extension ChooseIconViewController: UICollectionViewDataSource {
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "iconCell",
+                                                      for: indexPath) as? IconCell
+        
+        return cell ?? UICollectionViewCell()
+    }
+}

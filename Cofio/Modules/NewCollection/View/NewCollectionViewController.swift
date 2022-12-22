@@ -36,6 +36,20 @@ final class NewCollectionViewController: UIViewController {
         return view
     }()
     
+    private lazy var iconImageView: UIImageView = {
+        let iconImageView = UIImageView()
+        iconImageView.backgroundColor = .blue
+        iconImageView.isUserInteractionEnabled = true
+        iconImageView.addGestureRecognizer(openIconChooseGestureRecognizer)
+        iconImageView.translatesAutoresizingMaskIntoConstraints = false
+        return iconImageView
+    }()
+    
+    private lazy var openIconChooseGestureRecognizer: UITapGestureRecognizer = {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(chooseIcon))
+        return tap
+    }()
+    
     private lazy var doneButton: UIButton = {
         let doneButton = UIButton()
         doneButton.translatesAutoresizingMaskIntoConstraints = false
@@ -65,6 +79,10 @@ final class NewCollectionViewController: UIViewController {
         setupViews()
         collectionTextField.delegate = self
         collectionTextField.becomeFirstResponder()
+    }
+    
+    @objc func chooseIcon() {
+        output.chooseIcon()
     }
     
     
@@ -102,6 +120,14 @@ final class NewCollectionViewController: UIViewController {
             thinView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             thinView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             thinView.heightAnchor.constraint(equalToConstant: 5)
+        ])
+        
+        view.addSubview(iconImageView)
+        NSLayoutConstraint.activate([
+            iconImageView.topAnchor.constraint(equalTo: thinView.bottomAnchor, constant: 20),
+            iconImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            iconImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            iconImageView.heightAnchor.constraint(equalToConstant: 50)
         ])
         
         view.addSubview(doneButton)

@@ -10,5 +10,6 @@ protocol NewCollectionViewInput: AnyObject {}
 protocol NewCollectionViewOutput: AnyObject {
     
     func addNewCollection()
+    func chooseIcon()
     func closeModule()
 }

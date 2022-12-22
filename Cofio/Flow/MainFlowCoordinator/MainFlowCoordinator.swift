@@ -13,6 +13,7 @@ final class MainFlowCoordinator {
     
     private let parentViewController: UINavigationController
     private var mainModuleViewController: UIViewController?
+    private var newCollectionViewControllerr: UIViewController?
     private weak var mainModule: MainPresenterInput?
     
     
@@ -36,9 +37,17 @@ final class MainFlowCoordinator {
     private func showNewCollectionModule() {
         let builder = NewCollectionModuleBuilder(output: self)
         let newCollectionViewController = builder.build()
-
+        
+        newCollectionViewControllerr = newCollectionViewController
         newCollectionViewController.modalPresentationStyle = .fullScreen
         mainModuleViewController?.present(newCollectionViewController, animated: true)
+    }
+    
+    private func showChooseIconModule() {
+        let builder = ChooseIconModuleBuilder(output: self)
+        let chooseIconViewController = builder.build()
+        
+        newCollectionViewControllerr?.present(chooseIconViewController, animated: true)
     }
     
     private func showThemesModule(title: String) {
@@ -109,10 +118,28 @@ extension MainFlowCoordinator: NewCollectionPresenterOutput {
         mainModuleViewController?.dismiss(animated: true)
     }
     
+    func moduleWantsToChooseIcon(_ module: NewCollectionPresenterInput) {
+        showChooseIconModule()
+    }
+    
     func moduleWantsToAddCollectionAndClose(_ module: NewCollectionPresenterInput) {
         mainModule?.refreshCollections()
         mainModuleViewController?.dismiss(animated: true)
     }
+}
+
+// MARK: - ChooseIconPresenterOutput
+
+extension MainFlowCoordinator:  ChooseIconPresenterOutput {
+    
+    func moduleWantsToClose(_ module: ChooseIconPresenterInput) {
+        
+    }
+    
+    func moduleWantsToChooseIcon(_ module: ChooseIconPresenterInput) {
+        
+    }
+    
 }
 
 

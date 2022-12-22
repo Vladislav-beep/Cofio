@@ -29,9 +29,13 @@ final class NewCollectionPresenter {
 // MARK: - NewLanguageViewOutput
 
 extension NewCollectionPresenter: NewCollectionViewOutput {
-
+    
     func addNewCollection() {
         output?.moduleWantsToAddCollectionAndClose(self)
+    }
+    
+    func chooseIcon() {
+        output?.moduleWantsToChooseIcon(self)
     }
     
     func closeModule() {

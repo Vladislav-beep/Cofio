@@ -66,6 +66,9 @@
 		B9ACB79C2954391000F2B476 /* ChooseIconViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ACB79B2954391000F2B476 /* ChooseIconViewProtocol.swift */; };
 		B9ACB79F2954399C00F2B476 /* ChooseIconPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ACB79E2954399C00F2B476 /* ChooseIconPresenter.swift */; };
 		B9ACB7A129543A0000F2B476 /* ChooseIconPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ACB7A029543A0000F2B476 /* ChooseIconPresenterProtocol.swift */; };
+		B9ACB7A62954C85800F2B476 /* IconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ACB7A52954C85800F2B476 /* IconCell.swift */; };
+		B9ACB7AA2954CCA900F2B476 /* ChooseIconModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ACB7A92954CCA900F2B476 /* ChooseIconModuleBuilder.swift */; };
+		B9ACB7AC2954D2A900F2B476 /* IconsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ACB7AB2954D2A900F2B476 /* IconsCollectionView.swift */; };
 		B9CC135B288738980013ED76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC135A288738980013ED76 /* AppDelegate.swift */; };
 		B9CC135D288738980013ED76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC135C288738980013ED76 /* SceneDelegate.swift */; };
 		B9CC135F288738980013ED76 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC135E288738980013ED76 /* MainViewController.swift */; };
@@ -200,6 +203,9 @@
 		B9ACB79B2954391000F2B476 /* ChooseIconViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIconViewProtocol.swift; sourceTree = "<group>"; };
 		B9ACB79E2954399C00F2B476 /* ChooseIconPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIconPresenter.swift; sourceTree = "<group>"; };
 		B9ACB7A029543A0000F2B476 /* ChooseIconPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIconPresenterProtocol.swift; sourceTree = "<group>"; };
+		B9ACB7A52954C85800F2B476 /* IconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCell.swift; sourceTree = "<group>"; };
+		B9ACB7A92954CCA900F2B476 /* ChooseIconModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIconModuleBuilder.swift; sourceTree = "<group>"; };
+		B9ACB7AB2954D2A900F2B476 /* IconsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsCollectionView.swift; sourceTree = "<group>"; };
 		B9CC1357288738980013ED76 /* Cofio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cofio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9CC135A288738980013ED76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9CC135C288738980013ED76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -524,6 +530,7 @@
 		B9ACB797295437AE00F2B476 /* ChooseIcon */ = {
 			isa = PBXGroup;
 			children = (
+				B9ACB7A92954CCA900F2B476 /* ChooseIconModuleBuilder.swift */,
 				B9ACB79D2954398C00F2B476 /* Presenter */,
 				B9ACB798295437DC00F2B476 /* View */,
 			);
@@ -535,6 +542,7 @@
 			children = (
 				B9ACB7992954383B00F2B476 /* ChooseIconViewController.swift */,
 				B9ACB79B2954391000F2B476 /* ChooseIconViewProtocol.swift */,
+				B9ACB7A42954C82E00F2B476 /* Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -546,6 +554,14 @@
 				B9ACB7A029543A0000F2B476 /* ChooseIconPresenterProtocol.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B9ACB7A42954C82E00F2B476 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B9ACB7A52954C85800F2B476 /* IconCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		B9CC134E288738970013ED76 = {
@@ -769,6 +785,7 @@
 				B932E943289C402A007244E6 /* DoneButton.swift */,
 				B932E949289DBD95007244E6 /* HorizontalProgressBar.swift */,
 				B932E94B28A00499007244E6 /* WordTextView.swift */,
+				B9ACB7AB2954D2A900F2B476 /* IconsCollectionView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -1034,6 +1051,8 @@
 				B932E95C28ABFB51007244E6 /* RepetitionInteractorProtocol.swift in Sources */,
 				B9CC13E52891D6380013ED76 /* Card.swift in Sources */,
 				B932E97928B7FC29007244E6 /* CardsRepetitionViewProtocol.swift in Sources */,
+				B9ACB7AC2954D2A900F2B476 /* IconsCollectionView.swift in Sources */,
+				B9ACB7AA2954CCA900F2B476 /* ChooseIconModuleBuilder.swift in Sources */,
 				B93EF8D9289AFFD30057C774 /* CloseButton.swift in Sources */,
 				B932E95228ABF9DC007244E6 /* RepetitionViewController.swift in Sources */,
 				B9CC13E72891D6510013ED76 /* Word.swift in Sources */,
@@ -1056,6 +1075,7 @@
 				B99B17542944CD66002167DB /* AppFlowCoordinator.swift in Sources */,
 				B93EF8B828968D210057C774 /* CardsPresenter.swift in Sources */,
 				B9CC141E289688470013ED76 /* CardsCell.swift in Sources */,
+				B9ACB7A62954C85800F2B476 /* IconCell.swift in Sources */,
 				B9CC1391288B0B840013ED76 /* UITableViewCell+Extension.swift in Sources */,
 				B9CC140B2895C00C0013ED76 /* StatisticsCell.swift in Sources */,
 				B9CC13C728906A7C0013ED76 /* ThemesPresenter.swift in Sources */,
