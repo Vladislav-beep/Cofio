@@ -13,10 +13,12 @@ final class ChooseIconViewController: UIViewController {
     
     private let output: ChooseIconViewOutput
     
-    private lazy var closeButton: CloseButton = {
-        let closeButton = CloseButton()
-        closeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
-        return closeButton
+    private lazy var draggableView: UIView = {
+        let draggableView = UIView()
+        draggableView.backgroundColor = .gray
+        draggableView.layer.cornerRadius = 3
+        draggableView.translatesAutoresizingMaskIntoConstraints = false
+        return draggableView
     }()
     
     private lazy var iconsCollectionView: IconsCollectionView = {
@@ -47,29 +49,23 @@ final class ChooseIconViewController: UIViewController {
     // MARK: Private
     
     private func setupViews() {
-        view.backgroundColor = .blue
+        view.backgroundColor = .white
         
-        view.addSubview(closeButton)
+        view.addSubview(draggableView)
         NSLayoutConstraint.activate([
-            closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 45),
-            closeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            closeButton.heightAnchor.constraint(equalToConstant: 40),
-            closeButton.widthAnchor.constraint(equalToConstant: 100)
+            draggableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
+            draggableView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            draggableView.heightAnchor.constraint(equalToConstant: 6),
+            draggableView.widthAnchor.constraint(equalToConstant: 40)
         ])
         
         view.addSubview(iconsCollectionView)
         NSLayoutConstraint.activate([
-            iconsCollectionView.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 20),
+            iconsCollectionView.topAnchor.constraint(equalTo: draggableView.bottomAnchor, constant: 10),
             iconsCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             iconsCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             iconsCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
-    }
-    
-    // MARK: Actions
-    
-    @objc func close() {
-        output.closeModule()
     }
 }
 
@@ -81,6 +77,10 @@ extension ChooseIconViewController: ChooseIconViewInput {}
 
 extension ChooseIconViewController: UICollectionViewDelegate {
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let choosedIcon = output.getIcons()[indexPath.item]
+        output.viewDidTapRow(icon: choosedIcon)
+    }
 }
 
 // MARK: - CollectionViewDataSource
@@ -88,12 +88,14 @@ extension ChooseIconViewController: UICollectionViewDelegate {
 extension ChooseIconViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        5
+        output.getIcons().count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "iconCell",
                                                       for: indexPath) as? IconCell
+        let icon = output.getIcons()[indexPath.item]
+        cell?.configure(icon: icon)
         
         return cell ?? UICollectionViewCell()
     }

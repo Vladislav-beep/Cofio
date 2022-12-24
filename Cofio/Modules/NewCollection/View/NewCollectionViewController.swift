@@ -36,9 +36,22 @@ final class NewCollectionViewController: UIViewController {
         return view
     }()
     
+    private let chooseIconLabel: UILabel = {
+        let chooseIconLabel = UILabel()
+        chooseIconLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        chooseIconLabel.text = "new_collection_module_choose_icon"~
+        chooseIconLabel.translatesAutoresizingMaskIntoConstraints = false
+        return chooseIconLabel
+    }()
+    
     private lazy var iconImageView: UIImageView = {
         let iconImageView = UIImageView()
-        iconImageView.backgroundColor = .blue
+        iconImageView.image = UIImage(named: "iconPlaceholder")
+        iconImageView.layer.cornerRadius = 12
+        iconImageView.layer.borderWidth = 2
+        iconImageView.layer.borderColor = UIColor.black.cgColor
+        iconImageView.clipsToBounds = true
+        iconImageView.contentMode = .scaleAspectFill
         iconImageView.isUserInteractionEnabled = true
         iconImageView.addGestureRecognizer(openIconChooseGestureRecognizer)
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -77,6 +90,7 @@ final class NewCollectionViewController: UIViewController {
         super.viewDidLoad()
         
         setupViews()
+        output.moduleDidLoad()
         collectionTextField.delegate = self
         collectionTextField.becomeFirstResponder()
     }
@@ -122,12 +136,19 @@ final class NewCollectionViewController: UIViewController {
             thinView.heightAnchor.constraint(equalToConstant: 5)
         ])
         
+        view.addSubview(chooseIconLabel)
+        NSLayoutConstraint.activate([
+            chooseIconLabel.topAnchor.constraint(equalTo: thinView.bottomAnchor, constant: 40),
+            chooseIconLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            chooseIconLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16)
+        ])
+        
         view.addSubview(iconImageView)
         NSLayoutConstraint.activate([
-            iconImageView.topAnchor.constraint(equalTo: thinView.bottomAnchor, constant: 20),
-            iconImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            iconImageView.topAnchor.constraint(equalTo: chooseIconLabel.bottomAnchor, constant: 20),
             iconImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            iconImageView.heightAnchor.constraint(equalToConstant: 50)
+            iconImageView.widthAnchor.constraint(equalToConstant: 150),
+            iconImageView.heightAnchor.constraint(equalToConstant: 150)
         ])
         
         view.addSubview(doneButton)
@@ -154,7 +175,12 @@ final class NewCollectionViewController: UIViewController {
 
 // MARK: - NewCollectionViewInput 
 
-extension NewCollectionViewController: NewCollectionViewInput {}
+extension NewCollectionViewController: NewCollectionViewInput {
+
+    func refreshImageView(icon: String) {
+        iconImageView.image = UIImage(named: icon)
+    }
+}
 
 extension NewCollectionViewController: UITextFieldDelegate {
     

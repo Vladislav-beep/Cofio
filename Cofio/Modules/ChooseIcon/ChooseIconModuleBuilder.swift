@@ -24,7 +24,8 @@ final class ChooseIconModuleBuilder {
     // MARK: Public
     
     func build() -> UIViewController {
-        let presenter = ChooseIconPresenter()
+        let imageProvider = ImageProvider()
+        let presenter = ChooseIconPresenter(imageProvider: imageProvider)
         
         let viewController = ChooseIconViewController(output: presenter)
         

@@ -9,9 +9,10 @@ import UIKit
 
 final class IconCell: UICollectionViewCell {
     
-    private let iconView: UIView = {
-        let iconView = UIView()
-        iconView.backgroundColor = .red
+    private let iconView: UIImageView = {
+        let iconView = UIImageView()
+        iconView.layer.cornerRadius = 12
+        iconView.clipsToBounds = true
         iconView.translatesAutoresizingMaskIntoConstraints = false
         return iconView
     }()
@@ -39,7 +40,7 @@ final class IconCell: UICollectionViewCell {
         ])
     }
     
-    func configure() {
-        
+    func configure(icon: String) {
+        iconView.image = UIImage(named: icon)
     }
 }

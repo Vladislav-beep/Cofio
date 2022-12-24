@@ -126,9 +126,9 @@ final class MainModuleCell: UITableViewCell {
         }
     }
     
-    private func configureImage(with title: String) -> UIImage {
-        return ImageProvider().configureLanguageCell(with: title)
-    }
+//    private func configureImage(with title: String) -> UIImage {
+//        return ImageProvider().configureLanguageCell(with: title)
+//    }
     
     
     // MARK: Public

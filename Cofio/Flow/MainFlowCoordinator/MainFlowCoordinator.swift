@@ -15,6 +15,7 @@ final class MainFlowCoordinator {
     private var mainModuleViewController: UIViewController?
     private var newCollectionViewControllerr: UIViewController?
     private weak var mainModule: MainPresenterInput?
+    private weak var newCollectionModule: NewCollectionPresenterInput?
     
     
     // MARK: Lifecycle
@@ -114,6 +115,10 @@ extension MainFlowCoordinator: MainPresenterOutput {
 
 extension MainFlowCoordinator: NewCollectionPresenterOutput {
     
+    func moduleDidLoad(_ module: NewCollectionPresenterInput) {
+        newCollectionModule = module
+    }
+    
     func moduleWantsToClose(_ module: NewCollectionPresenterInput) {
         mainModuleViewController?.dismiss(animated: true)
     }
@@ -131,15 +136,11 @@ extension MainFlowCoordinator: NewCollectionPresenterOutput {
 // MARK: - ChooseIconPresenterOutput
 
 extension MainFlowCoordinator:  ChooseIconPresenterOutput {
-    
-    func moduleWantsToClose(_ module: ChooseIconPresenterInput) {
-        
+
+    func moduleWantsToChooseIconAndClose(_ module: ChooseIconPresenterInput, icon: String) {
+        newCollectionModule?.refreshImageView(icon: icon)
+        newCollectionViewControllerr?.dismiss(animated: true)
     }
-    
-    func moduleWantsToChooseIcon(_ module: ChooseIconPresenterInput) {
-        
-    }
-    
 }
 
 

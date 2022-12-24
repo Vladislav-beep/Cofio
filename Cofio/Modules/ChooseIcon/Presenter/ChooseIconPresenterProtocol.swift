@@ -9,6 +9,5 @@ protocol ChooseIconPresenterInput: AnyObject {}
 
 protocol ChooseIconPresenterOutput: AnyObject {
     
-    func moduleWantsToClose(_ module: ChooseIconPresenterInput)
-    func moduleWantsToChooseIcon(_ module: ChooseIconPresenterInput)
+    func moduleWantsToChooseIconAndClose(_ module: ChooseIconPresenterInput, icon: String)
 }

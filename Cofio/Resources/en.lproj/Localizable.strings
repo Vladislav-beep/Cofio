@@ -18,6 +18,7 @@
 
 // MARK: New collection
 "new_collection_module_title" = "Add collection";
+"new_collection_module_choose_icon" = "Choose icon";
 "new_collection_module_button_title" = "Add";
 
 // MARK: Themes

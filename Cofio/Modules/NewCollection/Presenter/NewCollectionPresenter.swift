@@ -30,6 +30,10 @@ final class NewCollectionPresenter {
 
 extension NewCollectionPresenter: NewCollectionViewOutput {
     
+    func moduleDidLoad() {
+        output?.moduleDidLoad(self)
+    }
+    
     func addNewCollection() {
         output?.moduleWantsToAddCollectionAndClose(self)
     }
@@ -46,7 +50,12 @@ extension NewCollectionPresenter: NewCollectionViewOutput {
 
 // MARK: - NewLanguagePresenterInput
 
-extension NewCollectionPresenter: NewCollectionPresenterInput {}
+extension NewCollectionPresenter: NewCollectionPresenterInput {
+    
+    func refreshImageView(icon: String) {
+        view?.refreshImageView(icon: icon)
+    }
+}
 
 
 // MARK: - NewLanguageInteractorOutput

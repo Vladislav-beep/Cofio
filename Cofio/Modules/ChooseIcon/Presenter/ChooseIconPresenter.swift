@@ -7,12 +7,16 @@
 
 final class ChooseIconPresenter {
     
+    private let imageProvider: ImageProviderProtocol
+    
     // MARK: Public properties
     
     weak var view: ChooseIconViewInput?
     weak var output: ChooseIconPresenterOutput?
     
-    init() {}
+    init(imageProvider: ImageProviderProtocol) {
+        self.imageProvider = imageProvider
+    }
 }
 
 
@@ -20,12 +24,12 @@ final class ChooseIconPresenter {
 
 extension ChooseIconPresenter: ChooseIconViewOutput {
 
-    func chooseIcon() {
-        output?.moduleWantsToChooseIcon(self)
+    func viewDidTapRow(icon: String) {
+        output?.moduleWantsToChooseIconAndClose(self, icon: icon)
     }
     
-    func closeModule() {
-        output?.moduleWantsToClose(self)
+    func getIcons() -> [String] {
+        imageProvider.getIcons()
     }
 }
 

@@ -11,6 +11,6 @@ protocol ChooseIconViewInput: AnyObject {}
 
 protocol ChooseIconViewOutput: AnyObject {
     
-    func closeModule()
-    func chooseIcon()
+    func getIcons() -> [String]
+    func viewDidTapRow(icon: String)
 }

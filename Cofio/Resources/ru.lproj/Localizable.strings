@@ -18,6 +18,7 @@
 
 // MARK: New collection
 "new_collection_module_title" = "Добавить коллекцию";
+"new_collection_module_choose_icon" = "Выберите иконку";
 "new_collection_module_button_title" = "Добавить";
 
 // MARK: Themes
