@@ -89,10 +89,10 @@ final class DymmyData {
         return [
             .statics(.init(title: "LOL")),
             .header(.init(title: "Темы")),
-            .card(.init(title: "Кухня", cardsCount: 2, repeats: 3)),
-            .card(.init(title: "Автомобиль", cardsCount: 5, repeats: 8)),
-            .card(.init(title: "Домашние дела", cardsCount: 1, repeats: 1)),
-            .card(.init(title: "Путешествия", cardsCount: 0, repeats: 6))
+            .card(.init(title: "Кухня", subtitle: "sdvvds", repeats: 3)),
+            .card(.init(title: "Автомобиль", subtitle: "efac", repeats: 8)),
+            .card(.init(title: "Домашние дела", subtitle: "asvdc", repeats: 1)),
+            .card(.init(title: "Путешествия", subtitle: "asvz", repeats: 6))
         ]
     }
     

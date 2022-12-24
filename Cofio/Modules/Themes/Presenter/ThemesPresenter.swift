@@ -4,6 +4,7 @@
 //
 //  Created by Владислав Сизонов on 26.07.2022.
 //
+import UIKit
 
 final class ThemesPresenter {
     
@@ -21,10 +22,12 @@ final class ThemesPresenter {
     
     // MARK: Lifecycle
     
-    init(interactor: ThemesInteractorInput, navigationBarTitle: String) {
+    init(interactor: ThemesInteractorInput,
+         navigationBarTitle: String) {
         self.interactor = interactor
         self.navigationBarTitle = navigationBarTitle
     }
+
 }
 
 
@@ -57,4 +60,3 @@ extension ThemesPresenter: ThemesPresenterInput {}
 // MARK: - CollectionsInteractorOutput
 
 extension ThemesPresenter: ThemesInteractorOutput {}
-

@@ -14,6 +14,8 @@ protocol ImageProviderProtocol {
 
 final class ImageProvider: ImageProviderProtocol {
     
+    // MARK: Private properties
+    
     private let icons = [
         "book",
         "calendar nude",
@@ -39,6 +41,8 @@ final class ImageProvider: ImageProviderProtocol {
         "shoe",
         "bulb"
     ]
+    
+    // MARK: Public
 
     func getIcons() -> [String] {
         icons

@@ -21,6 +21,6 @@ struct HeaderCellDataModel: Hashable {
 
 struct ThemesCellDataModel: Hashable {
     let title: String
-    let cardsCount: Int
+    let subtitle: String
     let repeats: Int
 }

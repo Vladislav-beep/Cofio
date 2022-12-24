@@ -13,7 +13,7 @@ final class ThemesCell: UITableViewCell {
     
     struct DisplayData: Hashable {
         let title: String
-        let cardsCount: Int
+        let subtitle: String
         let repeats: Int
     }
     
@@ -51,13 +51,17 @@ final class ThemesCell: UITableViewCell {
         return persentLabel
     }()
     
-    private lazy var progressView: HorizontalProgressBar = {
-        let progress = HorizontalProgressBar()
-        progress.backgroundColor = .white
-        progress.layer.borderWidth = 1
-        progress.layer.borderColor = UIColor.darkViolet.cgColor
-        progress.translatesAutoresizingMaskIntoConstraints = false
-        return progress
+    private let progressView: UIView = {
+        let progressView = UIView()
+        progressView.backgroundColor = .clear
+        progressView.translatesAutoresizingMaskIntoConstraints = false
+        return progressView
+    }()
+    
+    private let progressLabel: UILabel = {
+        let progressLabel = UILabel()
+        progressLabel.translatesAutoresizingMaskIntoConstraints = false
+        return progressLabel
     }()
     
     
@@ -78,6 +82,51 @@ final class ThemesCell: UITableViewCell {
     // MARK: Private
     
     private func setupViews() {
+        let shapeLayer = CAShapeLayer()
+        let trackLayer = CAShapeLayer()
+        
+        let x = progressView.center.x + 25
+        let y = progressView.center.y + 25
+        let center = CGPoint(x: x, y: y)
+        let circularPath = UIBezierPath(arcCenter: .zero,
+                                        radius: 25,
+                                        startAngle: 0,
+                                        endAngle: 2 * CGFloat.pi,
+                                        clockwise: true)
+        
+        trackLayer.path = circularPath.cgPath
+        
+        trackLayer.strokeColor = UIColor.lightGray.cgColor
+        trackLayer.lineCap = CAShapeLayerLineCap.round
+        trackLayer.fillColor = UIColor.clear.cgColor
+        trackLayer.lineWidth = 5
+        trackLayer.position = center
+     //   trackLayer.strokeEnd = 0
+        
+        progressView.layer.addSublayer(trackLayer)
+        
+        shapeLayer.path = circularPath.cgPath
+        
+        shapeLayer.strokeColor = UIColor.darkViolet.cgColor
+        shapeLayer.lineCap = CAShapeLayerLineCap.round
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.lineWidth = 5
+        shapeLayer.strokeEnd = 0
+        shapeLayer.position = center
+        
+        shapeLayer.transform = CATransform3DMakeRotation(-CGFloat.pi / 2, 0, 0, 1)
+        
+        progressView.layer.addSublayer(shapeLayer)
+        
+        let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        basicAnimation.toValue = 0.7
+        basicAnimation.duration = 2
+        basicAnimation.fillMode = CAMediaTimingFillMode.forwards
+        basicAnimation.isRemovedOnCompletion = false
+        
+        shapeLayer.add(basicAnimation, forKey: "aaa")
+        
+        
         contentView.addSubview(lowerView)
         NSLayoutConstraint.activate([
             lowerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
@@ -111,58 +160,24 @@ final class ThemesCell: UITableViewCell {
         
         lowerView.addSubview(progressView)
         NSLayoutConstraint.activate([
-            progressView.leadingAnchor.constraint(equalTo: lowerView.leadingAnchor, constant: 16),
-            progressView.trailingAnchor.constraint(equalTo: lowerView.trailingAnchor, constant: -16),
-            progressView.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 4),
-            progressView.bottomAnchor.constraint(equalTo: lowerView.bottomAnchor, constant: -6)
+            progressView.centerYAnchor.constraint(equalTo: lowerView.centerYAnchor),
+            progressView.widthAnchor.constraint(equalToConstant: 50),
+            progressView.heightAnchor.constraint(equalToConstant: 50),
+            progressView.trailingAnchor.constraint(equalTo: lowerView.trailingAnchor, constant: -16)
+        ])
+        
+        progressView.addSubview(progressLabel)
+        NSLayoutConstraint.activate([
+            progressLabel.centerYAnchor.constraint(equalTo: progressView.centerYAnchor),
+            progressLabel.centerXAnchor.constraint(equalTo: progressView.centerXAnchor)
         ])
     }
-    
-    private func configureSubtitleLabel(with count: Int) {
-        let string1: String
-        switch count {
-        case 1:
-            string1 = " карточка"
-        case 2...4:
-            string1 = " карточки"
-        case 5...Int.max:
-            string1 = " карточек"
-        default:
-            string1 = " карточек"
-        }
-        let myAttribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .bold),
-                           NSAttributedString.Key.foregroundColor: UIColor.darkOrange]
-        let countString = NSMutableAttributedString(string: "\(count)", attributes: myAttribute)
-        let attrString = NSAttributedString(string: string1)
-        if count == 0 {
-            subtitleLabel.text = "Нет карточек"
-        } else {
-            countString.append(attrString)
-            subtitleLabel.attributedText = countString
-        }
-    }
-    
-    private func updateProgress(with progress: Int) {
-        var k = 0.0
-        if progress == 8 {
-            k = 1.0
-        } else {
-            k = Double(100 / 8 * progress) / 100
-        }
-        progressView.progress = CGFloat(k)
-    }
-    
-    
+
     // MARK: Public
     
     func configure(with displayData: DisplayData) {
         titleLabel.text = displayData.title
-        if displayData.repeats == 8 {
-            persentLabel.text = "100 %"
-        } else {
-            persentLabel.text = String(100 / 8 * displayData.repeats) + " %"
-        }
-        configureSubtitleLabel(with: displayData.cardsCount)
-        updateProgress(with: displayData.repeats)
+        subtitleLabel.text = displayData.subtitle
+        progressLabel.text = "1/3"
     }
 }

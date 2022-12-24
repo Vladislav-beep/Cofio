@@ -9,6 +9,8 @@ import UIKit
 
 final class IconCell: UICollectionViewCell {
     
+    // MARK: Private properties
+    
     private let iconView: UIImageView = {
         let iconView = UIImageView()
         iconView.layer.cornerRadius = 12
@@ -17,7 +19,7 @@ final class IconCell: UICollectionViewCell {
         return iconView
     }()
     
-    // MARK: - Life cycle
+    // MARK: - Lifecycle
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,6 +41,8 @@ final class IconCell: UICollectionViewCell {
             iconView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
+    
+    // MARK: Public
     
     func configure(icon: String) {
         iconView.image = UIImage(named: icon)

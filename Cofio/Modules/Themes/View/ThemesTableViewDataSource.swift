@@ -33,8 +33,8 @@ final class ThemesTableViewDataSource: ThemesTableViewDataSourceProtocol {
             case .card(let model):
                 let cell = tableview.reuse(ThemesCell.self, indexPath)
                 let displayData = ThemesCell.DisplayData(title: model.title,
-                                                             cardsCount: model.cardsCount,
-                                                             repeats: model.repeats)
+                                                         subtitle: model.subtitle,
+                                                         repeats: model.repeats)
                 cell.configure(with: displayData)
                 return cell
             }
