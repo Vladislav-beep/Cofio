@@ -9,6 +9,6 @@ protocol CardsPresenterInput: AnyObject {}
 
 protocol CardsPresenterOutput: AnyObject {
     
-    func moduleWantsToOpenCardDetails(_ module: CardsPresenterInput)
+    func moduleWantsToOpenCardDetails(_ module: CardsPresenterInput, card: CardCellDataModel)
     func moduleWantsToOpenNewCard(_ module: CardsPresenterInput)
 }

@@ -10,15 +10,21 @@ final class CardDetailsPresenter {
     // MARK: Public properties
     
     weak var output: CardDetailsPresenterOutput?
-
+    weak var view: CardDetailsViewInput?
+    private let card: CardCellDataModel
+    
+    init(card: CardCellDataModel) {
+        self.card = card
+    }
 }
 
 
 // MARK: - CardsViewOutput
 
 extension CardDetailsPresenter: CardDetailsViewOutput {
-    func close() {
-        output?.moduleWantsToClose(self)
+    
+    func viewDidLoad() {
+        view?.updateView(model: card)
     }
 }
 

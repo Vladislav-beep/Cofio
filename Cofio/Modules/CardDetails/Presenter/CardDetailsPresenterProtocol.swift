@@ -7,8 +7,4 @@
 
 protocol CardDetailsPresenterInput: AnyObject {}
 
-protocol CardDetailsPresenterOutput: AnyObject {
-    
-    func moduleWantsToClose(_ module: CardsPresenterInput)
-}
-
+protocol CardDetailsPresenterOutput: AnyObject {}

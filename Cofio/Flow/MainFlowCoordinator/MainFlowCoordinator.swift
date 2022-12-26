@@ -65,8 +65,8 @@ final class MainFlowCoordinator {
         parentViewController.pushViewController(cardsViewController, animated: true)
     }
     
-    private func showCardDetailsModule() {
-        let builder = CardDetailsModuleBuilder(output: self)
+    private func showCardDetailsModule(card: CardCellDataModel) {
+        let builder = CardDetailsModuleBuilder(output: self, card: card)
         let cardDetailsViewController = builder.build()
         
         parentViewController.present(cardDetailsViewController, animated: true)
@@ -161,9 +161,9 @@ extension MainFlowCoordinator: ThemesPresenterOutput {
 // MARK: - CardsPresenterOutput
 
 extension MainFlowCoordinator: CardsPresenterOutput {
-    
-    func moduleWantsToOpenCardDetails(_ module: CardsPresenterInput) {
-        showCardDetailsModule()
+
+    func moduleWantsToOpenCardDetails(_ module: CardsPresenterInput, card: CardCellDataModel) {
+        showCardDetailsModule(card: card)
     }
     
     func moduleWantsToOpenNewCard(_ module: CardsPresenterInput) {
@@ -174,12 +174,7 @@ extension MainFlowCoordinator: CardsPresenterOutput {
 
 // MARK: - CardDetailsPresenterOutput
 
-extension MainFlowCoordinator: CardDetailsPresenterOutput {
-    
-    func moduleWantsToClose(_ module: CardsPresenterInput) {
-        parentViewController.dismiss(animated: true)
-    }
-}
+extension MainFlowCoordinator: CardDetailsPresenterOutput {}
 
 
 // MARK: - NewCardPresenterOutput

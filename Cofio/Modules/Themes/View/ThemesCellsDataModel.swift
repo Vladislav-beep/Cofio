@@ -22,5 +22,6 @@ struct HeaderCellDataModel: Hashable {
 struct ThemesCellDataModel: Hashable {
     let title: String
     let subtitle: String
+    let totalRepeats: Int
     let repeats: Int
 }

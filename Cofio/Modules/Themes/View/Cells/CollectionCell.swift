@@ -14,19 +14,19 @@ final class ThemesCell: UITableViewCell {
     struct DisplayData: Hashable {
         let title: String
         let subtitle: String
+        let totalRepeats: Int
         let repeats: Int
     }
     
-    
     // MARK: Private properties
 
-    private lazy var lowerView: LowerView = {
+    private let lowerView: LowerView = {
         let view = LowerView()
         view.layer.cornerRadius = 12
         return view
     }()
 
-    private lazy var titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         titleLabel.numberOfLines = 0
@@ -34,7 +34,7 @@ final class ThemesCell: UITableViewCell {
         return titleLabel
     }()
     
-    private lazy var subtitleLabel: UILabel = {
+    private let subtitleLabel: UILabel = {
         let subtitleLabel = UILabel()
         subtitleLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         subtitleLabel.numberOfLines = 1
@@ -42,7 +42,7 @@ final class ThemesCell: UITableViewCell {
         return subtitleLabel
     }()
     
-    private lazy var persentLabel: UILabel = {
+    private let persentLabel: UILabel = {
         let persentLabel = UILabel()
         persentLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         persentLabel.numberOfLines = 1
@@ -78,55 +78,9 @@ final class ThemesCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     // MARK: Private
     
     private func setupViews() {
-        let shapeLayer = CAShapeLayer()
-        let trackLayer = CAShapeLayer()
-        
-        let x = progressView.center.x + 25
-        let y = progressView.center.y + 25
-        let center = CGPoint(x: x, y: y)
-        let circularPath = UIBezierPath(arcCenter: .zero,
-                                        radius: 25,
-                                        startAngle: 0,
-                                        endAngle: 2 * CGFloat.pi,
-                                        clockwise: true)
-        
-        trackLayer.path = circularPath.cgPath
-        
-        trackLayer.strokeColor = UIColor.lightGray.cgColor
-        trackLayer.lineCap = CAShapeLayerLineCap.round
-        trackLayer.fillColor = UIColor.clear.cgColor
-        trackLayer.lineWidth = 5
-        trackLayer.position = center
-     //   trackLayer.strokeEnd = 0
-        
-        progressView.layer.addSublayer(trackLayer)
-        
-        shapeLayer.path = circularPath.cgPath
-        
-        shapeLayer.strokeColor = UIColor.darkViolet.cgColor
-        shapeLayer.lineCap = CAShapeLayerLineCap.round
-        shapeLayer.fillColor = UIColor.clear.cgColor
-        shapeLayer.lineWidth = 5
-        shapeLayer.strokeEnd = 0
-        shapeLayer.position = center
-        
-        shapeLayer.transform = CATransform3DMakeRotation(-CGFloat.pi / 2, 0, 0, 1)
-        
-        progressView.layer.addSublayer(shapeLayer)
-        
-        let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        basicAnimation.toValue = 0.7
-        basicAnimation.duration = 2
-        basicAnimation.fillMode = CAMediaTimingFillMode.forwards
-        basicAnimation.isRemovedOnCompletion = false
-        
-        shapeLayer.add(basicAnimation, forKey: "aaa")
-        
-        
         contentView.addSubview(lowerView)
         NSLayoutConstraint.activate([
             lowerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
@@ -172,12 +126,56 @@ final class ThemesCell: UITableViewCell {
             progressLabel.centerXAnchor.constraint(equalTo: progressView.centerXAnchor)
         ])
     }
+    
+    private func setupLayers(displayData: DisplayData) {
+        let shapeLayer = CAShapeLayer()
+        let trackLayer = CAShapeLayer()
+        
+        let x = progressView.center.x + 25
+        let y = progressView.center.y + 25
+        let center = CGPoint(x: x, y: y)
+        let circularPath = UIBezierPath(arcCenter: .zero,
+                                        radius: 25,
+                                        startAngle: 0,
+                                        endAngle: 2 * CGFloat.pi,
+                                        clockwise: true)
+        
+        trackLayer.path = circularPath.cgPath
+        trackLayer.strokeColor = UIColor.lightGray.cgColor
+        trackLayer.lineCap = CAShapeLayerLineCap.round
+        trackLayer.fillColor = UIColor.clear.cgColor
+        trackLayer.lineWidth = 5
+        trackLayer.position = center
+        
+        progressView.layer.addSublayer(trackLayer)
+        
+        shapeLayer.path = circularPath.cgPath
+        shapeLayer.strokeColor = UIColor.darkViolet.cgColor
+        shapeLayer.lineCap = CAShapeLayerLineCap.round
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.lineWidth = 5
+        shapeLayer.strokeEnd = 0
+        shapeLayer.position = center
+        shapeLayer.transform = CATransform3DMakeRotation(-CGFloat.pi / 2, 0, 0, 1)
+        
+        progressView.layer.addSublayer(shapeLayer)
+        
+        let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        let toValue = Double(displayData.repeats)/Double(displayData.totalRepeats)
+        basicAnimation.toValue = toValue
+        basicAnimation.duration = 1
+        basicAnimation.fillMode = CAMediaTimingFillMode.forwards
+        basicAnimation.isRemovedOnCompletion = false
+        
+        shapeLayer.add(basicAnimation, forKey: "circleAnimation")
+    }
 
     // MARK: Public
     
     func configure(with displayData: DisplayData) {
         titleLabel.text = displayData.title
         subtitleLabel.text = displayData.subtitle
-        progressLabel.text = "1/3"
+        progressLabel.text = "\(displayData.repeats)/\(displayData.totalRepeats)"
+        setupLayers(displayData: displayData)
     }
 }

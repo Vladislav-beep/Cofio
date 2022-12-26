@@ -1,27 +1,22 @@
 //
-//  CardsCell.swift
+//  CardDetailsCell.swift
 //  Cofio
 //
-//  Created by Владислав Сизонов on 31.07.2022.
+//  Created by Владислав Сизонов on 26.12.2022.
 //
 
 import UIKit
 
-final class CardsCell: UITableViewCell {
+final class CardDetailsCell: UITableViewCell {
     
     // MARK: Data structures
     
     struct DisplayData: Hashable {
-        let meaning: String
-        let translation: String
+        let title: String
+        let definition: String
     }
     
     // MARK: Private properties
-    
-    private lazy var lowerView: LowerView = {
-        let view = LowerView()
-        return view
-    }()
 
     private let titleLabel: UILabel = {
         let wordLabel = UILabel()
@@ -42,7 +37,7 @@ final class CardsCell: UITableViewCell {
     private let definitionLabel: UILabel = {
         let translationLabel = UILabel()
         translationLabel.font = UIFont.systemFont(ofSize: 17, weight: .regular)
-        translationLabel.numberOfLines = 4
+        translationLabel.numberOfLines = 0
         translationLabel.translatesAutoresizingMaskIntoConstraints = false
         return translationLabel
     }()
@@ -63,42 +58,34 @@ final class CardsCell: UITableViewCell {
     // MARK: Private
     
     private func setupViews() {
-        contentView.addSubview(lowerView)
+        contentView.addSubview(titleLabel)
         NSLayoutConstraint.activate([
-            lowerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            lowerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            lowerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            lowerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15),
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12),
         ])
         
-        lowerView.addSubview(titleLabel)
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: lowerView.topAnchor, constant: 10),
-            titleLabel.leadingAnchor.constraint(equalTo: lowerView.leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: lowerView.trailingAnchor, constant: -12),
-        ])
-        
-        lowerView.addSubview(thinView)
+        contentView.addSubview(thinView)
         NSLayoutConstraint.activate([
             thinView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
-            thinView.trailingAnchor.constraint(equalTo: lowerView.trailingAnchor, constant: -50),
-            thinView.leadingAnchor.constraint(equalTo: lowerView.leadingAnchor, constant: 16),
+            thinView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -50),
+            thinView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             thinView.heightAnchor.constraint(equalToConstant: 4)
         ])
         
-        lowerView.addSubview(definitionLabel)
+        contentView.addSubview(definitionLabel)
         NSLayoutConstraint.activate([
             definitionLabel.topAnchor.constraint(equalTo: thinView.bottomAnchor, constant: 10),
-            definitionLabel.leadingAnchor.constraint(equalTo: lowerView.leadingAnchor, constant: 16),
-            definitionLabel.trailingAnchor.constraint(equalTo: lowerView.trailingAnchor, constant: -12),
-            definitionLabel.bottomAnchor.constraint(equalTo: lowerView.bottomAnchor, constant: -12),
+            definitionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            definitionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12),
+            definitionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12),
         ])
     }
     
     // MARK: Public
     
     func configure(with displayData: DisplayData) {
-        titleLabel.text = displayData.meaning
-        definitionLabel.text = displayData.translation
+        titleLabel.text = displayData.title
+        definitionLabel.text = displayData.definition
     }
 }

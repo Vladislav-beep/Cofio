@@ -12,21 +12,26 @@ final class CardDetailsModuleBuilder {
     // MARK: Private
     
     private weak var output: CardDetailsPresenterOutput?
+    private let card: CardCellDataModel
     
     
     // MARK: Lifecycle
     
-    init(output: CardDetailsPresenterOutput) {
+    init(output: CardDetailsPresenterOutput,
+         card: CardCellDataModel) {
         self.output = output
+        self.card = card
     }
     
     
     // MARK: Public
     
     func build() -> UIViewController {
-        let presenter = CardDetailsPresenter()
-        let viewController = CardDetailsViewController(output: presenter)
+        let dataSource = CardDetailsDataSource()
+        let presenter = CardDetailsPresenter(card: card)
+        let viewController = CardDetailsViewController(output: presenter, dataSource: dataSource)
         
+        presenter.view = viewController
         presenter.output = output
         
         return viewController
