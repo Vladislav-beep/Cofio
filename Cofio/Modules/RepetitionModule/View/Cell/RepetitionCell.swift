@@ -13,11 +13,10 @@ final class RepetitionCell: UITableViewCell {
     
     struct DisplayData: Hashable {
         let title: String
-        let repeats: Int
-        let nextRepeat: String
-        let repeatDate: Date
+        let subtitle: String
+        let date: String
+        let backgroundColor: UIColor
     }
-    
     
     // MARK: Private properties
     
@@ -100,41 +99,41 @@ final class RepetitionCell: UITableViewCell {
         ])
     }
     
-    private func setupSubtitleLabel(with displayData: DisplayData) {
-        if displayData.repeats == 7 {
-            subtitleLabel.text = "Последнее повторение!"
-        } else {
-            subtitleLabel.text = "Следующее повторение"
-        }
-        
-        if Calendar.current.isDateInToday(displayData.repeatDate) {
-            subtitleLabel.text = "Нужно повторить"
-            dateLabel.text = "Сегодня"
-        } else if Calendar.current.isDateInYesterday(displayData.repeatDate) {
-            subtitleLabel.text = "Нужно было повторить"
-            dateLabel.text = "Вчера"
-        } else if Calendar.current.isDateInTomorrow(displayData.repeatDate) {
-            dateLabel.text = "Завтра"
-        }
-    }
-    
-    private func setupBackground(with displayData: DisplayData) {
-        if displayData.repeatDate > Date() {
-            lowerView.backgroundColor = .darkGreen
-        } else if Calendar.current.isDateInToday(displayData.repeatDate) {
-            lowerView.backgroundColor = .lightGreen
-        } else {
-            lowerView.backgroundColor = .darkRed
-        }
-    }
+//    private func setupSubtitleLabel(with displayData: DisplayData) {
+//        if displayData.repeats == 7 {
+//            subtitleLabel.text = "Последнее повторение!"
+//        } else {
+//            subtitleLabel.text = "Следующее повторение"
+//        }
+//        
+//        if Calendar.current.isDateInToday(displayData.repeatDate) {
+//            subtitleLabel.text = "Нужно повторить"
+//            dateLabel.text = "Сегодня"
+//        } else if Calendar.current.isDateInYesterday(displayData.repeatDate) {
+//            subtitleLabel.text = "Нужно было повторить"
+//            dateLabel.text = "Вчера"
+//        } else if Calendar.current.isDateInTomorrow(displayData.repeatDate) {
+//            dateLabel.text = "Завтра"
+//        }
+//    }
+//    
+//    private func setupBackground(with displayData: DisplayData) {
+//        if displayData.repeatDate > Date() {
+//            lowerView.backgroundColor = .darkGreen
+//        } else if Calendar.current.isDateInToday(displayData.repeatDate) {
+//            lowerView.backgroundColor = .lightGreen
+//        } else {
+//            lowerView.backgroundColor = .darkRed
+//        }
+//    }
     
     
     // MARK: Public
     
     func configure(with displayData: DisplayData) {
         titleLabel.text = displayData.title
-        dateLabel.text = displayData.nextRepeat
-        setupSubtitleLabel(with: displayData)
-        setupBackground(with: displayData)
+        subtitleLabel.text = displayData.subtitle
+        dateLabel.text = displayData.date
+        lowerView.backgroundColor = displayData.backgroundColor
     }
 }

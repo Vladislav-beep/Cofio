@@ -19,9 +19,9 @@ final class RepetitionTableViewDataSource: RepetitionTableViewDataSourceProtocol
         let tableViewDataSource = UITableViewDiffableDataSource<Int, RepetitionCellDataModel>(tableView: tableview) { tableView, indexPath, collection in
             let cell = tableView.reuse(RepetitionCell.self, indexPath)
             let displayData = RepetitionCell.DisplayData(title: collection.title,
-                                                         repeats: collection.repeats,
-                                                         nextRepeat: collection.nextRepeat,
-                                                         repeatDate: collection.repeatDate)
+                                                         subtitle: collection.subtitle,
+                                                         date: collection.date,
+                                                         backgroundColor: collection.backgroundColor)
             cell.configure(with: displayData)
             return cell
         }

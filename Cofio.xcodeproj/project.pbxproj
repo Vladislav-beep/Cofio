@@ -345,7 +345,7 @@
 			path = RepetitionFlowCoordinator;
 			sourceTree = "<group>";
 		};
-		B932E94D28ABF972007244E6 /* RepetitionScreen */ = {
+		B932E94D28ABF972007244E6 /* RepetitionModule */ = {
 			isa = PBXGroup;
 			children = (
 				B932E95D28ABFBC4007244E6 /* RepetitionModuleBuilder.swift */,
@@ -353,7 +353,7 @@
 				B932E94F28ABF9AB007244E6 /* Presenter */,
 				B932E94E28ABF9A6007244E6 /* View */,
 			);
-			path = RepetitionScreen;
+			path = RepetitionModule;
 			sourceTree = "<group>";
 		};
 		B932E94E28ABF9A6007244E6 /* View */ = {
@@ -845,7 +845,7 @@
 				B9CC14122896846B0013ED76 /* Cards */,
 				B94C0251294E591900EF9EB6 /* CardDetails */,
 				B93EF8C5289AF9190057C774 /* Word */,
-				B932E94D28ABF972007244E6 /* RepetitionScreen */,
+				B932E94D28ABF972007244E6 /* RepetitionModule */,
 				B932E96628B7F90D007244E6 /* CardsRepetition */,
 				B910AB3D2945E4F700D9E7EA /* StatisticsModule */,
 				B910AB392945E3EF00D9E7EA /* SettingsModule */,

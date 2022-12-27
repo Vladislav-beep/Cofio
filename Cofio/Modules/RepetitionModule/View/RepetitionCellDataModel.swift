@@ -9,7 +9,7 @@ import UIKit
 
 struct RepetitionCellDataModel: Hashable {
     let title: String
-    let repeats: Int
-    let nextRepeat: String
-    let repeatDate: Date
+    let subtitle: String
+    let date: String
+    let backgroundColor: UIColor
 }
