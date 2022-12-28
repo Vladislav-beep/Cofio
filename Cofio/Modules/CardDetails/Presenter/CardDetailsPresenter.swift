@@ -31,4 +31,4 @@ extension CardDetailsPresenter: CardDetailsViewOutput {
 
 // MARK: - CardsPresenterInput
 
-extension CardDetailsPresenter: CardsPresenterInput {}
+extension CardDetailsPresenter: CardDetailsPresenterInput {}

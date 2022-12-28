@@ -450,7 +450,7 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
-		B93EF8C5289AF9190057C774 /* Word */ = {
+		B93EF8C5289AF9190057C774 /* NewCard */ = {
 			isa = PBXGroup;
 			children = (
 				B93EF8D6289AFB720057C774 /* NewCardModuleBuilder.swift */,
@@ -458,7 +458,7 @@
 				B93EF8C7289AF93B0057C774 /* Presenter */,
 				B93EF8C6289AF9360057C774 /* View */,
 			);
-			path = Word;
+			path = NewCard;
 			sourceTree = "<group>";
 		};
 		B93EF8C6289AF9360057C774 /* View */ = {
@@ -844,7 +844,7 @@
 				B9CC13BE289069A40013ED76 /* Themes */,
 				B9CC14122896846B0013ED76 /* Cards */,
 				B94C0251294E591900EF9EB6 /* CardDetails */,
-				B93EF8C5289AF9190057C774 /* Word */,
+				B93EF8C5289AF9190057C774 /* NewCard */,
 				B932E94D28ABF972007244E6 /* RepetitionModule */,
 				B932E96628B7F90D007244E6 /* CardsRepetition */,
 				B910AB3D2945E4F700D9E7EA /* StatisticsModule */,

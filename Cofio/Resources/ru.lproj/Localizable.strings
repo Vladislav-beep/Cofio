@@ -33,7 +33,8 @@
 
 // MARK: New Card
 "new_card_module_add_button_title" = "Добавить карточку";
-
+"new_card_module_add_definition_textView_placeholder" = "Определение или слово";
+"new_card_module_add_description_textView_placeholder" = "Описание или перевод";
 
 
 

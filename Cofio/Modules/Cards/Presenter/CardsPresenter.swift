@@ -35,6 +35,8 @@ extension CardsPresenter: CardsViewOutput {
     }
     
     func viewDidLoad() {
+        output?.moduleDidLoad(self)
+        
         let data = DymmyData.getCardCellDataModel()
         view?.updateData(with: data)
     }
@@ -47,7 +49,14 @@ extension CardsPresenter: CardsViewOutput {
 
 // MARK: - CardsPresenterInput
 
-extension CardsPresenter: CardsPresenterInput {}
+extension CardsPresenter: CardsPresenterInput {
+    
+    func refreshModule() {
+        // TODO: get from coreData
+        let data = DymmyData.getCardCellDataModel()
+        view?.updateData(with: data)
+    }
+}
 
 
 // MARK: - CardsInteractorOutput

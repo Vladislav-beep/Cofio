@@ -16,6 +16,7 @@ final class MainFlowCoordinator {
     private var newCollectionViewControllerr: UIViewController?
     private weak var mainModule: MainPresenterInput?
     private weak var newCollectionModule: NewCollectionPresenterInput?
+    private weak var cardsModule: CardsPresenterInput?
     
     
     // MARK: Lifecycle
@@ -161,6 +162,10 @@ extension MainFlowCoordinator: ThemesPresenterOutput {
 // MARK: - CardsPresenterOutput
 
 extension MainFlowCoordinator: CardsPresenterOutput {
+    
+    func moduleDidLoad(_ module: CardsPresenterInput) {
+        cardsModule = module
+    }
 
     func moduleWantsToOpenCardDetails(_ module: CardsPresenterInput, card: CardCellDataModel) {
         showCardDetailsModule(card: card)
@@ -183,6 +188,10 @@ extension MainFlowCoordinator: NewCardPresenterOutput {
     
     func moduleWantsToClose(_ module: NewCardPresenterInput) {
         parentViewController.dismiss(animated: true)
-        // update UI
+    }
+    
+    func moduleWantsToAddNewCard(_ module: NewCardPresenterInput) {
+        cardsModule?.refreshModule()
+        parentViewController.dismiss(animated: true)
     }
 }

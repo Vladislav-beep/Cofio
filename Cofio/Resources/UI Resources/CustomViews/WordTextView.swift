@@ -9,8 +9,6 @@ import UIKit
 
 final class WordTextView: UITextView {
     
-   // private let placeholderText: String
-    
     private let urlButton: UIButton = {
         let urlButton = UIButton()
         urlButton.backgroundColor = .red
@@ -21,10 +19,8 @@ final class WordTextView: UITextView {
     // MARK: Lifecycle
     
     override init(frame: CGRect, textContainer: NSTextContainer?) {
-        //  self.placeholderText = placeholderText
           super.init(frame: frame, textContainer: textContainer)
           initialize()
-          setupViews()
     }
     
     required init?(coder: NSCoder) {
@@ -33,22 +29,13 @@ final class WordTextView: UITextView {
     
     // MARK: Private methods
     
-    private func setupViews() {
-        addSubview(urlButton)
-        NSLayoutConstraint.activate([
-            urlButton.heightAnchor.constraint(equalToConstant: 25),
-            urlButton.widthAnchor.constraint(equalToConstant: 25),
-            urlButton.topAnchor.constraint(equalTo: bottomAnchor),
-            urlButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16)
-        ])
-    }
-    
     private func initialize() {
-     //   text = placeholderText
-        textColor = .gray
+        textColor = .black
         layer.cornerRadius = 20
-        backgroundColor = .orange
+        backgroundColor = .base
         font = UIFont.systemFont(ofSize: 22)
+        layer.borderWidth = 2
+        layer.borderColor = UIColor.darkViolet.cgColor
         textContainerInset = UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
         translatesAutoresizingMaskIntoConstraints = false
     }

@@ -19,34 +19,29 @@ final class NewCardViewController: UIViewController {
         return closeButton
     }()
     
-    private let wordTextView: WordTextView = {
+    private let definitionTextView: WordTextView = {
         let wordTextView = WordTextView()
         return wordTextView
     }()
     
-    private let translationTextView: WordTextView = {
+    private let descriptionTextView: WordTextView = {
         let translationTextView = WordTextView()
         return translationTextView
     }()
     
-    private let sentenceTextView: WordTextView = {
-        let sentenceTextView = WordTextView()
-        return sentenceTextView
-    }()
-    
     private lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [wordTextView, translationTextView, sentenceTextView],
+        let stackView = UIStackView(arrangedSubviews: [definitionTextView, descriptionTextView],
                                     axis: .vertical,
                                     spacing: 30,
                                     distribution: .fillEqually)
-        stackView.setCustomSpacing(50, after: translationTextView)
+        stackView.setCustomSpacing(50, after: descriptionTextView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     
     private let doneButton: DoneButton = {
         let doneButton = DoneButton(title: "new_card_module_add_button_title"~)
-        doneButton.addTarget(self, action: #selector(addWord), for: .touchUpInside)
+        doneButton.addTarget(self, action: #selector(addNewCard), for: .touchUpInside)
         return doneButton
     }()
     
@@ -74,6 +69,14 @@ final class NewCardViewController: UIViewController {
     
     private func setupViews() {
         view.backgroundColor = .white
+        
+        definitionTextView.text = "new_card_module_add_definition_textView_placeholder"~
+        definitionTextView.textColor = .darkGray
+        definitionTextView.delegate = self
+        
+        descriptionTextView.text = "new_card_module_add_description_textView_placeholder"~
+        descriptionTextView.textColor = .darkGray
+        descriptionTextView.delegate = self
 
         view.addSubview(closeButton)
         NSLayoutConstraint.activate([
@@ -106,8 +109,8 @@ final class NewCardViewController: UIViewController {
         output.closeModule()
     }
     
-    @objc func addWord() {
-        
+    @objc func addNewCard() {
+        output.addNewCard()
     }
 }
 
@@ -115,3 +118,25 @@ final class NewCardViewController: UIViewController {
 // MARK: - WordViewInput
 
 extension NewCardViewController: NewCardViewInput {}
+
+extension NewCardViewController: UITextViewDelegate {
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.darkGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            if textView == definitionTextView {
+                textView.text = "new_card_module_add_definition_textView_placeholder"~
+            } else {
+                textView.text = "new_card_module_add_description_textView_placeholder"~
+            }
+            
+            textView.textColor = UIColor.darkGray
+        }
+    }
+}

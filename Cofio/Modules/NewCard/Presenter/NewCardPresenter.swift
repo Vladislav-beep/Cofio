@@ -33,6 +33,11 @@ extension NewCardPresenter: NewCardViewOutput {
     func closeModule() {
         output?.moduleWantsToClose(self)
     }
+    
+    func addNewCard() {
+        // TODO: Save to coreData
+        output?.moduleWantsToAddNewCard(self)
+    }
 }
 
 
