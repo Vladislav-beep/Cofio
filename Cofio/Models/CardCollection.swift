@@ -12,5 +12,5 @@ struct CardCollection: Equatable, Hashable {
     let repeats: Int
     let repeatDate: Date
     let isRepeatComplete: Bool
-    let cards: [Card]
+    let cards: [Card1]
 }

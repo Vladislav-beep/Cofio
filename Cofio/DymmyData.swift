@@ -46,12 +46,12 @@ final class DymmyData {
             Word(meaning: "Building", translation: "Здание"),
         ]
         
-        let card1 = [Card(words: words1)]
-        let card2 = [Card(words: words2)]
-        let card3 = [Card(words: words3)]
-        let card4 = [Card(words: words4)]
-        let card5 = [Card(words: words5)]
-        let card6 = [Card(words: words6)]
+        let card1 = [Card1(words: words1)]
+        let card2 = [Card1(words: words2)]
+        let card3 = [Card1(words: words3)]
+        let card4 = [Card1(words: words4)]
+        let card5 = [Card1(words: words5)]
+        let card6 = [Card1(words: words6)]
         
         
         let collection1 = CardCollection(name: "Животные", repeats: 0, repeatDate: Date(), isRepeatComplete: false, cards: card1)
