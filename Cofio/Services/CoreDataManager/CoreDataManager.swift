@@ -40,14 +40,14 @@ class CoreDataManager {
     
     // MARK: Object creation
     
-    func collection(name: String, icon: String) -> Collection {
+    func createCollection(name: String, icon: String) -> Collection {
         let collection = Collection(context: persistentContainer.viewContext)
         collection.name = name
         collection.icon = icon
         return collection
     }
 
-    func theme(name: String,
+    func createTheme(name: String,
                repeats: Int,
                repeatDate: Date,
                isRepeatComplete: Bool,
@@ -61,7 +61,7 @@ class CoreDataManager {
         return theme
     }
 
-    func card(cardDefinition: String, cardDescription: String, theme: Theme) -> Card {
+    func createCard(cardDefinition: String, cardDescription: String, theme: Theme) -> Card {
         let card = Card(context: persistentContainer.viewContext)
         card.cardDefinition = cardDefinition
         card.cardDescription = cardDescription
