@@ -8,12 +8,20 @@
 import Foundation
 import CoreData
 
-class CoreDataManager {
+protocol CoreDataManagerProtocol {
     
-    static let shared = CoreDataManager()
+    func save()
+    
+    func createCollection(name: String, icon: String) -> Collection
+    func collections() -> [Collection]
+}
+
+class CoreDataManager: CoreDataManagerProtocol {
+    
+  //  static let shared = CoreDataManager()
     
     lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "CoreDataRelationship")
+        let container = NSPersistentContainer(name: "DataModel")
         
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
@@ -51,13 +59,24 @@ class CoreDataManager {
                repeats: Int,
                repeatDate: Date,
                isRepeatComplete: Bool,
-               collection: Collection) -> Theme {
+               collectionName: String) -> Theme {
         let theme = Theme(context: persistentContainer.viewContext)
         theme.name = name
         theme.repeats = Int64(repeats)
         theme.repeatDate = repeatDate
         theme.isRepeatComplete = isRepeatComplete
-        collection.addToThemes(theme)
+        
+        let request: NSFetchRequest<Collection> = Collection.fetchRequest()
+        request.predicate = NSPredicate(format: "name == %@", collectionName)
+        
+        do {
+            let collection = try persistentContainer.viewContext.fetch(request).first
+            collection?.addToThemes(theme)
+        } catch {
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
+        
         return theme
     }
 
@@ -67,5 +86,32 @@ class CoreDataManager {
         card.cardDescription = cardDescription
         theme.addToCards(card)
         return card
+    }
+    
+    // MARK: Fetching data
+    
+    func collections() -> [Collection] {
+        let request: NSFetchRequest<Collection> = Collection.fetchRequest()
+        var fetchedCollections: [Collection] = []
+        
+        do {
+            fetchedCollections = try persistentContainer.viewContext.fetch(request)
+        } catch let error {
+            print("Error fetching collections \(error)")
+        }
+        return fetchedCollections
+    }
+    
+    func themes(collectionName: String) -> [Theme] {
+      let request: NSFetchRequest<Theme> = Theme.fetchRequest()
+      request.predicate = NSPredicate(format: "collection.name == %@", collectionName)
+
+      var fetchedThemes: [Theme] = []
+      do {
+          fetchedThemes = try persistentContainer.viewContext.fetch(request)
+      } catch let error {
+        print("Error fetching themes \(error)")
+      }
+      return fetchedThemes
     }
 }

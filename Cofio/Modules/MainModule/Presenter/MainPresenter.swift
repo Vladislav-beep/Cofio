@@ -10,6 +10,7 @@ final class MainPresenter {
     // MARK: Private properties
     
     private let interactor: MainInteractorInput
+    private let collectionsDataFactory: CollectionsDataFactoryProtocol
     
     
     // MARK: Public properties
@@ -20,8 +21,16 @@ final class MainPresenter {
     
     // MARK: Lifecycle
     
-    init(interactor: MainInteractorInput) {
+    init(interactor: MainInteractorInput,
+         collectionsDataFactory: CollectionsDataFactoryProtocol) {
         self.interactor = interactor
+        self.collectionsDataFactory = collectionsDataFactory
+    }
+    
+    private func updateView() {
+        let collections = interactor.getCollectionsFromStorage()
+        let data = collectionsDataFactory.dataFromCollections(collections: collections)
+        view?.updateView(with: data)
     }
 }
 
@@ -33,22 +42,17 @@ extension MainPresenter: MainViewOutput {
     func viewDidLoad() {
         output?.moduleDidLoad(self)
         
-        let data = DymmyData.getLanguages()
-        view?.updateView(with: data)
+        updateView()
     }
     
     func viewDidTapRow(_ type: MainModuleCellsDataModel) {
         switch type {
-        case .title:
+        case .title, .subtitle:
             break
-            
-        case .subtitle:
-            break
-            
+    
         case .collection(let model):
             output?.moduleWantsToOpenThemes(self, title: model.title)
         }
-        
     }
     
     func addNewCollection() {
@@ -62,7 +66,7 @@ extension MainPresenter: MainViewOutput {
 extension MainPresenter: MainPresenterInput {
 
     func refreshCollections() {
-        print("vlad refreshCollections")
+        updateView()
     }
 }
 

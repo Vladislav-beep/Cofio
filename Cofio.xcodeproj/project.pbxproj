@@ -69,6 +69,7 @@
 		B99B17542944CD66002167DB /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B17532944CD66002167DB /* AppFlowCoordinator.swift */; };
 		B99B175A2944CEE7002167DB /* TabBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B17592944CEE7002167DB /* TabBarPage.swift */; };
 		B99B175C2944CF07002167DB /* TabbarFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B175B2944CF07002167DB /* TabbarFlowCoordinator.swift */; };
+		B9AAEC22295F1A8A00BA6078 /* CollectionsDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AAEC21295F1A8A00BA6078 /* CollectionsDataFactory.swift */; };
 		B9ACB79A2954383B00F2B476 /* ChooseIconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ACB7992954383B00F2B476 /* ChooseIconViewController.swift */; };
 		B9ACB79C2954391000F2B476 /* ChooseIconViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ACB79B2954391000F2B476 /* ChooseIconViewProtocol.swift */; };
 		B9ACB79F2954399C00F2B476 /* ChooseIconPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ACB79E2954399C00F2B476 /* ChooseIconPresenter.swift */; };
@@ -216,6 +217,7 @@
 		B99B17532944CD66002167DB /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
 		B99B17592944CEE7002167DB /* TabBarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPage.swift; sourceTree = "<group>"; };
 		B99B175B2944CF07002167DB /* TabbarFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarFlowCoordinator.swift; sourceTree = "<group>"; };
+		B9AAEC21295F1A8A00BA6078 /* CollectionsDataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsDataFactory.swift; sourceTree = "<group>"; };
 		B9ACB7992954383B00F2B476 /* ChooseIconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIconViewController.swift; sourceTree = "<group>"; };
 		B9ACB79B2954391000F2B476 /* ChooseIconViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIconViewProtocol.swift; sourceTree = "<group>"; };
 		B9ACB79E2954399C00F2B476 /* ChooseIconPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIconPresenter.swift; sourceTree = "<group>"; };
@@ -549,6 +551,14 @@
 			path = TabbarFlowCoordinator;
 			sourceTree = "<group>";
 		};
+		B9AAEC20295F1A6E00BA6078 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				B9AAEC21295F1A8A00BA6078 /* CollectionsDataFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
 		B9ACB797295437AE00F2B476 /* ChooseIcon */ = {
 			isa = PBXGroup;
 			children = (
@@ -714,6 +724,7 @@
 			children = (
 				B9CC139A288EE6C20013ED76 /* MainPresenter.swift */,
 				B9CC139F288EE8C10013ED76 /* MainPresenterProtocol.swift */,
+				B9AAEC20295F1A6E00BA6078 /* Factory */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -1180,6 +1191,7 @@
 				B9CC140F2895C1E50013ED76 /* ThemesTableViewDataSource.swift in Sources */,
 				B93EF8B628968B150057C774 /* CardCellDataModel.swift in Sources */,
 				B9CC13F32894506E0013ED76 /* MainTableViewDataSource.swift in Sources */,
+				B9AAEC22295F1A8A00BA6078 /* CollectionsDataFactory.swift in Sources */,
 				B9CC135D288738980013ED76 /* SceneDelegate.swift in Sources */,
 				B9CC140D2895C1100013ED76 /* CollectionCell.swift in Sources */,
 				B9CC139B288EE6C20013ED76 /* MainPresenter.swift in Sources */,

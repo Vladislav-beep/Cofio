@@ -7,12 +7,27 @@
 
 final class MainInteractor {
     
+    // MARK: Private properties
+    
+    private let coreDataManager: CoreDataManagerProtocol
+    
     // MARK: Properties
     
     weak var output: MainInteractorOutput?
+    
+    // MARK: Lifecycle
+    
+    init(coreDataManager: CoreDataManagerProtocol) {
+        self.coreDataManager = coreDataManager
+    }
 }
 
 
 // MARK: - StartAppInteractorInput
 
-extension MainInteractor: MainInteractorInput {}
+extension MainInteractor: MainInteractorInput {
+    
+    func getCollectionsFromStorage() -> [Collection] {
+        coreDataManager.collections()
+    }
+}

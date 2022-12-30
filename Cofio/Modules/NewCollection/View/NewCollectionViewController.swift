@@ -168,7 +168,8 @@ final class NewCollectionViewController: UIViewController {
     }
     
     @objc func addNewCollection() {
-        output.addNewCollection()
+        let collectionName = collectionTextField.text ?? ""
+        output.addNewCollection(name: collectionName)
     }
 }
 

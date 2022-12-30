@@ -24,7 +24,8 @@ final class NewCollectionModuleBuilder {
     // MARK: Public
     
     func build() -> UIViewController {
-        let interactor = NewCollectionInteractor()
+        let coreDataManager = CoreDataManager()
+        let interactor = NewCollectionInteractor(coreDataManager: coreDataManager)
         let presenter = NewCollectionPresenter(interactor: interactor)
         
         let viewController = NewCollectionViewController(output: presenter)

@@ -24,8 +24,11 @@ final class MainModuleBuilder {
     // MARK: Public
     
     func build() -> UIViewController {
-        let interactor = MainInteractor()
-        let presenter = MainPresenter(interactor: interactor)
+        let coreDataManager = CoreDataManager()
+        let collectionsDataFactory = CollectionsDataFactory()
+        let interactor = MainInteractor(coreDataManager: coreDataManager)
+        let presenter = MainPresenter(interactor: interactor,
+                                      collectionsDataFactory: collectionsDataFactory)
         
         let tableViewDataSource = MainTableViewDataSource()
         let viewController = MainViewController(output: presenter,

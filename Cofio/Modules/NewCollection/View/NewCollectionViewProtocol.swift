@@ -13,7 +13,7 @@ protocol NewCollectionViewInput: AnyObject {
 protocol NewCollectionViewOutput: AnyObject {
     
     func moduleDidLoad()
-    func addNewCollection()
+    func addNewCollection(name: String)
     func chooseIcon()
     func closeModule()
 }

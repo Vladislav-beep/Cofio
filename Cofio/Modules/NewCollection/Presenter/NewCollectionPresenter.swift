@@ -10,13 +10,12 @@ final class NewCollectionPresenter {
     // MARK: Private properties
     
     private let interactor: NewCollectionInteractorInput
-    
+    private var iconName: String?
     
     // MARK: Public properties
     
     weak var view: NewCollectionViewInput?
     weak var output: NewCollectionPresenterOutput?
-    
     
     // MARK: Lifecycle
     
@@ -34,7 +33,10 @@ extension NewCollectionPresenter: NewCollectionViewOutput {
         output?.moduleDidLoad(self)
     }
     
-    func addNewCollection() {
+    func addNewCollection(name: String) {
+        let icon = iconName ?? ""
+        interactor.createCollection(name: name, icon: icon)
+        
         output?.moduleWantsToAddCollectionAndClose(self)
     }
     
@@ -53,6 +55,7 @@ extension NewCollectionPresenter: NewCollectionViewOutput {
 extension NewCollectionPresenter: NewCollectionPresenterInput {
     
     func refreshImageView(icon: String) {
+        iconName = icon
         view?.refreshImageView(icon: icon)
     }
 }
