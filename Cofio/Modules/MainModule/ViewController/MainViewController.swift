@@ -64,6 +64,7 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.prefersLargeTitles = false
+        output.refreshView()
     }
     
     override func viewDidLoad() {

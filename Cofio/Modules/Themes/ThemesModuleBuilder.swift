@@ -27,10 +27,11 @@ final class ThemesModuleBuilder {
     
     func build() -> UIViewController {
         let dataSource = ThemesTableViewDataSource()
+        let themesDataFactory = ThemesDataFactory()
         let coreDataManager = CoreDataManager()
         
         let interactor = ThemesInteractor(coreDataManager: coreDataManager, collectionName: collectionName)
-        let presenter = ThemesPresenter(interactor: interactor)
+        let presenter = ThemesPresenter(interactor: interactor, themesDataFactory: themesDataFactory)
         let viewController = ThemesViewController(output: presenter,
                                                  dataSource: dataSource)
         

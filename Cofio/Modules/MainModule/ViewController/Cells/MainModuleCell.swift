@@ -13,7 +13,7 @@ final class MainModuleCell: UITableViewCell {
     
     struct DisplayData: Hashable {
         let title: String
-        let collectionsCount: Int
+        let subtitle: String
         let icon: String
     }
     
@@ -125,23 +125,12 @@ final class MainModuleCell: UITableViewCell {
             subtitleLabel.attributedText = countString
         }
     }
-    
-//    private func configureImage(with title: String) -> UIImage {
-//        return ImageProvider().configureLanguageCell(with: title)
-//    }
-    
-    
+
     // MARK: Public
     
     func configure(with displayData: DisplayData) {
-//        if displayData.title == AppText.StartAppScreen.hindi.rawValue {
-//            titleLabel.text = displayData.title
-//        } else {
-//            titleLabel.text = displayData.title + " язык"
-//        }
         titleLabel.text = displayData.title
-       // iconView.image = configureImage(with: displayData.title)
+        subtitleLabel.text = displayData.subtitle
         iconView.image = UIImage(named: displayData.icon)
-        configureSubtitleLabel(with: displayData.collectionsCount)
     }
 }

@@ -70,6 +70,7 @@
 		B99B175A2944CEE7002167DB /* TabBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B17592944CEE7002167DB /* TabBarPage.swift */; };
 		B99B175C2944CF07002167DB /* TabbarFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B175B2944CF07002167DB /* TabbarFlowCoordinator.swift */; };
 		B9AAEC22295F1A8A00BA6078 /* CollectionsDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AAEC21295F1A8A00BA6078 /* CollectionsDataFactory.swift */; };
+		B9AAEC25295F628800BA6078 /* ThemesDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AAEC24295F628800BA6078 /* ThemesDataFactory.swift */; };
 		B9ACB79A2954383B00F2B476 /* ChooseIconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ACB7992954383B00F2B476 /* ChooseIconViewController.swift */; };
 		B9ACB79C2954391000F2B476 /* ChooseIconViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ACB79B2954391000F2B476 /* ChooseIconViewProtocol.swift */; };
 		B9ACB79F2954399C00F2B476 /* ChooseIconPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ACB79E2954399C00F2B476 /* ChooseIconPresenter.swift */; };
@@ -218,6 +219,7 @@
 		B99B17592944CEE7002167DB /* TabBarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPage.swift; sourceTree = "<group>"; };
 		B99B175B2944CF07002167DB /* TabbarFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarFlowCoordinator.swift; sourceTree = "<group>"; };
 		B9AAEC21295F1A8A00BA6078 /* CollectionsDataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsDataFactory.swift; sourceTree = "<group>"; };
+		B9AAEC24295F628800BA6078 /* ThemesDataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesDataFactory.swift; sourceTree = "<group>"; };
 		B9ACB7992954383B00F2B476 /* ChooseIconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIconViewController.swift; sourceTree = "<group>"; };
 		B9ACB79B2954391000F2B476 /* ChooseIconViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIconViewProtocol.swift; sourceTree = "<group>"; };
 		B9ACB79E2954399C00F2B476 /* ChooseIconPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIconPresenter.swift; sourceTree = "<group>"; };
@@ -559,6 +561,14 @@
 			path = Factory;
 			sourceTree = "<group>";
 		};
+		B9AAEC23295F626E00BA6078 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				B9AAEC24295F628800BA6078 /* ThemesDataFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
 		B9ACB797295437AE00F2B476 /* ChooseIcon */ = {
 			isa = PBXGroup;
 			children = (
@@ -816,7 +826,7 @@
 			children = (
 				B9CC13C628906A7C0013ED76 /* ThemesPresenter.swift */,
 				B9CC13C828906ACC0013ED76 /* ThemesPresenterProtocol.swift */,
-				B9ACB7AF2957753000F2B476 /* Localizable.stringsdict */,
+				B9AAEC23295F626E00BA6078 /* Factory */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -863,6 +873,7 @@
 				B9CC13D02890705E0013ED76 /* CustomViews */,
 				B9CC13652887389D0013ED76 /* LaunchScreen.storyboard */,
 				B9CC13632887389D0013ED76 /* Assets.xcassets */,
+				B9ACB7AF2957753000F2B476 /* Localizable.stringsdict */,
 			);
 			path = "UI Resources";
 			sourceTree = "<group>";
@@ -1107,6 +1118,7 @@
 				B910AB4429485B8100D9E7EA /* RepetitionFlowCoordinator.swift in Sources */,
 				B9CC13A6288EEC7A0013ED76 /* MainModuleBuilder.swift in Sources */,
 				B9CC13A2288EE98E0013ED76 /* MainInteractorProtocol.swift in Sources */,
+				B9AAEC25295F628800BA6078 /* ThemesDataFactory.swift in Sources */,
 				B932E95C28ABFB51007244E6 /* RepetitionInteractorProtocol.swift in Sources */,
 				B9CC13E52891D6380013ED76 /* Card1.swift in Sources */,
 				B932E97928B7FC29007244E6 /* CardsRepetitionViewProtocol.swift in Sources */,

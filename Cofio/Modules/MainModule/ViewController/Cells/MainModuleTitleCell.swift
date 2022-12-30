@@ -15,9 +15,7 @@ final class MainModuleTitleCell: UITableViewCell {
         let title: String
     }
     
-    
     // MARK: Private properties
-    
     
     private lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
@@ -26,7 +24,6 @@ final class MainModuleTitleCell: UITableViewCell {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         return titleLabel
     }()
-    
     
     // MARK: Lifecycle
     
@@ -41,7 +38,6 @@ final class MainModuleTitleCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     // MARK: Private
     
     private func setupViews() {
@@ -53,7 +49,6 @@ final class MainModuleTitleCell: UITableViewCell {
             titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
         ])
     }
-    
     
     // MARK: Public
     

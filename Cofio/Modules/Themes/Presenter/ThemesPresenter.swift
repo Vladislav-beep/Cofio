@@ -11,6 +11,7 @@ final class ThemesPresenter {
     // MARK: Private properties
     
     private let interactor: ThemesInteractorInput
+    private let themesDataFactory: ThemesDataFactoryProtocol
     
     
     // MARK: Public properties
@@ -21,8 +22,21 @@ final class ThemesPresenter {
     
     // MARK: Lifecycle
     
-    init(interactor: ThemesInteractorInput) {
+    init(interactor: ThemesInteractorInput,
+         themesDataFactory: ThemesDataFactoryProtocol) {
         self.interactor = interactor
+        self.themesDataFactory = themesDataFactory
+    }
+    
+    // MARK: Private
+    
+    private func updateView() {
+        let header = interactor.getCollectionName()
+        let themes = interactor.getThemes()
+        let models = themesDataFactory.dataFromThemes(themes: themes)
+        
+        view?.updateData(with: models)
+        view?.setupNavBarTitle(with: header)
     }
 }
 
@@ -32,15 +46,7 @@ final class ThemesPresenter {
 extension ThemesPresenter: ThemesViewOutput {
     
     func viewDidLoad() {
-        let header = interactor.getCollectionName()
-        let themes = interactor.getThemes()
-        var models: [ThemesCellsDataModel] = [.statics(.init(title: "")),.header(.init(title: "theme_module_header"~))]
-        for theme in themes {
-            let model = ThemesCellsDataModel.card(.init(title: theme.name ?? "", subtitle: "afc", totalRepeats: 7, repeats: Int(theme.repeats)))
-            models.append(model)
-        }
-        view?.updateData(with: models)
-        view?.setupNavBarTitle(with: header)
+        updateView()
     }
     
     func viewDidTapRow(_ item: ThemesCellDataModel) {
@@ -49,6 +55,10 @@ extension ThemesPresenter: ThemesViewOutput {
     
     func createTheme(name: String) {
         interactor.createTheme(themeName: name)
+    }
+    
+    func refreshView() {
+        updateView()
     }
 }
 

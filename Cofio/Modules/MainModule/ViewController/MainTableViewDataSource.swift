@@ -35,7 +35,7 @@ final class MainTableViewDataSource: MainTableViewDataSourceProtocol {
                 let cell = tableview.reuse(MainModuleCell.self, indexPath)
                 let displayData = MainModuleCell.DisplayData(
                     title: model.title,
-                    collectionsCount: model.collectionsCount,
+                    subtitle: model.subtitle,
                     icon: model.image
                 )
                 cell.configure(with: displayData)

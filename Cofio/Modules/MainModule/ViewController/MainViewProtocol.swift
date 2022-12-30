@@ -15,4 +15,5 @@ protocol MainViewOutput: AnyObject {
     func viewDidLoad()
     func viewDidTapRow(_ type: MainModuleCellsDataModel)
     func addNewCollection()
+    func refreshView()
 }

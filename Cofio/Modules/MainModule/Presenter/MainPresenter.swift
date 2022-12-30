@@ -28,8 +28,12 @@ final class MainPresenter {
     }
     
     private func updateView() {
-        let collections = interactor.getCollectionsFromStorage()
-        let data = collectionsDataFactory.dataFromCollections(collections: collections)
+        var collectionsDict: [Collection: Int] = [:]
+        for collection in interactor.getCollectionsFromStorage() {
+            collectionsDict[collection] = interactor.getThemesCountForCollection(collectionName: collection.name ?? "")
+        }
+        let data = collectionsDataFactory.dataFromCollections(collectionsDict: collectionsDict)
+        
         view?.updateView(with: data)
     }
 }
@@ -58,6 +62,10 @@ extension MainPresenter: MainViewOutput {
     
     func addNewCollection() {
         output?.moduleWantsToAddNewCollection(self)
+    }
+    
+    func refreshView() {
+        updateView()
     }
 }
 

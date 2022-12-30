@@ -8,6 +8,7 @@
 protocol MainInteractorInput: AnyObject {
     
     func getCollectionsFromStorage() -> [Collection]
+    func getThemesCountForCollection(collectionName: String) -> Int
 }
 
 protocol MainInteractorOutput: AnyObject {}

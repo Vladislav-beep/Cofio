@@ -30,4 +30,8 @@ extension MainInteractor: MainInteractorInput {
     func getCollectionsFromStorage() -> [Collection] {
         coreDataManager.fetchCollections()
     }
+    
+    func getThemesCountForCollection(collectionName: String) -> Int {
+        coreDataManager.fetchThemes(collectionName: collectionName).count
+    }
 }

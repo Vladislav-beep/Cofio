@@ -23,6 +23,6 @@ struct SubtitleCellDataModel: Hashable {
 
 struct MainModuleCellViewModel: Hashable {
     let title: String
-    let collectionsCount: Int
+    let subtitle: String
     let image: String
 }
