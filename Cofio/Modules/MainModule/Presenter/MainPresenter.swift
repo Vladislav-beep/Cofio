@@ -51,7 +51,8 @@ extension MainPresenter: MainViewOutput {
             break
     
         case .collection(let model):
-            output?.moduleWantsToOpenThemes(self, title: model.title)
+            print("vlad \(model.title)")
+            output?.moduleWantsToOpenThemes(self, collectionName: model.title)
         }
     }
     

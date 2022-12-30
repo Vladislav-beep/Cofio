@@ -15,5 +15,5 @@ protocol ThemesViewOutput: AnyObject {
     
     func viewDidLoad()
     func viewDidTapRow(_ item: ThemesCellDataModel)
-    func addTheme(name: String)
+    func createTheme(name: String)
 }

@@ -22,6 +22,7 @@
 "new_collection_module_button_title" = "Добавить";
 
 // MARK: Themes
+"theme_module_header" = "Темы";
 "theme_module_alert_title" = "Добавление темы";
 "theme_module_alert_subtitle" = "Напишите название темы, которую хотите добавить";
 "theme_module_alert_textField_placeholder" = "Название темы";

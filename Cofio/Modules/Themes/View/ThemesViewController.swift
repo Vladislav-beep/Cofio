@@ -77,7 +77,7 @@ final class ThemesViewController: UIViewController {
                            message: "theme_module_alert_subtitle"~,
                            actionTitle: "theme_module_alert_add_button"~,
                            textFieldPlaceholder: "theme_module_alert_textField_placeholder"~) { [weak self] name in
-            self?.output.addTheme(name: name)
+            self?.output.createTheme(name: name)
         }
     }
 }

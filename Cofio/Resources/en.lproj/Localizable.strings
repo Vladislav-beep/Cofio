@@ -22,6 +22,7 @@
 "new_collection_module_button_title" = "Add";
 
 // MARK: Themes
+"theme_module_header" = "Themes";
 "theme_module_alert_title" = "Theme addition";
 "theme_module_alert_subtitle" = "Type the name of the topic you want to add";
 "theme_module_alert_textField_placeholder" = "Topic name";

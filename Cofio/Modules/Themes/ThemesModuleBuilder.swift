@@ -12,14 +12,14 @@ final class ThemesModuleBuilder {
     // MARK: Private
     
     private weak var output: ThemesPresenterOutput?
-    private let navigationBarTitle: String
+    private let collectionName: String
     
     
     // MARK: Lifecycle
     
-    init(output: ThemesPresenterOutput, navigationBarTitle: String) {
+    init(output: ThemesPresenterOutput, collectionName: String) {
         self.output = output
-        self.navigationBarTitle = navigationBarTitle
+        self.collectionName = collectionName
     }
     
     
@@ -27,9 +27,10 @@ final class ThemesModuleBuilder {
     
     func build() -> UIViewController {
         let dataSource = ThemesTableViewDataSource()
+        let coreDataManager = CoreDataManager()
         
-        let interactor = ThemesInteractor()
-        let presenter = ThemesPresenter(interactor: interactor, navigationBarTitle: navigationBarTitle)
+        let interactor = ThemesInteractor(coreDataManager: coreDataManager, collectionName: collectionName)
+        let presenter = ThemesPresenter(interactor: interactor)
         let viewController = ThemesViewController(output: presenter,
                                                  dataSource: dataSource)
         

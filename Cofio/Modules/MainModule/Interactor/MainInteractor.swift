@@ -28,6 +28,6 @@ final class MainInteractor {
 extension MainInteractor: MainInteractorInput {
     
     func getCollectionsFromStorage() -> [Collection] {
-        coreDataManager.collections()
+        coreDataManager.fetchCollections()
     }
 }

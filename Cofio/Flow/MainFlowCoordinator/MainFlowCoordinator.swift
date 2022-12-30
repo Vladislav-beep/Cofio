@@ -52,8 +52,8 @@ final class MainFlowCoordinator {
         newCollectionViewControllerr?.present(chooseIconViewController, animated: true)
     }
     
-    private func showThemesModule(title: String) {
-        let builder = ThemesModuleBuilder(output: self, navigationBarTitle: title)
+    private func showThemesModule(collectionName: String) {
+        let builder = ThemesModuleBuilder(output: self, collectionName: collectionName)
         let themesViewController = builder.build()
         
         parentViewController.pushViewController(themesViewController, animated: true)
@@ -106,8 +106,8 @@ extension MainFlowCoordinator: MainPresenterOutput {
         showNewCollectionModule()
     }
     
-    func moduleWantsToOpenThemes(_ module: MainPresenterInput, title: String) {
-        showThemesModule(title: title)
+    func moduleWantsToOpenThemes(_ module: MainPresenterInput, collectionName: String) {
+        showThemesModule(collectionName: collectionName)
     }
 }
 
