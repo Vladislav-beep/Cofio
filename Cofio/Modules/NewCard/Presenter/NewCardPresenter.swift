@@ -34,8 +34,9 @@ extension NewCardPresenter: NewCardViewOutput {
         output?.moduleWantsToClose(self)
     }
     
-    func addNewCard() {
-        // TODO: Save to coreData
+    func addNewCard(definition: String, description: String) {
+        interactor.createCard(definition: definition, description: description)
+        
         output?.moduleWantsToAddNewCard(self)
     }
 }

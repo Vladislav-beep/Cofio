@@ -53,7 +53,8 @@ extension CardsPresenter: CardsViewOutput {
     }
     
     func addCard() {
-        output?.moduleWantsToOpenNewCard(self)
+        let themeName = interactor.getThemeName()
+        output?.moduleWantsToOpenNewCard(self, themeName: themeName)
     }
 }
 

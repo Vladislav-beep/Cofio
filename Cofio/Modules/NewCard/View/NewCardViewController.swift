@@ -110,7 +110,10 @@ final class NewCardViewController: UIViewController {
     }
     
     @objc func addNewCard() {
-        output.addNewCard()
+        let definition = definitionTextView.text ?? ""
+        let description = descriptionTextView.text ?? ""
+        
+        output.addNewCard(definition: definition, description: description)
     }
 }
 

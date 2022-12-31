@@ -7,6 +7,7 @@
 
 protocol CardsInteractorInput: AnyObject {
     
+    func getThemeName() -> String
     func getCardsFromStorage() -> [Card]
 }
 

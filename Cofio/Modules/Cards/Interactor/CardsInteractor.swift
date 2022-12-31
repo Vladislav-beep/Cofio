@@ -26,6 +26,10 @@ final class CardsInteractor {
 
 extension CardsInteractor: CardsInteractorInput {
     
+    func getThemeName() -> String {
+        themeName
+    }
+    
     func getCardsFromStorage() -> [Card] {
         coreDataManager.fetchCards(themeName: themeName)
     }

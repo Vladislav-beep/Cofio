@@ -10,5 +10,5 @@ protocol NewCardViewInput: AnyObject {}
 protocol NewCardViewOutput: AnyObject {
     
     func closeModule()
-    func addNewCard()
+    func addNewCard(definition: String, description: String)
 }
