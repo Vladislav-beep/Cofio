@@ -20,8 +20,10 @@ protocol CoreDataManagerProtocol {
                repeatDate: Date,
                isRepeatComplete: Bool,
                collectionName: String)
-    
     func fetchThemes(collectionName: String) -> [Theme]
+    
+    func createCard(cardDefinition: String, cardDescription: String, themeName: String)
+    func fetchCards(themeName: String) -> [Card]
 }
 
 class CoreDataManager: CoreDataManagerProtocol {
@@ -125,5 +127,18 @@ class CoreDataManager: CoreDataManagerProtocol {
         print("Error fetching themes \(error)")
       }
       return fetchedThemes
+    }
+    
+    func fetchCards(themeName: String) -> [Card] {
+        let request: NSFetchRequest<Card> = Card.fetchRequest()
+        request.predicate = NSPredicate(format: "theme.name == %@", themeName)
+        
+        var fetchedCards: [Card] = []
+        do {
+            fetchedCards = try persistentContainer.viewContext.fetch(request)
+        } catch let error {
+            print("Error fetching themes \(error)")
+        }
+        return fetchedCards
     }
 }

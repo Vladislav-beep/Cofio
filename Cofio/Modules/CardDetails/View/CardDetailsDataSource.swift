@@ -19,7 +19,7 @@ final class CardDetailsDataSource: CardDetailsDataSourceProtocol {
         let tableViewDataSource = UITableViewDiffableDataSource<Int, CardCellDataModel>(tableView: tableview) { tableView, indexPath, card in
             
             let cell = tableview.reuse(CardDetailsCell.self, indexPath)
-            let displayData = CardDetailsCell.DisplayData(title: card.meaning, definition: card.translation)
+            let displayData = CardDetailsCell.DisplayData(title: card.definition, definition: card.description)
             cell.configure(with: displayData)
             return cell
             

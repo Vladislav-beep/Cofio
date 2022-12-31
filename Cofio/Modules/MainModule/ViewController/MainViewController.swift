@@ -114,7 +114,7 @@ extension MainViewController: MainViewInput {
         var snapshot = NSDiffableDataSourceSnapshot<Int, MainModuleCellsDataModel>()
         snapshot.appendSections([0])
         snapshot.appendItems(data, toSection: 0)
-        tableViewDataSource.apply(snapshot)
+        tableViewDataSource.apply(snapshot, animatingDifferences: false)
     }
 }
 

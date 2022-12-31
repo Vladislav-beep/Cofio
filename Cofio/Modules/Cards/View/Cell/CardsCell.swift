@@ -12,8 +12,8 @@ final class CardsCell: UITableViewCell {
     // MARK: Data structures
     
     struct DisplayData: Hashable {
-        let meaning: String
-        let translation: String
+        let definition: String
+        let description: String
     }
     
     // MARK: Private properties
@@ -98,7 +98,7 @@ final class CardsCell: UITableViewCell {
     // MARK: Public
     
     func configure(with displayData: DisplayData) {
-        titleLabel.text = displayData.meaning
-        definitionLabel.text = displayData.translation
+        titleLabel.text = displayData.definition
+        definitionLabel.text = displayData.description
     }
 }

@@ -50,7 +50,7 @@ extension ThemesPresenter: ThemesViewOutput {
     }
     
     func viewDidTapRow(_ item: ThemesCellDataModel) {
-        output?.moduleWantsToOpenCards(self)
+        output?.moduleWantsToOpenCards(self, themeName: item.title)
     }
     
     func createTheme(name: String) {

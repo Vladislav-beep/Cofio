@@ -10,6 +10,7 @@ final class CardsPresenter {
     // MARK: Private properties
     
     private let interactor: CardsInteractorInput
+    private let cardsDataFactory: CardsDataFactoryProtocol
     
     
     // MARK: Public properties
@@ -20,8 +21,19 @@ final class CardsPresenter {
     
     // MARK: Lifecycle
     
-    init(interactor: CardsInteractorInput) {
+    init(interactor: CardsInteractorInput,
+         cardsDataFactory: CardsDataFactoryProtocol) {
         self.interactor = interactor
+        self.cardsDataFactory = cardsDataFactory
+    }
+    
+    // MARK: Private
+    
+    private func updateView() {
+        let cards = interactor.getCardsFromStorage()
+        let data = cardsDataFactory.dataFromCards(cards: cards)
+        
+        view?.updateData(with: data)
     }
 }
 
@@ -37,8 +49,7 @@ extension CardsPresenter: CardsViewOutput {
     func viewDidLoad() {
         output?.moduleDidLoad(self)
         
-        let data = DymmyData.getCardCellDataModel()
-        view?.updateData(with: data)
+        updateView()
     }
     
     func addCard() {
@@ -52,9 +63,7 @@ extension CardsPresenter: CardsViewOutput {
 extension CardsPresenter: CardsPresenterInput {
     
     func refreshModule() {
-        // TODO: get from coreData
-        let data = DymmyData.getCardCellDataModel()
-        view?.updateData(with: data)
+        updateView()
     }
 }
 

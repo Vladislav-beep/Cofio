@@ -9,6 +9,6 @@ protocol ThemesPresenterInput: AnyObject {}
 
 protocol ThemesPresenterOutput: AnyObject {
     
-    func moduleWantsToOpenCards(_ module: ThemesPresenterInput)
+    func moduleWantsToOpenCards(_ module: ThemesPresenterInput, themeName: String)
     func moduleWantsToClose(_ module: ThemesPresenterInput)
 }

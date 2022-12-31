@@ -59,8 +59,8 @@ final class MainFlowCoordinator {
         parentViewController.pushViewController(themesViewController, animated: true)
     }
     
-    private func showCardsModule() {
-        let builder = CardsModuleBuilder(output: self)
+    private func showCardsModule(themeName: String) {
+        let builder = CardsModuleBuilder(output: self, themeName: themeName)
         let cardsViewController = builder.build()
         
         parentViewController.pushViewController(cardsViewController, animated: true)
@@ -149,8 +149,8 @@ extension MainFlowCoordinator:  ChooseIconPresenterOutput {
 
 extension MainFlowCoordinator: ThemesPresenterOutput {
 
-    func moduleWantsToOpenCards(_ module: ThemesPresenterInput) {
-        showCardsModule()
+    func moduleWantsToOpenCards(_ module: ThemesPresenterInput, themeName: String) {
+        showCardsModule(themeName: themeName)
     }
     
     func moduleWantsToClose(_ module: ThemesPresenterInput) {

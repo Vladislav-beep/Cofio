@@ -6,6 +6,6 @@
 //
 
 struct CardCellDataModel: Hashable {
-    let meaning: String
-    let translation: String
+    let definition: String
+    let description: String
 }
