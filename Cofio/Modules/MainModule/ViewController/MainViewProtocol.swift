@@ -14,6 +14,8 @@ protocol MainViewOutput: AnyObject {
     
     func viewDidLoad()
     func viewDidTapRow(_ type: MainModuleCellsDataModel)
-    func addNewCollection()
+    func viewDidTapButton()
+    func editCollection(collectionName: String)
     func refreshView()
+    func deleteCollection(collectionName: String)
 }

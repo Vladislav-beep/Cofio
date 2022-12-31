@@ -36,8 +36,10 @@ final class MainFlowCoordinator {
         parentViewController.pushViewController(mainViewController, animated: true)
     }
     
-    private func showNewCollectionModule() {
-        let builder = NewCollectionModuleBuilder(output: self)
+    private func showNewCollectionModule(isEditing: Bool, collectionName: String?) {
+        let builder = NewCollectionModuleBuilder(output: self,
+                                                 isEditing: isEditing,
+                                                 collectionName: collectionName)
         let newCollectionViewController = builder.build()
         
         newCollectionViewControllerr = newCollectionViewController
@@ -97,13 +99,17 @@ extension MainFlowCoordinator: FlowCoordinatorProtocol {
 // MARK: - MainPresenterOutput
 
 extension MainFlowCoordinator: MainPresenterOutput {
-
+    
     func moduleDidLoad(_ module: MainPresenterInput) {
         mainModule = module
     }
     
     func moduleWantsToAddNewCollection(_ module: MainPresenterInput) {
-        showNewCollectionModule()
+        showNewCollectionModule(isEditing: false, collectionName: nil)
+    }
+    
+    func moduleWantsToEditCollection(_ module: MainPresenterInput, collectionName: String) {
+        showNewCollectionModule(isEditing: true, collectionName: collectionName)
     }
     
     func moduleWantsToOpenThemes(_ module: MainPresenterInput, collectionName: String) {

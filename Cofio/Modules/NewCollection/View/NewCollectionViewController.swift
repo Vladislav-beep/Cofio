@@ -19,8 +19,11 @@ final class NewCollectionViewController: UIViewController {
         return closeButton
     }()
     
-    private let titleLabel: TitleLabel = {
-        let titleLabel = TitleLabel(title: "new_collection_module_title"~)
+    private let titleLabel: UILabel = {
+        let titleLabel = UILabel()
+        titleLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+        titleLabel.numberOfLines = 0
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
         return titleLabel
     }()
     
@@ -169,7 +172,7 @@ final class NewCollectionViewController: UIViewController {
     
     @objc func addNewCollection() {
         let collectionName = collectionTextField.text ?? ""
-        output.addNewCollection(name: collectionName)
+        output.viewDidTapButton(name: collectionName)
     }
 }
 
@@ -177,7 +180,17 @@ final class NewCollectionViewController: UIViewController {
 // MARK: - NewCollectionViewInput 
 
 extension NewCollectionViewController: NewCollectionViewInput {
-
+    
+    func updateTitleAndButton(title: String, buttonTitle: String) {
+        titleLabel.text = title
+        doneButton.setTitle(buttonTitle, for: .normal)
+    }
+    
+    func updateTextViewAndIcon(text: String, icon: String) {
+        collectionTextField.text = text
+        iconImageView.image = UIImage(named: icon)
+    }
+    
     func refreshImageView(icon: String) {
         iconImageView.image = UIImage(named: icon)
     }

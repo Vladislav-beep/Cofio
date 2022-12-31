@@ -25,7 +25,6 @@ final class RepetitionViewController: UIViewController {
     
     private lazy var tableViewDataSource = dataSource.makeDataSource(for: repetitionTableView)
     
-    
     // MARK: Lifecycle
     
     init(output: RepetitionViewOutput,
@@ -49,7 +48,6 @@ final class RepetitionViewController: UIViewController {
         output.viewDidLoad()
     }
     
-    
     // MARK: Private
     
     private func setupViews() {
@@ -58,14 +56,14 @@ final class RepetitionViewController: UIViewController {
         view.addSubview(repetitionTableView)
         NSLayoutConstraint.activate([
             repetitionTableView.topAnchor.constraint(equalTo: view.topAnchor),
-            repetitionTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+            repetitionTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             repetitionTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             repetitionTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
     
     private func setupNavigationBar() {
-        title = "Повторение"
+        title = "repetition_module_title"~
         navigationController?.navigationBar.prefersLargeTitles = true
         
         // FIXME: Разобраться почему меняется цвет таббара

@@ -7,13 +7,15 @@
 
 protocol NewCollectionViewInput: AnyObject {
     
+    func updateTitleAndButton(title: String, buttonTitle: String)
+    func updateTextViewAndIcon(text: String, icon: String)
     func refreshImageView(icon: String)
 }
 
 protocol NewCollectionViewOutput: AnyObject {
     
     func moduleDidLoad()
-    func addNewCollection(name: String)
+    func viewDidTapButton(name: String)
     func chooseIcon()
     func closeModule()
 }

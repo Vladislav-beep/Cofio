@@ -15,15 +15,15 @@ protocol CoreDataManagerProtocol {
     func createCollection(name: String, icon: String)
     func fetchCollections() -> [Collection]
     
-    func createTheme(name: String,
-               repeats: Int,
-               repeatDate: Date,
-               isRepeatComplete: Bool,
-               collectionName: String)
+    func createTheme(name: String, repeats: Int, repeatDate: Date, isRepeatComplete: Bool, collectionName: String)
     func fetchThemes(collectionName: String) -> [Theme]
     
     func createCard(cardDefinition: String, cardDescription: String, themeName: String)
     func fetchCards(themeName: String) -> [Card]
+    
+    func deleteCollection(collectionName: String)
+    
+    func updateCollection(withName: String, newName: String, icon: String)
 }
 
 class CoreDataManager: CoreDataManagerProtocol {
@@ -54,7 +54,7 @@ class CoreDataManager: CoreDataManagerProtocol {
         }
     }
     
-    // MARK: Object creation
+    // MARK: Creation
     
     func createCollection(name: String, icon: String) {
         let collection = Collection(context: persistentContainer.viewContext)
@@ -102,7 +102,7 @@ class CoreDataManager: CoreDataManagerProtocol {
         }
     }
     
-    // MARK: Fetching data
+    // MARK: Fetching
     
     func fetchCollections() -> [Collection] {
         let request: NSFetchRequest<Collection> = Collection.fetchRequest()
@@ -140,5 +140,36 @@ class CoreDataManager: CoreDataManagerProtocol {
             print("Error fetching themes \(error)")
         }
         return fetchedCards
+    }
+    
+    // MARK: Deletion
+    
+    func deleteCollection(collectionName: String) {
+        let request: NSFetchRequest<Collection> = Collection.fetchRequest()
+        request.predicate = NSPredicate(format: "name == %@", collectionName)
+        
+        do {
+            let collection = try persistentContainer.viewContext.fetch(request).first!
+            persistentContainer.viewContext.delete(collection)
+        } catch let error {
+            print("Error deleting collection \(error)")
+        }
+        
+        save()
+    }
+    
+    // MARK: Update
+    
+    func updateCollection(withName: String, newName: String, icon: String) {
+        let request: NSFetchRequest<Collection> = Collection.fetchRequest()
+        request.predicate = NSPredicate(format: "name == %@", withName)
+        
+        do {
+            let collection = try persistentContainer.viewContext.fetch(request).first!
+            collection.name = newName
+            collection.icon = icon
+        } catch let error {
+            print("Error deleting collection \(error)")
+        }
     }
 }

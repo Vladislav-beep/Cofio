@@ -10,6 +10,7 @@ final class NewCollectionPresenter {
     // MARK: Private properties
     
     private let interactor: NewCollectionInteractorInput
+    private let isEditing: Bool
     private var iconName: String?
     
     // MARK: Public properties
@@ -19,8 +20,10 @@ final class NewCollectionPresenter {
     
     // MARK: Lifecycle
     
-    init(interactor: NewCollectionInteractorInput) {
+    init(interactor: NewCollectionInteractorInput,
+         isEditing: Bool) {
         self.interactor = interactor
+        self.isEditing = isEditing
     }
 }
 
@@ -31,11 +34,28 @@ extension NewCollectionPresenter: NewCollectionViewOutput {
     
     func moduleDidLoad() {
         output?.moduleDidLoad(self)
+        
+        if isEditing {
+            view?.updateTitleAndButton(title: "new_collection_module_edit_title"~,
+                                       buttonTitle: "new_collection_module_button_edit_title"~)
+            let collection = interactor.getCollection()
+            view?.updateTextViewAndIcon(text: collection.name ?? "", icon: collection.icon ?? "")
+        } else {
+            view?.updateTitleAndButton(title: "new_collection_module_title"~,
+                                       buttonTitle: "new_collection_module_button_title"~)
+        }
+        
+        
     }
     
-    func addNewCollection(name: String) {
-        let icon = iconName ?? ""
-        interactor.createCollection(name: name, icon: icon)
+    func viewDidTapButton(name: String) {
+        if isEditing {
+            let collection = interactor.getCollection()
+            interactor.updateCollection(name: collection.name ?? "", newName: name, icon: iconName ?? "")
+        } else {
+            let icon = iconName ?? ""
+            interactor.createCollection(name: name, icon: icon)
+        }
         
         output?.moduleWantsToAddCollectionAndClose(self)
     }

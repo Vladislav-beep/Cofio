@@ -50,7 +50,6 @@ final class RepetitionCell: UITableViewCell {
         return subtitleLabel
     }()
     
-    
     // MARK: Lifecycle
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -63,7 +62,6 @@ final class RepetitionCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
     // MARK: Private
     
@@ -126,7 +124,6 @@ final class RepetitionCell: UITableViewCell {
 //            lowerView.backgroundColor = .darkRed
 //        }
 //    }
-    
     
     // MARK: Public
     

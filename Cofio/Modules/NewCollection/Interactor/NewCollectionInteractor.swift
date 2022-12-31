@@ -10,6 +10,7 @@ final class NewCollectionInteractor {
     // MARK: Private properties
     
     private let coreDataManager: CoreDataManagerProtocol
+    private let collectionName: String?
     
     // MARK: Properties
     
@@ -17,8 +18,10 @@ final class NewCollectionInteractor {
     
     // MARK: Lifecycle
     
-    init(coreDataManager: CoreDataManagerProtocol) {
+    init(coreDataManager: CoreDataManagerProtocol,
+         collectionName: String?) {
         self.coreDataManager = coreDataManager
+        self.collectionName = collectionName
     }
 }
 
@@ -27,8 +30,17 @@ final class NewCollectionInteractor {
 
 extension NewCollectionInteractor: NewCollectionInteractorInput {
     
+    func getCollection() -> Collection {
+        coreDataManager.fetchCollections().first(where: { $0.name == collectionName })!
+    }
+    
     func createCollection(name: String, icon: String) {
         coreDataManager.createCollection(name: name, icon: icon)
+        coreDataManager.save()
+    }
+    
+    func updateCollection(name: String, newName: String, icon: String) {
+        coreDataManager.updateCollection(withName: name, newName: newName, icon: icon)
         coreDataManager.save()
     }
 }

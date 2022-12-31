@@ -12,12 +12,18 @@ final class NewCollectionModuleBuilder {
     // MARK: Private
     
     private weak var output: NewCollectionPresenterOutput?
+    private let isEditing: Bool
+    private let collectionName: String?
     
     
     // MARK: Lifecycle
     
-    init(output: NewCollectionPresenterOutput) {
+    init(output: NewCollectionPresenterOutput,
+         isEditing: Bool,
+         collectionName: String?) {
         self.output = output
+        self.isEditing = isEditing
+        self.collectionName = collectionName
     }
     
     
@@ -25,8 +31,9 @@ final class NewCollectionModuleBuilder {
     
     func build() -> UIViewController {
         let coreDataManager = CoreDataManager()
-        let interactor = NewCollectionInteractor(coreDataManager: coreDataManager)
-        let presenter = NewCollectionPresenter(interactor: interactor)
+        let interactor = NewCollectionInteractor(coreDataManager: coreDataManager,
+                                                 collectionName: collectionName)
+        let presenter = NewCollectionPresenter(interactor: interactor, isEditing: isEditing)
         
         let viewController = NewCollectionViewController(output: presenter)
         

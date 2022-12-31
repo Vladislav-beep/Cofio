@@ -18,8 +18,10 @@
 
 // MARK: New collection
 "new_collection_module_title" = "Add collection";
+"new_collection_module_edit_title" = "Edit collection";
 "new_collection_module_choose_icon" = "Choose icon";
 "new_collection_module_button_title" = "Add";
+"new_collection_module_button_edit_title" = "Edit";
 
 // MARK: Themes
 "theme_module_header" = "Themes";
@@ -36,6 +38,9 @@
 "new_card_module_add_button_title" = "Add card";
 "new_card_module_add_definition_textView_placeholder" = "Definition or word";
 "new_card_module_add_description_textView_placeholder" = "Description or translation";
+
+// MARK: Repetition
+"repetition_module_title" = "Repetition";
 
 
 

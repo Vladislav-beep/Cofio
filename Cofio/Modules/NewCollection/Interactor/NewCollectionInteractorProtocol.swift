@@ -8,6 +8,8 @@
 protocol NewCollectionInteractorInput: AnyObject {
     
     func createCollection(name: String, icon: String)
+    func getCollection() -> Collection
+    func updateCollection(name: String, newName: String, icon: String)
 }
 
 protocol NewCollectionInteractorOutput: AnyObject {}

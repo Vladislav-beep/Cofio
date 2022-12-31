@@ -43,6 +43,10 @@ final class MainPresenter {
 
 extension MainPresenter: MainViewOutput {
     
+    func deleteCollection(collectionName: String) {
+        interactor.deleteCollection(collectionName: collectionName)
+    }
+    
     func viewDidLoad() {
         output?.moduleDidLoad(self)
         
@@ -59,8 +63,12 @@ extension MainPresenter: MainViewOutput {
         }
     }
     
-    func addNewCollection() {
+    func viewDidTapButton() {
         output?.moduleWantsToAddNewCollection(self)
+    }
+    
+    func editCollection(collectionName: String) {
+        output?.moduleWantsToEditCollection(self, collectionName: collectionName)
     }
     
     func refreshView() {
@@ -69,7 +77,7 @@ extension MainPresenter: MainViewOutput {
 }
 
 
-// MARK: - StartAppPresenterInput
+// MARK: - MainPresenterInput
 
 extension MainPresenter: MainPresenterInput {
 
@@ -79,6 +87,6 @@ extension MainPresenter: MainPresenterInput {
 }
 
 
-// MARK: - StartAppInteractorOutput
+// MARK: - MainInteractorOutput
 
 extension MainPresenter: MainInteractorOutput {}

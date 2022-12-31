@@ -27,6 +27,10 @@ final class MainInteractor {
 
 extension MainInteractor: MainInteractorInput {
     
+    func deleteCollection(collectionName: String) {
+        coreDataManager.deleteCollection(collectionName: collectionName)
+    }
+    
     func getCollectionsFromStorage() -> [Collection] {
         coreDataManager.fetchCollections()
     }

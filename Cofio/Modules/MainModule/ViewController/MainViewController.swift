@@ -95,7 +95,49 @@ class MainViewController: UIViewController {
     // MARK: Actions
     
     @objc func addNewCollection() {
-        output.addNewCollection()
+        output.viewDidTapButton()
+    }
+    
+    private func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .destructive, title: "Удалить") {
+            [weak self] (action, view, complition) in
+            guard let self = self else { return }
+            
+            guard let item = self.tableViewDataSource.itemIdentifier(for: indexPath) else { return }
+            switch item {
+            case .title, .subtitle:
+                break
+
+            case .collection(let model):
+                self.output.deleteCollection(collectionName: model.title)
+                self.output.refreshView()
+            }
+
+            complition(true)
+        }
+        action.image = UIImage(systemName: "trash")
+        return action
+    }
+    
+    private func editAction(at indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .normal, title: "Редактировать") {
+            [weak self] (action, view, complition) in
+            guard let self = self else { return }
+            
+            guard let item = self.tableViewDataSource.itemIdentifier(for: indexPath) else { return }
+            switch item {
+            case .title, .subtitle:
+                break
+
+            case .collection(let model):
+                self.output.editCollection(collectionName: model.title)
+                self.output.refreshView()
+            }
+
+            complition(true)
+        }
+        action.image = UIImage(systemName: "slider.horizontal.3")
+        return action
     }
 }
 
@@ -121,5 +163,11 @@ extension MainViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         guard let item = tableViewDataSource.itemIdentifier(for: indexPath) else { return }
         output.viewDidTapRow(item)
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = deleteAction(at: indexPath)
+        let edit = editAction(at: indexPath)
+        return UISwipeActionsConfiguration(actions: [delete, edit])
     }
 }
