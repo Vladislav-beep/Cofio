@@ -27,11 +27,8 @@ class MainViewController: UIViewController {
     
     private lazy var bottomButton: UIButton = {
         let button = UIButton()
-      //  button.setTitle("+", for: .normal)
         button.setImage(UIImage(named: "pluss")?.withTintColor(.white), for: .normal)
         button.imageView?.contentMode = .scaleAspectFill
-       // button.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-      //  button.titleLabel?.font = UIFont.systemFont(ofSize: 21, weight: .semibold)
         button.setTitleColor(UIColor.white, for: .normal)
         button.setTitleColor(UIColor.darkOrange, for: .highlighted)
         button.addTarget(self, action: #selector(addNewCollection), for: .touchUpInside)
@@ -45,7 +42,6 @@ class MainViewController: UIViewController {
     }()
     
     private lazy var tableViewDataSource = dataSource.makeDataSource(for: collectionsTableView)
-    
     
     // MARK: Lifecycle
     
@@ -74,7 +70,6 @@ class MainViewController: UIViewController {
         output.viewDidLoad()
     }
     
-    
     // MARK: Private
     
     private func setupViews() {
@@ -97,7 +92,6 @@ class MainViewController: UIViewController {
         ])
     }
     
-    
     // MARK: Actions
     
     @objc func addNewCollection() {
@@ -106,7 +100,7 @@ class MainViewController: UIViewController {
 }
 
 
-// MARK: - StartAppViewInput
+// MARK: - MainViewInput
 
 extension MainViewController: MainViewInput {
     
@@ -114,7 +108,7 @@ extension MainViewController: MainViewInput {
         var snapshot = NSDiffableDataSourceSnapshot<Int, MainModuleCellsDataModel>()
         snapshot.appendSections([0])
         snapshot.appendItems(data, toSection: 0)
-        tableViewDataSource.apply(snapshot, animatingDifferences: false)
+        tableViewDataSource.apply(snapshot, animatingDifferences: true)
     }
 }
 

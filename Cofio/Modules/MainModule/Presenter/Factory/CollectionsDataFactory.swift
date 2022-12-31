@@ -43,6 +43,5 @@ private func countThemes(count: UInt) -> String {
     let formatString : String = NSLocalizedString("collection themes count",
                                                   comment: "")
     let resultString : String = String.localizedStringWithFormat(formatString, count)
-    
     return resultString
 }

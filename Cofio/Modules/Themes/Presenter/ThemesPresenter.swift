@@ -32,10 +32,14 @@ final class ThemesPresenter {
     
     private func updateView() {
         let header = interactor.getCollectionName()
-        let themes = interactor.getThemes()
-        let models = themesDataFactory.dataFromThemes(themes: themes)
         
-        view?.updateData(with: models)
+        var themesDict: [Theme: Int] = [:]
+        for theme in interactor.getThemes() {
+            themesDict[theme] = interactor.getCardsCount(themeName: theme.name ?? "")
+        }
+        let data = themesDataFactory.dataFromThemes(themesDict: themesDict)
+        
+        view?.updateData(with: data)
         view?.setupNavBarTitle(with: header)
     }
 }

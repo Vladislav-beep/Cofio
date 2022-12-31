@@ -10,6 +10,7 @@ protocol ThemesInteractorInput: AnyObject {
     func getThemes() -> [Theme]
     func createTheme(themeName: String)
     func getCollectionName() -> String
+    func getCardsCount(themeName: String) -> Int
 }
 
 protocol ThemesInteractorOutput: AnyObject {}

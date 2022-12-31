@@ -40,4 +40,8 @@ extension ThemesInteractor: ThemesInteractorInput {
     func getThemes() -> [Theme] {
         coreDataManager.fetchThemes(collectionName: collectionName)
     }
+    
+    func getCardsCount(themeName: String) -> Int {
+        coreDataManager.fetchCards(themeName: themeName).count
+    }
 }

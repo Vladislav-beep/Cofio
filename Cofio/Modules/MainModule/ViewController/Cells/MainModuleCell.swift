@@ -17,7 +17,6 @@ final class MainModuleCell: UITableViewCell {
         let icon: String
     }
     
-    
     // MARK: Private properties
     
     private lazy var lowerView: LowerView = {
@@ -52,7 +51,6 @@ final class MainModuleCell: UITableViewCell {
         return iconView
     }()
     
-    
     // MARK: Lifecycle
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -65,7 +63,6 @@ final class MainModuleCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
     // MARK: Private
     
@@ -100,30 +97,6 @@ final class MainModuleCell: UITableViewCell {
             subtitleLabel.trailingAnchor.constraint(equalTo: iconView.leadingAnchor, constant: -12),
             subtitleLabel.bottomAnchor.constraint(equalTo: lowerView.bottomAnchor, constant: -16)
         ])
-    }
-    
-    private func configureSubtitleLabel(with count: Int) {
-        let string1: String
-        switch count {
-        case 1:
-            string1 = " сборник"
-        case 2...4:
-            string1 = " сборника"
-        case 5...Int.max:
-            string1 = " сборников"
-        default:
-            string1 = " сборников"
-        }
-        let myAttribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .bold),
-                           NSAttributedString.Key.foregroundColor: UIColor.darkOrange]
-        let countString = NSMutableAttributedString(string: "\(count)", attributes: myAttribute)
-        let attrString = NSAttributedString(string: string1)
-        if count == 0 {
-            subtitleLabel.text = "Нет сборников"
-        } else {
-            countString.append(attrString)
-            subtitleLabel.attributedText = countString
-        }
     }
 
     // MARK: Public
