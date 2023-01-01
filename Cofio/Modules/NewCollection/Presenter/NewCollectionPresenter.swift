@@ -44,8 +44,6 @@ extension NewCollectionPresenter: NewCollectionViewOutput {
             view?.updateTitleAndButton(title: "new_collection_module_title"~,
                                        buttonTitle: "new_collection_module_button_title"~)
         }
-        
-        
     }
     
     func viewDidTapButton(name: String) {

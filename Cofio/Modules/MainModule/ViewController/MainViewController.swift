@@ -19,6 +19,7 @@ class MainViewController: UIViewController {
         tableview.register(MainModuleCell.self)
         tableview.register(MainModuleTitleCell.self)
         tableview.register(MainModuleSubtitleCell.self)
+        tableview.register(MainModuleEmptyCell.self)
         tableview.translatesAutoresizingMaskIntoConstraints = false
         tableview.separatorStyle = .none
         tableview.delegate = self
@@ -99,13 +100,14 @@ class MainViewController: UIViewController {
     }
     
     private func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
-        let action = UIContextualAction(style: .destructive, title: "Удалить") {
+        let action = UIContextualAction(style: .destructive,
+                                        title: "delete_button_title"~) {
             [weak self] (action, view, complition) in
             guard let self = self else { return }
             
             guard let item = self.tableViewDataSource.itemIdentifier(for: indexPath) else { return }
             switch item {
-            case .title, .subtitle:
+            case .title, .subtitle, .empty:
                 break
 
             case .collection(let model):
@@ -120,13 +122,14 @@ class MainViewController: UIViewController {
     }
     
     private func editAction(at indexPath: IndexPath) -> UIContextualAction {
-        let action = UIContextualAction(style: .normal, title: "Редактировать") {
+        let action = UIContextualAction(style: .normal,
+                                        title: "new_collection_module_button_edit_title"~) {
             [weak self] (action, view, complition) in
             guard let self = self else { return }
             
             guard let item = self.tableViewDataSource.itemIdentifier(for: indexPath) else { return }
             switch item {
-            case .title, .subtitle:
+            case .title, .subtitle, .empty:
                 break
 
             case .collection(let model):

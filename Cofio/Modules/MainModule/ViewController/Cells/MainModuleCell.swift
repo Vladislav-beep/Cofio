@@ -28,7 +28,6 @@ final class MainModuleCell: UITableViewCell {
         let titleLabel = UILabel()
         titleLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         titleLabel.numberOfLines = 0
-        titleLabel.numberOfLines = 1
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         return titleLabel
     }()

@@ -40,6 +40,12 @@ final class MainTableViewDataSource: MainTableViewDataSourceProtocol {
                 )
                 cell.configure(with: displayData)
                 return cell
+                
+            case .empty(let model):
+                let cell = tableview.reuse(MainModuleEmptyCell.self, indexPath)
+                let displayData = MainModuleEmptyCell.DisplayData(title: model.title)
+                cell.configure(with: displayData)
+                return cell
             }
         }
 

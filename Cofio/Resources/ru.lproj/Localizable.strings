@@ -8,6 +8,7 @@
 
 // MARK: Common
 "close_button_title" = "Закрыть";
+"delete_button_title" = "Удалить";
 
 // MARK: Tab bar
 "main_tab" = "Главная";
@@ -15,10 +16,11 @@
 // MARK: Main module
 "main_module_title" = "Флэш-карточки";
 "main_module_subtitle" = "Карточки для запоминания любой информации, подготовки к экзаменам, изучения иностранных слов";
+"main_module_empty_cell_title" = "Вы пока не добавили ни одной темы.\n Чтобы добавить тему нажите плюс внизу экрана.";
 
 // MARK: New collection
-"new_collection_module_title" = "Добавить коллекцию";
-"new_collection_module_edit_title" = "Редактировать коллекцию";
+"new_collection_module_title" = "Добавление коллекции";
+"new_collection_module_edit_title" = "Редактирование коллекции";
 "new_collection_module_choose_icon" = "Выберите иконку";
 "new_collection_module_button_title" = "Добавить";
 "new_collection_module_button_edit_title" = "Редактировать";

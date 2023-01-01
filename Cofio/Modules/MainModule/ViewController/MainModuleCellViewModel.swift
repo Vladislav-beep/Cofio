@@ -11,6 +11,7 @@ enum MainModuleCellsDataModel: Hashable {
     case title(TitleCellDataModel)
     case subtitle(SubtitleCellDataModel)
     case collection(MainModuleCellViewModel)
+    case empty(MainModuleEmptyCellViewModel)
 }
 
 struct TitleCellDataModel: Hashable {
@@ -25,4 +26,8 @@ struct MainModuleCellViewModel: Hashable {
     let title: String
     let subtitle: String
     let image: String
+}
+
+struct MainModuleEmptyCellViewModel: Hashable {
+    let title: String
 }

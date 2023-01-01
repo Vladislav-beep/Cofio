@@ -55,7 +55,7 @@ extension MainPresenter: MainViewOutput {
     
     func viewDidTapRow(_ type: MainModuleCellsDataModel) {
         switch type {
-        case .title, .subtitle:
+        case .title, .subtitle, .empty:
             break
     
         case .collection(let model):

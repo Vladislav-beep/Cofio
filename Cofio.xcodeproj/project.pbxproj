@@ -72,6 +72,7 @@
 		B9AAEC22295F1A8A00BA6078 /* CollectionsDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AAEC21295F1A8A00BA6078 /* CollectionsDataFactory.swift */; };
 		B9AAEC25295F628800BA6078 /* ThemesDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AAEC24295F628800BA6078 /* ThemesDataFactory.swift */; };
 		B9AAEC2A296048C100BA6078 /* CardsDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AAEC29296048C100BA6078 /* CardsDataFactory.swift */; };
+		B9AAEC2C2961C61800BA6078 /* MainModuleEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AAEC2B2961C61700BA6078 /* MainModuleEmptyCell.swift */; };
 		B9ACB79A2954383B00F2B476 /* ChooseIconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ACB7992954383B00F2B476 /* ChooseIconViewController.swift */; };
 		B9ACB79C2954391000F2B476 /* ChooseIconViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ACB79B2954391000F2B476 /* ChooseIconViewProtocol.swift */; };
 		B9ACB79F2954399C00F2B476 /* ChooseIconPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ACB79E2954399C00F2B476 /* ChooseIconPresenter.swift */; };
@@ -222,6 +223,7 @@
 		B9AAEC21295F1A8A00BA6078 /* CollectionsDataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsDataFactory.swift; sourceTree = "<group>"; };
 		B9AAEC24295F628800BA6078 /* ThemesDataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesDataFactory.swift; sourceTree = "<group>"; };
 		B9AAEC29296048C100BA6078 /* CardsDataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsDataFactory.swift; sourceTree = "<group>"; };
+		B9AAEC2B2961C61700BA6078 /* MainModuleEmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleEmptyCell.swift; sourceTree = "<group>"; };
 		B9ACB7992954383B00F2B476 /* ChooseIconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIconViewController.swift; sourceTree = "<group>"; };
 		B9ACB79B2954391000F2B476 /* ChooseIconViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIconViewProtocol.swift; sourceTree = "<group>"; };
 		B9ACB79E2954399C00F2B476 /* ChooseIconPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIconPresenter.swift; sourceTree = "<group>"; };
@@ -734,6 +736,7 @@
 			isa = PBXGroup;
 			children = (
 				B9CC138C2889D7900013ED76 /* MainModuleCell.swift */,
+				B9AAEC2B2961C61700BA6078 /* MainModuleEmptyCell.swift */,
 				B910AB51294DC23600D9E7EA /* MainModuleTitleCell.swift */,
 				B910AB53294DC33500D9E7EA /* MainModuleSubtitleCell.swift */,
 			);
@@ -1214,6 +1217,7 @@
 				B9ACB7B6295A39B800F2B476 /* CardDetailsDataSource.swift in Sources */,
 				B9CC140F2895C1E50013ED76 /* ThemesTableViewDataSource.swift in Sources */,
 				B93EF8B628968B150057C774 /* CardCellDataModel.swift in Sources */,
+				B9AAEC2C2961C61800BA6078 /* MainModuleEmptyCell.swift in Sources */,
 				B9CC13F32894506E0013ED76 /* MainTableViewDataSource.swift in Sources */,
 				B9AAEC22295F1A8A00BA6078 /* CollectionsDataFactory.swift in Sources */,
 				B9CC135D288738980013ED76 /* SceneDelegate.swift in Sources */,

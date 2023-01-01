@@ -8,6 +8,7 @@
 
 // MARK: Common
 "close_button_title" = "Close";
+"delete_button_title" = "Delete";
 
 // MARK: Tab bar
 "main_tab" = "Сollections";
@@ -15,6 +16,7 @@
 // MARK: Main module
 "main_module_title" = "Flash cards";
 "main_module_subtitle" = "Cards for memorizing any information, preparing for exams, learning foreign words";
+"main_module_empty_cell_title" = "You have not added any topics yet.\n To add a topic, press the plus at the bottom of the screen.";
 
 // MARK: New collection
 "new_collection_module_title" = "Add collection";
