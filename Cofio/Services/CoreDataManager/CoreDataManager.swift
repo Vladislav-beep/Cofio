@@ -14,16 +14,18 @@ protocol CoreDataManagerProtocol {
     
     func createCollection(name: String, icon: String)
     func fetchCollections() -> [Collection]
+    func deleteCollection(collectionName: String)
+    func updateCollection(withName: String, newName: String, icon: String)
     
     func createTheme(name: String, repeats: Int, repeatDate: Date, isRepeatComplete: Bool, collectionName: String)
     func fetchThemes(collectionName: String) -> [Theme]
+    func deleteTheme(collectionName: String, themeName: String)
+    func updateTheme(collectionName: String, themeName: String, newName: String)
     
     func createCard(cardDefinition: String, cardDescription: String, themeName: String)
     func fetchCards(themeName: String) -> [Card]
     
-    func deleteCollection(collectionName: String)
     
-    func updateCollection(withName: String, newName: String, icon: String)
 }
 
 class CoreDataManager: CoreDataManagerProtocol {
@@ -158,6 +160,24 @@ class CoreDataManager: CoreDataManagerProtocol {
         save()
     }
     
+    func deleteTheme(collectionName: String, themeName: String) {
+        let collectionPredicate = NSPredicate(format: "collection.name == %@", collectionName)
+        let namePredicate = NSPredicate(format: "name == %@", themeName)
+        let andPredicate = NSCompoundPredicate(type: .and, subpredicates: [collectionPredicate, namePredicate])
+        
+        let request: NSFetchRequest<Theme> = Theme.fetchRequest()
+        request.predicate = andPredicate
+        
+        do {
+            let theme = try persistentContainer.viewContext.fetch(request).first!
+            persistentContainer.viewContext.delete(theme)
+        } catch let error {
+            print("Error deleting collection \(error)")
+        }
+        
+        save()
+    }
+    
     // MARK: Update
     
     func updateCollection(withName: String, newName: String, icon: String) {
@@ -171,5 +191,23 @@ class CoreDataManager: CoreDataManagerProtocol {
         } catch let error {
             print("Error deleting collection \(error)")
         }
+    }
+    
+    func updateTheme(collectionName: String, themeName: String, newName: String) {
+        let collectionPredicate = NSPredicate(format: "collection.name == %@", collectionName)
+        let namePredicate = NSPredicate(format: "name == %@", themeName)
+        let andPredicate = NSCompoundPredicate(type: .and, subpredicates: [collectionPredicate, namePredicate])
+        
+        let request: NSFetchRequest<Theme> = Theme.fetchRequest()
+        request.predicate = andPredicate
+        
+        do {
+            let theme = try persistentContainer.viewContext.fetch(request).first!
+            theme.name = newName
+        } catch let error {
+            print("Error deleting collection \(error)")
+        }
+        
+        save()
     }
 }

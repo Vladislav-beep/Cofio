@@ -9,10 +9,11 @@ import UIKit
 
 extension UIViewController {
     
-    func showTwoButtonAlert(title: String,
+    func showTwoButtonAndTextFieldAlert(title: String,
                             message: String,
                             actionTitle: String,
-                            textFieldPlaceholder: String,
+                            textFieldPlaceholder: String?,
+                            textFieldText: String?,
                             completion: @escaping (String) -> Void) {
         let alert = UIAlertController(
             title: title,
@@ -21,6 +22,7 @@ extension UIViewController {
         )
         alert.addTextField { textField in
             textField.placeholder = textFieldPlaceholder
+            textField.text = textFieldText
         }
         let addAction = UIAlertAction(
             title: actionTitle,

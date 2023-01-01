@@ -64,6 +64,14 @@ extension ThemesPresenter: ThemesViewOutput {
     func refreshView() {
         updateView()
     }
+    
+    func deleteTheme(themeName: String) {
+        interactor.deleteTheme(themeName: themeName)
+    }
+    
+    func editTheme(currentName: String, newName: String) {
+        interactor.editTheme(themeName: currentName, newName: newName)
+    }
 }
 
 

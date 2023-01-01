@@ -44,4 +44,12 @@ extension ThemesInteractor: ThemesInteractorInput {
     func getCardsCount(themeName: String) -> Int {
         coreDataManager.fetchCards(themeName: themeName).count
     }
+    
+    func deleteTheme(themeName: String) {
+        coreDataManager.deleteTheme(collectionName: collectionName, themeName: themeName)
+    }
+    
+    func editTheme(themeName: String, newName: String) {
+        coreDataManager.updateTheme(collectionName: collectionName, themeName: themeName, newName: newName)
+    }
 }

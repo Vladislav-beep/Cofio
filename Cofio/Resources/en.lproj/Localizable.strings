@@ -28,9 +28,12 @@
 // MARK: Themes
 "theme_module_header" = "Themes";
 "theme_module_alert_title" = "Theme addition";
+"theme_module_alert_edit_title" = "Theme editing";
 "theme_module_alert_subtitle" = "Type the name of the topic you want to add";
+"theme_module_alert_edit_subtitle" = "Edit theme title";
 "theme_module_alert_textField_placeholder" = "Topic name";
 "theme_module_alert_add_button" = "Add";
+"theme_module_alert_edit_button" = "Edit";
 "theme_module_alert_cancel_button" = "Cancel";
 "theme_module_empty_cell_title" = "You have not added any themes yet.\n To add a topic, press the plus at the top of the screen.";
 

@@ -11,6 +11,9 @@ protocol ThemesInteractorInput: AnyObject {
     func createTheme(themeName: String)
     func getCollectionName() -> String
     func getCardsCount(themeName: String) -> Int
+    
+    func deleteTheme(themeName: String)
+    func editTheme(themeName: String, newName: String)
 }
 
 protocol ThemesInteractorOutput: AnyObject {}
