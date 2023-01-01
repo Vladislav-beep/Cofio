@@ -19,6 +19,7 @@ final class ThemesViewController: UIViewController {
         tableView.register(StatisticsCell.self)
         tableView.register(ThemesCell.self)
         tableView.register(HeaderCell.self)
+        tableView.register(ThemeEmptyCell.self)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
         tableView.delegate = self
@@ -117,13 +118,13 @@ extension ThemesViewController: UITableViewDelegate {
         let item = snapshot.itemIdentifiers[indexPath.row]
         
         switch item {
-        case .statics(_):
+        case .statics:
             return 140
             
-        case .header(_):
+        case .header:
             return 50
 
-        case .card(_):
+        case .card, .empty:
             return UITableView.automaticDimension
         }
     }
@@ -133,7 +134,7 @@ extension ThemesViewController: UITableViewDelegate {
         guard let item = tableViewDataSource.itemIdentifier(for: indexPath) else { return }
         
         switch item {
-        case .statics, .header:
+        case .statics, .header, .empty:
             break
             
         case .card(let cardsCellDataModel):

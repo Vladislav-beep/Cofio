@@ -16,7 +16,7 @@
 // MARK: Main module
 "main_module_title" = "Флэш-карточки";
 "main_module_subtitle" = "Карточки для запоминания любой информации, подготовки к экзаменам, изучения иностранных слов";
-"main_module_empty_cell_title" = "Вы пока не добавили ни одной темы.\n Чтобы добавить тему нажите плюс внизу экрана.";
+"main_module_empty_cell_title" = "Вы пока не добавили ни одной коллекции.\n Чтобы добавить коллекцию нажите плюс внизу экрана.";
 
 // MARK: New collection
 "new_collection_module_title" = "Добавление коллекции";
@@ -32,9 +32,11 @@
 "theme_module_alert_textField_placeholder" = "Название темы";
 "theme_module_alert_add_button" = "Добавить";
 "theme_module_alert_cancel_button" = "Отмена";
+"theme_module_empty_cell_title" = "Вы пока не добавили ни одной темы.\n Чтобы добавить тему нажите плюс вверху экрана.";
 
 // MARK: Cards
 "cards_module_title" = "Карточки";
+"cards_module_empty_cell_title" = "Вы пока не добавили ни одной карточки.\n Чтобы добавить карточку нажите плюс вверху экрана.";
 
 // MARK: New Card
 "new_card_module_add_button_title" = "Добавить карточку";

@@ -1,5 +1,5 @@
 //
-//  MainModuleEmptyCell.swift
+//  ThemeEmptyCell.swift
 //  Cofio
 //
 //  Created by Владислав Сизонов on 01.01.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MainModuleEmptyCell: UITableViewCell {
+final class ThemeEmptyCell: UITableViewCell {
     
     // MARK: Public data structures
     

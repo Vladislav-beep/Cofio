@@ -7,12 +7,12 @@
 
 protocol CardsViewInput: AnyObject {
     
-    func updateData(with data: [CardCellDataModel])
+    func updateData(with data: [CardCellsDataModel])
 }
 
 protocol CardsViewOutput: AnyObject {
     
     func viewDidLoad()
-    func viewDidTapRow(_ item: CardCellDataModel)
+    func viewDidTapRow(_ item: CardCellsDataModel)
     func addCard()
 }

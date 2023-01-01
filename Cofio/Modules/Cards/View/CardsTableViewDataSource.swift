@@ -8,20 +8,30 @@
 import UIKit
 
 protocol CardsTableViewDataSourceProtocol {
-    func makeDataSource(for tableview: UITableView) -> UITableViewDiffableDataSource<Int, CardCellDataModel>
+    func makeDataSource(for tableview: UITableView) -> UITableViewDiffableDataSource<Int, CardCellsDataModel>
 }
 
 final class CardsTableViewDataSource: CardsTableViewDataSourceProtocol {
     
     // MARK: Public
     
-    func makeDataSource(for tableview: UITableView) -> UITableViewDiffableDataSource<Int, CardCellDataModel> {
-        let tableViewDataSource = UITableViewDiffableDataSource<Int, CardCellDataModel>(tableView: tableview) { tableView, indexPath, card in
-            let cell = tableView.reuse(CardsCell.self, indexPath)
-            let displayData = CardsCell.DisplayData(definition: card.definition,
-                                                    description: card.description)
-            cell.configure(with: displayData)
-            return cell
+    func makeDataSource(for tableview: UITableView) -> UITableViewDiffableDataSource<Int, CardCellsDataModel> {
+        let tableViewDataSource = UITableViewDiffableDataSource<Int, CardCellsDataModel>(tableView: tableview) { tableView, indexPath, cellType in
+            
+            switch cellType {
+            case .card(let model):
+                let cell = tableView.reuse(CardsCell.self, indexPath)
+                let displayData = CardsCell.DisplayData(definition: model.definition,
+                                                        description: model.description)
+                cell.configure(with: displayData)
+                return cell
+                
+            case .empty(let model):
+                let cell = tableView.reuse(CardsEmptyCell.self, indexPath)
+                let displayData = CardsEmptyCell.DisplayData(title: model.title)
+                cell.configure(with: displayData)
+                return cell
+            }
         }
 
         return tableViewDataSource

@@ -22,6 +22,13 @@ final class ThemesDataFactory: ThemesDataFactoryProtocol {
             .header(.init(title: "theme_module_header"~))
         ]
         let keys = themesDict.keys.sorted { $0.name ?? "" > $1.name ?? "" }
+        
+        if keys.isEmpty {
+            let emptyCell = ThemesCellsDataModel.empty(.init(title: "theme_module_empty_cell_title"~))
+            themeCellsModel.append(emptyCell)
+            return themeCellsModel
+        }
+        
         for theme in keys {
             let themeCell = ThemesCellsDataModel.card(
                 .init(title: theme.name ?? "",

@@ -16,7 +16,7 @@
 // MARK: Main module
 "main_module_title" = "Flash cards";
 "main_module_subtitle" = "Cards for memorizing any information, preparing for exams, learning foreign words";
-"main_module_empty_cell_title" = "You have not added any topics yet.\n To add a topic, press the plus at the bottom of the screen.";
+"main_module_empty_cell_title" = "You have not added any collections yet.\n To add collection, press plus at the bottom of the screen.";
 
 // MARK: New collection
 "new_collection_module_title" = "Add collection";
@@ -32,9 +32,11 @@
 "theme_module_alert_textField_placeholder" = "Topic name";
 "theme_module_alert_add_button" = "Add";
 "theme_module_alert_cancel_button" = "Cancel";
+"theme_module_empty_cell_title" = "You have not added any themes yet.\n To add a topic, press the plus at the top of the screen.";
 
 // MARK: Cards
 "cards_module_title" = "Cards";
+"cards_module_empty_cell_title" = "You haven't added any cards yet.\n To add card, press plus at the top of the screen.";
 
 // MARK: New Card
 "new_card_module_add_button_title" = "Add card";

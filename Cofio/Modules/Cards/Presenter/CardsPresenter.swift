@@ -42,8 +42,14 @@ final class CardsPresenter {
 
 extension CardsPresenter: CardsViewOutput {
     
-    func viewDidTapRow(_ item: CardCellDataModel) {
-        output?.moduleWantsToOpenCardDetails(self, card: item)
+    func viewDidTapRow(_ item: CardCellsDataModel) {
+        switch item {
+        case .card(let card):
+            output?.moduleWantsToOpenCardDetails(self, card: card)
+            
+        case .empty:
+            break
+        }
     }
     
     func viewDidLoad() {

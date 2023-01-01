@@ -73,6 +73,8 @@
 		B9AAEC25295F628800BA6078 /* ThemesDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AAEC24295F628800BA6078 /* ThemesDataFactory.swift */; };
 		B9AAEC2A296048C100BA6078 /* CardsDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AAEC29296048C100BA6078 /* CardsDataFactory.swift */; };
 		B9AAEC2C2961C61800BA6078 /* MainModuleEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AAEC2B2961C61700BA6078 /* MainModuleEmptyCell.swift */; };
+		B9AAEC2E2961C9AC00BA6078 /* ThemeEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AAEC2D2961C9AC00BA6078 /* ThemeEmptyCell.swift */; };
+		B9AAEC302961CC3700BA6078 /* CardsEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AAEC2F2961CC3700BA6078 /* CardsEmptyCell.swift */; };
 		B9ACB79A2954383B00F2B476 /* ChooseIconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ACB7992954383B00F2B476 /* ChooseIconViewController.swift */; };
 		B9ACB79C2954391000F2B476 /* ChooseIconViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ACB79B2954391000F2B476 /* ChooseIconViewProtocol.swift */; };
 		B9ACB79F2954399C00F2B476 /* ChooseIconPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ACB79E2954399C00F2B476 /* ChooseIconPresenter.swift */; };
@@ -224,6 +226,8 @@
 		B9AAEC24295F628800BA6078 /* ThemesDataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesDataFactory.swift; sourceTree = "<group>"; };
 		B9AAEC29296048C100BA6078 /* CardsDataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsDataFactory.swift; sourceTree = "<group>"; };
 		B9AAEC2B2961C61700BA6078 /* MainModuleEmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleEmptyCell.swift; sourceTree = "<group>"; };
+		B9AAEC2D2961C9AC00BA6078 /* ThemeEmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeEmptyCell.swift; sourceTree = "<group>"; };
+		B9AAEC2F2961CC3700BA6078 /* CardsEmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsEmptyCell.swift; sourceTree = "<group>"; };
 		B9ACB7992954383B00F2B476 /* ChooseIconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIconViewController.swift; sourceTree = "<group>"; };
 		B9ACB79B2954391000F2B476 /* ChooseIconViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIconViewProtocol.swift; sourceTree = "<group>"; };
 		B9ACB79E2954399C00F2B476 /* ChooseIconPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIconPresenter.swift; sourceTree = "<group>"; };
@@ -944,6 +948,7 @@
 				B9CC140A2895C00C0013ED76 /* StatisticsCell.swift */,
 				B932E945289DB069007244E6 /* HeaderCell.swift */,
 				B9CC140C2895C1100013ED76 /* CollectionCell.swift */,
+				B9AAEC2D2961C9AC00BA6078 /* ThemeEmptyCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -975,6 +980,7 @@
 			isa = PBXGroup;
 			children = (
 				B9CC141D289688470013ED76 /* CardsCell.swift */,
+				B9AAEC2F2961CC3700BA6078 /* CardsEmptyCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1142,6 +1148,7 @@
 				B932E95228ABF9DC007244E6 /* RepetitionViewController.swift in Sources */,
 				B9CC13E72891D6510013ED76 /* Word.swift in Sources */,
 				B9CC13DD2891B9090013ED76 /* CollectionTextField.swift in Sources */,
+				B9AAEC302961CC3700BA6078 /* CardsEmptyCell.swift in Sources */,
 				B9ACB7A129543A0000F2B476 /* ChooseIconPresenterProtocol.swift in Sources */,
 				B94C0258294E5B3F00EF9EB6 /* CardDetailsViewProtocol.swift in Sources */,
 				B932E95E28ABFBC4007244E6 /* RepetitionModuleBuilder.swift in Sources */,
@@ -1169,6 +1176,7 @@
 				B9CC13B1288F07BF0013ED76 /* NewCollectionViewController.swift in Sources */,
 				B9CC139D288EE6E90013ED76 /* MainInteractor.swift in Sources */,
 				B9CC1414289686140013ED76 /* CardsViewController.swift in Sources */,
+				B9AAEC2E2961C9AC00BA6078 /* ThemeEmptyCell.swift in Sources */,
 				B910AB3C2945E42400D9E7EA /* SettingsViewController.swift in Sources */,
 				B93EF8BA28968D950057C774 /* CardsPresenterProtocol.swift in Sources */,
 				B9ACB79A2954383B00F2B476 /* ChooseIconViewController.swift in Sources */,

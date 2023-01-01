@@ -38,6 +38,12 @@ final class ThemesTableViewDataSource: ThemesTableViewDataSourceProtocol {
                                                          repeats: model.repeats)
                 cell.configure(with: displayData)
                 return cell
+                
+            case .empty(let model):
+                let cell = tableview.reuse(ThemeEmptyCell.self, indexPath)
+                let displayData = ThemeEmptyCell.DisplayData(title: model.title)
+                cell.configure(with: displayData)
+                return cell
             }
         }
 

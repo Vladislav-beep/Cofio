@@ -17,6 +17,7 @@ final class CardsViewController: UIViewController {
     private lazy var cardsTableView: UITableView = {
         let tableView = UITableView()
         tableView.register(CardsCell.self)
+        tableView.register(CardsEmptyCell.self)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
         tableView.delegate = self
@@ -84,8 +85,8 @@ final class CardsViewController: UIViewController {
 
 extension CardsViewController: CardsViewInput {
 
-    func updateData(with data: [CardCellDataModel]) {
-        var snapshot = NSDiffableDataSourceSnapshot<Int, CardCellDataModel>()
+    func updateData(with data: [CardCellsDataModel]) {
+        var snapshot = NSDiffableDataSourceSnapshot<Int, CardCellsDataModel>()
         snapshot.appendSections([0])
         snapshot.appendItems(data, toSection: 0)
         tableViewDataSource.apply(snapshot, animatingDifferences: true)

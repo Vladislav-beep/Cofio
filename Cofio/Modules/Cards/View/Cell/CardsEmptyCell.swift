@@ -1,5 +1,5 @@
 //
-//  MainModuleEmptyCell.swift
+//  CardsEmptyCell.swift
 //  Cofio
 //
 //  Created by Владислав Сизонов on 01.01.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MainModuleEmptyCell: UITableViewCell {
+final class CardsEmptyCell: UITableViewCell {
     
     // MARK: Public data structures
     

@@ -7,18 +7,24 @@
 
 protocol CardsDataFactoryProtocol {
     
-    func dataFromCards(cards: [Card]) -> [CardCellDataModel]
+    func dataFromCards(cards: [Card]) -> [CardCellsDataModel]
 }
 
 final class CardsDataFactory: CardsDataFactoryProtocol {
     
     // MARK: Public
     
-    func dataFromCards(cards: [Card]) -> [CardCellDataModel] {
-        var cardCellModels: [CardCellDataModel] = []
+    func dataFromCards(cards: [Card]) -> [CardCellsDataModel] {
+        var cardCellModels: [CardCellsDataModel] = []
+        
+        if cards.isEmpty {
+            let emptyCell = CardCellsDataModel.empty(.init(title: "cards_module_empty_cell_title"~))
+            cardCellModels.append(emptyCell)
+            return cardCellModels
+        }
         
         for card in cards {
-            let cardCell = CardCellDataModel(definition: card.cardDefinition ?? "", description: card.cardDescription ?? "")
+            let cardCell = CardCellsDataModel.card(.init(definition: card.cardDefinition ?? "", description: card.cardDescription ?? ""))
             cardCellModels.append(cardCell)
         }
         
