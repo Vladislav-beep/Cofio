@@ -13,14 +13,20 @@ final class NewCardModuleBuilder {
     
     private weak var output: NewCardPresenterOutput?
     private let themeName: String
+    private let cardName: String?
+    private let isEditing: Bool
     
     
     // MARK: Lifecycle
     
     init(output: NewCardPresenterOutput,
-         themeName: String) {
+         themeName: String,
+         cardName: String?,
+         isEditing: Bool) {
         self.output = output
         self.themeName = themeName
+        self.cardName = cardName
+        self.isEditing = isEditing
     }
     
     
@@ -30,8 +36,9 @@ final class NewCardModuleBuilder {
         let coreDataManager = CoreDataManager()
         
         let interactor = NewCardInteractor(coreDataManager: coreDataManager,
-                                           themeName: themeName)
-        let presenter = NewCardPresenter(interactor: interactor)
+                                           themeName: themeName,
+                                           cardName: cardName)
+        let presenter = NewCardPresenter(interactor: interactor, isEditing: isEditing)
         let viewController = NewCardViewController(output: presenter)
         
         presenter.view = viewController

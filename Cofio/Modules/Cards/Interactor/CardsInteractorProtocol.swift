@@ -9,6 +9,7 @@ protocol CardsInteractorInput: AnyObject {
     
     func getThemeName() -> String
     func getCardsFromStorage() -> [Card]
+    func deleteCard(cardName: String)
 }
 
 protocol CardsInteractorOutput: AnyObject {}

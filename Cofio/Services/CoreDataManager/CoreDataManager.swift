@@ -24,8 +24,8 @@ protocol CoreDataManagerProtocol {
     
     func createCard(cardDefinition: String, cardDescription: String, themeName: String)
     func fetchCards(themeName: String) -> [Card]
-    
-    
+    func deleteCard(themeName: String, cardName: String)
+    func updateCard(themeName: String, cardDefinition: String, newDefinition: String, newDescription: String)
 }
 
 class CoreDataManager: CoreDataManagerProtocol {
@@ -139,7 +139,7 @@ class CoreDataManager: CoreDataManagerProtocol {
         do {
             fetchedCards = try persistentContainer.viewContext.fetch(request)
         } catch let error {
-            print("Error fetching themes \(error)")
+            print("Error fetching cards \(error)")
         }
         return fetchedCards
     }
@@ -172,7 +172,25 @@ class CoreDataManager: CoreDataManagerProtocol {
             let theme = try persistentContainer.viewContext.fetch(request).first!
             persistentContainer.viewContext.delete(theme)
         } catch let error {
-            print("Error deleting collection \(error)")
+            print("Error deleting theme \(error)")
+        }
+        
+        save()
+    }
+    
+    func deleteCard(themeName: String, cardName: String) {
+        let themePredicate = NSPredicate(format: "theme.name == %@", themeName)
+        let namePredicate = NSPredicate(format: "cardDefinition == %@", cardName)
+        let andPredicate = NSCompoundPredicate(type: .and, subpredicates: [themePredicate, namePredicate])
+        
+        let request: NSFetchRequest<Card> = Card.fetchRequest()
+        request.predicate = andPredicate
+        
+        do {
+            let card = try persistentContainer.viewContext.fetch(request).first!
+            persistentContainer.viewContext.delete(card)
+        } catch let error {
+            print("Error deleting theme \(error)")
         }
         
         save()
@@ -189,7 +207,7 @@ class CoreDataManager: CoreDataManagerProtocol {
             collection.name = newName
             collection.icon = icon
         } catch let error {
-            print("Error deleting collection \(error)")
+            print("Error updating collection \(error)")
         }
     }
     
@@ -205,7 +223,26 @@ class CoreDataManager: CoreDataManagerProtocol {
             let theme = try persistentContainer.viewContext.fetch(request).first!
             theme.name = newName
         } catch let error {
-            print("Error deleting collection \(error)")
+            print("Error updating theme \(error)")
+        }
+        
+        save()
+    }
+    
+    func updateCard(themeName: String, cardDefinition: String, newDefinition: String, newDescription: String) {
+        let themePredicate = NSPredicate(format: "theme.name == %@", themeName)
+        let namePredicate = NSPredicate(format: "cardDefinition == %@", cardDefinition)
+        let andPredicate = NSCompoundPredicate(type: .and, subpredicates: [themePredicate, namePredicate])
+        
+        let request: NSFetchRequest<Card> = Card.fetchRequest()
+        request.predicate = andPredicate
+        
+        do {
+            let card = try persistentContainer.viewContext.fetch(request).first!
+            card.cardDefinition = newDefinition
+            card.cardDescription = newDescription
+        } catch let error {
+            print("Error updating theme \(error)")
         }
         
         save()

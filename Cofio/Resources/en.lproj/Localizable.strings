@@ -43,6 +43,7 @@
 
 // MARK: New Card
 "new_card_module_add_button_title" = "Add card";
+"new_card_module_edit_button_title" = "Edit";
 "new_card_module_add_definition_textView_placeholder" = "Definition or word";
 "new_card_module_add_description_textView_placeholder" = "Description or translation";
 

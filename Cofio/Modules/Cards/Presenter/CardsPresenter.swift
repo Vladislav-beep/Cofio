@@ -60,7 +60,20 @@ extension CardsPresenter: CardsViewOutput {
     
     func addCard() {
         let themeName = interactor.getThemeName()
-        output?.moduleWantsToOpenNewCard(self, themeName: themeName)
+        output?.moduleWantsToOpenNewCard(self, themeName: themeName, cardName: nil, isEditing: false)
+    }
+    
+    func refreshView() {
+        updateView()
+    }
+    
+    func deleteCard(cardName: String) {
+        interactor.deleteCard(cardName: cardName)
+    }
+    
+    func editCard(card: CardCellDataModel) {
+        let themeName = interactor.getThemeName()
+        output?.moduleWantsToOpenNewCard(self, themeName: themeName, cardName: card.definition, isEditing: true)
     }
 }
 

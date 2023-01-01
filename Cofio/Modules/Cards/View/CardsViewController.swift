@@ -78,6 +78,51 @@ final class CardsViewController: UIViewController {
     @objc func addCard() {
         output.addCard()
     }
+    
+    // MARK: Private
+    
+    private func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .destructive,
+                                        title: "delete_button_title"~) {
+            [weak self] (action, view, complition) in
+            guard let self = self else { return }
+            
+            guard let item = self.tableViewDataSource.itemIdentifier(for: indexPath) else { return }
+            switch item {
+            case .card(let model):
+                self.output.deleteCard(cardName: model.definition)
+                self.output.refreshView()
+                
+            case .empty:
+                break
+            }
+            
+            complition(true)
+        }
+        action.image = UIImage(systemName: "trash")
+        return action
+    }
+    
+    private func editAction(at indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .normal,
+                                        title: "new_collection_module_button_edit_title"~) {
+            [weak self] (action, view, complition) in
+            guard let self = self else { return }
+            
+            guard let item = self.tableViewDataSource.itemIdentifier(for: indexPath) else { return }
+            switch item {
+            case .card(let model):
+                self.output.editCard(card: model)
+                
+            case .empty:
+                break
+            }
+            
+            complition(true)
+        }
+        action.image = UIImage(systemName: "slider.horizontal.3")
+        return action
+    }
 }
 
 
@@ -103,5 +148,11 @@ extension CardsViewController: UITableViewDelegate {
         guard let item = tableViewDataSource.itemIdentifier(for: indexPath) else { return }
         
         output.viewDidTapRow(item)
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = deleteAction(at: indexPath)
+        let edit = editAction(at: indexPath)
+        return UISwipeActionsConfiguration(actions: [delete, edit])
     }
 }

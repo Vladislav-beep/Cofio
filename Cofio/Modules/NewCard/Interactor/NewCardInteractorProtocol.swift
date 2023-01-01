@@ -8,6 +8,8 @@
 protocol NewCardInteractorInput: AnyObject {
     
     func createCard(definition: String, description: String)
+    func getCard() -> Card
+    func updateCard(cardDefinition: String, newDefinition: String, newDescription: String)
 }
 
 protocol NewCardInteractorOutput: AnyObject {}

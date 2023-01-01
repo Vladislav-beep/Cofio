@@ -75,8 +75,8 @@ final class MainFlowCoordinator {
         parentViewController.present(cardDetailsViewController, animated: true)
     }
     
-    private func showNewCardModule(themeName: String) {
-        let builder = NewCardModuleBuilder(output: self, themeName: themeName)
+    private func showNewCardModule(themeName: String, cardName: String?, isEditing: Bool) {
+        let builder = NewCardModuleBuilder(output: self, themeName: themeName, cardName: cardName, isEditing: isEditing)
         let newCardViewController = builder.build()
         newCardViewController.modalPresentationStyle = .fullScreen
         parentViewController.present(newCardViewController, animated: true)
@@ -177,8 +177,8 @@ extension MainFlowCoordinator: CardsPresenterOutput {
         showCardDetailsModule(card: card)
     }
     
-    func moduleWantsToOpenNewCard(_ module: CardsPresenterInput, themeName: String) {
-        showNewCardModule(themeName: themeName)
+    func moduleWantsToOpenNewCard(_ module: CardsPresenterInput, themeName: String, cardName: String?, isEditing: Bool) {
+        showNewCardModule(themeName: themeName, cardName: cardName, isEditing: isEditing)
     }
 }
 

@@ -15,4 +15,7 @@ protocol CardsViewOutput: AnyObject {
     func viewDidLoad()
     func viewDidTapRow(_ item: CardCellsDataModel)
     func addCard()
+    func refreshView()
+    func deleteCard(cardName: String)
+    func editCard(card: CardCellDataModel)
 }

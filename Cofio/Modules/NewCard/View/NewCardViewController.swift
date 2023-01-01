@@ -19,8 +19,16 @@ final class NewCardViewController: UIViewController {
         return closeButton
     }()
     
-    private let definitionTextView: WordTextView = {
-        let wordTextView = WordTextView()
+    private let definitionTextView: UITextView = {
+        let wordTextView = UITextView()
+        wordTextView.textColor = .black
+        wordTextView.layer.cornerRadius = 20
+        wordTextView.backgroundColor = .base
+        wordTextView.font = UIFont.systemFont(ofSize: 22)
+        wordTextView.layer.borderWidth = 2
+        wordTextView.layer.borderColor = UIColor.darkViolet.cgColor
+        wordTextView.textContainerInset = UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
+        wordTextView.translatesAutoresizingMaskIntoConstraints = false
         return wordTextView
     }()
     
@@ -39,10 +47,14 @@ final class NewCardViewController: UIViewController {
         return stackView
     }()
     
-    private let doneButton: DoneButton = {
-        let doneButton = DoneButton(title: "new_card_module_add_button_title"~)
-        doneButton.addTarget(self, action: #selector(addNewCard), for: .touchUpInside)
-        return doneButton
+    private let doneButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("new_card_module_add_button_title"~, for: .normal)
+        button.backgroundColor = .darkViolet
+        button.layer.cornerRadius = 15
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(addNewCard), for: .touchUpInside)
+        return button
     }()
     
     
@@ -62,6 +74,7 @@ final class NewCardViewController: UIViewController {
         super.viewDidLoad()
         
         setupViews()
+        output.viewDidLoad()
     }
     
     
@@ -113,14 +126,27 @@ final class NewCardViewController: UIViewController {
         let definition = definitionTextView.text ?? ""
         let description = descriptionTextView.text ?? ""
         
-        output.addNewCard(definition: definition, description: description)
+        output.didTapButton(definition: definition, description: description)
     }
 }
 
 
 // MARK: - WordViewInput
 
-extension NewCardViewController: NewCardViewInput {}
+extension NewCardViewController: NewCardViewInput {
+    
+    func updateData(definition: String, description: String) {
+        definitionTextView.text = definition
+        descriptionTextView.text = description
+        
+        definitionTextView.textColor = .black
+        descriptionTextView.textColor = .black
+    }
+    
+    func updateButtonTitle(title: String) {
+        doneButton.setTitle(title, for: .normal)
+    }
+}
 
 extension NewCardViewController: UITextViewDelegate {
     

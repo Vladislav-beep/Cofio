@@ -33,4 +33,8 @@ extension CardsInteractor: CardsInteractorInput {
     func getCardsFromStorage() -> [Card] {
         coreDataManager.fetchCards(themeName: themeName)
     }
+    
+    func deleteCard(cardName: String) {
+        coreDataManager.deleteCard(themeName: themeName, cardName: cardName)
+    }
 }
