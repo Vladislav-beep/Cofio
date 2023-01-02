@@ -155,7 +155,8 @@ class CoreDataManager: CoreDataManagerProtocol {
         request.predicate = NSPredicate(format: "name == %@", collectionName)
         
         do {
-            let collection = try persistentContainer.viewContext.fetch(request).first!
+            guard let collection = try persistentContainer.viewContext.fetch(request).first
+            else { return }
             persistentContainer.viewContext.delete(collection)
         } catch let error {
             print("Error deleting collection \(error)")
@@ -173,7 +174,8 @@ class CoreDataManager: CoreDataManagerProtocol {
         request.predicate = andPredicate
         
         do {
-            let theme = try persistentContainer.viewContext.fetch(request).first!
+            guard let theme = try persistentContainer.viewContext.fetch(request).first
+            else { return }
             persistentContainer.viewContext.delete(theme)
         } catch let error {
             print("Error deleting theme \(error)")
@@ -191,7 +193,8 @@ class CoreDataManager: CoreDataManagerProtocol {
         request.predicate = andPredicate
         
         do {
-            let card = try persistentContainer.viewContext.fetch(request).first!
+            guard let card = try persistentContainer.viewContext.fetch(request).first
+            else { return }
             persistentContainer.viewContext.delete(card)
         } catch let error {
             print("Error deleting card \(error)")
@@ -207,7 +210,8 @@ class CoreDataManager: CoreDataManagerProtocol {
         request.predicate = NSPredicate(format: "name == %@", withName)
         
         do {
-            let collection = try persistentContainer.viewContext.fetch(request).first!
+            guard let collection = try persistentContainer.viewContext.fetch(request).first
+            else { return }
             collection.name = newName
             collection.icon = icon
         } catch let error {
@@ -226,7 +230,8 @@ class CoreDataManager: CoreDataManagerProtocol {
         request.predicate = andPredicate
         
         do {
-            let theme = try persistentContainer.viewContext.fetch(request).first!
+            guard let theme = try persistentContainer.viewContext.fetch(request).first
+            else { return }
             theme.name = newName
         } catch let error {
             print("Error updating theme \(error)")
@@ -244,7 +249,8 @@ class CoreDataManager: CoreDataManagerProtocol {
         request.predicate = andPredicate
         
         do {
-            let card = try persistentContainer.viewContext.fetch(request).first!
+            guard let card = try persistentContainer.viewContext.fetch(request).first
+            else { return }
             card.cardDefinition = newDefinition
             card.cardDescription = newDescription
         } catch let error {
