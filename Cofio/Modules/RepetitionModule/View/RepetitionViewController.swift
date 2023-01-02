@@ -39,13 +39,18 @@ final class RepetitionViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        output.viewWillAppear()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
         setupNavigationBar()
         
-        output.viewDidLoad()
     }
     
     // MARK: Private

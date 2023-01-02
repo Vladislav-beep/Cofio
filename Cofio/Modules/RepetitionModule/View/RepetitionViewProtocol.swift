@@ -12,5 +12,5 @@ protocol RepetitionViewInput: AnyObject {
 
 protocol RepetitionViewOutput: AnyObject {
     
-    func viewDidLoad()
+    func viewWillAppear()
 }

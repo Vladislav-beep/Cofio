@@ -33,7 +33,7 @@ final class RepetitionPresenter {
 
 extension RepetitionPresenter: RepetitionViewOutput {
     
-    func viewDidLoad() {
+    func viewWillAppear() {
         let themes = interactor.fetchAllThemesForRepetition()
         var data = repetitionDataFactory.dataFromThemes(themes: themes)
         data.sort { $0.date < $1.date }
