@@ -7,16 +7,16 @@
 
 final class CardsInteractor {
     
-    private let coreDataManager: CoreDataManagerProtocol
+    private let storageService: StorageServiceProtocol
     private let themeName: String
     
     // MARK: Properties
     
     weak var output: CardsInteractorOutput?
     
-    init(coreDataManager: CoreDataManagerProtocol,
+    init(storageService: StorageServiceProtocol,
          themeName: String) {
-        self.coreDataManager = coreDataManager
+        self.storageService = storageService
         self.themeName = themeName
     }
 }
@@ -31,10 +31,10 @@ extension CardsInteractor: CardsInteractorInput {
     }
     
     func getCardsFromStorage() -> [Card] {
-        coreDataManager.fetchCards(themeName: themeName)
+        storageService.fetchCards(themeName: themeName)
     }
     
     func deleteCard(cardName: String) {
-        coreDataManager.deleteCard(themeName: themeName, cardName: cardName)
+        storageService.deleteCard(themeName: themeName, cardName: cardName)
     }
 }

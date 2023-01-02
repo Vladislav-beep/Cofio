@@ -29,7 +29,7 @@ final class MainPresenter {
     
     private func updateView() {
         var collectionsDict: [Collection: Int] = [:]
-        for collection in interactor.getCollectionsFromStorage() {
+        for collection in interactor.fetchCollections() {
             collectionsDict[collection] = interactor.getThemesCountForCollection(collectionName: collection.name ?? "")
         }
         let data = collectionsDataFactory.dataFromCollections(collectionsDict: collectionsDict)

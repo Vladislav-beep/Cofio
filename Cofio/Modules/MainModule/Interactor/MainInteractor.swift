@@ -9,7 +9,7 @@ final class MainInteractor {
     
     // MARK: Private properties
     
-    private let coreDataManager: CoreDataManagerProtocol
+    private let storageService: StorageServiceProtocol
     
     // MARK: Properties
     
@@ -17,8 +17,8 @@ final class MainInteractor {
     
     // MARK: Lifecycle
     
-    init(coreDataManager: CoreDataManagerProtocol) {
-        self.coreDataManager = coreDataManager
+    init(storageService: StorageServiceProtocol) {
+        self.storageService = storageService
     }
 }
 
@@ -28,14 +28,14 @@ final class MainInteractor {
 extension MainInteractor: MainInteractorInput {
     
     func deleteCollection(collectionName: String) {
-        coreDataManager.deleteCollection(collectionName: collectionName)
+        storageService.deleteCollection(collectionName: collectionName)
     }
     
-    func getCollectionsFromStorage() -> [Collection] {
-        coreDataManager.fetchCollections()
+    func fetchCollections() -> [Collection] {
+        storageService.fetchCollections()
     }
     
     func getThemesCountForCollection(collectionName: String) -> Int {
-        coreDataManager.fetchThemes(collectionName: collectionName).count
+        storageService.getThemesCountForCollection(collectionName: collectionName)
     }
 }

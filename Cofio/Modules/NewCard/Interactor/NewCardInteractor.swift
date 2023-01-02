@@ -7,7 +7,7 @@
 
 final class NewCardInteractor {
     
-    private let coreDataManager: CoreDataManagerProtocol
+    private let storageService: StorageServiceProtocol
     private let themeName: String
     private let cardName: String?
     
@@ -15,10 +15,10 @@ final class NewCardInteractor {
     
     weak var output: NewCardInteractorOutput?
     
-    init(coreDataManager: CoreDataManagerProtocol,
+    init(storageService: StorageServiceProtocol,
          themeName: String,
          cardName: String?) {
-        self.coreDataManager = coreDataManager
+        self.storageService = storageService
         self.themeName = themeName
         self.cardName = cardName
     }
@@ -30,15 +30,14 @@ final class NewCardInteractor {
 extension NewCardInteractor: NewCardInteractorInput {
     
     func createCard(definition: String, description: String) {
-        coreDataManager.createCard(cardDefinition: definition, cardDescription: description, themeName: themeName)
-        coreDataManager.save()
+        storageService.createCard(themeName: themeName, definition: definition, description: description)
     }
     
     func getCard() -> Card {
-        coreDataManager.fetchCards(themeName: themeName).first(where: { $0.cardDefinition == cardName })!
+        storageService.fetchCard(themeName: themeName, cardName: cardName)
     }
     
     func updateCard(cardDefinition: String, newDefinition: String, newDescription: String) {
-        coreDataManager.updateCard(themeName: themeName, cardDefinition: cardDefinition, newDefinition: newDefinition, newDescription: newDescription)
+        storageService.updateCard(themeName: themeName, cardDefinition: cardDefinition, newDefinition: newDefinition, newDescription: newDescription)
     }
 }

@@ -75,6 +75,7 @@
 		B9AAEC2C2961C61800BA6078 /* MainModuleEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AAEC2B2961C61700BA6078 /* MainModuleEmptyCell.swift */; };
 		B9AAEC2E2961C9AC00BA6078 /* ThemeEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AAEC2D2961C9AC00BA6078 /* ThemeEmptyCell.swift */; };
 		B9AAEC302961CC3700BA6078 /* CardsEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AAEC2F2961CC3700BA6078 /* CardsEmptyCell.swift */; };
+		B9AAEC322962E7DB00BA6078 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AAEC312962E7DB00BA6078 /* StorageService.swift */; };
 		B9ACB79A2954383B00F2B476 /* ChooseIconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ACB7992954383B00F2B476 /* ChooseIconViewController.swift */; };
 		B9ACB79C2954391000F2B476 /* ChooseIconViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ACB79B2954391000F2B476 /* ChooseIconViewProtocol.swift */; };
 		B9ACB79F2954399C00F2B476 /* ChooseIconPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ACB79E2954399C00F2B476 /* ChooseIconPresenter.swift */; };
@@ -228,6 +229,7 @@
 		B9AAEC2B2961C61700BA6078 /* MainModuleEmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleEmptyCell.swift; sourceTree = "<group>"; };
 		B9AAEC2D2961C9AC00BA6078 /* ThemeEmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeEmptyCell.swift; sourceTree = "<group>"; };
 		B9AAEC2F2961CC3700BA6078 /* CardsEmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsEmptyCell.swift; sourceTree = "<group>"; };
+		B9AAEC312962E7DB00BA6078 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		B9ACB7992954383B00F2B476 /* ChooseIconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIconViewController.swift; sourceTree = "<group>"; };
 		B9ACB79B2954391000F2B476 /* ChooseIconViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIconViewProtocol.swift; sourceTree = "<group>"; };
 		B9ACB79E2954399C00F2B476 /* ChooseIconPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIconPresenter.swift; sourceTree = "<group>"; };
@@ -938,6 +940,7 @@
 			children = (
 				B9ACB7BC295E0B5900F2B476 /* CoreDataManager */,
 				B9CC13EC2893094D0013ED76 /* ImageProvider.swift */,
+				B9AAEC312962E7DB00BA6078 /* StorageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1215,6 +1218,7 @@
 				B9464ACB295E197200D7A5E1 /* Theme+CoreDataClass.swift in Sources */,
 				B93EF8C228968F310057C774 /* CardsModuleBuilder.swift in Sources */,
 				B9CC13F728952B630013ED76 /* DymmyData.swift in Sources */,
+				B9AAEC322962E7DB00BA6078 /* StorageService.swift in Sources */,
 				B9CC138D2889D7900013ED76 /* MainModuleCell.swift in Sources */,
 				B9CC13B3288F08040013ED76 /* NewCollectionPresenter.swift in Sources */,
 				B932E96128AC032B007244E6 /* RepetitionCell.swift in Sources */,

@@ -14,24 +14,26 @@ final class NewCollectionModuleBuilder {
     private weak var output: NewCollectionPresenterOutput?
     private let isEditing: Bool
     private let collectionName: String?
+    private let storageService: StorageServiceProtocol
     
     
     // MARK: Lifecycle
     
     init(output: NewCollectionPresenterOutput,
          isEditing: Bool,
-         collectionName: String?) {
+         collectionName: String?,
+         storageService: StorageServiceProtocol) {
         self.output = output
         self.isEditing = isEditing
         self.collectionName = collectionName
+        self.storageService = storageService
     }
     
     
     // MARK: Public
     
     func build() -> UIViewController {
-        let coreDataManager = CoreDataManager()
-        let interactor = NewCollectionInteractor(coreDataManager: coreDataManager,
+        let interactor = NewCollectionInteractor(storageService: storageService,
                                                  collectionName: collectionName)
         let presenter = NewCollectionPresenter(interactor: interactor, isEditing: isEditing)
         

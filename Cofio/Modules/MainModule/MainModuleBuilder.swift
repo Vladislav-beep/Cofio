@@ -12,21 +12,23 @@ final class MainModuleBuilder {
     // MARK: Private
     
     private var output: MainPresenterOutput
+    private let storageService: StorageServiceProtocol
     
     
     // MARK: Lifecycle
     
-    init(output: MainPresenterOutput) {
+    init(output: MainPresenterOutput,
+         storageService: StorageServiceProtocol) {
         self.output = output
+        self.storageService = storageService
     }
     
     
     // MARK: Public
     
     func build() -> UIViewController {
-        let coreDataManager = CoreDataManager()
         let collectionsDataFactory = CollectionsDataFactory()
-        let interactor = MainInteractor(coreDataManager: coreDataManager)
+        let interactor = MainInteractor(storageService: storageService)
         let presenter = MainPresenter(interactor: interactor,
                                       collectionsDataFactory: collectionsDataFactory)
         

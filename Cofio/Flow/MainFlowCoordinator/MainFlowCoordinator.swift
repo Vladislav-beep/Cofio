@@ -12,6 +12,7 @@ final class MainFlowCoordinator {
     // MARK: Private
     
     private let parentViewController: UINavigationController
+    private let storageService: StorageServiceProtocol
     private var mainModuleViewController: UIViewController?
     private var newCollectionViewControllerr: UIViewController?
     private weak var mainModule: MainPresenterInput?
@@ -21,15 +22,17 @@ final class MainFlowCoordinator {
     
     // MARK: Lifecycle
     
-    init(parentViewController: UINavigationController) {
+    init(parentViewController: UINavigationController,
+         storageService: StorageServiceProtocol) {
         self.parentViewController = parentViewController
+        self.storageService = storageService
     }
     
     
     // MARK: Private
     
     private func showMainModule() {
-        let builder = MainModuleBuilder(output: self)
+        let builder = MainModuleBuilder(output: self, storageService: storageService)
         let mainViewController = builder.build()
         
         mainModuleViewController = mainViewController
@@ -39,7 +42,8 @@ final class MainFlowCoordinator {
     private func showNewCollectionModule(isEditing: Bool, collectionName: String?) {
         let builder = NewCollectionModuleBuilder(output: self,
                                                  isEditing: isEditing,
-                                                 collectionName: collectionName)
+                                                 collectionName: collectionName,
+                                                 storageService: storageService)
         let newCollectionViewController = builder.build()
         
         newCollectionViewControllerr = newCollectionViewController
@@ -55,14 +59,18 @@ final class MainFlowCoordinator {
     }
     
     private func showThemesModule(collectionName: String) {
-        let builder = ThemesModuleBuilder(output: self, collectionName: collectionName)
+        let builder = ThemesModuleBuilder(output: self,
+                                          collectionName: collectionName,
+                                          storageService: storageService)
         let themesViewController = builder.build()
         
         parentViewController.pushViewController(themesViewController, animated: true)
     }
     
     private func showCardsModule(themeName: String) {
-        let builder = CardsModuleBuilder(output: self, themeName: themeName)
+        let builder = CardsModuleBuilder(output: self,
+                                         themeName: themeName,
+                                         storageService: storageService)
         let cardsViewController = builder.build()
         
         parentViewController.pushViewController(cardsViewController, animated: true)
@@ -76,7 +84,11 @@ final class MainFlowCoordinator {
     }
     
     private func showNewCardModule(themeName: String, cardName: String?, isEditing: Bool) {
-        let builder = NewCardModuleBuilder(output: self, themeName: themeName, cardName: cardName, isEditing: isEditing)
+        let builder = NewCardModuleBuilder(output: self,
+                                           themeName: themeName,
+                                           cardName: cardName,
+                                           isEditing: isEditing,
+                                           storageService: storageService)
         let newCardViewController = builder.build()
         newCardViewController.modalPresentationStyle = .fullScreen
         parentViewController.present(newCardViewController, animated: true)

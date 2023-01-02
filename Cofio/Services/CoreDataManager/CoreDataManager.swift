@@ -62,13 +62,15 @@ class CoreDataManager: CoreDataManagerProtocol {
         let collection = Collection(context: persistentContainer.viewContext)
         collection.name = name
         collection.icon = icon
+        
+        save()
     }
-
+    
     func createTheme(name: String,
-               repeats: Int,
-               repeatDate: Date,
-               isRepeatComplete: Bool,
-               collectionName: String) {
+                     repeats: Int,
+                     repeatDate: Date,
+                     isRepeatComplete: Bool,
+                     collectionName: String) {
         let theme = Theme(context: persistentContainer.viewContext)
         theme.name = name
         theme.repeats = Int64(repeats)
@@ -81,12 +83,13 @@ class CoreDataManager: CoreDataManagerProtocol {
         do {
             let collection = try persistentContainer.viewContext.fetch(request).first
             theme.collection = collection
-        } catch {
-            let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        } catch let error {
+            fatalError("Error creating theme \(error)")
         }
+        
+        save()
     }
-
+    
     func createCard(cardDefinition: String, cardDescription: String, themeName: String) {
         let card = Card(context: persistentContainer.viewContext)
         card.cardDefinition = cardDefinition
@@ -98,10 +101,11 @@ class CoreDataManager: CoreDataManagerProtocol {
         do {
             let theme = try persistentContainer.viewContext.fetch(request).first
             card.theme = theme
-        } catch {
-            let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        } catch let error {
+            fatalError("Error creating card \(error)")
         }
+        
+        save()
     }
     
     // MARK: Fetching
@@ -119,16 +123,16 @@ class CoreDataManager: CoreDataManagerProtocol {
     }
     
     func fetchThemes(collectionName: String) -> [Theme] {
-      let request: NSFetchRequest<Theme> = Theme.fetchRequest()
-      request.predicate = NSPredicate(format: "collection.name == %@", collectionName)
-
-      var fetchedThemes: [Theme] = []
-      do {
-          fetchedThemes = try persistentContainer.viewContext.fetch(request)
-      } catch let error {
-        print("Error fetching themes \(error)")
-      }
-      return fetchedThemes
+        let request: NSFetchRequest<Theme> = Theme.fetchRequest()
+        request.predicate = NSPredicate(format: "collection.name == %@", collectionName)
+        
+        var fetchedThemes: [Theme] = []
+        do {
+            fetchedThemes = try persistentContainer.viewContext.fetch(request)
+        } catch let error {
+            print("Error fetching themes \(error)")
+        }
+        return fetchedThemes
     }
     
     func fetchCards(themeName: String) -> [Card] {
@@ -190,7 +194,7 @@ class CoreDataManager: CoreDataManagerProtocol {
             let card = try persistentContainer.viewContext.fetch(request).first!
             persistentContainer.viewContext.delete(card)
         } catch let error {
-            print("Error deleting theme \(error)")
+            print("Error deleting card \(error)")
         }
         
         save()
@@ -209,6 +213,8 @@ class CoreDataManager: CoreDataManagerProtocol {
         } catch let error {
             print("Error updating collection \(error)")
         }
+        
+        save()
     }
     
     func updateTheme(collectionName: String, themeName: String, newName: String) {
@@ -242,7 +248,7 @@ class CoreDataManager: CoreDataManagerProtocol {
             card.cardDefinition = newDefinition
             card.cardDescription = newDescription
         } catch let error {
-            print("Error updating theme \(error)")
+            print("Error updating card \(error)")
         }
         
         save()

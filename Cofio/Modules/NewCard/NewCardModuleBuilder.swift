@@ -15,6 +15,7 @@ final class NewCardModuleBuilder {
     private let themeName: String
     private let cardName: String?
     private let isEditing: Bool
+    private let storageService: StorageServiceProtocol
     
     
     // MARK: Lifecycle
@@ -22,20 +23,20 @@ final class NewCardModuleBuilder {
     init(output: NewCardPresenterOutput,
          themeName: String,
          cardName: String?,
-         isEditing: Bool) {
+         isEditing: Bool,
+         storageService: StorageServiceProtocol) {
         self.output = output
         self.themeName = themeName
         self.cardName = cardName
         self.isEditing = isEditing
+        self.storageService = storageService
     }
     
     
     // MARK: Public
     
     func build() -> UIViewController {
-        let coreDataManager = CoreDataManager()
-        
-        let interactor = NewCardInteractor(coreDataManager: coreDataManager,
+        let interactor = NewCardInteractor(storageService: storageService,
                                            themeName: themeName,
                                            cardName: cardName)
         let presenter = NewCardPresenter(interactor: interactor, isEditing: isEditing)

@@ -9,16 +9,27 @@ import UIKit
 
 class TabbarFlowCoordinator: NSObject, FlowCoordinatorProtocol {
     
+    private let storageService = StorageService(coreDataManager: CoreDataManager())
+    
+    // MARK: Properties
+    
     var childCoordinators: [FlowCoordinatorProtocol] = []
     var parentViewController: UIViewController
     var tabBarController: UITabBarController
-
+    
+    // MARK: Lifecycle
     
     required init(parentViewController: UIViewController) {
         self.parentViewController = parentViewController
         self.tabBarController = .init()
     }
-
+    
+    deinit {
+        print("TabCoordinator deinit")
+    }
+    
+    // MARK: FlowCordinatorProtocol
+    
     func start() {
         let pages: [TabBarPage] = [.main, .repetition, .statistics, .settings]
             .sorted(by: { $0.pageOrderNumber() < $1.pageOrderNumber() })
@@ -29,7 +40,7 @@ class TabbarFlowCoordinator: NSObject, FlowCoordinatorProtocol {
         let tabBarItem0 = (tabBarController.tabBar.items?[0])! as UITabBarItem
         tabBarItem0.image = UIImage(named: "tab0")
         tabBarItem0.imageInsets = UIEdgeInsets(top: 9, left: 0, bottom: 9, right: 0)
-
+        
         let tabBarItem1 = (tabBarController.tabBar.items?[1])! as UITabBarItem
         tabBarItem1.image = UIImage(named: "tab1")
         tabBarItem1.imageInsets = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
@@ -49,9 +60,7 @@ class TabbarFlowCoordinator: NSObject, FlowCoordinatorProtocol {
         // TODO: to do
     }
     
-    deinit {
-        print("TabCoordinator deinit")
-    }
+    // MARK: Private
     
     private func prepareTabBarController(withTabControllers tabControllers: [UIViewController]) {
         tabBarController.delegate = self
@@ -60,25 +69,26 @@ class TabbarFlowCoordinator: NSObject, FlowCoordinatorProtocol {
         tabBarController.tabBar.isTranslucent = false
         tabBarController.tabBar.backgroundColor = .base
     }
-      
+    
     private func getTabController(_ page: TabBarPage) -> UINavigationController {
         let parentNavigationController = UINavigationController()
         parentNavigationController.setNavigationBarHidden(false, animated: false)
-
+        
         parentNavigationController.tabBarItem = UITabBarItem.init(title: page.pageTitleValue(),
                                                                   image: nil,
                                                                   tag: page.pageOrderNumber())
-
+        
         switch page {
         case .main:
             parentNavigationController.navigationBar.prefersLargeTitles = false
-            let flow = MainFlowCoordinator(parentViewController: parentNavigationController)
+            let flow = MainFlowCoordinator(parentViewController: parentNavigationController,
+                                           storageService: storageService)
             flow.start()
-                        
+            
         case .repetition:
             let flow = RepetitionFlowCoordinator(parentViewController: parentNavigationController)
             flow.start()
-        
+            
         case .settings:
             let statistics = StatisticsViewController()
             parentNavigationController.pushViewController(statistics, animated: true)
@@ -89,23 +99,12 @@ class TabbarFlowCoordinator: NSObject, FlowCoordinatorProtocol {
         }
         return parentNavigationController
     }
-    
-    func currentPage() -> TabBarPage? { TabBarPage.init(index: tabBarController.selectedIndex) }
-
-    func selectPage(_ page: TabBarPage) {
-        tabBarController.selectedIndex = page.pageOrderNumber()
-    }
-    
-    func setSelectedIndex(_ index: Int) {
-        guard let page = TabBarPage.init(index: index) else { return }
-        
-        tabBarController.selectedIndex = page.pageOrderNumber()
-    }
 }
 
 // MARK: - UITabBarControllerDelegate
-extension TabbarFlowCoordinator: UITabBarControllerDelegate {
 
+extension TabbarFlowCoordinator: UITabBarControllerDelegate {
+    
     func tabBarController(_ tabBarController: UITabBarController,
                           didSelect viewController: UIViewController) {
         // Some implementation

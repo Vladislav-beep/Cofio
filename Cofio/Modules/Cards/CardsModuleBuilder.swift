@@ -13,23 +13,25 @@ final class CardsModuleBuilder {
     
     private weak var output: CardsPresenterOutput?
     private let themeName: String
+    private let storageService: StorageServiceProtocol
     
     // MARK: Lifecycle
     
     init(output: CardsPresenterOutput,
-         themeName: String) {
+         themeName: String,
+         storageService: StorageServiceProtocol) {
         self.output = output
         self.themeName = themeName
+        self.storageService = storageService
     }
     
     // MARK: Public
     
     func build() -> UIViewController {
-        let coreDataManager = CoreDataManager()
         let dataSource = CardsTableViewDataSource()
         let cardsDataFactory = CardsDataFactory()
         
-        let interactor = CardsInteractor(coreDataManager: coreDataManager,
+        let interactor = CardsInteractor(storageService: storageService,
                                          themeName: themeName)
         let presenter = CardsPresenter(interactor: interactor,
                                        cardsDataFactory: cardsDataFactory)

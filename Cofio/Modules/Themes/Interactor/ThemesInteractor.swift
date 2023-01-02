@@ -9,16 +9,16 @@ import Foundation
 
 final class ThemesInteractor {
     
-    private let coreDataManager: CoreDataManagerProtocol
+    private let storageService: StorageServiceProtocol
     private let collectionName: String
     
     // MARK: Properties
     
     weak var output: ThemesInteractorOutput?
     
-    init(coreDataManager: CoreDataManagerProtocol,
+    init(storageService: StorageServiceProtocol,
          collectionName: String) {
-        self.coreDataManager = coreDataManager
+        self.storageService = storageService
         self.collectionName = collectionName
     }
 }
@@ -33,23 +33,22 @@ extension ThemesInteractor: ThemesInteractorInput {
     }
     
     func createTheme(themeName: String) {
-        coreDataManager.createTheme(name: themeName, repeats: 0, repeatDate: Date(), isRepeatComplete: false, collectionName: collectionName)
-        coreDataManager.save()
+        storageService.createTheme(collectionName: collectionName, themeName: themeName)
     }
     
     func getThemes() -> [Theme] {
-        coreDataManager.fetchThemes(collectionName: collectionName)
+        storageService.fetchThemes(collectionName: collectionName)
     }
     
     func getCardsCount(themeName: String) -> Int {
-        coreDataManager.fetchCards(themeName: themeName).count
+        storageService.getCardsCount(collectionName: collectionName, themeName: themeName)
     }
     
     func deleteTheme(themeName: String) {
-        coreDataManager.deleteTheme(collectionName: collectionName, themeName: themeName)
+        storageService.deleteTheme(collectionName: collectionName, themeName: themeName)
     }
     
     func editTheme(themeName: String, newName: String) {
-        coreDataManager.updateTheme(collectionName: collectionName, themeName: themeName, newName: newName)
+        storageService.updateTheme(collectionName: collectionName, themeName: themeName, newName: newName)
     }
 }
