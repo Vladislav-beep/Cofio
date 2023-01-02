@@ -10,6 +10,7 @@ final class RepetitionPresenter {
     // MARK: Private properties
     
     private let interactor: RepetitionInteractorInput
+    private let repetitionDataFactory: RepetitionDataFactoryProtocol
     
     
     // MARK: Public properties
@@ -20,8 +21,10 @@ final class RepetitionPresenter {
     
     // MARK: Lifecycle
     
-    init(interactor: RepetitionInteractorInput) {
+    init(interactor: RepetitionInteractorInput,
+         repetitionDataFactory: RepetitionDataFactoryProtocol) {
         self.interactor = interactor
+        self.repetitionDataFactory = repetitionDataFactory
     }
 }
 
@@ -31,7 +34,8 @@ final class RepetitionPresenter {
 extension RepetitionPresenter: RepetitionViewOutput {
     
     func viewDidLoad() {
-        var data = DymmyData.getRepetitionCellDataModel()
+        let themes = interactor.fetchAllThemesForRepetition()
+        var data = repetitionDataFactory.dataFromThemes(themes: themes)
         data.sort { $0.date < $1.date }
         view?.updateData(with: data)
     }

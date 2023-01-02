@@ -86,7 +86,8 @@ class TabbarFlowCoordinator: NSObject, FlowCoordinatorProtocol {
             flow.start()
             
         case .repetition:
-            let flow = RepetitionFlowCoordinator(parentViewController: parentNavigationController)
+            let flow = RepetitionFlowCoordinator(parentViewController: parentNavigationController,
+                                                 storageService: storageService)
             flow.start()
             
         case .settings:

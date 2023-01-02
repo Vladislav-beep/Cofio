@@ -26,6 +26,8 @@ protocol CoreDataManagerProtocol {
     func fetchCards(themeName: String) -> [Card]
     func deleteCard(themeName: String, cardName: String)
     func updateCard(themeName: String, cardDefinition: String, newDefinition: String, newDescription: String)
+    
+    func fetchAllThemesForRepetition() -> [Theme]
 }
 
 class CoreDataManager: CoreDataManagerProtocol {
@@ -168,10 +170,10 @@ class CoreDataManager: CoreDataManagerProtocol {
     func deleteTheme(collectionName: String, themeName: String) {
         let collectionPredicate = NSPredicate(format: "collection.name == %@", collectionName)
         let namePredicate = NSPredicate(format: "name == %@", themeName)
-        let andPredicate = NSCompoundPredicate(type: .and, subpredicates: [collectionPredicate, namePredicate])
+        let multiplePredicate = NSCompoundPredicate(type: .and, subpredicates: [collectionPredicate, namePredicate])
         
         let request: NSFetchRequest<Theme> = Theme.fetchRequest()
-        request.predicate = andPredicate
+        request.predicate = multiplePredicate
         
         do {
             guard let theme = try persistentContainer.viewContext.fetch(request).first
@@ -187,10 +189,10 @@ class CoreDataManager: CoreDataManagerProtocol {
     func deleteCard(themeName: String, cardName: String) {
         let themePredicate = NSPredicate(format: "theme.name == %@", themeName)
         let namePredicate = NSPredicate(format: "cardDefinition == %@", cardName)
-        let andPredicate = NSCompoundPredicate(type: .and, subpredicates: [themePredicate, namePredicate])
+        let multiplePredicate = NSCompoundPredicate(type: .and, subpredicates: [themePredicate, namePredicate])
         
         let request: NSFetchRequest<Card> = Card.fetchRequest()
-        request.predicate = andPredicate
+        request.predicate = multiplePredicate
         
         do {
             guard let card = try persistentContainer.viewContext.fetch(request).first
@@ -224,10 +226,10 @@ class CoreDataManager: CoreDataManagerProtocol {
     func updateTheme(collectionName: String, themeName: String, newName: String) {
         let collectionPredicate = NSPredicate(format: "collection.name == %@", collectionName)
         let namePredicate = NSPredicate(format: "name == %@", themeName)
-        let andPredicate = NSCompoundPredicate(type: .and, subpredicates: [collectionPredicate, namePredicate])
+        let multiplePredicate = NSCompoundPredicate(type: .and, subpredicates: [collectionPredicate, namePredicate])
         
         let request: NSFetchRequest<Theme> = Theme.fetchRequest()
-        request.predicate = andPredicate
+        request.predicate = multiplePredicate
         
         do {
             guard let theme = try persistentContainer.viewContext.fetch(request).first
@@ -243,10 +245,10 @@ class CoreDataManager: CoreDataManagerProtocol {
     func updateCard(themeName: String, cardDefinition: String, newDefinition: String, newDescription: String) {
         let themePredicate = NSPredicate(format: "theme.name == %@", themeName)
         let namePredicate = NSPredicate(format: "cardDefinition == %@", cardDefinition)
-        let andPredicate = NSCompoundPredicate(type: .and, subpredicates: [themePredicate, namePredicate])
+        let multiplePredicate = NSCompoundPredicate(type: .and, subpredicates: [themePredicate, namePredicate])
         
         let request: NSFetchRequest<Card> = Card.fetchRequest()
-        request.predicate = andPredicate
+        request.predicate = multiplePredicate
         
         do {
             guard let card = try persistentContainer.viewContext.fetch(request).first
@@ -258,5 +260,20 @@ class CoreDataManager: CoreDataManagerProtocol {
         }
         
         save()
+    }
+    
+    // MARK: Repetition
+    
+    func fetchAllThemesForRepetition() -> [Theme] {
+        let request: NSFetchRequest<Theme> = Theme.fetchRequest()
+        request.predicate = NSPredicate(format: "isRepeatComplete == %d", false)
+        
+        var fetchedThemes: [Theme] = []
+        do {
+            fetchedThemes = try persistentContainer.viewContext.fetch(request)
+        } catch let error {
+            print("Error fetching themes \(error)")
+        }
+        return fetchedThemes
     }
 }

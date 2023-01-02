@@ -7,12 +7,25 @@
 
 final class RepetitonInteractor {
     
+    // MARK: Private properties
+    
+    private let storageService: StorageServiceProtocol
+    
     // MARK: Properties
     
     weak var output: RepetitionInteractorOutput?
+    
+    init(storageService: StorageServiceProtocol) {
+        self.storageService = storageService
+    }
 }
 
 
 // MARK: - RepetitionInteractorInput
 
-extension RepetitonInteractor: RepetitionInteractorInput {}
+extension RepetitonInteractor: RepetitionInteractorInput {
+    
+    func fetchAllThemesForRepetition() -> [Theme] {
+        storageService.fetchAllThemesForRepetition()
+    }
+}

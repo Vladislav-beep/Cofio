@@ -27,6 +27,8 @@ protocol StorageServiceProtocol {
     func fetchCard(themeName: String, cardName: String?) -> Card
     func createCard(themeName: String, definition: String, description: String)
     func updateCard(themeName: String, cardDefinition: String, newDefinition: String, newDescription: String)
+    
+    func fetchAllThemesForRepetition() -> [Theme]
 }
 
 final class StorageService: StorageServiceProtocol {
@@ -109,5 +111,11 @@ final class StorageService: StorageServiceProtocol {
     
     func updateCard(themeName: String, cardDefinition: String, newDefinition: String, newDescription: String) {
         coreDataManager.updateCard(themeName: themeName, cardDefinition: cardDefinition, newDefinition: newDefinition, newDescription: newDescription)
+    }
+    
+    // MARK: Repetition methods
+    
+    func fetchAllThemesForRepetition() -> [Theme] {
+        coreDataManager.fetchAllThemesForRepetition()
     }
 }

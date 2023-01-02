@@ -12,19 +12,23 @@ final class RepetitionFlowCoordinator: FlowCoordinatorProtocol {
     // MARK: Private
     
     private let parentViewController: UINavigationController
+    private let storageService: StorageServiceProtocol
     
     
     // MARK: Lifecycle
     
-    init(parentViewController: UINavigationController) {
+    init(parentViewController: UINavigationController,
+         storageService: StorageServiceProtocol) {
         self.parentViewController = parentViewController
+        self.storageService = storageService
     }
     
     
     // MARK: Public
     
     func showRepetitionModule() {
-        let builder = RepetitionModuleBuilder(output: self)
+        let builder = RepetitionModuleBuilder(output: self,
+                                              storageService: storageService)
         let repetitionViewController = builder.build()
         
         parentViewController.pushViewController(repetitionViewController, animated: true)
