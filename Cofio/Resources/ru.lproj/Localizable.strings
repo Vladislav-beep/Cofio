@@ -49,7 +49,12 @@
 
 // MARK: Repetition
 "repetition_module_title" = "Повторение";
-
+"repetition_module_last_repeat" = "Последнее повторение!";
+"repetition_module_needs_repeat" = "Нужно повторить";
+"repetition_module_needs_repeat_past" = "Нужно было повторить";
+"repetition_module_today" = "Сегодня";
+"repetition_module_yesteday" = "Вчера";
+"repetition_module_tomorrow" = "Завтра";
 
 
 // MARK: - UI

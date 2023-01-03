@@ -33,9 +33,16 @@ final class RepetitionFlowCoordinator: FlowCoordinatorProtocol {
         
         parentViewController.pushViewController(repetitionViewController, animated: true)
     }
+    
+    func showCardsRepetitionModule() {
+        let builder = CardsRepetitionModuleBuilder(output: self)
+        let cardsRepetitionViewController = builder.build()
+        
+        parentViewController.pushViewController(cardsRepetitionViewController, animated: true)
+    }
 }
 
-// MARK: - FlowCoordinatorProtocol
+// MARK: FlowCoordinatorProtocol
 
 extension RepetitionFlowCoordinator {
     func start() {
@@ -43,10 +50,21 @@ extension RepetitionFlowCoordinator {
     }
     
     func finish(completion: (() -> Void)?) {
-        
+        // TODO: finish
     }
 }
 
+// MARK: - RepetitionPresenterOutput
+
 extension RepetitionFlowCoordinator: RepetitionPresenterOutput {
+    
+    func moduleWantsToOpenCardsRepetition(_ module: RepetitionPresenterInput) {
+        showCardsRepetitionModule()
+    }
+}
+
+// MARK: - CardsRepetitionPresenterOutput
+
+extension RepetitionFlowCoordinator: CardsRepetitionPresenterOutput {
     
 }

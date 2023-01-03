@@ -7,4 +7,7 @@
 
 protocol RepetitionPresenterInput: AnyObject {}
 
-protocol RepetitionPresenterOutput: AnyObject {}
+protocol RepetitionPresenterOutput: AnyObject {
+    
+    func moduleWantsToOpenCardsRepetition(_ module: RepetitionPresenterInput)
+}

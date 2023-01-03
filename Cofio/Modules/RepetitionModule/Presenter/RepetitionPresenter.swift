@@ -16,7 +16,7 @@ final class RepetitionPresenter {
     // MARK: Public properties
     
     weak var view: RepetitionViewInput?
-    weak var output: RepetitionPresenterOutput?
+    var output: RepetitionPresenterOutput?
     
     
     // MARK: Lifecycle
@@ -36,8 +36,12 @@ extension RepetitionPresenter: RepetitionViewOutput {
     func viewWillAppear() {
         let themes = interactor.fetchAllThemesForRepetition()
         var data = repetitionDataFactory.dataFromThemes(themes: themes)
-        data.sort { $0.date < $1.date }
+        data.sort { $0.date > $1.date }
         view?.updateData(with: data)
+    }
+    
+    func viewDidTapRow(_ item: RepetitionCellDataModel) {
+        output?.moduleWantsToOpenCardsRepetition(self)
     }
 }
 

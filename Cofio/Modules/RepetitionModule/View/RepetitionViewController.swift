@@ -92,4 +92,12 @@ extension RepetitionViewController: RepetitionViewInput {
 
 // MARK: - UITableViewDelegate
 
-extension RepetitionViewController: UITableViewDelegate {}
+extension RepetitionViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let item = tableViewDataSource.itemIdentifier(for: indexPath) else { return }
+        
+        output.viewDidTapRow(item)
+    }
+}

@@ -49,6 +49,12 @@
 
 // MARK: Repetition
 "repetition_module_title" = "Repetition";
+"repetition_module_last_repeat" = "Last repetition!";
+"repetition_module_needs_repeat" = "Needs repeating";
+"repetition_module_needs_repeat_past" = "Should have repeated";
+"repetition_module_today" = "Today";
+"repetition_module_yesteday" = "Yesterday";
+"repetition_module_tomorrow" = "Tomorrow";
 
 
 

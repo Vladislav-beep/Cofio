@@ -20,7 +20,6 @@ final class RepetitionDataFactory: RepetitionDataFactoryProtocol {
     func dataFromThemes(themes: [Theme]) -> [RepetitionCellDataModel] {
         var themeCellsModel: [RepetitionCellDataModel] = []
         
-        
         for theme in themes {
             let subtitle = makeSubtitle(repeats: theme.repeats, repeatDate: theme.repeatDate ?? Date())
             let date = makeDate(repeatDate: theme.repeatDate ?? Date())
@@ -38,29 +37,30 @@ final class RepetitionDataFactory: RepetitionDataFactoryProtocol {
     // MARK: Private
     
     private func makeSubtitle(repeats: Int64, repeatDate: Date) -> String {
+        // FIXME: repeats can be less or more than 7
         if repeats == 7 {
-            return "Последнее повторение!"
+            return "repetition_module_last_repeat"~
         }
         
         if Calendar.current.isDateInToday(repeatDate) {
-            return "Нужно повторить"
+            return "repetition_module_needs_repeat"~
         } else if Calendar.current.isDateInYesterday(repeatDate) {
-            return "Нужно было повторить"
+            return "repetition_module_needs_repeat_past"~
         }
         
-        return "Нужно повторить"
+        return "repetition_module_needs_repeat"~
     }
     
     private func makeDate(repeatDate: Date) -> String {
         if Calendar.current.isDateInToday(repeatDate) {
-            return "Сегодня"
+            return "repetition_module_today"~
         } else if Calendar.current.isDateInYesterday(repeatDate) {
-            return "Вчера"
+            return "repetition_module_yesteday"~
         } else if Calendar.current.isDateInTomorrow(repeatDate) {
-            return "Завтра"
+            return "repetition_module_tomorrow"~
         }
         
-        return "Вфеу"
+        return dateToString(date: repeatDate)
     }
     
     private func setupBackground(repeatDate: Date) -> UIColor {
@@ -71,5 +71,11 @@ final class RepetitionDataFactory: RepetitionDataFactoryProtocol {
         } else {
             return .darkRed
         }
+    }
+    
+    private func dateToString(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        return dateFormatter.string(from: date)
     }
 }
