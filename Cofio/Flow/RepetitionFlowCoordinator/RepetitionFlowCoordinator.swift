@@ -34,8 +34,10 @@ final class RepetitionFlowCoordinator: FlowCoordinatorProtocol {
         parentViewController.pushViewController(repetitionViewController, animated: true)
     }
     
-    func showCardsRepetitionModule() {
-        let builder = CardsRepetitionModuleBuilder(output: self)
+    func showCardsRepetitionModule(themeName: String) {
+        let builder = CardsRepetitionModuleBuilder(output: self,
+                                                   storageService: storageService,
+                                                   themeName: themeName)
         let cardsRepetitionViewController = builder.build()
         
         parentViewController.pushViewController(cardsRepetitionViewController, animated: true)
@@ -58,13 +60,11 @@ extension RepetitionFlowCoordinator {
 
 extension RepetitionFlowCoordinator: RepetitionPresenterOutput {
     
-    func moduleWantsToOpenCardsRepetition(_ module: RepetitionPresenterInput) {
-        showCardsRepetitionModule()
+    func moduleWantsToOpenCardsRepetition(_ module: RepetitionPresenterInput, themeName: String) {
+        showCardsRepetitionModule(themeName: themeName)
     }
 }
 
 // MARK: - CardsRepetitionPresenterOutput
 
-extension RepetitionFlowCoordinator: CardsRepetitionPresenterOutput {
-    
-}
+extension RepetitionFlowCoordinator: CardsRepetitionPresenterOutput {}

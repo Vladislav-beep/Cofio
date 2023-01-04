@@ -5,6 +5,13 @@
 //  Created by Владислав Сизонов on 25.08.2022.
 //
 
-protocol CardsRepetitionViewInput: AnyObject {}
+protocol CardsRepetitionViewInput: AnyObject {
+    
+    func updateData(with data: [CardCellsDataModel])
+    func updateNavBarTitle(navBarTitle: String)
+}
 
-protocol CardsRepetitionViewOutput: AnyObject {}
+protocol CardsRepetitionViewOutput: AnyObject {
+    
+    func viewDidLoad()
+}

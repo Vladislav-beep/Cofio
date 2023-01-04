@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B90A504E2964CB0400993C75 /* RepetitionCardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90A504D2964CB0400993C75 /* RepetitionCardsCell.swift */; };
+		B90A505029658D8000993C75 /* CardsCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90A504F29658D8000993C75 /* CardsCollectionViewDataSource.swift */; };
+		B90A505229658FD400993C75 /* RepetitionEmptyCardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90A505129658FD400993C75 /* RepetitionEmptyCardsCell.swift */; };
+		B90A50542965964F00993C75 /* UICollectionViewLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90A50532965964F00993C75 /* UICollectionViewLayout+Extension.swift */; };
+		B90A50572965977D00993C75 /* CardsRepetitionDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90A50562965977D00993C75 /* CardsRepetitionDataFactory.swift */; };
 		B910AB3C2945E42400D9E7EA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B910AB3B2945E42400D9E7EA /* SettingsViewController.swift */; };
 		B910AB402945E51900D9E7EA /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B910AB3F2945E51900D9E7EA /* StatisticsViewController.swift */; };
 		B910AB4429485B8100D9E7EA /* RepetitionFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B910AB4329485B8100D9E7EA /* RepetitionFlowCoordinator.swift */; };
@@ -160,6 +165,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B90A504D2964CB0400993C75 /* RepetitionCardsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepetitionCardsCell.swift; sourceTree = "<group>"; };
+		B90A504F29658D8000993C75 /* CardsCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		B90A505129658FD400993C75 /* RepetitionEmptyCardsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepetitionEmptyCardsCell.swift; sourceTree = "<group>"; };
+		B90A50532965964F00993C75 /* UICollectionViewLayout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewLayout+Extension.swift"; sourceTree = "<group>"; };
+		B90A50562965977D00993C75 /* CardsRepetitionDataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsRepetitionDataFactory.swift; sourceTree = "<group>"; };
 		B910AB3B2945E42400D9E7EA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B910AB3F2945E51900D9E7EA /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		B910AB4329485B8100D9E7EA /* RepetitionFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepetitionFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -325,6 +335,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B90A504C2964CAE400993C75 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B90A504D2964CB0400993C75 /* RepetitionCardsCell.swift */,
+				B90A505129658FD400993C75 /* RepetitionEmptyCardsCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B90A50552965973F00993C75 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				B90A50562965977D00993C75 /* CardsRepetitionDataFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
 		B910AB392945E3EF00D9E7EA /* SettingsModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -439,6 +466,8 @@
 			children = (
 				B932E96A28B7F960007244E6 /* CardsRepetitionViewController.swift */,
 				B932E97828B7FC29007244E6 /* CardsRepetitionViewProtocol.swift */,
+				B90A504F29658D8000993C75 /* CardsCollectionViewDataSource.swift */,
+				B90A504C2964CAE400993C75 /* Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -448,6 +477,7 @@
 			children = (
 				B932E96E28B7FA0E007244E6 /* CardsRepetitionPresenter.swift */,
 				B932E97028B7FA58007244E6 /* CardsRepetitionProtocol.swift */,
+				B90A50552965973F00993C75 /* Factory */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -719,6 +749,7 @@
 				B9CC13F0289310460013ED76 /* UIStackView+Extension.swift */,
 				B910AB4F294BBAF700D9E7EA /* Postfix operator.swift */,
 				B94C025E294F87A700EF9EB6 /* UIViewController+Extension.swift */,
+				B90A50532965964F00993C75 /* UICollectionViewLayout+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1160,6 +1191,7 @@
 				B9CC13E72891D6510013ED76 /* Word.swift in Sources */,
 				B9CC13DD2891B9090013ED76 /* CollectionTextField.swift in Sources */,
 				B9AAEC302961CC3700BA6078 /* CardsEmptyCell.swift in Sources */,
+				B90A505229658FD400993C75 /* RepetitionEmptyCardsCell.swift in Sources */,
 				B9ACB7A129543A0000F2B476 /* ChooseIconPresenterProtocol.swift in Sources */,
 				B94C0258294E5B3F00EF9EB6 /* CardDetailsViewProtocol.swift in Sources */,
 				B932E95E28ABFBC4007244E6 /* RepetitionModuleBuilder.swift in Sources */,
@@ -1175,6 +1207,7 @@
 				B932E95828ABFA98007244E6 /* RepetitionPresenterProtocol.swift in Sources */,
 				B93EF8CB289AF9910057C774 /* NewCardViewController.swift in Sources */,
 				B9CC13B5288F087A0013ED76 /* NewCollectionProtocol.swift in Sources */,
+				B90A50572965977D00993C75 /* CardsRepetitionDataFactory.swift in Sources */,
 				B99B17542944CD66002167DB /* AppFlowCoordinator.swift in Sources */,
 				B93EF8B828968D210057C774 /* CardsPresenter.swift in Sources */,
 				B9CC141E289688470013ED76 /* CardsCell.swift in Sources */,
@@ -1201,6 +1234,7 @@
 				B932E96528AC06F4007244E6 /* RepetitionTableViewDataSource.swift in Sources */,
 				B932E97328B7FAA5007244E6 /* CardsRepetitionInteractor.swift in Sources */,
 				B9CC13CB28906B040013ED76 /* ThemesInteractor.swift in Sources */,
+				B90A504E2964CB0400993C75 /* RepetitionCardsCell.swift in Sources */,
 				B94C0253294E596800EF9EB6 /* CardDetailsModuleBuilder.swift in Sources */,
 				B9CC13CD28906B310013ED76 /* ThemesInteractorProtocol.swift in Sources */,
 				B932E94C28A00499007244E6 /* WordTextView.swift in Sources */,
@@ -1229,6 +1263,7 @@
 				B9AAEC322962E7DB00BA6078 /* StorageService.swift in Sources */,
 				B9CC138D2889D7900013ED76 /* MainModuleCell.swift in Sources */,
 				B9CC13B3288F08040013ED76 /* NewCollectionPresenter.swift in Sources */,
+				B90A505029658D8000993C75 /* CardsCollectionViewDataSource.swift in Sources */,
 				B932E96128AC032B007244E6 /* RepetitionCell.swift in Sources */,
 				B9464AC9295E197200D7A5E1 /* Collection+CoreDataClass.swift in Sources */,
 				B9CC13CF28906B6A0013ED76 /* ThemesModuleBuilder.swift in Sources */,
@@ -1238,6 +1273,7 @@
 				B9CC140F2895C1E50013ED76 /* ThemesTableViewDataSource.swift in Sources */,
 				B93EF8B628968B150057C774 /* CardCellDataModel.swift in Sources */,
 				B9AAEC2C2961C61800BA6078 /* MainModuleEmptyCell.swift in Sources */,
+				B90A50542965964F00993C75 /* UICollectionViewLayout+Extension.swift in Sources */,
 				B9CC13F32894506E0013ED76 /* MainTableViewDataSource.swift in Sources */,
 				B9AAEC22295F1A8A00BA6078 /* CollectionsDataFactory.swift in Sources */,
 				B9CC135D288738980013ED76 /* SceneDelegate.swift in Sources */,

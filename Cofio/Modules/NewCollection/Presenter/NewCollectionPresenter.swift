@@ -51,6 +51,7 @@ extension NewCollectionPresenter: NewCollectionViewOutput {
             let collection = interactor.getCollection()
             interactor.updateCollection(name: collection.name ?? "", newName: name, icon: iconName ?? "")
         } else {
+            // TODO: добавить проверку на сущестование имени коллекции
             let icon = iconName ?? ""
             interactor.createCollection(name: name, icon: icon)
         }

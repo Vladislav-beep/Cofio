@@ -10,6 +10,7 @@ final class CardsRepetitionPresenter {
     // MARK: Private properties
     
     private let interactor: CardsRepetitionInteractorInput
+    private let cardsRepetitionDataFactory: CardsRepetitionDataFactoryProtocol
     
     
     // MARK: Public properties
@@ -20,8 +21,10 @@ final class CardsRepetitionPresenter {
     
     // MARK: Lifecycle
     
-    init(interactor: CardsRepetitionInteractorInput) {
+    init(interactor: CardsRepetitionInteractorInput,
+         cardsRepetitionDataFactory: CardsRepetitionDataFactoryProtocol) {
         self.interactor = interactor
+        self.cardsRepetitionDataFactory = cardsRepetitionDataFactory
     }
 }
 
@@ -30,6 +33,21 @@ final class CardsRepetitionPresenter {
 
 extension CardsRepetitionPresenter: CardsRepetitionViewOutput {
 
+    func viewDidLoad() {
+        let cards = interactor.fetchCards()
+        let themeName = interactor.getThemeName()
+        let data = cardsRepetitionDataFactory.dataFromRepetitionCards(cards: cards)
+        
+//        var cells: [CardCellsDataModel] = []
+//        
+//        for card in cards {
+//            let cell = CardCellsDataModel.card(.init(definition: card.cardDefinition ?? "", description: card.cardDescription ?? ""))
+//            cells.append(cell)
+//        }
+        
+        view?.updateData(with: data)
+        view?.updateNavBarTitle(navBarTitle: themeName)
+    }
 }
 
 

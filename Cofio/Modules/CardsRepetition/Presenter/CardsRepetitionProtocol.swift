@@ -7,4 +7,6 @@
 
 protocol CardsRepetitionPresenterInput: AnyObject {}
 
-protocol CardsRepetitionPresenterOutput: AnyObject {}
+protocol CardsRepetitionPresenterOutput: AnyObject {
+    
+}

@@ -9,5 +9,5 @@ protocol RepetitionPresenterInput: AnyObject {}
 
 protocol RepetitionPresenterOutput: AnyObject {
     
-    func moduleWantsToOpenCardsRepetition(_ module: RepetitionPresenterInput)
+    func moduleWantsToOpenCardsRepetition(_ module: RepetitionPresenterInput, themeName: String)
 }

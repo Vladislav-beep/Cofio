@@ -41,7 +41,7 @@ extension RepetitionPresenter: RepetitionViewOutput {
     }
     
     func viewDidTapRow(_ item: RepetitionCellDataModel) {
-        output?.moduleWantsToOpenCardsRepetition(self)
+        output?.moduleWantsToOpenCardsRepetition(self, themeName: item.title)
     }
 }
 

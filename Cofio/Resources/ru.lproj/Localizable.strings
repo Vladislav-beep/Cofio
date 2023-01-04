@@ -56,6 +56,8 @@
 "repetition_module_yesteday" = "Вчера";
 "repetition_module_tomorrow" = "Завтра";
 
+// MARK: Cards Repetition
+"cards_repetition_module_empty_cell_title" = "По этой теме пока не добавлены карточки.\n Добавьте их в главном разделе";
 
 // MARK: - UI
 

@@ -86,6 +86,7 @@ final class ThemesViewController: UIViewController {
                                        textFieldText: nil) { [weak self] name in
             guard let self = self else { return }
             
+            // TODO: добавить проверку на сущестование имени темы
             self.output.createTheme(name: name)
             self.output.refreshView()
         }
