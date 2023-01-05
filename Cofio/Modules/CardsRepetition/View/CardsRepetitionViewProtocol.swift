@@ -14,4 +14,5 @@ protocol CardsRepetitionViewInput: AnyObject {
 protocol CardsRepetitionViewOutput: AnyObject {
     
     func viewDidLoad()
+    func getCardsCount() -> Int
 }

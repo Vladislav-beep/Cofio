@@ -16,18 +16,20 @@ final class CardsRepetitionViewController: UIViewController {
     
     private let learnedButton: UIButton = {
         let learnedButton = UIButton()
-        learnedButton.setTitle("Выучил", for: .normal)
+        learnedButton.setTitle("cards_repetition_module_learned_button"~, for: .normal)
         learnedButton.layer.cornerRadius = 8
         learnedButton.backgroundColor = .darkGreen
+        learnedButton.addTarget(self, action: #selector(handleNext), for: .touchUpInside)
         learnedButton.translatesAutoresizingMaskIntoConstraints = false
         return learnedButton
     }()
     
     private let moreTimeButton: UIButton = {
         let moreTimeButton = UIButton()
-        moreTimeButton.setTitle("Еще раз", for: .normal)
+        moreTimeButton.setTitle("cards_repetition_module_more_button"~, for: .normal)
         moreTimeButton.layer.cornerRadius = 8
         moreTimeButton.backgroundColor = .darkRed
+        moreTimeButton.addTarget(self, action: #selector(handlePrev), for: .touchUpInside)
         moreTimeButton.translatesAutoresizingMaskIntoConstraints = false
         return moreTimeButton
     }()
@@ -43,7 +45,7 @@ final class CardsRepetitionViewController: UIViewController {
     private lazy var pageControl: UIPageControl = {
         let pc = UIPageControl()
         pc.currentPage = 0
-        pc.numberOfPages = 20
+        pc.numberOfPages = output.getCardsCount()
         pc.currentPageIndicatorTintColor = .systemPink
         pc.pageIndicatorTintColor = UIColor(red: 249/255, green: 207/255, blue: 224/255, alpha: 1)
         pc.translatesAutoresizingMaskIntoConstraints = false
@@ -115,6 +117,21 @@ final class CardsRepetitionViewController: UIViewController {
             cardsCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:  -8),
             cardsCollectionView.bottomAnchor.constraint(equalTo: pageControl.topAnchor, constant: -5)
         ])
+    }
+    
+    @objc private func handleNext() {
+        let nextIndex = min(pageControl.currentPage + 1, output.getCardsCount() - 1)
+        let indexPath = IndexPath(item: nextIndex, section: 0)
+        pageControl.currentPage = nextIndex
+        cardsCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    }
+    
+    @objc private func handlePrev() {
+        let nextIndex = max(pageControl.currentPage - 1, 0)
+        let indexPath = IndexPath(item: nextIndex, section: 0)
+        pageControl.currentPage = nextIndex
+        cardsCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        
     }
 }
 

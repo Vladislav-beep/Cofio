@@ -29,6 +29,7 @@ final class RepetitionDataFactory: RepetitionDataFactoryProtocol {
                                                     date: date,
                                                     backgroundColor: backgroundColor)
             themeCellsModel.append(themeCell)
+            themeCellsModel.sort { $0.date > $1.date }
         }
         
         return themeCellsModel
@@ -44,7 +45,7 @@ final class RepetitionDataFactory: RepetitionDataFactoryProtocol {
         
         if Calendar.current.isDateInToday(repeatDate) {
             return "repetition_module_needs_repeat"~
-        } else if Calendar.current.isDateInYesterday(repeatDate) {
+        } else if Calendar.current.isDateInYesterday(repeatDate) || repeatDate < Date() {
             return "repetition_module_needs_repeat_past"~
         }
         

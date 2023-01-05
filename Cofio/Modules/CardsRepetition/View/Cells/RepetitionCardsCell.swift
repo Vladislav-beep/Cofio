@@ -80,7 +80,7 @@ final class RepetitionCardsCell: UICollectionViewCell {
         
         lowerView.addSubview(thinView)
         NSLayoutConstraint.activate([
-            thinView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
+            thinView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 12),
             thinView.trailingAnchor.constraint(equalTo: lowerView.trailingAnchor, constant: -50),
             thinView.leadingAnchor.constraint(equalTo: lowerView.leadingAnchor, constant: 16),
             thinView.heightAnchor.constraint(equalToConstant: 4)

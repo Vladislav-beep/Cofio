@@ -58,6 +58,8 @@
 
 // MARK: Cards Repetition
 "cards_repetition_module_empty_cell_title" = "По этой теме пока не добавлены карточки.\n Добавьте их в главном разделе";
+"cards_repetition_module_learned_button" = "Выучил";
+"cards_repetition_module_more_button" = "Еще раз";
 
 // MARK: - UI
 

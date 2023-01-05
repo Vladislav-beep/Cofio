@@ -32,18 +32,15 @@ final class CardsRepetitionPresenter {
 // MARK: - CardsRepetitionViewOutput
 
 extension CardsRepetitionPresenter: CardsRepetitionViewOutput {
-
+    
+    func getCardsCount() -> Int {
+        interactor.fetchCards().count
+    }
+    
     func viewDidLoad() {
         let cards = interactor.fetchCards()
         let themeName = interactor.getThemeName()
         let data = cardsRepetitionDataFactory.dataFromRepetitionCards(cards: cards)
-        
-//        var cells: [CardCellsDataModel] = []
-//        
-//        for card in cards {
-//            let cell = CardCellsDataModel.card(.init(definition: card.cardDefinition ?? "", description: card.cardDescription ?? ""))
-//            cells.append(cell)
-//        }
         
         view?.updateData(with: data)
         view?.updateNavBarTitle(navBarTitle: themeName)
