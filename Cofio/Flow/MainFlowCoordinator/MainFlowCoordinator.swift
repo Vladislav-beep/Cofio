@@ -197,6 +197,7 @@ extension MainFlowCoordinator: CardsPresenterOutput {
 
 // MARK: - CardDetailsPresenterOutput
 
+// FIXME: выпилить, если не нужно
 extension MainFlowCoordinator: CardDetailsPresenterOutput {}
 
 

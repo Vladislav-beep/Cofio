@@ -164,22 +164,11 @@ extension CardsRepetitionViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = collectionViewDataSource.itemIdentifier(for: indexPath) else { return }
         switch item {
-            
-        case .card(let model):
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "repetitionCardsCell", for: indexPath) as? RepetitionCardsCell
-            let displayData = RepetitionCardsCell.DisplayData(
-                definition: model.definition,
-                description: model.description,
-                descriptionShown: true
-            )
-            cell?.configure(displayData: displayData)
-           // cell?.showDescriptionLabel()
+        case .card:
             output.viewDidTapRow(indexPath: indexPath)
             
         case .empty:
             break
         }
-        
-       // output.viewDidTapRow(item)
     }
 }
