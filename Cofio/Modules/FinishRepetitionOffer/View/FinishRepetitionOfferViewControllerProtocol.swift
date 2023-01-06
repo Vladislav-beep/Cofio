@@ -12,4 +12,5 @@ protocol FinishRepetitionOfferViewInput: AnyObject {
 protocol FinishRepetitionOfferViewOutput: AnyObject {
     
     func viewDidLoad()
+    func close()
 }

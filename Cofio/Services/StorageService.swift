@@ -116,6 +116,16 @@ final class StorageService: StorageServiceProtocol {
     // MARK: Repetition methods
     
     func fetchAllThemesForRepetition() -> [Theme] {
-        coreDataManager.fetchAllThemesForRepetition()
+        var returnedThemes: [Theme] = []
+        let themes = coreDataManager.fetchAllThemesForRepetition()
+        
+        // TODO: Подумать над предикатом на это
+        for theme in themes {
+            if theme.cards?.count ?? 0 > 0 {
+                returnedThemes.append(theme)
+            }
+        }
+        
+        return returnedThemes
     }
 }

@@ -61,6 +61,12 @@
 "cards_repetition_module_learned_button" = "Learned";
 "cards_repetition_module_more_button" = "One more time";
 
+// MARK: FinishRepetitionOffer
+"finish_offer_module_button_title" = "OK";
+"finish_offer_module_title_label" = "Theme";
+"finish_offer_module_repeated" = "has been repeated";
+"finish_offer_module_next_repeat" = "Next repeat";
+
 // MARK: - UI
 
 // MARK: CollectionTextField

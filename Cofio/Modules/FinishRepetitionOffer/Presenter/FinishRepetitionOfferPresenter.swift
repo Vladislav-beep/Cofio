@@ -20,4 +20,11 @@ extension FinishRepetitionOfferPresenter: FinishRepetitionOfferViewOutput {
     func viewDidLoad() {
         
     }
+    
+    func close() {
+        output?.moduleWantsToClose(self)
+    }
 }
+
+
+extension FinishRepetitionOfferPresenter: FinishRepetitionOfferPresenterInput {}

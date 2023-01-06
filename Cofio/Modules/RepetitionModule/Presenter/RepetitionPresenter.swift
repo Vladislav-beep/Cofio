@@ -26,6 +26,15 @@ final class RepetitionPresenter {
         self.interactor = interactor
         self.repetitionDataFactory = repetitionDataFactory
     }
+    
+    // MARK: Private
+    
+    private func updateView() {
+        // TODO: отсеять темы без карточек
+        let themes = interactor.fetchAllThemesForRepetition()
+        let data = repetitionDataFactory.dataFromThemes(themes: themes)
+        view?.updateData(with: data)
+    }
 }
 
 
@@ -33,10 +42,12 @@ final class RepetitionPresenter {
 
 extension RepetitionPresenter: RepetitionViewOutput {
     
+    func viewDidLoad() {
+        output?.moduleDidLoad(self)
+    }
+    
     func viewWillAppear() {
-        let themes = interactor.fetchAllThemesForRepetition()
-        let data = repetitionDataFactory.dataFromThemes(themes: themes)
-        view?.updateData(with: data)
+        updateView()
     }
     
     func viewDidTapRow(_ item: RepetitionCellDataModel) {
@@ -47,7 +58,12 @@ extension RepetitionPresenter: RepetitionViewOutput {
 
 // MARK: - RepetitionPresenterInput
 
-extension RepetitionPresenter: RepetitionPresenterInput {}
+extension RepetitionPresenter: RepetitionPresenterInput {
+    
+    func refreshView() {
+        updateView()
+    }
+}
 
 
 // MARK: - RepetitionInteractorOutput

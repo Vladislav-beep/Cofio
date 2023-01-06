@@ -124,6 +124,7 @@ final class CardsRepetitionViewController: UIViewController {
         let indexPath = IndexPath(item: nextIndex, section: 0)
         pageControl.currentPage = nextIndex
         cardsCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        output.viewDidTapButton(indexPath: indexPath)
     }
     
     @objc private func handlePrev() {

@@ -14,6 +14,7 @@ final class CardsRepetitionPresenter {
     private let interactor: CardsRepetitionInteractorInput
     private let cardsRepetitionDataFactory: CardsRepetitionDataFactoryProtocol
     private var cardsData: [RepetitionCardCellsDataModel] = []
+    private var isLastCard: Bool = false
     
     
     // MARK: Public properties
@@ -60,6 +61,16 @@ extension CardsRepetitionPresenter: CardsRepetitionViewOutput {
             
         case .empty:
             break
+        }
+    }
+    
+    func viewDidTapButton(indexPath: IndexPath) {
+        if isLastCard || cardsData.count == 1 {
+            output?.moduleWantsToOpenFinishOffer(self)
+        }
+        
+        if indexPath.row == cardsData.count - 1 {
+            isLastCard = true
         }
     }
 }

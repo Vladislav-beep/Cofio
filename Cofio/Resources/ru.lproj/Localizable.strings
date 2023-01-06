@@ -61,6 +61,12 @@
 "cards_repetition_module_learned_button" = "Выучил";
 "cards_repetition_module_more_button" = "Еще раз";
 
+// MARK: FinishRepetitionOffer
+"finish_offer_module_button_title" = "Понятно";
+"finish_offer_module_title_label" = "Тема";
+"finish_offer_module_repeated" = "повторена";
+"finish_offer_module_next_repeat" = "Следующие повторение";
+
 // MARK: - UI
 
 // MARK: CollectionTextField

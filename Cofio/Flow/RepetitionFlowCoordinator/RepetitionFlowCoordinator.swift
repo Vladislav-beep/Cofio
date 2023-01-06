@@ -13,6 +13,7 @@ final class RepetitionFlowCoordinator: FlowCoordinatorProtocol {
     
     private let parentViewController: UINavigationController
     private let storageService: StorageServiceProtocol
+    private weak var repetitionModule: RepetitionPresenterInput?
     
     
     // MARK: Lifecycle
@@ -24,9 +25,9 @@ final class RepetitionFlowCoordinator: FlowCoordinatorProtocol {
     }
     
     
-    // MARK: Public
+    // MARK: Private
     
-    func showRepetitionModule() {
+    private func showRepetitionModule() {
         let builder = RepetitionModuleBuilder(output: self,
                                               storageService: storageService)
         let repetitionViewController = builder.build()
@@ -41,6 +42,15 @@ final class RepetitionFlowCoordinator: FlowCoordinatorProtocol {
         let cardsRepetitionViewController = builder.build()
         
         parentViewController.pushViewController(cardsRepetitionViewController, animated: true)
+    }
+    
+    private func showFinishOffer() {
+        let builder = FinishRepetitionOfferModuleBuilder(output: self)
+        
+        let finishRepetitionOfferViewController = builder.build()
+        finishRepetitionOfferViewController.modalPresentationStyle = .fullScreen
+        
+        parentViewController.present(finishRepetitionOfferViewController, animated: true)
     }
 }
 
@@ -60,6 +70,10 @@ extension RepetitionFlowCoordinator {
 
 extension RepetitionFlowCoordinator: RepetitionPresenterOutput {
     
+    func moduleDidLoad(_ module: RepetitionPresenterInput) {
+        repetitionModule = module
+    }
+    
     func moduleWantsToOpenCardsRepetition(_ module: RepetitionPresenterInput, themeName: String) {
         showCardsRepetitionModule(themeName: themeName)
     }
@@ -67,4 +81,20 @@ extension RepetitionFlowCoordinator: RepetitionPresenterOutput {
 
 // MARK: - CardsRepetitionPresenterOutput
 
-extension RepetitionFlowCoordinator: CardsRepetitionPresenterOutput {}
+extension RepetitionFlowCoordinator: CardsRepetitionPresenterOutput {
+    
+    func moduleWantsToOpenFinishOffer(_ module: CardsRepetitionPresenterInput) {
+        showFinishOffer()
+    }
+}
+
+// MARK: - FinishRepetitionOfferPresenterOutput
+
+extension RepetitionFlowCoordinator: FinishRepetitionOfferPresenterOutput {
+    
+    func moduleWantsToClose(_ module: FinishRepetitionOfferPresenterInput) {
+        repetitionModule?.refreshView()
+        parentViewController.popToRootViewController(animated: true)
+        parentViewController.dismiss(animated: true)
+    }
+}

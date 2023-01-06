@@ -48,6 +48,7 @@ final class RepetitionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        output.viewDidLoad()
         setupViews()
         setupNavigationBar()
         

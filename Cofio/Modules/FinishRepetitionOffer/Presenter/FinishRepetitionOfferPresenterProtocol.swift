@@ -7,4 +7,7 @@
 
 protocol FinishRepetitionOfferPresenterInput: AnyObject {}
 
-protocol FinishRepetitionOfferPresenterOutput: AnyObject {}
+protocol FinishRepetitionOfferPresenterOutput: AnyObject {
+    
+    func moduleWantsToClose(_ module: FinishRepetitionOfferPresenterInput)
+}
