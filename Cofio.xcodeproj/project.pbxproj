@@ -12,6 +12,7 @@
 		B90A505229658FD400993C75 /* RepetitionEmptyCardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90A505129658FD400993C75 /* RepetitionEmptyCardsCell.swift */; };
 		B90A50542965964F00993C75 /* UICollectionViewLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90A50532965964F00993C75 /* UICollectionViewLayout+Extension.swift */; };
 		B90A50572965977D00993C75 /* CardsRepetitionDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90A50562965977D00993C75 /* CardsRepetitionDataFactory.swift */; };
+		B90A50592968948A00993C75 /* RepetitionCardCellsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90A50582968948A00993C75 /* RepetitionCardCellsDataModel.swift */; };
 		B910AB3C2945E42400D9E7EA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B910AB3B2945E42400D9E7EA /* SettingsViewController.swift */; };
 		B910AB402945E51900D9E7EA /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B910AB3F2945E51900D9E7EA /* StatisticsViewController.swift */; };
 		B910AB4429485B8100D9E7EA /* RepetitionFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B910AB4329485B8100D9E7EA /* RepetitionFlowCoordinator.swift */; };
@@ -170,6 +171,7 @@
 		B90A505129658FD400993C75 /* RepetitionEmptyCardsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepetitionEmptyCardsCell.swift; sourceTree = "<group>"; };
 		B90A50532965964F00993C75 /* UICollectionViewLayout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewLayout+Extension.swift"; sourceTree = "<group>"; };
 		B90A50562965977D00993C75 /* CardsRepetitionDataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsRepetitionDataFactory.swift; sourceTree = "<group>"; };
+		B90A50582968948A00993C75 /* RepetitionCardCellsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepetitionCardCellsDataModel.swift; sourceTree = "<group>"; };
 		B910AB3B2945E42400D9E7EA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B910AB3F2945E51900D9E7EA /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		B910AB4329485B8100D9E7EA /* RepetitionFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepetitionFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -467,6 +469,7 @@
 				B932E96A28B7F960007244E6 /* CardsRepetitionViewController.swift */,
 				B932E97828B7FC29007244E6 /* CardsRepetitionViewProtocol.swift */,
 				B90A504F29658D8000993C75 /* CardsCollectionViewDataSource.swift */,
+				B90A50582968948A00993C75 /* RepetitionCardCellsDataModel.swift */,
 				B90A504C2964CAE400993C75 /* Cells */,
 			);
 			path = View;
@@ -1216,6 +1219,7 @@
 				B9464ACD295E197200D7A5E1 /* Card+CoreDataClass.swift in Sources */,
 				B9CC140B2895C00C0013ED76 /* StatisticsCell.swift in Sources */,
 				B9CC13C728906A7C0013ED76 /* ThemesPresenter.swift in Sources */,
+				B90A50592968948A00993C75 /* RepetitionCardCellsDataModel.swift in Sources */,
 				B94C025B294E5BC200EF9EB6 /* CardDetailsPresenter.swift in Sources */,
 				B9CC13B1288F07BF0013ED76 /* NewCollectionViewController.swift in Sources */,
 				B9CC139D288EE6E90013ED76 /* MainInteractor.swift in Sources */,

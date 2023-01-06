@@ -14,6 +14,7 @@ final class RepetitionCardsCell: UICollectionViewCell {
     struct DisplayData: Hashable {
         let definition: String
         let description: String
+        let descriptionShown: Bool
     }
     
     // MARK: Private properties
@@ -61,6 +62,7 @@ final class RepetitionCardsCell: UICollectionViewCell {
     // MARK: Private
     
     private func setupViews() {
+        
         titleLabel.setContentHuggingPriority(.required, for: .vertical)
         
         contentView.addSubview(lowerView)
@@ -100,5 +102,6 @@ final class RepetitionCardsCell: UICollectionViewCell {
     func configure(displayData: DisplayData) {
         titleLabel.text = displayData.definition
         definitionLabel.text = displayData.description
+        definitionLabel.isHidden = !displayData.descriptionShown
     }
 }

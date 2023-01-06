@@ -8,20 +8,21 @@
 import UIKit
 
 protocol CardsCollectionViewDataSourceProtocol {
-    func makeDataSource(for tableview: UICollectionView) -> UICollectionViewDiffableDataSource<Int, CardCellsDataModel>
+    func makeDataSource(for tableview: UICollectionView) -> UICollectionViewDiffableDataSource<Int, RepetitionCardCellsDataModel>
 }
 
 final class CardsCollectionViewDataSource: CardsCollectionViewDataSourceProtocol {
     
     // MARK: Public
     
-    func makeDataSource(for collectionView: UICollectionView) -> UICollectionViewDiffableDataSource<Int, CardCellsDataModel> {
-        let collectionViewDataSource = UICollectionViewDiffableDataSource<Int, CardCellsDataModel>(collectionView: collectionView) { collectionView, indexPath, cellType in
+    func makeDataSource(for collectionView: UICollectionView) -> UICollectionViewDiffableDataSource<Int, RepetitionCardCellsDataModel> {
+        let collectionViewDataSource = UICollectionViewDiffableDataSource<Int, RepetitionCardCellsDataModel>(collectionView: collectionView) { collectionView, indexPath, cellType in
             switch cellType {
             case .card(let model):
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "repetitionCardsCell", for: indexPath) as? RepetitionCardsCell
                 let displayData = RepetitionCardsCell.DisplayData(definition: model.definition,
-                                                                  description: model.description)
+                                                                  description: model.description,
+                                                                  descriptionShown: model.descriptionShown)
                 cell?.configure(displayData: displayData)
                 return cell
                 

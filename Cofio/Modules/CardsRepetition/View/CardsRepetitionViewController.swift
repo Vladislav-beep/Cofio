@@ -140,13 +140,13 @@ final class CardsRepetitionViewController: UIViewController {
 
 extension CardsRepetitionViewController: CardsRepetitionViewInput {
     
-    func updateData(with data: [CardCellsDataModel]) {
-        var snapshot = NSDiffableDataSourceSnapshot<Int, CardCellsDataModel>()
+    func updateData(with data: [RepetitionCardCellsDataModel]) {
+        var snapshot = NSDiffableDataSourceSnapshot<Int, RepetitionCardCellsDataModel>()
         snapshot.appendSections([0])
         snapshot.appendItems(data, toSection: 0)
         collectionViewDataSource.apply(snapshot)
         
-        if data.first == .empty(CardEmptyCellDataModel(title: "cards_repetition_module_empty_cell_title"~)) {
+        if data.first == .empty(RepetitionCardEmptyCellDataModel(title: "cards_repetition_module_empty_cell_title"~)) {
             buttonStackView.isHidden = true
             pageControl.isHidden = true
         }
@@ -159,4 +159,27 @@ extension CardsRepetitionViewController: CardsRepetitionViewInput {
 
 // MARK: - UICollectionViewDelegate
 
-extension CardsRepetitionViewController: UICollectionViewDelegate {}
+extension CardsRepetitionViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let item = collectionViewDataSource.itemIdentifier(for: indexPath) else { return }
+        switch item {
+            
+        case .card(let model):
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "repetitionCardsCell", for: indexPath) as? RepetitionCardsCell
+            let displayData = RepetitionCardsCell.DisplayData(
+                definition: model.definition,
+                description: model.description,
+                descriptionShown: true
+            )
+            cell?.configure(displayData: displayData)
+           // cell?.showDescriptionLabel()
+            output.viewDidTapRow(indexPath: indexPath)
+            
+        case .empty:
+            break
+        }
+        
+       // output.viewDidTapRow(item)
+    }
+}

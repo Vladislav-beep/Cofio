@@ -7,24 +7,24 @@
 
 protocol CardsRepetitionDataFactoryProtocol {
     
-    func dataFromRepetitionCards(cards: [Card]) -> [CardCellsDataModel]
+    func dataFromRepetitionCards(cards: [Card]) -> [RepetitionCardCellsDataModel]
 }
 
 final class CardsRepetitionDataFactory: CardsRepetitionDataFactoryProtocol {
     
     // MARK: Public
     
-    func dataFromRepetitionCards(cards: [Card]) -> [CardCellsDataModel] {
-        var cardCellModels: [CardCellsDataModel] = []
+    func dataFromRepetitionCards(cards: [Card]) -> [RepetitionCardCellsDataModel] {
+        var cardCellModels: [RepetitionCardCellsDataModel] = []
         
         if cards.isEmpty {
-            let emptyCell = CardCellsDataModel.empty(.init(title: "cards_repetition_module_empty_cell_title"~))
+            let emptyCell = RepetitionCardCellsDataModel.empty(.init(title: "cards_repetition_module_empty_cell_title"~))
             cardCellModels.append(emptyCell)
             return cardCellModels
         }
         
         for card in cards {
-            let cardCell = CardCellsDataModel.card(.init(definition: card.cardDefinition ?? "", description: card.cardDescription ?? ""))
+            let cardCell = RepetitionCardCellsDataModel.card(.init(definition: card.cardDefinition ?? "", description: card.cardDescription ?? "", descriptionShown: false))
             cardCellModels.append(cardCell)
         }
         
