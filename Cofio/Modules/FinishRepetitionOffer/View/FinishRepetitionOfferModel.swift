@@ -10,4 +10,5 @@ import Foundation
 struct FinishRepetitionOfferModel {
     let themeName: String
     let date: String
+    let isCompleted: Bool
 }

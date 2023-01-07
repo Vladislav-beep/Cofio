@@ -11,15 +11,17 @@ final class FinishRepetitionOfferPresenter {
     
     private let themeName: String
     private let repeatDate: String
+    private let isCompleted: Bool
     
     // MARK: Public properties
     
     weak var output: FinishRepetitionOfferPresenterOutput?
     weak var view: FinishRepetitionOfferViewInput?
     
-    init(themeName: String, repeatDate: String) {
+    init(themeName: String, repeatDate: String, isCompleted: Bool) {
         self.themeName = themeName
         self.repeatDate = repeatDate
+        self.isCompleted = isCompleted
     }
 }
 
@@ -27,7 +29,7 @@ final class FinishRepetitionOfferPresenter {
 extension FinishRepetitionOfferPresenter: FinishRepetitionOfferViewOutput {
     
     func viewDidLoad() {
-        let model = FinishRepetitionOfferModel(themeName: themeName, date: repeatDate)
+        let model = FinishRepetitionOfferModel(themeName: themeName, date: repeatDate, isCompleted: isCompleted)
         view?.updateData(with: model)
     }
     

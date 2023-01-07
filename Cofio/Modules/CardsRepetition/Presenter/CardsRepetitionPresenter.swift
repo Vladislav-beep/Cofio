@@ -63,12 +63,17 @@ extension CardsRepetitionPresenter: CardsRepetitionViewOutput {
         if isLastCard || cardsData.count == 1 {
             interactor.updateTheme()
             let theme = interactor.fetchTheme()
+            if theme.repeats == 7 {
+                let themeName = interactor.getThemeName()
+                output?.moduleWantsToOpenFinishOffer(self, themeName: themeName, repeatDate: nil, isCompleted: true)
+                return
+            }
             let date = theme.repeatDate
             let dateFormatter = DateFormatter()
             dateFormatter.dateStyle = .medium
             let dateString = dateFormatter.string(from: date!)
             let themeName = interactor.getThemeName()
-            output?.moduleWantsToOpenFinishOffer(self, themeName: themeName, repeatDate: dateString)
+            output?.moduleWantsToOpenFinishOffer(self, themeName: themeName, repeatDate: dateString, isCompleted: false)
         }
         
         if indexPath.row == cardsData.count - 1 {
@@ -77,6 +82,7 @@ extension CardsRepetitionPresenter: CardsRepetitionViewOutput {
     }
     
     func viewDidTapMoreTime(indexPath: IndexPath) {
+        // FIXME: что-то идет не так, когда хочешь повторить последнюю карточку
         let card = cardsData[indexPath.item]
         let newCard = RepetitionCardCellDataModel(id: UUID(), definition: card.definition, description: card.description, descriptionShown: false)
         cardsData.append(newCard)

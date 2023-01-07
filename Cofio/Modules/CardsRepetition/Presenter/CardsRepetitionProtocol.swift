@@ -9,5 +9,5 @@ protocol CardsRepetitionPresenterInput: AnyObject {}
 
 protocol CardsRepetitionPresenterOutput: AnyObject {
     
-    func moduleWantsToOpenFinishOffer(_ module: CardsRepetitionPresenterInput, themeName: String, repeatDate: String)
+    func moduleWantsToOpenFinishOffer(_ module: CardsRepetitionPresenterInput, themeName: String, repeatDate: String?, isCompleted: Bool)
 }

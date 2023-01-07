@@ -19,8 +19,10 @@ final class RepetitionDataFactory: RepetitionDataFactoryProtocol {
     
     func dataFromThemes(themes: [Theme]) -> [RepetitionCellDataModel] {
         var themeCellsModel: [RepetitionCellDataModel] = []
+        var newThemes = themes
+        newThemes.sort { $0.repeatDate ?? Date() < $1.repeatDate ?? Date() }
         
-        for theme in themes {
+        for theme in newThemes {
             let subtitle = makeSubtitle(repeats: theme.repeats, repeatDate: theme.repeatDate ?? Date())
             let date = makeDate(repeatDate: theme.repeatDate ?? Date())
             let backgroundColor = setupBackground(repeatDate: theme.repeatDate ?? Date())
@@ -38,7 +40,7 @@ final class RepetitionDataFactory: RepetitionDataFactoryProtocol {
     
     private func makeSubtitle(repeats: Int64, repeatDate: Date) -> String {
         // FIXME: repeats can be less or more than 7
-        if repeats == 7 {
+        if repeats == 6 {
             return "repetition_module_last_repeat"~
         }
         
@@ -69,7 +71,7 @@ final class RepetitionDataFactory: RepetitionDataFactoryProtocol {
         } else if Calendar.current.isDateInToday(repeatDate) {
             return .lightGreen
         } else {
-            return .darkRed
+            return .lightRed
         }
     }
     

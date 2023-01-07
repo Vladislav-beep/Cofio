@@ -22,19 +22,19 @@ final class RepetitionService: RepetitionServiceProtocol {
             return Date(timeIntervalSinceNow: 86400)
             
         case 2:
-            return Date(timeIntervalSinceNow: 259300)
+            return Date(timeIntervalSinceNow: 259200)
             
         case 3:
-            return Date(timeIntervalSinceNow: 518400)
+            return Date(timeIntervalSinceNow: 604800)
             
         case 4:
-            return Date(timeIntervalSinceNow: 1036800)
+            return Date(timeIntervalSinceNow: 1296000)
             
         case 5:
-            return Date(timeIntervalSinceNow: 1987200)
+            return Date(timeIntervalSinceNow: 2678400)
             
         case 6:
-            return Date(timeIntervalSinceNow: 3974400)
+            return Date(timeIntervalSinceNow: 5443200)
             
         default:
             return Date(timeIntervalSinceNow: 86400)

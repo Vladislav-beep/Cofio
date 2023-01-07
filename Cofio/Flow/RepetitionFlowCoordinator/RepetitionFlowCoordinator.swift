@@ -44,8 +44,11 @@ final class RepetitionFlowCoordinator: FlowCoordinatorProtocol {
         parentViewController.pushViewController(cardsRepetitionViewController, animated: true)
     }
     
-    private func showFinishOffer(themeName: String, repeatDate: String) {
-        let builder = FinishRepetitionOfferModuleBuilder(output: self, themeName: themeName, repeatDate: repeatDate)
+    private func showFinishOffer(themeName: String, repeatDate: String, isCompleted: Bool) {
+        let builder = FinishRepetitionOfferModuleBuilder(output: self,
+                                                         themeName: themeName,
+                                                         repeatDate: repeatDate,
+                                                         isCompleted: isCompleted)
         
         let finishRepetitionOfferViewController = builder.build()
         finishRepetitionOfferViewController.modalPresentationStyle = .fullScreen
@@ -83,8 +86,8 @@ extension RepetitionFlowCoordinator: RepetitionPresenterOutput {
 
 extension RepetitionFlowCoordinator: CardsRepetitionPresenterOutput {
 
-    func moduleWantsToOpenFinishOffer(_ module: CardsRepetitionPresenterInput, themeName: String, repeatDate: String) {
-        showFinishOffer(themeName: themeName, repeatDate: repeatDate)
+    func moduleWantsToOpenFinishOffer(_ module: CardsRepetitionPresenterInput, themeName: String, repeatDate: String?, isCompleted: Bool) {
+        showFinishOffer(themeName: themeName, repeatDate: repeatDate ?? "", isCompleted: isCompleted)
     }
 }
 

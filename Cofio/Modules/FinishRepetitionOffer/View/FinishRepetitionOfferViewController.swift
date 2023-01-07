@@ -155,12 +155,15 @@ final class FinishRepetitionOfferViewController: UIViewController {
 // MARK: - FinishRepetitionOfferViewInput
 
 extension FinishRepetitionOfferViewController: FinishRepetitionOfferViewInput {
-    
+    // TODO: сделать посередине вью
     func updateData(with data: FinishRepetitionOfferModel) {
         themeLabel.text = data.themeName
         dateLabel.text = data.date
         
-        print("vlad \(data.themeName)")
-        print("vlad \(data.date)")
+        if data.isCompleted {
+            repeatLabel.text = "выучена!"
+            dateLabel.isHidden = true
+            nextRepeatLabel.isHidden = true
+        }
     }
 }
