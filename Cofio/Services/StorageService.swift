@@ -17,6 +17,7 @@ protocol StorageServiceProtocol {
     func updateCollection(name: String, newName: String, icon: String)
     
     func fetchThemes(collectionName: String) -> [Theme]
+    func fetchTheme(themeName: String) -> Theme
     func deleteTheme(collectionName: String, themeName: String)
     func getCardsCount(collectionName: String, themeName: String) -> Int
     func createTheme(collectionName: String, themeName: String)
@@ -29,6 +30,8 @@ protocol StorageServiceProtocol {
     func updateCard(themeName: String, cardDefinition: String, newDefinition: String, newDescription: String)
     
     func fetchAllThemesForRepetition() -> [Theme]
+    
+    func updateThemeDate(themeName: String, newDate: Date, newRepeats: Int, isRepeatCompleted: Bool)
 }
 
 final class StorageService: StorageServiceProtocol {
@@ -75,6 +78,10 @@ final class StorageService: StorageServiceProtocol {
         coreDataManager.fetchThemes(collectionName: collectionName)
     }
     
+    func fetchTheme(themeName: String) -> Theme {
+        coreDataManager.fetchTheme(themeName: themeName)
+    }
+    
     func deleteTheme(collectionName: String, themeName: String) {
         coreDataManager.deleteTheme(collectionName: collectionName, themeName: themeName)
     }
@@ -102,6 +109,7 @@ final class StorageService: StorageServiceProtocol {
     }
     
     func fetchCard(themeName: String, cardName: String?) -> Card {
+        // TODO: решить что-то с форс анврапом
         coreDataManager.fetchCards(themeName: themeName).first(where: { $0.cardDefinition == cardName })!
     }
     
@@ -127,5 +135,10 @@ final class StorageService: StorageServiceProtocol {
         }
         
         return returnedThemes
+    }
+    
+    
+    func updateThemeDate(themeName: String, newDate: Date, newRepeats: Int, isRepeatCompleted: Bool) {
+        coreDataManager.updateThemeDate(themeName: themeName, newDate: newDate, newRepeats: newRepeats, isRepeatCompleted: isRepeatCompleted)
     }
 }

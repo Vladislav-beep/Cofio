@@ -11,6 +11,13 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        let repetition: RepetitionType = .long
+       // UserDefaults.standard.set(repetition, forKey: "repetitionType")
+        
+        if let encoded = try? JSONEncoder().encode(repetition) {
+            UserDefaults.standard.set(encoded, forKey: "repetitionType")
+        }
         return true
     }
     

@@ -9,6 +9,8 @@ protocol CardsRepetitionInteractorInput: AnyObject {
     
     func getThemeName() -> String
     func fetchCards() -> [Card]
+    func updateTheme()
+    func fetchTheme() -> Theme
 }
 
 protocol CardsRepetitionInteractorOutput: AnyObject {}

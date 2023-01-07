@@ -19,6 +19,7 @@ protocol CoreDataManagerProtocol {
     
     func createTheme(name: String, repeats: Int, repeatDate: Date, isRepeatComplete: Bool, collectionName: String)
     func fetchThemes(collectionName: String) -> [Theme]
+    func fetchTheme(themeName: String) -> Theme
     func deleteTheme(collectionName: String, themeName: String)
     func updateTheme(collectionName: String, themeName: String, newName: String)
     
@@ -28,6 +29,8 @@ protocol CoreDataManagerProtocol {
     func updateCard(themeName: String, cardDefinition: String, newDefinition: String, newDescription: String)
     
     func fetchAllThemesForRepetition() -> [Theme]
+    
+    func updateThemeDate(themeName: String, newDate: Date, newRepeats: Int, isRepeatCompleted: Bool)
 }
 
 class CoreDataManager: CoreDataManagerProtocol {
@@ -135,6 +138,19 @@ class CoreDataManager: CoreDataManagerProtocol {
             print("Error fetching themes \(error)")
         }
         return fetchedThemes
+    }
+    
+    func fetchTheme(themeName: String) -> Theme {
+        let request: NSFetchRequest<Theme> = Theme.fetchRequest()
+        request.predicate = NSPredicate(format: "name == %@", themeName)
+        
+        var fetchedTheme: Theme?
+        do {
+            fetchedTheme = try persistentContainer.viewContext.fetch(request).first
+        } catch let error {
+            print("Error fetching themes \(error)")
+        }
+        return fetchedTheme!
     }
     
     func fetchCards(themeName: String) -> [Card] {
@@ -275,5 +291,26 @@ class CoreDataManager: CoreDataManagerProtocol {
             print("Error fetching themes \(error)")
         }
         return fetchedThemes
+    }
+    
+    
+    func updateThemeDate(themeName: String, newDate: Date, newRepeats: Int, isRepeatCompleted: Bool) {
+        let namePredicate = NSPredicate(format: "name == %@", themeName)
+      //  let multiplePredicate = NSCompoundPredicate(type: .and, subpredicates: [collectionPredicate, namePredicate])
+        
+        let request: NSFetchRequest<Theme> = Theme.fetchRequest()
+        request.predicate = namePredicate
+        
+        do {
+            guard let theme = try persistentContainer.viewContext.fetch(request).first
+            else { return }
+            theme.repeatDate = newDate
+            theme.repeats = Int64(newRepeats)
+            theme.isRepeatComplete = isRepeatCompleted
+        } catch let error {
+            print("Error updating theme \(error)")
+        }
+        
+        save()
     }
 }

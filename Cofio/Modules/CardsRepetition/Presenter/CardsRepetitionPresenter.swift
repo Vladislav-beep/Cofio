@@ -61,7 +61,14 @@ extension CardsRepetitionPresenter: CardsRepetitionViewOutput {
     
     func viewDidTapButton(indexPath: IndexPath) {
         if isLastCard || cardsData.count == 1 {
-            output?.moduleWantsToOpenFinishOffer(self)
+            interactor.updateTheme()
+            let theme = interactor.fetchTheme()
+            let date = theme.repeatDate
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            let dateString = dateFormatter.string(from: date!)
+            let themeName = interactor.getThemeName()
+            output?.moduleWantsToOpenFinishOffer(self, themeName: themeName, repeatDate: dateString)
         }
         
         if indexPath.row == cardsData.count - 1 {

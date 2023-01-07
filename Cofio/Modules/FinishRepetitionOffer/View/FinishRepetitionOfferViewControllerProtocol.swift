@@ -7,6 +7,7 @@
 
 protocol FinishRepetitionOfferViewInput: AnyObject {
     
+    func updateData(with data: FinishRepetitionOfferModel)
 }
 
 protocol FinishRepetitionOfferViewOutput: AnyObject {

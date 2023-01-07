@@ -29,7 +29,6 @@ final class RepetitionDataFactory: RepetitionDataFactoryProtocol {
                                                     date: date,
                                                     backgroundColor: backgroundColor)
             themeCellsModel.append(themeCell)
-            themeCellsModel.sort { $0.date > $1.date }
         }
         
         return themeCellsModel
@@ -70,7 +69,7 @@ final class RepetitionDataFactory: RepetitionDataFactoryProtocol {
         } else if Calendar.current.isDateInToday(repeatDate) {
             return .lightGreen
         } else {
-            return .lightRed
+            return .darkRed
         }
     }
     

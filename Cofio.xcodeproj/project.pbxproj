@@ -17,6 +17,10 @@
 		B90A50622968AA7D00993C75 /* FinishRepetitionOfferPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90A50612968AA7D00993C75 /* FinishRepetitionOfferPresenter.swift */; };
 		B90A50642968AA8B00993C75 /* FinishRepetitionOfferPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90A50632968AA8B00993C75 /* FinishRepetitionOfferPresenterProtocol.swift */; };
 		B90A50662968AF3600993C75 /* FinishRepetitionOfferModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90A50652968AF3600993C75 /* FinishRepetitionOfferModuleBuilder.swift */; };
+		B90A50682969BDE200993C75 /* FinishRepetitionOfferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90A50672969BDE200993C75 /* FinishRepetitionOfferModel.swift */; };
+		B90A506A2969CA6E00993C75 /* RepetitionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90A50692969CA6E00993C75 /* RepetitionService.swift */; };
+		B90A506D2969CAA300993C75 /* RepetitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90A506C2969CAA300993C75 /* RepetitionType.swift */; };
+		B90A506F2969CB0A00993C75 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90A506E2969CB0A00993C75 /* UserDefaultsService.swift */; };
 		B910AB3C2945E42400D9E7EA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B910AB3B2945E42400D9E7EA /* SettingsViewController.swift */; };
 		B910AB402945E51900D9E7EA /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B910AB3F2945E51900D9E7EA /* StatisticsViewController.swift */; };
 		B910AB4429485B8100D9E7EA /* RepetitionFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B910AB4329485B8100D9E7EA /* RepetitionFlowCoordinator.swift */; };
@@ -180,6 +184,10 @@
 		B90A50612968AA7D00993C75 /* FinishRepetitionOfferPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishRepetitionOfferPresenter.swift; sourceTree = "<group>"; };
 		B90A50632968AA8B00993C75 /* FinishRepetitionOfferPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishRepetitionOfferPresenterProtocol.swift; sourceTree = "<group>"; };
 		B90A50652968AF3600993C75 /* FinishRepetitionOfferModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishRepetitionOfferModuleBuilder.swift; sourceTree = "<group>"; };
+		B90A50672969BDE200993C75 /* FinishRepetitionOfferModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishRepetitionOfferModel.swift; sourceTree = "<group>"; };
+		B90A50692969CA6E00993C75 /* RepetitionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepetitionService.swift; sourceTree = "<group>"; };
+		B90A506C2969CAA300993C75 /* RepetitionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepetitionType.swift; sourceTree = "<group>"; };
+		B90A506E2969CB0A00993C75 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		B910AB3B2945E42400D9E7EA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B910AB3F2945E51900D9E7EA /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		B910AB4329485B8100D9E7EA /* RepetitionFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepetitionFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -376,6 +384,7 @@
 			children = (
 				B90A505D2968A8AD00993C75 /* FinishRepetitionOfferViewController.swift */,
 				B90A505F2968A8BC00993C75 /* FinishRepetitionOfferViewControllerProtocol.swift */,
+				B90A50672969BDE200993C75 /* FinishRepetitionOfferModel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -387,6 +396,15 @@
 				B90A50632968AA8B00993C75 /* FinishRepetitionOfferPresenterProtocol.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B90A506B2969CA9000993C75 /* RepetitionService */ = {
+			isa = PBXGroup;
+			children = (
+				B90A50692969CA6E00993C75 /* RepetitionService.swift */,
+				B90A506C2969CAA300993C75 /* RepetitionType.swift */,
+			);
+			path = RepetitionService;
 			sourceTree = "<group>";
 		};
 		B910AB392945E3EF00D9E7EA /* SettingsModule */ = {
@@ -1016,9 +1034,11 @@
 		B9CC13EB289309390013ED76 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B90A506B2969CA9000993C75 /* RepetitionService */,
 				B9ACB7BC295E0B5900F2B476 /* CoreDataManager */,
-				B9CC13EC2893094D0013ED76 /* ImageProvider.swift */,
 				B9AAEC312962E7DB00BA6078 /* StorageService.swift */,
+				B9CC13EC2893094D0013ED76 /* ImageProvider.swift */,
+				B90A506E2969CB0A00993C75 /* UserDefaultsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1232,6 +1252,7 @@
 				B9CC13E72891D6510013ED76 /* Word.swift in Sources */,
 				B9CC13DD2891B9090013ED76 /* CollectionTextField.swift in Sources */,
 				B9AAEC302961CC3700BA6078 /* CardsEmptyCell.swift in Sources */,
+				B90A506D2969CAA300993C75 /* RepetitionType.swift in Sources */,
 				B9ACB7A129543A0000F2B476 /* ChooseIconPresenterProtocol.swift in Sources */,
 				B94C0258294E5B3F00EF9EB6 /* CardDetailsViewProtocol.swift in Sources */,
 				B932E95E28ABFBC4007244E6 /* RepetitionModuleBuilder.swift in Sources */,
@@ -1249,6 +1270,7 @@
 				B9CC13B5288F087A0013ED76 /* NewCollectionProtocol.swift in Sources */,
 				B90A50572965977D00993C75 /* CardsRepetitionDataFactory.swift in Sources */,
 				B99B17542944CD66002167DB /* AppFlowCoordinator.swift in Sources */,
+				B90A506A2969CA6E00993C75 /* RepetitionService.swift in Sources */,
 				B93EF8B828968D210057C774 /* CardsPresenter.swift in Sources */,
 				B9CC141E289688470013ED76 /* CardsCell.swift in Sources */,
 				B9ACB7A62954C85800F2B476 /* IconCell.swift in Sources */,
@@ -1289,12 +1311,14 @@
 				B9ACB7BA295A3A4200F2B476 /* CardDetailsCell.swift in Sources */,
 				B9ACB7D9295E112F00F2B476 /* CoreDataManager.swift in Sources */,
 				B9464ACE295E197200D7A5E1 /* Card+CoreDataProperties.swift in Sources */,
+				B90A506F2969CB0A00993C75 /* UserDefaultsService.swift in Sources */,
 				B9CC13A0288EE8C10013ED76 /* MainPresenterProtocol.swift in Sources */,
 				B93EF8B428968A8F0057C774 /* CardsViewProtocol.swift in Sources */,
 				B932E948289DB365007244E6 /* MainModuleCellViewModel.swift in Sources */,
 				B9CC13A8288EF56D0013ED76 /* MainFlowCoordinator.swift in Sources */,
 				B99B175C2944CF07002167DB /* TabbarFlowCoordinator.swift in Sources */,
 				B9CC13BB288F0A000013ED76 /* NewCollectionInteractorProtocol.swift in Sources */,
+				B90A50682969BDE200993C75 /* FinishRepetitionOfferModel.swift in Sources */,
 				B93EF8CD289AF9B60057C774 /* NewCardViewProtocol.swift in Sources */,
 				B9CC13F1289310460013ED76 /* UIStackView+Extension.swift in Sources */,
 				B9AAEC2A296048C100BA6078 /* CardsDataFactory.swift in Sources */,

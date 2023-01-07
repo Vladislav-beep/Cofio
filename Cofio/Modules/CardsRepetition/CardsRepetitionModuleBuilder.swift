@@ -31,8 +31,12 @@ final class CardsRepetitionModuleBuilder {
     
     func build() -> UIViewController {
         let dataSource = CardsCollectionViewDataSource()
+        let repetitionService = RepetitionService()
+        let userDefaultsService = UserDefaultsService()
         let cardsRepetitionDataFactory = CardsRepetitionDataFactory()
         let interactor = CardsRepetitonInteractor(storageService: storageService,
+                                                  repetitionService: repetitionService,
+                                                  userDefaultsService: userDefaultsService,
                                                   themeName: themeName)
         let presenter = CardsRepetitionPresenter(interactor: interactor,
                                                  cardsRepetitionDataFactory: cardsRepetitionDataFactory)

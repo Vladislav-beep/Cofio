@@ -30,7 +30,6 @@ final class FinishRepetitionOfferViewController: UIViewController {
         themeLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         themeLabel.numberOfLines = 7
         themeLabel.textAlignment = .center
-        themeLabel.text = "wsgweweew weggeegw wweggewewg gsssdg sdgdgsgsdgsdgs dgsdgsdgsdgsdgs ggssdgs sgddgsdgsgdg gssdgsg dsggdssd sdg sddsggsgg sgdgd sgd jdwgjwjjwjdw jwdgjdwjldw sgggrwgrwgr wgrwgrgwrwgrwgr gwgrwgrwgwr"
         themeLabel.translatesAutoresizingMaskIntoConstraints = false
         return themeLabel
     }()
@@ -60,7 +59,6 @@ final class FinishRepetitionOfferViewController: UIViewController {
         themeLabel.font = UIFont.systemFont(ofSize: 19, weight: .bold)
         themeLabel.numberOfLines = 0
         themeLabel.textAlignment = .center
-        themeLabel.text = "23 янв. 2023 г."
         themeLabel.translatesAutoresizingMaskIntoConstraints = false
         return themeLabel
     }()
@@ -89,6 +87,7 @@ final class FinishRepetitionOfferViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        output.viewDidLoad()
         
         setupViews()
     }
@@ -155,4 +154,13 @@ final class FinishRepetitionOfferViewController: UIViewController {
 
 // MARK: - FinishRepetitionOfferViewInput
 
-extension FinishRepetitionOfferViewController: FinishRepetitionOfferViewInput {}
+extension FinishRepetitionOfferViewController: FinishRepetitionOfferViewInput {
+    
+    func updateData(with data: FinishRepetitionOfferModel) {
+        themeLabel.text = data.themeName
+        dateLabel.text = data.date
+        
+        print("vlad \(data.themeName)")
+        print("vlad \(data.date)")
+    }
+}

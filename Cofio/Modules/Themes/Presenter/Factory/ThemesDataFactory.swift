@@ -30,11 +30,12 @@ final class ThemesDataFactory: ThemesDataFactoryProtocol {
         }
         
         for theme in keys {
+            // TODO: totalRepeats из userDefaults
             let themeCell = ThemesCellsDataModel.card(
                 .init(title: theme.name ?? "",
                       subtitle: countCards(count: themesDict[theme] ?? 0),
                       totalRepeats: 7,
-                      repeats: 0)
+                      repeats: Int(theme.repeats))
             )
             themeCellsModel.append(themeCell)
         }

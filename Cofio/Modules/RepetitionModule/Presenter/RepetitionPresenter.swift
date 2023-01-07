@@ -30,7 +30,6 @@ final class RepetitionPresenter {
     // MARK: Private
     
     private func updateView() {
-        // TODO: отсеять темы без карточек
         let themes = interactor.fetchAllThemesForRepetition()
         let data = repetitionDataFactory.dataFromThemes(themes: themes)
         view?.updateData(with: data)
