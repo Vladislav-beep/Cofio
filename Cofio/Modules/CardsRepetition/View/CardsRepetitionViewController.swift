@@ -18,7 +18,7 @@ final class CardsRepetitionViewController: UIViewController {
         let learnedButton = UIButton()
         learnedButton.setTitle("cards_repetition_module_learned_button"~, for: .normal)
         learnedButton.layer.cornerRadius = 8
-        learnedButton.backgroundColor = .darkGreen
+        learnedButton.backgroundColor = .lightGreen
         learnedButton.addTarget(self, action: #selector(handleNext), for: .touchUpInside)
         learnedButton.translatesAutoresizingMaskIntoConstraints = false
         return learnedButton
@@ -28,8 +28,8 @@ final class CardsRepetitionViewController: UIViewController {
         let moreTimeButton = UIButton()
         moreTimeButton.setTitle("cards_repetition_module_more_button"~, for: .normal)
         moreTimeButton.layer.cornerRadius = 8
-        moreTimeButton.backgroundColor = .darkRed
-        moreTimeButton.addTarget(self, action: #selector(handlePrev), for: .touchUpInside)
+        moreTimeButton.backgroundColor = .lightRed
+        moreTimeButton.addTarget(self, action: #selector(handleMoreTime), for: .touchUpInside)
         moreTimeButton.translatesAutoresizingMaskIntoConstraints = false
         return moreTimeButton
     }()
@@ -93,6 +93,8 @@ final class CardsRepetitionViewController: UIViewController {
     
     private func setupViews() {
         view.backgroundColor = .white
+        learnedButton.isEnabled = false
+        moreTimeButton.isEnabled = false
         
         view.addSubview(buttonStackView)
         NSLayoutConstraint.activate([
@@ -119,20 +121,28 @@ final class CardsRepetitionViewController: UIViewController {
         ])
     }
     
-    @objc private func handleNext() {
+    private func handleTap() {
         let nextIndex = min(pageControl.currentPage + 1, output.getCardsCount() - 1)
         let indexPath = IndexPath(item: nextIndex, section: 0)
         pageControl.currentPage = nextIndex
         cardsCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        
+        learnedButton.isEnabled = false
+        learnedButton.backgroundColor = .lightGreen
+        moreTimeButton.isEnabled = false
+        moreTimeButton.backgroundColor = .lightRed
+        
         output.viewDidTapButton(indexPath: indexPath)
     }
     
-    @objc private func handlePrev() {
-        let nextIndex = max(pageControl.currentPage - 1, 0)
-        let indexPath = IndexPath(item: nextIndex, section: 0)
-        pageControl.currentPage = nextIndex
-        cardsCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        
+    // MARK: Actions
+    
+    @objc private func handleNext() {
+        handleTap()
+    }
+    
+    @objc private func handleMoreTime() {
+        handleTap()
     }
 }
 
@@ -167,6 +177,10 @@ extension CardsRepetitionViewController: UICollectionViewDelegate {
         switch item {
         case .card:
             output.viewDidTapRow(indexPath: indexPath)
+            learnedButton.isEnabled = true
+            learnedButton.backgroundColor = .darkGreen
+            moreTimeButton.isEnabled = true
+            moreTimeButton.backgroundColor = .darkRed
             
         case .empty:
             break

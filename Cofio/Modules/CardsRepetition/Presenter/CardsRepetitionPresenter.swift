@@ -38,7 +38,7 @@ final class CardsRepetitionPresenter {
 extension CardsRepetitionPresenter: CardsRepetitionViewOutput {
     
     func getCardsCount() -> Int {
-        interactor.fetchCards().count
+        cardsData.count
     }
     
     func viewDidLoad() {

@@ -21,7 +21,8 @@ extension UIColor {
     static let darkGreen = #colorLiteral(red: 0.06667982787, green: 0.6665675044, blue: 0.6952224374, alpha: 1)
     static let lightGreen = #colorLiteral(red: 0.8447727561, green: 0.952921927, blue: 0.9529249072, alpha: 1)
     
-    static let darkRed = #colorLiteral(red: 0.9345772862, green: 0.6980291605, blue: 0.7430046797, alpha: 1)
+    static let lightRed = #colorLiteral(red: 0.9345772862, green: 0.6980291605, blue: 0.7430046797, alpha: 1)
+    static let darkRed = #colorLiteral(red: 0.916656673, green: 0.297821641, blue: 0.5368250608, alpha: 1)
     
     static let lightGray = #colorLiteral(red: 0.8501498699, green: 0.7922084928, blue: 0.76350528, alpha: 1)
 }

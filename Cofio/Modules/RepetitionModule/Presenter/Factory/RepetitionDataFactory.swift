@@ -70,7 +70,7 @@ final class RepetitionDataFactory: RepetitionDataFactoryProtocol {
         } else if Calendar.current.isDateInToday(repeatDate) {
             return .lightGreen
         } else {
-            return .darkRed
+            return .lightRed
         }
     }
     
