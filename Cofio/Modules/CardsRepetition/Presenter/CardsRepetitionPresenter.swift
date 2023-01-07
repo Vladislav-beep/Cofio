@@ -54,7 +54,7 @@ extension CardsRepetitionPresenter: CardsRepetitionViewOutput {
     func viewDidTapRow(indexPath: IndexPath) {
         switch cardsData[indexPath.item] {
         case .card(let model):
-            let newCard = RepetitionCardCellsDataModel.card(.init(definition: model.definition, description: model.description, descriptionShown: true))
+            let newCard = RepetitionCardCellsDataModel.card(.init(id: UUID(), definition: model.definition, description: model.description, descriptionShown: true))
             cardsData.remove(at: indexPath.item)
             cardsData.insert(newCard, at: indexPath.item)
             view?.updateData(with: cardsData)
@@ -71,6 +71,18 @@ extension CardsRepetitionPresenter: CardsRepetitionViewOutput {
         
         if indexPath.row == cardsData.count - 1 {
             isLastCard = true
+        }
+    }
+    
+    func viewDidTapMoreTime(indexPath: IndexPath) {
+        switch cardsData[indexPath.item] {
+        case .card(let model):
+            let newCard = RepetitionCardCellsDataModel.card(.init(id: UUID(), definition: model.definition, description: model.description, descriptionShown: false))
+            cardsData.append(newCard)
+            view?.updateData(with: cardsData)
+            
+        case .empty:
+            break
         }
     }
 }

@@ -45,7 +45,6 @@ final class CardsRepetitionViewController: UIViewController {
     private lazy var pageControl: UIPageControl = {
         let pc = UIPageControl()
         pc.currentPage = 0
-        pc.numberOfPages = output.getCardsCount()
         pc.currentPageIndicatorTintColor = .systemPink
         pc.pageIndicatorTintColor = UIColor(red: 249/255, green: 207/255, blue: 224/255, alpha: 1)
         pc.translatesAutoresizingMaskIntoConstraints = false
@@ -95,19 +94,30 @@ final class CardsRepetitionViewController: UIViewController {
         view.backgroundColor = .white
         learnedButton.isEnabled = false
         moreTimeButton.isEnabled = false
+        pageControl.numberOfPages = output.getCardsCount()
         
-        view.addSubview(buttonStackView)
-        NSLayoutConstraint.activate([
-            buttonStackView.heightAnchor.constraint(equalToConstant: 50),
-            buttonStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -25),
-            buttonStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            buttonStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:  -16)
-        ])
+        if output.getCardsCount() != 1 {
+            view.addSubview(buttonStackView)
+            NSLayoutConstraint.activate([
+                buttonStackView.heightAnchor.constraint(equalToConstant: 50),
+                buttonStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -25),
+                buttonStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+                buttonStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:  -16)
+            ])
+        } else {
+            view.addSubview(learnedButton)
+            NSLayoutConstraint.activate([
+                learnedButton.heightAnchor.constraint(equalToConstant: 50),
+                learnedButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -25),
+                learnedButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+                learnedButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:  -16)
+            ])
+        }
         
         view.addSubview(pageControl)
         NSLayoutConstraint.activate([
             pageControl.heightAnchor.constraint(equalToConstant: 20),
-            pageControl.bottomAnchor.constraint(equalTo: buttonStackView.topAnchor, constant: -20),
+            pageControl.bottomAnchor.constraint(equalTo: learnedButton.topAnchor, constant: -20),
             pageControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             pageControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:  -16)
         ])
@@ -127,6 +137,7 @@ final class CardsRepetitionViewController: UIViewController {
         pageControl.currentPage = nextIndex
         cardsCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         
+        pageControl.numberOfPages = output.getCardsCount()
         learnedButton.isEnabled = false
         learnedButton.backgroundColor = .lightGreen
         moreTimeButton.isEnabled = false
@@ -142,7 +153,20 @@ final class CardsRepetitionViewController: UIViewController {
     }
     
     @objc private func handleMoreTime() {
-        handleTap()
+        let nextIndex = min(pageControl.currentPage + 1, output.getCardsCount() - 1)
+        let indexPath = IndexPath(item: nextIndex, section: 0)
+        let idexPrev = IndexPath(item: pageControl.currentPage, section: 0)
+        pageControl.currentPage = nextIndex
+        cardsCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        
+        
+        learnedButton.isEnabled = false
+        learnedButton.backgroundColor = .lightGreen
+        moreTimeButton.isEnabled = false
+        moreTimeButton.backgroundColor = .lightRed
+        
+        output.viewDidTapMoreTime(indexPath: idexPrev)
+        pageControl.numberOfPages = output.getCardsCount()
     }
 }
 

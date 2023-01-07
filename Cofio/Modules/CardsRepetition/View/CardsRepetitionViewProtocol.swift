@@ -19,4 +19,5 @@ protocol CardsRepetitionViewOutput: AnyObject {
     func getCardsCount() -> Int
     func viewDidTapRow(indexPath: IndexPath)
     func viewDidTapButton(indexPath: IndexPath)
+    func viewDidTapMoreTime(indexPath: IndexPath)
 }

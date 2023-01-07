@@ -5,6 +5,8 @@
 //  Created by Владислав Сизонов on 04.01.2023.
 //
 
+import Foundation
+
 protocol CardsRepetitionDataFactoryProtocol {
     
     func dataFromRepetitionCards(cards: [Card]) -> [RepetitionCardCellsDataModel]
@@ -24,7 +26,7 @@ final class CardsRepetitionDataFactory: CardsRepetitionDataFactoryProtocol {
         }
         
         for card in cards {
-            let cardCell = RepetitionCardCellsDataModel.card(.init(definition: card.cardDefinition ?? "", description: card.cardDescription ?? "", descriptionShown: false))
+            let cardCell = RepetitionCardCellsDataModel.card(.init(id: UUID(), definition: card.cardDefinition ?? "", description: card.cardDescription ?? "", descriptionShown: false))
             cardCellModels.append(cardCell)
         }
         
