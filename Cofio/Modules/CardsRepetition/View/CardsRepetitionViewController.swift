@@ -55,7 +55,6 @@ final class CardsRepetitionViewController: UIViewController {
         let cardsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
         cardsCollectionView.backgroundColor = .white
         cardsCollectionView.register(RepetitionCardsCell.self, forCellWithReuseIdentifier: "repetitionCardsCell")
-        cardsCollectionView.register(RepetitionEmptyCardsCell.self, forCellWithReuseIdentifier: "repetitionEmptyCardsCell")
         cardsCollectionView.collectionViewLayout = UICollectionViewLayout.createRepetitionCardsLayout()
         cardsCollectionView.isScrollEnabled = false
         cardsCollectionView.showsHorizontalScrollIndicator = false
@@ -175,16 +174,11 @@ final class CardsRepetitionViewController: UIViewController {
 
 extension CardsRepetitionViewController: CardsRepetitionViewInput {
     
-    func updateData(with data: [RepetitionCardCellsDataModel]) {
-        var snapshot = NSDiffableDataSourceSnapshot<Int, RepetitionCardCellsDataModel>()
+    func updateData(with data: [RepetitionCardCellDataModel]) {
+        var snapshot = NSDiffableDataSourceSnapshot<Int, RepetitionCardCellDataModel>()
         snapshot.appendSections([0])
         snapshot.appendItems(data, toSection: 0)
         collectionViewDataSource.apply(snapshot)
-        
-        if data.first == .empty(RepetitionCardEmptyCellDataModel(title: "cards_repetition_module_empty_cell_title"~)) {
-            buttonStackView.isHidden = true
-            pageControl.isHidden = true
-        }
     }
     
     func updateNavBarTitle(navBarTitle: String) {
@@ -198,16 +192,10 @@ extension CardsRepetitionViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = collectionViewDataSource.itemIdentifier(for: indexPath) else { return }
-        switch item {
-        case .card:
-            output.viewDidTapRow(indexPath: indexPath)
-            learnedButton.isEnabled = true
-            learnedButton.backgroundColor = .darkGreen
-            moreTimeButton.isEnabled = true
-            moreTimeButton.backgroundColor = .darkRed
-            
-        case .empty:
-            break
-        }
+        output.viewDidTapRow(indexPath: indexPath)
+        learnedButton.isEnabled = true
+        learnedButton.backgroundColor = .darkGreen
+        moreTimeButton.isEnabled = true
+        moreTimeButton.backgroundColor = .darkRed
     }
 }

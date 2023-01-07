@@ -9,7 +9,7 @@ import Foundation
 
 protocol CardsRepetitionViewInput: AnyObject {
     
-    func updateData(with data: [RepetitionCardCellsDataModel])
+    func updateData(with data: [RepetitionCardCellDataModel])
     func updateNavBarTitle(navBarTitle: String)
 }
 

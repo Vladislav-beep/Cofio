@@ -9,24 +9,18 @@ import Foundation
 
 protocol CardsRepetitionDataFactoryProtocol {
     
-    func dataFromRepetitionCards(cards: [Card]) -> [RepetitionCardCellsDataModel]
+    func dataFromRepetitionCards(cards: [Card]) -> [RepetitionCardCellDataModel]
 }
 
 final class CardsRepetitionDataFactory: CardsRepetitionDataFactoryProtocol {
     
     // MARK: Public
     
-    func dataFromRepetitionCards(cards: [Card]) -> [RepetitionCardCellsDataModel] {
-        var cardCellModels: [RepetitionCardCellsDataModel] = []
-        
-        if cards.isEmpty {
-            let emptyCell = RepetitionCardCellsDataModel.empty(.init(title: "cards_repetition_module_empty_cell_title"~))
-            cardCellModels.append(emptyCell)
-            return cardCellModels
-        }
+    func dataFromRepetitionCards(cards: [Card]) -> [RepetitionCardCellDataModel] {
+        var cardCellModels: [RepetitionCardCellDataModel] = []
         
         for card in cards {
-            let cardCell = RepetitionCardCellsDataModel.card(.init(id: UUID(), definition: card.cardDefinition ?? "", description: card.cardDescription ?? "", descriptionShown: false))
+            let cardCell = RepetitionCardCellDataModel(id: UUID(), definition: card.cardDefinition ?? "", description: card.cardDescription ?? "", descriptionShown: false)
             cardCellModels.append(cardCell)
         }
         

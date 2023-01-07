@@ -7,10 +7,10 @@
 
 import Foundation
 
-enum RepetitionCardCellsDataModel: Hashable {
-    case card(RepetitionCardCellDataModel)
-    case empty(RepetitionCardEmptyCellDataModel)
-}
+//enum RepetitionCardCellsDataModel: Hashable {
+//    case card(RepetitionCardCellDataModel)
+//    case empty(RepetitionCardEmptyCellDataModel)
+//}
 
 struct RepetitionCardCellDataModel: Hashable, Identifiable {
     let id: UUID
@@ -19,6 +19,6 @@ struct RepetitionCardCellDataModel: Hashable, Identifiable {
     let descriptionShown: Bool
 }
 
-struct RepetitionCardEmptyCellDataModel: Hashable {
-    let title: String
-}
+//struct RepetitionCardEmptyCellDataModel: Hashable {
+//    let title: String
+//}

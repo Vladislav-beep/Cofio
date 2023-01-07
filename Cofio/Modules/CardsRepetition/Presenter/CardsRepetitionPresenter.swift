@@ -13,7 +13,7 @@ final class CardsRepetitionPresenter {
     
     private let interactor: CardsRepetitionInteractorInput
     private let cardsRepetitionDataFactory: CardsRepetitionDataFactoryProtocol
-    private var cardsData: [RepetitionCardCellsDataModel] = []
+    private var cardsData: [RepetitionCardCellDataModel] = []
     private var isLastCard: Bool = false
     
     
@@ -52,16 +52,11 @@ extension CardsRepetitionPresenter: CardsRepetitionViewOutput {
     }
     
     func viewDidTapRow(indexPath: IndexPath) {
-        switch cardsData[indexPath.item] {
-        case .card(let model):
-            let newCard = RepetitionCardCellsDataModel.card(.init(id: UUID(), definition: model.definition, description: model.description, descriptionShown: true))
-            cardsData.remove(at: indexPath.item)
-            cardsData.insert(newCard, at: indexPath.item)
-            view?.updateData(with: cardsData)
-            
-        case .empty:
-            break
-        }
+        let card = cardsData[indexPath.item]
+        let newCard = RepetitionCardCellDataModel(id: UUID(), definition: card.definition, description: card.description, descriptionShown: true)
+        cardsData.remove(at: indexPath.item)
+        cardsData.insert(newCard, at: indexPath.item)
+        view?.updateData(with: cardsData)
     }
     
     func viewDidTapButton(indexPath: IndexPath) {
@@ -75,15 +70,10 @@ extension CardsRepetitionPresenter: CardsRepetitionViewOutput {
     }
     
     func viewDidTapMoreTime(indexPath: IndexPath) {
-        switch cardsData[indexPath.item] {
-        case .card(let model):
-            let newCard = RepetitionCardCellsDataModel.card(.init(id: UUID(), definition: model.definition, description: model.description, descriptionShown: false))
-            cardsData.append(newCard)
-            view?.updateData(with: cardsData)
-            
-        case .empty:
-            break
-        }
+        let card = cardsData[indexPath.item]
+        let newCard = RepetitionCardCellDataModel(id: UUID(), definition: card.definition, description: card.description, descriptionShown: false)
+        cardsData.append(newCard)
+        view?.updateData(with: cardsData)
     }
 }
 
