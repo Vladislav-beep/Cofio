@@ -41,16 +41,7 @@ final class ThemesCell: UITableViewCell {
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
         return subtitleLabel
     }()
-    
-    private let persentLabel: UILabel = {
-        let persentLabel = UILabel()
-        persentLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
-        persentLabel.numberOfLines = 1
-        persentLabel.textAlignment = .center
-        persentLabel.translatesAutoresizingMaskIntoConstraints = false
-        return persentLabel
-    }()
-    
+
     private let progressView: UIView = {
         let progressView = UIView()
         progressView.backgroundColor = .clear
@@ -89,29 +80,6 @@ final class ThemesCell: UITableViewCell {
             lowerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
         ])
         
-        lowerView.addSubview(persentLabel)
-        NSLayoutConstraint.activate([
-            persentLabel.topAnchor.constraint(equalTo: lowerView.topAnchor, constant: 10),
-            persentLabel.bottomAnchor.constraint(equalTo: lowerView.bottomAnchor, constant: -16),
-            persentLabel.trailingAnchor.constraint(equalTo: lowerView.trailingAnchor, constant: -12),
-            persentLabel.heightAnchor.constraint(equalTo: persentLabel.widthAnchor)
-        ])
-        
-        lowerView.addSubview(titleLabel)
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: lowerView.topAnchor, constant: 16),
-            titleLabel.leadingAnchor.constraint(equalTo: lowerView.leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: lowerView.trailingAnchor, constant: -12),
-        ])
-        
-        lowerView.addSubview(subtitleLabel)
-        NSLayoutConstraint.activate([
-            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
-            subtitleLabel.leadingAnchor.constraint(equalTo: lowerView.leadingAnchor, constant: 16),
-            subtitleLabel.trailingAnchor.constraint(equalTo: lowerView.trailingAnchor, constant: -12),
-            subtitleLabel.bottomAnchor.constraint(equalTo: lowerView.bottomAnchor, constant: -16)
-        ])
-        
         lowerView.addSubview(progressView)
         NSLayoutConstraint.activate([
             progressView.centerYAnchor.constraint(equalTo: lowerView.centerYAnchor),
@@ -125,9 +93,25 @@ final class ThemesCell: UITableViewCell {
             progressLabel.centerYAnchor.constraint(equalTo: progressView.centerYAnchor),
             progressLabel.centerXAnchor.constraint(equalTo: progressView.centerXAnchor)
         ])
+        
+        lowerView.addSubview(titleLabel)
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: lowerView.topAnchor, constant: 16),
+            titleLabel.leadingAnchor.constraint(equalTo: lowerView.leadingAnchor, constant: 16),
+            titleLabel.trailingAnchor.constraint(equalTo: progressView.leadingAnchor, constant: -12),
+        ])
+        
+        lowerView.addSubview(subtitleLabel)
+        NSLayoutConstraint.activate([
+            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
+            subtitleLabel.leadingAnchor.constraint(equalTo: lowerView.leadingAnchor, constant: 16),
+            subtitleLabel.trailingAnchor.constraint(equalTo: lowerView.trailingAnchor, constant: -12),
+            subtitleLabel.bottomAnchor.constraint(equalTo: lowerView.bottomAnchor, constant: -16)
+        ])
     }
     
     private func setupLayers(displayData: DisplayData) {
+        // TODO: иногда не срабатывает анимация при обновлении экрана
         let shapeLayer = CAShapeLayer()
         let trackLayer = CAShapeLayer()
         

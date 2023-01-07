@@ -19,6 +19,13 @@ final class FinishRepetitionOfferViewController: UIViewController {
         return closeButton
     }()
     
+    private let checkMarkImageView: UIImageView = {
+        let checkMarkImageView = UIImageView()
+        checkMarkImageView.clipsToBounds = true
+        checkMarkImageView.translatesAutoresizingMaskIntoConstraints = false
+        return checkMarkImageView
+    }()
+    
     private let titleLabel: TitleLabel = {
         let titleLabel = TitleLabel(title: "finish_offer_module_title_label"~)
         titleLabel.textAlignment = .center
@@ -107,9 +114,18 @@ final class FinishRepetitionOfferViewController: UIViewController {
             closeButton.widthAnchor.constraint(equalToConstant: 100)
         ])
         
+        view.addSubview(checkMarkImageView)
+        checkMarkImageView.layer.cornerRadius = UIScreen.main.bounds.height / 8
+        NSLayoutConstraint.activate([
+            checkMarkImageView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height / 4),
+            checkMarkImageView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.height / 4),
+            checkMarkImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            checkMarkImageView.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 40)
+        ])
+        
         view.addSubview(titleLabel)
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 40),
+            titleLabel.topAnchor.constraint(equalTo: checkMarkImageView.bottomAnchor, constant: 30),
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
@@ -159,9 +175,11 @@ extension FinishRepetitionOfferViewController: FinishRepetitionOfferViewInput {
     func updateData(with data: FinishRepetitionOfferModel) {
         themeLabel.text = data.themeName
         dateLabel.text = data.date
+        checkMarkImageView.image = UIImage(named: "repeated")
         
         if data.isCompleted {
             repeatLabel.text = "выучена!"
+            checkMarkImageView.image = UIImage(named: "check")
             dateLabel.isHidden = true
             nextRepeatLabel.isHidden = true
         }
