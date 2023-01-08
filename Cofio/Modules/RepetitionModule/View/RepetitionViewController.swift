@@ -14,12 +14,11 @@ final class RepetitionViewController: UIViewController {
     private let output: RepetitionViewOutput
     private let dataSource: RepetitionTableViewDataSourceProtocol
  
-    private lazy var repetitionTableView: UITableView = {
+    private let repetitionTableView: UITableView = {
         let tableView = UITableView()
         tableView.register(RepetitionCell.self)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
-        tableView.delegate = self
         return tableView
     }()
     
@@ -51,7 +50,7 @@ final class RepetitionViewController: UIViewController {
         output.viewDidLoad()
         setupViews()
         setupNavigationBar()
-        
+        repetitionTableView.delegate = self
     }
     
     // MARK: Private
@@ -77,7 +76,6 @@ final class RepetitionViewController: UIViewController {
     }
 }
 
-
 // MARK: - RepetitionViewInput
 
 extension RepetitionViewController: RepetitionViewInput {
@@ -89,7 +87,6 @@ extension RepetitionViewController: RepetitionViewInput {
         tableViewDataSource.apply(snapshot, animatingDifferences: true)
     }
 }
-
 
 // MARK: - UITableViewDelegate
 

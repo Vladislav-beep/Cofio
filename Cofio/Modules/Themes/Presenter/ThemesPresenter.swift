@@ -13,17 +13,17 @@ final class ThemesPresenter {
     private let interactor: ThemesInteractorInput
     private let themesDataFactory: ThemesDataFactoryProtocol
     
-    
     // MARK: Public properties
     
     weak var view: ThemesViewInput?
     weak var output: ThemesPresenterOutput?
     
-    
     // MARK: Lifecycle
     
-    init(interactor: ThemesInteractorInput,
-         themesDataFactory: ThemesDataFactoryProtocol) {
+    init(
+        interactor: ThemesInteractorInput,
+        themesDataFactory: ThemesDataFactoryProtocol
+    ) {
         self.interactor = interactor
         self.themesDataFactory = themesDataFactory
     }
@@ -44,8 +44,7 @@ final class ThemesPresenter {
     }
 }
 
-
-// MARK: - CollectionsViewOutput
+// MARK: - ThemesViewOutput
 
 extension ThemesPresenter: ThemesViewOutput {
     
@@ -74,12 +73,10 @@ extension ThemesPresenter: ThemesViewOutput {
     }
 }
 
-
-// MARK: - CollectionsPresenterInput
+// MARK: - ThemesPresenterInput
 
 extension ThemesPresenter: ThemesPresenterInput {}
 
-
-// MARK: - CollectionsInteractorOutput
+// MARK: - ThemesInteractorOutput
 
 extension ThemesPresenter: ThemesInteractorOutput {}

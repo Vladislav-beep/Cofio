@@ -16,22 +16,21 @@ final class CardsRepetitionPresenter {
     private var cardsData: [RepetitionCardCellDataModel] = []
     private var isLastCard: Bool = false
     
-    
     // MARK: Public properties
     
     weak var view: CardsRepetitionViewInput?
     weak var output: CardsRepetitionPresenterOutput?
     
-    
     // MARK: Lifecycle
     
-    init(interactor: CardsRepetitionInteractorInput,
-         cardsRepetitionDataFactory: CardsRepetitionDataFactoryProtocol) {
+    init(
+        interactor: CardsRepetitionInteractorInput,
+        cardsRepetitionDataFactory: CardsRepetitionDataFactoryProtocol
+    ) {
         self.interactor = interactor
         self.cardsRepetitionDataFactory = cardsRepetitionDataFactory
     }
 }
-
 
 // MARK: - CardsRepetitionViewOutput
 
@@ -53,7 +52,12 @@ extension CardsRepetitionPresenter: CardsRepetitionViewOutput {
     
     func viewDidTapRow(indexPath: IndexPath) {
         let card = cardsData[indexPath.item]
-        let newCard = RepetitionCardCellDataModel(id: UUID(), definition: card.definition, description: card.description, descriptionShown: true)
+        let newCard = RepetitionCardCellDataModel(
+            id: UUID(),
+            definition: card.definition,
+            description: card.description,
+            descriptionShown: true
+        )
         cardsData.remove(at: indexPath.item)
         cardsData.insert(newCard, at: indexPath.item)
         view?.updateData(with: cardsData)
@@ -65,10 +69,16 @@ extension CardsRepetitionPresenter: CardsRepetitionViewOutput {
             let theme = interactor.fetchTheme()
             if theme.repeats == 7 {
                 let themeName = interactor.getThemeName()
-                output?.moduleWantsToOpenFinishOffer(self, themeName: themeName, repeatDate: nil, isCompleted: true)
+                output?.moduleWantsToOpenFinishOffer(
+                    self,
+                    themeName: themeName,
+                    repeatDate: nil,
+                    isCompleted: true
+                )
                 return
             }
             let date = theme.repeatDate
+            // FIXME: use dateformatter service
             let dateFormatter = DateFormatter()
             dateFormatter.dateStyle = .medium
             let dateString = dateFormatter.string(from: date!)
@@ -84,17 +94,20 @@ extension CardsRepetitionPresenter: CardsRepetitionViewOutput {
     func viewDidTapMoreTime(indexPath: IndexPath) {
         // FIXME: что-то идет не так, когда хочешь повторить последнюю карточку
         let card = cardsData[indexPath.item]
-        let newCard = RepetitionCardCellDataModel(id: UUID(), definition: card.definition, description: card.description, descriptionShown: false)
+        let newCard = RepetitionCardCellDataModel(
+            id: UUID(),
+            definition: card.definition,
+            description: card.description,
+            descriptionShown: false
+        )
         cardsData.append(newCard)
         view?.updateData(with: cardsData)
     }
 }
 
-
 // MARK: - CardsRepetitionPresenterInput
 
 extension CardsRepetitionPresenter: CardsRepetitionPresenterInput {}
-
 
 // MARK: - CardsRepetitionInteractorOutput
 

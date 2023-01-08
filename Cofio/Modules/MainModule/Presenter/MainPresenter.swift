@@ -12,20 +12,22 @@ final class MainPresenter {
     private let interactor: MainInteractorInput
     private let collectionsDataFactory: CollectionsDataFactoryProtocol
     
-    
     // MARK: Public properties
     
     weak var view: MainViewInput?
     var output: MainPresenterOutput?
     
-    
     // MARK: Lifecycle
     
-    init(interactor: MainInteractorInput,
-         collectionsDataFactory: CollectionsDataFactoryProtocol) {
+    init(
+        interactor: MainInteractorInput,
+        collectionsDataFactory: CollectionsDataFactoryProtocol
+    ) {
         self.interactor = interactor
         self.collectionsDataFactory = collectionsDataFactory
     }
+    
+    // MARK: Private
     
     private func updateView() {
         var collectionsDict: [Collection: Int] = [:]
@@ -38,7 +40,6 @@ final class MainPresenter {
     }
 }
 
-
 // MARK: - StartAppViewOutput
 
 extension MainPresenter: MainViewOutput {
@@ -49,7 +50,6 @@ extension MainPresenter: MainViewOutput {
     
     func viewDidLoad() {
         output?.moduleDidLoad(self)
-        
         updateView()
     }
     
@@ -57,7 +57,7 @@ extension MainPresenter: MainViewOutput {
         switch type {
         case .title, .subtitle, .empty:
             break
-    
+            
         case .collection(let model):
             output?.moduleWantsToOpenThemes(self, collectionName: model.title)
         }
@@ -76,11 +76,10 @@ extension MainPresenter: MainViewOutput {
     }
 }
 
-
 // MARK: - MainPresenterInput
 
 extension MainPresenter: MainPresenterInput {
-
+    
     func refreshCollections() {
         updateView()
     }

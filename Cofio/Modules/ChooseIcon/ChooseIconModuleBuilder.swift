@@ -13,13 +13,11 @@ final class ChooseIconModuleBuilder {
     
     private weak var output: ChooseIconPresenterOutput?
     
-    
     // MARK: Lifecycle
     
     init(output: ChooseIconPresenterOutput) {
         self.output = output
     }
-    
     
     // MARK: Public
     

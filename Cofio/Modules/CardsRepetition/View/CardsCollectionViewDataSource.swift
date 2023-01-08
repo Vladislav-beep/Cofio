@@ -18,9 +18,11 @@ final class CardsCollectionViewDataSource: CardsCollectionViewDataSourceProtocol
     func makeDataSource(for collectionView: UICollectionView) -> UICollectionViewDiffableDataSource<Int, RepetitionCardCellDataModel> {
         let collectionViewDataSource = UICollectionViewDiffableDataSource<Int, RepetitionCardCellDataModel>(collectionView: collectionView) { collectionView, indexPath, card in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "repetitionCardsCell", for: indexPath) as? RepetitionCardsCell
-            let displayData = RepetitionCardsCell.DisplayData(definition: card.definition,
-                                                              description: card.description,
-                                                              descriptionShown: card.descriptionShown)
+            let displayData = RepetitionCardsCell.DisplayData(
+                definition: card.definition,
+                description: card.description,
+                descriptionShown: card.descriptionShown
+            )
             cell?.configure(displayData: displayData)
             return cell
         }

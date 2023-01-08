@@ -9,22 +9,25 @@ import Foundation
 
 final class ThemesInteractor {
     
+    // MARK: Private properties
+    
     private let storageService: StorageServiceProtocol
     private let collectionName: String
     
-    // MARK: Properties
+    // MARK: Public properties
     
     weak var output: ThemesInteractorOutput?
     
-    init(storageService: StorageServiceProtocol,
-         collectionName: String) {
+    init(
+        storageService: StorageServiceProtocol,
+        collectionName: String
+    ) {
         self.storageService = storageService
         self.collectionName = collectionName
     }
 }
 
-
-// MARK: - CollectionsInteractorInput
+// MARK: - ThemesInteractorInput
 
 extension ThemesInteractor: ThemesInteractorInput {
     

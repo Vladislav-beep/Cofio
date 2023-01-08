@@ -46,8 +46,10 @@ final class ThemesDataFactory: ThemesDataFactoryProtocol {
     // MARK: Private
 
     private func countCards(count: Int) -> String {
-        let formatString : String = NSLocalizedString("collection cards count",
-                                                      comment: "")
+        let formatString : String = NSLocalizedString(
+            "collection cards count",
+            comment: ""
+        )
         let resultString : String = String.localizedStringWithFormat(formatString, count)
         return resultString
     }

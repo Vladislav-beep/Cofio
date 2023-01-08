@@ -12,22 +12,21 @@ final class NewCardPresenter {
     private let interactor: NewCardInteractorInput
     private let isEditing: Bool
     
-    
     // MARK: Public properties
     
     weak var view: NewCardViewInput?
     weak var output: NewCardPresenterOutput?
     
-    
     // MARK: Lifecycle
     
-    init(interactor: NewCardInteractorInput,
-         isEditing: Bool) {
+    init(
+        interactor: NewCardInteractorInput,
+        isEditing: Bool
+    ) {
         self.interactor = interactor
         self.isEditing = isEditing
     }
 }
-
 
 // MARK: - WordViewOutput
 
@@ -36,7 +35,10 @@ extension NewCardPresenter: NewCardViewOutput {
     func viewDidLoad() {
         if isEditing {
             let card = interactor.getCard()
-            view?.updateData(definition: card.cardDefinition ?? "", description: card.cardDescription ?? "")
+            view?.updateData(
+                definition: card.cardDefinition ?? "",
+                description: card.cardDescription ?? ""
+            )
             view?.updateButtonTitle(title: "new_card_module_edit_button_title"~)
         }
     }
@@ -48,7 +50,11 @@ extension NewCardPresenter: NewCardViewOutput {
     func didTapButton(definition: String, description: String) {
         if isEditing {
             let cardDefinition = interactor.getCard().cardDefinition ?? ""
-            interactor.updateCard(cardDefinition: cardDefinition, newDefinition: definition, newDescription: description)
+            interactor.updateCard(
+                cardDefinition: cardDefinition,
+                newDefinition: definition,
+                newDescription: description
+            )
             output?.moduleWantsToAddNewCard(self)
         } else {
             interactor.createCard(definition: definition, description: description)
@@ -57,12 +63,10 @@ extension NewCardPresenter: NewCardViewOutput {
     }
 }
 
-
-// MARK: - WordPresenterInput
+// MARK: - NewCardPresenterInput
 
 extension NewCardPresenter: NewCardPresenterInput {}
 
-
-// MARK: - WordInteractorOutput
+// MARK: - NewCardInteractorOutput
 
 extension NewCardPresenter: NewCardInteractorOutput {}

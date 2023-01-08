@@ -12,17 +12,17 @@ final class RepetitionPresenter {
     private let interactor: RepetitionInteractorInput
     private let repetitionDataFactory: RepetitionDataFactoryProtocol
     
-    
     // MARK: Public properties
     
     weak var view: RepetitionViewInput?
     var output: RepetitionPresenterOutput?
     
-    
     // MARK: Lifecycle
     
-    init(interactor: RepetitionInteractorInput,
-         repetitionDataFactory: RepetitionDataFactoryProtocol) {
+    init(
+        interactor: RepetitionInteractorInput,
+        repetitionDataFactory: RepetitionDataFactoryProtocol
+    ) {
         self.interactor = interactor
         self.repetitionDataFactory = repetitionDataFactory
     }
@@ -35,7 +35,6 @@ final class RepetitionPresenter {
         view?.updateData(with: data)
     }
 }
-
 
 // MARK: - RepetitionViewOutput
 
@@ -54,7 +53,6 @@ extension RepetitionPresenter: RepetitionViewOutput {
     }
 }
 
-
 // MARK: - RepetitionPresenterInput
 
 extension RepetitionPresenter: RepetitionPresenterInput {
@@ -63,7 +61,6 @@ extension RepetitionPresenter: RepetitionPresenterInput {
         updateView()
     }
 }
-
 
 // MARK: - RepetitionInteractorOutput
 

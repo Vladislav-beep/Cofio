@@ -33,7 +33,7 @@ final class CollectionsDataFactory: CollectionsDataFactoryProtocol {
             let collectionCell = MainModuleCellsDataModel.collection(
                 .init(
                     title: collection.name ?? "",
-                    subtitle: countThemes(count: UInt(collectionsDict[collection] ?? 0)),
+                    subtitle: countThemes(count: collectionsDict[collection] ?? 0),
                     image: collection.icon ?? ""
                 )
             )
@@ -42,13 +42,13 @@ final class CollectionsDataFactory: CollectionsDataFactoryProtocol {
         
         return mainCellsModel
     }
-}
-
-// MARK: Private
-
-private func countThemes(count: UInt) -> String {
-    let formatString : String = NSLocalizedString("collection themes count",
-                                                  comment: "")
-    let resultString : String = String.localizedStringWithFormat(formatString, count)
-    return resultString
+    
+    // MARK: Private
+    
+    private func countThemes(count: Int) -> String {
+        let formatString : String = NSLocalizedString("collection themes count",
+                                                      comment: "")
+        let resultString : String = String.localizedStringWithFormat(formatString, count)
+        return resultString
+    }
 }

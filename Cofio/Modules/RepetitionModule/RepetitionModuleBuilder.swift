@@ -14,15 +14,15 @@ final class RepetitionModuleBuilder {
     private weak var output: RepetitionPresenterOutput?
     private let storageService: StorageServiceProtocol
     
-    
     // MARK: Lifecycle
     
-    init(output: RepetitionPresenterOutput,
-         storageService: StorageServiceProtocol) {
+    init(
+        output: RepetitionPresenterOutput,
+        storageService: StorageServiceProtocol
+    ) {
         self.output = output
         self.storageService = storageService
     }
-    
     
     // MARK: Public
     
@@ -31,10 +31,14 @@ final class RepetitionModuleBuilder {
         let repetitionDataFactory = RepetitionDataFactory()
         
         let interactor = RepetitonInteractor(storageService: storageService)
-        let presenter = RepetitionPresenter(interactor: interactor,
-                                            repetitionDataFactory: repetitionDataFactory)
-        let viewController = RepetitionViewController(output: presenter,
-                                                      dataSource: dataSource)
+        let presenter = RepetitionPresenter(
+            interactor: interactor,
+            repetitionDataFactory: repetitionDataFactory
+        )
+        let viewController = RepetitionViewController(
+            output: presenter,
+            dataSource: dataSource
+        )
         
         presenter.view = viewController
         interactor.output = presenter

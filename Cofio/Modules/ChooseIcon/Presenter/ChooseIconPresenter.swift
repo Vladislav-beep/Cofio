@@ -7,6 +7,8 @@
 
 final class ChooseIconPresenter {
     
+    // MARK: Private properties
+    
     private let imageProvider: ImageProviderProtocol
     
     // MARK: Public properties
@@ -14,11 +16,12 @@ final class ChooseIconPresenter {
     weak var view: ChooseIconViewInput?
     weak var output: ChooseIconPresenterOutput?
     
+    // MARK: Lifecycle
+    
     init(imageProvider: ImageProviderProtocol) {
         self.imageProvider = imageProvider
     }
 }
-
 
 // MARK: - ChooseIconViewOutput
 
@@ -32,7 +35,6 @@ extension ChooseIconPresenter: ChooseIconViewOutput {
         imageProvider.getIcons()
     }
 }
-
 
 // MARK: - ChooseIconPresenterInput
 

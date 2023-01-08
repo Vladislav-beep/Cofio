@@ -18,7 +18,7 @@ final class CardsCell: UITableViewCell {
     
     // MARK: Private properties
     
-    private lazy var lowerView: LowerView = {
+    private let lowerView: LowerView = {
         let view = LowerView()
         return view
     }()

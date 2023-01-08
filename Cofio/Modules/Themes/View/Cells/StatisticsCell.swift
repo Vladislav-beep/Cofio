@@ -15,16 +15,15 @@ final class StatisticsCell: UITableViewCell {
         let title: String
     }
     
-    
     // MARK: Private properties
     
-    private lazy var lowerView: LowerView = {
+    private let lowerView: LowerView = {
         let view = LowerView()
         view.backgroundColor = .darkOrange
         return view
     }()
     
-    private lazy var progress: HorizontalProgressBar = {
+    private let progress: HorizontalProgressBar = {
         let progress = HorizontalProgressBar()
         progress.backgroundColor = .blue
         progress.progress = 0.3
@@ -45,7 +44,6 @@ final class StatisticsCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
     // MARK: Private
     
@@ -68,15 +66,11 @@ final class StatisticsCell: UITableViewCell {
         
     }
     
-    
     // MARK: Public
     
     func configure(with displayData: DisplayData) {
         UIView.animate(withDuration: 2, delay: 1, options: .autoreverse) {
             self.progress.progress = 0.8
-        } completion: { _ in
-
-        }
-
+        } completion: { _ in }
     }
 }

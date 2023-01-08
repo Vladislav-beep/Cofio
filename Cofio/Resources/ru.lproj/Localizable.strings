@@ -12,6 +12,9 @@
 
 // MARK: Tab bar
 "main_tab" = "Главная";
+"repetition_tab" = "Повторение";
+"statistics_tab" = "Статистика";
+"settings_tab" = "Настройки";
 
 // MARK: Main module
 "main_module_title" = "Флэш-карточки";
@@ -65,7 +68,8 @@
 "finish_offer_module_button_title" = "Понятно";
 "finish_offer_module_title_label" = "Тема";
 "finish_offer_module_repeated" = "повторена";
-"finish_offer_module_next_repeat" = "Следующие повторение";
+"finish_offer_module_next_repeat" = "Следующее повторение";
+"finish_offer_module_learned" = "выучена!";
 
 // MARK: - UI
 

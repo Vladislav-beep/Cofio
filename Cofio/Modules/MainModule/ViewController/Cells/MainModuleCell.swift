@@ -19,12 +19,12 @@ final class MainModuleCell: UITableViewCell {
     
     // MARK: Private properties
     
-    private lazy var lowerView: LowerView = {
+    private let lowerView: LowerView = {
         let view = LowerView()
         return view
     }()
     
-    private lazy var titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         titleLabel.numberOfLines = 0
@@ -32,7 +32,7 @@ final class MainModuleCell: UITableViewCell {
         return titleLabel
     }()
     
-    private lazy var subtitleLabel: UILabel = {
+    private let subtitleLabel: UILabel = {
         let subtitleLabel = UILabel()
         subtitleLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         subtitleLabel.numberOfLines = 0
@@ -41,7 +41,7 @@ final class MainModuleCell: UITableViewCell {
         return subtitleLabel
     }()
     
-    private lazy var iconView: UIImageView = {
+    private let iconView: UIImageView = {
         let iconView = UIImageView()
         iconView.contentMode = .scaleAspectFill
         iconView.clipsToBounds = true

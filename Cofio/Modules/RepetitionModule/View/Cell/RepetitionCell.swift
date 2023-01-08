@@ -20,13 +20,13 @@ final class RepetitionCell: UITableViewCell {
     
     // MARK: Private properties
     
-    private lazy var lowerView: LowerView = {
+    private let lowerView: LowerView = {
         let view = LowerView()
         view.layer.cornerRadius = 12
         return view
     }()
     
-    private lazy var titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         titleLabel.numberOfLines = 0
@@ -34,7 +34,7 @@ final class RepetitionCell: UITableViewCell {
         return titleLabel
     }()
     
-    private lazy var subtitleLabel: UILabel = {
+    private let subtitleLabel: UILabel = {
         let subtitleLabel = UILabel()
         subtitleLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         subtitleLabel.numberOfLines = 1
@@ -42,12 +42,12 @@ final class RepetitionCell: UITableViewCell {
         return subtitleLabel
     }()
     
-    private lazy var dateLabel: UILabel = {
-        let subtitleLabel = UILabel()
-        subtitleLabel.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        subtitleLabel.numberOfLines = 1
-        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        return subtitleLabel
+    private let dateLabel: UILabel = {
+        let dateLabel = UILabel()
+        dateLabel.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        dateLabel.numberOfLines = 1
+        dateLabel.translatesAutoresizingMaskIntoConstraints = false
+        return dateLabel
     }()
     
     // MARK: Lifecycle

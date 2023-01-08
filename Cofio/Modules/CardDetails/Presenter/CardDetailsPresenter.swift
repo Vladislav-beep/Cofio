@@ -6,18 +6,22 @@
 //
 
 final class CardDetailsPresenter {
+    
+    // MARK: Private properties
+    
+    private let card: CardCellDataModel
         
     // MARK: Public properties
     
     weak var output: CardDetailsPresenterOutput?
     weak var view: CardDetailsViewInput?
-    private let card: CardCellDataModel
+    
+    // MARK: Lifecycle
     
     init(card: CardCellDataModel) {
         self.card = card
     }
 }
-
 
 // MARK: - CardsViewOutput
 
@@ -27,7 +31,6 @@ extension CardDetailsPresenter: CardDetailsViewOutput {
         view?.updateView(model: card)
     }
 }
-
 
 // MARK: - CardsPresenterInput
 

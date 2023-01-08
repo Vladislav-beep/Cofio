@@ -15,7 +15,6 @@ final class RepetitionFlowCoordinator: FlowCoordinatorProtocol {
     private let storageService: StorageServiceProtocol
     private weak var repetitionModule: RepetitionPresenterInput?
     
-    
     // MARK: Lifecycle
     
     init(parentViewController: UINavigationController,
@@ -24,40 +23,44 @@ final class RepetitionFlowCoordinator: FlowCoordinatorProtocol {
         self.storageService = storageService
     }
     
-    
     // MARK: Private
     
     private func showRepetitionModule() {
-        let builder = RepetitionModuleBuilder(output: self,
-                                              storageService: storageService)
+        let builder = RepetitionModuleBuilder(
+            output: self,
+            storageService: storageService
+        )
         let repetitionViewController = builder.build()
         
         parentViewController.pushViewController(repetitionViewController, animated: true)
     }
     
     func showCardsRepetitionModule(themeName: String) {
-        let builder = CardsRepetitionModuleBuilder(output: self,
-                                                   storageService: storageService,
-                                                   themeName: themeName)
+        let builder = CardsRepetitionModuleBuilder(
+            output: self,
+            storageService: storageService,
+            themeName: themeName
+        )
         let cardsRepetitionViewController = builder.build()
         
         parentViewController.pushViewController(cardsRepetitionViewController, animated: true)
     }
     
     private func showFinishOffer(themeName: String, repeatDate: String, isCompleted: Bool) {
-        let builder = FinishRepetitionOfferModuleBuilder(output: self,
-                                                         themeName: themeName,
-                                                         repeatDate: repeatDate,
-                                                         isCompleted: isCompleted)
-        
+        let builder = FinishRepetitionOfferModuleBuilder(
+            output: self,
+            themeName: themeName,
+            repeatDate: repeatDate,
+            isCompleted: isCompleted
+        )
         let finishRepetitionOfferViewController = builder.build()
-        finishRepetitionOfferViewController.modalPresentationStyle = .fullScreen
         
+        finishRepetitionOfferViewController.modalPresentationStyle = .fullScreen
         parentViewController.present(finishRepetitionOfferViewController, animated: true)
     }
 }
 
-// MARK: FlowCoordinatorProtocol
+// MARK: - FlowCoordinatorProtocol
 
 extension RepetitionFlowCoordinator {
     func start() {
@@ -65,7 +68,7 @@ extension RepetitionFlowCoordinator {
     }
     
     func finish(completion: (() -> Void)?) {
-        // TODO: finish
+        // TODO: финишировать координатор при добавлении контроллера логина
     }
 }
 

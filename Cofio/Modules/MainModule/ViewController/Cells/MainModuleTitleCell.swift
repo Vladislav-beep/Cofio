@@ -17,7 +17,7 @@ final class MainModuleTitleCell: UITableViewCell {
     
     // MARK: Private properties
     
-    private lazy var titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold)
         titleLabel.numberOfLines = 0

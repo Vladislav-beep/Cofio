@@ -19,13 +19,13 @@ final class ThemesCell: UITableViewCell {
     }
     
     // MARK: Private properties
-
+    
     private let lowerView: LowerView = {
         let view = LowerView()
         view.layer.cornerRadius = 12
         return view
     }()
-
+    
     private let titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
@@ -41,7 +41,7 @@ final class ThemesCell: UITableViewCell {
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
         return subtitleLabel
     }()
-
+    
     private let progressView: UIView = {
         let progressView = UIView()
         progressView.backgroundColor = .clear
@@ -54,7 +54,6 @@ final class ThemesCell: UITableViewCell {
         progressLabel.translatesAutoresizingMaskIntoConstraints = false
         return progressLabel
     }()
-    
     
     // MARK: Lifecycle
     
@@ -153,7 +152,7 @@ final class ThemesCell: UITableViewCell {
         
         shapeLayer.add(basicAnimation, forKey: "circleAnimation")
     }
-
+    
     // MARK: Public
     
     func configure(with displayData: DisplayData) {

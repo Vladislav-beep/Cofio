@@ -15,17 +15,15 @@ final class HeaderCell: UITableViewCell {
         let title: String
     }
     
-    
     // MARK: Private properties
     
-    private lazy var titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.font = UIFont.systemFont(ofSize: 28, weight: .bold)
         titleLabel.numberOfLines = 0
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         return titleLabel
     }()
-    
     
     // MARK: Lifecycle
     
@@ -40,7 +38,6 @@ final class HeaderCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     // MARK: Private
     
     private func setupViews() {
@@ -52,7 +49,6 @@ final class HeaderCell: UITableViewCell {
             titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
         ])
     }
-    
     
     // MARK: Public
     

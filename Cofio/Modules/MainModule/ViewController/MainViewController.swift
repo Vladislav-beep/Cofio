@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
     private let output: MainViewOutput
     private let dataSource: MainTableViewDataSourceProtocol
     
-    private lazy var collectionsTableView: UITableView = {
+    private let collectionsTableView: UITableView = {
         let tableview = UITableView()
         tableview.register(MainModuleCell.self)
         tableview.register(MainModuleTitleCell.self)
@@ -22,11 +22,10 @@ class MainViewController: UIViewController {
         tableview.register(MainModuleEmptyCell.self)
         tableview.translatesAutoresizingMaskIntoConstraints = false
         tableview.separatorStyle = .none
-        tableview.delegate = self
         return tableview
     }()
     
-    private lazy var bottomButton: UIButton = {
+    private let bottomButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "pluss")?.withTintColor(.white), for: .normal)
         button.imageView?.contentMode = .scaleAspectFill
@@ -46,8 +45,10 @@ class MainViewController: UIViewController {
     
     // MARK: Lifecycle
     
-    init(output: MainViewOutput,
-         dataSource: MainTableViewDataSourceProtocol) {
+    init(
+        output: MainViewOutput,
+        dataSource: MainTableViewDataSourceProtocol
+    ) {
         self.output = output
         self.dataSource = dataSource
         
@@ -66,9 +67,10 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         setupViews()
         output.viewDidLoad()
+        collectionsTableView.delegate = self
     }
     
     // MARK: Private
@@ -93,28 +95,23 @@ class MainViewController: UIViewController {
         ])
     }
     
-    // MARK: Actions
-    
-    @objc func addNewCollection() {
-        output.viewDidTapButton()
-    }
-    
     private func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
-        let action = UIContextualAction(style: .destructive,
-                                        title: "delete_button_title"~) {
-            [weak self] (action, view, complition) in
+        let action = UIContextualAction(
+            style: .destructive,
+            title: "delete_button_title"~
+        ) { [weak self] (action, view, complition) in
             guard let self = self else { return }
             
             guard let item = self.tableViewDataSource.itemIdentifier(for: indexPath) else { return }
             switch item {
             case .title, .subtitle, .empty:
                 break
-
+                
             case .collection(let model):
                 self.output.deleteCollection(collectionName: model.title)
                 self.output.refreshView()
             }
-
+            
             complition(true)
         }
         action.image = UIImage(systemName: "trash")
@@ -122,28 +119,34 @@ class MainViewController: UIViewController {
     }
     
     private func editAction(at indexPath: IndexPath) -> UIContextualAction {
-        let action = UIContextualAction(style: .normal,
-                                        title: "new_collection_module_button_edit_title"~) {
-            [weak self] (action, view, complition) in
+        let action = UIContextualAction(
+            style: .normal,
+            title: "new_collection_module_button_edit_title"~
+        ) { [weak self] (action, view, complition) in
             guard let self = self else { return }
             
             guard let item = self.tableViewDataSource.itemIdentifier(for: indexPath) else { return }
             switch item {
             case .title, .subtitle, .empty:
                 break
-
+                
             case .collection(let model):
                 self.output.editCollection(collectionName: model.title)
                 self.output.refreshView()
             }
-
+            
             complition(true)
         }
         action.image = UIImage(systemName: "slider.horizontal.3")
         return action
     }
+    
+    // MARK: Actions
+    
+    @objc func addNewCollection() {
+        output.viewDidTapButton()
+    }
 }
-
 
 // MARK: - MainViewInput
 
@@ -156,7 +159,6 @@ extension MainViewController: MainViewInput {
         tableViewDataSource.apply(snapshot, animatingDifferences: true)
     }
 }
-
 
 // MARK: - UITableViewDelegate
 

@@ -14,7 +14,7 @@ final class ThemesViewController: UIViewController {
     private let output: ThemesViewOutput
     private let dataSource: ThemesTableViewDataSourceProtocol
     
-    private lazy var collectionCardsTableView: UITableView = {
+    private let themesTableView: UITableView = {
         let tableView = UITableView()
         tableView.register(StatisticsCell.self)
         tableView.register(ThemesCell.self)
@@ -22,11 +22,10 @@ final class ThemesViewController: UIViewController {
         tableView.register(ThemeEmptyCell.self)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
-        tableView.delegate = self
         return tableView
     }()
     
-    private lazy var tableViewDataSource = dataSource.makeDataSource(for: collectionCardsTableView)
+    private lazy var tableViewDataSource = dataSource.makeDataSource(for: themesTableView)
     
     
     // MARK: Lifecycle
@@ -55,18 +54,18 @@ final class ThemesViewController: UIViewController {
         setupNavigationBar()
         
         output.viewDidLoad()
+        themesTableView.delegate = self
     }
-    
     
     // MARK: Private
     
     private func setupViews() {
-        view.addSubview(collectionCardsTableView)
+        view.addSubview(themesTableView)
         NSLayoutConstraint.activate([
-            collectionCardsTableView.topAnchor.constraint(equalTo: view.topAnchor),
-            collectionCardsTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            collectionCardsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            collectionCardsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            themesTableView.topAnchor.constraint(equalTo: view.topAnchor),
+            themesTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            themesTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            themesTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
     
@@ -75,31 +74,33 @@ final class ThemesViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTheme))
     }
     
-    
     // MARK: Actions
     
     @objc func addTheme() {
-        showTwoButtonAndTextFieldAlert(title: "theme_module_alert_title"~,
-                           message: "theme_module_alert_subtitle"~,
-                           actionTitle: "theme_module_alert_add_button"~,
-                                       textFieldPlaceholder: "theme_module_alert_textField_placeholder"~,
-                                       textFieldText: nil) { [weak self] name in
-            guard let self = self else { return }
-            
-            // TODO: добавить проверку на сущестование имени темы
-            self.output.createTheme(name: name)
-            self.output.refreshView()
-        }
+        showTwoButtonAndTextFieldAlert(
+            title: "theme_module_alert_title"~,
+            message: "theme_module_alert_subtitle"~,
+            actionTitle: "theme_module_alert_add_button"~,
+            textFieldPlaceholder: "theme_module_alert_textField_placeholder"~,
+            textFieldText: nil) { [weak self] name in
+                guard let self = self else { return }
+                
+                // TODO: добавить проверку на сущестование имени темы
+                self.output.createTheme(name: name)
+                self.output.refreshView()
+            }
     }
     
     // MARK: Private
     
     func editTheme(currentName: String) {
-        showTwoButtonAndTextFieldAlert(title: "theme_module_alert_edit_title"~,
-                                       message: "theme_module_alert_edit_subtitle"~,
-                                       actionTitle: "theme_module_alert_edit_button"~,
-                                       textFieldPlaceholder: nil,
-                                       textFieldText: currentName) { [weak self] newName in
+        showTwoButtonAndTextFieldAlert(
+            title: "theme_module_alert_edit_title"~,
+            message: "theme_module_alert_edit_subtitle"~,
+            actionTitle: "theme_module_alert_edit_button"~,
+            textFieldPlaceholder: nil,
+            textFieldText: currentName
+        ) { [weak self] newName in
             guard let self = self else { return }
             
             self.output.editTheme(currentName: currentName, newName: newName)
@@ -108,9 +109,10 @@ final class ThemesViewController: UIViewController {
     }
     
     private func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
-        let action = UIContextualAction(style: .destructive,
-                                        title: "delete_button_title"~) {
-            [weak self] (action, view, complition) in
+        let action = UIContextualAction(
+            style: .destructive,
+            title: "delete_button_title"~
+        ) { [weak self] (action, view, complition) in
             guard let self = self else { return }
             
             guard let item = self.tableViewDataSource.itemIdentifier(for: indexPath) else { return }
@@ -122,7 +124,7 @@ final class ThemesViewController: UIViewController {
             case .statics, .header, .empty:
                 break
             }
-
+            
             complition(true)
         }
         action.image = UIImage(systemName: "trash")
@@ -130,9 +132,10 @@ final class ThemesViewController: UIViewController {
     }
     
     private func editAction(at indexPath: IndexPath) -> UIContextualAction {
-        let action = UIContextualAction(style: .normal,
-                                        title: "new_collection_module_button_edit_title"~) {
-            [weak self] (action, view, complition) in
+        let action = UIContextualAction(
+            style: .normal,
+            title: "new_collection_module_button_edit_title"~
+        ) { [weak self] (action, view, complition) in
             guard let self = self else { return }
             
             guard let item = self.tableViewDataSource.itemIdentifier(for: indexPath) else { return }
@@ -143,7 +146,7 @@ final class ThemesViewController: UIViewController {
             case .statics, .header, .empty:
                 break
             }
-
+            
             complition(true)
         }
         action.image = UIImage(systemName: "slider.horizontal.3")
@@ -151,8 +154,7 @@ final class ThemesViewController: UIViewController {
     }
 }
 
-
-// MARK: - CollectionsViewInput
+// MARK: - ThemesViewInput
 
 extension ThemesViewController: ThemesViewInput {
     
@@ -168,7 +170,6 @@ extension ThemesViewController: ThemesViewInput {
     }
 }
 
-
 // MARK: - UITableViewDelegate
 
 extension ThemesViewController: UITableViewDelegate {
@@ -183,7 +184,7 @@ extension ThemesViewController: UITableViewDelegate {
             
         case .header:
             return 50
-
+            
         case .card, .empty:
             return UITableView.automaticDimension
         }

@@ -9,26 +9,31 @@ import Foundation
 
 final class CardsRepetitonInteractor {
     
+    // MARK: Private properties
+    
     private let storageService: StorageServiceProtocol
     private let repetitionService: RepetitionServiceProtocol
     private let userDefaultsService: UserDefaultsServiceProtocol
     private let themeName: String
     
-    // MARK: Properties
+    // MARK: Public properties
     
     weak var output: CardsRepetitionInteractorOutput?
     
-    init(storageService: StorageServiceProtocol,
-         repetitionService: RepetitionServiceProtocol,
-         userDefaultsService: UserDefaultsServiceProtocol,
-         themeName: String) {
+    // MARK: Lifecycle
+    
+    init(
+        storageService: StorageServiceProtocol,
+        repetitionService: RepetitionServiceProtocol,
+        userDefaultsService: UserDefaultsServiceProtocol,
+        themeName: String
+    ) {
         self.storageService = storageService
         self.repetitionService = repetitionService
         self.userDefaultsService = userDefaultsService
         self.themeName = themeName
     }
 }
-
 
 // MARK: - CardsRepetitionInteractorInput
 
@@ -49,18 +54,19 @@ extension CardsRepetitonInteractor: CardsRepetitionInteractorInput {
     func updateTheme() {
         let theme = storageService.fetchTheme(themeName: themeName)
         let repeats = theme.repeats
-        print("vlad repeats \(repeats)")
         let newRepeats = repeats + 1
-        print("vlad newRepeats \(newRepeats)")
         
         if newRepeats == 7 {
             storageService.updateThemeDate(themeName: themeName, newDate: Date(), newRepeats: 7, isRepeatCompleted: true)
             return
         }
         let repetitionType = userDefaultsService.getRepetitionType()
-        print("vlad repetitionType \(userDefaultsService.getRepetitionType())")
         let date = repetitionService.getNextRepetDate(repetitionType: repetitionType, repeatsCount: Int(newRepeats))
-        print("vlad date \(date)")
-        storageService.updateThemeDate(themeName: themeName, newDate: date, newRepeats: Int(newRepeats), isRepeatCompleted: false)
+        storageService.updateThemeDate(
+            themeName: themeName,
+            newDate: date,
+            newRepeats: Int(newRepeats),
+            isRepeatCompleted: false
+        )
     }
 }

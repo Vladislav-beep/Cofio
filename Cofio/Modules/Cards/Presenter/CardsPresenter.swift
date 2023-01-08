@@ -12,17 +12,17 @@ final class CardsPresenter {
     private let interactor: CardsInteractorInput
     private let cardsDataFactory: CardsDataFactoryProtocol
     
-    
     // MARK: Public properties
     
     weak var view: CardsViewInput?
     weak var output: CardsPresenterOutput?
     
-    
     // MARK: Lifecycle
     
-    init(interactor: CardsInteractorInput,
-         cardsDataFactory: CardsDataFactoryProtocol) {
+    init(
+        interactor: CardsInteractorInput,
+        cardsDataFactory: CardsDataFactoryProtocol
+    ) {
         self.interactor = interactor
         self.cardsDataFactory = cardsDataFactory
     }
@@ -36,7 +36,6 @@ final class CardsPresenter {
         view?.updateData(with: data)
     }
 }
-
 
 // MARK: - CardsViewOutput
 
@@ -77,7 +76,6 @@ extension CardsPresenter: CardsViewOutput {
     }
 }
 
-
 // MARK: - CardsPresenterInput
 
 extension CardsPresenter: CardsPresenterInput {
@@ -86,7 +84,6 @@ extension CardsPresenter: CardsPresenterInput {
         updateView()
     }
 }
-
 
 // MARK: - CardsInteractorOutput
 

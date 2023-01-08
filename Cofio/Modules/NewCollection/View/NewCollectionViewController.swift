@@ -13,7 +13,7 @@ final class NewCollectionViewController: UIViewController {
     
     private let output: NewCollectionViewOutput
     
-    private lazy var closeButton: CloseButton = {
+    private let closeButton: CloseButton = {
         let closeButton = CloseButton()
         closeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
         return closeButton
@@ -98,11 +98,6 @@ final class NewCollectionViewController: UIViewController {
         collectionTextField.becomeFirstResponder()
     }
     
-    @objc func chooseIcon() {
-        output.chooseIcon()
-    }
-    
-    
     // MARK: Private
     
     private func setupViews() {
@@ -163,7 +158,6 @@ final class NewCollectionViewController: UIViewController {
         ])
     }
     
-    
     // MARK: Actions
     
     @objc func close() {
@@ -174,8 +168,11 @@ final class NewCollectionViewController: UIViewController {
         let collectionName = collectionTextField.text ?? ""
         output.viewDidTapButton(name: collectionName)
     }
+    
+    @objc func chooseIcon() {
+        output.chooseIcon()
+    }
 }
-
 
 // MARK: - NewCollectionViewInput 
 
@@ -195,6 +192,8 @@ extension NewCollectionViewController: NewCollectionViewInput {
         iconImageView.image = UIImage(named: icon)
     }
 }
+
+// MARK: - UITextFieldDelegate
 
 extension NewCollectionViewController: UITextFieldDelegate {
     

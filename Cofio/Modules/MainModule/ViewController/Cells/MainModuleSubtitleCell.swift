@@ -17,7 +17,7 @@ final class MainModuleSubtitleCell: UITableViewCell {
     
     // MARK: Private properties
     
-    private lazy var subtitleLabel: UILabel = {
+    private let subtitleLabel: UILabel = {
         let subtitleLabel = UILabel()
         subtitleLabel.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         subtitleLabel.numberOfLines = 0

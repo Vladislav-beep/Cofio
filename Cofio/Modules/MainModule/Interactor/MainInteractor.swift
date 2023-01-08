@@ -22,7 +22,6 @@ final class MainInteractor {
     }
 }
 
-
 // MARK: - StartAppInteractorInput
 
 extension MainInteractor: MainInteractorInput {

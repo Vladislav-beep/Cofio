@@ -7,6 +7,8 @@
 
 final class CardsInteractor {
     
+    // MARK: Private properties
+    
     private let storageService: StorageServiceProtocol
     private let themeName: String
     
@@ -14,13 +16,14 @@ final class CardsInteractor {
     
     weak var output: CardsInteractorOutput?
     
-    init(storageService: StorageServiceProtocol,
-         themeName: String) {
+    init(
+        storageService: StorageServiceProtocol,
+        themeName: String
+    ) {
         self.storageService = storageService
         self.themeName = themeName
     }
 }
-
 
 // MARK: - CardsInteractorInput
 

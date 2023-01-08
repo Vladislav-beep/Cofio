@@ -13,7 +13,7 @@ final class ChooseIconViewController: UIViewController {
     
     private let output: ChooseIconViewOutput
     
-    private lazy var draggableView: UIView = {
+    private let draggableView: UIView = {
         let draggableView = UIView()
         draggableView.backgroundColor = .gray
         draggableView.layer.cornerRadius = 3
@@ -21,7 +21,7 @@ final class ChooseIconViewController: UIViewController {
         return draggableView
     }()
     
-    private lazy var iconsCollectionView: IconsCollectionView = {
+    private let iconsCollectionView: IconsCollectionView = {
         let iconsCollectionView = IconsCollectionView()
         return iconsCollectionView
     }()

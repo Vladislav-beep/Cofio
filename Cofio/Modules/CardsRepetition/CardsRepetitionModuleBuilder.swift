@@ -15,17 +15,17 @@ final class CardsRepetitionModuleBuilder {
     private let storageService: StorageServiceProtocol
     private let themeName: String
     
-    
     // MARK: Lifecycle
     
-    init(output: CardsRepetitionPresenterOutput,
-         storageService: StorageServiceProtocol,
-         themeName: String) {
+    init(
+        output: CardsRepetitionPresenterOutput,
+        storageService: StorageServiceProtocol,
+        themeName: String
+    ) {
         self.output = output
         self.storageService = storageService
         self.themeName = themeName
     }
-    
     
     // MARK: Public
     
@@ -34,13 +34,20 @@ final class CardsRepetitionModuleBuilder {
         let repetitionService = RepetitionService()
         let userDefaultsService = UserDefaultsService()
         let cardsRepetitionDataFactory = CardsRepetitionDataFactory()
-        let interactor = CardsRepetitonInteractor(storageService: storageService,
-                                                  repetitionService: repetitionService,
-                                                  userDefaultsService: userDefaultsService,
-                                                  themeName: themeName)
-        let presenter = CardsRepetitionPresenter(interactor: interactor,
-                                                 cardsRepetitionDataFactory: cardsRepetitionDataFactory)
-        let viewController = CardsRepetitionViewController(output: presenter, dataSource: dataSource)
+        let interactor = CardsRepetitonInteractor(
+            storageService: storageService,
+            repetitionService: repetitionService,
+            userDefaultsService: userDefaultsService,
+            themeName: themeName
+        )
+        let presenter = CardsRepetitionPresenter(
+            interactor: interactor,
+            cardsRepetitionDataFactory: cardsRepetitionDataFactory
+        )
+        let viewController = CardsRepetitionViewController(
+            output: presenter,
+            dataSource: dataSource
+        )
         
         presenter.view = viewController
         interactor.output = presenter

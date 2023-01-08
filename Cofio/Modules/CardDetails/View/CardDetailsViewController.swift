@@ -14,7 +14,7 @@ final class CardDetailsViewController: UIViewController {
     private let output: CardDetailsViewOutput
     private let dataSource: CardDetailsDataSourceProtocol
     
-    private lazy var draggableView: UIView = {
+    private let draggableView: UIView = {
         let draggableView = UIView()
         draggableView.backgroundColor = .gray
         draggableView.layer.cornerRadius = 3
@@ -22,12 +22,11 @@ final class CardDetailsViewController: UIViewController {
         return draggableView
     }()
     
-    private lazy var cardDetailsTableView: UITableView = {
+    private let cardDetailsTableView: UITableView = {
         let tableview = UITableView()
         tableview.register(CardDetailsCell.self)
         tableview.translatesAutoresizingMaskIntoConstraints = false
         tableview.separatorStyle = .none
-        tableview.delegate = self
         return tableview
     }()
     
@@ -36,12 +35,15 @@ final class CardDetailsViewController: UIViewController {
     
     // MARK: Lifecycle
     
-    init(output: CardDetailsViewOutput,
-         dataSource: CardDetailsDataSourceProtocol) {
+    init(
+        output: CardDetailsViewOutput,
+        dataSource: CardDetailsDataSourceProtocol
+    ) {
         self.output = output
         self.dataSource = dataSource
         
         super.init(nibName: nil, bundle: nil)
+        cardDetailsTableView.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -54,7 +56,6 @@ final class CardDetailsViewController: UIViewController {
         output.viewDidLoad()
         setupViews()
     }
-    
     
     // MARK: Private
     

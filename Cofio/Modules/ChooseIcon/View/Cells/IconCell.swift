@@ -19,7 +19,7 @@ final class IconCell: UICollectionViewCell {
         return iconView
     }()
     
-    // MARK: - Lifecycle
+    // MARK: Lifecycle
     
     override init(frame: CGRect) {
         super.init(frame: frame)

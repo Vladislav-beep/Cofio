@@ -12,6 +12,9 @@
 
 // MARK: Tab bar
 "main_tab" = "Сollections";
+"repetition_tab" = "Repetition";
+"statistics_tab" = "Statistics";
+"settings_tab" = "Settings";
 
 // MARK: Main module
 "main_module_title" = "Flash cards";
@@ -51,7 +54,7 @@
 "repetition_module_title" = "Repetition";
 "repetition_module_last_repeat" = "Last repetition!";
 "repetition_module_needs_repeat" = "Needs repeating";
-"repetition_module_needs_repeat_past" = "Should have repeated";
+"repetition_module_needs_repeat_past" = "Needed repeating";
 "repetition_module_today" = "Today";
 "repetition_module_yesteday" = "Yesterday";
 "repetition_module_tomorrow" = "Tomorrow";
@@ -66,6 +69,7 @@
 "finish_offer_module_title_label" = "Theme";
 "finish_offer_module_repeated" = "has been repeated";
 "finish_offer_module_next_repeat" = "Next repeat";
+"finish_offer_module_learned" = "is learned!";
 
 // MARK: - UI
 

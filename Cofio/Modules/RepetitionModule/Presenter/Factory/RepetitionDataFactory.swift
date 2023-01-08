@@ -23,13 +23,18 @@ final class RepetitionDataFactory: RepetitionDataFactoryProtocol {
         newThemes.sort { $0.repeatDate ?? Date() < $1.repeatDate ?? Date() }
         
         for theme in newThemes {
-            let subtitle = makeSubtitle(repeats: theme.repeats, repeatDate: theme.repeatDate ?? Date())
+            let subtitle = makeSubtitle(
+                repeats: theme.repeats,
+                repeatDate: theme.repeatDate ?? Date()
+            )
             let date = makeDate(repeatDate: theme.repeatDate ?? Date())
             let backgroundColor = setupBackground(repeatDate: theme.repeatDate ?? Date())
-            let themeCell = RepetitionCellDataModel(title: theme.name ?? "",
-                                                    subtitle: subtitle,
-                                                    date: date,
-                                                    backgroundColor: backgroundColor)
+            let themeCell = RepetitionCellDataModel(
+                title: theme.name ?? "",
+                subtitle: subtitle,
+                date: date,
+                backgroundColor: backgroundColor
+            )
             themeCellsModel.append(themeCell)
         }
         
@@ -39,7 +44,7 @@ final class RepetitionDataFactory: RepetitionDataFactoryProtocol {
     // MARK: Private
     
     private func makeSubtitle(repeats: Int64, repeatDate: Date) -> String {
-        // FIXME: repeats can be less or more than 7
+        // FIXME: repeats can be less or more than 7, don't use raw Int
         if repeats == 6 {
             return "repetition_module_last_repeat"~
         }

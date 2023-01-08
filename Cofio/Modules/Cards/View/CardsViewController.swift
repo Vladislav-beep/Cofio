@@ -14,13 +14,12 @@ final class CardsViewController: UIViewController {
     private let output: CardsViewOutput
     private let dataSource: CardsTableViewDataSourceProtocol
     
-    private lazy var cardsTableView: UITableView = {
+    private let cardsTableView: UITableView = {
         let tableView = UITableView()
         tableView.register(CardsCell.self)
         tableView.register(CardsEmptyCell.self)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
-        tableView.delegate = self
         return tableView
     }()
     
@@ -29,8 +28,10 @@ final class CardsViewController: UIViewController {
     
     // MARK: Lifecycle
     
-    init(output: CardsViewOutput,
-         dataSource: CardsTableViewDataSourceProtocol) {
+    init(
+        output: CardsViewOutput,
+        dataSource: CardsTableViewDataSourceProtocol
+    ) {
         self.output = output
         self.dataSource = dataSource
         
@@ -48,8 +49,8 @@ final class CardsViewController: UIViewController {
         setupNavigationBar()
 
         output.viewDidLoad()
+        cardsTableView.delegate = self
     }
-    
     
     // MARK: Private
     
@@ -69,22 +70,20 @@ final class CardsViewController: UIViewController {
         title = "cards_module_title"~
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = UIColor.darkViolet
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addCard))
-    }
-    
-    
-    // MARK: Actions
-    
-    @objc func addCard() {
-        output.addCard()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(addCard)
+        )
     }
     
     // MARK: Private
     
     private func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
-        let action = UIContextualAction(style: .destructive,
-                                        title: "delete_button_title"~) {
-            [weak self] (action, view, complition) in
+        let action = UIContextualAction(
+            style: .destructive,
+            title: "delete_button_title"~
+        ) { [weak self] (action, view, complition) in
             guard let self = self else { return }
             
             guard let item = self.tableViewDataSource.itemIdentifier(for: indexPath) else { return }
@@ -104,9 +103,10 @@ final class CardsViewController: UIViewController {
     }
     
     private func editAction(at indexPath: IndexPath) -> UIContextualAction {
-        let action = UIContextualAction(style: .normal,
-                                        title: "new_collection_module_button_edit_title"~) {
-            [weak self] (action, view, complition) in
+        let action = UIContextualAction(
+            style: .normal,
+            title: "new_collection_module_button_edit_title"~
+        ) { [weak self] (action, view, complition) in
             guard let self = self else { return }
             
             guard let item = self.tableViewDataSource.itemIdentifier(for: indexPath) else { return }
@@ -123,8 +123,13 @@ final class CardsViewController: UIViewController {
         action.image = UIImage(systemName: "slider.horizontal.3")
         return action
     }
+    
+    // MARK: Actions
+    
+    @objc func addCard() {
+        output.addCard()
+    }
 }
-
 
 // MARK: - CardsViewInput
 
@@ -137,7 +142,6 @@ extension CardsViewController: CardsViewInput {
         tableViewDataSource.apply(snapshot, animatingDifferences: true)
     }
 }
-
 
 // MARK: - UITableViewDelegate
 

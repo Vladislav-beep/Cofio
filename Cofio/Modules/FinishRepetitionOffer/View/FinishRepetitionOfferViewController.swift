@@ -42,32 +42,32 @@ final class FinishRepetitionOfferViewController: UIViewController {
     }()
     
     private let repeatLabel: UILabel = {
-        let themeLabel = UILabel()
-        themeLabel.font = UIFont.systemFont(ofSize: 19, weight: .regular)
-        themeLabel.numberOfLines = 0
-        themeLabel.textAlignment = .center
-        themeLabel.text = "finish_offer_module_repeated"~
-        themeLabel.translatesAutoresizingMaskIntoConstraints = false
-        return themeLabel
+        let repeatLabel = UILabel()
+        repeatLabel.font = UIFont.systemFont(ofSize: 19, weight: .regular)
+        repeatLabel.numberOfLines = 0
+        repeatLabel.textAlignment = .center
+        repeatLabel.text = "finish_offer_module_repeated"~
+        repeatLabel.translatesAutoresizingMaskIntoConstraints = false
+        return repeatLabel
     }()
     
     private let nextRepeatLabel: UILabel = {
-        let themeLabel = UILabel()
-        themeLabel.font = UIFont.systemFont(ofSize: 21, weight: .regular)
-        themeLabel.numberOfLines = 0
-        themeLabel.textAlignment = .center
-        themeLabel.text = "finish_offer_module_next_repeat"~
-        themeLabel.translatesAutoresizingMaskIntoConstraints = false
-        return themeLabel
+        let nextRepeatLabel = UILabel()
+        nextRepeatLabel.font = UIFont.systemFont(ofSize: 21, weight: .regular)
+        nextRepeatLabel.numberOfLines = 0
+        nextRepeatLabel.textAlignment = .center
+        nextRepeatLabel.text = "finish_offer_module_next_repeat"~
+        nextRepeatLabel.translatesAutoresizingMaskIntoConstraints = false
+        return nextRepeatLabel
     }()
     
     private let dateLabel: UILabel = {
-        let themeLabel = UILabel()
-        themeLabel.font = UIFont.systemFont(ofSize: 19, weight: .bold)
-        themeLabel.numberOfLines = 0
-        themeLabel.textAlignment = .center
-        themeLabel.translatesAutoresizingMaskIntoConstraints = false
-        return themeLabel
+        let dateLabel = UILabel()
+        dateLabel.font = UIFont.systemFont(ofSize: 19, weight: .bold)
+        dateLabel.numberOfLines = 0
+        dateLabel.textAlignment = .center
+        dateLabel.translatesAutoresizingMaskIntoConstraints = false
+        return dateLabel
     }()
     
     private let doneButton: UIButton = {
@@ -99,9 +99,7 @@ final class FinishRepetitionOfferViewController: UIViewController {
         setupViews()
     }
     
-    @objc func didTapButton() {
-        output.close()
-    }
+    // MARK: Private
     
     private func setupViews() {
         view.backgroundColor = .white
@@ -166,6 +164,12 @@ final class FinishRepetitionOfferViewController: UIViewController {
             doneButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
         ])
     }
+    
+    // MARK: Actions
+    
+    @objc func didTapButton() {
+        output.close()
+    }
 }
 
 // MARK: - FinishRepetitionOfferViewInput
@@ -178,7 +182,7 @@ extension FinishRepetitionOfferViewController: FinishRepetitionOfferViewInput {
         checkMarkImageView.image = UIImage(named: "repeated")
         
         if data.isCompleted {
-            repeatLabel.text = "выучена!"
+            repeatLabel.text = "finish_offer_module_learned"~
             checkMarkImageView.image = UIImage(named: "check")
             dateLabel.isHidden = true
             nextRepeatLabel.isHidden = true

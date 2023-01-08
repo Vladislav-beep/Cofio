@@ -20,15 +20,16 @@ final class NewCollectionPresenter {
     
     // MARK: Lifecycle
     
-    init(interactor: NewCollectionInteractorInput,
-         isEditing: Bool) {
+    init(
+        interactor: NewCollectionInteractorInput,
+        isEditing: Bool
+    ) {
         self.interactor = interactor
         self.isEditing = isEditing
     }
 }
 
-
-// MARK: - NewLanguageViewOutput
+// MARK: - NewCollectionViewOutput
 
 extension NewCollectionPresenter: NewCollectionViewOutput {
     
@@ -36,13 +37,17 @@ extension NewCollectionPresenter: NewCollectionViewOutput {
         output?.moduleDidLoad(self)
         
         if isEditing {
-            view?.updateTitleAndButton(title: "new_collection_module_edit_title"~,
-                                       buttonTitle: "new_collection_module_button_edit_title"~)
+            view?.updateTitleAndButton(
+                title: "new_collection_module_edit_title"~,
+                buttonTitle: "new_collection_module_button_edit_title"~
+            )
             let collection = interactor.getCollection()
             view?.updateTextViewAndIcon(text: collection.name ?? "", icon: collection.icon ?? "")
         } else {
-            view?.updateTitleAndButton(title: "new_collection_module_title"~,
-                                       buttonTitle: "new_collection_module_button_title"~)
+            view?.updateTitleAndButton(
+                title: "new_collection_module_title"~,
+                buttonTitle: "new_collection_module_button_title"~
+            )
         }
     }
     
@@ -51,7 +56,7 @@ extension NewCollectionPresenter: NewCollectionViewOutput {
             let collection = interactor.getCollection()
             interactor.updateCollection(name: collection.name ?? "", newName: name, icon: iconName ?? "")
         } else {
-            // TODO: добавить проверку на сущестование имени коллекции
+            // TODO: добавить проверку на сущестование имени коллекции и на пустое имя
             let icon = iconName ?? ""
             interactor.createCollection(name: name, icon: icon)
         }
@@ -68,8 +73,7 @@ extension NewCollectionPresenter: NewCollectionViewOutput {
     }
 }
 
-
-// MARK: - NewLanguagePresenterInput
+// MARK: - NewCollectionPresenterInput
 
 extension NewCollectionPresenter: NewCollectionPresenterInput {
     
@@ -79,7 +83,6 @@ extension NewCollectionPresenter: NewCollectionPresenterInput {
     }
 }
 
-
-// MARK: - NewLanguageInteractorOutput
+// MARK: - NewCollectionInteractorOutput
 
 extension NewCollectionPresenter: NewCollectionInteractorOutput {}

@@ -191,7 +191,6 @@ extension CardsRepetitionViewController: CardsRepetitionViewInput {
 extension CardsRepetitionViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let item = collectionViewDataSource.itemIdentifier(for: indexPath) else { return }
         output.viewDidTapRow(indexPath: indexPath)
         learnedButton.isEnabled = true
         learnedButton.backgroundColor = .darkGreen

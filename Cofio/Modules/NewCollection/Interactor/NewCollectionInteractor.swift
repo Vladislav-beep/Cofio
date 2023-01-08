@@ -18,13 +18,14 @@ final class NewCollectionInteractor {
     
     // MARK: Lifecycle
     
-    init(storageService: StorageServiceProtocol,
-         collectionName: String?) {
+    init(
+        storageService: StorageServiceProtocol,
+        collectionName: String?
+    ) {
         self.storageService = storageService
         self.collectionName = collectionName
     }
 }
-
 
 // MARK: - NewCollectionInteractorInput
 

@@ -11,14 +11,23 @@ protocol AppCoordinatorProtocol: FlowCoordinatorProtocol {
     func showMainFlow()
 }
 
-final class AppFlowCoordinator: AppCoordinatorProtocol {
+final class AppFlowCoordinator {
     
-    var parentViewController: UIViewController
-    var childCoordinators = [FlowCoordinatorProtocol]()
+    // MARK: Private properties
+    
+    private let parentViewController: UIViewController
+    private var childCoordinators = [FlowCoordinatorProtocol]()
+    
+    // MARK: Lifecycle
     
     required init(parentViewController: UIViewController) {
         self.parentViewController = parentViewController
     }
+}
+
+// MARK: - FlowCoordinatorProtocol
+
+extension AppFlowCoordinator: FlowCoordinatorProtocol {
     
     func start() {
         showMainFlow()
@@ -27,6 +36,11 @@ final class AppFlowCoordinator: AppCoordinatorProtocol {
     func finish(completion: (() -> Void)?) {
         // unused
     }
+}
+
+// MARK: - AppCoordinatorProtocol
+
+extension AppFlowCoordinator: AppCoordinatorProtocol {
     
     func showMainFlow() {
         let tabCoordinator = TabbarFlowCoordinator(parentViewController: parentViewController)

@@ -24,7 +24,10 @@ final class CardsDataFactory: CardsDataFactoryProtocol {
         }
         
         for card in cards {
-            let cardCell = CardCellsDataModel.card(.init(definition: card.cardDefinition ?? "", description: card.cardDescription ?? ""))
+            let cardCell = CardCellsDataModel.card(.init(
+                definition: card.cardDefinition ?? "",
+                description: card.cardDescription ?? "")
+            )
             cardCellModels.append(cardCell)
         }
         

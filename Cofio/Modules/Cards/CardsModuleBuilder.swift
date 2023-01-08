@@ -17,9 +17,11 @@ final class CardsModuleBuilder {
     
     // MARK: Lifecycle
     
-    init(output: CardsPresenterOutput,
-         themeName: String,
-         storageService: StorageServiceProtocol) {
+    init(
+        output: CardsPresenterOutput,
+        themeName: String,
+        storageService: StorageServiceProtocol
+    ) {
         self.output = output
         self.themeName = themeName
         self.storageService = storageService
@@ -31,12 +33,18 @@ final class CardsModuleBuilder {
         let dataSource = CardsTableViewDataSource()
         let cardsDataFactory = CardsDataFactory()
         
-        let interactor = CardsInteractor(storageService: storageService,
-                                         themeName: themeName)
-        let presenter = CardsPresenter(interactor: interactor,
-                                       cardsDataFactory: cardsDataFactory)
-        let viewController = CardsViewController(output: presenter,
-                                                 dataSource: dataSource)
+        let interactor = CardsInteractor(
+            storageService: storageService,
+            themeName: themeName
+        )
+        let presenter = CardsPresenter(
+            interactor: interactor,
+            cardsDataFactory: cardsDataFactory
+        )
+        let viewController = CardsViewController(
+            output: presenter,
+            dataSource: dataSource
+        )
         
         presenter.view = viewController
         interactor.output = presenter

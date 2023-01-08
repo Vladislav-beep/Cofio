@@ -7,15 +7,14 @@
 
 import UIKit
 
-class TabbarFlowCoordinator: NSObject, FlowCoordinatorProtocol {
+class TabbarFlowCoordinator: NSObject {
     
+    // MARK: Private properties
+    
+    private let parentViewController: UIViewController
+    private let tabBarController: UITabBarController
     private let storageService = StorageService(coreDataManager: CoreDataManager())
-    
-    // MARK: Properties
-    
-    var childCoordinators: [FlowCoordinatorProtocol] = []
-    var parentViewController: UIViewController
-    var tabBarController: UITabBarController
+    private var childCoordinators: [FlowCoordinatorProtocol] = []
     
     // MARK: Lifecycle
     
@@ -24,11 +23,62 @@ class TabbarFlowCoordinator: NSObject, FlowCoordinatorProtocol {
         self.tabBarController = .init()
     }
     
-    deinit {
-        print("TabCoordinator deinit")
+    // MARK: Private
+    
+    private func prepareTabBarController(withTabControllers tabControllers: [UIViewController]) {
+        tabBarController.delegate = self
+        tabBarController.setViewControllers(tabControllers, animated: true)
+        tabBarController.selectedIndex = TabBarPage.main.pageOrderNumber()
+        tabBarController.tabBar.isTranslucent = false
+        tabBarController.tabBar.backgroundColor = .base
     }
     
-    // MARK: FlowCordinatorProtocol
+    private func getTabController(_ page: TabBarPage) -> UINavigationController {
+        let parentNavigationController = UINavigationController()
+        parentNavigationController.setNavigationBarHidden(false, animated: false)
+        
+        parentNavigationController.tabBarItem = UITabBarItem.init(
+            title: page.pageTitleValue(),
+            image: nil,
+            tag: page.pageOrderNumber()
+        )
+        
+        switch page {
+        case .main:
+            parentNavigationController.navigationBar.prefersLargeTitles = false
+            let flow = MainFlowCoordinator(
+                parentViewController: parentNavigationController,
+                storageService: storageService
+            )
+            childCoordinators.append(flow)
+            flow.start()
+            
+        case .repetition:
+            let flow = RepetitionFlowCoordinator(
+                parentViewController: parentNavigationController,
+                storageService: storageService
+            )
+            childCoordinators.append(flow)
+            flow.start()
+            
+        case .settings:
+            // TODO: добавить флоу координаторы
+            let statistics = StatisticsViewController()
+            parentNavigationController.pushViewController(statistics, animated: true)
+            
+        case .statistics:
+            // TODO: добавить флоу координаторы
+            let settingVC = SettingsViewController()
+            parentNavigationController.pushViewController(settingVC, animated: true)
+        }
+        
+        return parentNavigationController
+    }
+}
+
+// MARK: - FlowCoordinatorProtocol
+
+extension TabbarFlowCoordinator: FlowCoordinatorProtocol {
     
     func start() {
         let pages: [TabBarPage] = [.main, .repetition, .statistics, .settings]
@@ -36,7 +86,9 @@ class TabbarFlowCoordinator: NSObject, FlowCoordinatorProtocol {
         
         let controllers: [UIViewController] = pages.map({ getTabController($0) })
         
+        // FIXME: убрать force unwrapp
         prepareTabBarController(withTabControllers: controllers)
+        
         let tabBarItem0 = (tabBarController.tabBar.items?[0])! as UITabBarItem
         tabBarItem0.image = UIImage(named: "tab0")
         tabBarItem0.imageInsets = UIEdgeInsets(top: 9, left: 0, bottom: 9, right: 0)
@@ -57,48 +109,7 @@ class TabbarFlowCoordinator: NSObject, FlowCoordinatorProtocol {
     }
     
     func finish(completion: (() -> Void)?) {
-        // TODO: to do
-    }
-    
-    // MARK: Private
-    
-    private func prepareTabBarController(withTabControllers tabControllers: [UIViewController]) {
-        tabBarController.delegate = self
-        tabBarController.setViewControllers(tabControllers, animated: true)
-        tabBarController.selectedIndex = TabBarPage.main.pageOrderNumber()
-        tabBarController.tabBar.isTranslucent = false
-        tabBarController.tabBar.backgroundColor = .base
-    }
-    
-    private func getTabController(_ page: TabBarPage) -> UINavigationController {
-        let parentNavigationController = UINavigationController()
-        parentNavigationController.setNavigationBarHidden(false, animated: false)
-        
-        parentNavigationController.tabBarItem = UITabBarItem.init(title: page.pageTitleValue(),
-                                                                  image: nil,
-                                                                  tag: page.pageOrderNumber())
-        
-        switch page {
-        case .main:
-            parentNavigationController.navigationBar.prefersLargeTitles = false
-            let flow = MainFlowCoordinator(parentViewController: parentNavigationController,
-                                           storageService: storageService)
-            flow.start()
-            
-        case .repetition:
-            let flow = RepetitionFlowCoordinator(parentViewController: parentNavigationController,
-                                                 storageService: storageService)
-            flow.start()
-            
-        case .settings:
-            let statistics = StatisticsViewController()
-            parentNavigationController.pushViewController(statistics, animated: true)
-            
-        case .statistics:
-            let settingVC = SettingsViewController()
-            parentNavigationController.pushViewController(settingVC, animated: true)
-        }
-        return parentNavigationController
+        // TODO: finish child flowcoordinators if switch to login controller
     }
 }
 
@@ -106,6 +117,7 @@ class TabbarFlowCoordinator: NSObject, FlowCoordinatorProtocol {
 
 extension TabbarFlowCoordinator: UITabBarControllerDelegate {
     
+    // FIXME: добавить имплементацию либо удалить
     func tabBarController(_ tabBarController: UITabBarController,
                           didSelect viewController: UIViewController) {
         // Some implementation

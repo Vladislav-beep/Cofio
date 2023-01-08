@@ -7,6 +7,8 @@
 
 final class NewCardInteractor {
     
+    // MARK: Private properties
+    
     private let storageService: StorageServiceProtocol
     private let themeName: String
     private let cardName: String?
@@ -15,17 +17,20 @@ final class NewCardInteractor {
     
     weak var output: NewCardInteractorOutput?
     
-    init(storageService: StorageServiceProtocol,
-         themeName: String,
-         cardName: String?) {
+    // MARK: Lifecycle
+    
+    init(
+        storageService: StorageServiceProtocol,
+        themeName: String,
+        cardName: String?
+    ) {
         self.storageService = storageService
         self.themeName = themeName
         self.cardName = cardName
     }
 }
 
-
-// MARK: - WordInteractorInput
+// MARK: - NewCardInteractorInput
 
 extension NewCardInteractor: NewCardInteractorInput {
     

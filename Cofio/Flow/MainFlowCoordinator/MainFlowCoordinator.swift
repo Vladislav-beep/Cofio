@@ -19,7 +19,6 @@ final class MainFlowCoordinator {
     private weak var newCollectionModule: NewCollectionPresenterInput?
     private weak var cardsModule: CardsPresenterInput?
     
-    
     // MARK: Lifecycle
     
     init(parentViewController: UINavigationController,
@@ -27,7 +26,6 @@ final class MainFlowCoordinator {
         self.parentViewController = parentViewController
         self.storageService = storageService
     }
-    
     
     // MARK: Private
     
@@ -40,10 +38,12 @@ final class MainFlowCoordinator {
     }
     
     private func showNewCollectionModule(isEditing: Bool, collectionName: String?) {
-        let builder = NewCollectionModuleBuilder(output: self,
-                                                 isEditing: isEditing,
-                                                 collectionName: collectionName,
-                                                 storageService: storageService)
+        let builder = NewCollectionModuleBuilder(
+            output: self,
+            isEditing: isEditing,
+            collectionName: collectionName,
+            storageService: storageService
+        )
         let newCollectionViewController = builder.build()
         
         newCollectionViewControllerr = newCollectionViewController
@@ -59,18 +59,22 @@ final class MainFlowCoordinator {
     }
     
     private func showThemesModule(collectionName: String) {
-        let builder = ThemesModuleBuilder(output: self,
-                                          collectionName: collectionName,
-                                          storageService: storageService)
+        let builder = ThemesModuleBuilder(
+            output: self,
+            collectionName: collectionName,
+            storageService: storageService
+        )
         let themesViewController = builder.build()
         
         parentViewController.pushViewController(themesViewController, animated: true)
     }
     
     private func showCardsModule(themeName: String) {
-        let builder = CardsModuleBuilder(output: self,
-                                         themeName: themeName,
-                                         storageService: storageService)
+        let builder = CardsModuleBuilder(
+            output: self,
+            themeName: themeName,
+            storageService: storageService
+        )
         let cardsViewController = builder.build()
         
         parentViewController.pushViewController(cardsViewController, animated: true)
@@ -84,12 +88,15 @@ final class MainFlowCoordinator {
     }
     
     private func showNewCardModule(themeName: String, cardName: String?, isEditing: Bool) {
-        let builder = NewCardModuleBuilder(output: self,
-                                           themeName: themeName,
-                                           cardName: cardName,
-                                           isEditing: isEditing,
-                                           storageService: storageService)
+        let builder = NewCardModuleBuilder(
+            output: self,
+            themeName: themeName,
+            cardName: cardName,
+            isEditing: isEditing,
+            storageService: storageService
+        )
         let newCardViewController = builder.build()
+        
         newCardViewController.modalPresentationStyle = .fullScreen
         parentViewController.present(newCardViewController, animated: true)
     }
@@ -103,10 +110,9 @@ extension MainFlowCoordinator: FlowCoordinatorProtocol {
     }
     
     func finish(completion: (() -> Void)?) {
-        
+        // TODO: финишировать координатор при добавлении контроллера логина
     }
 }
-
 
 // MARK: - MainPresenterOutput
 
@@ -128,7 +134,6 @@ extension MainFlowCoordinator: MainPresenterOutput {
         showThemesModule(collectionName: collectionName)
     }
 }
-
 
 // MARK: - NewCollectionPresenterOutput
 
@@ -155,18 +160,17 @@ extension MainFlowCoordinator: NewCollectionPresenterOutput {
 // MARK: - ChooseIconPresenterOutput
 
 extension MainFlowCoordinator:  ChooseIconPresenterOutput {
-
+    
     func moduleWantsToChooseIconAndClose(_ module: ChooseIconPresenterInput, icon: String) {
         newCollectionModule?.refreshImageView(icon: icon)
         newCollectionViewControllerr?.dismiss(animated: true)
     }
 }
 
-
 // MARK: - ThemesPresenterOutput
 
 extension MainFlowCoordinator: ThemesPresenterOutput {
-
+    
     func moduleWantsToOpenCards(_ module: ThemesPresenterInput, themeName: String) {
         showCardsModule(themeName: themeName)
     }
@@ -176,7 +180,6 @@ extension MainFlowCoordinator: ThemesPresenterOutput {
     }
 }
 
-
 // MARK: - CardsPresenterOutput
 
 extension MainFlowCoordinator: CardsPresenterOutput {
@@ -184,7 +187,7 @@ extension MainFlowCoordinator: CardsPresenterOutput {
     func moduleDidLoad(_ module: CardsPresenterInput) {
         cardsModule = module
     }
-
+    
     func moduleWantsToOpenCardDetails(_ module: CardsPresenterInput, card: CardCellDataModel) {
         showCardDetailsModule(card: card)
     }
@@ -194,12 +197,10 @@ extension MainFlowCoordinator: CardsPresenterOutput {
     }
 }
 
-
 // MARK: - CardDetailsPresenterOutput
 
 // FIXME: выпилить, если не нужно
 extension MainFlowCoordinator: CardDetailsPresenterOutput {}
-
 
 // MARK: - NewCardPresenterOutput
 

@@ -19,33 +19,33 @@ final class RepetitionCardsCell: UICollectionViewCell {
     
     // MARK: Private properties
     
-    private lazy var lowerView: LowerView = {
+    private let lowerView: LowerView = {
         let view = LowerView()
         return view
     }()
     
     private let titleLabel: UILabel = {
-        let wordLabel = UILabel()
-        wordLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
-        wordLabel.numberOfLines = 0
-        wordLabel.translatesAutoresizingMaskIntoConstraints = false
-        return wordLabel
+        let titleLabel = UILabel()
+        titleLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+        titleLabel.numberOfLines = 0
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        return titleLabel
     }()
     
     private let thinView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .gray
-        view.layer.cornerRadius = 2
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+        let thinView = UIView()
+        thinView.backgroundColor = .gray
+        thinView.layer.cornerRadius = 2
+        thinView.translatesAutoresizingMaskIntoConstraints = false
+        return thinView
     }()
 
     private let definitionLabel: UILabel = {
-        let translationLabel = UILabel()
-        translationLabel.font = UIFont.systemFont(ofSize: 17, weight: .regular)
-        translationLabel.numberOfLines = 0
-        translationLabel.translatesAutoresizingMaskIntoConstraints = false
-        return translationLabel
+        let definitionLabel = UILabel()
+        definitionLabel.font = UIFont.systemFont(ofSize: 17, weight: .regular)
+        definitionLabel.numberOfLines = 0
+        definitionLabel.translatesAutoresizingMaskIntoConstraints = false
+        return definitionLabel
     }()
     
     // MARK: Lifecycle
@@ -62,7 +62,6 @@ final class RepetitionCardsCell: UICollectionViewCell {
     // MARK: Private
     
     private func setupViews() {
-        
         titleLabel.setContentHuggingPriority(.required, for: .vertical)
         
         contentView.addSubview(lowerView)

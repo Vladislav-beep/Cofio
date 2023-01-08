@@ -18,6 +18,8 @@ final class FinishRepetitionOfferPresenter {
     weak var output: FinishRepetitionOfferPresenterOutput?
     weak var view: FinishRepetitionOfferViewInput?
     
+    // MARK: Lifecycle
+    
     init(themeName: String, repeatDate: String, isCompleted: Bool) {
         self.themeName = themeName
         self.repeatDate = repeatDate
@@ -25,11 +27,16 @@ final class FinishRepetitionOfferPresenter {
     }
 }
 
+// MARK: - FinishRepetitionOfferViewOutput
 
 extension FinishRepetitionOfferPresenter: FinishRepetitionOfferViewOutput {
     
     func viewDidLoad() {
-        let model = FinishRepetitionOfferModel(themeName: themeName, date: repeatDate, isCompleted: isCompleted)
+        let model = FinishRepetitionOfferModel(
+            themeName: themeName,
+            date: repeatDate,
+            isCompleted: isCompleted
+        )
         view?.updateData(with: model)
     }
     
@@ -38,5 +45,6 @@ extension FinishRepetitionOfferPresenter: FinishRepetitionOfferViewOutput {
     }
 }
 
+// MARK: - FinishRepetitionOfferPresenterInput
 
 extension FinishRepetitionOfferPresenter: FinishRepetitionOfferPresenterInput {}

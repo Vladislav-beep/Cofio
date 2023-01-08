@@ -12,7 +12,7 @@ final class NewCardViewController: UIViewController {
     // MARK: Private properties
     
     private let output: NewCardViewOutput
- 
+    
     private let closeButton: CloseButton = {
         let closeButton = CloseButton()
         closeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
@@ -57,7 +57,6 @@ final class NewCardViewController: UIViewController {
         return button
     }()
     
-    
     // MARK: Lifecycle
     
     init(output: NewCardViewOutput) {
@@ -77,7 +76,6 @@ final class NewCardViewController: UIViewController {
         output.viewDidLoad()
     }
     
-    
     // MARK: Private
     
     private func setupViews() {
@@ -90,7 +88,7 @@ final class NewCardViewController: UIViewController {
         descriptionTextView.text = "new_card_module_add_description_textView_placeholder"~
         descriptionTextView.textColor = .darkGray
         descriptionTextView.delegate = self
-
+        
         view.addSubview(closeButton)
         NSLayoutConstraint.activate([
             closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 45),
@@ -130,8 +128,7 @@ final class NewCardViewController: UIViewController {
     }
 }
 
-
-// MARK: - WordViewInput
+// MARK: - NewCardViewInput
 
 extension NewCardViewController: NewCardViewInput {
     
@@ -147,6 +144,8 @@ extension NewCardViewController: NewCardViewInput {
         doneButton.setTitle(title, for: .normal)
     }
 }
+
+// MARK: - UITextViewDelegate
 
 extension NewCardViewController: UITextViewDelegate {
     

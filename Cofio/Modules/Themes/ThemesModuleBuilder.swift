@@ -17,9 +17,11 @@ final class ThemesModuleBuilder {
     
     // MARK: Lifecycle
     
-    init(output: ThemesPresenterOutput,
-         collectionName: String,
-         storageService: StorageServiceProtocol) {
+    init(
+        output: ThemesPresenterOutput,
+        collectionName: String,
+        storageService: StorageServiceProtocol
+    ) {
         self.output = output
         self.collectionName = collectionName
         self.storageService = storageService
@@ -31,11 +33,18 @@ final class ThemesModuleBuilder {
         let dataSource = ThemesTableViewDataSource()
         let themesDataFactory = ThemesDataFactory()
         
-        let interactor = ThemesInteractor(storageService: storageService,
-                                          collectionName: collectionName)
-        let presenter = ThemesPresenter(interactor: interactor, themesDataFactory: themesDataFactory)
-        let viewController = ThemesViewController(output: presenter,
-                                                 dataSource: dataSource)
+        let interactor = ThemesInteractor(
+            storageService: storageService,
+            collectionName: collectionName
+        )
+        let presenter = ThemesPresenter(
+            interactor: interactor,
+            themesDataFactory: themesDataFactory
+        )
+        let viewController = ThemesViewController(
+            output: presenter,
+            dataSource: dataSource
+        )
         
         presenter.view = viewController
         interactor.output = presenter
