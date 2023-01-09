@@ -80,6 +80,12 @@
 		B94C025B294E5BC200EF9EB6 /* CardDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94C025A294E5BC200EF9EB6 /* CardDetailsPresenter.swift */; };
 		B94C025D294E5BD300EF9EB6 /* CardDetailsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94C025C294E5BD300EF9EB6 /* CardDetailsPresenterProtocol.swift */; };
 		B94C025F294F87A700EF9EB6 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94C025E294F87A700EF9EB6 /* UIViewController+Extension.swift */; };
+		B972963B296C8EC600878B32 /* SettingsFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972963A296C8EC600878B32 /* SettingsFlowCoordinator.swift */; };
+		B972963E296C8FAC00878B32 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972963D296C8FAC00878B32 /* SettingsPresenter.swift */; };
+		B9729640296C8FB900878B32 /* SettingsModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972963F296C8FB900878B32 /* SettingsModuleBuilder.swift */; };
+		B9729642296C905600878B32 /* SettingsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9729641296C905600878B32 /* SettingsPresenterProtocol.swift */; };
+		B9729644296C908E00878B32 /* SettingsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9729643296C908E00878B32 /* SettingsViewProtocol.swift */; };
+		B9729647296C943800878B32 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9729646296C943800878B32 /* SettingsCell.swift */; };
 		B99B17542944CD66002167DB /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B17532944CD66002167DB /* AppFlowCoordinator.swift */; };
 		B99B175A2944CEE7002167DB /* TabBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B17592944CEE7002167DB /* TabBarPage.swift */; };
 		B99B175C2944CF07002167DB /* TabbarFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B175B2944CF07002167DB /* TabbarFlowCoordinator.swift */; };
@@ -248,6 +254,12 @@
 		B94C025A294E5BC200EF9EB6 /* CardDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsPresenter.swift; sourceTree = "<group>"; };
 		B94C025C294E5BD300EF9EB6 /* CardDetailsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsPresenterProtocol.swift; sourceTree = "<group>"; };
 		B94C025E294F87A700EF9EB6 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		B972963A296C8EC600878B32 /* SettingsFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFlowCoordinator.swift; sourceTree = "<group>"; };
+		B972963D296C8FAC00878B32 /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		B972963F296C8FB900878B32 /* SettingsModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModuleBuilder.swift; sourceTree = "<group>"; };
+		B9729641296C905600878B32 /* SettingsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenterProtocol.swift; sourceTree = "<group>"; };
+		B9729643296C908E00878B32 /* SettingsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewProtocol.swift; sourceTree = "<group>"; };
+		B9729646296C943800878B32 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		B99B17532944CD66002167DB /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
 		B99B17592944CEE7002167DB /* TabBarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPage.swift; sourceTree = "<group>"; };
 		B99B175B2944CF07002167DB /* TabbarFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -410,6 +422,8 @@
 		B910AB392945E3EF00D9E7EA /* SettingsModule */ = {
 			isa = PBXGroup;
 			children = (
+				B972963F296C8FB900878B32 /* SettingsModuleBuilder.swift */,
+				B972963C296C8F9700878B32 /* Presenter */,
 				B910AB3A2945E40E00D9E7EA /* View */,
 			);
 			path = SettingsModule;
@@ -419,6 +433,8 @@
 			isa = PBXGroup;
 			children = (
 				B910AB3B2945E42400D9E7EA /* SettingsViewController.swift */,
+				B9729643296C908E00878B32 /* SettingsViewProtocol.swift */,
+				B9729645296C942300878B32 /* Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -632,6 +648,23 @@
 				B94C025C294E5BD300EF9EB6 /* CardDetailsPresenterProtocol.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B972963C296C8F9700878B32 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B972963D296C8FAC00878B32 /* SettingsPresenter.swift */,
+				B9729641296C905600878B32 /* SettingsPresenterProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B9729645296C942300878B32 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B9729646296C943800878B32 /* SettingsCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		B99B176329450BA4002167DB /* AppFlowCoordinator */ = {
@@ -871,6 +904,7 @@
 				B99B176429450C47002167DB /* TabbarFlowCoordinator */,
 				B910AB412948565C00D9E7EA /* MainFlowCoordinator */,
 				B910AB422948598D00D9E7EA /* RepetitionFlowCoordinator */,
+				B972963A296C8EC600878B32 /* SettingsFlowCoordinator.swift */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
@@ -1224,9 +1258,11 @@
 				B9ACB79F2954399C00F2B476 /* ChooseIconPresenter.swift in Sources */,
 				B910AB402945E51900D9E7EA /* StatisticsViewController.swift in Sources */,
 				B90A50622968AA7D00993C75 /* FinishRepetitionOfferPresenter.swift in Sources */,
+				B9729642296C905600878B32 /* SettingsPresenterProtocol.swift in Sources */,
 				B9464ACA295E197200D7A5E1 /* Collection+CoreDataProperties.swift in Sources */,
 				B9464ACC295E197200D7A5E1 /* Theme+CoreDataProperties.swift in Sources */,
 				B9CC138F288B0AFD0013ED76 /* UITableView+Extension.swift in Sources */,
+				B9729644296C908E00878B32 /* SettingsViewProtocol.swift in Sources */,
 				B93EF8D7289AFB720057C774 /* NewCardModuleBuilder.swift in Sources */,
 				B99B175A2944CEE7002167DB /* TabBarPage.swift in Sources */,
 				B9CC13B7288F094A0013ED76 /* NewCollectionViewProtocol.swift in Sources */,
@@ -1234,6 +1270,7 @@
 				B9CC13DB28919E0E0013ED76 /* LowerView.swift in Sources */,
 				B910AB50294BBAF700D9E7EA /* Postfix operator.swift in Sources */,
 				B93EF8C428970C4C0057C774 /* FadeView.swift in Sources */,
+				B972963E296C8FAC00878B32 /* SettingsPresenter.swift in Sources */,
 				B910AB482948EE5000D9E7EA /* FlowCoordinatorProtocol.swift in Sources */,
 				B90A50602968A8BC00993C75 /* FinishRepetitionOfferViewControllerProtocol.swift in Sources */,
 				B93EF8D5289AFB2A0057C774 /* NewCardInteractorProtocol.swift in Sources */,
@@ -1265,6 +1302,7 @@
 				B932E97528B7FAD0007244E6 /* CardsRepetitionInteractorProtocol.swift in Sources */,
 				B9CC135F288738980013ED76 /* MainViewController.swift in Sources */,
 				B910AB52294DC23600D9E7EA /* MainModuleTitleCell.swift in Sources */,
+				B9729640296C8FB900878B32 /* SettingsModuleBuilder.swift in Sources */,
 				B932E95828ABFA98007244E6 /* RepetitionPresenterProtocol.swift in Sources */,
 				B93EF8CB289AF9910057C774 /* NewCardViewController.swift in Sources */,
 				B9CC13B5288F087A0013ED76 /* NewCollectionProtocol.swift in Sources */,
@@ -1347,12 +1385,14 @@
 				B9CC140D2895C1100013ED76 /* CollectionCell.swift in Sources */,
 				B9CC139B288EE6C20013ED76 /* MainPresenter.swift in Sources */,
 				B93EF8BE28968E320057C774 /* CardsInteractor.swift in Sources */,
+				B9729647296C943800878B32 /* SettingsCell.swift in Sources */,
 				B9CC13D52890720B0013ED76 /* SubtitleLabel.swift in Sources */,
 				B93EF8D1289AFADC0057C774 /* NewCardPresenterProtocol.swift in Sources */,
 				B9CC141A2896878E0013ED76 /* CardsTableViewDataSource.swift in Sources */,
 				B9CC1394288B15F00013ED76 /* UIColor+Extension.swift in Sources */,
 				B9CC13E12891D5C60013ED76 /* Language.swift in Sources */,
 				B932E94A289DBD95007244E6 /* HorizontalProgressBar.swift in Sources */,
+				B972963B296C8EC600878B32 /* SettingsFlowCoordinator.swift in Sources */,
 				B9CC13BD288F0AC90013ED76 /* NewCollectionModuleBuilder.swift in Sources */,
 				B94C025D294E5BD300EF9EB6 /* CardDetailsPresenterProtocol.swift in Sources */,
 				B9CC13B9288F09D10013ED76 /* NewCollectionInteractor.swift in Sources */,

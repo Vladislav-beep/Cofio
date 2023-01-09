@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class RepetitionFlowCoordinator: FlowCoordinatorProtocol {
+final class RepetitionFlowCoordinator {
     
     // MARK: Private
     
@@ -62,7 +62,7 @@ final class RepetitionFlowCoordinator: FlowCoordinatorProtocol {
 
 // MARK: - FlowCoordinatorProtocol
 
-extension RepetitionFlowCoordinator {
+extension RepetitionFlowCoordinator: FlowCoordinatorProtocol {
     func start() {
         showRepetitionModule()
     }

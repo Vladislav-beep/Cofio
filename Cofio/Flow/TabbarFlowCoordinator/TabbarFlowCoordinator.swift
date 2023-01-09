@@ -62,14 +62,14 @@ class TabbarFlowCoordinator: NSObject {
             flow.start()
             
         case .settings:
-            // TODO: добавить флоу координаторы
-            let statistics = StatisticsViewController()
-            parentNavigationController.pushViewController(statistics, animated: true)
+            let flow = SettingsFlowCoordinator(parentViewController: parentNavigationController)
+            childCoordinators.append(flow)
+            flow.start()
             
         case .statistics:
             // TODO: добавить флоу координаторы
-            let settingVC = SettingsViewController()
-            parentNavigationController.pushViewController(settingVC, animated: true)
+            let statistics = StatisticsViewController()
+            parentNavigationController.pushViewController(statistics, animated: true)
         }
         
         return parentNavigationController

@@ -71,6 +71,9 @@
 "finish_offer_module_next_repeat" = "Next repeat";
 "finish_offer_module_learned" = "is learned!";
 
+// MARK: Settings
+"settings_module_title" = "Settings";
+
 // MARK: - UI
 
 // MARK: CollectionTextField
