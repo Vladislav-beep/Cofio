@@ -6,7 +6,13 @@
 //
 
 protocol SettingsViewInput: AnyObject {
+    
+    func updateData(with data: [SettingsCellsDataModel])
 }
 
 protocol SettingsViewOutput: AnyObject {
+    
+    func viewDidLoad()
+    func viewDidTapLearningCell()
+    func viewDidTapOnboardingCell()
 }

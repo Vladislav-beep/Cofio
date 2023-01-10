@@ -17,7 +17,6 @@ final class SettingsCell: UITableViewCell {
     
     // MARK: Private properties
     
-    
     private let titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.font = UIFont.systemFont(ofSize: 22, weight: .regular)
@@ -28,7 +27,8 @@ final class SettingsCell: UITableViewCell {
     
     private let iconImageView: UIImageView = {
         let iconImageView = UIImageView()
-        iconImageView.backgroundColor = .red
+        iconImageView.image = UIImage(systemName: "chevron.right")
+        iconImageView.tintColor = .gray
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
         return iconImageView
     }()
@@ -50,19 +50,19 @@ final class SettingsCell: UITableViewCell {
     
     private func setupViews() {
         contentView.addSubview(titleLabel)
-        NSLayoutConstraint.activate([
-            contentView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            contentView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            contentView.trailingAnchor.constraint(equalTo: iconImageView.leadingAnchor, constant: -16),
-            contentView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
-        ])
-        
         contentView.addSubview(iconImageView)
+        
         NSLayoutConstraint.activate([
             iconImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             iconImageView.heightAnchor.constraint(equalToConstant: 20),
-            iconImageView.widthAnchor.constraint(equalToConstant: 20),
+            iconImageView.widthAnchor.constraint(equalToConstant: 15),
             iconImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
+        ])
+        
+        NSLayoutConstraint.activate([
+            titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            titleLabel.trailingAnchor.constraint(equalTo: iconImageView.leadingAnchor, constant: -16)
         ])
     }
     

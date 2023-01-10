@@ -86,6 +86,8 @@
 		B9729642296C905600878B32 /* SettingsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9729641296C905600878B32 /* SettingsPresenterProtocol.swift */; };
 		B9729644296C908E00878B32 /* SettingsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9729643296C908E00878B32 /* SettingsViewProtocol.swift */; };
 		B9729647296C943800878B32 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9729646296C943800878B32 /* SettingsCell.swift */; };
+		B9729649296DDEB000878B32 /* SettingsCellsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9729648296DDEB000878B32 /* SettingsCellsDataModel.swift */; };
+		B972964B296DDF5E00878B32 /* SettingsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972964A296DDF5E00878B32 /* SettingsTableViewDataSource.swift */; };
 		B99B17542944CD66002167DB /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B17532944CD66002167DB /* AppFlowCoordinator.swift */; };
 		B99B175A2944CEE7002167DB /* TabBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B17592944CEE7002167DB /* TabBarPage.swift */; };
 		B99B175C2944CF07002167DB /* TabbarFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B175B2944CF07002167DB /* TabbarFlowCoordinator.swift */; };
@@ -260,6 +262,8 @@
 		B9729641296C905600878B32 /* SettingsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenterProtocol.swift; sourceTree = "<group>"; };
 		B9729643296C908E00878B32 /* SettingsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewProtocol.swift; sourceTree = "<group>"; };
 		B9729646296C943800878B32 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		B9729648296DDEB000878B32 /* SettingsCellsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellsDataModel.swift; sourceTree = "<group>"; };
+		B972964A296DDF5E00878B32 /* SettingsTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewDataSource.swift; sourceTree = "<group>"; };
 		B99B17532944CD66002167DB /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
 		B99B17592944CEE7002167DB /* TabBarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPage.swift; sourceTree = "<group>"; };
 		B99B175B2944CF07002167DB /* TabbarFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -434,6 +438,8 @@
 			children = (
 				B910AB3B2945E42400D9E7EA /* SettingsViewController.swift */,
 				B9729643296C908E00878B32 /* SettingsViewProtocol.swift */,
+				B9729648296DDEB000878B32 /* SettingsCellsDataModel.swift */,
+				B972964A296DDF5E00878B32 /* SettingsTableViewDataSource.swift */,
 				B9729645296C942300878B32 /* Cells */,
 			);
 			path = View;
@@ -1266,6 +1272,7 @@
 				B93EF8D7289AFB720057C774 /* NewCardModuleBuilder.swift in Sources */,
 				B99B175A2944CEE7002167DB /* TabBarPage.swift in Sources */,
 				B9CC13B7288F094A0013ED76 /* NewCollectionViewProtocol.swift in Sources */,
+				B972964B296DDF5E00878B32 /* SettingsTableViewDataSource.swift in Sources */,
 				B9CC13D3289070E70013ED76 /* TitleLabel.swift in Sources */,
 				B9CC13DB28919E0E0013ED76 /* LowerView.swift in Sources */,
 				B910AB50294BBAF700D9E7EA /* Postfix operator.swift in Sources */,
@@ -1366,6 +1373,7 @@
 				B9464ACB295E197200D7A5E1 /* Theme+CoreDataClass.swift in Sources */,
 				B93EF8C228968F310057C774 /* CardsModuleBuilder.swift in Sources */,
 				B9AAEC322962E7DB00BA6078 /* StorageService.swift in Sources */,
+				B9729649296DDEB000878B32 /* SettingsCellsDataModel.swift in Sources */,
 				B9CC138D2889D7900013ED76 /* MainModuleCell.swift in Sources */,
 				B9CC13B3288F08040013ED76 /* NewCollectionPresenter.swift in Sources */,
 				B90A505029658D8000993C75 /* CardsCollectionViewDataSource.swift in Sources */,

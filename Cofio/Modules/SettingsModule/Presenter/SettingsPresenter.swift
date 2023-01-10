@@ -16,7 +16,23 @@ final class SettingsPresenter {
 // MARK: - SettingsViewOutput
 
 extension SettingsPresenter: SettingsViewOutput {
-
+    
+    func viewDidLoad() {
+        let data: [SettingsCellsDataModel] = [
+            .learning(.init(title: "settings_module_learning_cell_title"~)),
+            .onboarding(.init(title: "settings_module_onboarding_cell_title"~))
+        ]
+        
+        view?.updateData(with: data)
+    }
+    
+    func viewDidTapLearningCell() {
+        
+    }
+    
+    func viewDidTapOnboardingCell() {
+        
+    }
 }
 
 // MARK: - SettingsPresenterInput

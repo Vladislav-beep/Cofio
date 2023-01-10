@@ -22,9 +22,13 @@ final class SettingsModuleBuilder {
     // MARK: Public
     
     func build() -> UIViewController {
+        let dataSource = SettingsTableViewDataSource()
         let presenter = SettingsPresenter()
         
-        let viewController = SettingsViewController(output: presenter)
+        let viewController = SettingsViewController(
+            output: presenter,
+            dataSource: dataSource
+        )
         
         presenter.view = viewController
         

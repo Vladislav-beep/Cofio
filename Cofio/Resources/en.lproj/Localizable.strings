@@ -73,6 +73,8 @@
 
 // MARK: Settings
 "settings_module_title" = "Settings";
+"settings_module_learning_cell_title" = "Choose memorizing method";
+"settings_module_onboarding_cell_title" = "Show onboarding";
 
 // MARK: - UI
 

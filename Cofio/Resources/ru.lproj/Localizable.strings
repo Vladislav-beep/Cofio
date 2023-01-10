@@ -73,6 +73,8 @@
 
 // MARK: Settings
 "settings_module_title" = "Настройки";
+"settings_module_learning_cell_title" = "Выбор способа запоминания";
+"settings_module_onboarding_cell_title" = "Показать онбординг";
 
 // MARK: - UI
 
