@@ -76,6 +76,13 @@
 "settings_module_learning_cell_title" = "Choose memorizing method";
 "settings_module_onboarding_cell_title" = "Show onboarding";
 
+// MARK: LearningMethod
+"learning_method_module_title" = "Memorizing method";
+"learning_method_module_long_cell_title" = "Прогрессирующее повторение";
+"learning_method_module_week_cell_title" = "Каждодневное повторение";
+"learning_method_module_long_cell_subtitle" = "Для запоминания используется методика прогрессирующего запоминания, первое повторение происходит в тот же день, далее на следующий, потом через 3 дня, 5....";
+"learning_method_module_week_cell_subtitle" = "Методика состоит в том, чтобы повторять информацию каждый день в течение недели";
+
 // MARK: - UI
 
 // MARK: CollectionTextField

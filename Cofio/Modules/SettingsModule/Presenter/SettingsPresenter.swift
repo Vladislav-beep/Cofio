@@ -27,11 +27,11 @@ extension SettingsPresenter: SettingsViewOutput {
     }
     
     func viewDidTapLearningCell() {
-        
+        output?.moduleWantsToOpenLearningMethod(self)
     }
     
     func viewDidTapOnboardingCell() {
-        
+        output?.moduleWantsToOpenOnboarding(self)
     }
 }
 

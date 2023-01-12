@@ -27,6 +27,17 @@ final class SettingsFlowCoordinator {
         let settingsViewController = builder.build()
         parentViewController.pushViewController(settingsViewController, animated: true)
     }
+    
+    private func showLearningMethod() {
+        let builder = LearningMethodModuleBuilder()
+        let vc = builder.build()
+        
+        parentViewController.pushViewController(vc, animated: true)
+    }
+    
+    private func showOnboarding() {
+        
+    }
 }
 
 // MARK: - FlowCoordinatorProtocol
@@ -44,4 +55,13 @@ extension SettingsFlowCoordinator: FlowCoordinatorProtocol {
 
 // MARK: - SettingsPresenterOutput
 
-extension SettingsFlowCoordinator: SettingsPresenterOutput {}
+extension SettingsFlowCoordinator: SettingsPresenterOutput {
+    
+    func moduleWantsToOpenLearningMethod(_ module: SettingsPresenterInput) {
+        showLearningMethod()
+    }
+    
+    func moduleWantsToOpenOnboarding(_ module: SettingsPresenterInput) {
+        showOnboarding()
+    }
+}
