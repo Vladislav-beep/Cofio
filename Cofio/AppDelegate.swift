@@ -11,13 +11,6 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        // FIXME: Проверять настройки при входе в приложение, а не хардкодить
-        let repetition: RepetitionType = .long
-        
-        if let encoded = try? JSONEncoder().encode(repetition) {
-            UserDefaults.standard.set(encoded, forKey: "repetitionType")
-        }
         return true
     }
     

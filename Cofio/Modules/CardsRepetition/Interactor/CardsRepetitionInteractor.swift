@@ -60,7 +60,7 @@ extension CardsRepetitonInteractor: CardsRepetitionInteractorInput {
             storageService.updateThemeDate(themeName: themeName, newDate: Date(), newRepeats: 7, isRepeatCompleted: true)
             return
         }
-        let repetitionType = userDefaultsService.getRepetitionType()
+        let repetitionType = userDefaultsService.getRepetitionType() ?? .long
         let date = repetitionService.getNextRepetDate(repetitionType: repetitionType, repeatsCount: Int(newRepeats))
         storageService.updateThemeDate(
             themeName: themeName,

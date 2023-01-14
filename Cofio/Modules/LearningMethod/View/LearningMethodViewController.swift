@@ -27,7 +27,7 @@ class LearningMethodViewController: UIViewController {
         let tableview = UITableView()
         tableview.register(LearningCell.self)
         tableview.translatesAutoresizingMaskIntoConstraints = false
-    //    tableview.separatorStyle = .none
+        tableview.separatorStyle = .none
         return tableview
     }()
     
@@ -86,7 +86,7 @@ extension LearningMethodViewController: LearningMethodViewInput {
         var snapshot = NSDiffableDataSourceSnapshot<Int, LearningCellsDataModel>()
         snapshot.appendSections([0])
         snapshot.appendItems(data, toSection: 0)
-        tableViewDataSource.apply(snapshot, animatingDifferences: true)
+        tableViewDataSource.apply(snapshot, animatingDifferences: false)
     }
 }
 
@@ -95,5 +95,16 @@ extension LearningMethodViewController: LearningMethodViewInput {
 
 extension LearningMethodViewController: UITableViewDelegate {
     
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let item = tableViewDataSource.itemIdentifier(for: indexPath) else { return }
+        
+        switch item {
+        case .long:
+            output.viewDidTapLongCell()
+            
+        case .week:
+            output.viewDidTapWeekCell()
+        }
+    }
 }

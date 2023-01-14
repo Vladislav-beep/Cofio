@@ -34,7 +34,7 @@ final class LearningTableViewDataSource: LearningTableViewDataSourceProtocol {
                 let displayData = LearningCell.DisplayData(
                     title: model.title,
                     subtitle: model.subtitle,
-                    isOn: model.isOn
+                    backGroundColor: model.backGroundColor
                 )
                 cell.configure(with: displayData)
                 return cell
@@ -44,7 +44,7 @@ final class LearningTableViewDataSource: LearningTableViewDataSourceProtocol {
                 let displayData = LearningCell.DisplayData(
                     title: model.title,
                     subtitle: model.subtitle,
-                    isOn: model.isOn
+                    backGroundColor: model.backGroundColor
                 )
                 cell.configure(with: displayData)
                 return cell

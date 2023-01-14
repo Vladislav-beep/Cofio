@@ -13,4 +13,6 @@ protocol LearningMethodViewInput: AnyObject {
 protocol LearningMethodViewOutput: AnyObject {
     
     func viewDidLoad()
+    func viewDidTapLongCell()
+    func viewDidTapWeekCell()
 }

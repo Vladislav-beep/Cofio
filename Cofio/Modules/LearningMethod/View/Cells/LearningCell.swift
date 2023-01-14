@@ -14,10 +14,16 @@ final class LearningCell: UITableViewCell {
     struct DisplayData: Hashable {
         let title: String
         let subtitle: String
-        let isOn: Bool
+        let backGroundColor: UIColor
     }
     
     // MARK: Private properties
+    
+    private let lowerView: LowerView = {
+        let view = LowerView()
+        view.layer.cornerRadius = 12
+        return view
+    }()
     
     private let titleLabel: UILabel = {
         let titleLabel = UILabel()
@@ -34,13 +40,7 @@ final class LearningCell: UITableViewCell {
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
         return subtitleLabel
     }()
-    
-    private let learningSwitch: UISwitch = {
-        let learningSwitch = UISwitch()
-        learningSwitch.translatesAutoresizingMaskIntoConstraints = false
-        return learningSwitch
-    }()
-    
+
     // MARK: Lifecycle
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -55,30 +55,29 @@ final class LearningCell: UITableViewCell {
     }
     
     // MARK: Private
-    
+
     private func setupViews() {
-        contentView.addSubview(learningSwitch)
-        contentView.addSubview(titleLabel)
-        contentView.addSubview(subtitleLabel)
-        
+        contentView.addSubview(lowerView)
+        lowerView.addSubview(titleLabel)
+        lowerView.addSubview(subtitleLabel)
         NSLayoutConstraint.activate([
-            learningSwitch.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            learningSwitch.heightAnchor.constraint(equalToConstant: 30),
-            learningSwitch.widthAnchor.constraint(equalToConstant: 30),
-            learningSwitch.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -35)
+            lowerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            lowerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            lowerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            lowerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
         ])
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            titleLabel.trailingAnchor.constraint(equalTo: learningSwitch.leadingAnchor, constant: -16)
+            titleLabel.topAnchor.constraint(equalTo: lowerView.topAnchor, constant: 16),
+            titleLabel.leadingAnchor.constraint(equalTo: lowerView.leadingAnchor, constant: 16),
+            titleLabel.trailingAnchor.constraint(equalTo: lowerView.trailingAnchor, constant: -16)
         ])
         
         NSLayoutConstraint.activate([
             subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
-            subtitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            subtitleLabel.trailingAnchor.constraint(equalTo: learningSwitch.leadingAnchor, constant: -16),
-            subtitleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
+            subtitleLabel.leadingAnchor.constraint(equalTo: lowerView.leadingAnchor, constant: 20),
+            subtitleLabel.trailingAnchor.constraint(equalTo: lowerView.trailingAnchor, constant: -16),
+            subtitleLabel.bottomAnchor.constraint(equalTo: lowerView.bottomAnchor, constant: -10)
         ])
     }
     
@@ -87,6 +86,6 @@ final class LearningCell: UITableViewCell {
     func configure(with displayData: DisplayData) {
         titleLabel.text = displayData.title
         subtitleLabel.text = displayData.subtitle
-        learningSwitch.isOn = displayData.isOn
+        lowerView.backgroundColor = displayData.backGroundColor
     }
 }

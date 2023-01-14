@@ -5,6 +5,8 @@
 //  Created by Владислав Сизонов on 11.01.2023.
 //
 
+import UIKit
+
 enum LearningCellsDataModel: Hashable {
     case long(LongCellDataModel)
     case week(WeekCellDataModel)
@@ -13,11 +15,11 @@ enum LearningCellsDataModel: Hashable {
 struct LongCellDataModel: Hashable {
     let title: String
     let subtitle: String
-    let isOn: Bool
+    let backGroundColor: UIColor
 }
 
 struct WeekCellDataModel: Hashable {
     let title: String
     let subtitle: String
-    let isOn: Bool
+    let backGroundColor: UIColor
 }

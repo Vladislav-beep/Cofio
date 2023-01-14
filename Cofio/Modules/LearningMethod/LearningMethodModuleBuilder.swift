@@ -8,12 +8,13 @@
 import UIKit
 
 final class LearningMethodModuleBuilder {
-    
+
     // MARK: Public
     
     func build() -> UIViewController {
+        let userDefaultsService = UserDefaultsService()
         let dataSource = LearningTableViewDataSource()
-        let presenter = LearningMethodPresenter()
+        let presenter = LearningMethodPresenter(userDefaultsService: userDefaultsService)
         
         let viewController = LearningMethodViewController(
             output: presenter,
