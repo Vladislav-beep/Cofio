@@ -95,6 +95,7 @@
 		B9729658296F3AC900878B32 /* LearningCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9729657296F3AC900878B32 /* LearningCell.swift */; };
 		B972965B29707BB600878B32 /* LearningMethodPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972965A29707BB600878B32 /* LearningMethodPresenter.swift */; };
 		B972965D29707C6B00878B32 /* LearningMethodModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972965C29707C6B00878B32 /* LearningMethodModuleBuilder.swift */; };
+		B972965F2972B29300878B32 /* LearningMethodDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972965E2972B29300878B32 /* LearningMethodDataFactory.swift */; };
 		B99B17542944CD66002167DB /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B17532944CD66002167DB /* AppFlowCoordinator.swift */; };
 		B99B175A2944CEE7002167DB /* TabBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B17592944CEE7002167DB /* TabBarPage.swift */; };
 		B99B175C2944CF07002167DB /* TabbarFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B175B2944CF07002167DB /* TabbarFlowCoordinator.swift */; };
@@ -278,6 +279,7 @@
 		B9729657296F3AC900878B32 /* LearningCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningCell.swift; sourceTree = "<group>"; };
 		B972965A29707BB600878B32 /* LearningMethodPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningMethodPresenter.swift; sourceTree = "<group>"; };
 		B972965C29707C6B00878B32 /* LearningMethodModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningMethodModuleBuilder.swift; sourceTree = "<group>"; };
+		B972965E2972B29300878B32 /* LearningMethodDataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningMethodDataFactory.swift; sourceTree = "<group>"; };
 		B99B17532944CD66002167DB /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
 		B99B17592944CEE7002167DB /* TabBarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPage.swift; sourceTree = "<group>"; };
 		B99B175B2944CF07002167DB /* TabbarFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -721,6 +723,7 @@
 			isa = PBXGroup;
 			children = (
 				B972965A29707BB600878B32 /* LearningMethodPresenter.swift */,
+				B972965E2972B29300878B32 /* LearningMethodDataFactory.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -1437,6 +1440,7 @@
 				B9CC138D2889D7900013ED76 /* MainModuleCell.swift in Sources */,
 				B9CC13B3288F08040013ED76 /* NewCollectionPresenter.swift in Sources */,
 				B90A505029658D8000993C75 /* CardsCollectionViewDataSource.swift in Sources */,
+				B972965F2972B29300878B32 /* LearningMethodDataFactory.swift in Sources */,
 				B932E96128AC032B007244E6 /* RepetitionCell.swift in Sources */,
 				B9464AC9295E197200D7A5E1 /* Collection+CoreDataClass.swift in Sources */,
 				B9CC13CF28906B6A0013ED76 /* ThemesModuleBuilder.swift in Sources */,

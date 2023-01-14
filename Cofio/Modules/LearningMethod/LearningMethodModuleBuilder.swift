@@ -13,8 +13,12 @@ final class LearningMethodModuleBuilder {
     
     func build() -> UIViewController {
         let userDefaultsService = UserDefaultsService()
+        let learningMethodDataFactory = LearningMethodDataFactory()
         let dataSource = LearningTableViewDataSource()
-        let presenter = LearningMethodPresenter(userDefaultsService: userDefaultsService)
+        let presenter = LearningMethodPresenter(
+            userDefaultsService: userDefaultsService,
+            learningMethodDataFactory: learningMethodDataFactory
+        )
         
         let viewController = LearningMethodViewController(
             output: presenter,

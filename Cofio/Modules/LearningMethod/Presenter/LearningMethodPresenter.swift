@@ -12,6 +12,7 @@ final class LearningMethodPresenter {
     // MARK: Private properties
     
     private let userDefaultsService: UserDefaultsServiceProtocol
+    private let learningMethodDataFactory: LearningMethodDataFactoryProtocol
     
     // MARK: Public properties
     
@@ -19,34 +20,17 @@ final class LearningMethodPresenter {
     
     // MARK: Lifecycle
     
-    init(userDefaultsService: UserDefaultsServiceProtocol) {
+    init(
+        userDefaultsService: UserDefaultsServiceProtocol,
+        learningMethodDataFactory: LearningMethodDataFactoryProtocol) {
         self.userDefaultsService = userDefaultsService
+            self.learningMethodDataFactory = learningMethodDataFactory
     }
     
     private func updateView() {
-        let longColor: UIColor
-        let weekColor: UIColor
-        
-        if userDefaultsService.getRepetitionType() == .long {
-            longColor = .lightGreen
-            weekColor = .base
-        } else {
-            longColor = .base
-            weekColor = .lightGreen
-        }
-        
-        let data: [LearningCellsDataModel] = [
-            .long(.init(
-                title: "learning_method_module_long_cell_title"~,
-                subtitle: "learning_method_module_long_cell_subtitle"~,
-                backGroundColor: longColor)
-            ),
-            .week(.init(
-                title: "learning_method_module_week_cell_title"~,
-                subtitle: "learning_method_module_week_cell_subtitle"~,
-                backGroundColor: weekColor)
-            )
-        ]
+        let repetitionType = userDefaultsService.getRepetitionType() ?? .long
+        let data = learningMethodDataFactory.learningMethodData(repetitionType: repetitionType)
+ 
         print("\(userDefaultsService.getRepetitionType())")
         view?.updateData(with: data)
     }
