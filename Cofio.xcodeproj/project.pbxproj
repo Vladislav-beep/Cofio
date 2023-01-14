@@ -96,6 +96,7 @@
 		B972965B29707BB600878B32 /* LearningMethodPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972965A29707BB600878B32 /* LearningMethodPresenter.swift */; };
 		B972965D29707C6B00878B32 /* LearningMethodModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972965C29707C6B00878B32 /* LearningMethodModuleBuilder.swift */; };
 		B972965F2972B29300878B32 /* LearningMethodDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972965E2972B29300878B32 /* LearningMethodDataFactory.swift */; };
+		B97296612972B64F00878B32 /* DateFormatterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97296602972B64F00878B32 /* DateFormatterService.swift */; };
 		B99B17542944CD66002167DB /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B17532944CD66002167DB /* AppFlowCoordinator.swift */; };
 		B99B175A2944CEE7002167DB /* TabBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B17592944CEE7002167DB /* TabBarPage.swift */; };
 		B99B175C2944CF07002167DB /* TabbarFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B175B2944CF07002167DB /* TabbarFlowCoordinator.swift */; };
@@ -280,6 +281,7 @@
 		B972965A29707BB600878B32 /* LearningMethodPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningMethodPresenter.swift; sourceTree = "<group>"; };
 		B972965C29707C6B00878B32 /* LearningMethodModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningMethodModuleBuilder.swift; sourceTree = "<group>"; };
 		B972965E2972B29300878B32 /* LearningMethodDataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningMethodDataFactory.swift; sourceTree = "<group>"; };
+		B97296602972B64F00878B32 /* DateFormatterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterService.swift; sourceTree = "<group>"; };
 		B99B17532944CD66002167DB /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
 		B99B17592944CEE7002167DB /* TabBarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPage.swift; sourceTree = "<group>"; };
 		B99B175B2944CF07002167DB /* TabbarFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -1135,6 +1137,7 @@
 				B9AAEC312962E7DB00BA6078 /* StorageService.swift */,
 				B9CC13EC2893094D0013ED76 /* ImageProvider.swift */,
 				B90A506E2969CB0A00993C75 /* UserDefaultsService.swift */,
+				B97296602972B64F00878B32 /* DateFormatterService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1446,6 +1449,7 @@
 				B9CC13CF28906B6A0013ED76 /* ThemesModuleBuilder.swift in Sources */,
 				B932E95628ABFA5F007244E6 /* RepetitionPresenter.swift in Sources */,
 				B93EF8C028968E690057C774 /* CardsInteractorProtocol.swift in Sources */,
+				B97296612972B64F00878B32 /* DateFormatterService.swift in Sources */,
 				B9ACB7B6295A39B800F2B476 /* CardDetailsDataSource.swift in Sources */,
 				B9CC140F2895C1E50013ED76 /* ThemesTableViewDataSource.swift in Sources */,
 				B93EF8B628968B150057C774 /* CardCellDataModel.swift in Sources */,

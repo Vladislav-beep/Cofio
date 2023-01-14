@@ -90,7 +90,6 @@ extension LearningMethodViewController: LearningMethodViewInput {
     }
 }
 
-
 // MARK: - UITableViewDelegate
 
 extension LearningMethodViewController: UITableViewDelegate {

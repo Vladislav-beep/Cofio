@@ -34,6 +34,7 @@ final class CardsRepetitionModuleBuilder {
         let repetitionService = RepetitionService()
         let userDefaultsService = UserDefaultsService()
         let cardsRepetitionDataFactory = CardsRepetitionDataFactory()
+        let dateFormatterService = DateFormatterService()
         let interactor = CardsRepetitonInteractor(
             storageService: storageService,
             repetitionService: repetitionService,
@@ -42,7 +43,8 @@ final class CardsRepetitionModuleBuilder {
         )
         let presenter = CardsRepetitionPresenter(
             interactor: interactor,
-            cardsRepetitionDataFactory: cardsRepetitionDataFactory
+            cardsRepetitionDataFactory: cardsRepetitionDataFactory,
+            dateFormatterService: dateFormatterService
         )
         let viewController = CardsRepetitionViewController(
             output: presenter,

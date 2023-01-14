@@ -13,6 +13,7 @@ final class CardsRepetitionPresenter {
     
     private let interactor: CardsRepetitionInteractorInput
     private let cardsRepetitionDataFactory: CardsRepetitionDataFactoryProtocol
+    private let dateFormatterService: DateFormatterServiceProtocol
     private var cardsData: [RepetitionCardCellDataModel] = []
     private var isLastCard: Bool = false
     
@@ -25,10 +26,12 @@ final class CardsRepetitionPresenter {
     
     init(
         interactor: CardsRepetitionInteractorInput,
-        cardsRepetitionDataFactory: CardsRepetitionDataFactoryProtocol
+        cardsRepetitionDataFactory: CardsRepetitionDataFactoryProtocol,
+        dateFormatterService: DateFormatterServiceProtocol
     ) {
         self.interactor = interactor
         self.cardsRepetitionDataFactory = cardsRepetitionDataFactory
+        self.dateFormatterService = dateFormatterService
     }
 }
 
@@ -77,11 +80,8 @@ extension CardsRepetitionPresenter: CardsRepetitionViewOutput {
                 )
                 return
             }
-            let date = theme.repeatDate
-            // FIXME: use dateformatter service
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .medium
-            let dateString = dateFormatter.string(from: date!)
+            let date = theme.repeatDate ?? Date()
+            let dateString = dateFormatterService.dateToString(date: date)
             let themeName = interactor.getThemeName()
             output?.moduleWantsToOpenFinishOffer(self, themeName: themeName, repeatDate: dateString, isCompleted: false)
         }
