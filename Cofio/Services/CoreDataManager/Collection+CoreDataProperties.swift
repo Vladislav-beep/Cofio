@@ -2,7 +2,7 @@
 //  Collection+CoreDataProperties.swift
 //  Cofio
 //
-//  Created by Владислав Сизонов on 29.12.2022.
+//  Created by Владислав Сизонов on 14.01.2023.
 //
 //
 
@@ -16,8 +16,9 @@ extension Collection {
         return NSFetchRequest<Collection>(entityName: "Collection")
     }
 
-    @NSManaged public var name: String?
     @NSManaged public var icon: String?
+    @NSManaged public var name: String?
+    @NSManaged public var creationDate: Date?
     @NSManaged public var themes: NSSet?
 
 }

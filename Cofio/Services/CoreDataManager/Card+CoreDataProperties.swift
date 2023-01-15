@@ -2,7 +2,7 @@
 //  Card+CoreDataProperties.swift
 //  Cofio
 //
-//  Created by Владислав Сизонов on 29.12.2022.
+//  Created by Владислав Сизонов on 14.01.2023.
 //
 //
 
@@ -18,6 +18,7 @@ extension Card {
 
     @NSManaged public var cardDefinition: String?
     @NSManaged public var cardDescription: String?
+    @NSManaged public var creationDate: Date?
     @NSManaged public var theme: Theme?
 
 }

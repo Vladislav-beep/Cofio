@@ -12,6 +12,7 @@ final class ThemesPresenter {
     
     private let interactor: ThemesInteractorInput
     private let themesDataFactory: ThemesDataFactoryProtocol
+    private let userDefaultsService: UserDefaultsServiceProtocol
     
     // MARK: Public properties
     
@@ -22,10 +23,12 @@ final class ThemesPresenter {
     
     init(
         interactor: ThemesInteractorInput,
-        themesDataFactory: ThemesDataFactoryProtocol
+        themesDataFactory: ThemesDataFactoryProtocol,
+        userDefaultsService: UserDefaultsServiceProtocol
     ) {
         self.interactor = interactor
         self.themesDataFactory = themesDataFactory
+        self.userDefaultsService = userDefaultsService
     }
     
     // MARK: Private
@@ -57,7 +60,14 @@ extension ThemesPresenter: ThemesViewOutput {
     }
     
     func createTheme(name: String) {
-        interactor.createTheme(themeName: name)
+        let repetitionType: String
+        
+        if userDefaultsService.getRepetitionType() == .long {
+            repetitionType = "long"
+        } else {
+            repetitionType = "week"
+        }
+        interactor.createTheme(themeName: name, repetitionType: repetitionType)
     }
     
     func refreshView() {

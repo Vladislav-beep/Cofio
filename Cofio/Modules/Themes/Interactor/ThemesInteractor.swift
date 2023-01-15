@@ -35,8 +35,8 @@ extension ThemesInteractor: ThemesInteractorInput {
         collectionName
     }
     
-    func createTheme(themeName: String) {
-        storageService.createTheme(collectionName: collectionName, themeName: themeName)
+    func createTheme(themeName: String, repetitionType: String) {
+        storageService.createTheme(collectionName: collectionName, themeName: themeName, repetitionType: repetitionType)
     }
     
     func getThemes() -> [Theme] {

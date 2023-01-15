@@ -2,7 +2,7 @@
 //  Card+CoreDataClass.swift
 //  Cofio
 //
-//  Created by Владислав Сизонов on 29.12.2022.
+//  Created by Владислав Сизонов on 14.01.2023.
 //
 //
 

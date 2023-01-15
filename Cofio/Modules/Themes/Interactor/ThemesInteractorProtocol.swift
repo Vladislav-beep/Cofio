@@ -8,7 +8,7 @@
 protocol ThemesInteractorInput: AnyObject {
     
     func getThemes() -> [Theme]
-    func createTheme(themeName: String)
+    func createTheme(themeName: String, repetitionType: String)
     func getCollectionName() -> String
     func getCardsCount(themeName: String) -> Int
     func deleteTheme(themeName: String)

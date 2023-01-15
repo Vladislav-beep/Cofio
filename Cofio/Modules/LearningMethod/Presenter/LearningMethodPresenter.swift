@@ -31,7 +31,7 @@ final class LearningMethodPresenter {
         let repetitionType = userDefaultsService.getRepetitionType() ?? .long
         let data = learningMethodDataFactory.learningMethodData(repetitionType: repetitionType)
  
-        print("\(userDefaultsService.getRepetitionType())")
+        print("vladdd \(userDefaultsService.getRepetitionType())")
         view?.updateData(with: data)
     }
 }

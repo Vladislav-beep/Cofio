@@ -20,7 +20,7 @@ protocol StorageServiceProtocol {
     func fetchTheme(themeName: String) -> Theme
     func deleteTheme(collectionName: String, themeName: String)
     func getCardsCount(collectionName: String, themeName: String) -> Int
-    func createTheme(collectionName: String, themeName: String)
+    func createTheme(collectionName: String, themeName: String, repetitionType: String)
     func updateTheme(collectionName: String, themeName: String, newName: String)
     
     func fetchCards(themeName: String) -> [Card]
@@ -90,8 +90,8 @@ final class StorageService: StorageServiceProtocol {
         coreDataManager.fetchCards(themeName: themeName).count
     }
     
-    func createTheme(collectionName: String, themeName: String) {
-        coreDataManager.createTheme(name: themeName, repeats: 0, repeatDate: Date(), isRepeatComplete: false, collectionName: collectionName)
+    func createTheme(collectionName: String, themeName: String, repetitionType: String) {
+        coreDataManager.createTheme(name: themeName, repeats: 0, repeatDate: Date(), isRepeatComplete: false, repetitionType: repetitionType, collectionName: collectionName)
     }
     
     func updateTheme(collectionName: String, themeName: String, newName: String) {

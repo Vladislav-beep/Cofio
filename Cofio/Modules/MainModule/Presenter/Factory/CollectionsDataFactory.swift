@@ -21,7 +21,7 @@ final class CollectionsDataFactory: CollectionsDataFactoryProtocol {
             .title(.init(title: "main_module_title"~)),
             .subtitle(.init(subtitle: "main_module_subtitle"~))
         ]
-        let keys = collectionsDict.keys.sorted { $0.name ?? "" > $1.name ?? "" }
+        let keys = collectionsDict.keys.sorted { $0.creationDate ?? Date() > $1.creationDate ?? Date() }
         
         if keys.isEmpty {
             let emptyCell = MainModuleCellsDataModel.empty(.init(title: "main_module_empty_cell_title"~))

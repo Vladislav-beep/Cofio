@@ -62,8 +62,13 @@ extension CardsRepetitonInteractor: CardsRepetitionInteractorInput {
             return
         }
         
-        // TODO: move repetitionType to theme property
-        let repetitionType = userDefaultsService.getRepetitionType() ?? .long
+        let repetitionTypeString = theme.repetitionType
+        let repetitionType: RepetitionType
+        if repetitionTypeString == "long" {
+            repetitionType = .long
+        } else {
+            repetitionType = .week
+        }
         let date = repetitionService.getNextRepetDate(repetitionType: repetitionType, repeatsCount: Int(newRepeats))
         storageService.updateThemeDate(
             themeName: themeName,

@@ -2,7 +2,7 @@
 //  Theme+CoreDataProperties.swift
 //  Cofio
 //
-//  Created by Владислав Сизонов on 29.12.2022.
+//  Created by Владислав Сизонов on 14.01.2023.
 //
 //
 
@@ -16,12 +16,14 @@ extension Theme {
         return NSFetchRequest<Theme>(entityName: "Theme")
     }
 
-    @NSManaged public var name: String?
-    @NSManaged public var repeats: Int64
-    @NSManaged public var repeatDate: Date?
     @NSManaged public var isRepeatComplete: Bool
-    @NSManaged public var collection: Collection?
+    @NSManaged public var name: String?
+    @NSManaged public var repeatDate: Date?
+    @NSManaged public var repeats: Int64
+    @NSManaged public var creationDate: Date?
+    @NSManaged public var repetitionType: String?
     @NSManaged public var cards: NSSet?
+    @NSManaged public var collection: Collection?
 
 }
 

@@ -32,6 +32,7 @@ final class ThemesModuleBuilder {
     func build() -> UIViewController {
         let dataSource = ThemesTableViewDataSource()
         let themesDataFactory = ThemesDataFactory()
+        let userDefaultsService = UserDefaultsService()
         
         let interactor = ThemesInteractor(
             storageService: storageService,
@@ -39,7 +40,8 @@ final class ThemesModuleBuilder {
         )
         let presenter = ThemesPresenter(
             interactor: interactor,
-            themesDataFactory: themesDataFactory
+            themesDataFactory: themesDataFactory,
+            userDefaultsService: userDefaultsService
         )
         let viewController = ThemesViewController(
             output: presenter,

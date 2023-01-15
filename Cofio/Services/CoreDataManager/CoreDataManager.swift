@@ -17,7 +17,7 @@ protocol CoreDataManagerProtocol {
     func deleteCollection(collectionName: String)
     func updateCollection(withName: String, newName: String, icon: String)
     
-    func createTheme(name: String, repeats: Int, repeatDate: Date, isRepeatComplete: Bool, collectionName: String)
+    func createTheme(name: String, repeats: Int, repeatDate: Date, isRepeatComplete: Bool, repetitionType: String, collectionName: String)
     func fetchThemes(collectionName: String) -> [Theme]
     func fetchTheme(themeName: String) -> Theme
     func deleteTheme(collectionName: String, themeName: String)
@@ -67,6 +67,7 @@ class CoreDataManager: CoreDataManagerProtocol {
         let collection = Collection(context: persistentContainer.viewContext)
         collection.name = name
         collection.icon = icon
+        collection.creationDate = Date()
         
         save()
     }
@@ -75,12 +76,15 @@ class CoreDataManager: CoreDataManagerProtocol {
                      repeats: Int,
                      repeatDate: Date,
                      isRepeatComplete: Bool,
+                     repetitionType: String,
                      collectionName: String) {
         let theme = Theme(context: persistentContainer.viewContext)
         theme.name = name
         theme.repeats = Int64(repeats)
         theme.repeatDate = repeatDate
         theme.isRepeatComplete = isRepeatComplete
+        theme.creationDate = Date()
+        theme.repetitionType = repetitionType
         
         let request: NSFetchRequest<Collection> = Collection.fetchRequest()
         request.predicate = NSPredicate(format: "name == %@", collectionName)
@@ -99,6 +103,7 @@ class CoreDataManager: CoreDataManagerProtocol {
         let card = Card(context: persistentContainer.viewContext)
         card.cardDefinition = cardDefinition
         card.cardDescription = cardDescription
+        card.creationDate = Date()
         
         let request: NSFetchRequest<Theme> = Theme.fetchRequest()
         request.predicate = NSPredicate(format: "name == %@", themeName)
