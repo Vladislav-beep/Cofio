@@ -36,7 +36,10 @@ final class SettingsFlowCoordinator {
     }
     
     private func showOnboarding() {
+        let builder = OnboardingModuleBuilder(output: self)
+        let vc = builder.build()
         
+        parentViewController.present(vc, animated: true)
     }
 }
 
@@ -63,5 +66,12 @@ extension SettingsFlowCoordinator: SettingsPresenterOutput {
     
     func moduleWantsToOpenOnboarding(_ module: SettingsPresenterInput) {
         showOnboarding()
+    }
+}
+
+extension SettingsFlowCoordinator: OnboardingPresenterOutput {
+    
+    func moduleWantsToClose(_ module: OnboardingPresenterInput) {
+        parentViewController.dismiss(animated: true)
     }
 }

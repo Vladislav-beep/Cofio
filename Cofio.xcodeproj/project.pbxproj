@@ -97,6 +97,15 @@
 		B972966B2972BD7D00878B32 /* Collection+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97296652972BD7D00878B32 /* Collection+CoreDataProperties.swift */; };
 		B972966C2972BD7D00878B32 /* Card+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97296662972BD7D00878B32 /* Card+CoreDataClass.swift */; };
 		B972966D2972BD7D00878B32 /* Card+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97296672972BD7D00878B32 /* Card+CoreDataProperties.swift */; };
+		B972967129742E5900878B32 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972967029742E5900878B32 /* OnboardingViewController.swift */; };
+		B972967429742F0000878B32 /* OnboardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972967329742F0000878B32 /* OnboardingPresenter.swift */; };
+		B97296762974300F00878B32 /* OnboardingViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97296752974300F00878B32 /* OnboardingViewProtocol.swift */; };
+		B97296782974327C00878B32 /* OnboardingViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97296772974327C00878B32 /* OnboardingViewDataSource.swift */; };
+		B972967A297432B500878B32 /* OnboardingCellDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9729679297432B500878B32 /* OnboardingCellDataModel.swift */; };
+		B972967D297433C600878B32 /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972967C297433C600878B32 /* OnboardingCell.swift */; };
+		B972967F297439AA00878B32 /* OnboardingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972967E297439AA00878B32 /* OnboardingService.swift */; };
+		B9729681297439F000878B32 /* OnboardingPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9729680297439F000878B32 /* OnboardingPresenterProtocol.swift */; };
+		B972968329743BBC00878B32 /* OnboardingModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972968229743BBC00878B32 /* OnboardingModuleBuilder.swift */; };
 		B99B17542944CD66002167DB /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B17532944CD66002167DB /* AppFlowCoordinator.swift */; };
 		B99B175A2944CEE7002167DB /* TabBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B17592944CEE7002167DB /* TabBarPage.swift */; };
 		B99B175C2944CF07002167DB /* TabbarFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B175B2944CF07002167DB /* TabbarFlowCoordinator.swift */; };
@@ -282,6 +291,15 @@
 		B97296652972BD7D00878B32 /* Collection+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B97296662972BD7D00878B32 /* Card+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B97296672972BD7D00878B32 /* Card+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B972967029742E5900878B32 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		B972967329742F0000878B32 /* OnboardingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenter.swift; sourceTree = "<group>"; };
+		B97296752974300F00878B32 /* OnboardingViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewProtocol.swift; sourceTree = "<group>"; };
+		B97296772974327C00878B32 /* OnboardingViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewDataSource.swift; sourceTree = "<group>"; };
+		B9729679297432B500878B32 /* OnboardingCellDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCellDataModel.swift; sourceTree = "<group>"; };
+		B972967C297433C600878B32 /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
+		B972967E297439AA00878B32 /* OnboardingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingService.swift; sourceTree = "<group>"; };
+		B9729680297439F000878B32 /* OnboardingPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenterProtocol.swift; sourceTree = "<group>"; };
+		B972968229743BBC00878B32 /* OnboardingModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModuleBuilder.swift; sourceTree = "<group>"; };
 		B99B17532944CD66002167DB /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
 		B99B17592944CEE7002167DB /* TabBarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPage.swift; sourceTree = "<group>"; };
 		B99B175B2944CF07002167DB /* TabbarFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -730,6 +748,45 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		B972966E29742E1B00878B32 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				B972968229743BBC00878B32 /* OnboardingModuleBuilder.swift */,
+				B972967229742EEC00878B32 /* Presenter */,
+				B972966F29742E3400878B32 /* View */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		B972966F29742E3400878B32 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B972967029742E5900878B32 /* OnboardingViewController.swift */,
+				B97296752974300F00878B32 /* OnboardingViewProtocol.swift */,
+				B97296772974327C00878B32 /* OnboardingViewDataSource.swift */,
+				B9729679297432B500878B32 /* OnboardingCellDataModel.swift */,
+				B972967B2974339F00878B32 /* Cells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B972967229742EEC00878B32 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B972967329742F0000878B32 /* OnboardingPresenter.swift */,
+				B9729680297439F000878B32 /* OnboardingPresenterProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B972967B2974339F00878B32 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B972967C297433C600878B32 /* OnboardingCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		B99B176329450BA4002167DB /* AppFlowCoordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -1114,6 +1171,7 @@
 				B910AB3D2945E4F700D9E7EA /* StatisticsModule */,
 				B910AB392945E3EF00D9E7EA /* SettingsModule */,
 				B972964C296F359E00878B32 /* LearningMethod */,
+				B972966E29742E1B00878B32 /* Onboarding */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -1138,6 +1196,7 @@
 				B9CC13EC2893094D0013ED76 /* ImageProvider.swift */,
 				B90A506E2969CB0A00993C75 /* UserDefaultsService.swift */,
 				B97296602972B64F00878B32 /* DateFormatterService.swift */,
+				B972967E297439AA00878B32 /* OnboardingService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1348,6 +1407,7 @@
 				B932E95C28ABFB51007244E6 /* RepetitionInteractorProtocol.swift in Sources */,
 				B9CC13E52891D6380013ED76 /* Card1.swift in Sources */,
 				B9729651296F364100878B32 /* LearningMethodViewProtocol.swift in Sources */,
+				B972967A297432B500878B32 /* OnboardingCellDataModel.swift in Sources */,
 				B932E97928B7FC29007244E6 /* CardsRepetitionViewProtocol.swift in Sources */,
 				B9ACB7AC2954D2A900F2B476 /* IconsCollectionView.swift in Sources */,
 				B9ACB7AA2954CCA900F2B476 /* ChooseIconModuleBuilder.swift in Sources */,
@@ -1389,6 +1449,7 @@
 				B9CC13C728906A7C0013ED76 /* ThemesPresenter.swift in Sources */,
 				B90A50592968948A00993C75 /* RepetitionCardCellsDataModel.swift in Sources */,
 				B94C025B294E5BC200EF9EB6 /* CardDetailsPresenter.swift in Sources */,
+				B97296762974300F00878B32 /* OnboardingViewProtocol.swift in Sources */,
 				B9CC13B1288F07BF0013ED76 /* NewCollectionViewController.swift in Sources */,
 				B9CC139D288EE6E90013ED76 /* MainInteractor.swift in Sources */,
 				B9CC1414289686140013ED76 /* CardsViewController.swift in Sources */,
@@ -1407,10 +1468,12 @@
 				B910AB54294DC33500D9E7EA /* MainModuleSubtitleCell.swift in Sources */,
 				B932E96528AC06F4007244E6 /* RepetitionTableViewDataSource.swift in Sources */,
 				B932E97328B7FAA5007244E6 /* CardsRepetitionInteractor.swift in Sources */,
+				B97296782974327C00878B32 /* OnboardingViewDataSource.swift in Sources */,
 				B9CC13CB28906B040013ED76 /* ThemesInteractor.swift in Sources */,
 				B90A504E2964CB0400993C75 /* RepetitionCardsCell.swift in Sources */,
 				B94C0253294E596800EF9EB6 /* CardDetailsModuleBuilder.swift in Sources */,
 				B9CC13CD28906B310013ED76 /* ThemesInteractorProtocol.swift in Sources */,
+				B972967129742E5900878B32 /* OnboardingViewController.swift in Sources */,
 				B97296682972BD7D00878B32 /* Theme+CoreDataClass.swift in Sources */,
 				B972966B2972BD7D00878B32 /* Collection+CoreDataProperties.swift in Sources */,
 				B932E94C28A00499007244E6 /* WordTextView.swift in Sources */,
@@ -1422,13 +1485,16 @@
 				B9ACB7BA295A3A4200F2B476 /* CardDetailsCell.swift in Sources */,
 				B9ACB7D9295E112F00F2B476 /* CoreDataManager.swift in Sources */,
 				B90A506F2969CB0A00993C75 /* UserDefaultsService.swift in Sources */,
+				B972968329743BBC00878B32 /* OnboardingModuleBuilder.swift in Sources */,
 				B9CC13A0288EE8C10013ED76 /* MainPresenterProtocol.swift in Sources */,
 				B93EF8B428968A8F0057C774 /* CardsViewProtocol.swift in Sources */,
 				B932E948289DB365007244E6 /* MainModuleCellViewModel.swift in Sources */,
+				B972967429742F0000878B32 /* OnboardingPresenter.swift in Sources */,
 				B9CC13A8288EF56D0013ED76 /* MainFlowCoordinator.swift in Sources */,
 				B99B175C2944CF07002167DB /* TabbarFlowCoordinator.swift in Sources */,
 				B9CC13BB288F0A000013ED76 /* NewCollectionInteractorProtocol.swift in Sources */,
 				B90A50682969BDE200993C75 /* FinishRepetitionOfferModel.swift in Sources */,
+				B9729681297439F000878B32 /* OnboardingPresenterProtocol.swift in Sources */,
 				B93EF8CD289AF9B60057C774 /* NewCardViewProtocol.swift in Sources */,
 				B9729655296F382100878B32 /* LearningCellsDataModel.swift in Sources */,
 				B9CC13F1289310460013ED76 /* UIStackView+Extension.swift in Sources */,
@@ -1459,7 +1525,9 @@
 				B9CC135D288738980013ED76 /* SceneDelegate.swift in Sources */,
 				B9CC140D2895C1100013ED76 /* CollectionCell.swift in Sources */,
 				B9CC139B288EE6C20013ED76 /* MainPresenter.swift in Sources */,
+				B972967F297439AA00878B32 /* OnboardingService.swift in Sources */,
 				B93EF8BE28968E320057C774 /* CardsInteractor.swift in Sources */,
+				B972967D297433C600878B32 /* OnboardingCell.swift in Sources */,
 				B972966C2972BD7D00878B32 /* Card+CoreDataClass.swift in Sources */,
 				B9729647296C943800878B32 /* SettingsCell.swift in Sources */,
 				B9CC13D52890720B0013ED76 /* SubtitleLabel.swift in Sources */,

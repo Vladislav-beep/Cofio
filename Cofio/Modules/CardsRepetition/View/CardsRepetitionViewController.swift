@@ -91,6 +91,7 @@ final class CardsRepetitionViewController: UIViewController {
     // MARK: Private
     
     private func setupViews() {
+        // TODO: refactore method
         view.backgroundColor = .white
         learnedButton.isEnabled = false
         moreTimeButton.isEnabled = false
@@ -132,6 +133,7 @@ final class CardsRepetitionViewController: UIViewController {
     }
     
     private func handleTap() {
+        // TODO: refactore method
         let nextIndex = min(pageControl.currentPage + 1, output.getCardsCount() - 1)
         let indexPath = IndexPath(item: nextIndex, section: 0)
         pageControl.currentPage = nextIndex

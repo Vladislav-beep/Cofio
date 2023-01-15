@@ -6,14 +6,14 @@
 //
 
 enum SettingsCellsDataModel: Hashable {
-    case learning(LearningCellDataModel)
-    case onboarding(OnboardingCellDataModel)
+    case learning(LearningSettingsCellDataModel)
+    case onboarding(OnboardingSettingsCellDataModel)
 }
 
-struct LearningCellDataModel: Hashable {
+struct LearningSettingsCellDataModel: Hashable {
     let title: String
 }
 
-struct OnboardingCellDataModel: Hashable {
+struct OnboardingSettingsCellDataModel: Hashable {
     let title: String
 }

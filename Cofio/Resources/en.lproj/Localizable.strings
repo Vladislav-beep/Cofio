@@ -83,6 +83,9 @@
 "learning_method_module_long_cell_subtitle" = "Для запоминания используется методика прогрессирующего запоминания, первое повторение происходит в тот же день, далее на следующий, потом через 3 дня, 5....";
 "learning_method_module_week_cell_subtitle" = "Методика состоит в том, чтобы повторять информацию каждый день в течение недели";
 
+// MARK: Onboarding
+"onboarding_module_button_title" = "Дальше";
+
 // MARK: - UI
 
 // MARK: CollectionTextField
