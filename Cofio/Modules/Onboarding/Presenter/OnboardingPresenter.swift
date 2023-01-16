@@ -13,11 +13,10 @@ final class OnboardingPresenter {
     
     private let onboardingService: OnboardingServiceProtocol
     private var isLastPage: Bool = false
-    let data = [
-        OnboardingCellDataModel(image: UIImage(named: "book")!, title: "11111111", subtitle: "ascvassac"),
-        OnboardingCellDataModel(image: UIImage(named: "clock")!, title: "222222222", subtitle: "sfffffffffff"),
-        OnboardingCellDataModel(image: UIImage(named: "calendar")!, title: "qeklqklkm klmqemkelwklmwe wklem eeetehehet tehhteehthte", subtitle: "wekwekewkp kwdkkwkwkm kmwekmwkmkm mkekm wekweklkew kmwekmewkmekmlwk mmk kmewmkekmwlwkemlekml kmwekmlewklmew mkwekmle wklmkmlewkmew mkw e")
-    ]
+    
+    private var data: [OnboardingCellDataModel] {
+        onboardingService.getOnboardingData()
+    }
     
     // MARK: Public properties
     
