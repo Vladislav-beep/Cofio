@@ -11,7 +11,7 @@ final class NewCollectionPresenter {
     
     private let interactor: NewCollectionInteractorInput
     private let isEditing: Bool
-    private var iconName: String?
+    private var iconName = "iconPlaceholder"
     
     // MARK: Public properties
     
@@ -42,7 +42,7 @@ extension NewCollectionPresenter: NewCollectionViewOutput {
                 buttonTitle: "new_collection_module_button_edit_title"~
             )
             let collection = interactor.getCollection()
-            view?.updateTextViewAndIcon(text: collection.name ?? "", icon: collection.icon ?? "")
+            view?.updateTextViewAndIcon(text: collection.name ?? "", icon: collection.icon ?? "iconPlaceholder")
         } else {
             view?.updateTitleAndButton(
                 title: "new_collection_module_title"~,
@@ -54,10 +54,10 @@ extension NewCollectionPresenter: NewCollectionViewOutput {
     func viewDidTapButton(name: String) {
         if isEditing {
             let collection = interactor.getCollection()
-            interactor.updateCollection(name: collection.name ?? "", newName: name, icon: iconName ?? "")
+            interactor.updateCollection(name: collection.name ?? "", newName: name, icon: iconName)
         } else {
             // TODO: добавить проверку на сущестование имени коллекции и на пустое имя
-            let icon = iconName ?? ""
+            let icon = iconName
             interactor.createCollection(name: name, icon: icon)
         }
         

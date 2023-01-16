@@ -91,8 +91,7 @@ final class RepetitionCardsCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             definitionLabel.topAnchor.constraint(equalTo: thinView.bottomAnchor, constant: 10),
             definitionLabel.leadingAnchor.constraint(equalTo: lowerView.leadingAnchor, constant: 16),
-            definitionLabel.trailingAnchor.constraint(equalTo: lowerView.trailingAnchor, constant: -12),
-            definitionLabel.bottomAnchor.constraint(equalTo: lowerView.bottomAnchor, constant: -12),
+            definitionLabel.trailingAnchor.constraint(equalTo: lowerView.trailingAnchor, constant: -12)
         ])
     }
     
@@ -102,5 +101,7 @@ final class RepetitionCardsCell: UICollectionViewCell {
         titleLabel.text = displayData.definition
         definitionLabel.text = displayData.description
         definitionLabel.isHidden = !displayData.descriptionShown
+        titleLabel.sizeToFit()
+        definitionLabel.sizeToFit()
     }
 }
