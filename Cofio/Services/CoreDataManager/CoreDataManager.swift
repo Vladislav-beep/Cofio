@@ -17,11 +17,12 @@ protocol CoreDataManagerProtocol {
     func deleteCollection(collectionName: String)
     func updateCollection(withName: String, newName: String, icon: String)
     
-    func createTheme(name: String, repeats: Int, repeatDate: Date, isRepeatComplete: Bool, repetitionType: String, collectionName: String)
+    func createTheme(name: String, repeats: Int, repeatDate: Date, isRepeatComplete: Bool, repetitionType: String, collectionName: String, isBeingRepeated: Bool)
     func fetchThemes(collectionName: String) -> [Theme]
     func fetchTheme(themeName: String) -> Theme
     func deleteTheme(collectionName: String, themeName: String)
     func updateTheme(collectionName: String, themeName: String, newName: String)
+    func updateThemeRepeating(collectionName: String, themeName: String)
     
     func createCard(cardDefinition: String, cardDescription: String, themeName: String)
     func fetchCards(themeName: String) -> [Card]
@@ -77,7 +78,8 @@ class CoreDataManager: CoreDataManagerProtocol {
                      repeatDate: Date,
                      isRepeatComplete: Bool,
                      repetitionType: String,
-                     collectionName: String) {
+                     collectionName: String,
+                     isBeingRepeated: Bool) {
         let theme = Theme(context: persistentContainer.viewContext)
         theme.name = name
         theme.repeats = Int64(repeats)
@@ -85,6 +87,7 @@ class CoreDataManager: CoreDataManagerProtocol {
         theme.isRepeatComplete = isRepeatComplete
         theme.creationDate = Date()
         theme.repetitionType = repetitionType
+        theme.isBeingRepeated = isBeingRepeated
         
         let request: NSFetchRequest<Collection> = Collection.fetchRequest()
         request.predicate = NSPredicate(format: "name == %@", collectionName)
@@ -312,6 +315,24 @@ class CoreDataManager: CoreDataManagerProtocol {
             theme.repeatDate = newDate
             theme.repeats = Int64(newRepeats)
             theme.isRepeatComplete = isRepeatCompleted
+        } catch let error {
+            print("Error updating theme \(error)")
+        }
+        
+        save()
+    }
+    
+    func updateThemeRepeating(collectionName: String, themeName: String) {
+        let namePredicate = NSPredicate(format: "name == %@", themeName)
+        //  let multiplePredicate = NSCompoundPredicate(type: .and, subpredicates: [collectionPredicate, namePredicate])
+        
+        let request: NSFetchRequest<Theme> = Theme.fetchRequest()
+        request.predicate = namePredicate
+        
+        do {
+            guard let theme = try persistentContainer.viewContext.fetch(request).first
+            else { return }
+            theme.isBeingRepeated = true
         } catch let error {
             print("Error updating theme \(error)")
         }

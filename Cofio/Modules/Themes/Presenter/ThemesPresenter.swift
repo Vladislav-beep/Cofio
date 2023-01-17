@@ -82,6 +82,10 @@ extension ThemesPresenter: ThemesViewOutput {
     func editTheme(currentName: String, newName: String) {
         interactor.editTheme(themeName: currentName, newName: newName)
     }
+    
+    func startLearningTheme(themeName: String) {
+        interactor.startLearningTheme(themeName: themeName)
+    }
 }
 
 // MARK: - ThemesPresenterInput

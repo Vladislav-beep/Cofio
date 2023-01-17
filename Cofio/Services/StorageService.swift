@@ -24,6 +24,7 @@ protocol StorageServiceProtocol {
     func updateTheme(collectionName: String, themeName: String, newName: String)
     func updateThemeDate(themeName: String, newDate: Date, newRepeats: Int, isRepeatCompleted: Bool)
     func fetchAllThemesForRepetition() -> [Theme]
+    func startLearningTheme(collectionName: String, themeName: String)
     
     func fetchCards(themeName: String) -> [Card]
     func deleteCard(themeName: String, cardName: String)
@@ -91,11 +92,15 @@ final class StorageService: StorageServiceProtocol {
     }
     
     func createTheme(collectionName: String, themeName: String, repetitionType: String) {
-        coreDataManager.createTheme(name: themeName, repeats: 0, repeatDate: Date(), isRepeatComplete: false, repetitionType: repetitionType, collectionName: collectionName)
+        coreDataManager.createTheme(name: themeName, repeats: 0, repeatDate: Date(), isRepeatComplete: false, repetitionType: repetitionType, collectionName: collectionName, isBeingRepeated: false)
     }
     
     func updateTheme(collectionName: String, themeName: String, newName: String) {
         coreDataManager.updateTheme(collectionName: collectionName, themeName: themeName, newName: newName)
+    }
+    
+    func updateThemeDate(themeName: String, newDate: Date, newRepeats: Int, isRepeatCompleted: Bool) {
+        coreDataManager.updateThemeDate(themeName: themeName, newDate: newDate, newRepeats: newRepeats, isRepeatCompleted: isRepeatCompleted)
     }
     
     func fetchAllThemesForRepetition() -> [Theme] {
@@ -104,7 +109,7 @@ final class StorageService: StorageServiceProtocol {
         
         // TODO: Подумать над предикатом на это
         for theme in themes {
-            if theme.cards?.count ?? 0 > 0 {
+            if theme.cards?.count ?? 0 > 0 && theme.isBeingRepeated == true {
                 returnedThemes.append(theme)
             }
         }
@@ -112,8 +117,8 @@ final class StorageService: StorageServiceProtocol {
         return returnedThemes
     }
     
-    func updateThemeDate(themeName: String, newDate: Date, newRepeats: Int, isRepeatCompleted: Bool) {
-        coreDataManager.updateThemeDate(themeName: themeName, newDate: newDate, newRepeats: newRepeats, isRepeatCompleted: isRepeatCompleted)
+    func startLearningTheme(collectionName: String, themeName: String) {
+        coreDataManager.updateThemeRepeating(collectionName: collectionName, themeName: themeName)
     }
     
     // MARK: Card methods

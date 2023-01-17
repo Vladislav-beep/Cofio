@@ -14,6 +14,7 @@
     </entity>
     <entity name="Theme" representedClassName="Theme" syncable="YES">
         <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="isBeingRepeated" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="isRepeatComplete" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="repeatDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -25,6 +26,6 @@
     <elements>
         <element name="Card" positionX="151.651123046875" positionY="148.2431030273438" width="128" height="89"/>
         <element name="Collection" positionX="-45" positionY="0" width="128" height="89"/>
-        <element name="Theme" positionX="-197.68359375" positionY="396.5792846679688" width="128" height="149"/>
+        <element name="Theme" positionX="-197.68359375" positionY="396.5792846679688" width="128" height="164"/>
     </elements>
 </model>

@@ -152,6 +152,29 @@ final class ThemesViewController: UIViewController {
         action.image = UIImage(systemName: "slider.horizontal.3")
         return action
     }
+    
+    private func learnAction(at indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(
+            style: .normal,
+            title: "Изучить тему"
+        ) { [weak self] (action, view, complition) in
+            guard let self = self else { return }
+            
+            guard let item = self.tableViewDataSource.itemIdentifier(for: indexPath) else { return }
+            switch item {
+            case .card(let model):
+                // TODO: add notification from top that theme is being repeated
+                self.output.startLearningTheme(themeName: model.title)
+                
+            case .statics, .header, .empty:
+                break
+            }
+            
+            complition(true)
+        }
+        action.image = UIImage(systemName: "slider.horizontal.3")
+        return action
+    }
 }
 
 // MARK: - ThemesViewInput
@@ -204,8 +227,16 @@ extension ThemesViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let delete = deleteAction(at: indexPath)
-        let edit = editAction(at: indexPath)
-        return UISwipeActionsConfiguration(actions: [delete, edit])
+        guard let item = tableViewDataSource.itemIdentifier(for: indexPath) else { return nil }
+        switch item {
+        case .statics, .header, .empty:
+            return nil
+            
+        case .card:
+            let delete = deleteAction(at: indexPath)
+            let edit = editAction(at: indexPath)
+            let learn = learnAction(at: indexPath)
+            return UISwipeActionsConfiguration(actions: [delete, edit, learn])
+        }
     }
 }

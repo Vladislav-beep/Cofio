@@ -54,4 +54,8 @@ extension ThemesInteractor: ThemesInteractorInput {
     func editTheme(themeName: String, newName: String) {
         storageService.updateTheme(collectionName: collectionName, themeName: themeName, newName: newName)
     }
+    
+    func startLearningTheme(themeName: String) {
+        storageService.startLearningTheme(collectionName: collectionName, themeName: themeName)
+    }
 }

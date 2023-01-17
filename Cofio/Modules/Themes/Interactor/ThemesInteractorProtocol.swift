@@ -13,6 +13,7 @@ protocol ThemesInteractorInput: AnyObject {
     func getCardsCount(themeName: String) -> Int
     func deleteTheme(themeName: String)
     func editTheme(themeName: String, newName: String)
+    func startLearningTheme(themeName: String)
 }
 
 protocol ThemesInteractorOutput: AnyObject {}

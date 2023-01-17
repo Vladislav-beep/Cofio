@@ -30,6 +30,7 @@ final class RepetitionPresenter {
     // MARK: Private
     
     private func updateView() {
+        // TODO: add empty cell
         let themes = interactor.fetchAllThemesForRepetition()
         let data = repetitionDataFactory.dataFromThemes(themes: themes)
         view?.updateData(with: data)
