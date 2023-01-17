@@ -40,4 +40,27 @@ extension UIViewController {
         alert.addAction(cancelAction)
         present(alert, animated: true)
     }
+    
+    func showTwoButtonAlert(title: String,
+                            message: String,
+                            actionTitle: String,
+                            completion: @escaping () -> Void) {
+        let alert = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert
+        )
+        let action = UIAlertAction(
+            title: actionTitle,
+            style: .cancel) { _ in
+                completion()
+            }
+        let cancelAction = UIAlertAction(
+            title: "theme_module_alert_cancel_button"~,
+            style: .default
+        )
+        alert.addAction(action)
+        alert.addAction(cancelAction)
+        present(alert, animated: true)
+    }
 }

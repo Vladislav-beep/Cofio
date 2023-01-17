@@ -8,12 +8,20 @@
 enum SettingsCellsDataModel: Hashable {
     case learning(LearningSettingsCellDataModel)
     case onboarding(OnboardingSettingsCellDataModel)
+    case deleteAllData(DeleteAllDataCellDataModel)
 }
 
 struct LearningSettingsCellDataModel: Hashable {
     let title: String
+    let isImageShown: Bool
 }
 
 struct OnboardingSettingsCellDataModel: Hashable {
     let title: String
+    let isImageShown: Bool
+}
+
+struct DeleteAllDataCellDataModel: Hashable {
+    let title: String
+    let isImageShown: Bool
 }

@@ -12,17 +12,25 @@ final class SettingsFlowCoordinator {
     // MARK: Private
     
     private let parentViewController: UINavigationController
+    private let storageService: StorageServiceProtocol
     
     // MARK: Lifecycle
     
-    init(parentViewController: UINavigationController) {
+    init(
+        parentViewController: UINavigationController,
+        storageService: StorageServiceProtocol
+    ) {
         self.parentViewController = parentViewController
+        self.storageService = storageService
     }
     
     // MARK: Private
 
     private func showSettingsModule() {
-        let builder = SettingsModuleBuilder(output: self)
+        let builder = SettingsModuleBuilder(
+            output: self,
+            storageService: storageService
+        )
         
         let settingsViewController = builder.build()
         parentViewController.pushViewController(settingsViewController, animated: true)

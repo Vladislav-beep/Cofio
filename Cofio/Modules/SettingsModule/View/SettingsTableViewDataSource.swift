@@ -20,18 +20,33 @@ final class SettingsTableViewDataSource: SettingsTableViewDataSourceProtocol {
             switch cellType {
             case .learning(let model):
                 let cell = tableview.reuse(SettingsCell.self, indexPath)
-                let displayData = SettingsCell.DisplayData(title: model.title)
+                let displayData = SettingsCell.DisplayData(
+                    title: model.title,
+                    isImageShown: model.isImageShown
+                )
                 cell.configure(with: displayData)
                 return cell
                 
             case .onboarding(let model):
                 let cell = tableview.reuse(SettingsCell.self, indexPath)
-                let displayData = SettingsCell.DisplayData(title: model.title)
+                let displayData = SettingsCell.DisplayData(
+                    title: model.title,
+                    isImageShown: model.isImageShown
+                    )
+                cell.configure(with: displayData)
+                return cell
+                
+            case .deleteAllData(let model):
+                let cell = tableview.reuse(SettingsCell.self, indexPath)
+                    let displayData = SettingsCell.DisplayData(
+                        title: model.title,
+                        isImageShown: model.isImageShown
+                        )
                 cell.configure(with: displayData)
                 return cell
             }
         }
-
+        
         return tableViewDataSource
     }
 }

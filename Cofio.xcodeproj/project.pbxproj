@@ -91,8 +91,6 @@
 		B972965D29707C6B00878B32 /* LearningMethodModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972965C29707C6B00878B32 /* LearningMethodModuleBuilder.swift */; };
 		B972965F2972B29300878B32 /* LearningMethodDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972965E2972B29300878B32 /* LearningMethodDataFactory.swift */; };
 		B97296612972B64F00878B32 /* DateFormatterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97296602972B64F00878B32 /* DateFormatterService.swift */; };
-		B97296682972BD7D00878B32 /* Theme+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97296622972BD7D00878B32 /* Theme+CoreDataClass.swift */; };
-		B97296692972BD7D00878B32 /* Theme+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97296632972BD7D00878B32 /* Theme+CoreDataProperties.swift */; };
 		B972966A2972BD7D00878B32 /* Collection+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97296642972BD7D00878B32 /* Collection+CoreDataClass.swift */; };
 		B972966B2972BD7D00878B32 /* Collection+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97296652972BD7D00878B32 /* Collection+CoreDataProperties.swift */; };
 		B972966C2972BD7D00878B32 /* Card+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97296662972BD7D00878B32 /* Card+CoreDataClass.swift */; };
@@ -106,6 +104,8 @@
 		B972967F297439AA00878B32 /* OnboardingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972967E297439AA00878B32 /* OnboardingService.swift */; };
 		B9729681297439F000878B32 /* OnboardingPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9729680297439F000878B32 /* OnboardingPresenterProtocol.swift */; };
 		B972968329743BBC00878B32 /* OnboardingModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972968229743BBC00878B32 /* OnboardingModuleBuilder.swift */; };
+		B972968629771E5100878B32 /* Theme+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972968429771E5100878B32 /* Theme+CoreDataClass.swift */; };
+		B972968729771E5100878B32 /* Theme+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972968529771E5100878B32 /* Theme+CoreDataProperties.swift */; };
 		B99B17542944CD66002167DB /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B17532944CD66002167DB /* AppFlowCoordinator.swift */; };
 		B99B175A2944CEE7002167DB /* TabBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B17592944CEE7002167DB /* TabBarPage.swift */; };
 		B99B175C2944CF07002167DB /* TabbarFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B175B2944CF07002167DB /* TabbarFlowCoordinator.swift */; };
@@ -281,8 +281,6 @@
 		B972965C29707C6B00878B32 /* LearningMethodModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningMethodModuleBuilder.swift; sourceTree = "<group>"; };
 		B972965E2972B29300878B32 /* LearningMethodDataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningMethodDataFactory.swift; sourceTree = "<group>"; };
 		B97296602972B64F00878B32 /* DateFormatterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterService.swift; sourceTree = "<group>"; };
-		B97296622972BD7D00878B32 /* Theme+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+CoreDataClass.swift"; sourceTree = "<group>"; };
-		B97296632972BD7D00878B32 /* Theme+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B97296642972BD7D00878B32 /* Collection+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B97296652972BD7D00878B32 /* Collection+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B97296662972BD7D00878B32 /* Card+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -296,6 +294,8 @@
 		B972967E297439AA00878B32 /* OnboardingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingService.swift; sourceTree = "<group>"; };
 		B9729680297439F000878B32 /* OnboardingPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenterProtocol.swift; sourceTree = "<group>"; };
 		B972968229743BBC00878B32 /* OnboardingModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModuleBuilder.swift; sourceTree = "<group>"; };
+		B972968429771E5100878B32 /* Theme+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B972968529771E5100878B32 /* Theme+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B99B17532944CD66002167DB /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
 		B99B17592944CEE7002167DB /* TabBarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPage.swift; sourceTree = "<group>"; };
 		B99B175B2944CF07002167DB /* TabbarFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -876,8 +876,8 @@
 		B9ACB7BC295E0B5900F2B476 /* CoreDataManager */ = {
 			isa = PBXGroup;
 			children = (
-				B97296622972BD7D00878B32 /* Theme+CoreDataClass.swift */,
-				B97296632972BD7D00878B32 /* Theme+CoreDataProperties.swift */,
+				B972968429771E5100878B32 /* Theme+CoreDataClass.swift */,
+				B972968529771E5100878B32 /* Theme+CoreDataProperties.swift */,
 				B97296642972BD7D00878B32 /* Collection+CoreDataClass.swift */,
 				B97296652972BD7D00878B32 /* Collection+CoreDataProperties.swift */,
 				B97296662972BD7D00878B32 /* Card+CoreDataClass.swift */,
@@ -1398,7 +1398,6 @@
 				B9CC13DD2891B9090013ED76 /* CollectionTextField.swift in Sources */,
 				B9AAEC302961CC3700BA6078 /* CardsEmptyCell.swift in Sources */,
 				B90A506D2969CAA300993C75 /* RepetitionType.swift in Sources */,
-				B97296692972BD7D00878B32 /* Theme+CoreDataProperties.swift in Sources */,
 				B9ACB7A129543A0000F2B476 /* ChooseIconPresenterProtocol.swift in Sources */,
 				B94C0258294E5B3F00EF9EB6 /* CardDetailsViewProtocol.swift in Sources */,
 				B932E95E28ABFBC4007244E6 /* RepetitionModuleBuilder.swift in Sources */,
@@ -1416,6 +1415,7 @@
 				B9CC13B5288F087A0013ED76 /* NewCollectionProtocol.swift in Sources */,
 				B90A50572965977D00993C75 /* CardsRepetitionDataFactory.swift in Sources */,
 				B99B17542944CD66002167DB /* AppFlowCoordinator.swift in Sources */,
+				B972968729771E5100878B32 /* Theme+CoreDataProperties.swift in Sources */,
 				B90A506A2969CA6E00993C75 /* RepetitionService.swift in Sources */,
 				B93EF8B828968D210057C774 /* CardsPresenter.swift in Sources */,
 				B9CC141E289688470013ED76 /* CardsCell.swift in Sources */,
@@ -1451,7 +1451,6 @@
 				B94C0253294E596800EF9EB6 /* CardDetailsModuleBuilder.swift in Sources */,
 				B9CC13CD28906B310013ED76 /* ThemesInteractorProtocol.swift in Sources */,
 				B972967129742E5900878B32 /* OnboardingViewController.swift in Sources */,
-				B97296682972BD7D00878B32 /* Theme+CoreDataClass.swift in Sources */,
 				B972966B2972BD7D00878B32 /* Collection+CoreDataProperties.swift in Sources */,
 				B932E94C28A00499007244E6 /* WordTextView.swift in Sources */,
 				B932E95428ABFA1E007244E6 /* RepetitionViewProtocol.swift in Sources */,
@@ -1472,6 +1471,7 @@
 				B9CC13BB288F0A000013ED76 /* NewCollectionInteractorProtocol.swift in Sources */,
 				B90A50682969BDE200993C75 /* FinishRepetitionOfferModel.swift in Sources */,
 				B9729681297439F000878B32 /* OnboardingPresenterProtocol.swift in Sources */,
+				B972968629771E5100878B32 /* Theme+CoreDataClass.swift in Sources */,
 				B93EF8CD289AF9B60057C774 /* NewCardViewProtocol.swift in Sources */,
 				B9729655296F382100878B32 /* LearningCellsDataModel.swift in Sources */,
 				B9CC13F1289310460013ED76 /* UIStackView+Extension.swift in Sources */,

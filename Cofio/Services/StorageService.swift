@@ -22,6 +22,8 @@ protocol StorageServiceProtocol {
     func getCardsCount(collectionName: String, themeName: String) -> Int
     func createTheme(collectionName: String, themeName: String, repetitionType: String)
     func updateTheme(collectionName: String, themeName: String, newName: String)
+    func updateThemeDate(themeName: String, newDate: Date, newRepeats: Int, isRepeatCompleted: Bool)
+    func fetchAllThemesForRepetition() -> [Theme]
     
     func fetchCards(themeName: String) -> [Card]
     func deleteCard(themeName: String, cardName: String)
@@ -29,9 +31,7 @@ protocol StorageServiceProtocol {
     func createCard(themeName: String, definition: String, description: String)
     func updateCard(themeName: String, cardDefinition: String, newDefinition: String, newDescription: String)
     
-    func fetchAllThemesForRepetition() -> [Theme]
-    
-    func updateThemeDate(themeName: String, newDate: Date, newRepeats: Int, isRepeatCompleted: Bool)
+    func deleteAllData()
 }
 
 final class StorageService: StorageServiceProtocol {
@@ -98,6 +98,24 @@ final class StorageService: StorageServiceProtocol {
         coreDataManager.updateTheme(collectionName: collectionName, themeName: themeName, newName: newName)
     }
     
+    func fetchAllThemesForRepetition() -> [Theme] {
+        var returnedThemes: [Theme] = []
+        let themes = coreDataManager.fetchAllThemesForRepetition()
+        
+        // TODO: Подумать над предикатом на это
+        for theme in themes {
+            if theme.cards?.count ?? 0 > 0 {
+                returnedThemes.append(theme)
+            }
+        }
+        
+        return returnedThemes
+    }
+    
+    func updateThemeDate(themeName: String, newDate: Date, newRepeats: Int, isRepeatCompleted: Bool) {
+        coreDataManager.updateThemeDate(themeName: themeName, newDate: newDate, newRepeats: newRepeats, isRepeatCompleted: isRepeatCompleted)
+    }
+    
     // MARK: Card methods
     
     func fetchCards(themeName: String) -> [Card] {
@@ -121,24 +139,12 @@ final class StorageService: StorageServiceProtocol {
         coreDataManager.updateCard(themeName: themeName, cardDefinition: cardDefinition, newDefinition: newDefinition, newDescription: newDescription)
     }
     
-    // MARK: Repetition methods
+    // MARK: Common
     
-    func fetchAllThemesForRepetition() -> [Theme] {
-        var returnedThemes: [Theme] = []
-        let themes = coreDataManager.fetchAllThemesForRepetition()
-        
-        // TODO: Подумать над предикатом на это
-        for theme in themes {
-            if theme.cards?.count ?? 0 > 0 {
-                returnedThemes.append(theme)
-            }
+    func deleteAllData() {
+        let collections = coreDataManager.fetchCollections()
+        for collection in collections {
+            coreDataManager.deleteCollection(collectionName: collection.name ?? "")
         }
-        
-        return returnedThemes
-    }
-    
-    
-    func updateThemeDate(themeName: String, newDate: Date, newRepeats: Int, isRepeatCompleted: Bool) {
-        coreDataManager.updateThemeDate(themeName: themeName, newDate: newDate, newRepeats: newRepeats, isRepeatCompleted: isRepeatCompleted)
     }
 }

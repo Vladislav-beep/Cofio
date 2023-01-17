@@ -62,7 +62,9 @@ class TabbarFlowCoordinator: NSObject {
             flow.start()
             
         case .settings:
-            let flow = SettingsFlowCoordinator(parentViewController: parentNavigationController)
+            let flow = SettingsFlowCoordinator(
+                parentViewController: parentNavigationController,
+                storageService: storageService)
             childCoordinators.append(flow)
             flow.start()
             

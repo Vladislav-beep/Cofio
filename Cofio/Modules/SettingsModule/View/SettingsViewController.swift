@@ -65,6 +65,18 @@ class SettingsViewController: UIViewController {
         title = "settings_module_title"~
         navigationController?.navigationBar.prefersLargeTitles = true
     }
+    
+    private func deleteAllData() {
+        let handler: () -> Void = { [weak self] in
+            self?.output.deleteAllData()
+        }
+        showTwoButtonAlert(
+            title: "Удалить все данные?",
+            message: "Вы действительно хотите удалить все данные?",
+            actionTitle: "Удалить",
+            completion: handler
+        )
+    }
 }
 
 // MARK: - SettingsViewInput
@@ -95,6 +107,9 @@ extension SettingsViewController: UITableViewDelegate {
             
         case .onboarding:
             output.viewDidTapOnboardingCell()
+            
+        case .deleteAllData:
+            deleteAllData()
         }
     }
 }

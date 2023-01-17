@@ -2,7 +2,7 @@
 //  Theme+CoreDataProperties.swift
 //  Cofio
 //
-//  Created by Владислав Сизонов on 14.01.2023.
+//  Created by Владислав Сизонов on 17.01.2023.
 //
 //
 
@@ -22,6 +22,7 @@ extension Theme {
     @NSManaged public var repeats: Int64
     @NSManaged public var creationDate: Date?
     @NSManaged public var repetitionType: String?
+    @NSManaged public var isBeingRepeated: Bool
     @NSManaged public var cards: NSSet?
     @NSManaged public var collection: Collection?
 

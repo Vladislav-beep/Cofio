@@ -13,6 +13,7 @@ final class SettingsCell: UITableViewCell {
     
     struct DisplayData: Hashable {
         let title: String
+        let isImageShown: Bool
     }
     
     // MARK: Private properties
@@ -70,5 +71,6 @@ final class SettingsCell: UITableViewCell {
     
     func configure(with displayData: DisplayData) {
         titleLabel.text = displayData.title
+        iconImageView.isHidden = !displayData.isImageShown
     }
 }

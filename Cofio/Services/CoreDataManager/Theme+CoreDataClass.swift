@@ -2,7 +2,7 @@
 //  Theme+CoreDataClass.swift
 //  Cofio
 //
-//  Created by Владислав Сизонов on 14.01.2023.
+//  Created by Владислав Сизонов on 17.01.2023.
 //
 //
 

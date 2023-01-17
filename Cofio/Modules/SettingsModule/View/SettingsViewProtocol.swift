@@ -15,4 +15,5 @@ protocol SettingsViewOutput: AnyObject {
     func viewDidLoad()
     func viewDidTapLearningCell()
     func viewDidTapOnboardingCell()
+    func deleteAllData()
 }
