@@ -26,6 +26,7 @@ class MainViewController: UIViewController {
     }()
     
     private let bottomButton: UIButton = {
+        // TODO: Добавить анимацию
         let button = UIButton()
         button.setImage(UIImage(named: "pluss")?.withTintColor(.white), for: .normal)
         button.imageView?.contentMode = .scaleAspectFill
@@ -141,6 +142,29 @@ class MainViewController: UIViewController {
         return action
     }
     
+    private func learnAction(at indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(
+            style: .normal,
+            title: "theme_module_start_learning_title"~
+        ) { [weak self] (action, view, complition) in
+            guard let self = self else { return }
+            
+            guard let item = self.tableViewDataSource.itemIdentifier(for: indexPath) else { return }
+            switch item {
+            case .title, .subtitle, .empty:
+                break
+                
+            case .collection(let model):
+                self.output.startLearnCollection(collectionName: model.title)
+            }
+            
+            complition(true)
+        }
+        action.image = UIImage(systemName: "arrow.triangle.2.circlepath.doc.on.clipboard")
+        action.backgroundColor = .darkGreen
+        return action
+    }
+    
     // MARK: Actions
     
     @objc func addNewCollection() {
@@ -171,8 +195,13 @@ extension MainViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let delete = deleteAction(at: indexPath)
+        let learn = learnAction(at: indexPath)
         let edit = editAction(at: indexPath)
-        return UISwipeActionsConfiguration(actions: [delete, edit])
+        return UISwipeActionsConfiguration(actions: [learn, edit])
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = deleteAction(at: indexPath)
+        return UISwipeActionsConfiguration(actions: [delete])
     }
 }

@@ -37,4 +37,8 @@ extension MainInteractor: MainInteractorInput {
     func getThemesCountForCollection(collectionName: String) -> Int {
         storageService.getThemesCountForCollection(collectionName: collectionName)
     }
+    
+    func startLearnCollection(collectionName: String) {
+        storageService.startLearningCollection(collectionName: collectionName)
+    }
 }

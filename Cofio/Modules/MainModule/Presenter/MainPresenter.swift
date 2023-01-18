@@ -74,6 +74,10 @@ extension MainPresenter: MainViewOutput {
     func refreshView() {
         updateView()
     }
+    
+    func startLearnCollection(collectionName: String) {
+        interactor.startLearnCollection(collectionName: collectionName)
+    }
 }
 
 // MARK: - MainPresenterInput

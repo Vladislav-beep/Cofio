@@ -39,6 +39,7 @@
 "theme_module_alert_edit_button" = "Редактировать";
 "theme_module_alert_cancel_button" = "Отмена";
 "theme_module_empty_cell_title" = "Вы пока не добавили ни одной темы.\n Чтобы добавить тему нажите плюс вверху экрана.";
+"theme_module_start_learning_title" = "Изучить тему";
 
 // MARK: Cards
 "cards_module_title" = "Карточки";

@@ -10,6 +10,7 @@ protocol MainInteractorInput: AnyObject {
     func fetchCollections() -> [Collection]
     func getThemesCountForCollection(collectionName: String) -> Int
     func deleteCollection(collectionName: String)
+    func startLearnCollection(collectionName: String)
 }
 
 protocol MainInteractorOutput: AnyObject {}

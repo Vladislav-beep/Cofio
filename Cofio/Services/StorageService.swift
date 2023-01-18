@@ -15,6 +15,7 @@ protocol StorageServiceProtocol {
     func fetchCollection(collectionName: String) -> Collection
     func createCollection(name: String, icon: String)
     func updateCollection(name: String, newName: String, icon: String)
+    func startLearningCollection(collectionName: String)
     
     func fetchThemes(collectionName: String) -> [Theme]
     func fetchTheme(themeName: String) -> Theme
@@ -71,6 +72,13 @@ final class StorageService: StorageServiceProtocol {
     
     func updateCollection(name: String, newName: String, icon: String) {
         coreDataManager.updateCollection(withName: name, newName: newName, icon: icon)
+    }
+    
+    func startLearningCollection(collectionName: String) {
+        let themes = coreDataManager.fetchThemes(collectionName: collectionName)
+        for theme in themes {
+            coreDataManager.updateThemeRepeating(collectionName: collectionName, themeName: theme.name ?? "")
+        }
     }
     
     // MARK: Theme methods

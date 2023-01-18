@@ -18,4 +18,5 @@ protocol MainViewOutput: AnyObject {
     func editCollection(collectionName: String)
     func refreshView()
     func deleteCollection(collectionName: String)
+    func startLearnCollection(collectionName: String)
 }

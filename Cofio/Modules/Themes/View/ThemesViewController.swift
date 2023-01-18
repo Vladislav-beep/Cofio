@@ -156,7 +156,7 @@ final class ThemesViewController: UIViewController {
     private func learnAction(at indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(
             style: .normal,
-            title: "Изучить тему"
+            title: "theme_module_start_learning_title"~
         ) { [weak self] (action, view, complition) in
             guard let self = self else { return }
             
@@ -172,7 +172,8 @@ final class ThemesViewController: UIViewController {
             
             complition(true)
         }
-        action.image = UIImage(systemName: "slider.horizontal.3")
+        action.image = UIImage(systemName: "arrow.triangle.2.circlepath.doc.on.clipboard")
+        action.backgroundColor = .darkGreen
         return action
     }
 }
@@ -233,10 +234,22 @@ extension ThemesViewController: UITableViewDelegate {
             return nil
             
         case .card:
-            let delete = deleteAction(at: indexPath)
             let edit = editAction(at: indexPath)
             let learn = learnAction(at: indexPath)
-            return UISwipeActionsConfiguration(actions: [delete, edit, learn])
+            return UISwipeActionsConfiguration(actions: [learn, edit])
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        guard let item = tableViewDataSource.itemIdentifier(for: indexPath) else { return nil }
+        
+        switch item {
+        case .statics, .header, .empty:
+            return nil
+            
+        case .card:
+            let delete = deleteAction(at: indexPath)
+            return UISwipeActionsConfiguration(actions: [delete])
         }
     }
 }
