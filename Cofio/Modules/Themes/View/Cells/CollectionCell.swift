@@ -73,10 +73,10 @@ final class ThemesCell: UITableViewCell {
     private func setupViews() {
         contentView.addSubview(lowerView)
         NSLayoutConstraint.activate([
-            lowerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            lowerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 6),
             lowerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             lowerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            lowerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+            lowerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12),
         ])
         
         lowerView.addSubview(progressView)

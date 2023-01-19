@@ -21,7 +21,7 @@ final class LowerView: UIView {
     private func initialize() {
         layer.cornerRadius = 20
         backgroundColor = .base
-        layer.shadowRadius = 7
+        layer.shadowRadius = 4
         layer.shadowOpacity = 0.4
         layer.shadowOffset = CGSize(width: 0, height: 3)
         translatesAutoresizingMaskIntoConstraints = false

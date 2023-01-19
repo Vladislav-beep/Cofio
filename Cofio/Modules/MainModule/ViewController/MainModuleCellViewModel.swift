@@ -8,14 +8,9 @@
 import UIKit
 
 enum MainModuleCellsDataModel: Hashable {
-    case title(TitleCellDataModel)
     case subtitle(SubtitleCellDataModel)
     case collection(MainModuleCellViewModel)
     case empty(MainModuleEmptyCellViewModel)
-}
-
-struct TitleCellDataModel: Hashable {
-    let title: String
 }
 
 struct SubtitleCellDataModel: Hashable {

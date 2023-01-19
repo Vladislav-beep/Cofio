@@ -62,7 +62,6 @@ class MainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.prefersLargeTitles = false
         output.refreshView()
     }
     
@@ -70,6 +69,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         setupViews()
+        setupNavigationBar()
         output.viewDidLoad()
         collectionsTableView.delegate = self
     }
@@ -96,6 +96,11 @@ class MainViewController: UIViewController {
         ])
     }
     
+    private func setupNavigationBar() {
+        title = "main_module_title"~
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
     private func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(
             style: .destructive,
@@ -105,7 +110,7 @@ class MainViewController: UIViewController {
             
             guard let item = self.tableViewDataSource.itemIdentifier(for: indexPath) else { return }
             switch item {
-            case .title, .subtitle, .empty:
+            case .subtitle, .empty:
                 break
                 
             case .collection(let model):
@@ -128,7 +133,7 @@ class MainViewController: UIViewController {
             
             guard let item = self.tableViewDataSource.itemIdentifier(for: indexPath) else { return }
             switch item {
-            case .title, .subtitle, .empty:
+            case .subtitle, .empty:
                 break
                 
             case .collection(let model):
@@ -151,7 +156,7 @@ class MainViewController: UIViewController {
             
             guard let item = self.tableViewDataSource.itemIdentifier(for: indexPath) else { return }
             switch item {
-            case .title, .subtitle, .empty:
+            case .subtitle, .empty:
                 break
                 
             case .collection(let model):

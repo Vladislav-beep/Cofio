@@ -18,7 +18,6 @@ final class CollectionsDataFactory: CollectionsDataFactoryProtocol {
     
     func dataFromCollections(collectionsDict: [Collection: Int]) -> [MainModuleCellsDataModel] {
         var mainCellsModel: [MainModuleCellsDataModel] = [
-            .title(.init(title: "main_module_title"~)),
             .subtitle(.init(subtitle: "main_module_subtitle"~))
         ]
         let keys = collectionsDict.keys.sorted { $0.creationDate ?? Date() > $1.creationDate ?? Date() }
