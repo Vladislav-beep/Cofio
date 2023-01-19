@@ -20,6 +20,7 @@
 "main_module_title" = "Флэш-карточки";
 "main_module_subtitle" = "Карточки для запоминания любой информации, подготовки к экзаменам, изучения иностранных слов";
 "main_module_empty_cell_title" = "Вы пока не добавили ни одной коллекции.\n Чтобы добавить коллекцию нажите плюс внизу экрана.";
+"main_module_start_learning_title" = "Изучить коллекцию";
 
 // MARK: New collection
 "new_collection_module_title" = "Добавление коллекции";

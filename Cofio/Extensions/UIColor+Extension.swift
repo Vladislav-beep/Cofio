@@ -25,4 +25,6 @@ extension UIColor {
     static let darkRed = #colorLiteral(red: 0.916656673, green: 0.297821641, blue: 0.5368250608, alpha: 1)
     
     static let lightGray = #colorLiteral(red: 0.8501498699, green: 0.7922084928, blue: 0.76350528, alpha: 1)
+    
+    static let pageControlColor = #colorLiteral(red: 0.9764705882, green: 0.8117647059, blue: 0.8784313725, alpha: 1)
 }

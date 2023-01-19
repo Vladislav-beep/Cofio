@@ -150,7 +150,7 @@ class MainViewController: UIViewController {
     private func learnAction(at indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(
             style: .normal,
-            title: "theme_module_start_learning_title"~
+            title: "main_module_start_learning_title"~
         ) { [weak self] (action, view, complition) in
             guard let self = self else { return }
             
