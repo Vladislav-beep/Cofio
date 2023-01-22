@@ -13,15 +13,18 @@ final class MainModuleBuilder {
     
     private var output: MainPresenterOutput
     private let storageService: StorageServiceProtocol
+    private let userDefaultsService: UserDefaultsServiceProtocol
     
     // MARK: Lifecycle
     
     init(
         output: MainPresenterOutput,
-        storageService: StorageServiceProtocol
+        storageService: StorageServiceProtocol,
+        userDefaultsService: UserDefaultsServiceProtocol
     ) {
         self.output = output
         self.storageService = storageService
+        self.userDefaultsService = userDefaultsService
     }
     
     // MARK: Public
@@ -30,7 +33,10 @@ final class MainModuleBuilder {
         let collectionsDataFactory = CollectionsDataFactory()
         let tableViewDataSource = MainTableViewDataSource()
         
-        let interactor = MainInteractor(storageService: storageService)
+        let interactor = MainInteractor(
+            storageService: storageService,
+            userDefaultsService: userDefaultsService
+        )
         let presenter = MainPresenter(
             interactor: interactor,
             collectionsDataFactory: collectionsDataFactory

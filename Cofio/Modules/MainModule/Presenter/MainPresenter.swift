@@ -64,7 +64,11 @@ extension MainPresenter: MainViewOutput {
     }
     
     func viewDidTapButton() {
-        output?.moduleWantsToAddNewCollection(self)
+        if interactor.getRepetitionType() == nil {
+            view?.showAlert()
+        } else {
+            output?.moduleWantsToAddNewCollection(self)
+        }
     }
     
     func editCollection(collectionName: String) {

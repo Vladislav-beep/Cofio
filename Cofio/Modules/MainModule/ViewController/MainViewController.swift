@@ -187,6 +187,15 @@ extension MainViewController: MainViewInput {
         snapshot.appendItems(data, toSection: 0)
         tableViewDataSource.apply(snapshot, animatingDifferences: true)
     }
+    
+    func showAlert() {
+        // TODO: вставить кнопку в алерт, которая перебрасывает в настройки
+        showOneButtonAlert(
+            title: "Не выбран способ запоминания",
+            message: "Перейдите в вкладку Настройки и выберите способ запоминания информации",
+            actionTitle: "Понятно",
+            completion: nil)
+    }
 }
 
 // MARK: - UITableViewDelegate

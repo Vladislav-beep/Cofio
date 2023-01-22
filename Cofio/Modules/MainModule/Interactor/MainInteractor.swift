@@ -10,6 +10,7 @@ final class MainInteractor {
     // MARK: Private properties
     
     private let storageService: StorageServiceProtocol
+    private let userDefaultsService: UserDefaultsServiceProtocol
     
     // MARK: Properties
     
@@ -17,8 +18,12 @@ final class MainInteractor {
     
     // MARK: Lifecycle
     
-    init(storageService: StorageServiceProtocol) {
+    init(
+        storageService: StorageServiceProtocol,
+        userDefaultsService: UserDefaultsServiceProtocol
+    ) {
         self.storageService = storageService
+        self.userDefaultsService = userDefaultsService
     }
 }
 
@@ -40,5 +45,9 @@ extension MainInteractor: MainInteractorInput {
     
     func startLearnCollection(collectionName: String) {
         storageService.startLearningCollection(collectionName: collectionName)
+    }
+    
+    func getRepetitionType() -> RepetitionType? {
+        userDefaultsService.getRepetitionType()
     }
 }

@@ -7,6 +7,7 @@
 
 import UIKit
 
+// TODO: добавить картинку в ячейку для хорошего дизайна
 final class ThemeEmptyCell: UITableViewCell {
     
     // MARK: Public data structures

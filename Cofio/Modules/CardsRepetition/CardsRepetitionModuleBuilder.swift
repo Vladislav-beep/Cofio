@@ -13,6 +13,7 @@ final class CardsRepetitionModuleBuilder {
     
     private weak var output: CardsRepetitionPresenterOutput?
     private let storageService: StorageServiceProtocol
+    private let userDefaultsService: UserDefaultsServiceProtocol
     private let themeName: String
     
     // MARK: Lifecycle
@@ -20,10 +21,12 @@ final class CardsRepetitionModuleBuilder {
     init(
         output: CardsRepetitionPresenterOutput,
         storageService: StorageServiceProtocol,
+        userDefaultsService: UserDefaultsServiceProtocol,
         themeName: String
     ) {
         self.output = output
         self.storageService = storageService
+        self.userDefaultsService = userDefaultsService
         self.themeName = themeName
     }
     
@@ -32,9 +35,9 @@ final class CardsRepetitionModuleBuilder {
     func build() -> UIViewController {
         let dataSource = CardsCollectionViewDataSource()
         let repetitionService = RepetitionService()
-        let userDefaultsService = UserDefaultsService()
         let cardsRepetitionDataFactory = CardsRepetitionDataFactory()
         let dateFormatterService = DateFormatterService()
+        
         let interactor = CardsRepetitonInteractor(
             storageService: storageService,
             repetitionService: repetitionService,

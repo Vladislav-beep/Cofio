@@ -13,6 +13,7 @@ final class MainFlowCoordinator {
     
     private let parentViewController: UINavigationController
     private let storageService: StorageServiceProtocol
+    private let userDefaultsService: UserDefaultsServiceProtocol
     private var mainModuleViewController: UIViewController?
     private var newCollectionViewControllerr: UIViewController?
     private weak var mainModule: MainPresenterInput?
@@ -21,16 +22,24 @@ final class MainFlowCoordinator {
     
     // MARK: Lifecycle
     
-    init(parentViewController: UINavigationController,
-         storageService: StorageServiceProtocol) {
+    init(
+        parentViewController: UINavigationController,
+        storageService: StorageServiceProtocol,
+        userDefaultsService: UserDefaultsServiceProtocol
+    ) {
         self.parentViewController = parentViewController
         self.storageService = storageService
+        self.userDefaultsService = userDefaultsService
     }
     
     // MARK: Private
     
     private func showMainModule() {
-        let builder = MainModuleBuilder(output: self, storageService: storageService)
+        let builder = MainModuleBuilder(
+            output: self,
+            storageService: storageService,
+            userDefaultsService: userDefaultsService
+        )
         let mainViewController = builder.build()
         
         mainModuleViewController = mainViewController
@@ -62,7 +71,8 @@ final class MainFlowCoordinator {
         let builder = ThemesModuleBuilder(
             output: self,
             collectionName: collectionName,
-            storageService: storageService
+            storageService: storageService,
+            userDefaultsService: userDefaultsService
         )
         let themesViewController = builder.build()
         

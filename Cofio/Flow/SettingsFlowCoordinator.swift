@@ -13,15 +13,18 @@ final class SettingsFlowCoordinator {
     
     private let parentViewController: UINavigationController
     private let storageService: StorageServiceProtocol
+    private let userDefaultsService: UserDefaultsServiceProtocol
     
     // MARK: Lifecycle
     
     init(
         parentViewController: UINavigationController,
-        storageService: StorageServiceProtocol
+        storageService: StorageServiceProtocol,
+        userDefaultsService: UserDefaultsServiceProtocol
     ) {
         self.parentViewController = parentViewController
         self.storageService = storageService
+        self.userDefaultsService = userDefaultsService
     }
     
     // MARK: Private
@@ -37,7 +40,7 @@ final class SettingsFlowCoordinator {
     }
     
     private func showLearningMethod() {
-        let builder = LearningMethodModuleBuilder()
+        let builder = LearningMethodModuleBuilder(userDefaultsService: userDefaultsService)
         let vc = builder.build()
         
         parentViewController.pushViewController(vc, animated: true)

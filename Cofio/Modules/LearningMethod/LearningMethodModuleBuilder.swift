@@ -8,11 +8,20 @@
 import UIKit
 
 final class LearningMethodModuleBuilder {
+    
+    // MARK: Private
+    
+    private let userDefaultsService: UserDefaultsServiceProtocol
+    
+    // MARK: Lifecycle
+    
+    init(userDefaultsService: UserDefaultsServiceProtocol) {
+        self.userDefaultsService = userDefaultsService
+    }
 
     // MARK: Public
     
     func build() -> UIViewController {
-        let userDefaultsService = UserDefaultsService()
         let learningMethodDataFactory = LearningMethodDataFactory()
         let dataSource = LearningTableViewDataSource()
         let presenter = LearningMethodPresenter(

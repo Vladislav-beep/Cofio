@@ -45,6 +45,7 @@ final class CollectionsDataFactory: CollectionsDataFactoryProtocol {
     // MARK: Private
     
     private func countThemes(count: Int) -> String {
+        // TODO: сделать локализацию
         let formatString : String = NSLocalizedString("collection themes count",
                                                       comment: "")
         let resultString : String = String.localizedStringWithFormat(formatString, count)

@@ -14,6 +14,7 @@ class TabbarFlowCoordinator: NSObject {
     private let parentViewController: UIViewController
     private let tabBarController: UITabBarController
     private let storageService = StorageService(coreDataManager: CoreDataManager())
+    private let userDefaultsService = UserDefaultsService()
     private var childCoordinators: [FlowCoordinatorProtocol] = []
     
     // MARK: Lifecycle
@@ -48,7 +49,8 @@ class TabbarFlowCoordinator: NSObject {
             parentNavigationController.navigationBar.prefersLargeTitles = false
             let flow = MainFlowCoordinator(
                 parentViewController: parentNavigationController,
-                storageService: storageService
+                storageService: storageService,
+                userDefaultsService: userDefaultsService
             )
             childCoordinators.append(flow)
             flow.start()
@@ -56,7 +58,8 @@ class TabbarFlowCoordinator: NSObject {
         case .repetition:
             let flow = RepetitionFlowCoordinator(
                 parentViewController: parentNavigationController,
-                storageService: storageService
+                storageService: storageService,
+                userDefaultsService: userDefaultsService
             )
             childCoordinators.append(flow)
             flow.start()
@@ -64,7 +67,9 @@ class TabbarFlowCoordinator: NSObject {
         case .settings:
             let flow = SettingsFlowCoordinator(
                 parentViewController: parentNavigationController,
-                storageService: storageService)
+                storageService: storageService,
+                userDefaultsService: userDefaultsService
+            )
             childCoordinators.append(flow)
             flow.start()
             

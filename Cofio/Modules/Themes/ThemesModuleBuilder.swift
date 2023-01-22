@@ -14,17 +14,20 @@ final class ThemesModuleBuilder {
     private weak var output: ThemesPresenterOutput?
     private let collectionName: String
     private let storageService: StorageServiceProtocol
+    private let userDefaultsService: UserDefaultsServiceProtocol
     
     // MARK: Lifecycle
     
     init(
         output: ThemesPresenterOutput,
         collectionName: String,
-        storageService: StorageServiceProtocol
+        storageService: StorageServiceProtocol,
+        userDefaultsService: UserDefaultsServiceProtocol
     ) {
         self.output = output
         self.collectionName = collectionName
         self.storageService = storageService
+        self.userDefaultsService = userDefaultsService
     }
     
     // MARK: Public
@@ -32,7 +35,6 @@ final class ThemesModuleBuilder {
     func build() -> UIViewController {
         let dataSource = ThemesTableViewDataSource()
         let themesDataFactory = ThemesDataFactory()
-        let userDefaultsService = UserDefaultsService()
         
         let interactor = ThemesInteractor(
             storageService: storageService,

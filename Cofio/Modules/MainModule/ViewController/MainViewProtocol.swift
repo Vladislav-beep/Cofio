@@ -8,6 +8,7 @@
 protocol MainViewInput: AnyObject {
     
     func updateView(with data: [MainModuleCellsDataModel])
+    func showAlert()
 }
 
 protocol MainViewOutput: AnyObject {

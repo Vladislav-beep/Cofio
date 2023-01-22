@@ -11,6 +11,7 @@ protocol MainInteractorInput: AnyObject {
     func getThemesCountForCollection(collectionName: String) -> Int
     func deleteCollection(collectionName: String)
     func startLearnCollection(collectionName: String)
+    func getRepetitionType() -> RepetitionType?
 }
 
 protocol MainInteractorOutput: AnyObject {}
