@@ -32,6 +32,7 @@ final class MainModuleBuilder {
     func build() -> UIViewController {
         let collectionsDataFactory = CollectionsDataFactory()
         let tableViewDataSource = MainTableViewDataSource()
+        let notificationService = NotificationService()
         
         let interactor = MainInteractor(
             storageService: storageService,
@@ -39,7 +40,8 @@ final class MainModuleBuilder {
         )
         let presenter = MainPresenter(
             interactor: interactor,
-            collectionsDataFactory: collectionsDataFactory
+            collectionsDataFactory: collectionsDataFactory,
+            notificationService: notificationService
         )
         let viewController = MainViewController(
             output: presenter,

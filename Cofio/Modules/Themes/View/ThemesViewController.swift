@@ -77,35 +77,35 @@ final class ThemesViewController: UIViewController {
     // MARK: Actions
     
     @objc func addTheme() {
-        showTwoButtonAndTextFieldAlert(
-            title: "theme_module_alert_title"~,
-            message: "theme_module_alert_subtitle"~,
-            actionTitle: "theme_module_alert_add_button"~,
-            textFieldPlaceholder: "theme_module_alert_textField_placeholder"~,
-            textFieldText: nil) { [weak self] name in
-                guard let self = self else { return }
-                
-                // TODO: добавить проверку на сущестование имени темы
-                self.output.createTheme(name: name)
-                self.output.refreshView()
-            }
+//        showTwoButtonAndTextFieldAlert(
+//            title: "theme_module_alert_title"~,
+//            message: "theme_module_alert_subtitle"~,
+//            actionTitle: "theme_module_alert_add_button"~,
+//            textFieldPlaceholder: "theme_module_alert_textField_placeholder"~,
+//            textFieldText: nil) { [weak self] name in
+//                guard let self = self else { return }
+//
+//                // TODO: добавить проверку на сущестование имени темы
+//                self.output.createTheme(name: name)
+//                self.output.refreshView()
+//            }
     }
     
     // MARK: Private
     
     func editTheme(currentName: String) {
-        showTwoButtonAndTextFieldAlert(
-            title: "theme_module_alert_edit_title"~,
-            message: "theme_module_alert_edit_subtitle"~,
-            actionTitle: "theme_module_alert_edit_button"~,
-            textFieldPlaceholder: nil,
-            textFieldText: currentName
-        ) { [weak self] newName in
-            guard let self = self else { return }
-            
-            self.output.editTheme(currentName: currentName, newName: newName)
-            self.output.refreshView()
-        }
+//        showTwoButtonAndTextFieldAlert(
+//            title: "theme_module_alert_edit_title"~,
+//            message: "theme_module_alert_edit_subtitle"~,
+//            actionTitle: "theme_module_alert_edit_button"~,
+//            textFieldPlaceholder: nil,
+//            textFieldText: currentName
+//        ) { [weak self] newName in
+//            guard let self = self else { return }
+//            
+//            self.output.editTheme(currentName: currentName, newName: newName)
+//            self.output.refreshView()
+//        }
     }
     
     private func deleteAction(at indexPath: IndexPath) -> UIContextualAction {

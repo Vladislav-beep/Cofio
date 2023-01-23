@@ -10,6 +10,7 @@ final class SettingsPresenter {
     // MARK: Private properties
     
     private let storageService: StorageServiceProtocol
+    private let notificationService: NotificationServiceProtocol
     
     // MARK: Public properties
     
@@ -18,8 +19,12 @@ final class SettingsPresenter {
     
     // MARK: Lifecycle
     
-    init(storageService: StorageServiceProtocol) {
+    init(
+        storageService: StorageServiceProtocol,
+        notificationService: NotificationServiceProtocol
+    ) {
         self.storageService = storageService
+        self.notificationService = notificationService
     }
 }
 
@@ -46,7 +51,14 @@ extension SettingsPresenter: SettingsViewOutput {
     }
     
     func deleteAllData() {
-        storageService.deleteAllData()
+        let handler: () -> Void = { [weak self] in
+            self?.storageService.deleteAllData()
+        }
+        notificationService.showTwoButtonAlert(
+            title: "Удаление данных",
+            message: "Вы действительно хотите удалить все данные?",
+            actionTitle: "Удалить",
+            completion: handler)
     }
 }
 

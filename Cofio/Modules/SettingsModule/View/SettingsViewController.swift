@@ -66,17 +66,17 @@ class SettingsViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
-    private func deleteAllData() {
-        let handler: () -> Void = { [weak self] in
-            self?.output.deleteAllData()
-        }
-        showTwoButtonAlert(
-            title: "Удалить все данные?",
-            message: "Вы действительно хотите удалить все данные?",
-            actionTitle: "Удалить",
-            completion: handler
-        )
-    }
+//  private func deleteAllData() {
+   //     let handler: () -> Void = { [weak self] in
+   //         self?.output.deleteAllData()
+    //    }
+//        showTwoButtonAlert(
+//            title: "Удалить все данные?",
+//            message: "Вы действительно хотите удалить все данные?",
+//            actionTitle: "Удалить",
+//            completion: handler
+//        )
+  //  }
 }
 
 // MARK: - SettingsViewInput
@@ -109,7 +109,7 @@ extension SettingsViewController: UITableViewDelegate {
             output.viewDidTapOnboardingCell()
             
         case .deleteAllData:
-            deleteAllData()
+            output.deleteAllData()
         }
     }
 }

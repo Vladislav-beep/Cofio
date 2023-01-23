@@ -28,7 +28,11 @@ final class SettingsModuleBuilder {
     
     func build() -> UIViewController {
         let dataSource = SettingsTableViewDataSource()
-        let presenter = SettingsPresenter(storageService: storageService)
+        let notificationService = NotificationService()
+        let presenter = SettingsPresenter(
+            storageService: storageService,
+            notificationService: notificationService
+        )
         
         let viewController = SettingsViewController(
             output: presenter,

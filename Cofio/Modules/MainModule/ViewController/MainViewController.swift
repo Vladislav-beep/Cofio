@@ -68,9 +68,9 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        output.viewDidLoad()
         setupViews()
         setupNavigationBar()
-        output.viewDidLoad()
         collectionsTableView.delegate = self
     }
     
@@ -188,13 +188,8 @@ extension MainViewController: MainViewInput {
         tableViewDataSource.apply(snapshot, animatingDifferences: true)
     }
     
-    func showAlert() {
-        // TODO: вставить кнопку в алерт, которая перебрасывает в настройки
-        showOneButtonAlert(
-            title: "Не выбран способ запоминания",
-            message: "Перейдите в вкладку Настройки и выберите способ запоминания информации",
-            actionTitle: "Понятно",
-            completion: nil)
+    func showToast() {
+        showToast(message: "Изучение коллекция начато")
     }
 }
 

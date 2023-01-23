@@ -46,7 +46,6 @@ class TabbarFlowCoordinator: NSObject {
         
         switch page {
         case .main:
-            parentNavigationController.navigationBar.prefersLargeTitles = false
             let flow = MainFlowCoordinator(
                 parentViewController: parentNavigationController,
                 storageService: storageService,
