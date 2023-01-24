@@ -74,7 +74,6 @@
 		B94C0258294E5B3F00EF9EB6 /* CardDetailsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94C0257294E5B3F00EF9EB6 /* CardDetailsViewProtocol.swift */; };
 		B94C025B294E5BC200EF9EB6 /* CardDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94C025A294E5BC200EF9EB6 /* CardDetailsPresenter.swift */; };
 		B94C025D294E5BD300EF9EB6 /* CardDetailsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94C025C294E5BD300EF9EB6 /* CardDetailsPresenterProtocol.swift */; };
-		B94C025F294F87A700EF9EB6 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94C025E294F87A700EF9EB6 /* UIViewController+Extension.swift */; };
 		B972963B296C8EC600878B32 /* SettingsFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972963A296C8EC600878B32 /* SettingsFlowCoordinator.swift */; };
 		B972963E296C8FAC00878B32 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972963D296C8FAC00878B32 /* SettingsPresenter.swift */; };
 		B9729640296C8FB900878B32 /* SettingsModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972963F296C8FB900878B32 /* SettingsModuleBuilder.swift */; };
@@ -265,7 +264,6 @@
 		B94C0257294E5B3F00EF9EB6 /* CardDetailsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsViewProtocol.swift; sourceTree = "<group>"; };
 		B94C025A294E5BC200EF9EB6 /* CardDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsPresenter.swift; sourceTree = "<group>"; };
 		B94C025C294E5BD300EF9EB6 /* CardDetailsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsPresenterProtocol.swift; sourceTree = "<group>"; };
-		B94C025E294F87A700EF9EB6 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		B972963A296C8EC600878B32 /* SettingsFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFlowCoordinator.swift; sourceTree = "<group>"; };
 		B972963D296C8FAC00878B32 /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		B972963F296C8FB900878B32 /* SettingsModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModuleBuilder.swift; sourceTree = "<group>"; };
@@ -950,7 +948,6 @@
 				B9CC1393288B15F00013ED76 /* UIColor+Extension.swift */,
 				B9CC13F0289310460013ED76 /* UIStackView+Extension.swift */,
 				B910AB4F294BBAF700D9E7EA /* Postfix operator.swift */,
-				B94C025E294F87A700EF9EB6 /* UIViewController+Extension.swift */,
 				B90A50532965964F00993C75 /* UICollectionViewLayout+Extension.swift */,
 			);
 			path = Extensions;
@@ -1479,7 +1476,6 @@
 				B9729655296F382100878B32 /* LearningCellsDataModel.swift in Sources */,
 				B9CC13F1289310460013ED76 /* UIStackView+Extension.swift in Sources */,
 				B9AAEC2A296048C100BA6078 /* CardsDataFactory.swift in Sources */,
-				B94C025F294F87A700EF9EB6 /* UIViewController+Extension.swift in Sources */,
 				B9CC135B288738980013ED76 /* AppDelegate.swift in Sources */,
 				B93EF8CF289AFAB00057C774 /* NewCardPresenter.swift in Sources */,
 				B93EF8C228968F310057C774 /* CardsModuleBuilder.swift in Sources */,

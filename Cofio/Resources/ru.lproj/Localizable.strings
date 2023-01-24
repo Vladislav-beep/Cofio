@@ -21,6 +21,8 @@
 "main_module_subtitle" = "Карточки для запоминания любой информации, подготовки к экзаменам, изучения иностранных слов";
 "main_module_empty_cell_title" = "Вы пока не добавили ни одной коллекции.\n Чтобы добавить коллекцию нажите плюс внизу экрана.";
 "main_module_start_learning_title" = "Изучить коллекцию";
+"main_module_learning_method_alert_title" = "Не выбран способ запоминания";
+"main_module_learning_method_alert_message" = "Перейдите в вкладку Настройки и выберите способ запоминания информации";
 
 // MARK: New collection
 "new_collection_module_title" = "Добавление коллекции";
@@ -77,6 +79,9 @@
 "settings_module_title" = "Настройки";
 "settings_module_learning_cell_title" = "Выбор способа запоминания";
 "settings_module_onboarding_cell_title" = "Показать онбординг";
+"settings_module_delete_cell_title" = "Удалить все данные";
+"settings_module_delete_alert_title" = "Удаление данных";
+"settings_module_delete_alert_message" = "Вы действительно хотите удалить все данные?";
 
 // MARK: LearningMethod
 "learning_method_module_title" = "Выбор способа запоминания";

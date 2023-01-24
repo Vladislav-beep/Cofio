@@ -36,7 +36,7 @@ extension SettingsPresenter: SettingsViewOutput {
         let data: [SettingsCellsDataModel] = [
             .learning(.init(title: "settings_module_learning_cell_title"~, isImageShown: true)),
             .onboarding(.init(title: "settings_module_onboarding_cell_title"~, isImageShown: true)),
-            .deleteAllData(.init(title: "Удалить все данные", isImageShown: false))
+            .deleteAllData(.init(title: "settings_module_delete_cell_title"~, isImageShown: false))
         ]
         
         view?.updateData(with: data)
@@ -55,9 +55,9 @@ extension SettingsPresenter: SettingsViewOutput {
             self?.storageService.deleteAllData()
         }
         notificationService.showTwoButtonAlert(
-            title: "Удаление данных",
-            message: "Вы действительно хотите удалить все данные?",
-            actionTitle: "Удалить",
+            title: "settings_module_delete_alert_title"~,
+            message: "settings_module_delete_alert_message"~,
+            actionTitle: "delete_button_title"~,
             completion: handler)
     }
 }

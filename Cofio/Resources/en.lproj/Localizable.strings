@@ -21,6 +21,8 @@
 "main_module_subtitle" = "Cards for memorizing any information, preparing for exams, learning foreign words";
 "main_module_empty_cell_title" = "You have not added any collections yet.\n To add collection, press plus at the bottom of the screen.";
 "main_module_start_learning_title" = "Learn collection";
+"main_module_learning_method_alert_title" = "Memory method is not selected";
+"main_module_learning_method_alert_message" = "Navigate to Settings tab and select memorizing method";
 
 // MARK: New collection
 "new_collection_module_title" = "Add collection";
@@ -78,6 +80,9 @@
 "settings_module_title" = "Settings";
 "settings_module_learning_cell_title" = "Choose memorizing method";
 "settings_module_onboarding_cell_title" = "Show onboarding";
+"settings_module_delete_cell_title" = "Delete all data";
+"settings_module_delete_alert_title" = "Data deleting";
+"settings_module_delete_alert_message" = "Are you sure you want to delete all data?";
 
 // MARK: LearningMethod
 "learning_method_module_title" = "Memorizing method";

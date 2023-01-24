@@ -71,42 +71,20 @@ final class ThemesViewController: UIViewController {
     
     private func setupNavigationBar() {
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTheme))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(addTheme)
+        )
     }
     
     // MARK: Actions
     
     @objc func addTheme() {
-//        showTwoButtonAndTextFieldAlert(
-//            title: "theme_module_alert_title"~,
-//            message: "theme_module_alert_subtitle"~,
-//            actionTitle: "theme_module_alert_add_button"~,
-//            textFieldPlaceholder: "theme_module_alert_textField_placeholder"~,
-//            textFieldText: nil) { [weak self] name in
-//                guard let self = self else { return }
-//
-//                // TODO: добавить проверку на сущестование имени темы
-//                self.output.createTheme(name: name)
-//                self.output.refreshView()
-//            }
+        output.addTheme()
     }
     
     // MARK: Private
-    
-    func editTheme(currentName: String) {
-//        showTwoButtonAndTextFieldAlert(
-//            title: "theme_module_alert_edit_title"~,
-//            message: "theme_module_alert_edit_subtitle"~,
-//            actionTitle: "theme_module_alert_edit_button"~,
-//            textFieldPlaceholder: nil,
-//            textFieldText: currentName
-//        ) { [weak self] newName in
-//            guard let self = self else { return }
-//            
-//            self.output.editTheme(currentName: currentName, newName: newName)
-//            self.output.refreshView()
-//        }
-    }
     
     private func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(
@@ -141,7 +119,7 @@ final class ThemesViewController: UIViewController {
             guard let item = self.tableViewDataSource.itemIdentifier(for: indexPath) else { return }
             switch item {
             case .card(let model):
-                self.editTheme(currentName: model.title)
+                self.output.editTheme(currentName: model.title)
                 
             case .statics, .header, .empty:
                 break

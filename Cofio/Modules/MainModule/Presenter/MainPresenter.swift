@@ -70,12 +70,11 @@ extension MainPresenter: MainViewOutput {
     
     func viewDidTapButton() {
         if interactor.getRepetitionType() == nil {
-           // view?.showAlert()
-            
+            // TODO: сделать переход в настройки
             notificationService.showOneButtonAlert(
-                title: "Не выбран способ запоминания",
-                message: "Перейдите в вкладку Настройки и выберите способ запоминания информации",
-                actionTitle: "Понятно",
+                title: "main_module_learning_method_alert_title"~,
+                message: "main_module_learning_method_alert_message"~,
+                actionTitle: "Перейти в настройки",
                 completion: nil)
         } else {
             output?.moduleWantsToAddNewCollection(self)
@@ -92,7 +91,7 @@ extension MainPresenter: MainViewOutput {
     
     func startLearnCollection(collectionName: String) {
         interactor.startLearnCollection(collectionName: collectionName)
-        view?.showToast()
+        notificationService.showToast(message: "scsac")
     }
 }
 

@@ -14,6 +14,7 @@ final class ThemesPresenter {
     private let interactor: ThemesInteractorInput
     private let themesDataFactory: ThemesDataFactoryProtocol
     private let userDefaultsService: UserDefaultsServiceProtocol
+    private let notificationService: NotificationServiceProtocol
     
     // MARK: Public properties
     
@@ -25,11 +26,13 @@ final class ThemesPresenter {
     init(
         interactor: ThemesInteractorInput,
         themesDataFactory: ThemesDataFactoryProtocol,
-        userDefaultsService: UserDefaultsServiceProtocol
+        userDefaultsService: UserDefaultsServiceProtocol,
+        notificationService: NotificationServiceProtocol
     ) {
         self.interactor = interactor
         self.themesDataFactory = themesDataFactory
         self.userDefaultsService = userDefaultsService
+        self.notificationService = notificationService
     }
     
     // MARK: Private
@@ -79,8 +82,34 @@ extension ThemesPresenter: ThemesViewOutput {
         interactor.deleteTheme(themeName: themeName)
     }
     
-    func editTheme(currentName: String, newName: String) {
-        interactor.editTheme(themeName: currentName, newName: newName)
+    func addTheme() {
+        notificationService.showTwoButtonAndTextFieldAlert(
+            title: "theme_module_alert_title"~,
+            message: "theme_module_alert_subtitle"~,
+            actionTitle: "theme_module_alert_add_button"~,
+            textFieldPlaceholder: "theme_module_alert_textField_placeholder"~,
+            textFieldText: nil) { [weak self] name in
+                guard let self = self else { return }
+                
+                // TODO: добавить проверку на сущестование имени темы
+                self.createTheme(name: name)
+                self.refreshView()
+            }
+    }
+    
+    func editTheme(currentName: String) {
+        notificationService.showTwoButtonAndTextFieldAlert(
+            title: "theme_module_alert_edit_title"~,
+            message: "theme_module_alert_edit_subtitle"~,
+            actionTitle: "theme_module_alert_edit_button"~,
+            textFieldPlaceholder: nil,
+            textFieldText: currentName
+        ) { [weak self] newName in
+            guard let self = self else { return }
+            
+            self.interactor.editTheme(themeName: currentName, newName: newName)
+            self.refreshView()
+        }
     }
     
     func startLearningTheme(themeName: String) {

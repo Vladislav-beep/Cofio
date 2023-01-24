@@ -18,6 +18,7 @@ protocol ThemesViewOutput: AnyObject {
     func createTheme(name: String)
     func refreshView()
     func deleteTheme(themeName: String)
-    func editTheme(currentName: String, newName: String)
+    func addTheme()
+    func editTheme(currentName: String)
     func startLearningTheme(themeName: String)
 }

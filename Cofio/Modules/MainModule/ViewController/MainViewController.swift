@@ -187,10 +187,6 @@ extension MainViewController: MainViewInput {
         snapshot.appendItems(data, toSection: 0)
         tableViewDataSource.apply(snapshot, animatingDifferences: true)
     }
-    
-    func showToast() {
-        showToast(message: "Изучение коллекция начато")
-    }
 }
 
 // MARK: - UITableViewDelegate
