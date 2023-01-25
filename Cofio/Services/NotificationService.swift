@@ -108,34 +108,121 @@ final class NotificationService: NotificationServiceProtocol {
         rootViewController.present(alert, animated: true)
     }
     
+//    func showToast(message: String) {
+//        guard let window = UIApplication.shared.keyWindow else {
+//            return
+//        }
+//
+//        let toastLbl = UILabel()
+//        toastLbl.text = message
+//        toastLbl.textAlignment = .center
+//        toastLbl.font = UIFont.systemFont(ofSize: 18)
+//        toastLbl.textColor = UIColor.white
+//        toastLbl.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+//        toastLbl.numberOfLines = 0
+//
+//
+//        let textSize = toastLbl.intrinsicContentSize
+//        let labelHeight = ( textSize.width / window.frame.width ) * 30
+//        let labelWidth = min(textSize.width, window.frame.width - 40)
+//        let adjustedHeight = max(labelHeight, textSize.height + 20)
+//
+//        toastLbl.frame = CGRect(x: 20, y: 90 - adjustedHeight, width: labelWidth + 20, height: adjustedHeight)
+//        toastLbl.center.x = window.center.x
+//        toastLbl.layer.cornerRadius = 10
+//        toastLbl.layer.masksToBounds = true
+//
+//        window.addSubview(toastLbl)
+//
+//        UIView.animate(withDuration: 3.0, animations: {
+//            toastLbl.alpha = 0
+//        }) { (_) in
+//            toastLbl.removeFromSuperview()
+//        }
+//    }
+    
     func showToast(message: String) {
         guard let window = UIApplication.shared.keyWindow else {
             return
         }
-        
         let toastLbl = UILabel()
+        toastLbl.translatesAutoresizingMaskIntoConstraints = false
         toastLbl.text = message
         toastLbl.textAlignment = .center
         toastLbl.font = UIFont.systemFont(ofSize: 18)
-        toastLbl.textColor = UIColor.white
-        toastLbl.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        toastLbl.textColor = UIColor.red
+       // toastLbl.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         toastLbl.numberOfLines = 0
         
         
         let textSize = toastLbl.intrinsicContentSize
         let labelHeight = ( textSize.width / window.frame.width ) * 30
+        print(" vllabelHeightad\(labelHeight)")
+        print("height\(textSize.height)")
+        print("width\(textSize.width)")
         let labelWidth = min(textSize.width, window.frame.width - 40)
         let adjustedHeight = max(labelHeight, textSize.height + 20)
+        print("adjustedHeight\(adjustedHeight)")
         
-        toastLbl.frame = CGRect(x: 20, y: 90 - adjustedHeight, width: labelWidth + 20, height: adjustedHeight)
-        toastLbl.center.x = window.center.x
-        toastLbl.layer.cornerRadius = 10
-        toastLbl.layer.masksToBounds = true
+        let backView = UIView()
+        backView.translatesAutoresizingMaskIntoConstraints = false
+        backView.layer.cornerRadius = 30
+        window.addSubview(backView)
+        backView.backgroundColor = .base
         
-        window.addSubview(toastLbl)
+        NSLayoutConstraint.activate([
+            backView.topAnchor.constraint(equalTo: window.safeAreaLayoutGuide.topAnchor, constant: 20),
+            backView.centerXAnchor.constraint(equalTo: window.centerXAnchor),
+            backView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width / 3 * 2),
+            backView.heightAnchor.constraint(equalToConstant: adjustedHeight)
+        ])
+        
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "calendar")
+        imageView.layer.cornerRadius = 18
+        imageView.clipsToBounds = true
+        backView.addSubview(imageView)
+        
+        NSLayoutConstraint.activate([
+            imageView.centerYAnchor.constraint(equalTo: backView.centerYAnchor),
+            imageView.leadingAnchor.constraint(equalTo: backView.leadingAnchor, constant: 12),
+            imageView.heightAnchor.constraint(equalToConstant: 36),
+            imageView.widthAnchor.constraint(equalToConstant: 36)
+        ])
+        
+        
+//        let toastLbl = UILabel()
+//        toastLbl.translatesAutoresizingMaskIntoConstraints = false
+//        toastLbl.text = message
+//        toastLbl.textAlignment = .center
+//        toastLbl.font = UIFont.systemFont(ofSize: 18)
+//        toastLbl.textColor = UIColor.red
+//       // toastLbl.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+//        toastLbl.numberOfLines = 0
+//
+//
+//        let textSize = toastLbl.intrinsicContentSize
+//        let labelHeight = ( textSize.width / window.frame.width ) * 30
+//        let labelWidth = min(textSize.width, window.frame.width - 40)
+//        let adjustedHeight = max(labelHeight, textSize.height + 20)
+        
+        backView.addSubview(toastLbl)
+        NSLayoutConstraint.activate([
+            toastLbl.centerYAnchor.constraint(equalTo: backView.centerYAnchor),
+            toastLbl.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 10),
+            toastLbl.trailingAnchor.constraint(equalTo: backView.trailingAnchor, constant: -12),
+        ])
+        
+//        toastLbl.frame = CGRect(x: 20, y: 90 - adjustedHeight, width: labelWidth + 20, height: adjustedHeight)
+//        toastLbl.center.x = window.center.x
+//        toastLbl.layer.cornerRadius = 10
+//        toastLbl.layer.masksToBounds = true
+        
+       // window.addSubview(backView)
         
         UIView.animate(withDuration: 3.0, animations: {
-            toastLbl.alpha = 0
+            backView.alpha = 0
         }) { (_) in
             toastLbl.removeFromSuperview()
         }
