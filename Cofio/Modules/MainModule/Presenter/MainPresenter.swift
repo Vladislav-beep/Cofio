@@ -91,7 +91,7 @@ extension MainPresenter: MainViewOutput {
     
     func startLearnCollection(collectionName: String) {
         interactor.startLearnCollection(collectionName: collectionName)
-        notificationService.showToast(message: "Theme learning started eegwgewgew weggeewggewweg weggewgewgegew wegewgweg")
+        notificationService.showToast(message: "main_module_repeat_started_toast_title"~)
     }
 }
 

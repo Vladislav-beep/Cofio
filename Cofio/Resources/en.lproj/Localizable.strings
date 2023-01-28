@@ -23,6 +23,7 @@
 "main_module_start_learning_title" = "Learn collection";
 "main_module_learning_method_alert_title" = "Memory method is not selected";
 "main_module_learning_method_alert_message" = "Navigate to Settings tab and select memorizing method";
+"main_module_repeat_started_toast_title" = "Theme repetition started";
 
 // MARK: New collection
 "new_collection_module_title" = "Add collection";

@@ -23,6 +23,7 @@
 "main_module_start_learning_title" = "Изучить коллекцию";
 "main_module_learning_method_alert_title" = "Не выбран способ запоминания";
 "main_module_learning_method_alert_message" = "Перейдите в вкладку Настройки и выберите способ запоминания информации";
+"main_module_repeat_started_toast_title" = "Повторение темы началось";
 
 // MARK: New collection
 "new_collection_module_title" = "Добавление коллекции";
