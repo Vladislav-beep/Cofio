@@ -17,12 +17,13 @@
 "settings_tab" = "Настройки";
 
 // MARK: Main module
-"main_module_title" = "Флэш-карточки";
+"main_module_title" = "Главная";
 "main_module_subtitle" = "Карточки для запоминания любой информации, подготовки к экзаменам, изучения иностранных слов";
 "main_module_empty_cell_title" = "Вы пока не добавили ни одной коллекции.\n Чтобы добавить коллекцию нажите плюс внизу экрана.";
 "main_module_start_learning_title" = "Изучить коллекцию";
 "main_module_learning_method_alert_title" = "Не выбран способ запоминания";
 "main_module_learning_method_alert_message" = "Перейдите в вкладку Настройки и выберите способ запоминания информации";
+"main_module_learning_method_alert_button_title" = "Перейти в настройки";
 "main_module_repeat_started_toast_title" = "Повторение темы началось";
 
 // MARK: New collection

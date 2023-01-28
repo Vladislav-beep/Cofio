@@ -47,6 +47,7 @@ class TabbarFlowCoordinator: NSObject {
         switch page {
         case .main:
             let flow = MainFlowCoordinator(
+                output: self,
                 parentViewController: parentNavigationController,
                 storageService: storageService,
                 userDefaultsService: userDefaultsService
@@ -79,6 +80,10 @@ class TabbarFlowCoordinator: NSObject {
         }
         
         return parentNavigationController
+    }
+    
+    private func openTab(page: TabBarPage) {
+        tabBarController.selectedIndex = page.pageOrderNumber()
     }
 }
 
@@ -127,5 +132,14 @@ extension TabbarFlowCoordinator: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController,
                           didSelect viewController: UIViewController) {
         // Some implementation
+    }
+}
+
+// MARK: - MainFlowCoordinatorOutput
+
+extension TabbarFlowCoordinator: MainFlowCoordinatorOutput {
+    
+    func openSettingsTab() {
+        openTab(page: .settings)
     }
 }

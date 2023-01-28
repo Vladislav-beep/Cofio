@@ -27,11 +27,12 @@ final class LearningMethodPresenter {
             self.learningMethodDataFactory = learningMethodDataFactory
     }
     
+    // MARK: Private
+    
     private func updateView() {
-        let repetitionType = userDefaultsService.getRepetitionType() ?? .long
+        let repetitionType = userDefaultsService.getRepetitionType()
         let data = learningMethodDataFactory.learningMethodData(repetitionType: repetitionType)
- 
-        print("vladdd \(userDefaultsService.getRepetitionType())")
+
         view?.updateData(with: data)
     }
 }

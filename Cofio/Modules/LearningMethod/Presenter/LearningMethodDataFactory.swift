@@ -9,23 +9,29 @@ import UIKit
 
 protocol LearningMethodDataFactoryProtocol {
     
-    func learningMethodData(repetitionType: RepetitionType) -> [LearningCellsDataModel]
+    func learningMethodData(repetitionType: RepetitionType?) -> [LearningCellsDataModel]
 }
 
 final class LearningMethodDataFactory: LearningMethodDataFactoryProtocol {
     
     // MARK: Public
     
-    func learningMethodData(repetitionType: RepetitionType) -> [LearningCellsDataModel] {
+    func learningMethodData(repetitionType: RepetitionType?) -> [LearningCellsDataModel] {
         let longColor: UIColor
         let weekColor: UIColor
         
-        if repetitionType == .long {
+        switch repetitionType {
+        case .long:
             longColor = .lightGreen
             weekColor = .base
-        } else {
+            
+        case .week:
             longColor = .base
             weekColor = .lightGreen
+            
+        case nil:
+            longColor = .base
+            weekColor = .base
         }
         
         let data: [LearningCellsDataModel] = [

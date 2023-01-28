@@ -7,10 +7,16 @@
 
 import UIKit
 
+protocol MainFlowCoordinatorOutput {
+    
+    func openSettingsTab()
+}
+
 final class MainFlowCoordinator {
     
     // MARK: Private
     
+    private let output: MainFlowCoordinatorOutput
     private let parentViewController: UINavigationController
     private let storageService: StorageServiceProtocol
     private let userDefaultsService: UserDefaultsServiceProtocol
@@ -23,10 +29,12 @@ final class MainFlowCoordinator {
     // MARK: Lifecycle
     
     init(
+        output: MainFlowCoordinatorOutput,
         parentViewController: UINavigationController,
         storageService: StorageServiceProtocol,
         userDefaultsService: UserDefaultsServiceProtocol
     ) {
+        self.output = output
         self.parentViewController = parentViewController
         self.storageService = storageService
         self.userDefaultsService = userDefaultsService
@@ -142,6 +150,10 @@ extension MainFlowCoordinator: MainPresenterOutput {
     
     func moduleWantsToOpenThemes(_ module: MainPresenterInput, collectionName: String) {
         showThemesModule(collectionName: collectionName)
+    }
+    
+    func moduleWantsToOpenSettingsTab() {
+        output.openSettingsTab()
     }
 }
 

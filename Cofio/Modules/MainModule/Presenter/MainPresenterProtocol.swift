@@ -16,4 +16,5 @@ protocol MainPresenterOutput: AnyObject {
     func moduleWantsToAddNewCollection(_ module: MainPresenterInput)
     func moduleWantsToEditCollection(_ module: MainPresenterInput, collectionName: String)
     func moduleWantsToOpenThemes(_ module: MainPresenterInput, collectionName: String)
+    func moduleWantsToOpenSettingsTab()
 }

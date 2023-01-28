@@ -71,11 +71,14 @@ extension MainPresenter: MainViewOutput {
     func viewDidTapButton() {
         if interactor.getRepetitionType() == nil {
             // TODO: сделать переход в настройки
+            let handler: () -> Void = { [weak self] in
+                self?.output?.moduleWantsToOpenSettingsTab()
+            }
             notificationService.showOneButtonAlert(
                 title: "main_module_learning_method_alert_title"~,
                 message: "main_module_learning_method_alert_message"~,
-                actionTitle: "Перейти в настройки",
-                completion: nil)
+                actionTitle: "main_module_learning_method_alert_button_title"~,
+                completion: handler)
         } else {
             output?.moduleWantsToAddNewCollection(self)
         }
@@ -103,7 +106,6 @@ extension MainPresenter: MainPresenterInput {
         updateView()
     }
 }
-
 
 // MARK: - MainInteractorOutput
 
