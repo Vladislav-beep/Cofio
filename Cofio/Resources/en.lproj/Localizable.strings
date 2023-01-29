@@ -19,7 +19,8 @@
 // MARK: Main module
 "main_module_title" = "Flash cards";
 "main_module_subtitle" = "Cards for memorizing any information, preparing for exams, learning foreign words";
-"main_module_empty_cell_title" = "You have not added any collections yet.\n To add collection, press plus at the bottom of the screen.";
+"main_module_empty_cell_title" = "No collections";
+"main_module_empty_cell_subtitle" = "To add a collection, press the plus at the bottom of the screen";
 "main_module_start_learning_title" = "Learn collection";
 "main_module_learning_method_alert_title" = "Memory method is not selected";
 "main_module_learning_method_alert_message" = "Navigate to Settings tab and select memorizing method";
@@ -43,13 +44,15 @@
 "theme_module_alert_add_button" = "Add";
 "theme_module_alert_edit_button" = "Edit";
 "theme_module_alert_cancel_button" = "Cancel";
-"theme_module_empty_cell_title" = "You have not added any themes yet.\n To add a topic, press the plus at the top of the screen.";
+"theme_module_empty_cell_title" = "No themes";
+"theme_module_empty_cell_subtitle" = "Press plus at the bottom of the screen to add a theme";
 "theme_module_start_learning_title" = "Learn theme";
 
 
 // MARK: Cards
 "cards_module_title" = "Cards";
 "cards_module_empty_cell_title" = "You haven't added any cards yet.\n To add card, press plus at the top of the screen.";
+"cards_module_empty_cell_subtitle" = "Press plus at the top of the screen to add a card ";
 
 // MARK: New Card
 "new_card_module_add_button_title" = "Add card";

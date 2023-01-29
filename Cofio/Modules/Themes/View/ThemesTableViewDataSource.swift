@@ -40,8 +40,12 @@ final class ThemesTableViewDataSource: ThemesTableViewDataSourceProtocol {
                 return cell
                 
             case .empty(let model):
-                let cell = tableview.reuse(ThemeEmptyCell.self, indexPath)
-                let displayData = ThemeEmptyCell.DisplayData(title: model.title)
+                let cell = tableview.reuse(EmptyCell.self, indexPath)
+                let displayData = EmptyCell.DisplayData(
+                    title: model.title,
+                    subtitle: model.subtitle,
+                    icon: model.icon
+                )
                 cell.configure(with: displayData)
                 return cell
             }

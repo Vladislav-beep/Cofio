@@ -19,7 +19,8 @@
 // MARK: Main module
 "main_module_title" = "Главная";
 "main_module_subtitle" = "Карточки для запоминания любой информации, подготовки к экзаменам, изучения иностранных слов";
-"main_module_empty_cell_title" = "Вы пока не добавили ни одной коллекции.\n Чтобы добавить коллекцию нажите плюс внизу экрана.";
+"main_module_empty_cell_title" = "Нет коллекций";
+"main_module_empty_cell_subtitle" = "Чтобы добавить коллекцию нажите плюс внизу экрана";
 "main_module_start_learning_title" = "Изучить коллекцию";
 "main_module_learning_method_alert_title" = "Не выбран способ запоминания";
 "main_module_learning_method_alert_message" = "Перейдите в вкладку Настройки и выберите способ запоминания информации";
@@ -43,12 +44,14 @@
 "theme_module_alert_add_button" = "Добавить";
 "theme_module_alert_edit_button" = "Редактировать";
 "theme_module_alert_cancel_button" = "Отмена";
-"theme_module_empty_cell_title" = "Вы пока не добавили ни одной темы.\n Чтобы добавить тему нажите плюс вверху экрана.";
+"theme_module_empty_cell_title" = "Нет тем";
+"theme_module_empty_cell_subtitle" = "Чтобы добавить тему нажите плюс вверху экрана";
 "theme_module_start_learning_title" = "Изучить тему";
 
 // MARK: Cards
 "cards_module_title" = "Карточки";
-"cards_module_empty_cell_title" = "Вы пока не добавили ни одной карточки.\n Чтобы добавить карточку нажите плюс вверху экрана.";
+"cards_module_empty_cell_title" = "Нет карточек";
+"cards_module_empty_cell_subtitle" = "Чтобы добавить карточку нажите плюс вверху экрана";
 
 // MARK: New Card
 "new_card_module_add_button_title" = "Добавить карточку";

@@ -17,7 +17,7 @@ final class CardsViewController: UIViewController {
     private let cardsTableView: UITableView = {
         let tableView = UITableView()
         tableView.register(CardsCell.self)
-        tableView.register(CardsEmptyCell.self)
+        tableView.register(EmptyCell.self)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
         return tableView

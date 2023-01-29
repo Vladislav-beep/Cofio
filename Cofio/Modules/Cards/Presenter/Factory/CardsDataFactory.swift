@@ -20,7 +20,11 @@ final class CardsDataFactory: CardsDataFactoryProtocol {
         var cardCellModels: [CardCellsDataModel] = []
         
         if cards.isEmpty {
-            let emptyCell = CardCellsDataModel.empty(.init(title: "cards_module_empty_cell_title"~))
+            let emptyCell = CardCellsDataModel.empty(.init(
+                title: "cards_module_empty_cell_title"~,
+                subtitle: "cards_module_empty_cell_subtitle"~,
+                icon: "cardEmptyCellIcon"
+            ))
             cardCellModels.append(emptyCell)
             return cardCellModels
         }

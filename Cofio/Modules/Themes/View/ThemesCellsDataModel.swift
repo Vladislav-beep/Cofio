@@ -9,7 +9,7 @@ enum ThemesCellsDataModel: Hashable {
     case statics(StaticsCellDataModel)
     case header(HeaderCellDataModel)
     case card(ThemesCellDataModel)
-    case empty(ThemesEmptyCellDataModel)
+    case empty(EmptyCellDataModel)
 }
 
 struct StaticsCellDataModel: Hashable {
@@ -25,8 +25,4 @@ struct ThemesCellDataModel: Hashable {
     let subtitle: String
     let totalRepeats: Int
     let repeats: Int
-}
-
-struct ThemesEmptyCellDataModel: Hashable {
-    let title: String
 }

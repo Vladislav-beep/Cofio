@@ -19,7 +19,7 @@ class MainViewController: UIViewController {
         tableview.register(MainModuleCell.self)
         tableview.register(MainModuleTitleCell.self)
         tableview.register(MainModuleSubtitleCell.self)
-        tableview.register(MainModuleEmptyCell.self)
+        tableview.register(EmptyCell.self)
         tableview.translatesAutoresizingMaskIntoConstraints = false
         tableview.separatorStyle = .none
         return tableview

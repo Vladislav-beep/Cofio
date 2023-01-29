@@ -27,8 +27,12 @@ final class CardsTableViewDataSource: CardsTableViewDataSourceProtocol {
                 return cell
                 
             case .empty(let model):
-                let cell = tableView.reuse(CardsEmptyCell.self, indexPath)
-                let displayData = CardsEmptyCell.DisplayData(title: model.title)
+                let cell = tableView.reuse(EmptyCell.self, indexPath)
+                let displayData = EmptyCell.DisplayData(
+                    title: model.title,
+                    subtitle: model.subtitle,
+                    icon: model.icon
+                )
                 cell.configure(with: displayData)
                 return cell
             }

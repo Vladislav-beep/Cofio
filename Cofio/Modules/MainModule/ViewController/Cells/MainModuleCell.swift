@@ -36,7 +36,6 @@ final class MainModuleCell: UITableViewCell {
         let subtitleLabel = UILabel()
         subtitleLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         subtitleLabel.numberOfLines = 0
-        subtitleLabel.numberOfLines = 1
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
         return subtitleLabel
     }()

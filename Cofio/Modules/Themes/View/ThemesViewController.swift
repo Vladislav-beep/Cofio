@@ -19,7 +19,7 @@ final class ThemesViewController: UIViewController {
         tableView.register(StatisticsCell.self)
         tableView.register(ThemesCell.self)
         tableView.register(HeaderCell.self)
-        tableView.register(ThemeEmptyCell.self)
+        tableView.register(EmptyCell.self)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
         return tableView

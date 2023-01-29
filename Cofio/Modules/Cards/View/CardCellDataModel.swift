@@ -9,15 +9,11 @@ import Foundation
 
 enum CardCellsDataModel: Hashable {
     case card(CardCellDataModel)
-    case empty(CardEmptyCellDataModel)
+    case empty(EmptyCellDataModel)
 }
 
 struct CardCellDataModel: Hashable {
     let definition: String
     let description: String
     let creationDate: Date
-}
-
-struct CardEmptyCellDataModel: Hashable {
-    let title: String
 }

@@ -25,4 +25,6 @@ struct MainModuleCellViewModel: Hashable {
 
 struct MainModuleEmptyCellViewModel: Hashable {
     let title: String
+    let subtitle: String
+    let icon: String
 }

@@ -24,7 +24,11 @@ final class ThemesDataFactory: ThemesDataFactoryProtocol {
         let keys = themesDict.keys.sorted { $0.creationDate ?? Date() > $1.creationDate ?? Date() }
         
         if keys.isEmpty {
-            let emptyCell = ThemesCellsDataModel.empty(.init(title: "theme_module_empty_cell_title"~))
+            let emptyCell = ThemesCellsDataModel.empty(.init(
+                title: "theme_module_empty_cell_title"~,
+                subtitle: "theme_module_empty_cell_subtitle"~,
+                icon: "themeEmptyCellIcon"
+            ))
             themeCellsModel.append(emptyCell)
             return themeCellsModel
         }
