@@ -17,6 +17,7 @@ final class RepetitionViewController: UIViewController {
     private let repetitionTableView: UITableView = {
         let tableView = UITableView()
         tableView.register(RepetitionCell.self)
+        tableView.register(EmptyCell.self)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
         return tableView
@@ -80,8 +81,8 @@ final class RepetitionViewController: UIViewController {
 
 extension RepetitionViewController: RepetitionViewInput {
     
-    func updateData(with data: [RepetitionCellDataModel]) {
-        var snapshot = NSDiffableDataSourceSnapshot<Int, RepetitionCellDataModel>()
+    func updateData(with data: [RepetitionCellsDataModel]) {
+        var snapshot = NSDiffableDataSourceSnapshot<Int, RepetitionCellsDataModel>()
         snapshot.appendSections([0])
         snapshot.appendItems(data, toSection: 0)
         tableViewDataSource.apply(snapshot, animatingDifferences: true)

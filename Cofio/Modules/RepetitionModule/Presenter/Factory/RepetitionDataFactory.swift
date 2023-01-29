@@ -10,16 +10,27 @@ import UIKit
 
 protocol RepetitionDataFactoryProtocol {
     
-    func dataFromThemes(themes: [Theme]) -> [RepetitionCellDataModel]
+    func dataFromThemes(themes: [Theme]) -> [RepetitionCellsDataModel]
 }
 
 final class RepetitionDataFactory: RepetitionDataFactoryProtocol {
     
     // MARK: Public
     
-    func dataFromThemes(themes: [Theme]) -> [RepetitionCellDataModel] {
-        var themeCellsModel: [RepetitionCellDataModel] = []
+    func dataFromThemes(themes: [Theme]) -> [RepetitionCellsDataModel] {
+        var themeCellsModel: [RepetitionCellsDataModel] = []
         var newThemes = themes
+        
+        if themes.isEmpty {
+            let emptyCell = RepetitionCellsDataModel.empty(.init(
+                title: "repetition_module_empty_cell_title"~,
+                subtitle: "repetition_module_empty_cell_subtitle"~,
+                icon: "themeEmptyCellIcon"
+            ))
+            themeCellsModel.append(emptyCell)
+            return themeCellsModel
+        }
+        
         newThemes.sort { $0.repeatDate ?? Date() < $1.repeatDate ?? Date() }
         
         for theme in newThemes {
@@ -29,12 +40,12 @@ final class RepetitionDataFactory: RepetitionDataFactoryProtocol {
             )
             let date = makeDate(repeatDate: theme.repeatDate ?? Date())
             let backgroundColor = setupBackground(repeatDate: theme.repeatDate ?? Date())
-            let themeCell = RepetitionCellDataModel(
+            let themeCell = RepetitionCellsDataModel.theme(.init(
                 title: theme.name ?? "",
                 subtitle: subtitle,
                 date: date,
                 backgroundColor: backgroundColor
-            )
+            ))
             themeCellsModel.append(themeCell)
         }
         

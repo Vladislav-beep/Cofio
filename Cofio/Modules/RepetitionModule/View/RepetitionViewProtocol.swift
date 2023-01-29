@@ -7,12 +7,12 @@
 
 protocol RepetitionViewInput: AnyObject {
     
-    func updateData(with data: [RepetitionCellDataModel])
+    func updateData(with data: [RepetitionCellsDataModel])
 }
 
 protocol RepetitionViewOutput: AnyObject {
     
     func viewDidLoad()
     func viewWillAppear()
-    func viewDidTapRow(_ item: RepetitionCellDataModel)
+    func viewDidTapRow(_ item: RepetitionCellsDataModel)
 }

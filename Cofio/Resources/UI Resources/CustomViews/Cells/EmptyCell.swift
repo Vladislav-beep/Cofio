@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MainModuleEmptyCell: UITableViewCell {
+final class EmptyCell: UITableViewCell {
     
     // MARK: Public data structures
     

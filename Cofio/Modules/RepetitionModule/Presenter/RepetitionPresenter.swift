@@ -49,9 +49,15 @@ extension RepetitionPresenter: RepetitionViewOutput {
         updateView()
     }
     
-    func viewDidTapRow(_ item: RepetitionCellDataModel) {
+    func viewDidTapRow(_ item: RepetitionCellsDataModel) {
         // TODO: открывать повторение в случае если дата наступила
-        output?.moduleWantsToOpenCardsRepetition(self, themeName: item.title)
+        switch item {
+        case .theme(let model):
+            output?.moduleWantsToOpenCardsRepetition(self, themeName: model.title)
+            
+        case .empty:
+            break
+        }
     }
 }
 

@@ -67,6 +67,8 @@
 "repetition_module_today" = "Сегодня";
 "repetition_module_yesteday" = "Вчера";
 "repetition_module_tomorrow" = "Завтра";
+"repetition_module_empty_cell_title" = "Нет тем для повторения";
+"repetition_module_empty_cell_subtitle" = "Начните изучение коллекции или темы";
 
 // MARK: Cards Repetition
 "cards_repetition_module_empty_cell_title" = "По этой теме пока не добавлены карточки.\n Добавьте их в главном разделе";

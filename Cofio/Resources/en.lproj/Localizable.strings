@@ -68,6 +68,8 @@
 "repetition_module_today" = "Today";
 "repetition_module_yesteday" = "Yesterday";
 "repetition_module_tomorrow" = "Tomorrow";
+"repetition_module_empty_cell_title" = "No themes for repetition";
+"repetition_module_empty_cell_subtitle" = "Start learning collection or theme";
 
 // MARK: Cards Repetition
 "cards_repetition_module_empty_cell_title" = "No cards have been added for this theme yet.\n Add them in the main section";

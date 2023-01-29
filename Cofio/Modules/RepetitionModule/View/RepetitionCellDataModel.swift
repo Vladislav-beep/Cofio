@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum RepetitionCellsDataModel: Hashable {
+    case theme(RepetitionCellDataModel)
+    case empty(EmptyCellDataModel)
+}
+
 struct RepetitionCellDataModel: Hashable {
     let title: String
     let subtitle: String
