@@ -23,7 +23,7 @@ protocol NotificationServiceProtocol {
                             message: String,
                             actionTitle: String,
                             completion: (() -> Void)?)
-    func showToast(message: String)
+    func showToast(message: String, icon: String)
 }
 
 final class NotificationService: NotificationServiceProtocol {
@@ -109,17 +109,17 @@ final class NotificationService: NotificationServiceProtocol {
         rootViewController.present(alert, animated: true)
     }
     
-    func showToast(message: String) {
+    func showToast(message: String, icon: String) {
         guard let window = UIApplication.shared.windows.first else {
             return
         }
         let toastLbl = UILabel()
-        toastLbl.translatesAutoresizingMaskIntoConstraints = false
         toastLbl.text = message
         toastLbl.textAlignment = .center
         toastLbl.font = UIFont.systemFont(ofSize: 18)
         toastLbl.textColor = .black
         toastLbl.numberOfLines = 0
+        toastLbl.translatesAutoresizingMaskIntoConstraints = false
         
         let textSize = toastLbl.intrinsicContentSize
         let toastWidth = UIScreen.main.bounds.width / 9 * 7
@@ -127,11 +127,14 @@ final class NotificationService: NotificationServiceProtocol {
         let adjustedHeight = max(labelHeight, 60)
         
         let backView = UIView()
-        backView.translatesAutoresizingMaskIntoConstraints = false
-        backView.layer.cornerRadius = 30
-        window.addSubview(backView)
         backView.backgroundColor = .base
+        backView.layer.cornerRadius = 30
+        backView.layer.shadowRadius = 4
+        backView.layer.shadowOpacity = 0.4
+        backView.layer.shadowOffset = CGSize(width: 0, height: 3)
+        backView.translatesAutoresizingMaskIntoConstraints = false
         
+        window.addSubview(backView)
         NSLayoutConstraint.activate([
             backView.topAnchor.constraint(equalTo: window.safeAreaLayoutGuide.topAnchor, constant: 20),
             backView.centerXAnchor.constraint(equalTo: window.centerXAnchor),
@@ -140,12 +143,12 @@ final class NotificationService: NotificationServiceProtocol {
         ])
         
         let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "repeatToast")
+        imageView.image = UIImage(named: icon)
         imageView.layer.cornerRadius = 18
         imageView.clipsToBounds = true
-        backView.addSubview(imageView)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         
+        backView.addSubview(imageView)
         NSLayoutConstraint.activate([
             imageView.centerYAnchor.constraint(equalTo: backView.centerYAnchor),
             imageView.leadingAnchor.constraint(equalTo: backView.leadingAnchor, constant: 12),
@@ -156,8 +159,8 @@ final class NotificationService: NotificationServiceProtocol {
         backView.addSubview(toastLbl)
         NSLayoutConstraint.activate([
             toastLbl.centerYAnchor.constraint(equalTo: backView.centerYAnchor),
-            toastLbl.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 10),
-            toastLbl.trailingAnchor.constraint(equalTo: backView.trailingAnchor, constant: -12),
+            toastLbl.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 4),
+            toastLbl.trailingAnchor.constraint(equalTo: backView.trailingAnchor, constant: -8),
         ])
         
         UIView.animate(withDuration: 3.0, animations: {

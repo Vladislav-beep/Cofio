@@ -25,7 +25,8 @@
 "main_module_learning_method_alert_title" = "Не выбран способ запоминания";
 "main_module_learning_method_alert_message" = "Перейдите в вкладку Настройки и выберите способ запоминания информации";
 "main_module_learning_method_alert_button_title" = "Перейти в настройки";
-"main_module_repeat_started_toast_title" = "Повторение темы началось";
+"main_module_repeat_started_toast_title" = "Повторение коллекции началось";
+"main_module_repeat_no_themes_toast_title" = "Нет тем для повторения";
 
 // MARK: New collection
 "new_collection_module_title" = "Добавление коллекции";
@@ -47,6 +48,8 @@
 "theme_module_empty_cell_title" = "Нет тем";
 "theme_module_empty_cell_subtitle" = "Чтобы добавить тему нажите плюс вверху экрана";
 "theme_module_start_learning_title" = "Изучить тему";
+"theme_module_repeat_started_toast_title" = "Повторение темы началось";
+"theme_module_repeat_no_cards_toast_title" = "Добавьте карточки в тему";
 
 // MARK: Cards
 "cards_module_title" = "Карточки";
@@ -68,7 +71,7 @@
 "repetition_module_yesteday" = "Вчера";
 "repetition_module_tomorrow" = "Завтра";
 "repetition_module_empty_cell_title" = "Нет тем для повторения";
-"repetition_module_empty_cell_subtitle" = "Начните изучение коллекции или темы";
+"repetition_module_empty_cell_subtitle" = "Начните изучение коллекции или темы или добавьте карточки в существующие темы";
 
 // MARK: Cards Repetition
 "cards_repetition_module_empty_cell_title" = "По этой теме пока не добавлены карточки.\n Добавьте их в главном разделе";

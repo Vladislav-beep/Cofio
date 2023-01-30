@@ -93,8 +93,21 @@ extension MainPresenter: MainViewOutput {
     }
     
     func startLearnCollection(collectionName: String) {
-        interactor.startLearnCollection(collectionName: collectionName)
-        notificationService.showToast(message: "main_module_repeat_started_toast_title"~)
+        let title: String
+        let icon: String
+        
+        if interactor.getThemesCountForCollection(collectionName: collectionName) == 0 {
+            title = "main_module_repeat_no_themes_toast_title"~
+            icon = "noThemesToast"
+        } else {
+            title = "main_module_repeat_started_toast_title"~
+            icon = "repeatToast"
+            interactor.startLearnCollection(collectionName: collectionName)
+        }
+        notificationService.showToast(
+            message: title,
+            icon: icon
+        )
     }
 }
 

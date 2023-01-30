@@ -25,7 +25,8 @@
 "main_module_learning_method_alert_title" = "Memory method is not selected";
 "main_module_learning_method_alert_message" = "Navigate to Settings tab and select memorizing method";
 "main_module_learning_method_alert_button_title" = "Go to settings";
-"main_module_repeat_started_toast_title" = "Theme repetition started";
+"main_module_repeat_started_toast_title" = "Collection repetition started";
+"main_module_repeat_no_themes_toast_title" = "No themes for repetition";
 
 // MARK: New collection
 "new_collection_module_title" = "Add collection";
@@ -47,6 +48,8 @@
 "theme_module_empty_cell_title" = "No themes";
 "theme_module_empty_cell_subtitle" = "Press plus at the bottom of the screen to add a theme";
 "theme_module_start_learning_title" = "Learn theme";
+"theme_module_repeat_started_toast_title" = "Theme repetition started";
+"theme_module_repeat_no_cards_toast_title" = "Add cards to the theme";
 
 
 // MARK: Cards
@@ -69,7 +72,7 @@
 "repetition_module_yesteday" = "Yesterday";
 "repetition_module_tomorrow" = "Tomorrow";
 "repetition_module_empty_cell_title" = "No themes for repetition";
-"repetition_module_empty_cell_subtitle" = "Start learning collection or theme";
+"repetition_module_empty_cell_subtitle" = "Start learning collection or theme or add cards to existing themes";
 
 // MARK: Cards Repetition
 "cards_repetition_module_empty_cell_title" = "No cards have been added for this theme yet.\n Add them in the main section";

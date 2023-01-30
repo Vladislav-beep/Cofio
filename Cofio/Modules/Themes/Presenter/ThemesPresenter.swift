@@ -113,7 +113,21 @@ extension ThemesPresenter: ThemesViewOutput {
     }
     
     func startLearningTheme(themeName: String) {
-        interactor.startLearningTheme(themeName: themeName)
+        let title: String
+        let icon: String
+        
+        if interactor.getCardsCount(themeName: themeName) == 0 {
+            title = "theme_module_repeat_no_cards_toast_title"~
+            icon = "noThemesToast"
+        } else {
+            title = "theme_module_repeat_started_toast_title"~
+            icon = "repeatToast"
+            interactor.startLearningTheme(themeName: themeName)
+        }
+        notificationService.showToast(
+            message: title,
+            icon: icon
+        )
     }
 }
 
