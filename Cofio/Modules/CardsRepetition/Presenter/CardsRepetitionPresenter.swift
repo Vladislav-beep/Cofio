@@ -92,7 +92,6 @@ extension CardsRepetitionPresenter: CardsRepetitionViewOutput {
     }
     
     func viewDidTapMoreTime(indexPath: IndexPath) {
-        // FIXME: что-то идет не так, когда хочешь повторить последнюю карточку
         let card = cardsData[indexPath.item]
         let newCard = RepetitionCardCellDataModel(
             id: UUID(),

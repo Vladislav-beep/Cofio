@@ -195,9 +195,16 @@ extension CardsRepetitionViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         output.viewDidTapRow(indexPath: indexPath)
+        
+        if indexPath.item == output.getCardsCount() - 1 {
+            moreTimeButton.isEnabled = false
+            moreTimeButton.backgroundColor = .lightRed
+        } else {
+            moreTimeButton.isEnabled = true
+            moreTimeButton.backgroundColor = .darkRed
+        }
+        
         learnedButton.isEnabled = true
         learnedButton.backgroundColor = .darkGreen
-        moreTimeButton.isEnabled = true
-        moreTimeButton.backgroundColor = .darkRed
     }
 }
