@@ -69,6 +69,7 @@
 		B93EF8D9289AFFD30057C774 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93EF8D8289AFFD30057C774 /* CloseButton.swift */; };
 		B945C7AA297F05890071F355 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B945C7A9297F05890071F355 /* NotificationService.swift */; };
 		B945C7AD298697FB0071F355 /* EmptyCellDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B945C7AC298697FB0071F355 /* EmptyCellDataModel.swift */; };
+		B945C7FB2991802F0071F355 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = B945C7FD2991802F0071F355 /* Localizable.stringsdict */; };
 		B9464AC2295E185A00D7A5E1 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B9464AC0295E185A00D7A5E1 /* DataModel.xcdatamodeld */; };
 		B94C0253294E596800EF9EB6 /* CardDetailsModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94C0252294E596800EF9EB6 /* CardDetailsModuleBuilder.swift */; };
 		B94C0256294E59BF00EF9EB6 /* CardDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94C0255294E59BF00EF9EB6 /* CardDetailsViewController.swift */; };
@@ -123,7 +124,6 @@
 		B9ACB7A62954C85800F2B476 /* IconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ACB7A52954C85800F2B476 /* IconCell.swift */; };
 		B9ACB7AA2954CCA900F2B476 /* ChooseIconModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ACB7A92954CCA900F2B476 /* ChooseIconModuleBuilder.swift */; };
 		B9ACB7AC2954D2A900F2B476 /* IconsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ACB7AB2954D2A900F2B476 /* IconsCollectionView.swift */; };
-		B9ACB7B02957753000F2B476 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = B9ACB7AF2957753000F2B476 /* Localizable.stringsdict */; };
 		B9ACB7B6295A39B800F2B476 /* CardDetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ACB7B5295A39B800F2B476 /* CardDetailsDataSource.swift */; };
 		B9ACB7BA295A3A4200F2B476 /* CardDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ACB7B9295A3A4200F2B476 /* CardDetailsCell.swift */; };
 		B9ACB7D9295E112F00F2B476 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ACB7D8295E112F00F2B476 /* CoreDataManager.swift */; };
@@ -258,6 +258,8 @@
 		B93EF8D8289AFFD30057C774 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		B945C7A9297F05890071F355 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		B945C7AC298697FB0071F355 /* EmptyCellDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCellDataModel.swift; sourceTree = "<group>"; };
+		B945C7FC2991802F0071F355 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		B945C7FE299180360071F355 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ru; path = ru.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		B9464AC1295E185A00D7A5E1 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		B94C0252294E596800EF9EB6 /* CardDetailsModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsModuleBuilder.swift; sourceTree = "<group>"; };
 		B94C0255294E59BF00EF9EB6 /* CardDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsViewController.swift; sourceTree = "<group>"; };
@@ -312,7 +314,6 @@
 		B9ACB7A52954C85800F2B476 /* IconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCell.swift; sourceTree = "<group>"; };
 		B9ACB7A92954CCA900F2B476 /* ChooseIconModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseIconModuleBuilder.swift; sourceTree = "<group>"; };
 		B9ACB7AB2954D2A900F2B476 /* IconsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsCollectionView.swift; sourceTree = "<group>"; };
-		B9ACB7AF2957753000F2B476 /* Localizable.stringsdict */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
 		B9ACB7B5295A39B800F2B476 /* CardDetailsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsDataSource.swift; sourceTree = "<group>"; };
 		B9ACB7B9295A3A4200F2B476 /* CardDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsCell.swift; sourceTree = "<group>"; };
 		B9ACB7D8295E112F00F2B476 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -1139,7 +1140,7 @@
 				B9CC13D02890705E0013ED76 /* CustomViews */,
 				B9CC13652887389D0013ED76 /* LaunchScreen.storyboard */,
 				B9CC13632887389D0013ED76 /* Assets.xcassets */,
-				B9ACB7AF2957753000F2B476 /* Localizable.stringsdict */,
+				B945C7FD2991802F0071F355 /* Localizable.stringsdict */,
 			);
 			path = "UI Resources";
 			sourceTree = "<group>";
@@ -1334,7 +1335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9ACB7B02957753000F2B476 /* Localizable.stringsdict in Resources */,
+				B945C7FB2991802F0071F355 /* Localizable.stringsdict in Resources */,
 				B9CC13672887389D0013ED76 /* LaunchScreen.storyboard in Resources */,
 				B910AB4B2949A44F00D9E7EA /* Localizable.strings in Resources */,
 				B9CC13642887389D0013ED76 /* Assets.xcassets in Resources */,
@@ -1566,6 +1567,15 @@
 				B910AB4E2949A4C700D9E7EA /* ru */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		B945C7FD2991802F0071F355 /* Localizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B945C7FC2991802F0071F355 /* en */,
+				B945C7FE299180360071F355 /* ru */,
+			);
+			name = Localizable.stringsdict;
 			sourceTree = "<group>";
 		};
 		B9CC13652887389D0013ED76 /* LaunchScreen.storyboard */ = {

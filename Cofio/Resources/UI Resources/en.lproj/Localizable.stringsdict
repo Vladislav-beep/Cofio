@@ -13,17 +13,17 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>d</string>
 			<key>zero</key>
-			<string>Нет тем</string>
+			<string>No themes</string>
 			<key>one</key>
-			<string>%d тема</string>
+			<string>%d theme</string>
 			<key>two</key>
-			<string>%d темы</string>
+			<string>%d themes</string>
 			<key>few</key>
-			<string>%d темы</string>
+			<string>%d themes</string>
 			<key>many</key>
-			<string>%d тем</string>
+			<string>%d themes</string>
 			<key>other</key>
-			<string></string>
+			<string>%d themes</string>
 		</dict>
 	</dict>
 	<key>collection cards count</key>
@@ -37,17 +37,17 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>d</string>
 			<key>zero</key>
-			<string>Нет карточек</string>
+			<string>No cards</string>
 			<key>one</key>
-			<string>%d карточка</string>
+			<string>%d card</string>
 			<key>two</key>
-			<string>%d карточки</string>
+			<string>%d cards</string>
 			<key>few</key>
-			<string>%d карточки</string>
+			<string>%d cards</string>
 			<key>many</key>
-			<string>%d карточек</string>
+			<string>%d cards</string>
 			<key>other</key>
-			<string></string>
+			<string>%d cards</string>
 		</dict>
 	</dict>
 </dict>
