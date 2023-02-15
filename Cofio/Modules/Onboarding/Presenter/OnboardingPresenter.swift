@@ -49,7 +49,7 @@ extension OnboardingPresenter: OnboardingViewOutput {
         
         if indexPath.row == data.count - 1 {
             isLastPage = true
-            view?.updateMainButtonTitle(title: "Закрыть")
+            view?.updateMainButtonTitle(title: "close_button_title"~)
         }
     }
 }

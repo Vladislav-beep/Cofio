@@ -102,6 +102,20 @@
 
 // MARK: Onboarding
 "onboarding_module_button_title" = "Дальше";
+"onboarding_module_title1" = "Добро пожаловать!";
+"onboarding_module_subtitle1" = "Изучайте и запоминайте информацию с помощью карточек.";
+"onboarding_module_title2" = "Добавляйте коллекции!";
+"onboarding_module_subtitle2" = "Для удобства все темы можно группировать в коллекции. Для каждой коллекции выбирается своя иконка.";
+"onboarding_module_title3" = "Следите за прогрессом!";
+"onboarding_module_subtitle3" = "Рядом с названием каждой темы есть прогресс, показываеющий сколько повторений темы сделано.";
+"onboarding_module_title4" = "Добавляйте карточки!";
+"onboarding_module_subtitle4" = "В каждую тему можно добавить неограниченное количество карточек.";
+"onboarding_module_title5" = "Начать повторение!";
+"onboarding_module_subtitle5" = "Чтобы начать изучать определенную тему свайпните плашку влево.";
+"onboarding_module_title6" = "Повторяйте!";
+"onboarding_module_subtitle6" = "В разделе Повторение показывается какую тему нужно повторить сегодня, а повторение какой темы пропущено.";
+"onboarding_module_title7" = "Статистика!";
+"onboarding_module_subtitle7" = "В разделе статистика можно посмотреть количество добавленный и выученных карточек за разные периоды времени.";
 
 // MARK: - UI
 

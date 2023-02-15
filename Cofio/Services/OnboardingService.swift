@@ -15,22 +15,41 @@ protocol OnboardingServiceProtocol {
 final class OnboardingService: OnboardingServiceProtocol {
     
     func getOnboardingData() -> [OnboardingCellDataModel] {
-        // TODO: запилить норм данные для онбординга
         let data = [
             OnboardingCellDataModel(
-                image: UIImage(named: "book")!,
-                title: "11111111",
-                subtitle: "ascvassac"
+                image: UIImage(named: "onboarding")!,
+                title: "onboarding_module_title1"~,
+                subtitle: "onboarding_module_subtitle1"~
             ),
             OnboardingCellDataModel(
-                image: UIImage(named: "clock")!,
-                title: "222222222",
-                subtitle: "sfffffffffff"
+                image: UIImage(named: "onboarding2")!,
+                title: "onboarding_module_title2"~,
+                subtitle: "onboarding_module_subtitle2"~
+            ),
+            OnboardingCellDataModel(
+                image: UIImage(named: "onboarding3")!,
+                title: "onboarding_module_title3"~,
+                subtitle: "onboarding_module_subtitle3"~
             ),
             OnboardingCellDataModel(
                 image: UIImage(named: "onboarding")!,
-                title: "qeklqklkm klmqemkelwklmwe wklem eeetehehet tehhteehthte",
-                subtitle: "wekwekewkp kwdkkwkwkm kmwekmwkmkm mkekm wekweklkew kmwekmewkmekmlwk mmk kmewmkekmwlwkemlekml kmwekmlewklmew mkwekmle wklmkmlewkmew mkw e"
+                title: "onboarding_module_title4"~,
+                subtitle: "onboarding_module_subtitle4"~
+            ),
+            OnboardingCellDataModel(
+                image: UIImage(named: "onboarding")!,
+                title:"onboarding_module_title5"~,
+                subtitle: "onboarding_module_subtitle5"~
+            ),
+            OnboardingCellDataModel(
+                image: UIImage(named: "onboarding")!,
+                title: "onboarding_module_title6"~,
+                subtitle: "onboarding_module_subtitle6"~
+            ),
+            OnboardingCellDataModel(
+                image: UIImage(named: "onboarding")!,
+                title: "onboarding_module_title7"~,
+                subtitle: "onboarding_module_subtitle7"~
             )
         ]
         

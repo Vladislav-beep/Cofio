@@ -63,7 +63,7 @@ final class EmptyCell: UITableViewCell {
         contentView.addSubview(iconView)
         NSLayoutConstraint.activate([
             iconView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            iconView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            iconView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 40),
             iconView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height / 5),
             iconView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.height / 5)
         ])

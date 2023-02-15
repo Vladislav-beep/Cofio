@@ -103,6 +103,20 @@
 
 // MARK: Onboarding
 "onboarding_module_button_title" = "Next";
+"onboarding_module_title1" = "Welcome!";
+"onboarding_module_subtitle1" = "Learn and memorize information with flash-cards.";
+"onboarding_module_title2" = "Add collections!";
+"onboarding_module_subtitle2" = "For convenience all topics can be grouped into collections. Each collection has its own icon.";
+"onboarding_module_title3" = "Follow the progress!";
+"onboarding_module_subtitle3" = "Next to the title of each theme there is a progress bar showing how many iterations of the topic have been made.";
+"onboarding_module_title4" = "Add cards!";
+"onboarding_module_subtitle4" = "You can add an unlimited number of cards to each theme.";
+"onboarding_module_title5" = "Start repeating!";
+"onboarding_module_subtitle5" = "To start repeating a particular theme, swipe to the left.";
+"onboarding_module_title6" = "Repeat!";
+"onboarding_module_subtitle6" = "Repetition section shows which theme needs to be repeated today and which theme repetition was skipped over.";
+"onboarding_module_title7" = "Statistics!";
+"onboarding_module_subtitle7" = "In the Statistics section, you can see the number of added and learned cards for different periods of time.";
 
 // MARK: - UI
 
