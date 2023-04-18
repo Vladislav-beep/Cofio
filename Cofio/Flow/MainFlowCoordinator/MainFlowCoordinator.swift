@@ -18,8 +18,7 @@ final class MainFlowCoordinator {
     
     private let output: MainFlowCoordinatorOutput
     private let parentViewController: UINavigationController
-    private let storageService: StorageServiceProtocol
-    private let userDefaultsService: UserDefaultsServiceProtocol
+    private let assembly: ApplicationAssembly
     private var mainModuleViewController: UIViewController?
     private var newCollectionViewControllerr: UIViewController?
     private weak var mainModule: MainPresenterInput?
@@ -31,13 +30,11 @@ final class MainFlowCoordinator {
     init(
         output: MainFlowCoordinatorOutput,
         parentViewController: UINavigationController,
-        storageService: StorageServiceProtocol,
-        userDefaultsService: UserDefaultsServiceProtocol
+        assembly: ApplicationAssembly
     ) {
         self.output = output
         self.parentViewController = parentViewController
-        self.storageService = storageService
-        self.userDefaultsService = userDefaultsService
+        self.assembly = assembly
     }
     
     // MARK: Private
@@ -45,8 +42,9 @@ final class MainFlowCoordinator {
     private func showMainModule() {
         let builder = MainModuleBuilder(
             output: self,
-            storageService: storageService,
-            userDefaultsService: userDefaultsService
+            storageService: assembly.servicesAssembly.storageService,
+            notificationService: assembly.uiAssembly.notificationService,
+            userDefaultsService: assembly.servicesAssembly.userDefaultsService
         )
         let mainViewController = builder.build()
         
@@ -59,7 +57,7 @@ final class MainFlowCoordinator {
             output: self,
             isEditing: isEditing,
             collectionName: collectionName,
-            storageService: storageService
+            storageService: assembly.servicesAssembly.storageService
         )
         let newCollectionViewController = builder.build()
         
@@ -69,7 +67,10 @@ final class MainFlowCoordinator {
     }
     
     private func showChooseIconModule() {
-        let builder = ChooseIconModuleBuilder(output: self)
+        let builder = ChooseIconModuleBuilder(
+            output: self,
+            imageProvider: assembly.uiAssembly.imageProviderService
+        )
         let chooseIconViewController = builder.build()
         
         newCollectionViewControllerr?.present(chooseIconViewController, animated: true)
@@ -79,8 +80,9 @@ final class MainFlowCoordinator {
         let builder = ThemesModuleBuilder(
             output: self,
             collectionName: collectionName,
-            storageService: storageService,
-            userDefaultsService: userDefaultsService
+            storageService: assembly.servicesAssembly.storageService,
+            userDefaultsService: assembly.servicesAssembly.userDefaultsService,
+            notificationService: assembly.uiAssembly.notificationService
         )
         let themesViewController = builder.build()
         
@@ -91,7 +93,7 @@ final class MainFlowCoordinator {
         let builder = CardsModuleBuilder(
             output: self,
             themeName: themeName,
-            storageService: storageService
+            storageService: assembly.servicesAssembly.storageService
         )
         let cardsViewController = builder.build()
         
@@ -99,7 +101,10 @@ final class MainFlowCoordinator {
     }
     
     private func showCardDetailsModule(card: CardCellDataModel) {
-        let builder = CardDetailsModuleBuilder(output: self, card: card)
+        let builder = CardDetailsModuleBuilder(
+            output: self,
+            card: card
+        )
         let cardDetailsViewController = builder.build()
         
         parentViewController.present(cardDetailsViewController, animated: true)
@@ -111,7 +116,7 @@ final class MainFlowCoordinator {
             themeName: themeName,
             cardName: cardName,
             isEditing: isEditing,
-            storageService: storageService
+            storageService: assembly.servicesAssembly.storageService
         )
         let newCardViewController = builder.build()
         

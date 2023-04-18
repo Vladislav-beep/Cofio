@@ -13,22 +13,24 @@ final class SettingsModuleBuilder {
     
     private weak var output: SettingsPresenterOutput?
     private let storageService: StorageServiceProtocol
+    private let notificationService: NotificationServiceProtocol
     
     // MARK: Lifecycle
     
     init(
         output: SettingsPresenterOutput,
-        storageService: StorageServiceProtocol
+        storageService: StorageServiceProtocol,
+        notificationService: NotificationServiceProtocol
     ) {
         self.output = output
         self.storageService = storageService
+        self.notificationService = notificationService
     }
     
     // MARK: Public
     
     func build() -> UIViewController {
         let dataSource = SettingsTableViewDataSource()
-        let notificationService = NotificationService()
         let presenter = SettingsPresenter(
             storageService: storageService,
             notificationService: notificationService

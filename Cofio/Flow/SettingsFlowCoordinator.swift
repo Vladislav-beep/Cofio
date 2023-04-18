@@ -12,19 +12,16 @@ final class SettingsFlowCoordinator {
     // MARK: Private
     
     private let parentViewController: UINavigationController
-    private let storageService: StorageServiceProtocol
-    private let userDefaultsService: UserDefaultsServiceProtocol
+    private let assembly: ApplicationAssembly
     
     // MARK: Lifecycle
     
     init(
         parentViewController: UINavigationController,
-        storageService: StorageServiceProtocol,
-        userDefaultsService: UserDefaultsServiceProtocol
+        assembly: ApplicationAssembly
     ) {
         self.parentViewController = parentViewController
-        self.storageService = storageService
-        self.userDefaultsService = userDefaultsService
+        self.assembly = assembly
     }
     
     // MARK: Private
@@ -32,7 +29,8 @@ final class SettingsFlowCoordinator {
     private func showSettingsModule() {
         let builder = SettingsModuleBuilder(
             output: self,
-            storageService: storageService
+            storageService: assembly.servicesAssembly.storageService,
+            notificationService: assembly.uiAssembly.notificationService
         )
         
         let settingsViewController = builder.build()
@@ -40,14 +38,17 @@ final class SettingsFlowCoordinator {
     }
     
     private func showLearningMethod() {
-        let builder = LearningMethodModuleBuilder(userDefaultsService: userDefaultsService)
+        let builder = LearningMethodModuleBuilder(userDefaultsService: assembly.servicesAssembly.userDefaultsService)
         let vc = builder.build()
         
         parentViewController.pushViewController(vc, animated: true)
     }
     
     private func showOnboarding() {
-        let builder = OnboardingModuleBuilder(output: self)
+        let builder = OnboardingModuleBuilder(
+            output: self,
+            onboardingService: assembly.uiAssembly.onboardingService
+        )
         let vc = builder.build()
         
         parentViewController.present(vc, animated: true)
@@ -79,6 +80,8 @@ extension SettingsFlowCoordinator: SettingsPresenterOutput {
         showOnboarding()
     }
 }
+
+// MARK: - OnboardingPresenterOutput
 
 extension SettingsFlowCoordinator: OnboardingPresenterOutput {
     

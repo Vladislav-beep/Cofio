@@ -39,7 +39,8 @@ final class NewCardModuleBuilder {
         let interactor = NewCardInteractor(
             storageService: storageService,
             themeName: themeName,
-            cardName: cardName)
+            cardName: cardName
+        )
         
         let presenter = NewCardPresenter(
             interactor: interactor,

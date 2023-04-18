@@ -37,7 +37,10 @@ final class NewCollectionModuleBuilder {
             storageService: storageService,
             collectionName: collectionName
         )
-        let presenter = NewCollectionPresenter(interactor: interactor, isEditing: isEditing)
+        let presenter = NewCollectionPresenter(
+            interactor: interactor,
+            isEditing: isEditing
+        )
         let viewController = NewCollectionViewController(output: presenter)
         
         presenter.view = viewController

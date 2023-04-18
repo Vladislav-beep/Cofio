@@ -12,17 +12,21 @@ final class OnboardingModuleBuilder {
     // MARK: Private
     
     private weak var output: OnboardingPresenterOutput?
+    private let onboardingService: OnboardingServiceProtocol
     
     // MARK: Lifecycle
     
-    init(output: OnboardingPresenterOutput) {
+    init(
+        output: OnboardingPresenterOutput,
+        onboardingService: OnboardingServiceProtocol
+    ) {
         self.output = output
+        self.onboardingService = onboardingService
     }
     
     // MARK: Public
     
     func build() -> UIViewController {
-        let onboardingService = OnboardingService()
         let dataSource = OnboardingViewDataSource()
         let presenter = OnboardingPresenter(onboardingService: onboardingService)
         let viewController = OnboardingViewController(

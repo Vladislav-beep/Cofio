@@ -15,6 +15,7 @@ final class ThemesModuleBuilder {
     private let collectionName: String
     private let storageService: StorageServiceProtocol
     private let userDefaultsService: UserDefaultsServiceProtocol
+    private let notificationService: NotificationServiceProtocol
     
     // MARK: Lifecycle
     
@@ -22,12 +23,14 @@ final class ThemesModuleBuilder {
         output: ThemesPresenterOutput,
         collectionName: String,
         storageService: StorageServiceProtocol,
-        userDefaultsService: UserDefaultsServiceProtocol
+        userDefaultsService: UserDefaultsServiceProtocol,
+        notificationService: NotificationServiceProtocol
     ) {
         self.output = output
         self.collectionName = collectionName
         self.storageService = storageService
         self.userDefaultsService = userDefaultsService
+        self.notificationService = notificationService
     }
     
     // MARK: Public
@@ -35,7 +38,6 @@ final class ThemesModuleBuilder {
     func build() -> UIViewController {
         let dataSource = ThemesTableViewDataSource()
         let themesDataFactory = ThemesDataFactory()
-        let notificationService = NotificationService()
         
         let interactor = ThemesInteractor(
             storageService: storageService,

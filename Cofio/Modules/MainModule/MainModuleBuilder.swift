@@ -13,6 +13,7 @@ final class MainModuleBuilder {
     
     private var output: MainPresenterOutput
     private let storageService: StorageServiceProtocol
+    private let notificationService: NotificationServiceProtocol
     private let userDefaultsService: UserDefaultsServiceProtocol
     
     // MARK: Lifecycle
@@ -20,10 +21,12 @@ final class MainModuleBuilder {
     init(
         output: MainPresenterOutput,
         storageService: StorageServiceProtocol,
+        notificationService: NotificationServiceProtocol,
         userDefaultsService: UserDefaultsServiceProtocol
     ) {
         self.output = output
         self.storageService = storageService
+        self.notificationService = notificationService
         self.userDefaultsService = userDefaultsService
     }
     
@@ -32,7 +35,6 @@ final class MainModuleBuilder {
     func build() -> UIViewController {
         let collectionsDataFactory = CollectionsDataFactory()
         let tableViewDataSource = MainTableViewDataSource()
-        let notificationService = NotificationService()
         
         let interactor = MainInteractor(
             storageService: storageService,

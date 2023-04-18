@@ -12,20 +12,17 @@ final class RepetitionFlowCoordinator {
     // MARK: Private
     
     private let parentViewController: UINavigationController
-    private let storageService: StorageServiceProtocol
-    private let userDefaultsService: UserDefaultsServiceProtocol
+    private let assembly: ApplicationAssembly
     private weak var repetitionModule: RepetitionPresenterInput?
     
     // MARK: Lifecycle
     
     init(
         parentViewController: UINavigationController,
-        storageService: StorageServiceProtocol,
-        userDefaultsService: UserDefaultsServiceProtocol
+        assembly: ApplicationAssembly
     ) {
         self.parentViewController = parentViewController
-        self.storageService = storageService
-        self.userDefaultsService = userDefaultsService
+        self.assembly = assembly
     }
     
     // MARK: Private
@@ -33,7 +30,7 @@ final class RepetitionFlowCoordinator {
     private func showRepetitionModule() {
         let builder = RepetitionModuleBuilder(
             output: self,
-            storageService: storageService
+            storageService: assembly.servicesAssembly.storageService
         )
         let repetitionViewController = builder.build()
         
@@ -43,8 +40,10 @@ final class RepetitionFlowCoordinator {
     func showCardsRepetitionModule(themeName: String) {
         let builder = CardsRepetitionModuleBuilder(
             output: self,
-            storageService: storageService,
-            userDefaultsService: userDefaultsService,
+            storageService: assembly.servicesAssembly.storageService,
+            userDefaultsService: assembly.servicesAssembly.userDefaultsService,
+            repetitionService: assembly.servicesAssembly.repetitionService,
+            dateFormatterService: assembly.servicesAssembly.dateFormatterService,
             themeName: themeName
         )
         let cardsRepetitionViewController = builder.build()
