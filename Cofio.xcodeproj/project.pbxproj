@@ -175,6 +175,12 @@
 		B9CC1414289686140013ED76 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC1413289686140013ED76 /* CardsViewController.swift */; };
 		B9CC141A2896878E0013ED76 /* CardsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC14192896878E0013ED76 /* CardsTableViewDataSource.swift */; };
 		B9CC141E289688470013ED76 /* CardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC141D289688470013ED76 /* CardsCell.swift */; };
+		B9DCF11629EE9F9C0072A4A4 /* ApplicationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DCF11529EE9F9C0072A4A4 /* ApplicationAssembly.swift */; };
+		B9DCF11829EE9FB60072A4A4 /* ApplicationAssemblyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DCF11729EE9FB60072A4A4 /* ApplicationAssemblyProtocol.swift */; };
+		B9DCF11A29EEA23B0072A4A4 /* ServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DCF11929EEA23B0072A4A4 /* ServicesAssembly.swift */; };
+		B9DCF11C29EEA25E0072A4A4 /* ServicesAssemblyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DCF11B29EEA25E0072A4A4 /* ServicesAssemblyProtocol.swift */; };
+		B9DCF11E29EEA28D0072A4A4 /* UIAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DCF11D29EEA28D0072A4A4 /* UIAssembly.swift */; };
+		B9DCF12029EEA29C0072A4A4 /* UIAssemblyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DCF11F29EEA29C0072A4A4 /* UIAssemblyProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -369,6 +375,12 @@
 		B9CC1413289686140013ED76 /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 		B9CC14192896878E0013ED76 /* CardsTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsTableViewDataSource.swift; sourceTree = "<group>"; };
 		B9CC141D289688470013ED76 /* CardsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCell.swift; sourceTree = "<group>"; };
+		B9DCF11529EE9F9C0072A4A4 /* ApplicationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationAssembly.swift; sourceTree = "<group>"; };
+		B9DCF11729EE9FB60072A4A4 /* ApplicationAssemblyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationAssemblyProtocol.swift; sourceTree = "<group>"; };
+		B9DCF11929EEA23B0072A4A4 /* ServicesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesAssembly.swift; sourceTree = "<group>"; };
+		B9DCF11B29EEA25E0072A4A4 /* ServicesAssemblyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesAssemblyProtocol.swift; sourceTree = "<group>"; };
+		B9DCF11D29EEA28D0072A4A4 /* UIAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAssembly.swift; sourceTree = "<group>"; };
+		B9DCF11F29EEA29C0072A4A4 /* UIAssemblyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAssemblyProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -919,6 +931,7 @@
 		B9CC1359288738980013ED76 /* Cofio */ = {
 			isa = PBXGroup;
 			children = (
+				B9DCF11429EE9F6F0072A4A4 /* DI */,
 				B9CC135A288738980013ED76 /* AppDelegate.swift */,
 				B9CC135C288738980013ED76 /* SceneDelegate.swift */,
 				B9CC13A9288EF6E40013ED76 /* Flow */,
@@ -1230,6 +1243,19 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		B9DCF11429EE9F6F0072A4A4 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				B9DCF11529EE9F9C0072A4A4 /* ApplicationAssembly.swift */,
+				B9DCF11729EE9FB60072A4A4 /* ApplicationAssemblyProtocol.swift */,
+				B9DCF11929EEA23B0072A4A4 /* ServicesAssembly.swift */,
+				B9DCF11B29EEA25E0072A4A4 /* ServicesAssemblyProtocol.swift */,
+				B9DCF11D29EEA28D0072A4A4 /* UIAssembly.swift */,
+				B9DCF11F29EEA29C0072A4A4 /* UIAssemblyProtocol.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1396,6 +1422,7 @@
 				B972967A297432B500878B32 /* OnboardingCellDataModel.swift in Sources */,
 				B932E97928B7FC29007244E6 /* CardsRepetitionViewProtocol.swift in Sources */,
 				B9ACB7AC2954D2A900F2B476 /* IconsCollectionView.swift in Sources */,
+				B9DCF11E29EEA28D0072A4A4 /* UIAssembly.swift in Sources */,
 				B9ACB7AA2954CCA900F2B476 /* ChooseIconModuleBuilder.swift in Sources */,
 				B93EF8D9289AFFD30057C774 /* CloseButton.swift in Sources */,
 				B932E95228ABF9DC007244E6 /* RepetitionViewController.swift in Sources */,
@@ -1407,14 +1434,17 @@
 				B9ACB7A129543A0000F2B476 /* ChooseIconPresenterProtocol.swift in Sources */,
 				B94C0258294E5B3F00EF9EB6 /* CardDetailsViewProtocol.swift in Sources */,
 				B932E95E28ABFBC4007244E6 /* RepetitionModuleBuilder.swift in Sources */,
+				B9DCF11829EE9FB60072A4A4 /* ApplicationAssemblyProtocol.swift in Sources */,
 				B932E97728B7FB5B007244E6 /* CardsRepetitionModuleBuilder.swift in Sources */,
 				B9CC13A4288EEAA70013ED76 /* MainViewProtocol.swift in Sources */,
 				B932E946289DB069007244E6 /* HeaderCell.swift in Sources */,
 				B9ACB79C2954391000F2B476 /* ChooseIconViewProtocol.swift in Sources */,
+				B9DCF12029EEA29C0072A4A4 /* UIAssemblyProtocol.swift in Sources */,
 				B932E95A28ABFADF007244E6 /* RepetitonInteractor.swift in Sources */,
 				B932E97528B7FAD0007244E6 /* CardsRepetitionInteractorProtocol.swift in Sources */,
 				B9CC135F288738980013ED76 /* MainViewController.swift in Sources */,
 				B910AB52294DC23600D9E7EA /* MainModuleTitleCell.swift in Sources */,
+				B9DCF11629EE9F9C0072A4A4 /* ApplicationAssembly.swift in Sources */,
 				B9729640296C8FB900878B32 /* SettingsModuleBuilder.swift in Sources */,
 				B932E95828ABFA98007244E6 /* RepetitionPresenterProtocol.swift in Sources */,
 				B93EF8CB289AF9910057C774 /* NewCardViewController.swift in Sources */,
@@ -1482,6 +1512,7 @@
 				B9CC13F1289310460013ED76 /* UIStackView+Extension.swift in Sources */,
 				B9AAEC2A296048C100BA6078 /* CardsDataFactory.swift in Sources */,
 				B9CC135B288738980013ED76 /* AppDelegate.swift in Sources */,
+				B9DCF11C29EEA25E0072A4A4 /* ServicesAssemblyProtocol.swift in Sources */,
 				B93EF8CF289AFAB00057C774 /* NewCardPresenter.swift in Sources */,
 				B93EF8C228968F310057C774 /* CardsModuleBuilder.swift in Sources */,
 				B9AAEC322962E7DB00BA6078 /* StorageService.swift in Sources */,
@@ -1490,6 +1521,7 @@
 				B9CC13B3288F08040013ED76 /* NewCollectionPresenter.swift in Sources */,
 				B90A505029658D8000993C75 /* CardsCollectionViewDataSource.swift in Sources */,
 				B972966D2972BD7D00878B32 /* Card+CoreDataProperties.swift in Sources */,
+				B9DCF11A29EEA23B0072A4A4 /* ServicesAssembly.swift in Sources */,
 				B972965F2972B29300878B32 /* LearningMethodDataFactory.swift in Sources */,
 				B932E96128AC032B007244E6 /* RepetitionCell.swift in Sources */,
 				B9CC13CF28906B6A0013ED76 /* ThemesModuleBuilder.swift in Sources */,

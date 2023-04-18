@@ -13,14 +13,19 @@ class TabbarFlowCoordinator: NSObject {
     
     private let parentViewController: UIViewController
     private let tabBarController: UITabBarController
+    private let assembly: ApplicationAssembly
     private let storageService = StorageService(coreDataManager: CoreDataManager())
     private let userDefaultsService = UserDefaultsService()
     private var childCoordinators: [FlowCoordinatorProtocol] = []
     
     // MARK: Lifecycle
     
-    required init(parentViewController: UIViewController) {
+    required init(
+        parentViewController: UIViewController,
+        assembly: ApplicationAssembly
+    ) {
         self.parentViewController = parentViewController
+        self.assembly = assembly
         self.tabBarController = .init()
     }
     
@@ -49,8 +54,8 @@ class TabbarFlowCoordinator: NSObject {
             let flow = MainFlowCoordinator(
                 output: self,
                 parentViewController: parentNavigationController,
-                storageService: storageService,
-                userDefaultsService: userDefaultsService
+                storageService: assembly.servicesAssembly.storageService,
+                userDefaultsService: assembly.servicesAssembly.userDefaultsService
             )
             childCoordinators.append(flow)
             flow.start()
@@ -58,8 +63,8 @@ class TabbarFlowCoordinator: NSObject {
         case .repetition:
             let flow = RepetitionFlowCoordinator(
                 parentViewController: parentNavigationController,
-                storageService: storageService,
-                userDefaultsService: userDefaultsService
+                storageService: assembly.servicesAssembly.storageService,
+                userDefaultsService: assembly.servicesAssembly.userDefaultsService
             )
             childCoordinators.append(flow)
             flow.start()
@@ -67,8 +72,8 @@ class TabbarFlowCoordinator: NSObject {
         case .settings:
             let flow = SettingsFlowCoordinator(
                 parentViewController: parentNavigationController,
-                storageService: storageService,
-                userDefaultsService: userDefaultsService
+                storageService: assembly.servicesAssembly.storageService,
+                userDefaultsService: assembly.servicesAssembly.userDefaultsService
             )
             childCoordinators.append(flow)
             flow.start()

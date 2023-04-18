@@ -16,12 +16,17 @@ final class AppFlowCoordinator {
     // MARK: Private properties
     
     private let parentViewController: UIViewController
+    private let assembly: ApplicationAssembly
     private var childCoordinators = [FlowCoordinatorProtocol]()
     
     // MARK: Lifecycle
     
-    required init(parentViewController: UIViewController) {
+    required init(
+        parentViewController: UIViewController,
+        assembly: ApplicationAssembly
+    ) {
         self.parentViewController = parentViewController
+        self.assembly = assembly
     }
 }
 
@@ -43,7 +48,10 @@ extension AppFlowCoordinator: FlowCoordinatorProtocol {
 extension AppFlowCoordinator: AppCoordinatorProtocol {
     
     func showMainFlow() {
-        let tabCoordinator = TabbarFlowCoordinator(parentViewController: parentViewController)
+        let tabCoordinator = TabbarFlowCoordinator(
+            parentViewController: parentViewController,
+            assembly: assembly
+        )
         tabCoordinator.start()
         childCoordinators.append(tabCoordinator)
     }

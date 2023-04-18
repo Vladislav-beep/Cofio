@@ -16,9 +16,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         
         let parentVC = UIViewController()
+        let assembly = ApplicationAssembly()
+        
         window.rootViewController = parentVC
         window.makeKeyAndVisible()
-        let flow = AppFlowCoordinator(parentViewController: parentVC)
+        
+        let flow = AppFlowCoordinator(
+            parentViewController: parentVC,
+            assembly: assembly
+        )
     
         self.window = window
         
