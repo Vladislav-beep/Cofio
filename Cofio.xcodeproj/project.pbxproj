@@ -108,6 +108,8 @@
 		B972968329743BBC00878B32 /* OnboardingModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972968229743BBC00878B32 /* OnboardingModuleBuilder.swift */; };
 		B972968629771E5100878B32 /* Theme+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972968429771E5100878B32 /* Theme+CoreDataClass.swift */; };
 		B972968729771E5100878B32 /* Theme+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972968529771E5100878B32 /* Theme+CoreDataProperties.swift */; };
+		B9835D0A2B123C07001E5CDB /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9835D092B123C07001E5CDB /* Strings+Generated.swift */; };
+		B9835D0C2B123C0C001E5CDB /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9835D0B2B123C0C001E5CDB /* XCAssets+Generated.swift */; };
 		B99B17542944CD66002167DB /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B17532944CD66002167DB /* AppFlowCoordinator.swift */; };
 		B99B175A2944CEE7002167DB /* TabBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B17592944CEE7002167DB /* TabBarPage.swift */; };
 		B99B175C2944CF07002167DB /* TabbarFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99B175B2944CF07002167DB /* TabbarFlowCoordinator.swift */; };
@@ -304,6 +306,8 @@
 		B972968229743BBC00878B32 /* OnboardingModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModuleBuilder.swift; sourceTree = "<group>"; };
 		B972968429771E5100878B32 /* Theme+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B972968529771E5100878B32 /* Theme+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B9835D092B123C07001E5CDB /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
+		B9835D0B2B123C0C001E5CDB /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
 		B99B17532944CD66002167DB /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
 		B99B17592944CEE7002167DB /* TabBarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPage.swift; sourceTree = "<group>"; };
 		B99B175B2944CF07002167DB /* TabbarFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -799,6 +803,15 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		B9835D082B123BCF001E5CDB /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				B9835D0B2B123C0C001E5CDB /* XCAssets+Generated.swift */,
+				B9835D092B123C07001E5CDB /* Strings+Generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		B99B176329450BA4002167DB /* AppFlowCoordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -1140,6 +1153,7 @@
 		B9CC13D1289070700013ED76 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B9835D082B123BCF001E5CDB /* Generated */,
 				B9CC13D72891959D0013ED76 /* Text Resources */,
 				B9CC13D6289195770013ED76 /* UI Resources */,
 				B910AB4D2949A44F00D9E7EA /* Localizable.strings */,
@@ -1428,6 +1442,7 @@
 				B932E95228ABF9DC007244E6 /* RepetitionViewController.swift in Sources */,
 				B9729658296F3AC900878B32 /* LearningCell.swift in Sources */,
 				B9729653296F37D700878B32 /* LearningTableViewDataSource.swift in Sources */,
+				B9835D0C2B123C0C001E5CDB /* XCAssets+Generated.swift in Sources */,
 				B972965B29707BB600878B32 /* LearningMethodPresenter.swift in Sources */,
 				B9CC13DD2891B9090013ED76 /* CollectionTextField.swift in Sources */,
 				B90A506D2969CAA300993C75 /* RepetitionType.swift in Sources */,
@@ -1547,6 +1562,7 @@
 				B9CC13D52890720B0013ED76 /* SubtitleLabel.swift in Sources */,
 				B93EF8D1289AFADC0057C774 /* NewCardPresenterProtocol.swift in Sources */,
 				B9CC141A2896878E0013ED76 /* CardsTableViewDataSource.swift in Sources */,
+				B9835D0A2B123C07001E5CDB /* Strings+Generated.swift in Sources */,
 				B9CC1394288B15F00013ED76 /* UIColor+Extension.swift in Sources */,
 				B932E94A289DBD95007244E6 /* HorizontalProgressBar.swift in Sources */,
 				B972963B296C8EC600878B32 /* SettingsFlowCoordinator.swift in Sources */,
