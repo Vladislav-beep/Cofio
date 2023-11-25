@@ -16,6 +16,8 @@
    outputs:
      - templateName: structured-swift5
        output: Resources/Generated/Strings+Generated.swift
+       params:
+         enumName: Strings
 
 
 ## Generate constants for your Assets Catalogs, including constants for images, colors, ARKit resources, etc.
@@ -30,6 +32,8 @@
        params:
          forceProvidesNamespaces: true
        output: Resources/Generated/XCAssets+Generated.swift
+       params:
+         enumName: Assets
 
 ## Generate constants for your storyboards and XIBs.
 ##   This one generates 2 output files, one containing the storyboard scenes, and another for the segues.

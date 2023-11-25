@@ -23,60 +23,46 @@ internal typealias AssetImageTypeAlias = ImageAsset.Image
 // MARK: - Asset Catalogs
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
-internal enum Asset {
+internal enum Assets {
   internal static let accentColor = ColorAsset(name: "AccentColor")
-  internal enum Buttons {
-    internal static let pluss = ImageAsset(name: "pluss")
-  }
-  internal enum EmptyCells {
-    internal static let cardEmptyCellIcon = ImageAsset(name: "cardEmptyCellIcon")
-    internal static let mainEmptyCellIcon = ImageAsset(name: "mainEmptyCellIcon")
-    internal static let themeEmptyCellIcon = ImageAsset(name: "themeEmptyCellIcon")
-  }
-  internal enum FinishOffer {
-    internal static let check = ImageAsset(name: "check")
-    internal static let repeated = ImageAsset(name: "repeated")
-  }
-  internal enum Icons {
-    internal static let book = ImageAsset(name: "book")
-    internal static let bulb = ImageAsset(name: "bulb")
-    internal static let calendarNude = ImageAsset(name: "calendar nude")
-    internal static let calendar = ImageAsset(name: "calendar")
-    internal static let classRoom = ImageAsset(name: "class room")
-    internal static let clock = ImageAsset(name: "clock")
-    internal static let cloud = ImageAsset(name: "cloud")
-    internal static let flower = ImageAsset(name: "flower")
-    internal static let food = ImageAsset(name: "food")
-    internal static let heart = ImageAsset(name: "heart")
-    internal static let home = ImageAsset(name: "home")
-    internal static let life = ImageAsset(name: "life")
-    internal static let mail = ImageAsset(name: "mail")
-    internal static let math = ImageAsset(name: "math")
-    internal static let message = ImageAsset(name: "message")
-    internal static let photos = ImageAsset(name: "photos")
-    internal static let pigCoin = ImageAsset(name: "pig coin")
-    internal static let shoe = ImageAsset(name: "shoe")
-    internal static let strava = ImageAsset(name: "strava")
-    internal static let threeGears = ImageAsset(name: "three gears")
-    internal static let train = ImageAsset(name: "train")
-    internal static let twoGears = ImageAsset(name: "two gears")
-    internal static let weight = ImageAsset(name: "weight")
-  }
-  internal enum Onboarding {
-    internal static let onboarding = ImageAsset(name: "onboarding")
-    internal static let onboarding2 = ImageAsset(name: "onboarding2")
-    internal static let onboarding3 = ImageAsset(name: "onboarding3")
-  }
-  internal enum Tabbar {
-    internal static let tab0 = ImageAsset(name: "tab0")
-    internal static let tab1 = ImageAsset(name: "tab1")
-    internal static let tab2 = ImageAsset(name: "tab2")
-    internal static let tab3 = ImageAsset(name: "tab3")
-  }
-  internal enum Toasts {
-    internal static let noThemesToast = ImageAsset(name: "noThemesToast")
-    internal static let repeatToast = ImageAsset(name: "repeatToast")
-  }
+  internal static let pluss = ImageAsset(name: "pluss")
+  internal static let cardEmptyCellIcon = ImageAsset(name: "cardEmptyCellIcon")
+  internal static let mainEmptyCellIcon = ImageAsset(name: "mainEmptyCellIcon")
+  internal static let themeEmptyCellIcon = ImageAsset(name: "themeEmptyCellIcon")
+  internal static let check = ImageAsset(name: "check")
+  internal static let repeated = ImageAsset(name: "repeated")
+  internal static let book = ImageAsset(name: "book")
+  internal static let bulb = ImageAsset(name: "bulb")
+  internal static let calendarNude = ImageAsset(name: "calendar nude")
+  internal static let calendar = ImageAsset(name: "calendar")
+  internal static let classRoom = ImageAsset(name: "class room")
+  internal static let clock = ImageAsset(name: "clock")
+  internal static let cloud = ImageAsset(name: "cloud")
+  internal static let flower = ImageAsset(name: "flower")
+  internal static let food = ImageAsset(name: "food")
+  internal static let heart = ImageAsset(name: "heart")
+  internal static let home = ImageAsset(name: "home")
+  internal static let life = ImageAsset(name: "life")
+  internal static let mail = ImageAsset(name: "mail")
+  internal static let math = ImageAsset(name: "math")
+  internal static let message = ImageAsset(name: "message")
+  internal static let photos = ImageAsset(name: "photos")
+  internal static let pigCoin = ImageAsset(name: "pig coin")
+  internal static let shoe = ImageAsset(name: "shoe")
+  internal static let strava = ImageAsset(name: "strava")
+  internal static let threeGears = ImageAsset(name: "three gears")
+  internal static let train = ImageAsset(name: "train")
+  internal static let twoGears = ImageAsset(name: "two gears")
+  internal static let weight = ImageAsset(name: "weight")
+  internal static let onboarding = ImageAsset(name: "onboarding")
+  internal static let onboarding2 = ImageAsset(name: "onboarding2")
+  internal static let onboarding3 = ImageAsset(name: "onboarding3")
+  internal static let tab0 = ImageAsset(name: "tab0")
+  internal static let tab1 = ImageAsset(name: "tab1")
+  internal static let tab2 = ImageAsset(name: "tab2")
+  internal static let tab3 = ImageAsset(name: "tab3")
+  internal static let noThemesToast = ImageAsset(name: "noThemesToast")
+  internal static let repeatToast = ImageAsset(name: "repeatToast")
   internal static let iconPlaceholder = ImageAsset(name: "iconPlaceholder")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
