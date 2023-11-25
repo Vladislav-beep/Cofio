@@ -7,7 +7,25 @@
 		<key>Cofio.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>6</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>B9CC1356288738980013ED76</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B9CC136C2887389E0013ED76</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B9CC13762887389E0013ED76</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

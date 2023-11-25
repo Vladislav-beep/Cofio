@@ -1,0 +1,28 @@
+PODS:
+  - lottie-ios (4.3.3)
+  - MarqueeLabel (4.0.5)
+  - NotificationBannerSwift (3.0.6):
+    - MarqueeLabel (~> 4.0.5)
+    - SnapKit (~> 5.0.1)
+  - SnapKit (5.0.1)
+
+DEPENDENCIES:
+  - lottie-ios
+  - NotificationBannerSwift (~> 3.0.0)
+
+SPEC REPOS:
+  trunk:
+    - lottie-ios
+    - MarqueeLabel
+    - NotificationBannerSwift
+    - SnapKit
+
+SPEC CHECKSUMS:
+  lottie-ios: 25e7b2675dad5c3ddad369ac9baab03560c5bfdd
+  MarqueeLabel: 00cc0bcd087111dca575878b3531af980559707d
+  NotificationBannerSwift: 7021be2338f8f29cf424b0aca43da462bf9e2a1a
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+
+PODFILE CHECKSUM: ff40cf93a03e8459af892b90656bce815a3ce56b
+
+COCOAPODS: 1.14.3
