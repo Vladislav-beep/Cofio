@@ -143,6 +143,8 @@ final class ThemesViewController: UIViewController {
             case .card(let model):
                 // TODO: add notification from top that theme is being repeated
                 self.output.startLearningTheme(themeName: model.title)
+                self.output.refreshView()
+                
                 
             case .statics, .header, .empty:
                 break

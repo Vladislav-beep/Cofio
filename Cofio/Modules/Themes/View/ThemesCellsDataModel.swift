@@ -25,4 +25,5 @@ struct ThemesCellDataModel: Hashable {
     let subtitle: String
     let totalRepeats: Int
     let repeats: Int
+    let isBeingRepeated: Bool
 }

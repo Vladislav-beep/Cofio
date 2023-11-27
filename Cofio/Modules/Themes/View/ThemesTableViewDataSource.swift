@@ -35,7 +35,8 @@ final class ThemesTableViewDataSource: ThemesTableViewDataSourceProtocol {
                 let displayData = ThemesCell.DisplayData(title: model.title,
                                                          subtitle: model.subtitle,
                                                          totalRepeats: model.totalRepeats,
-                                                         repeats: model.repeats)
+                                                         repeats: model.repeats,
+                                                         isBeingRepeated: model.isBeingRepeated)
                 cell.configure(with: displayData)
                 return cell
                 

@@ -39,7 +39,8 @@ final class ThemesDataFactory: ThemesDataFactoryProtocol {
                 .init(title: theme.name ?? "",
                       subtitle: countCards(count: themesDict[theme] ?? 0),
                       totalRepeats: 7,
-                      repeats: Int(theme.repeats))
+                      repeats: Int(theme.repeats),
+                      isBeingRepeated: theme.isBeingRepeated)
             )
             themeCellsModel.append(themeCell)
         }

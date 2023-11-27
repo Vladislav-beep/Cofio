@@ -16,14 +16,28 @@ final class ThemesCell: UITableViewCell {
         let subtitle: String
         let totalRepeats: Int
         let repeats: Int
+        let isBeingRepeated: Bool
     }
     
     // MARK: Private properties
     
+    private let baseView: LowerView = {
+        let baseView = LowerView()
+        baseView.layer.cornerRadius = 12
+        return baseView
+    }()
+    
     private let lowerView: LowerView = {
-        let view = LowerView()
-        view.layer.cornerRadius = 12
-        return view
+        let lowerView = LowerView()
+        lowerView.layer.cornerRadius = 12
+        lowerView.clipsToBounds = true
+        return lowerView
+    }()
+
+    private let lineView: UIView = {
+        let lineView = UIView()
+        lineView.translatesAutoresizingMaskIntoConstraints = false
+        return lineView
     }()
     
     private let titleLabel: UILabel = {
@@ -71,12 +85,28 @@ final class ThemesCell: UITableViewCell {
     // MARK: Private
     
     private func setupViews() {
+        contentView.addSubview(baseView)
+        NSLayoutConstraint.activate([
+            baseView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 6),
+            baseView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            baseView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            baseView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12),
+        ])
+
         contentView.addSubview(lowerView)
         NSLayoutConstraint.activate([
             lowerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 6),
             lowerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             lowerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             lowerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12),
+        ])
+        
+        lowerView.addSubview(lineView)
+        NSLayoutConstraint.activate([
+            lineView.topAnchor.constraint(equalTo: lowerView.topAnchor),
+            lineView.leadingAnchor.constraint(equalTo: lowerView.leadingAnchor),
+            lineView.bottomAnchor.constraint(equalTo: lowerView.bottomAnchor),
+            lineView.widthAnchor.constraint(equalToConstant: 10)
         ])
         
         lowerView.addSubview(progressView)
@@ -95,15 +125,15 @@ final class ThemesCell: UITableViewCell {
         
         lowerView.addSubview(titleLabel)
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: lowerView.topAnchor, constant: 16),
-            titleLabel.leadingAnchor.constraint(equalTo: lowerView.leadingAnchor, constant: 16),
+            titleLabel.topAnchor.constraint(equalTo: lowerView.topAnchor, constant: 10),
+            titleLabel.leadingAnchor.constraint(equalTo: lineView.trailingAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: progressView.leadingAnchor, constant: -12),
         ])
         
         lowerView.addSubview(subtitleLabel)
         NSLayoutConstraint.activate([
             subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
-            subtitleLabel.leadingAnchor.constraint(equalTo: lowerView.leadingAnchor, constant: 16),
+            subtitleLabel.leadingAnchor.constraint(equalTo: lineView.trailingAnchor, constant: 16),
             subtitleLabel.trailingAnchor.constraint(equalTo: lowerView.trailingAnchor, constant: -12),
             subtitleLabel.bottomAnchor.constraint(equalTo: lowerView.bottomAnchor, constant: -16)
         ])
@@ -160,5 +190,11 @@ final class ThemesCell: UITableViewCell {
         subtitleLabel.text = displayData.subtitle
         progressLabel.text = "\(displayData.repeats)/\(displayData.totalRepeats)"
         setupLayers(displayData: displayData)
+        
+        if displayData.isBeingRepeated {
+            lineView.backgroundColor = .darkGreen
+        } else {
+            lineView.backgroundColor = .darkRed
+        }
     }
 }
