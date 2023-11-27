@@ -75,9 +75,9 @@ extension MainPresenter: MainViewOutput {
                 self?.output?.moduleWantsToOpenSettingsTab()
             }
             notificationService.showOneButtonAlert(
-                title: "main_module_learning_method_alert_title"~,
-                message: "main_module_learning_method_alert_message"~,
-                actionTitle: "main_module_learning_method_alert_button_title"~,
+                title: Strings.MainModule.LearningMethodAlert.title,
+                message: Strings.MainModule.LearningMethodAlert.message,
+                actionTitle: Strings.MainModule.LearningMethodAlertButton.title,
                 completion: handler)
         } else {
             output?.moduleWantsToAddNewCollection(self)
@@ -97,10 +97,10 @@ extension MainPresenter: MainViewOutput {
         let icon: String
         
         if interactor.getThemesCountForCollection(collectionName: collectionName) == 0 {
-            title = "main_module_repeat_no_themes_toast_title"~
+            title = Strings.MainModule.RepeatNoThemesToast.title
             icon = "noThemesToast"
         } else {
-            title = "main_module_repeat_started_toast_title"~
+            title = Strings.MainModule.RepeatStartedToast.title
             icon = "repeatToast"
             interactor.startLearnCollection(collectionName: collectionName)
         }

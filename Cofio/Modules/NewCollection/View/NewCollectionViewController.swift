@@ -42,7 +42,7 @@ final class NewCollectionViewController: UIViewController {
     private let chooseIconLabel: UILabel = {
         let chooseIconLabel = UILabel()
         chooseIconLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        chooseIconLabel.text = "new_collection_module_choose_icon"~
+        chooseIconLabel.text = Strings.NewCollectionModule.chooseIcon
         chooseIconLabel.translatesAutoresizingMaskIntoConstraints = false
         return chooseIconLabel
     }()
@@ -69,7 +69,7 @@ final class NewCollectionViewController: UIViewController {
     private lazy var doneButton: UIButton = {
         let doneButton = UIButton()
         doneButton.translatesAutoresizingMaskIntoConstraints = false
-        doneButton.setTitle("new_collection_module_button_title"~, for: .normal)
+        doneButton.setTitle(Strings.NewCollectionModule.Button.title, for: .normal)
         doneButton.backgroundColor = .darkViolet
         doneButton.layer.cornerRadius = 15
         doneButton.addTarget(self, action: #selector(addNewCollection), for: .touchUpInside)

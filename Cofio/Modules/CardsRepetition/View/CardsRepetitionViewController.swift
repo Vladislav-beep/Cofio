@@ -16,7 +16,7 @@ final class CardsRepetitionViewController: UIViewController {
     
     private let learnedButton: UIButton = {
         let learnedButton = UIButton()
-        learnedButton.setTitle("cards_repetition_module_learned_button"~, for: .normal)
+        learnedButton.setTitle(Strings.CardsRepetitionModule.learnedButton, for: .normal)
         learnedButton.layer.cornerRadius = 8
         learnedButton.backgroundColor = .lightGreen
         learnedButton.addTarget(self, action: #selector(handleNext), for: .touchUpInside)
@@ -26,7 +26,7 @@ final class CardsRepetitionViewController: UIViewController {
     
     private let moreTimeButton: UIButton = {
         let moreTimeButton = UIButton()
-        moreTimeButton.setTitle("cards_repetition_module_more_button"~, for: .normal)
+        moreTimeButton.setTitle(Strings.CardsRepetitionModule.moreButton, for: .normal)
         moreTimeButton.layer.cornerRadius = 8
         moreTimeButton.backgroundColor = .lightRed
         moreTimeButton.addTarget(self, action: #selector(handleMoreTime), for: .touchUpInside)

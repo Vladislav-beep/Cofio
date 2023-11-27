@@ -84,10 +84,10 @@ extension ThemesPresenter: ThemesViewOutput {
     
     func addTheme() {
         notificationService.showTwoButtonAndTextFieldAlert(
-            title: "theme_module_alert_title"~,
-            message: "theme_module_alert_subtitle"~,
-            actionTitle: "theme_module_alert_add_button"~,
-            textFieldPlaceholder: "theme_module_alert_textField_placeholder"~,
+            title: Strings.ThemeModule.Alert.title,
+            message: Strings.ThemeModule.Alert.subtitle,
+            actionTitle: Strings.ThemeModule.Alert.addButton,
+            textFieldPlaceholder: Strings.ThemeModule.Alert.textFieldPlaceholder,
             textFieldText: nil) { [weak self] name in
                 guard let self = self else { return }
                 
@@ -99,9 +99,9 @@ extension ThemesPresenter: ThemesViewOutput {
     
     func editTheme(currentName: String) {
         notificationService.showTwoButtonAndTextFieldAlert(
-            title: "theme_module_alert_edit_title"~,
-            message: "theme_module_alert_edit_subtitle"~,
-            actionTitle: "theme_module_alert_edit_button"~,
+            title: Strings.ThemeModule.Alert.editTitle,
+            message: Strings.ThemeModule.Alert.editSubtitle,
+            actionTitle: Strings.ThemeModule.Alert.editButton,
             textFieldPlaceholder: nil,
             textFieldText: currentName
         ) { [weak self] newName in
@@ -117,10 +117,10 @@ extension ThemesPresenter: ThemesViewOutput {
         let icon: String
         
         if interactor.getCardsCount(themeName: themeName) == 0 {
-            title = "theme_module_repeat_no_cards_toast_title"~
+            title = Strings.ThemeModule.RepeatNoCardsToast.title
             icon = "noThemesToast"
         } else {
-            title = "theme_module_repeat_started_toast_title"~
+            title = Strings.ThemeModule.RepeatStartedToast.title
             icon = "repeatToast"
             interactor.startLearningTheme(themeName: themeName)
         }

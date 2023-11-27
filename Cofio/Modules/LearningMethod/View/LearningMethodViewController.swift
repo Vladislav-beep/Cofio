@@ -18,7 +18,7 @@ class LearningMethodViewController: UIViewController {
         let titleLabel = UILabel()
         titleLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold)
         titleLabel.numberOfLines = 0
-        titleLabel.text = "learning_method_module_title"~
+        titleLabel.text = Strings.LearningMethodModule.title
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         return titleLabel
     }()

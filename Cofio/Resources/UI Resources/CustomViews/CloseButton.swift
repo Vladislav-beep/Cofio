@@ -23,7 +23,7 @@ final class CloseButton: UIButton {
     // MARK: Private methods
     
     private func initialize() {
-        setTitle("close_button_title"~, for: .normal)
+        setTitle(Strings.Common.CloseButton.title, for: .normal)
         contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.left
         setTitleColor(UIColor.darkViolet, for: .normal)
         translatesAutoresizingMaskIntoConstraints = false

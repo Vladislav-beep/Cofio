@@ -34,9 +34,9 @@ extension SettingsPresenter: SettingsViewOutput {
     
     func viewDidLoad() {
         let data: [SettingsCellsDataModel] = [
-            .learning(.init(title: "settings_module_learning_cell_title"~, isImageShown: true)),
-            .onboarding(.init(title: "settings_module_onboarding_cell_title"~, isImageShown: true)),
-            .deleteAllData(.init(title: "settings_module_delete_cell_title"~, isImageShown: false))
+            .learning(.init(title: Strings.SettingsModule.LearningCell.title, isImageShown: true)),
+            .onboarding(.init(title: Strings.SettingsModule.OnboardingCell.title, isImageShown: true)),
+            .deleteAllData(.init(title: Strings.SettingsModule.DeleteCell.title, isImageShown: false))
         ]
         
         view?.updateData(with: data)
@@ -55,9 +55,9 @@ extension SettingsPresenter: SettingsViewOutput {
             self?.storageService.deleteAllData()
         }
         notificationService.showTwoButtonAlert(
-            title: "settings_module_delete_alert_title"~,
-            message: "settings_module_delete_alert_message"~,
-            actionTitle: "delete_button_title"~,
+            title: Strings.SettingsModule.DeleteAlert.title,
+            message: Strings.SettingsModule.DeleteAlert.message,
+            actionTitle: Strings.Common.DeleteButton.title,
             completion: handler)
     }
 }

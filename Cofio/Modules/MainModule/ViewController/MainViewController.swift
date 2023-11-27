@@ -97,14 +97,14 @@ class MainViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        title = "main_module_title"~
+        title = Strings.MainModule.title
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     private func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(
             style: .destructive,
-            title: "delete_button_title"~
+            title: Strings.Common.DeleteButton.title
         ) { [weak self] (action, view, complition) in
             guard let self = self else { return }
             
@@ -127,7 +127,7 @@ class MainViewController: UIViewController {
     private func editAction(at indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(
             style: .normal,
-            title: "new_collection_module_button_edit_title"~
+            title: Strings.NewCollectionModule.Button.editTitle
         ) { [weak self] (action, view, complition) in
             guard let self = self else { return }
             

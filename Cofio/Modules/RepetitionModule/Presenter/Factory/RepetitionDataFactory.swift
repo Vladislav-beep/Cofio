@@ -23,8 +23,8 @@ final class RepetitionDataFactory: RepetitionDataFactoryProtocol {
         
         if themes.isEmpty {
             let emptyCell = RepetitionCellsDataModel.empty(.init(
-                title: "repetition_module_empty_cell_title"~,
-                subtitle: "repetition_module_empty_cell_subtitle"~,
+                title: Strings.RepetitionModule.EmptyCell.title,
+                subtitle: Strings.RepetitionModule.EmptyCell.subtitle,
                 icon: "themeEmptyCellIcon"
             ))
             themeCellsModel.append(emptyCell)
@@ -57,25 +57,25 @@ final class RepetitionDataFactory: RepetitionDataFactoryProtocol {
     private func makeSubtitle(repeats: Int64, repeatDate: Date) -> String {
         // FIXME: repeats can be less or more than 7, don't use raw Int
         if repeats == 6 {
-            return "repetition_module_last_repeat"~
+            return Strings.RepetitionModule.lastRepeat
         }
         
         if Calendar.current.isDateInToday(repeatDate) {
-            return "repetition_module_needs_repeat"~
+            return Strings.RepetitionModule.needsRepeat
         } else if Calendar.current.isDateInYesterday(repeatDate) || repeatDate < Date() {
-            return "repetition_module_needs_repeat_past"~
+            return Strings.RepetitionModule.needsRepeatPast
         }
         
-        return "repetition_module_needs_repeat"~
+        return Strings.RepetitionModule.needsRepeat
     }
     
     private func makeDate(repeatDate: Date) -> String {
         if Calendar.current.isDateInToday(repeatDate) {
-            return "repetition_module_today"~
+            return Strings.RepetitionModule.today
         } else if Calendar.current.isDateInYesterday(repeatDate) {
-            return "repetition_module_yesteday"~
+            return Strings.RepetitionModule.yesteday
         } else if Calendar.current.isDateInTomorrow(repeatDate) {
-            return "repetition_module_tomorrow"~
+            return Strings.RepetitionModule.tomorrow
         }
         
         return dateToString(date: repeatDate)

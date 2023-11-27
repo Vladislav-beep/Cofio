@@ -27,7 +27,7 @@ final class FinishRepetitionOfferViewController: UIViewController {
     }()
     
     private let titleLabel: TitleLabel = {
-        let titleLabel = TitleLabel(title: "finish_offer_module_title_label"~)
+        let titleLabel = TitleLabel(title: Strings.FinishOfferModule.titleLabel)
         titleLabel.textAlignment = .center
         return titleLabel
     }()
@@ -46,7 +46,7 @@ final class FinishRepetitionOfferViewController: UIViewController {
         repeatLabel.font = UIFont.systemFont(ofSize: 19, weight: .regular)
         repeatLabel.numberOfLines = 0
         repeatLabel.textAlignment = .center
-        repeatLabel.text = "finish_offer_module_repeated"~
+        repeatLabel.text = Strings.FinishOfferModule.repeated
         repeatLabel.translatesAutoresizingMaskIntoConstraints = false
         return repeatLabel
     }()
@@ -56,7 +56,7 @@ final class FinishRepetitionOfferViewController: UIViewController {
         nextRepeatLabel.font = UIFont.systemFont(ofSize: 21, weight: .regular)
         nextRepeatLabel.numberOfLines = 0
         nextRepeatLabel.textAlignment = .center
-        nextRepeatLabel.text = "finish_offer_module_next_repeat"~
+        nextRepeatLabel.text = Strings.FinishOfferModule.nextRepeat
         nextRepeatLabel.translatesAutoresizingMaskIntoConstraints = false
         return nextRepeatLabel
     }()
@@ -73,7 +73,7 @@ final class FinishRepetitionOfferViewController: UIViewController {
     private let doneButton: UIButton = {
         let doneButton = UIButton()
         doneButton.translatesAutoresizingMaskIntoConstraints = false
-        doneButton.setTitle("finish_offer_module_button_title"~, for: .normal)
+        doneButton.setTitle(Strings.FinishOfferModule.buttonTitle, for: .normal)
         doneButton.backgroundColor = .darkViolet
         doneButton.layer.cornerRadius = 15
         doneButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
@@ -182,7 +182,7 @@ extension FinishRepetitionOfferViewController: FinishRepetitionOfferViewInput {
         checkMarkImageView.image = UIImage(named: "repeated")
         
         if data.isCompleted {
-            repeatLabel.text = "finish_offer_module_learned"~
+            repeatLabel.text = Strings.FinishOfferModule.learned
             checkMarkImageView.image = UIImage(named: "check")
             dateLabel.isHidden = true
             nextRepeatLabel.isHidden = true

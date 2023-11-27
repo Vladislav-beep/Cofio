@@ -69,7 +69,7 @@ final class RepetitionViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        title = "repetition_module_title"~
+        title = Strings.RepetitionModule.title
         navigationController?.navigationBar.prefersLargeTitles = true
         
         // FIXME: Разобраться почему меняется цвет таббара

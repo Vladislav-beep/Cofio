@@ -18,14 +18,14 @@ final class CollectionsDataFactory: CollectionsDataFactoryProtocol {
     
     func dataFromCollections(collectionsDict: [Collection: Int]) -> [MainModuleCellsDataModel] {
         var mainCellsModel: [MainModuleCellsDataModel] = [
-            .subtitle(.init(subtitle: "main_module_subtitle"~))
+            .subtitle(.init(subtitle: Strings.MainModule.subtitle))
         ]
         let keys = collectionsDict.keys.sorted { $0.creationDate ?? Date() > $1.creationDate ?? Date() }
         
         if keys.isEmpty {
             let emptyCell = MainModuleCellsDataModel.empty(.init(
-                title: "main_module_empty_cell_title"~,
-                subtitle: "main_module_empty_cell_subtitle"~,
+                title: Strings.MainModule.EmptyCell.title,
+                subtitle: Strings.MainModule.EmptyCell.subtitle,
                 icon: "mainEmptyCellIcon"
             ))
             mainCellsModel.append(emptyCell)

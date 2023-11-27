@@ -23,7 +23,7 @@ class CollectionTextField: UITextField {
     // MARK: Private methods
     
     private func initialize() {
-        placeholder = "collection_textField_placeholder"~
+        placeholder = Strings.CollectionTextField.placeholder
         borderStyle = .none
         translatesAutoresizingMaskIntoConstraints = false
         

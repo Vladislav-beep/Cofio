@@ -7,77 +7,76 @@
 */
 
 // MARK: Common
-"close_button_title" = "Close";
-"delete_button_title" = "Delete";
+"Common.close_button.title" = "Close";
+"Common.delete_button.title" = "Delete";
 
 // MARK: Tab bar
-"main_tab" = "Сollections";
-"repetition_tab" = "Repetition";
-"statistics_tab" = "Statistics";
-"settings_tab" = "Settings";
+"Tab.main_tab" = "Сollections";
+"Tab.repetition_tab" = "Repetition";
+"Tab.statistics_tab" = "Statistics";
+"Tab.settings_tab" = "Settings";
 
 // MARK: Main module
-"main_module_title" = "Flash cards";
-"main_module_subtitle" = "Cards for memorizing any information, preparing for exams, learning foreign words";
-"main_module_empty_cell_title" = "No collections";
-"main_module_empty_cell_subtitle" = "To add a collection, press the plus at the bottom of the screen";
-"main_module_start_learning_title" = "Learn collection";
-"main_module_learning_method_alert_title" = "Memory method is not selected";
-"main_module_learning_method_alert_message" = "Navigate to Settings tab and select memorizing method";
-"main_module_learning_method_alert_button_title" = "Go to settings";
-"main_module_repeat_started_toast_title" = "Collection repetition started";
-"main_module_repeat_no_themes_toast_title" = "No themes for repetition";
+"main_module.title" = "Flash cards";
+"main_module.subtitle" = "Cards for memorizing any information, preparing for exams, learning foreign words";
+"main_module.empty_cell.title" = "No collections";
+"main_module.empty_cell.subtitle" = "To add a collection, press the plus at the bottom of the screen";
+"main_module.start_learning.title" = "Learn collection";
+"main_module.learning_method.alert_title" = "Memory method is not selected";
+"main_module.learning_method.alert_message" = "Navigate to Settings tab and select memorizing method";
+"main_module.learning_method.alert_button_title" = "Go to settings";
+"main_module.repeat_started_toast.title" = "Collection repetition started";
+"main_module.repeat_no_themes_toast.title" = "No themes for repetition";
 
 // MARK: New collection
-"new_collection_module_title" = "Add collection";
-"new_collection_module_edit_title" = "Edit collection";
-"new_collection_module_choose_icon" = "Choose icon";
-"new_collection_module_button_title" = "Add";
-"new_collection_module_button_edit_title" = "Edit";
+"new_collection_module.title" = "Add collection";
+"new_collection_module.edit_title" = "Edit collection";
+"new_collection_module.choose_icon" = "Choose icon";
+"new_collection_module.button.title" = "Add";
+"new_collection_module.button.edit_title" = "Edit";
 
 // MARK: Themes
-"theme_module_header" = "Themes";
-"theme_module_alert_title" = "Theme addition";
-"theme_module_alert_edit_title" = "Theme editing";
-"theme_module_alert_subtitle" = "Type the name of the topic you want to add";
-"theme_module_alert_edit_subtitle" = "Edit theme title";
-"theme_module_alert_textField_placeholder" = "Topic name";
-"theme_module_alert_add_button" = "Add";
-"theme_module_alert_edit_button" = "Edit";
-"theme_module_alert_cancel_button" = "Cancel";
-"theme_module_empty_cell_title" = "No themes";
-"theme_module_empty_cell_subtitle" = "Press plus at the bottom of the screen to add a theme";
-"theme_module_start_learning_title" = "Learn theme";
-"theme_module_repeat_started_toast_title" = "Theme repetition started";
-"theme_module_repeat_no_cards_toast_title" = "Add cards to the theme";
+"theme_module.header" = "Themes";
+"theme_module.alert.title" = "Theme addition";
+"theme_module.alert.edit_title" = "Theme editing";
+"theme_module.alert.subtitle" = "Type the name of the topic you want to add";
+"theme_module.alert.edit_subtitle" = "Edit theme title";
+"theme_module.alert.textField_placeholder" = "Topic name";
+"theme_module.alert.add_button" = "Add";
+"theme_module.alert.edit_button" = "Edit";
+"theme_module.alert.cancel_button" = "Cancel";
+"theme_module.empty_cell.title" = "No themes";
+"theme_module.empty_cell.subtitle" = "Press plus at the bottom of the screen to add a theme";
+"theme_module.start_learning.title" = "Learn theme";
+"theme_module.repeat_started_toast.title" = "Theme repetition started";
+"theme_module.repeat_no_cards_toast.title" = "Add cards to the theme";
 
 
 // MARK: Cards
-"cards_module_title" = "Cards";
-"cards_module_empty_cell_title" = "You haven't added any cards yet.\n To add card, press plus at the top of the screen.";
-"cards_module_empty_cell_subtitle" = "Press plus at the top of the screen to add a card ";
+"cards_module.title" = "Cards";
+"cards_module.empty_cell.title" = "You haven't added any cards yet.\n To add card, press plus at the top of the screen.";
+"cards_module.empty_cell.subtitle" = "Press plus at the top of the screen to add a card ";
 
 // MARK: New Card
-"new_card_module_add_button_title" = "Add card";
-"new_card_module_edit_button_title" = "Edit";
-"new_card_module_add_definition_textView_placeholder" = "Definition or word";
-"new_card_module_add_description_textView_placeholder" = "Description or translation";
+"new_card_module.add_button.title" = "Add card";
+"new_card_module.edit_button.title" = "Edit";
+"new_card_module.add_definition.textView_placeholder" = "Definition or word";
+"new_card_module.add_description.textView_placeholder" = "Description or translation";
 
 // MARK: Repetition
-"repetition_module_title" = "Repetition";
-"repetition_module_last_repeat" = "Last repetition!";
-"repetition_module_needs_repeat" = "Needs repeating";
-"repetition_module_needs_repeat_past" = "Needed repeating";
-"repetition_module_today" = "Today";
-"repetition_module_yesteday" = "Yesterday";
-"repetition_module_tomorrow" = "Tomorrow";
-"repetition_module_empty_cell_title" = "No themes for repetition";
-"repetition_module_empty_cell_subtitle" = "Start learning collection or theme or add cards to existing themes";
+"repetition_module.title" = "Repetition";
+"repetition_module.last_repeat" = "Last repetition!";
+"repetition_module.needs_repeat" = "Needs repeating";
+"repetition_module.needs_repeat_past" = "Needed repeating";
+"repetition_module.today" = "Today";
+"repetition_module.yesteday" = "Yesterday";
+"repetition_module.tomorrow" = "Tomorrow";
+"repetition_module.empty_cell.title" = "No themes for repetition";
+"repetition_module.empty_cell.subtitle" = "Start learning collection or theme or add cards to existing themes";
 
 // MARK: Cards Repetition
-"cards_repetition_module_empty_cell_title" = "No cards have been added for this theme yet.\n Add them in the main section";
-"cards_repetition_module_learned_button" = "Learned";
-"cards_repetition_module_more_button" = "One more time";
+"cards_repetition_module.learned_button" = "Learned";
+"cards_repetition_module.more_button" = "One more time";
 
 // MARK: FinishRepetitionOffer
 "finish_offer_module_button_title" = "OK";
@@ -87,38 +86,38 @@
 "finish_offer_module_learned" = "is learned!";
 
 // MARK: Settings
-"settings_module_title" = "Settings";
-"settings_module_learning_cell_title" = "Choose memorizing method";
-"settings_module_onboarding_cell_title" = "Show onboarding";
-"settings_module_delete_cell_title" = "Delete all data";
-"settings_module_delete_alert_title" = "Data deleting";
-"settings_module_delete_alert_message" = "Are you sure you want to delete all data?";
+"settings_module.title" = "Settings";
+"settings_module.learning_cell.title" = "Choose memorizing method";
+"settings_module.onboarding_cell.title" = "Show onboarding";
+"settings_module.delete_cell.title" = "Delete all data";
+"settings_module.delete_alert.title" = "Data deleting";
+"settings_module.delete_alert.message" = "Are you sure you want to delete all data?";
 
 // MARK: LearningMethod
-"learning_method_module_title" = "Memorizing method";
-"learning_method_module_long_cell_title" = "Прогрессирующее повторение";
-"learning_method_module_week_cell_title" = "Каждодневное повторение";
-"learning_method_module_long_cell_subtitle" = "Для запоминания используется методика прогрессирующего запоминания, первое повторение происходит в тот же день, далее на следующий, потом через 3 дня, 5....";
-"learning_method_module_week_cell_subtitle" = "Методика состоит в том, чтобы повторять информацию каждый день в течение недели";
+"learning_method_module.title" = "Memorizing method";
+"learning_method_module.long_cell.title" = "Прогрессирующее повторение";
+"learning_method_module.week_cell.title" = "Каждодневное повторение";
+"learning_method_module.long_cell.subtitle" = "Для запоминания используется методика прогрессирующего запоминания, первое повторение происходит в тот же день, далее на следующий, потом через 3 дня, 5....";
+"learning_method_module.week_cell.subtitle" = "Методика состоит в том, чтобы повторять информацию каждый день в течение недели";
 
 // MARK: Onboarding
-"onboarding_module_button_title" = "Next";
-"onboarding_module_title1" = "Welcome!";
-"onboarding_module_subtitle1" = "Learn and memorize information with flash-cards.";
-"onboarding_module_title2" = "Add collections!";
-"onboarding_module_subtitle2" = "For convenience all topics can be grouped into collections. Each collection has its own icon.";
-"onboarding_module_title3" = "Follow the progress!";
-"onboarding_module_subtitle3" = "Next to the title of each theme there is a progress bar showing how many iterations of the topic have been made.";
-"onboarding_module_title4" = "Add cards!";
-"onboarding_module_subtitle4" = "You can add an unlimited number of cards to each theme.";
-"onboarding_module_title5" = "Start repeating!";
-"onboarding_module_subtitle5" = "To start repeating a particular theme, swipe to the left.";
-"onboarding_module_title6" = "Repeat!";
-"onboarding_module_subtitle6" = "Repetition section shows which theme needs to be repeated today and which theme repetition was skipped over.";
-"onboarding_module_title7" = "Statistics!";
-"onboarding_module_subtitle7" = "In the Statistics section, you can see the number of added and learned cards for different periods of time.";
+"onboarding_module.button_title" = "Next";
+"onboarding_module.title1" = "Welcome!";
+"onboarding_module.subtitle1" = "Learn and memorize information with flash-cards.";
+"onboarding_module.title2" = "Add collections!";
+"onboarding_module.subtitle2" = "For convenience all topics can be grouped into collections. Each collection has its own icon.";
+"onboarding_module.title3" = "Follow the progress!";
+"onboarding_module.subtitle3" = "Next to the title of each theme there is a progress bar showing how many iterations of the topic have been made.";
+"onboarding_module.title4" = "Add cards!";
+"onboarding_module.subtitle4" = "You can add an unlimited number of cards to each theme.";
+"onboarding_module.title5" = "Start repeating!";
+"onboarding_module.subtitle5" = "To start repeating a particular theme, swipe to the left.";
+"onboarding_module.title6" = "Repeat!";
+"onboarding_module.subtitle6" = "Repetition section shows which theme needs to be repeated today and which theme repetition was skipped over.";
+"onboarding_module.title7" = "Statistics!";
+"onboarding_module.subtitle7" = "In the Statistics section, you can see the number of added and learned cards for different periods of time.";
 
 // MARK: - UI
 
 // MARK: CollectionTextField
-"collection_textField_placeholder" = "Collection name";
+"collection_textField.placeholder" = "Collection name";

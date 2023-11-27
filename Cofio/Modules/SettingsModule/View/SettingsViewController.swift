@@ -62,7 +62,7 @@ class SettingsViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        title = "settings_module_title"~
+        title = Strings.SettingsModule.title
         navigationController?.navigationBar.prefersLargeTitles = true
     }
 }

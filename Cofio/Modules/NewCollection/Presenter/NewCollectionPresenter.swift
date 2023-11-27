@@ -38,15 +38,15 @@ extension NewCollectionPresenter: NewCollectionViewOutput {
         
         if isEditing {
             view?.updateTitleAndButton(
-                title: "new_collection_module_edit_title"~,
-                buttonTitle: "new_collection_module_button_edit_title"~
+                title: Strings.NewCollectionModule.editTitle,
+                buttonTitle: Strings.NewCollectionModule.Button.editTitle
             )
             let collection = interactor.getCollection()
             view?.updateTextViewAndIcon(text: collection.name ?? "", icon: collection.icon ?? "iconPlaceholder")
         } else {
             view?.updateTitleAndButton(
-                title: "new_collection_module_title"~,
-                buttonTitle: "new_collection_module_button_title"~
+                title: Strings.NewCollectionModule.title,
+                buttonTitle: Strings.NewCollectionModule.Button.title
             )
         }
     }

@@ -49,7 +49,7 @@ final class NewCardViewController: UIViewController {
     
     private let doneButton: UIButton = {
         let button = UIButton()
-        button.setTitle("new_card_module_add_button_title"~, for: .normal)
+        button.setTitle(Strings.NewCardModule.AddButton.title, for: .normal)
         button.backgroundColor = .darkViolet
         button.layer.cornerRadius = 15
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -81,11 +81,11 @@ final class NewCardViewController: UIViewController {
     private func setupViews() {
         view.backgroundColor = .white
         
-        definitionTextView.text = "new_card_module_add_definition_textView_placeholder"~
+        definitionTextView.text = Strings.NewCardModule.AddDefinition.textViewPlaceholder
         definitionTextView.textColor = .darkGray
         definitionTextView.delegate = self
         
-        descriptionTextView.text = "new_card_module_add_description_textView_placeholder"~
+        descriptionTextView.text = Strings.NewCardModule.AddDescription.textViewPlaceholder
         descriptionTextView.textColor = .darkGray
         descriptionTextView.delegate = self
         
@@ -159,9 +159,9 @@ extension NewCardViewController: UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
             if textView == definitionTextView {
-                textView.text = "new_card_module_add_definition_textView_placeholder"~
+                textView.text = Strings.NewCardModule.AddDefinition.textViewPlaceholder
             } else {
-                textView.text = "new_card_module_add_description_textView_placeholder"~
+                textView.text = Strings.NewCardModule.AddDescription.textViewPlaceholder
             }
             
             textView.textColor = UIColor.darkGray

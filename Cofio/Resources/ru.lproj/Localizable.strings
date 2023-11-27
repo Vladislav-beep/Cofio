@@ -7,117 +7,116 @@
 */
 
 // MARK: Common
-"close_button_title" = "Закрыть";
-"delete_button_title" = "Удалить";
+"Common.close_button.title" = "Закрыть";
+"Common.delete_button.title" = "Удалить";
 
 // MARK: Tab bar
-"main_tab" = "Главная";
-"repetition_tab" = "Повторение";
-"statistics_tab" = "Статистика";
-"settings_tab" = "Настройки";
+"Tab.main_tab" = "Главная";
+"Tab.repetition_tab" = "Повторение";
+"Tab.statistics_tab" = "Статистика";
+"Tab.settings_tab" = "Настройки";
 
 // MARK: Main module
-"main_module_title" = "Главная";
-"main_module_subtitle" = "Карточки для запоминания любой информации, подготовки к экзаменам, изучения иностранных слов";
-"main_module_empty_cell_title" = "Нет коллекций";
-"main_module_empty_cell_subtitle" = "Чтобы добавить коллекцию нажите плюс внизу экрана";
-"main_module_start_learning_title" = "Изучить коллекцию";
-"main_module_learning_method_alert_title" = "Не выбран способ запоминания";
-"main_module_learning_method_alert_message" = "Перейдите в вкладку Настройки и выберите способ запоминания информации";
-"main_module_learning_method_alert_button_title" = "Перейти в настройки";
-"main_module_repeat_started_toast_title" = "Повторение коллекции началось";
-"main_module_repeat_no_themes_toast_title" = "Нет тем для повторения";
+"main_module.title" = "Главная";
+"main_module.subtitle" = "Карточки для запоминания любой информации, подготовки к экзаменам, изучения иностранных слов";
+"main_module.empty_cell.title" = "Нет коллекций";
+"main_module.empty_cell.subtitle" = "Чтобы добавить коллекцию нажите плюс внизу экрана";
+"main_module.start_learning.title" = "Изучить коллекцию";
+"main_module.learning_method_alert.title" = "Не выбран способ запоминания";
+"main_module.learning_method_alert.message" = "Перейдите в вкладку Настройки и выберите способ запоминания информации";
+"main_module.learning_method_alert_button.title" = "Перейти в настройки";
+"main_module.repeat_started_toast.title" = "Повторение коллекции началось";
+"main_module.repeat_no_themes_toast.title" = "Нет тем для повторения";
 
 // MARK: New collection
-"new_collection_module_title" = "Добавление коллекции";
-"new_collection_module_edit_title" = "Редактирование коллекции";
-"new_collection_module_choose_icon" = "Выберите иконку";
-"new_collection_module_button_title" = "Добавить";
-"new_collection_module_button_edit_title" = "Редактировать";
+"new_collection_module.title" = "Добавление коллекции";
+"new_collection_module.edit_title" = "Редактирование коллекции";
+"new_collection_module.choose_icon" = "Выберите иконку";
+"new_collection_module.button.title" = "Добавить";
+"new_collection_module.button.edit_title" = "Редактировать";
 
 // MARK: Themes
-"theme_module_header" = "Темы";
-"theme_module_alert_title" = "Добавление темы";
-"theme_module_alert_edit_title" = "Редактирование темы";
-"theme_module_alert_subtitle" = "Напишите название темы, которую хотите добавить";
-"theme_module_alert_edit_subtitle" = "Отредактируйте название темы";
-"theme_module_alert_textField_placeholder" = "Название темы";
-"theme_module_alert_add_button" = "Добавить";
-"theme_module_alert_edit_button" = "Редактировать";
-"theme_module_alert_cancel_button" = "Отмена";
-"theme_module_empty_cell_title" = "Нет тем";
-"theme_module_empty_cell_subtitle" = "Чтобы добавить тему нажите плюс вверху экрана";
-"theme_module_start_learning_title" = "Изучить тему";
-"theme_module_repeat_started_toast_title" = "Повторение темы началось";
-"theme_module_repeat_no_cards_toast_title" = "Добавьте карточки в тему";
+"theme_module.header" = "Темы";
+"theme_module.alert.title" = "Добавление темы";
+"theme_module.alert.edit_title" = "Редактирование темы";
+"theme_module.alert.subtitle" = "Напишите название темы, которую хотите добавить";
+"theme_module.alert.edit_subtitle" = "Отредактируйте название темы";
+"theme_module.alert.textField_placeholder" = "Название темы";
+"theme_module.alert.add_button" = "Добавить";
+"theme_module.alert.edit_button" = "Редактировать";
+"theme_module.alert.cancel_button" = "Отмена";
+"theme_module.empty_cell.title" = "Нет тем";
+"theme_module.empty_cell.subtitle" = "Чтобы добавить тему нажите плюс вверху экрана";
+"theme_module.start_learning.title" = "Изучить тему";
+"theme_module.repeat_started_toast.title" = "Повторение темы началось";
+"theme_module.repeat_no_cards_toast.title" = "Добавьте карточки в тему";
 
 // MARK: Cards
-"cards_module_title" = "Карточки";
-"cards_module_empty_cell_title" = "Нет карточек";
-"cards_module_empty_cell_subtitle" = "Чтобы добавить карточку нажите плюс вверху экрана";
+"cards_module.title" = "Карточки";
+"cards_module.empty_cell.title" = "Нет карточек";
+"cards_module.empty_cell.subtitle" = "Чтобы добавить карточку нажите плюс вверху экрана";
 
 // MARK: New Card
-"new_card_module_add_button_title" = "Добавить карточку";
-"new_card_module_edit_button_title" = "Редактировать";
-"new_card_module_add_definition_textView_placeholder" = "Определение или слово";
-"new_card_module_add_description_textView_placeholder" = "Описание или перевод";
+"new_card_module.add_button.title" = "Добавить карточку";
+"new_card_module.edit_button.title" = "Редактировать";
+"new_card_module.add_definition.textView_placeholder" = "Определение или слово";
+"new_card_module.add_description.textView_placeholder" = "Описание или перевод";
 
 // MARK: Repetition
-"repetition_module_title" = "Повторение";
-"repetition_module_last_repeat" = "Последнее повторение!";
-"repetition_module_needs_repeat" = "Нужно повторить";
-"repetition_module_needs_repeat_past" = "Нужно было повторить";
-"repetition_module_today" = "Сегодня";
-"repetition_module_yesteday" = "Вчера";
-"repetition_module_tomorrow" = "Завтра";
-"repetition_module_empty_cell_title" = "Нет тем для повторения";
-"repetition_module_empty_cell_subtitle" = "Начните изучение коллекции или темы или добавьте карточки в существующие темы";
+"repetition_module.title" = "Повторение";
+"repetition_module.last_repeat" = "Последнее повторение!";
+"repetition_module.needs_repeat" = "Нужно повторить";
+"repetition_module.needs_repeat_past" = "Нужно было повторить";
+"repetition_module.today" = "Сегодня";
+"repetition_module.yesteday" = "Вчера";
+"repetition_module.tomorrow" = "Завтра";
+"repetition_module.empty_cell.title" = "Нет тем для повторения";
+"repetition_module.empty_cell.subtitle" = "Начните изучение коллекции или темы или добавьте карточки в существующие темы";
 
 // MARK: Cards Repetition
-"cards_repetition_module_empty_cell_title" = "По этой теме пока не добавлены карточки.\n Добавьте их в главном разделе";
-"cards_repetition_module_learned_button" = "Выучил";
-"cards_repetition_module_more_button" = "Еще раз";
+"cards_repetition_module.learned_button" = "Выучил";
+"cards_repetition_module.more_button" = "Еще раз";
 
 // MARK: FinishRepetitionOffer
-"finish_offer_module_button_title" = "Понятно";
-"finish_offer_module_title_label" = "Тема";
-"finish_offer_module_repeated" = "повторена";
-"finish_offer_module_next_repeat" = "Следующее повторение";
-"finish_offer_module_learned" = "выучена!";
+"finish_offer_module.button_title" = "Понятно";
+"finish_offer_module.title_label" = "Тема";
+"finish_offer_module.repeated" = "повторена";
+"finish_offer_module.next_repeat" = "Следующее повторение";
+"finish_offer_module.learned" = "выучена!";
 
 // MARK: Settings
-"settings_module_title" = "Настройки";
-"settings_module_learning_cell_title" = "Выбор способа запоминания";
-"settings_module_onboarding_cell_title" = "Показать онбординг";
-"settings_module_delete_cell_title" = "Удалить все данные";
-"settings_module_delete_alert_title" = "Удаление данных";
-"settings_module_delete_alert_message" = "Вы действительно хотите удалить все данные?";
+"settings_module.title" = "Настройки";
+"settings_module.learning_cell.title" = "Выбор способа запоминания";
+"settings_module.onboarding_cell.title" = "Показать онбординг";
+"settings_module.delete_cell.title" = "Удалить все данные";
+"settings_module.delete_alert.title" = "Удаление данных";
+"settings_module.delete_alert.message" = "Вы действительно хотите удалить все данные?";
 
 // MARK: LearningMethod
-"learning_method_module_title" = "Выбор способа запоминания";
-"learning_method_module_long_cell_title" = "Прогрессирующее повторение";
-"learning_method_module_week_cell_title" = "Каждодневное повторение";
-"learning_method_module_long_cell_subtitle" = "Для запоминания используется методика прогрессирующего запоминания, первое повторение происходит в тот же день, далее на следующий, потом через 3 дня, 5....";
-"learning_method_module_week_cell_subtitle" = "Методика состоит в том, чтобы повторять информацию каждый день в течение недели";
+"learning_method_module.title" = "Выбор способа запоминания";
+"learning_method_module.long_cell.title" = "Прогрессирующее повторение";
+"learning_method_module.week_cell.title" = "Каждодневное повторение";
+"learning_method_module.long_cell.subtitle" = "Для запоминания используется методика прогрессирующего запоминания, первое повторение происходит в тот же день, далее на следующий, потом через 3 дня, 5....";
+"learning_method_module.week_cell.subtitle" = "Методика состоит в том, чтобы повторять информацию каждый день в течение недели";
 
 // MARK: Onboarding
-"onboarding_module_button_title" = "Дальше";
-"onboarding_module_title1" = "Добро пожаловать!";
-"onboarding_module_subtitle1" = "Изучайте и запоминайте информацию с помощью карточек.";
-"onboarding_module_title2" = "Добавляйте коллекции!";
-"onboarding_module_subtitle2" = "Для удобства все темы можно группировать в коллекции. Для каждой коллекции выбирается своя иконка.";
-"onboarding_module_title3" = "Следите за прогрессом!";
-"onboarding_module_subtitle3" = "Рядом с названием каждой темы есть прогресс, показываеющий сколько повторений темы сделано.";
-"onboarding_module_title4" = "Добавляйте карточки!";
-"onboarding_module_subtitle4" = "В каждую тему можно добавить неограниченное количество карточек.";
-"onboarding_module_title5" = "Начать повторение!";
-"onboarding_module_subtitle5" = "Чтобы начать изучать определенную тему свайпните плашку влево.";
-"onboarding_module_title6" = "Повторяйте!";
-"onboarding_module_subtitle6" = "В разделе Повторение показывается какую тему нужно повторить сегодня, а повторение какой темы пропущено.";
-"onboarding_module_title7" = "Статистика!";
-"onboarding_module_subtitle7" = "В разделе статистика можно посмотреть количество добавленный и выученных карточек за разные периоды времени.";
+"onboarding_module.button_title" = "Дальше";
+"onboarding_module.title1" = "Добро пожаловать!";
+"onboarding_module.subtitle1" = "Изучайте и запоминайте информацию с помощью карточек.";
+"onboarding_module.title2" = "Добавляйте коллекции!";
+"onboarding_module.subtitle2" = "Для удобства все темы можно группировать в коллекции. Для каждой коллекции выбирается своя иконка.";
+"onboarding_module.title3" = "Следите за прогрессом!";
+"onboarding_module.subtitle3" = "Рядом с названием каждой темы есть прогресс, показываеющий сколько повторений темы сделано.";
+"onboarding_module.title4" = "Добавляйте карточки!";
+"onboarding_module.subtitle4" = "В каждую тему можно добавить неограниченное количество карточек.";
+"onboarding_module.title5" = "Начать повторение!";
+"onboarding_module.subtitle5" = "Чтобы начать изучать определенную тему свайпните плашку влево.";
+"onboarding_module.title6" = "Повторяйте!";
+"onboarding_module.subtitle6" = "В разделе Повторение показывается какую тему нужно повторить сегодня, а повторение какой темы пропущено.";
+"onboarding_module.title7" = "Статистика!";
+"onboarding_module.subtitle7" = "В разделе статистика можно посмотреть количество добавленный и выученных карточек за разные периоды времени.";
 
 // MARK: - UI
 
 // MARK: CollectionTextField
-"collection_textField_placeholder" = "Название коллекции";
+"collection_textField.placeholder" = "Название коллекции";

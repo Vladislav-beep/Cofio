@@ -36,13 +36,13 @@ final class LearningMethodDataFactory: LearningMethodDataFactoryProtocol {
         
         let data: [LearningCellsDataModel] = [
             .long(.init(
-                title: "learning_method_module_long_cell_title"~,
-                subtitle: "learning_method_module_long_cell_subtitle"~,
+                title: Strings.LearningMethodModule.LongCell.title,
+                subtitle: Strings.LearningMethodModule.LongCell.subtitle,
                 backGroundColor: longColor)
             ),
             .week(.init(
-                title: "learning_method_module_week_cell_title"~,
-                subtitle: "learning_method_module_week_cell_subtitle"~,
+                title: Strings.LearningMethodModule.WeekCell.title,
+                subtitle: Strings.LearningMethodModule.WeekCell.subtitle,
                 backGroundColor: weekColor)
             )
         ]

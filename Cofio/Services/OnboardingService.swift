@@ -18,38 +18,38 @@ final class OnboardingService: OnboardingServiceProtocol {
         let data = [
             OnboardingCellDataModel(
                 image: UIImage(named: "onboarding")!,
-                title: "onboarding_module_title1"~,
-                subtitle: "onboarding_module_subtitle1"~
+                title: Strings.OnboardingModule.title1,
+                subtitle: Strings.OnboardingModule.subtitle1
             ),
             OnboardingCellDataModel(
                 image: UIImage(named: "onboarding2")!,
-                title: "onboarding_module_title2"~,
-                subtitle: "onboarding_module_subtitle2"~
+                title: Strings.OnboardingModule.title2,
+                subtitle: Strings.OnboardingModule.subtitle2
             ),
             OnboardingCellDataModel(
                 image: UIImage(named: "onboarding3")!,
-                title: "onboarding_module_title3"~,
-                subtitle: "onboarding_module_subtitle3"~
+                title: Strings.OnboardingModule.title3,
+                subtitle: Strings.OnboardingModule.subtitle3
             ),
             OnboardingCellDataModel(
                 image: UIImage(named: "onboarding")!,
-                title: "onboarding_module_title4"~,
-                subtitle: "onboarding_module_subtitle4"~
+                title: Strings.OnboardingModule.title4,
+                subtitle: Strings.OnboardingModule.subtitle4
             ),
             OnboardingCellDataModel(
                 image: UIImage(named: "onboarding")!,
-                title:"onboarding_module_title5"~,
-                subtitle: "onboarding_module_subtitle5"~
+                title: Strings.OnboardingModule.title5,
+                subtitle: Strings.OnboardingModule.subtitle5
             ),
             OnboardingCellDataModel(
                 image: UIImage(named: "onboarding")!,
-                title: "onboarding_module_title6"~,
-                subtitle: "onboarding_module_subtitle6"~
+                title: Strings.OnboardingModule.title6,
+                subtitle: Strings.OnboardingModule.subtitle6
             ),
             OnboardingCellDataModel(
                 image: UIImage(named: "onboarding")!,
-                title: "onboarding_module_title7"~,
-                subtitle: "onboarding_module_subtitle7"~
+                title: Strings.OnboardingModule.title7,
+                subtitle: Strings.OnboardingModule.subtitle7
             )
         ]
         

@@ -19,14 +19,14 @@ final class ThemesDataFactory: ThemesDataFactoryProtocol {
     func dataFromThemes(themesDict: [Theme: Int]) -> [ThemesCellsDataModel] {
         var themeCellsModel: [ThemesCellsDataModel] = [
             .statics(.init(title: "")),
-            .header(.init(title: "theme_module_header"~))
+            .header(.init(title: Strings.ThemeModule.header))
         ]
         let keys = themesDict.keys.sorted { $0.creationDate ?? Date() > $1.creationDate ?? Date() }
         
         if keys.isEmpty {
             let emptyCell = ThemesCellsDataModel.empty(.init(
-                title: "theme_module_empty_cell_title"~,
-                subtitle: "theme_module_empty_cell_subtitle"~,
+                title: Strings.ThemeModule.EmptyCell.title,
+                subtitle: Strings.ThemeModule.EmptyCell.subtitle,
                 icon: "themeEmptyCellIcon"
             ))
             themeCellsModel.append(emptyCell)

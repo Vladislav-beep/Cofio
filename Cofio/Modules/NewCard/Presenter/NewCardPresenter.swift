@@ -39,7 +39,7 @@ extension NewCardPresenter: NewCardViewOutput {
                 definition: card.cardDefinition ?? "",
                 description: card.cardDescription ?? ""
             )
-            view?.updateButtonTitle(title: "new_card_module_edit_button_title"~)
+            view?.updateButtonTitle(title: Strings.NewCardModule.EditButton.title)
         }
     }
     

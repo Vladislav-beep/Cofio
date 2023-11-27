@@ -16,7 +16,7 @@ final class OnboardingViewController: UIViewController {
     
     private let mainButton: UIButton = {
         let mainButton = UIButton()
-        mainButton.setTitle("onboarding_module_button_title"~, for: .normal)
+        mainButton.setTitle(Strings.OnboardingModule.buttonTitle, for: .normal)
         mainButton.titleLabel?.font = UIFont.systemFont(ofSize: 19, weight: .semibold)
         mainButton.layer.cornerRadius = 8
         mainButton.backgroundColor = .lightGray

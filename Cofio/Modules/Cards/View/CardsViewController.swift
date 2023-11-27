@@ -67,7 +67,7 @@ final class CardsViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        title = "cards_module_title"~
+        title = Strings.CardsModule.title
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = UIColor.darkViolet
         navigationItem.rightBarButtonItem = UIBarButtonItem(
@@ -105,7 +105,7 @@ final class CardsViewController: UIViewController {
     private func editAction(at indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(
             style: .normal,
-            title: "new_collection_module_button_edit_title"~
+            title: Strings.NewCollectionModule.Button.editTitle
         ) { [weak self] (action, view, complition) in
             guard let self = self else { return }
             

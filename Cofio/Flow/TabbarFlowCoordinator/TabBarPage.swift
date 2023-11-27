@@ -39,16 +39,16 @@ enum TabBarPage {
     func pageTitleValue() -> String {
         switch self {
         case .main:
-            return "main_tab"~
+            return Strings.Tab.mainTab
             
         case .repetition:
-            return "repetition_tab"~
+            return Strings.Tab.repetitionTab
             
         case .settings:
-            return "settings_tab"~
+            return Strings.Tab.settingsTab
             
         case .statistics:
-            return "statistics_tab"~
+            return Strings.Tab.statisticsTab
         }
     }
     
