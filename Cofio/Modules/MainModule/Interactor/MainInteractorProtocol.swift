@@ -9,6 +9,7 @@ protocol MainInteractorInput: AnyObject {
     
     func fetchCollections() -> [Collection]
     func getThemesCountForCollection(collectionName: String) -> Int
+    func allThemesHaveCards(collectionName: String) -> Bool
     func deleteCollection(collectionName: String)
     func startLearnCollection(collectionName: String)
     func getRepetitionType() -> RepetitionType?

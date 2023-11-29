@@ -89,7 +89,7 @@ final class ThemesViewController: UIViewController {
     private func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(
             style: .destructive,
-            title: "delete_button_title"~
+            title: Strings.Common.DeleteButton.title
         ) { [weak self] (action, view, complition) in
             guard let self = self else { return }
             

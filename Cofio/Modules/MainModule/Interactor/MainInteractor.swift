@@ -42,6 +42,17 @@ extension MainInteractor: MainInteractorInput {
     func getThemesCountForCollection(collectionName: String) -> Int {
         storageService.getThemesCountForCollection(collectionName: collectionName)
     }
+
+    func allThemesHaveCards(collectionName: String) -> Bool {
+        let themes = storageService.fetchThemes(collectionName: collectionName)
+        guard themes.count != 0 else { return false }
+        for theme in themes {
+            if theme.cards?.count == 0 {
+                return false
+            }
+        }
+        return true
+    }
     
     func startLearnCollection(collectionName: String) {
         storageService.startLearningCollection(collectionName: collectionName)

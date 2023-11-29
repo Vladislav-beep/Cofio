@@ -5,6 +5,7 @@
 //  Created by Владислав Сизонов on 26.07.2022.
 //
 
+import NotificationBannerSwift
 import UIKit
 
 final class ThemesPresenter {
@@ -114,19 +115,27 @@ extension ThemesPresenter: ThemesViewOutput {
     
     func startLearningTheme(themeName: String) {
         let title: String
-        let icon: String
+        let message: String
+        let image: String
+        let style: BannerStyle
         
         if interactor.getCardsCount(themeName: themeName) == 0 {
-            title = Strings.ThemeModule.RepeatNoCardsToast.title
-            icon = "noThemesToast"
+            title = Strings.Common.error
+            message = Strings.ThemeModule.RepeatNoCardsToast.title
+            image = Assets.noThemesToast.name
+            style = .danger
         } else {
-            title = Strings.ThemeModule.RepeatStartedToast.title
-            icon = "repeatToast"
+            title = Strings.Common.success
+            message = Strings.ThemeModule.RepeatStartedToast.title
+            image = Assets.repeatToast.name
+            style = .success
             interactor.startLearningTheme(themeName: themeName)
         }
         notificationService.showToast(
-            message: title,
-            icon: icon
+            title: title,
+            message: message,
+            style: style,
+            image: image
         )
     }
 }

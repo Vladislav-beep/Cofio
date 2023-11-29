@@ -9,6 +9,9 @@
 // MARK: Common
 "Common.close_button.title" = "Закрыть";
 "Common.delete_button.title" = "Удалить";
+"Common.cancel_button.title" = "Отмена";
+"Common.error" = "Ошибка";
+"Common.success" = "Удача";
 
 // MARK: Tab bar
 "Tab.main_tab" = "Главная";
@@ -26,7 +29,7 @@
 "main_module.learning_method_alert.message" = "Перейдите в вкладку Настройки и выберите способ запоминания информации";
 "main_module.learning_method_alert_button.title" = "Перейти в настройки";
 "main_module.repeat_started_toast.title" = "Повторение коллекции началось";
-"main_module.repeat_no_themes_toast.title" = "Нет тем для повторения";
+"main_module.repeat_no_themes_toast.message" = "Нет тем для изучения либо одна из тем не содержит карточек";
 
 // MARK: New collection
 "new_collection_module.title" = "Добавление коллекции";

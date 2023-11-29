@@ -32,6 +32,7 @@
 		B910AB50294BBAF700D9E7EA /* Postfix operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B910AB4F294BBAF700D9E7EA /* Postfix operator.swift */; };
 		B910AB52294DC23600D9E7EA /* MainModuleTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B910AB51294DC23600D9E7EA /* MainModuleTitleCell.swift */; };
 		B910AB54294DC33500D9E7EA /* MainModuleSubtitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B910AB53294DC33500D9E7EA /* MainModuleSubtitleCell.swift */; };
+		B92539B82B17C9E900C82861 /* CustomBannerColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92539B72B17C9E900C82861 /* CustomBannerColors.swift */; };
 		B932E944289C402A007244E6 /* DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932E943289C402A007244E6 /* DoneButton.swift */; };
 		B932E946289DB069007244E6 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932E945289DB069007244E6 /* HeaderCell.swift */; };
 		B932E948289DB365007244E6 /* MainModuleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932E947289DB365007244E6 /* MainModuleCellViewModel.swift */; };
@@ -237,6 +238,7 @@
 		B910AB4F294BBAF700D9E7EA /* Postfix operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Postfix operator.swift"; sourceTree = "<group>"; };
 		B910AB51294DC23600D9E7EA /* MainModuleTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleTitleCell.swift; sourceTree = "<group>"; };
 		B910AB53294DC33500D9E7EA /* MainModuleSubtitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleSubtitleCell.swift; sourceTree = "<group>"; };
+		B92539B72B17C9E900C82861 /* CustomBannerColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBannerColors.swift; sourceTree = "<group>"; };
 		B932E943289C402A007244E6 /* DoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneButton.swift; sourceTree = "<group>"; };
 		B932E945289DB069007244E6 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		B932E947289DB365007244E6 /* MainModuleCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleCellViewModel.swift; sourceTree = "<group>"; };
@@ -437,7 +439,6 @@
 				2897DCFD97CAD98086302B5A /* Pods-CofioTests.debug.xcconfig */,
 				1F72A39FE4A0BA26A8A59B1B /* Pods-CofioTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -547,6 +548,15 @@
 				B910AB4329485B8100D9E7EA /* RepetitionFlowCoordinator.swift */,
 			);
 			path = RepetitionFlowCoordinator;
+			sourceTree = "<group>";
+		};
+		B92539B62B17C9D300C82861 /* NotificationService */ = {
+			isa = PBXGroup;
+			children = (
+				B945C7A9297F05890071F355 /* NotificationService.swift */,
+				B92539B72B17C9E900C82861 /* CustomBannerColors.swift */,
+			);
+			path = NotificationService;
 			sourceTree = "<group>";
 		};
 		B932E94D28ABF972007244E6 /* RepetitionModule */ = {
@@ -1235,6 +1245,7 @@
 		B9CC13EB289309390013ED76 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B92539B62B17C9D300C82861 /* NotificationService */,
 				B90A506B2969CA9000993C75 /* RepetitionService */,
 				B9ACB7BC295E0B5900F2B476 /* CoreDataManager */,
 				B9AAEC312962E7DB00BA6078 /* StorageService.swift */,
@@ -1242,7 +1253,6 @@
 				B90A506E2969CB0A00993C75 /* UserDefaultsService.swift */,
 				B97296602972B64F00878B32 /* DateFormatterService.swift */,
 				B972967E297439AA00878B32 /* OnboardingService.swift */,
-				B945C7A9297F05890071F355 /* NotificationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1662,6 +1672,7 @@
 				B90A506F2969CB0A00993C75 /* UserDefaultsService.swift in Sources */,
 				B972968329743BBC00878B32 /* OnboardingModuleBuilder.swift in Sources */,
 				B9CC13A0288EE8C10013ED76 /* MainPresenterProtocol.swift in Sources */,
+				B92539B82B17C9E900C82861 /* CustomBannerColors.swift in Sources */,
 				B93EF8B428968A8F0057C774 /* CardsViewProtocol.swift in Sources */,
 				B932E948289DB365007244E6 /* MainModuleCellViewModel.swift in Sources */,
 				B972967429742F0000878B32 /* OnboardingPresenter.swift in Sources */,

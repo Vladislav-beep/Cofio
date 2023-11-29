@@ -5,6 +5,7 @@
 //  Created by Владислав Сизонов on 25.07.2022.
 //
 
+import NotificationBannerSwift
 import UIKit
 
 final class MainPresenter {
@@ -94,19 +95,29 @@ extension MainPresenter: MainViewOutput {
     
     func startLearnCollection(collectionName: String) {
         let title: String
-        let icon: String
+        let message: String
+        let image: String
+        let style: BannerStyle
         
-        if interactor.getThemesCountForCollection(collectionName: collectionName) == 0 {
-            title = Strings.MainModule.RepeatNoThemesToast.title
-            icon = "noThemesToast"
+        if interactor.getThemesCountForCollection(collectionName: collectionName) == 0 ||
+           !interactor.allThemesHaveCards(collectionName: collectionName) {
+            
+            title = Strings.Common.error
+            message = Strings.MainModule.RepeatNoThemesToast.message
+            image = Assets.noThemesToast.name
+            style = .danger
         } else {
-            title = Strings.MainModule.RepeatStartedToast.title
-            icon = "repeatToast"
+            title = Strings.Common.success
+            message = Strings.MainModule.RepeatStartedToast.title
+            image = Assets.repeatToast.name
+            style = .success
             interactor.startLearnCollection(collectionName: collectionName)
         }
         notificationService.showToast(
-            message: title,
-            icon: icon
+            title: title,
+            message: message,
+            style: style,
+            image: image
         )
     }
 }

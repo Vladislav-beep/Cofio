@@ -11,6 +11,14 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum Strings {
   internal enum Common {
+    /// Ошибка
+    internal static let error = Strings.tr("Localizable", "Common.error", fallback: "Ошибка")
+    /// Удача
+    internal static let success = Strings.tr("Localizable", "Common.success", fallback: "Удача")
+    internal enum CancelButton {
+      /// Отмена
+      internal static let title = Strings.tr("Localizable", "Common.cancel_button.title", fallback: "Отмена")
+    }
     internal enum CloseButton {
       /// Localizable.strings
       ///   Cofio
@@ -103,8 +111,8 @@ internal enum Strings {
       internal static let title = Strings.tr("Localizable", "main_module.learning_method_alert_button.title", fallback: "Перейти в настройки")
     }
     internal enum RepeatNoThemesToast {
-      /// Нет тем для повторения
-      internal static let title = Strings.tr("Localizable", "main_module.repeat_no_themes_toast.title", fallback: "Нет тем для повторения")
+      /// Нет тем для изучения либо одна из тем не содержит карточек
+      internal static let message = Strings.tr("Localizable", "main_module.repeat_no_themes_toast.message", fallback: "Нет тем для изучения либо одна из тем не содержит карточек")
     }
     internal enum RepeatStartedToast {
       /// Повторение коллекции началось
