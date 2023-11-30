@@ -68,6 +68,7 @@ extension CardsPresenter: CardsViewOutput {
     
     func deleteCard(cardName: String) {
         interactor.deleteCard(cardName: cardName)
+        output?.moduleDidDeleteCardCard(self)
     }
     
     func editCard(card: CardCellDataModel) {

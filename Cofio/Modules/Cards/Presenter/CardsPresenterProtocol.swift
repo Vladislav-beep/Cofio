@@ -15,4 +15,5 @@ protocol CardsPresenterOutput: AnyObject {
     func moduleDidLoad(_ module: CardsPresenterInput)
     func moduleWantsToOpenCardDetails(_ module: CardsPresenterInput, card: CardCellDataModel)
     func moduleWantsToOpenNewCard(_ module: CardsPresenterInput, themeName: String, cardName: String?, isEditing: Bool)
+    func moduleDidDeleteCardCard(_ module: CardsPresenterInput)
 }

@@ -42,11 +42,6 @@ final class ThemesViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        output.refreshView()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

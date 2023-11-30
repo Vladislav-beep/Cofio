@@ -22,6 +22,7 @@ final class MainFlowCoordinator {
     private var mainModuleViewController: UIViewController?
     private var newCollectionViewControllerr: UIViewController?
     private weak var mainModule: MainPresenterInput?
+    private weak var themesModule: ThemesPresenterInput?
     private weak var newCollectionModule: NewCollectionPresenterInput?
     private weak var cardsModule: CardsPresenterInput?
     
@@ -197,7 +198,11 @@ extension MainFlowCoordinator:  ChooseIconPresenterOutput {
 // MARK: - ThemesPresenterOutput
 
 extension MainFlowCoordinator: ThemesPresenterOutput {
-    
+
+    func moduleDidLoad(_ module: ThemesPresenterInput) {
+        themesModule = module
+    }
+
     func moduleWantsToOpenCards(_ module: ThemesPresenterInput, themeName: String) {
         showCardsModule(themeName: themeName)
     }
@@ -222,6 +227,10 @@ extension MainFlowCoordinator: CardsPresenterOutput {
     func moduleWantsToOpenNewCard(_ module: CardsPresenterInput, themeName: String, cardName: String?, isEditing: Bool) {
         showNewCardModule(themeName: themeName, cardName: cardName, isEditing: isEditing)
     }
+    
+    func moduleDidDeleteCardCard(_ module: CardsPresenterInput) {
+        themesModule?.refreshModule()
+    }
 }
 
 // MARK: - CardDetailsPresenterOutput
@@ -239,6 +248,7 @@ extension MainFlowCoordinator: NewCardPresenterOutput {
     
     func moduleWantsToAddNewCard(_ module: NewCardPresenterInput) {
         cardsModule?.refreshModule()
+        themesModule?.refreshModule()
         parentViewController.dismiss(animated: true)
     }
 }

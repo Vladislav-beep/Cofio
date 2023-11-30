@@ -58,6 +58,7 @@ extension ThemesPresenter: ThemesViewOutput {
     
     func viewDidLoad() {
         updateView()
+        output?.moduleDidLoad(self)
     }
     
     func viewDidTapRow(_ item: ThemesCellDataModel) {
@@ -142,7 +143,12 @@ extension ThemesPresenter: ThemesViewOutput {
 
 // MARK: - ThemesPresenterInput
 
-extension ThemesPresenter: ThemesPresenterInput {}
+extension ThemesPresenter: ThemesPresenterInput {
+    
+    func refreshModule() {
+        updateView()
+    }
+}
 
 // MARK: - ThemesInteractorOutput
 
