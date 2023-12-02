@@ -7,10 +7,16 @@
 
 import UIKit
 
+protocol RepetitionFlowCoordinatorOutput: AnyObject {
+    
+    func repetitionFlowWantsToUpdateModules()
+}
+
 final class RepetitionFlowCoordinator {
     
     // MARK: Private
     
+    private let output: RepetitionFlowCoordinatorOutput
     private let parentViewController: UINavigationController
     private let assembly: ApplicationAssembly
     private weak var repetitionModule: RepetitionPresenterInput?
@@ -18,9 +24,11 @@ final class RepetitionFlowCoordinator {
     // MARK: Lifecycle
     
     init(
+        output: RepetitionFlowCoordinatorOutput,
         parentViewController: UINavigationController,
         assembly: ApplicationAssembly
     ) {
+        self.output = output
         self.parentViewController = parentViewController
         self.assembly = assembly
     }
@@ -105,6 +113,7 @@ extension RepetitionFlowCoordinator: FinishRepetitionOfferPresenterOutput {
     
     func moduleWantsToClose(_ module: FinishRepetitionOfferPresenterInput) {
         repetitionModule?.refreshView()
+        output.repetitionFlowWantsToUpdateModules()
         parentViewController.popToRootViewController(animated: true)
         parentViewController.dismiss(animated: true)
     }

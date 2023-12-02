@@ -52,6 +52,7 @@ class CoreDataManager: CoreDataManagerProtocol {
     
     func save() {
         let context = persistentContainer.viewContext
+        context.mergePolicy = NSMergePolicy(merge: .overwriteMergePolicyType)
         if context.hasChanges {
             do {
                 try context.save()

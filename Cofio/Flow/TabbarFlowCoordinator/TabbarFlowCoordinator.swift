@@ -17,6 +17,8 @@ class TabbarFlowCoordinator: NSObject {
     private let userDefaultsService = UserDefaultsService()
     private var childCoordinators: [FlowCoordinatorProtocol] = []
     
+    private weak var mainInput: MainFlowCoordinatorInput?
+    
     // MARK: Lifecycle
     
     required init(
@@ -60,6 +62,7 @@ class TabbarFlowCoordinator: NSObject {
             
         case .repetition:
             let flow = RepetitionFlowCoordinator(
+                output: self,
                 parentViewController: parentNavigationController,
                 assembly: assembly
             )
@@ -140,7 +143,20 @@ extension TabbarFlowCoordinator: UITabBarControllerDelegate {
 
 extension TabbarFlowCoordinator: MainFlowCoordinatorOutput {
     
+    func setMainFlowCoordinatorInput(input: MainFlowCoordinatorInput) {
+        mainInput = input
+    }
+    
     func openSettingsTab() {
         openTab(page: .settings)
+    }
+}
+
+// MARK: - RepetitionFlowCoordinatorOutput
+
+extension TabbarFlowCoordinator: RepetitionFlowCoordinatorOutput {
+
+    func repetitionFlowWantsToUpdateModules() {
+        mainInput?.refreshThemesModule()
     }
 }

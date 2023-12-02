@@ -7,8 +7,14 @@
 
 import UIKit
 
-protocol MainFlowCoordinatorOutput {
+protocol MainFlowCoordinatorInput: AnyObject {
     
+    func refreshThemesModule()
+}
+
+protocol MainFlowCoordinatorOutput: AnyObject {
+    
+    func setMainFlowCoordinatorInput(input: MainFlowCoordinatorInput)
     func openSettingsTab()
 }
 
@@ -131,10 +137,19 @@ final class MainFlowCoordinator {
 extension MainFlowCoordinator: FlowCoordinatorProtocol {
     func start() {
         showMainModule()
+        output.setMainFlowCoordinatorInput(input: self)
     }
     
     func finish(completion: (() -> Void)?) {
         // TODO: финишировать координатор при добавлении контроллера логина
+    }
+}
+
+// MARK: - MainFlowCoordinatorInput
+extension MainFlowCoordinator: MainFlowCoordinatorInput {
+
+    func refreshThemesModule() {
+        themesModule?.refreshModule()
     }
 }
 
