@@ -40,12 +40,12 @@ final class RepetitionCardsCell: UICollectionViewCell {
         return thinView
     }()
 
-    private let definitionLabel: UILabel = {
-        let definitionLabel = UILabel()
-        definitionLabel.font = UIFont.systemFont(ofSize: 17, weight: .regular)
-        definitionLabel.numberOfLines = 0
-        definitionLabel.translatesAutoresizingMaskIntoConstraints = false
-        return definitionLabel
+    private let definitionTextView: UITextView = {
+        let definitionTextView = UITextView()
+        definitionTextView.font = UIFont.systemFont(ofSize: 17, weight: .regular)
+        definitionTextView.backgroundColor = .base
+        definitionTextView.translatesAutoresizingMaskIntoConstraints = false
+        return definitionTextView
     }()
     
     // MARK: Lifecycle
@@ -87,11 +87,12 @@ final class RepetitionCardsCell: UICollectionViewCell {
             thinView.heightAnchor.constraint(equalToConstant: 4)
         ])
         
-        lowerView.addSubview(definitionLabel)
+        lowerView.addSubview(definitionTextView)
         NSLayoutConstraint.activate([
-            definitionLabel.topAnchor.constraint(equalTo: thinView.bottomAnchor, constant: 10),
-            definitionLabel.leadingAnchor.constraint(equalTo: lowerView.leadingAnchor, constant: 16),
-            definitionLabel.trailingAnchor.constraint(equalTo: lowerView.trailingAnchor, constant: -12)
+            definitionTextView.topAnchor.constraint(equalTo: thinView.bottomAnchor, constant: 10),
+            definitionTextView.leadingAnchor.constraint(equalTo: lowerView.leadingAnchor, constant: 16),
+            definitionTextView.trailingAnchor.constraint(equalTo: lowerView.trailingAnchor, constant: -16),
+            definitionTextView.bottomAnchor.constraint(equalTo: lowerView.bottomAnchor, constant: -10)
         ])
     }
     
@@ -99,9 +100,8 @@ final class RepetitionCardsCell: UICollectionViewCell {
     
     func configure(displayData: DisplayData) {
         titleLabel.text = displayData.definition
-        definitionLabel.text = displayData.description
-        definitionLabel.isHidden = !displayData.descriptionShown
+        definitionTextView.text = displayData.description
+        definitionTextView.isHidden = !displayData.descriptionShown
         titleLabel.sizeToFit()
-        definitionLabel.sizeToFit()
     }
 }
