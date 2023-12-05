@@ -24,7 +24,7 @@ final class RepetitionTableViewDataSource: RepetitionTableViewDataSourceProtocol
                 let displayData = RepetitionCell.DisplayData(
                     title: model.title,
                     subtitle: model.subtitle,
-                    date: model.date,
+                    date: model.dateString,
                     backgroundColor: model.backgroundColor
                 )
                 cell.configure(with: displayData)

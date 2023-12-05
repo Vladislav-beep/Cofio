@@ -334,6 +334,7 @@ class CoreDataManager: CoreDataManagerProtocol {
             guard let theme = try persistentContainer.viewContext.fetch(request).first
             else { return }
             theme.isBeingRepeated = true
+            theme.repeatDate = Date()
         } catch let error {
             print("Error updating theme \(error)")
         }

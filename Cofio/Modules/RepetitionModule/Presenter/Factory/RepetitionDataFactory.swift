@@ -43,7 +43,8 @@ final class RepetitionDataFactory: RepetitionDataFactoryProtocol {
             let themeCell = RepetitionCellsDataModel.theme(.init(
                 title: theme.name ?? "",
                 subtitle: subtitle,
-                date: date,
+                dateString: date,
+                date: theme.repeatDate,
                 backgroundColor: backgroundColor
             ))
             themeCellsModel.append(themeCell)

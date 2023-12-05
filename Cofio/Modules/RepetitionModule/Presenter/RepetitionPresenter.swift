@@ -5,6 +5,8 @@
 //  Created by Владислав Сизонов on 16.08.2022.
 //
 
+import Foundation
+
 final class RepetitionPresenter {
     
     // MARK: Private properties
@@ -50,11 +52,13 @@ extension RepetitionPresenter: RepetitionViewOutput {
     }
     
     func viewDidTapRow(_ item: RepetitionCellsDataModel) {
-        // TODO: открывать повторение в случае если дата наступила
         switch item {
         case .theme(let model):
-            output?.moduleWantsToOpenCardsRepetition(self, themeName: model.title)
-            
+            let repeatDate = model.date ?? Date()
+            if repeatDate < Date() || Calendar.current.isDateInToday(repeatDate) {
+                output?.moduleWantsToOpenCardsRepetition(self, themeName: model.title)
+            }
+
         case .empty:
             break
         }

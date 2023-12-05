@@ -15,6 +15,7 @@ enum RepetitionCellsDataModel: Hashable {
 struct RepetitionCellDataModel: Hashable {
     let title: String
     let subtitle: String
-    let date: String
+    let dateString: String
+    let date: Date?
     let backgroundColor: UIColor
 }
