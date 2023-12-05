@@ -18,7 +18,7 @@ protocol CoreDataManagerProtocol {
     func updateCollection(withName: String, newName: String, icon: String)
     
     func createTheme(name: String, repeats: Int, repeatDate: Date, isRepeatComplete: Bool, repetitionType: String, collectionName: String, isBeingRepeated: Bool)
-    func fetchThemes(collectionName: String) -> [Theme]
+    func fetchThemes(collectionName: String, creationDate: Date) -> [Theme]
     func fetchTheme(themeName: String) -> Theme
     func deleteTheme(collectionName: String, themeName: String)
     func updateTheme(collectionName: String, themeName: String, newName: String)
@@ -136,9 +136,12 @@ class CoreDataManager: CoreDataManagerProtocol {
         return fetchedCollections
     }
     
-    func fetchThemes(collectionName: String) -> [Theme] {
+    func fetchThemes(collectionName: String, creationDate: Date) -> [Theme] {
         let request: NSFetchRequest<Theme> = Theme.fetchRequest()
-        request.predicate = NSPredicate(format: "collection.name == %@", collectionName)
+        let namePredicate = NSPredicate(format: "collection.name == %@", collectionName)
+        let datePredicate = NSPredicate(format: "collection.creationDate == %@", creationDate as NSDate)
+        let multiplePredicate = NSCompoundPredicate(type: .and, subpredicates: [namePredicate, datePredicate])
+        request.predicate = multiplePredicate
         
         var fetchedThemes: [Theme] = []
         do {

@@ -13,6 +13,7 @@ final class ThemesModuleBuilder {
     
     private weak var output: ThemesPresenterOutput?
     private let collectionName: String
+    private let creationDate: Date
     private let storageService: StorageServiceProtocol
     private let userDefaultsService: UserDefaultsServiceProtocol
     private let notificationService: NotificationServiceProtocol
@@ -22,12 +23,14 @@ final class ThemesModuleBuilder {
     init(
         output: ThemesPresenterOutput,
         collectionName: String,
+        creationDate: Date,
         storageService: StorageServiceProtocol,
         userDefaultsService: UserDefaultsServiceProtocol,
         notificationService: NotificationServiceProtocol
     ) {
         self.output = output
         self.collectionName = collectionName
+        self.creationDate = creationDate
         self.storageService = storageService
         self.userDefaultsService = userDefaultsService
         self.notificationService = notificationService
@@ -41,7 +44,8 @@ final class ThemesModuleBuilder {
         
         let interactor = ThemesInteractor(
             storageService: storageService,
-            collectionName: collectionName
+            collectionName: collectionName,
+            creationDate: creationDate
         )
         let presenter = ThemesPresenter(
             interactor: interactor,

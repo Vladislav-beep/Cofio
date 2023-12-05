@@ -13,6 +13,7 @@ final class ThemesInteractor {
     
     private let storageService: StorageServiceProtocol
     private let collectionName: String
+    private let creationDate: Date
     
     // MARK: Public properties
     
@@ -20,10 +21,12 @@ final class ThemesInteractor {
     
     init(
         storageService: StorageServiceProtocol,
-        collectionName: String
+        collectionName: String,
+        creationDate: Date
     ) {
         self.storageService = storageService
         self.collectionName = collectionName
+        self.creationDate = creationDate
     }
 }
 
@@ -40,7 +43,7 @@ extension ThemesInteractor: ThemesInteractorInput {
     }
     
     func getThemes() -> [Theme] {
-        storageService.fetchThemes(collectionName: collectionName)
+        storageService.fetchThemes(collectionName: collectionName, creationDate: creationDate)
     }
     
     func getCardsCount(themeName: String) -> Int {

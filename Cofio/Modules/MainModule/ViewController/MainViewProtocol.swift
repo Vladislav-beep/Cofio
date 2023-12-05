@@ -5,6 +5,8 @@
 //  Created by Владислав Сизонов on 25.07.2022.
 //
 
+import Foundation
+
 protocol MainViewInput: AnyObject {
     
     func updateView(with data: [MainModuleCellsDataModel])
@@ -18,5 +20,5 @@ protocol MainViewOutput: AnyObject {
     func editCollection(collectionName: String)
     func refreshView()
     func deleteCollection(collectionName: String)
-    func startLearnCollection(collectionName: String)
+    func startLearnCollection(collectionName: String, creationDate: Date)
 }

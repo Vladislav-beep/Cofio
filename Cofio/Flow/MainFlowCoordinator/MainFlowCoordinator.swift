@@ -83,10 +83,11 @@ final class MainFlowCoordinator {
         newCollectionViewControllerr?.present(chooseIconViewController, animated: true)
     }
     
-    private func showThemesModule(collectionName: String) {
+    private func showThemesModule(collectionName: String, creationDate: Date) {
         let builder = ThemesModuleBuilder(
             output: self,
             collectionName: collectionName,
+            creationDate: creationDate,
             storageService: assembly.servicesAssembly.storageService,
             userDefaultsService: assembly.servicesAssembly.userDefaultsService,
             notificationService: assembly.uiAssembly.notificationService
@@ -169,8 +170,8 @@ extension MainFlowCoordinator: MainPresenterOutput {
         showNewCollectionModule(isEditing: true, collectionName: collectionName)
     }
     
-    func moduleWantsToOpenThemes(_ module: MainPresenterInput, collectionName: String) {
-        showThemesModule(collectionName: collectionName)
+    func moduleWantsToOpenThemes(_ module: MainPresenterInput, collectionName: String, creationDate: Date) {
+        showThemesModule(collectionName: collectionName, creationDate: creationDate)
     }
     
     func moduleWantsToOpenSettingsTab() {

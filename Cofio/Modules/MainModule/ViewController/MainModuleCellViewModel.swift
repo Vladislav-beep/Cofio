@@ -18,9 +18,11 @@ struct SubtitleCellDataModel: Hashable {
 }
 
 struct MainModuleCellViewModel: Hashable {
+    let id = UUID()
     let title: String
     let subtitle: String
     let image: String
+    let creationDate: Date
 }
 
 struct MainModuleEmptyCellViewModel: Hashable {

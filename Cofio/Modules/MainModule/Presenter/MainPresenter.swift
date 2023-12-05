@@ -38,7 +38,7 @@ final class MainPresenter {
     private func updateView() {
         var collectionsDict: [Collection: Int] = [:]
         for collection in interactor.fetchCollections() {
-            collectionsDict[collection] = interactor.getThemesCountForCollection(collectionName: collection.name ?? "")
+            collectionsDict[collection] = interactor.getThemesCountForCollection(collectionName: collection.name ?? "", creationDate: collection.creationDate ?? Date())
         }
         let data = collectionsDataFactory.dataFromCollections(collectionsDict: collectionsDict)
         
@@ -46,7 +46,7 @@ final class MainPresenter {
     }
 }
 
-// MARK: - StartAppViewOutput
+// MARK: - MainViewOutput
 
 extension MainPresenter: MainViewOutput {
     
@@ -65,7 +65,7 @@ extension MainPresenter: MainViewOutput {
             break
             
         case .collection(let model):
-            output?.moduleWantsToOpenThemes(self, collectionName: model.title)
+            output?.moduleWantsToOpenThemes(self, collectionName: model.title, creationDate: model.creationDate)
         }
     }
     
@@ -93,14 +93,14 @@ extension MainPresenter: MainViewOutput {
         updateView()
     }
     
-    func startLearnCollection(collectionName: String) {
+    func startLearnCollection(collectionName: String, creationDate: Date) {
         let title: String
         let message: String
         let image: String
         let style: BannerStyle
         
-        if interactor.getThemesCountForCollection(collectionName: collectionName) == 0 ||
-           !interactor.allThemesHaveCards(collectionName: collectionName) {
+        if interactor.getThemesCountForCollection(collectionName: collectionName, creationDate: creationDate) == 0 ||
+            !interactor.allThemesHaveCards(collectionName: collectionName, creationDate: creationDate) {
             
             title = Strings.Common.error
             message = Strings.MainModule.RepeatNoThemesToast.message
@@ -111,7 +111,7 @@ extension MainPresenter: MainViewOutput {
             message = Strings.MainModule.RepeatStartedToast.title
             image = Assets.repeatToast.name
             style = .success
-            interactor.startLearnCollection(collectionName: collectionName)
+            interactor.startLearnCollection(collectionName: collectionName, creationDate: creationDate)
         }
         notificationService.showToast(
             title: title,

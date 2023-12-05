@@ -11,13 +11,13 @@ protocol StorageServiceProtocol {
     
     func fetchCollections() -> [Collection]
     func deleteCollection(collectionName: String)
-    func getThemesCountForCollection(collectionName: String) -> Int
+    func getThemesCountForCollection(collectionName: String, creationDate: Date) -> Int
     func fetchCollection(collectionName: String) -> Collection
     func createCollection(name: String, icon: String)
     func updateCollection(name: String, newName: String, icon: String)
-    func startLearningCollection(collectionName: String)
+    func startLearningCollection(collectionName: String, creationDate: Date)
     
-    func fetchThemes(collectionName: String) -> [Theme]
+    func fetchThemes(collectionName: String, creationDate: Date) -> [Theme]
     func fetchTheme(themeName: String) -> Theme
     func deleteTheme(collectionName: String, themeName: String)
     func getCardsCount(collectionName: String, themeName: String) -> Int
@@ -58,8 +58,8 @@ final class StorageService: StorageServiceProtocol {
         coreDataManager.deleteCollection(collectionName: collectionName)
     }
     
-    func getThemesCountForCollection(collectionName: String) -> Int {
-        coreDataManager.fetchThemes(collectionName: collectionName).count
+    func getThemesCountForCollection(collectionName: String, creationDate: Date) -> Int {
+        coreDataManager.fetchThemes(collectionName: collectionName, creationDate: creationDate).count
     }
     
     func fetchCollection(collectionName: String) -> Collection {
@@ -74,8 +74,8 @@ final class StorageService: StorageServiceProtocol {
         coreDataManager.updateCollection(withName: name, newName: newName, icon: icon)
     }
     
-    func startLearningCollection(collectionName: String) {
-        let themes = coreDataManager.fetchThemes(collectionName: collectionName)
+    func startLearningCollection(collectionName: String, creationDate: Date) {
+        let themes = coreDataManager.fetchThemes(collectionName: collectionName, creationDate: creationDate)
         for theme in themes {
             coreDataManager.updateThemeRepeating(collectionName: collectionName, themeName: theme.name ?? "")
         }
@@ -83,8 +83,8 @@ final class StorageService: StorageServiceProtocol {
     
     // MARK: Theme methods
     
-    func fetchThemes(collectionName: String) -> [Theme] {
-        coreDataManager.fetchThemes(collectionName: collectionName)
+    func fetchThemes(collectionName: String, creationDate: Date) -> [Theme] {
+        coreDataManager.fetchThemes(collectionName: collectionName, creationDate: creationDate)
     }
     
     func fetchTheme(themeName: String) -> Theme {

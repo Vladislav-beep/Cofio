@@ -160,7 +160,7 @@ class MainViewController: UIViewController {
                 break
                 
             case .collection(let model):
-                self.output.startLearnCollection(collectionName: model.title)
+                self.output.startLearnCollection(collectionName: model.title, creationDate: model.creationDate)
             }
             
             complition(true)

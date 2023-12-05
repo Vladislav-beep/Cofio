@@ -37,7 +37,8 @@ final class CollectionsDataFactory: CollectionsDataFactoryProtocol {
                 .init(
                     title: collection.name ?? "",
                     subtitle: countThemes(count: collectionsDict[collection] ?? 0),
-                    image: collection.icon ?? ""
+                    image: collection.icon ?? "",
+                    creationDate: collection.creationDate ?? Date()
                 )
             )
             mainCellsModel.append(collectionCell)
