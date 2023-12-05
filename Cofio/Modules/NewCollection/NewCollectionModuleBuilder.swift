@@ -15,6 +15,7 @@ final class NewCollectionModuleBuilder {
     private let isEditing: Bool
     private let collectionName: String?
     private let storageService: StorageServiceProtocol
+    private let notificationService: NotificationServiceProtocol
     
     // MARK: Lifecycle
     
@@ -22,12 +23,14 @@ final class NewCollectionModuleBuilder {
         output: NewCollectionPresenterOutput,
         isEditing: Bool,
         collectionName: String?,
-        storageService: StorageServiceProtocol
+        storageService: StorageServiceProtocol,
+        notificationService: NotificationServiceProtocol
     ) {
         self.output = output
         self.isEditing = isEditing
         self.collectionName = collectionName
         self.storageService = storageService
+        self.notificationService = notificationService
     }
     
     // MARK: Public
@@ -39,6 +42,7 @@ final class NewCollectionModuleBuilder {
         )
         let presenter = NewCollectionPresenter(
             interactor: interactor,
+            notificationService: notificationService,
             isEditing: isEditing
         )
         let viewController = NewCollectionViewController(output: presenter)

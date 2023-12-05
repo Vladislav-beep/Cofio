@@ -37,6 +37,7 @@
 "new_collection_module.choose_icon" = "Choose icon";
 "new_collection_module.button.title" = "Add";
 "new_collection_module.button.edit_title" = "Edit";
+"new_collection_module.alert.message" = "Collection name can't be empty";
 
 // MARK: Themes
 "theme_module.header" = "Themes";

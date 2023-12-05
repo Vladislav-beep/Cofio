@@ -37,6 +37,7 @@
 "new_collection_module.choose_icon" = "Выберите иконку";
 "new_collection_module.button.title" = "Добавить";
 "new_collection_module.button.edit_title" = "Редактировать";
+"new_collection_module.alert.message" = "Имя коллекции не может быть пустым";
 
 // MARK: Themes
 "theme_module.header" = "Темы";

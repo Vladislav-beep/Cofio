@@ -64,7 +64,8 @@ final class MainFlowCoordinator {
             output: self,
             isEditing: isEditing,
             collectionName: collectionName,
-            storageService: assembly.servicesAssembly.storageService
+            storageService: assembly.servicesAssembly.storageService,
+            notificationService: assembly.uiAssembly.notificationService
         )
         let newCollectionViewController = builder.build()
         

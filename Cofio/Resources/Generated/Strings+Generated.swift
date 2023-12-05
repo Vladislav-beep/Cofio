@@ -148,6 +148,10 @@ internal enum Strings {
     internal static let editTitle = Strings.tr("Localizable", "new_collection_module.edit_title", fallback: "Редактирование коллекции")
     /// Добавление коллекции
     internal static let title = Strings.tr("Localizable", "new_collection_module.title", fallback: "Добавление коллекции")
+    internal enum Alert {
+      /// Имя коллекции не может быть пустым
+      internal static let message = Strings.tr("Localizable", "new_collection_module.alert.message", fallback: "Имя коллекции не может быть пустым")
+    }
     internal enum Button {
       /// Редактировать
       internal static let editTitle = Strings.tr("Localizable", "new_collection_module.button.edit_title", fallback: "Редактировать")

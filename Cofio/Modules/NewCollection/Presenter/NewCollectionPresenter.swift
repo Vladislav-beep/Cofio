@@ -5,11 +5,14 @@
 //  Created by Владислав Сизонов on 25.07.2022.
 //
 
+import NotificationBannerSwift
+
 final class NewCollectionPresenter {
     
     // MARK: Private properties
     
     private let interactor: NewCollectionInteractorInput
+    private let notificationService: NotificationServiceProtocol
     private let isEditing: Bool
     private var iconName = "iconPlaceholder"
     
@@ -22,10 +25,41 @@ final class NewCollectionPresenter {
     
     init(
         interactor: NewCollectionInteractorInput,
+        notificationService: NotificationServiceProtocol,
         isEditing: Bool
     ) {
         self.interactor = interactor
+        self.notificationService = notificationService
         self.isEditing = isEditing
+    }
+    
+    private func editCollection(name: String) {
+        guard !name.isEmpty else {
+            showError()
+            return
+        }
+        let collection = interactor.getCollection()
+        interactor.updateCollection(name: collection.name ?? "", newName: name, icon: iconName)
+        output?.moduleWantsToAddCollectionAndClose(self)
+    }
+    
+    private func createCollection(name: String) {
+        guard !name.isEmpty else {
+            showError()
+            return
+        }
+        let icon = iconName
+        interactor.createCollection(name: name, icon: icon)
+        output?.moduleWantsToAddCollectionAndClose(self)
+    }
+    
+    private func showError() {
+        notificationService.showToast(
+            title: Strings.Common.error,
+            message: Strings.NewCollectionModule.Alert.message,
+            style: .danger,
+            image: Assets.noThemesToast.name
+        )
     }
 }
 
@@ -53,15 +87,10 @@ extension NewCollectionPresenter: NewCollectionViewOutput {
     
     func viewDidTapButton(name: String) {
         if isEditing {
-            let collection = interactor.getCollection()
-            interactor.updateCollection(name: collection.name ?? "", newName: name, icon: iconName)
+            editCollection(name: name)
         } else {
-            // TODO: добавить проверку на сущестование имени коллекции и на пустое имя
-            let icon = iconName
-            interactor.createCollection(name: name, icon: icon)
+            createCollection(name: name)
         }
-        
-        output?.moduleWantsToAddCollectionAndClose(self)
     }
     
     func chooseIcon() {
